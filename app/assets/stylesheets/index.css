@@ -300,3 +300,144 @@
     transform: scale(1.2);
 }
 /*六大中心*/
+/*名医专家*/
+.proContainer{
+    background: #fff;
+    border: 1px solid #9bbdf7;
+}
+.proTitle{
+    line-height: 46px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 20px;
+}
+proIntroduce{
+    color: #666;
+    font-size: 12px;
+}
+.proDetails{
+    line-height: 24px;
+    color: #666;
+    font-size: 12px;
+}
+.proInWord{
+    color: #3ebb2b;
+}
+.professorName{
+    text-align: center;
+}
+.professorName span{
+    padding: 8px;
+    color: #fff;
+    border-radius: 5px;
+    background: #3ebb2b;
+    margin-top: 10px;
+    display: inline-block;
+}
+.proImg{
+    width: 144px;
+    padding-top: 30px;
+    margin-left: 20px;
+}
+.proList li{
+    margin-left: 54px;
+}
+.proList li:first-child{
+    margin-left: 20px;
+}
+.proContainer{
+    padding-bottom: 85px;
+    margin-top: 20px;
+}
+.proIntroduce>div{
+    float: left;
+}
+.proMiddle{
+    margin-left: 25px;
+    width: 360px;
+    padding-top: 16px;
+}
+.proTime{
+    width: 578px;
+    padding-top: 47px;
+    margin-left: 35px;
+}
+.proTime p{
+    line-height: 30px;
+}
+.proContent{
+    width: 1158px;
+    box-sizing: border-box;
+    background: #e4f8fe;
+    padding: 30px 6px 60px 37px;
+    position: relative;
+    border: 1px solid #b4dfec;
+    margin: 20px 7px 0;
+    border-radius: 2px;
+    font-size: 12px;
+    color: #666;
+    line-height: 24px;
+}
+.proContent>div>div{
+    float: left;
+}
+.proContent:before,.proContent:after{
+    top: -20px;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #b4dfec;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.proContent:after{
+    top: -19px;
+    border-bottom-color: #e4f8fe;
+}
+.proContent.fi{
+    display: block;
+}
+.fi:before,.fi:after{
+    left: 73px;
+}
+.proInformation{
+    width: 495px;
+}
+.proContent{
+    display: none;
+}
+.proInformation h5{
+    color: #3ebb2b;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 400;
+}
+.proWorkTime{
+    width: 576px;
+    margin-left: 40px;
+}
+.se:before,.se:after{
+    left: 275px;
+}
+.th:before,.th:after{
+    left: 472px;
+}
+.fo:before,.fo:after{
+    left: 667px;
+}
+.fif:before,.fif:after{
+    left: 865px;
+}
+.si:before,.si:after{
+    left: 1064px;
+}
+.proContainer.proPad{
+    padding-bottom: 20px;
+}
+.parMarB{
+    margin-bottom: 20px;
+}
+/*名医专家*/
