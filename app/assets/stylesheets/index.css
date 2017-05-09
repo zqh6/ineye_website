@@ -1,3 +1,20 @@
+.top{
+    position: fixed;
+    height: 128px;
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 100;
+    overflow: hidden;
+}
+.topShadow{
+    height: 125px;
+    background: #f4f4f4;
+    box-shadow: 0 1px 5px 0 #ccc;
+}
+.topHeight{
+    height: 125px;
+}
 .whiteBg{
     background: #fff;
 }
@@ -52,6 +69,9 @@
 }
 .flParent li{
     float: left;
+}
+.flParent .fr{
+    float: right;
 }
 .commit{
     width: 72px;
@@ -205,6 +225,23 @@
     position: relative;
     margin-bottom: 30px;
 }
+.aboutHos>li>div>a{
+    width: 540px;
+    height: 340px;
+    margin: 0 18px;
+    display: block;
+}
+
+.aboutHos>li>div>a img{
+    display: inline-block;
+    /*transition: all 1s;*/
+    width: 0;
+    height: 0;
+}
+/*.aboutHos>li>div>a .imgActive{*/
+    /*width: 540px;*/
+    /*height: 340px;*/
+/*}*/
 .aboutHos .fr{
     float: right;
 }
@@ -215,7 +252,7 @@
     box-sizing: border-box;
     width: 98px;
     height: 45px;
-    line-height: 45px;
+    line-height: 40px;
     border: 2px solid #fff;
     background: #aacf52;
 }
@@ -441,3 +478,222 @@ proIntroduce{
     margin-bottom: 20px;
 }
 /*名医专家*/
+/*科学教研*/
+.ophthalmology{
+    padding-bottom: 20px;
+}
+.ophthalmology>li{
+    width: 556px;
+    padding: 10px 10px 28px;
+    border: 1px solid #9bbdf7;
+    background: #fff;
+}
+.ophthalmology>li>a{
+    margin: 12px 0 17px;
+    display: block;
+}
+.ophthalmology a:hover{
+    color: #0284cf;
+}
+.titImg div{
+    width: 555px;
+    height: 380px;
+}
+.titImg div img{
+    width: 100%;
+    height: 100%;
+}
+.ophthalmology h5{
+    line-height: 44px;
+    border-bottom: 1px solid #eee;
+    font-size: 18px;
+    font-weight: 400;
+}
+.ophthalmology ul li{
+    line-height: 30px;
+    float: none;
+}
+.ophthalmology ul li span{
+    float: right;
+    font-size: 12px;
+}
+
+.mdlPad{
+    padding-bottom: 20px;
+}
+/*科学教研*/
+/*新闻中心*/
+.slide-left{
+    width:650px;
+    height: 364px;
+    position: relative;
+}
+a.ctrl-slide{
+    position:absolute;
+    width: 46px;
+    height: 48px;
+    z-index: 10;
+    top: 145px;
+}
+.prev{
+    left: 0;
+}
+.next{
+    right: 0;
+}
+.inner{
+    height: 58px;
+    line-height: 58px;
+    position: absolute;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+.slide-left ul.slide-wrapper{
+    height: 100%;
+}
+.slide-left ul li em {
+    width:6px;
+    height:6px;
+    cursor:pointer;
+    background:#fff;
+    border-radius:100%;
+    text-indent:-9999px;
+    display:block;
+}
+.slide-left .slidebox{
+    right: 15px;
+    margin-left: 0;
+    left: auto;
+}
+/*新闻中心*/
+/*眼健康科普*/
+.middle .eyeHealth>li{
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.eyeHealth>li{
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.eyeHealth>li>h5{
+    margin-bottom: 15px;
+}
+.signMask{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.4);
+    text-align: center;
+}
+.eyeHealth>li>div{
+    width: 530px;
+    height: 330px;
+    position: relative;
+}
+.eyeHealth>li>div.fl{
+    width: 584px;
+}
+.eyeHealth>li>div .signMask{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.3);
+    text-align: center;
+    line-height: 330px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    font-size: 24px;
+    color: #fff;
+}
+
+/*轮播*/
+.banner {
+    width: 100%;
+    height: 330px;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner > ul {
+    display: none;
+    /*width: 999999999px;*/
+    height: 330px;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+.banner > ul > li  {
+    float: left;
+    height: 330px;
+    position: relative;
+}
+
+.banner > ul > li > a {
+    display: block;
+    font-size: 200px;
+    text-align: center;
+    font-weight: bold;
+}
+.banner > ul > li > a img{
+    width: 584px;
+    height: 330px;
+}
+
+.left-btn,.right-btn {
+    width: 61px;
+    height: 61px;
+    position: absolute;
+    top: 45%;
+    right: 30px;
+    background: url("../../assets/images/btn_right.png");
+    cursor: pointer;
+}
+
+.left-btn {
+    left: 30px;
+    background: url("../../assets/images/btn_left.png");
+}
+
+.img-btn-list {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    text-align: center;
+}
+
+.img-btn-list > span  {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    margin: 0 5px;
+    /*background: rgba(0,0,0,0.8);*/
+    border: 2px solid #b8b8b8;
+    cursor: pointer;
+}
+
+.img-btn-list > span.current {
+    border: 2px solid #048ddb;
+    /*background: rgba(255,255,255,0.8);*/
+}
+.imgTitle{
+    height: 58px;
+    line-height: 38px;
+    background: rgba(0,0,0,.5);
+    color: #ff730c;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+}
+/*轮播*/
+/*眼健康科普*/

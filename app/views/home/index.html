@@ -4,44 +4,52 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="../../assets/stylesheets/commom.css">
+    <!--<link rel="stylesheet" href="../../assets/stylesheets/flexslider.css">-->
     <link rel="stylesheet" href="../../assets/stylesheets/index.css">
 </head>
 <body>
 <div class="main">
-    <!--顶部-->
-    <div class="header flow">
-        <ul class="fr headerMsg flParent">
-            <li class="language">
-                <span class="active"><a href="javascript:;">中文</a></span><span><a href="javascript:;">英文</a></span>
-            </li>
-            <li>
-                <span><a href="javascript:;">注册</a> | <a href="javascript:;">登录</a></span>
-            </li>
-            <li>
-                <span>咨询服务：<em class="tele">400 9900 766</em></span>
-            </li>
-        </ul>
-    </div>
-    <!--顶部-->
-    <!--头部-->
-    <div class="flow whiteBg titNav">
-        <div class="fl flow">
-            <img src="../../assets/images/logo.png" alt="">
+<div class="top">
+   <!--顶部-->
+    <div class="topShadow">
+        <div class="header flow">
+            <ul class="fr headerMsg flParent">
+                <li class="language">
+                    <span class="active"><a href="javascript:;">中文</a></span><span><a href="javascript:;">英文</a></span>
+                </li>
+                <li>
+                    <span><a href="javascript:;">注册</a> | <a href="javascript:;">登录</a></span>
+                </li>
+                <li>
+                    <span>咨询服务：<em class="tele">400 9900 766</em></span>
+                </li>
+            </ul>
         </div>
-        <ul class="flParent fl flow nav">
-            <li><a href="javascript:;">就诊</a></li>
-            <li><a href="javascript:;">教学</a></li>
-            <li><a href="javascript:;">科研</a></li>
-            <li><a href="javascript:;">新闻</a></li>
-            <li><a href="javascript:;">简介</a></li>
-        </ul>
-        <ul class="fr flParent func">
-            <li class="appointment commit"><a href="javascript:;">预约医生</a></li>
-            <li class="consult commit"><a href="javascript:;">在线咨询</a></li>
-            <li class="search"><input type="text" placeholder="请输入关键字"><span><img src="../../assets/images/search.png " alt=""> 搜</span></li>
-        </ul>
-    </div>
+
+    <!--顶部-->
     <!--头部-->
+        <div class="flow whiteBg titNav">
+            <div class="fl flow">
+                <img src="../../assets/images/logo.png" alt="">
+            </div>
+            <ul class="flParent fl flow nav">
+                <li><a href="javascript:;">就诊</a></li>
+                <li><a href="javascript:;">教学</a></li>
+                <li><a href="javascript:;">科研</a></li>
+                <li><a href="javascript:;">新闻</a></li>
+                <li><a href="javascript:;">简介</a></li>
+            </ul>
+            <ul class="fr flParent func">
+                <li class="appointment commit"><a href="javascript:;">预约医生</a></li>
+                <li class="consult commit"><a href="javascript:;">在线咨询</a></li>
+                <li class="search"><input type="text" placeholder="请输入关键字"><span><img src="../../assets/images/search.png " alt=""> 搜</span></li>
+            </ul>
+        </div>
+    <!--头部-->
+    </div>
+</div>
+<div class="topHeight"></div>
+    
     <!--轮播-->
     <div class="slide">
         <ul class="slide-wrapper">
@@ -63,7 +71,7 @@
     </div>
     <!--轮播-->
     <div class="middle">
-        <ul class="nav flow flParent">
+        <ul class="nav flow flParent centerNav">
             <li class="active"><a href="javascript:;">走进银海</a></li>
             <li><a href="javascript:;">就医服务</a></li>
             <li><a href="javascript:;">六大中心</a></li>
@@ -74,7 +82,7 @@
         </ul>
 
         <!--走进银海-->
-        <ul class="aboutHos flParent flow column" style="display: none;">
+        <ul class="aboutHos flParent flow column" style="display: ;">
             <li>
                 <div>
                     <a href="javascript:;"><img src="../../assets/images/hospital-environment.png" alt=""></a>
@@ -83,8 +91,8 @@
             </li>
             <li class="fr">
                 <div>
-                    <img src="../../assets/images/Dean.png" alt="">
-                    <a href=""><div class="introduced"><a href="">院长寄语</a></div></a>
+                    <a href=""><img src="../../assets/images/Dean.png" alt=""></a>
+                    <div class="introduced"><a href="">院长寄语</a></div>
                 </div>
             </li>
             <li>
@@ -95,8 +103,8 @@
             </li>
             <li class="fr">
                 <div>
-                    <img src="../../assets/images/Technology.png" alt="">
-                    <a href=""><div class="introduced"><a href="">技术设备</a></div></a>
+                    <a href=""><img src="../../assets/images/Technology.png" alt=""></a>
+                    <div class="introduced"><a href="">技术设备</a></div>
                 </div>
             </li>
         </ul>
@@ -266,7 +274,7 @@
         <!--六大中心-->
 
         <!--名医专家-->
-        <div class="column professor">
+        <div class="column professor" style="display: none;">
             <!--国医大师-->
             <div class="proContainer">
                 <h6 class="proTitle">国医大师</h6>
@@ -552,18 +560,155 @@
                 </div>
             </div>
             <!--主任医师-->
-
         </div>
 
         <!--名医专家-->
         <!--科学教研-->
-        <ul class="column flow flParent">
+        <ul class="column flow flParent ophthalmology" style="display: none">
             <li>
+                <h5>眼科学院</h5>
+                <a href="javascript:;">
+                    <div>
+                        <img src="../../assets/images/ykxy.png" alt="">
+                    </div>
+                </a>
+                <ul>
+                    <li class="titImg">
+                        <a href="javascript:;">召开本科教学审核评估工作动员会 <span>2017/4/28</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">成都中医大银海眼科医院相关学术 <span>2016/11/10</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">2017硕士学位研究生拟录取 <span>2017/4/17</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">2017硕士研究生校内调剂名额 <span>2017/4/7</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li class="fr">
+                <h5>眼科研究院</h5>
+                <a href="javascript:;">
+                    <div>
+                        <img src="../../assets/images/ykyjy.png" alt="">
+                    </div>
+                </a>
+                <ul>
+                    <li class="titImg">
+                        <a href="javascript:;">召开本科教学审核评估工作动员会 <span>2017/4/28</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">成都中医大银海眼科医院相关学术 <span>2016/11/10</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">2017硕士学位研究生拟录取 <span>2017/4/17</span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">2017硕士研究生校内调剂名额 <span>2017/4/7</span></a>
+                    </li>
+                </ul>
 
             </li>
-            <li></li>
         </ul>
         <!--科学教研-->
+        <!--新闻中心-->
+        <div class="column flow mdlPad" style="display: none;">
+            <!--轮播-->
+            <div class="slide slide-left fl">
+                <ul class="slide-wrapper">
+                    <li>
+                        <a href="javascript:;"><img src="../../assets/images/xwzx1.png" alt=""></a>
+                        <div class="inner">
+                            <p>近视防控显成效，沙河源小学来中医大银海眼科医院致谢</p>
+                        </div>
+                    </li>
+                    <li style="display:none">
+                        <a href="javascript:;"><img src="../../assets/images/xwzx1.png" alt=""></a>
+                        <div class="inner">
+                            <p>近视防控显成效，沙河源小学来中医大银海眼科医院致谢</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="slidebox">
+                    <div class="slideWrap">
+                        <ul class="dot-wrap">
+                            <li class="current"><em>1</em></li>
+                            <li><em>2</em></li>
+                        </ul>
+                    </div>
+                </div>
+                <a href="javascript:" class="ctrl-slide prev"><img src="../../assets/images/btn_left.png"></a> 
+                <a href="javascript:" class="ctrl-slide next"><img src="../../assets/images/btn_right.png"></a>
+            </div>
+            <!--轮播-->
+            <!--视频-->
+            <div class="fr">
+                <img src="../../assets/images/xwsp.png">
+            </div>
+            
+            <!--视频-->
+
+        </div>
+        <!--新闻中心-->
+        <!-- 眼健康科普 -->
+        <ul class="column flow mdlPad ophthalmology eyeHealth" style="display: none;">
+            <li>
+                <h5>科普知识</h5>
+                <div class="fl">
+                    <a href="javascript:;"><img src="../../assets/images/kpzs.png"></a>
+                </div>
+                <div class="fr">
+                    <a href="javascript:;"><img src="../../assets/images/kpsp.png"></a>
+                </div>
+            </li>
+            <li>
+                <h5>科普活动</h5>
+                <div class="fl">
+                    <!--轮播-->
+                    <div class="banner">
+                        <ul class="">
+                            <li>
+                                <a href=""><img src="../../assets/images/dynamic-1.png" alt=""></a>
+                                <div class="imgTitle">
+                                    <p>2017年03月06日 21:46:55 | 来源：新华社</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href=""><img src="../../assets/images/dynamic-2.jpg" alt=""></a>
+                                <div class="imgTitle">
+                                    <p>四川省视力保护科普基地流动科普馆在蓉启动</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href=""><img src="../../assets/images/dynamic-3.jpg" alt=""></a>
+                                <div class="imgTitle">
+                                    <p>三月眼健康科普月-千里奔袭得荣县，“对口扶贫.精准复明”公益活动</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a href=""><img src="../../assets/images/dynamic-4.jpg" alt=""></a>
+                                <div class="imgTitle">
+                                    <p>四川省视力保护科普基地与得荣县签订“对口扶贫·精准复明”协议</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <!--<div class="left-btn"></div>-->
+                        <!--<div class="right-btn"></div>-->
+                        <div class="img-btn-list"></div>
+                    </div>
+
+                    <!--轮播-->
+                </div>
+                <div class="fr signContainer">
+                    <a href="javascript:;"><img src="../../assets/images/yybm.png"></a>
+                    <div class="signMask">
+                        <p>预约报名</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <!-- 眼健康科普 -->
 
     </div>
 
@@ -594,16 +739,53 @@
 </body>
 <script src="../../assets/javascripts/jquery-1.8.3.min.js"></script>
 <script src="../../assets/javascripts/slide-2.js"></script>
+<script src="../../assets/javascripts/bannerList.js"></script>
 <script>
     $('.slide').ckSlide({
         autoPlay:true,
-        add:true
+    });
+    $(".slide.slide-left").ckSlide({
+        autoPlay:true,
+        add:true,
+        // seamless:true,
+        dir:"x",
     });
     $(".proContainer .proImg").hover(function () {
         var i = $(this).index();
-//        console.log($(this).parents(".proContainer").attr("class"));
         $(this).parents(".proContainer").find(".proContent").hide().eq(i).show();
     })
 
+    $(".aboutHos li div a img").animate({
+        width: "540px",
+        height: "340px"
+    })
+
+    $(".centerNav li").click(function () {
+        var i = $(this).index();
+        console.log(i);
+        $(".middle .column").hide().eq(i).show();
+        console.log(this);
+        $(this).addClass("active").siblings().removeClass("active");
+        if($(".middle .column").eq(i).hasClass("aboutHos")){
+            $(".aboutHos li div a img").animate({
+                width: "540px",
+                height: "340px"
+            })
+        }else {
+            $(".aboutHos li div a img").animate({
+                width:0,
+                height:0
+            })
+        }
+    })
+
+    bannerListFn(
+        $(".banner"),
+        $(".img-btn-list"),
+        $(".left-btn"),
+        $(".right-btn"),
+        2000,
+        true
+    );
 </script>
 </html>
