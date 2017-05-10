@@ -6,6 +6,8 @@
 
 function bannerListFn(a,b,c,d,e,f){
     var $bannerMaxWapDom=a;
+    console.log($(".banner").width());
+    console.log($bannerMaxWapDom.width());
     var windowWidth=$bannerMaxWapDom.width();
     // var windowWidth=$(window).width();
     var timeShow=0;

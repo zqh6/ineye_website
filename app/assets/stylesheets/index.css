@@ -161,6 +161,9 @@
 .middle{
     padding: 25px 12px 0;
 }
+.topNav span{
+   margin-left: 6px;
+}
 .middle .nav{
     margin-bottom: 20px;
 }
@@ -613,7 +616,7 @@ a.ctrl-slide{
 
 /*轮播*/
 .banner {
-    width: 100%;
+    width: 584px;
     height: 330px;
     overflow: hidden;
     position: relative;
@@ -637,7 +640,7 @@ a.ctrl-slide{
 .banner > ul > li > a {
     display: block;
     font-size: 200px;
-    text-align: center;
+    /*text-align: center;*/
     font-weight: bold;
 }
 .banner > ul > li > a img{
