@@ -1,793 +1,682 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="../../assets/stylesheets/commom.css">
-    <!--<link rel="stylesheet" href="../../assets/stylesheets/flexslider.css">-->
-    <link rel="stylesheet" href="../../assets/stylesheets/index.css">
-  </head>
-  <body>
-    <div class="main">
-      <div class="top">
-        <!--顶部-->
-        <div class="topShadow">
+<div class="middle">
+  <!--走进银海-->
+  <ul class="aboutHos flParent flow column" style="display: ;">
+    <li>
+      <div>
+        <a href="javascript:;"><%= image_tag("hospital-environment.png") %></a>
+        <div class="introduced"><a href="">医院介绍</a></div>
+      </div>
+    </li>
+    <li class="fr">
+      <div>
+        <a href=""><%= image_tag("Dean.png") %></a>
+        <div class="introduced"><a href="">院长寄语</a></div>
+      </div>
+    </li>
+    <li>
+      <div>
+        <a href="javascript:;"><%= image_tag("hospital-institutions.png") %></a>
+        <div class="introduced"><a href="">医院机构</a></div>
+      </div>
+    </li>
+    <li class="fr">
+      <div>
+        <a href=""><%= image_tag("Technology.png") %></a>
+        <div class="introduced"><a href="">技术设备</a></div>
+      </div>
+    </li>
+  </ul>
+  <!--走进银海-->
 
-
-          <!--顶部-->
-          <!--头部-->
-          <div class="flow whiteBg titNav">
-            <div class="fl flow">
-              <%= image_tag("logo.png") %>
-            </div>
-            <ul class="flParent fl flow nav topNav">
-              <li><a href="javascript:;">就诊 <span><%= image_tag("arrow-icon.png") %></span></a></li>
-              <li><a href="javascript:;">教学 <span><%= image_tag("arrow-icon.png") %></span></a></li>
-              <li><a href="javascript:;">科研 <span><%= image_tag("arrow-icon.png") %></span></a></li>
-              <li><a href="javascript:;">新闻 <span><%= image_tag("arrow-icon.png") %></span></a></li>
-              <li><a href="javascript:;">简介 <span><%= image_tag("arrow-icon.png") %></span></a></li>
-            </ul>
-            <div class="rightHeader">
-                <div class="header flow header2">
-                   <ul class="fr headerMsg flParent">
-                       <li>
-                           <span><a href="javascript:;">注册</a> | <a href="javascript:;">登录</a></span>
-                       </li>
-                       <li>
-                          <span>咨询服务：<em class="tele">400 9900 766</em></span>
-                       </li>
-                   </ul>
-                </div>
-                <ul class="fr flParent func">
-                  <li class="appointment commit"><a href="javascript:;">预约医生</a></li>
-                  <li class="consult commit"><a href="javascript:;">在线咨询</a></li>
-                  <li class="search"><input type="text" placeholder="请输入关键字"><span><%= image_tag("search.png")%></span></li>
-                </ul>
-            </div>
+  <!--就医服务-->
+  <div class="column" style="display: none">
+    <div class="scheduling">
+      <%= image_tag("scheduling.png") %>
+    </div>
+    <ul class="flParent flow guide">
+      <li class="mar-L-z">
+        <a href="javascript:;">
+          <div>
+            <%= image_tag("jy-1.jpg") %>
           </div>
-          <!--头部-->
+          <p>预约挂号</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div>
+            <%= image_tag("jy-2.jpg") %>
+          </div>
+          <p>专家排班</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div>
+            <%= image_tag("jy-3.jpg") %>
+          </div>
+          <p>来源指引</p>
+        </a>
+      </li>
+      <li class="mar-L-z">
+        <a href="javascript:;">
+          <div>
+            <%= image_tag("jy-4.jpg") %>
+          </div>
+          <p>就医流程</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div>
+            <%= image_tag("jy-5.jpg") %>
+          </div>
+          <p>流程指引</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div>
+            <%= image_tag("jy-6.jpg") %>
+          </div>
+          <p>医保政策</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!--就医服务-->
+
+  <!--六大中心-->
+  <div class="column centerContainer" style="display: none">
+    <ul class="center flParent">
+      <li>
+        <a href="javascript:;">
+          <div class="icon">
+            <%= image_tag("zxtb_1.png") %>
+          </div>
+          <p>角膜移植与眼表病</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div class="icon">
+            <%= image_tag("zxtb_2.png") %>
+          </div>
+          <p>干眼病</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div class="icon">
+            <%= image_tag("zxtb_3.png") %>
+          </div>
+          <p>青光眼</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div class="icon">
+            <%= image_tag("zxtb_4.png") %>
+          </div>
+          <p>小儿眼病</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div class="icon">
+            <%= image_tag("zxtb_5.png") %>
+          </div>
+          <p>泪道病及眼眶病</p>
+        </a>
+      </li>
+      <li class="lastCenter">
+        <a href="javascript:;">
+          <div class="icon">
+            <%= image_tag("zxtb_6.png") %>
+          </div>
+          <p>眼外伤与眼整形美容</p>
+        </a>
+      </li>
+    </ul>
+    <ul class="flParent flow guide">
+      <li class="mar-L-z">
+        <a href="javascript:;">
+          <div>
+            <%= image_tag("center_1.png") %>
+          </div>
+          <p>眼视光中心</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div>
+            <%= image_tag("center_2.png") %>
+          </div>
+          <p>白内障屈光中心</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div>
+            <%= image_tag("center_3.png") %>
+          </div>
+          <p>中医眼科中心</p>
+        </a>
+      </li>
+      <li class="mar-L-z">
+        <a href="javascript:;">
+          <div>
+            <%= image_tag("center_4.png") %>
+          </div>
+          <p>眼底病中心</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div>
+            <%= image_tag("center_5.png") %>
+          </div>
+          <p>糖尿病病变防治中心</p>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div>
+            <%= image_tag("center_6.png") %>
+          </div>
+          <p>读片中心</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!--六大中心-->
+
+  <!--名医专家-->
+  <div class="column professor" style="display: none;">
+    <!--国医大师-->
+    <div class="proContainer">
+      <h6 class="proTitle">国医大师</h6>
+      <div class="proIntroduce flow">
+        <div class="proImg">
+          <div>
+            <%= image_tag("gyds.png") %>
+          </div>
+          <p class="professorName"><span>廖品正教授</span></p>
+        </div>
+        <div class="proMiddle">
+          <p class="proInWord">专家简介：</p>
+          <p class="proDetails">廖品正，女，1938年生。成都中医药大学教授、博士生导师、享受国务院政府特殊津贴专家。1964年于成都中医药大学(原成都中医学院)中医专业本科毕业,留校从事中医眼科医疗、教学、科研工作40余年。曾被评为全国教育系统劳动模范并获“人民教师”奖章。先后担任国务院学位委员会第五届学科评议组成员、中华中医药学会科学技术奖评审专家、中华中医药学会眼科专业委员会委员、中华中医药学会糖尿病专业委员会特聘顾问、世界中医药学会内科糖尿病专业委员会学术顾问···</p>
+        </div>
+        <div class="proTime">
+          <p>应诊时间</p>
+          <%= image_tag("workTime.png") %>
         </div>
       </div>
-      <div class="topHeight"></div>
-
-      <!--轮播-->
-      <div class="slide">
-        <ul class="slide-wrapper">
-          <li>
-            <a href="javascript:;"><%= image_tag("banner.png") %></a>
+    </div>
+    <!--国医大师-->
+    <!--著名专家-->
+    <div class="proContainer proPad">
+      <h6 class="proTitle">著名专家</h6>
+      <div class="proIntroduce flow">
+        <ul class="flow flParent proList">
+          <li class="proImg">
+            <a href="">
+              <div>
+                <%= image_tag("zmzj1.png") %>
+              </div>
+              <p class="professorName"><span>段俊国教授</span></p>
+            </a>
           </li>
-          <li style="display:none">
-            <a href="javascript:;"><%= image_tag("banner.png") %></a>
+          <li class="proImg">
+            <a href="">
+              <div>
+                <%= image_tag("zmzj2.png") %>
+              </div>
+              <p class="professorName"><span>朱思泉教授</span></p>
+            </a>
+          </li>
+          <li class="proImg">
+            <a href="">
+              <div>
+                <%= image_tag("zmzj3.png") %>
+              </div>
+              <p class="professorName"><span>周华祥教授</span></p>
+            </a>
+          </li>
+          <li class="proImg">
+            <a href="">
+              <div>
+                <%= image_tag("zmzj4.png") %>
+              </div>
+              <p class="professorName"><span>周跃华教授</span></p>
+            </a>
           </li>
         </ul>
-        <div class="slidebox">
-          <div class="slideWrap">
-            <ul class="dot-wrap">
-              <li class="current"><em>1</em></li>
-              <li><em>2</em></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!--轮播-->
-      <!--中间导航-->
-      <ul class="nav flow flParent centerNav">
-          <li class="active"><a href="javascript:;">走进银海</a></li>
-          <li><a href="javascript:;">就医服务</a></li>
-          <li><a href="javascript:;">六大中心</a></li>
-          <li><a href="javascript:;">名医专家</a></li>
-          <li><a href="javascript:;">科学教研</a></li>
-          <li><a href="javascript:;">新闻中心</a></li>
-          <li><a href="javascript:;">眼健康科普</a></li>
-      </ul>
-      <!--中间导航-->
-      <div class="middle">
-      
-        <!--走进银海-->
-        <ul class="aboutHos flParent flow column" style="display: ;">
-          <li>
-            <div>
-              <a href="javascript:;"><%= image_tag("hospital-environment.png") %></a>
-              <div class="introduced"><a href="">医院介绍</a></div>
-            </div>
-          </li>
-          <li class="fr">
-            <div>
-              <a href=""><%= image_tag("Dean.png") %></a>
-              <div class="introduced"><a href="">院长寄语</a></div>
-            </div>
-          </li>
-          <li>
-            <div>
-              <a href="javascript:;"><%= image_tag("hospital-institutions.png") %></a>
-              <div class="introduced"><a href="">医院机构</a></div>
-            </div>
-          </li>
-          <li class="fr">
-            <div>
-              <a href=""><%= image_tag("Technology.png") %></a>
-              <div class="introduced"><a href="">技术设备</a></div>
-            </div>
-          </li>
-        </ul>
-        <!--走进银海-->
-
-        <!--就医服务-->
-        <div class="column" style="display: none">
-          <div class="scheduling">
-            <%= image_tag("scheduling.png") %>
-          </div>
-          <ul class="flParent flow guide">
-            <li class="mar-L-z">
-              <a href="javascript:;">
-                <div>
-                  <%= image_tag("jy-1.jpg") %>
-                </div>
-                <p>预约挂号</p>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">
-                <div>
-                  <%= image_tag("jy-2.jpg") %>
-                </div>
-                <p>专家排班</p>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">
-                <div>
-                  <%= image_tag("jy-3.jpg") %>
-                </div>
-                <p>来源指引</p>
-              </a>
-            </li>
-            <li class="mar-L-z">
-              <a href="javascript:;">
-                <div>
-                  <%= image_tag("jy-4.jpg") %>
-                </div>
-                <p>就医流程</p>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">
-                <div>
-                  <%= image_tag("jy-5.jpg") %>
-                </div>
-                <p>流程指引</p>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">
-                <div>
-                  <%= image_tag("jy-6.jpg") %>
-                </div>
-                <p>医保政策</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <!--就医服务-->
-
-        <!--六大中心-->
-        <div class="column centerContainer" style="display: none">
-          <ul class="center flParent">
-            <li>
-              <a href="javascript:;">
-                <div class="icon">
-                  <%= image_tag("zxtb_1.png") %>
-                </div>
-                <p>角膜移植与眼表病</p>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">
-                <div class="icon">
-                  <%= image_tag("zxtb_2.png") %>
-                </div>
-                <p>干眼病</p>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">
-                <div class="icon">
-                  <%= image_tag("zxtb_3.png") %>
-                </div>
-                <p>青光眼</p>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">
-                <div class="icon">
-                  <%= image_tag("zxtb_4.png") %>
-                </div>
-                <p>小儿眼病</p>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">
-                <div class="icon">
-                  <%= image_tag("zxtb_5.png") %>
-                </div>
-                <p>泪道病及眼眶病</p>
-              </a>
-            </li>
-            <li class="lastCenter">
-              <a href="javascript:;">
-                <div class="icon">
-                  <%= image_tag("zxtb_6.png") %>
-                </div>
-                <p>眼外伤与眼整形美容</p>
-              </a>
-            </li>
-          </ul>
-          <ul class="flParent flow guide">
-            <li class="mar-L-z">
-              <a href="javascript:;">
-                <div>
-                  <%= image_tag("center_1.png") %>
-                </div>
-                <p>眼视光中心</p>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">
-                <div>
-                  <%= image_tag("center_2.png") %>
-                </div>
-                <p>白内障屈光中心</p>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">
-                <div>
-                  <%= image_tag("center_3.png") %>
-                </div>
-                <p>中医眼科中心</p>
-              </a>
-            </li>
-            <li class="mar-L-z">
-              <a href="javascript:;">
-                <div>
-                  <%= image_tag("center_4.png") %>
-                </div>
-                <p>眼底病中心</p>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">
-                <div>
-                  <%= image_tag("center_5.png") %>
-                </div>
-                <p>糖尿病病变防治中心</p>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:;">
-                <div>
-                  <%= image_tag("center_6.png") %>
-                </div>
-                <p>读片中心</p>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <!--六大中心-->
-
-        <!--名医专家-->
-        <div class="column professor" style="display: none;">
-          <!--国医大师-->
-          <div class="proContainer">
-            <h6 class="proTitle">国医大师</h6>
-            <div class="proIntroduce flow">
-              <div class="proImg">
-                <div>
-                  <%= image_tag("gyds.png") %>
-                </div>
-                <p class="professorName"><span>廖品正教授</span></p>
+        <ul class="proInforList">
+          <li class="proContent fi">
+            <div class="flow">
+              <div class="proInformation">
+                <p>教授   博士导师</p>
+                <p>成都中医药大学眼科学院院长兼书记</p>
+                <h5>专家简介：</h5>
+                <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
+                <h5>擅长领域：</h5>
+                <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
               </div>
-              <div class="proMiddle">
-                <p class="proInWord">专家简介：</p>
-                <p class="proDetails">廖品正，女，1938年生。成都中医药大学教授、博士生导师、享受国务院政府特殊津贴专家。1964年于成都中医药大学(原成都中医学院)中医专业本科毕业,留校从事中医眼科医疗、教学、科研工作40余年。曾被评为全国教育系统劳动模范并获“人民教师”奖章。先后担任国务院学位委员会第五届学科评议组成员、中华中医药学会科学技术奖评审专家、中华中医药学会眼科专业委员会委员、中华中医药学会糖尿病专业委员会特聘顾问、世界中医药学会内科糖尿病专业委员会学术顾问···</p>
-              </div>
-              <div class="proTime">
+              <div class="proWorkTime">
                 <p>应诊时间</p>
                 <%= image_tag("workTime.png") %>
               </div>
             </div>
-          </div>
-          <!--国医大师-->
-          <!--著名专家-->
-          <div class="proContainer proPad">
-            <h6 class="proTitle">著名专家</h6>
-            <div class="proIntroduce flow">
-              <ul class="flow flParent proList">
-                <li class="proImg">
-                  <a href="">
-                    <div>
-                      <%= image_tag("zmzj1.png") %>
-                    </div>
-                    <p class="professorName"><span>段俊国教授</span></p>
-                  </a>
-                </li>
-                <li class="proImg">
-                  <a href="">
-                    <div>
-                      <%= image_tag("zmzj2.png") %>
-                    </div>
-                    <p class="professorName"><span>朱思泉教授</span></p>
-                  </a>
-                </li>
-                <li class="proImg">
-                  <a href="">
-                    <div>
-                      <%= image_tag("zmzj3.png") %>
-                    </div>
-                    <p class="professorName"><span>周华祥教授</span></p>
-                  </a>
-                </li>
-                <li class="proImg">
-                  <a href="">
-                    <div>
-                      <%= image_tag("zmzj4.png") %>
-                    </div>
-                    <p class="professorName"><span>周跃华教授</span></p>
-                  </a>
-                </li>
-              </ul>
-              <ul class="proInforList">
-                <li class="proContent fi">
-                  <div class="flow">
-                    <div class="proInformation">
-                      <p>教授   博士导师</p>
-                      <p>成都中医药大学眼科学院院长兼书记</p>
-                      <h5>专家简介：</h5>
-                      <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
-                      <h5>擅长领域：</h5>
-                      <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
-                    </div>
-                    <div class="proWorkTime">
-                      <p>应诊时间</p>
-                      <%= image_tag("workTime.png") %>
-                    </div>
-                  </div>
-                </li>
-                <li class="proContent se">
-                  <div class="flow">
-                    <div class="proInformation">
-                      <p>教授   博士导师</p>
-                      <p>成都中医药大学眼科学院院长兼书记</p>
-                      <h5>专家简介：</h5>
-                      <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
-                      <h5>擅长领域：</h5>
-                      <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
-                    </div>
-                    <div class="proWorkTime">
-                      <p>应诊时间</p>
-                      <%= image_tag("workTime.png") %>
-                    </div>
-                  </div>
-                </li>
-                <li class="proContent th">
-                  <div class="flow">
-                    <div class="proInformation">
-                      <p>教授   博士导师</p>
-                      <p>成都中医药大学眼科学院院长兼书记</p>
-                      <h5>专家简介：</h5>
-                      <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
-                      <h5>擅长领域：</h5>
-                      <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
-                    </div>
-                    <div class="proWorkTime">
-                      <p>应诊时间</p>
-                      <%= image_tag("workTime.png") %>
-                    </div>
-                  </div>
-                </li>
-                <li class="proContent fo">
-                  <div class="flow">
-                    <div class="proInformation">
-                      <p>教授   博士导师</p>
-                      <p>成都中医药大学眼科学院院长兼书记</p>
-                      <h5>专家简介：</h5>
-                      <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
-                      <h5>擅长领域：</h5>
-                      <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
-                    </div>
-                    <div class="proWorkTime">
-                      <p>应诊时间</p>
-                      <%= image_tag("workTime.png") %>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-
-            </div>
-          </div>
-          <!--著名专家-->
-          <!--主任医师-->
-          <div class="proContainer proPad parMarB">
-            <h6 class="proTitle">主任医师</h6>
-            <div class="proIntroduce flow">
-              <ul class="flow flParent proList">
-                <li class="proImg">
-                  <a href="">
-                    <div>
-                      <%= image_tag("zrys1.png") %>
-                    </div>
-                    <p class="professorName"><span>黄霄主任医师</span></p>
-                  </a>
-                </li>
-                <li class="proImg">
-                  <a href="">
-                    <div>
-                      <%= image_tag("zrys2.png") %>
-                    </div>
-                    <p class="professorName"><span>路雪婧主任医师</span></p>
-                  </a>
-                </li>
-                <li class="proImg">
-                  <a href="">
-                    <div>
-                      <%= image_tag("zrys3.png") %>
-                    </div>
-                    <p class="professorName"><span>谢艾芮主任医师</span></p>
-                  </a>
-                </li>
-                <li class="proImg">
-                  <a href="">
-                    <div>
-                      <%= image_tag("zrys4.png") %>
-                    </div>
-                    <p class="professorName"><span>袁晓辉主任医师</span></p>
-                  </a>
-                </li>
-                <li class="proImg">
-                  <a href="">
-                    <div>
-                      <%= image_tag("zrys5.png") %>
-                    </div>
-                    <p class="professorName"><span>周春阳主任医师</span></p>
-                  </a>
-                </li>
-                <li class="proImg">
-                  <a href="">
-                    <div>
-                      <%= image_tag("zrys6.png") %>
-                    </div>
-                    <p class="professorName"><span>文娟主任医师</span></p>
-                  </a>
-                </li>
-              </ul>
-              <ul class="proInforList">
-                <li class="proContent fi">
-                  <div class="flow">
-                    <div class="proInformation">
-                      <p>教授   博士导师</p>
-                      <p>成都中医药大学眼科学院院长兼书记</p>
-                      <h5>专家简介：</h5>
-                      <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
-                      <h5>擅长领域：</h5>
-                      <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
-                    </div>
-                    <div class="proWorkTime">
-                      <p>应诊时间</p>
-                      <%= image_tag("workTime.png") %>
-                    </div>
-                  </div>
-                </li>
-                <li class="proContent se">
-                  <div class="flow">
-                    <div class="proInformation">
-                      <p>教授   博士导师</p>
-                      <p>成都中医药大学眼科学院院长兼书记</p>
-                      <h5>专家简介：</h5>
-                      <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
-                      <h5>擅长领域：</h5>
-                      <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
-                    </div>
-                    <div class="proWorkTime">
-                      <p>应诊时间</p>
-                      <%= image_tag("workTime.png") %>
-                    </div>
-                  </div>
-                </li>
-                <li class="proContent th">
-                  <div class="flow">
-                    <div class="proInformation">
-                      <p>教授   博士导师</p>
-                      <p>成都中医药大学眼科学院院长兼书记</p>
-                      <h5>专家简介：</h5>
-                      <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
-                      <h5>擅长领域：</h5>
-                      <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
-                    </div>
-                    <div class="proWorkTime">
-                      <p>应诊时间</p>
-                      <%= image_tag("workTime.png") %>
-                    </div>
-                  </div>
-                </li>
-                <li class="proContent fo">
-                  <div class="flow">
-                    <div class="proInformation">
-                      <p>教授   博士导师</p>
-                      <p>成都中医药大学眼科学院院长兼书记</p>
-                      <h5>专家简介：</h5>
-                      <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
-                      <h5>擅长领域：</h5>
-                      <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
-                    </div>
-                    <div class="proWorkTime">
-                      <p>应诊时间</p>
-                      <%= image_tag("workTime.png") %>
-                    </div>
-                  </div>
-                </li>
-                <li class="proContent fif">
-                  <div class="flow">
-                    <div class="proInformation">
-                      <p>教授   博士导师</p>
-                      <p>成都中医药大学眼科学院院长兼书记</p>
-                      <h5>专家简介：</h5>
-                      <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
-                      <h5>擅长领域：</h5>
-                      <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
-                    </div>
-                    <div class="proWorkTime">
-                      <p>应诊时间</p>
-                      <%= image_tag("workTime.png") %>
-                    </div>
-                  </div>
-                </li>
-                <li class="proContent si">
-                  <div class="flow">
-                    <div class="proInformation">
-                      <p>教授   博士导师</p>
-                      <p>成都中医药大学眼科学院院长兼书记</p>
-                      <h5>专家简介：</h5>
-                      <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
-                      <h5>擅长领域：</h5>
-                      <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
-                    </div>
-                    <div class="proWorkTime">
-                      <p>应诊时间</p>
-                      <%= image_tag("workTime.png") %>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-
-            </div>
-          </div>
-          <!--主任医师-->
-        </div>
-
-        <!--名医专家-->
-        <!--科学教研-->
-        <ul class="column flow flParent ophthalmology" style="display: none">
-          <li>
-            <h5>眼科学院</h5>
-            <a href="javascript:;">
-              <div>
-                <%= image_tag("ykyjy.png") %>
-              </div>
-            </a>
-            <ul>
-              <li class="titImg">
-                <a href="javascript:;">召开本科教学审核评估工作动员会 <span>2017/4/28</span></a>
-              </li>
-              <li>
-                <a href="javascript:;">成都中医大银海眼科医院相关学术 <span>2016/11/10</span></a>
-              </li>
-              <li>
-                <a href="javascript:;">2017硕士学位研究生拟录取 <span>2017/4/17</span></a>
-              </li>
-              <li>
-                <a href="javascript:;">2017硕士研究生校内调剂名额 <span>2017/4/7</span></a>
-              </li>
-            </ul>
           </li>
-          <li class="fr">
-            <h5>眼科研究院</h5>
-            <a href="javascript:;">
-              <div>
-                <%= image_tag("ykyjy.png") %>
+          <li class="proContent se">
+            <div class="flow">
+              <div class="proInformation">
+                <p>教授   博士导师</p>
+                <p>成都中医药大学眼科学院院长兼书记</p>
+                <h5>专家简介：</h5>
+                <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
+                <h5>擅长领域：</h5>
+                <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
               </div>
-            </a>
-            <ul>
-              <li class="titImg">
-                <a href="javascript:;">召开本科教学审核评估工作动员会 <span>2017/4/28</span></a>
-              </li>
-              <li>
-                <a href="javascript:;">成都中医大银海眼科医院相关学术 <span>2016/11/10</span></a>
-              </li>
-              <li>
-                <a href="javascript:;">2017硕士学位研究生拟录取 <span>2017/4/17</span></a>
-              </li>
-              <li>
-                <a href="javascript:;">2017硕士研究生校内调剂名额 <span>2017/4/7</span></a>
-              </li>
-            </ul>
-
-          </li>
-        </ul>
-        <!--科学教研-->
-        <!--新闻中心-->
-        <div class="column flow mdlPad" style="display: none;">
-          <!--轮播-->
-          <div class="slide slide-left fl">
-            <ul class="slide-wrapper">
-              <li>
-                <a href="javascript:;"><%= image_tag("xwzx1.png") %></a>
-                <div class="inner">
-                  <p>近视防控显成效，沙河源小学来中医大银海眼科医院致谢</p>
-                </div>
-              </li>
-              <li style="display:none">
-                <a href="javascript:;"><%= image_tag("xwzx1.png") %></a>
-                <div class="inner">
-                  <p>近视防控显成效，沙河源小学来中医大银海眼科医院致谢</p>
-                </div>
-              </li>
-            </ul>
-            <div class="slidebox">
-              <div class="slideWrap">
-                <ul class="dot-wrap">
-                  <li class="current"><em>1</em></li>
-                  <li><em>2</em></li>
-                </ul>
+              <div class="proWorkTime">
+                <p>应诊时间</p>
+                <%= image_tag("workTime.png") %>
               </div>
-            </div>
-            <a href="javascript:" class="ctrl-slide prev"><%= image_tag("btn_left.png") %></a> 
-            <a href="javascript:" class="ctrl-slide next"><%= image_tag("btn_right.png") %></a>
-          </div>
-          <!--轮播-->
-          <!--视频-->
-          <div class="fr">
-            <%= image_tag("xwsp.png") %>
-          </div>
-
-          <!--视频-->
-
-        </div>
-        <!--新闻中心-->
-        <!-- 眼健康科普 -->
-        <ul class="column flow mdlPad ophthalmology eyeHealth" style="display: none;">
-          <li>
-            <h5>科普知识</h5>
-            <div class="fl">
-              <a href="javascript:;"><%= image_tag("kpzs.png") %></a>
-            </div>
-            <div class="fr">
-              <a href="javascript:;"><%= image_tag("kpsp.png") %></a>
             </div>
           </li>
-          <li>
-            <h5>科普活动</h5>
-            <div class="fl">
-              <!--轮播-->
-              <div class="banner">
-                <ul class="">
-                  <li>
-                    <a href=""><%= image_tag("dynamic-1.png") %></a>
-                    <div class="imgTitle">
-                      <p>2017年03月06日 21:46:55 | 来源：新华社</p>
-                    </div>
-                  </li>
-                  <li>
-                    <a href=""><%= image_tag("dynamic-2.jpg") %></a>
-                    <div class="imgTitle">
-                      <p>四川省视力保护科普基地流动科普馆在蓉启动</p>
-                    </div>
-                  </li>
-                  <li>
-                    <a href=""><%= image_tag("dynamic-3.jpg") %></a>
-                    <div class="imgTitle">
-                      <p>三月眼健康科普月-千里奔袭得荣县，“对口扶贫.精准复明”公益活动</p>
-                    </div>
-                  </li>
-                  <li>
-                    <a href=""><%= image_tag("dynamic-4.jpg") %></a>
-                    <div class="imgTitle">
-                      <p>四川省视力保护科普基地与得荣县签订“对口扶贫·精准复明”协议</p>
-                    </div>
-                  </li>
-                </ul>
-                <!--<div class="left-btn"></div>-->
-                <!--<div class="right-btn"></div>-->
-                <div class="img-btn-list"></div>
+          <li class="proContent th">
+            <div class="flow">
+              <div class="proInformation">
+                <p>教授   博士导师</p>
+                <p>成都中医药大学眼科学院院长兼书记</p>
+                <h5>专家简介：</h5>
+                <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
+                <h5>擅长领域：</h5>
+                <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
               </div>
-
-              <!--轮播-->
+              <div class="proWorkTime">
+                <p>应诊时间</p>
+                <%= image_tag("workTime.png") %>
+              </div>
             </div>
-            <div class="fr signContainer">
-              <a href="javascript:;"><%= image_tag("yybm.png") %></a>
-              <div class="signMask">
-                <p>预约报名</p>
+          </li>
+          <li class="proContent fo">
+            <div class="flow">
+              <div class="proInformation">
+                <p>教授   博士导师</p>
+                <p>成都中医药大学眼科学院院长兼书记</p>
+                <h5>专家简介：</h5>
+                <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
+                <h5>擅长领域：</h5>
+                <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
+              </div>
+              <div class="proWorkTime">
+                <p>应诊时间</p>
+                <%= image_tag("workTime.png") %>
               </div>
             </div>
           </li>
         </ul>
-        <!-- 眼健康科普 -->
 
-      </div>
-
-      <div class="footer flow">
-        <ul class="flow flParent">
-          <li class="mar-L-z">
-            <p class="title">合作交流</p>
-            <%= image_tag("partners.png") %>
-          </li>
-          <li class="partner">
-            <p class="title">相关连接</p>
-            <p><%= image_tag("logo-zyd.png") %></p>
-            <p><%= image_tag("logo-zyd-eye.png") %></p>
-          </li>
-          <li>
-            <p class="title">联系方式</p>
-            <p>咨询服务：4009900766</p>
-            <p>医院地址：成都市金牛区星辉西路8号</p>
-            <p>E-mail:ineyehospital@126.com</p>
-          </li>
-          <li class="code">
-            <%= image_tag("erweima.png") %>
-            <p>微信公众号</p>
-          </li>
-        </ul>
       </div>
     </div>
-  </body>
-  <script src="../../assets/javascripts/jquery-1.8.3.min.js"></script>
-  <script src="../../assets/javascripts/slide-2.js"></script>
-  <script src="../../assets/javascripts/bannerList.js"></script>
-  <script>
-    $('.slide').ckSlide({
-      autoPlay:true,
-    });
-    $(".slide.slide-left").ckSlide({
-      autoPlay:true,
-      add:true,
+    <!--著名专家-->
+    <!--主任医师-->
+    <div class="proContainer proPad parMarB">
+      <h6 class="proTitle">主任医师</h6>
+      <div class="proIntroduce flow">
+        <ul class="flow flParent proList">
+          <li class="proImg">
+            <a href="">
+              <div>
+                <%= image_tag("zrys1.png") %>
+              </div>
+              <p class="professorName"><span>黄霄主任医师</span></p>
+            </a>
+          </li>
+          <li class="proImg">
+            <a href="">
+              <div>
+                <%= image_tag("zrys2.png") %>
+              </div>
+              <p class="professorName"><span>路雪婧主任医师</span></p>
+            </a>
+          </li>
+          <li class="proImg">
+            <a href="">
+              <div>
+                <%= image_tag("zrys3.png") %>
+              </div>
+              <p class="professorName"><span>谢艾芮主任医师</span></p>
+            </a>
+          </li>
+          <li class="proImg">
+            <a href="">
+              <div>
+                <%= image_tag("zrys4.png") %>
+              </div>
+              <p class="professorName"><span>袁晓辉主任医师</span></p>
+            </a>
+          </li>
+          <li class="proImg">
+            <a href="">
+              <div>
+                <%= image_tag("zrys5.png") %>
+              </div>
+              <p class="professorName"><span>周春阳主任医师</span></p>
+            </a>
+          </li>
+          <li class="proImg">
+            <a href="">
+              <div>
+                <%= image_tag("zrys6.png") %>
+              </div>
+              <p class="professorName"><span>文娟主任医师</span></p>
+            </a>
+          </li>
+        </ul>
+        <ul class="proInforList">
+          <li class="proContent fi">
+            <div class="flow">
+              <div class="proInformation">
+                <p>教授   博士导师</p>
+                <p>成都中医药大学眼科学院院长兼书记</p>
+                <h5>专家简介：</h5>
+                <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
+                <h5>擅长领域：</h5>
+                <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
+              </div>
+              <div class="proWorkTime">
+                <p>应诊时间</p>
+                <%= image_tag("workTime.png") %>
+              </div>
+            </div>
+          </li>
+          <li class="proContent se">
+            <div class="flow">
+              <div class="proInformation">
+                <p>教授   博士导师</p>
+                <p>成都中医药大学眼科学院院长兼书记</p>
+                <h5>专家简介：</h5>
+                <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
+                <h5>擅长领域：</h5>
+                <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
+              </div>
+              <div class="proWorkTime">
+                <p>应诊时间</p>
+                <%= image_tag("workTime.png") %>
+              </div>
+            </div>
+          </li>
+          <li class="proContent th">
+            <div class="flow">
+              <div class="proInformation">
+                <p>教授   博士导师</p>
+                <p>成都中医药大学眼科学院院长兼书记</p>
+                <h5>专家简介：</h5>
+                <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
+                <h5>擅长领域：</h5>
+                <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
+              </div>
+              <div class="proWorkTime">
+                <p>应诊时间</p>
+                <%= image_tag("workTime.png") %>
+              </div>
+            </div>
+          </li>
+          <li class="proContent fo">
+            <div class="flow">
+              <div class="proInformation">
+                <p>教授   博士导师</p>
+                <p>成都中医药大学眼科学院院长兼书记</p>
+                <h5>专家简介：</h5>
+                <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
+                <h5>擅长领域：</h5>
+                <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
+              </div>
+              <div class="proWorkTime">
+                <p>应诊时间</p>
+                <%= image_tag("workTime.png") %>
+              </div>
+            </div>
+          </li>
+          <li class="proContent fif">
+            <div class="flow">
+              <div class="proInformation">
+                <p>教授   博士导师</p>
+                <p>成都中医药大学眼科学院院长兼书记</p>
+                <h5>专家简介：</h5>
+                <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
+                <h5>擅长领域：</h5>
+                <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
+              </div>
+              <div class="proWorkTime">
+                <p>应诊时间</p>
+                <%= image_tag("workTime.png") %>
+              </div>
+            </div>
+          </li>
+          <li class="proContent si">
+            <div class="flow">
+              <div class="proInformation">
+                <p>教授   博士导师</p>
+                <p>成都中医药大学眼科学院院长兼书记</p>
+                <h5>专家简介：</h5>
+                <p>享受国务院政府经贴专家，“中国百名杰出青年中医”“四川省学术和技术带头人”“四川省著名中医”，现任国务院学位委员会中医中药学科评议组成员</p>
+                <h5>擅长领域：</h5>
+                <p>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护研究，且在青少年近视防治方面有所突破</p>
+              </div>
+              <div class="proWorkTime">
+                <p>应诊时间</p>
+                <%= image_tag("workTime.png") %>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+    <!--主任医师-->
+  </div>
+
+  <!--名医专家-->
+  <!--科学教研-->
+  <ul class="column flow flParent ophthalmology" style="display: none">
+    <li>
+      <h5>眼科学院</h5>
+      <a href="javascript:;">
+        <div>
+          <%= image_tag("ykyjy.png") %>
+        </div>
+      </a>
+      <ul>
+        <li class="titImg">
+          <a href="javascript:;">召开本科教学审核评估工作动员会 <span>2017/4/28</span></a>
+        </li>
+        <li>
+          <a href="javascript:;">成都中医大银海眼科医院相关学术 <span>2016/11/10</span></a>
+        </li>
+        <li>
+          <a href="javascript:;">2017硕士学位研究生拟录取 <span>2017/4/17</span></a>
+        </li>
+        <li>
+          <a href="javascript:;">2017硕士研究生校内调剂名额 <span>2017/4/7</span></a>
+        </li>
+      </ul>
+    </li>
+    <li class="fr">
+      <h5>眼科研究院</h5>
+      <a href="javascript:;">
+        <div>
+          <%= image_tag("ykyjy.png") %>
+        </div>
+      </a>
+      <ul>
+        <li class="titImg">
+          <a href="javascript:;">召开本科教学审核评估工作动员会 <span>2017/4/28</span></a>
+        </li>
+        <li>
+          <a href="javascript:;">成都中医大银海眼科医院相关学术 <span>2016/11/10</span></a>
+        </li>
+        <li>
+          <a href="javascript:;">2017硕士学位研究生拟录取 <span>2017/4/17</span></a>
+        </li>
+        <li>
+          <a href="javascript:;">2017硕士研究生校内调剂名额 <span>2017/4/7</span></a>
+        </li>
+      </ul>
+
+    </li>
+  </ul>
+  <!--科学教研-->
+  <!--新闻中心-->
+  <div class="column flow mdlPad" style="display: none;">
+    <!--轮播-->
+    <div class="slide slide-left fl">
+      <ul class="slide-wrapper">
+        <li>
+          <a href="javascript:;"><%= image_tag("xwzx1.png") %></a>
+          <div class="inner">
+            <p>近视防控显成效，沙河源小学来中医大银海眼科医院致谢</p>
+          </div>
+        </li>
+        <li style="display:none">
+          <a href="javascript:;"><%= image_tag("xwzx1.png") %></a>
+          <div class="inner">
+            <p>近视防控显成效，沙河源小学来中医大银海眼科医院致谢</p>
+          </div>
+        </li>
+      </ul>
+      <div class="slidebox">
+        <div class="slideWrap">
+          <ul class="dot-wrap">
+            <li class="current"><em>1</em></li>
+            <li><em>2</em></li>
+          </ul>
+        </div>
+      </div>
+      <a href="javascript:" class="ctrl-slide prev"><%= image_tag("btn_left.png") %></a> 
+      <a href="javascript:" class="ctrl-slide next"><%= image_tag("btn_right.png") %></a>
+    </div>
+    <!--轮播-->
+    <!--视频-->
+    <div class="fr">
+      <%= image_tag("xwsp.png") %>
+    </div>
+
+    <!--视频-->
+
+  </div>
+  <!--新闻中心-->
+  <!-- 眼健康科普 -->
+  <ul class="column flow mdlPad ophthalmology eyeHealth" style="display: none;">
+    <li>
+      <h5>科普知识</h5>
+      <div class="fl">
+        <a href="javascript:;"><%= image_tag("kpzs.png") %></a>
+      </div>
+      <div class="fr">
+        <a href="javascript:;"><%= image_tag("kpsp.png") %></a>
+      </div>
+    </li>
+    <li>
+      <h5>科普活动</h5>
+      <div class="fl">
+        <!--轮播-->
+        <div class="banner">
+          <ul class="">
+            <li>
+              <a href=""><%= image_tag("dynamic-1.png") %></a>
+              <div class="imgTitle">
+                <p>2017年03月06日 21:46:55 | 来源：新华社</p>
+              </div>
+            </li>
+            <li>
+              <a href=""><%= image_tag("dynamic-2.jpg") %></a>
+              <div class="imgTitle">
+                <p>四川省视力保护科普基地流动科普馆在蓉启动</p>
+              </div>
+            </li>
+            <li>
+              <a href=""><%= image_tag("dynamic-3.jpg") %></a>
+              <div class="imgTitle">
+                <p>三月眼健康科普月-千里奔袭得荣县，“对口扶贫.精准复明”公益活动</p>
+              </div>
+            </li>
+            <li>
+              <a href=""><%= image_tag("dynamic-4.jpg") %></a>
+              <div class="imgTitle">
+                <p>四川省视力保护科普基地与得荣县签订“对口扶贫·精准复明”协议</p>
+              </div>
+            </li>
+          </ul>
+          <!--<div class="left-btn"></div>-->
+          <!--<div class="right-btn"></div>-->
+          <div class="img-btn-list"></div>
+        </div>
+
+        <!--轮播-->
+      </div>
+      <div class="fr signContainer">
+        <a href="javascript:;"><%= image_tag("yybm.png") %></a>
+        <div class="signMask">
+          <p>预约报名</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <!-- 眼健康科普 -->
+</div>
+
+<script src="../../assets/javascripts/jquery-1.8.3.min.js"></script>
+<script src="../../assets/javascripts/slide-2.js"></script>
+<script src="../../assets/javascripts/bannerList.js"></script>
+<script>
+  $('.slide').ckSlide({
+    autoPlay:true,
+  });
+  $(".slide.slide-left").ckSlide({
+    autoPlay:true,
+    add:true,
       // seamless:true,
       dir:"x",
     });
-    $(".proContainer .proImg").hover(function () {
-      var i = $(this).index();
-      $(this).parents(".proContainer").find(".proContent").hide().eq(i).show();
-    })
+  $(".proContainer .proImg").hover(function () {
+    var i = $(this).index();
+    $(this).parents(".proContainer").find(".proContent").hide().eq(i).show();
+  })
 
-    $(".aboutHos li div a img").animate({
-      width: "540px",
-      height: "340px"
-    })
+  $(".aboutHos li div a img").animate({
+    width: "540px",
+    height: "340px"
+  })
 
-    $(".centerNav li").click(function () {
-      var i = $(this).index();
-      console.log(i);
-      $(".middle .column").hide().eq(i).show();
-      console.log(this);
-      $(this).addClass("active").siblings().removeClass("active");
-      if($(".middle .column").eq(i).hasClass("aboutHos")){
-        $(".aboutHos li div a img").animate({
-          width: "540px",
-          height: "340px"
-        })
-      }else {
-        $(".aboutHos li div a img").animate({
-          width:0,
-          height:0
-        })
-      }
-    })
+  $(".centerNav li").click(function () {
+    var i = $(this).index();
+    console.log(i);
+    $(".middle .column").hide().eq(i).show();
+    console.log(this);
+    $(this).addClass("active").siblings().removeClass("active");
+    if($(".middle .column").eq(i).hasClass("aboutHos")){
+      $(".aboutHos li div a img").animate({
+        width: "540px",
+        height: "340px"
+      })
+    }else {
+      $(".aboutHos li div a img").animate({
+        width:0,
+        height:0
+      })
+    }
+  })
 
-    bannerListFn(
-      $(".banner"),
-      $(".img-btn-list"),
-      $(".left-btn"),
-      $(".right-btn"),
-      2000,
-      true
+  bannerListFn(
+    $(".banner"),
+    $(".img-btn-list"),
+    $(".left-btn"),
+    $(".right-btn"),
+    2000,
+    true
     );
   </script>
-</html>
