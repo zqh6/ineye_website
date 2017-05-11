@@ -93,12 +93,8 @@
         </a>
       </li>
       <li>
-        <a href="javascript:;">
-          <div>
-            <%= image_tag("center_6.png") %>
-          </div>
-          <p>读片中心</p>
-        </a>
+        <%= link_to image_tag("center_6.png"), center_path(:reader_center) %>
+        <p>读片中心</p>
       </li>
     </ul>
   </div>
