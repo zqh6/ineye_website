@@ -5,6 +5,7 @@
         <%= image_tag("logo.png") %>
       </div>
       <ul class="flParent fl flow nav topNav">
+      
         <li><a href="javascript:;">就诊 <span><%= image_tag("arrow-icon.png") %></span></a></li>
         <li><a href="javascript:;">教学 <span><%= image_tag("arrow-icon.png") %></span></a></li>
         <li><a href="javascript:;">科研 <span><%= image_tag("arrow-icon.png") %></span></a></li>
@@ -56,11 +57,13 @@
 <!--轮播-->
 <!--中间导航-->
 <ul class="nav flow flParent centerNav">
-  <li class="active"><a href="javascript:;">走进银海</a></li>
-  <li><a href="javascript:;">就医服务</a></li>
-  <li><a href="javascript:;">六大中心</a></li>
-  <li><a href="javascript:;">名医专家</a></li>
-  <li><a href="javascript:;">科学教研</a></li>
-  <li><a href="javascript:;">新闻中心</a></li>
-  <li><a href="javascript:;">眼健康科普</a></li>
+  <li><%= link_to :走进银海,  :homes,class: :active %></li>
+  <li><%= link_to :就医服务,  :medicals %></li>
+  <li><%= link_to :六大中心,  :centers  %></li>
+  <li><%= link_to :名医专家,  :experts  %></li>
+  <li><%= link_to :教学科研,  :sciences %></li>
+  <li><%= link_to :新闻中心,  :news_index %></li>
+  <li><%= link_to :眼健康科普,:kepus %></li>
 </ul>
+
+
