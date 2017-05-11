@@ -53,47 +53,27 @@
     </ul>
     <ul class="flParent flow guide">
       <li class="mar-L-z">
-        <a href="javascript:;">
-          <div>
-            <%= image_tag("center_1.png") %>
-          </div>
-          <p>眼视光中心</p>
-        </a>
+        <%= link_to image_tag("center_2.png"), center_path(:视光中心) %>
+        <p>眼视光中心</p>
       </li>
       <li>
-        <a href="javascript:;">
-          <div>
-            <%= image_tag("center_2.png") %>
-          </div>
-          <p>白内障屈光中心</p>
-        </a>
+        <%= link_to image_tag("center_2.png"), center_path(:白内障屈光中心) %>
+        <p>白内障屈光中心</p>
       </li>
       <li>
-        <a href="javascript:;">
-          <div>
-            <%= image_tag("center_3.png") %>
-          </div>
-          <p>中医眼科中心</p>
-        </a>
+        <%= link_to image_tag("center_3.png"), center_path(:中医眼科中心) %>
+        <p>中医眼科中心</p>
       </li>
       <li class="mar-L-z">
-        <a href="javascript:;">
-          <div>
-            <%= image_tag("center_4.png") %>
-          </div>
-          <p>眼底病中心</p>
-        </a>
+        <%= link_to image_tag("center_4.png"), center_path(:眼底病中心) %>
+        <p>眼底病中心</p>
       </li>
       <li>
-        <a href="javascript:;">
-          <div>
-            <%= image_tag("center_5.png") %>
-          </div>
-          <p>糖尿病病变防治中心</p>
-        </a>
+        <%= link_to image_tag("center_5.png"), center_path(:糖尿病病变防治中心) %>
+        <p>糖尿病病变防治中心</p>
       </li>
       <li>
-        <%= link_to image_tag("center_6.png"), center_path(:reader_center) %>
+        <%= link_to image_tag("center_6.png"), center_path(:读片中心) %>
         <p>读片中心</p>
       </li>
     </ul>
