@@ -1,0 +1,2 @@
+class SciencesController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class KepusController < ApplicationController
+end
