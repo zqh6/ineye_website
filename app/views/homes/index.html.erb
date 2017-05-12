@@ -3,25 +3,25 @@
   <ul class="aboutHos flParent flow column" style="display: ;">
     <li>
       <div>
-        <a href="javascript:;"><%= image_tag("hospital-environment.png") %></a>
+        <%= link_to image_tag("hospital-environment"),home_path(:医院介绍) %>
         <div class="introduced"><a href="">医院介绍</a></div>
       </div>
     </li>
     <li class="fr">
       <div>
-        <a href=""><%= image_tag("Dean.png") %></a>
+        <%= link_to image_tag("Dean.png"),home_path(:院长寄语) %>
         <div class="introduced"><a href="">院长寄语</a></div>
       </div>
     </li>
     <li>
       <div>
-        <a href="javascript:;"><%= image_tag("hospital-institutions.png") %></a>
+        <%= link_to image_tag("hospital-institutions.png"),home_path(:医院机构) %>
         <div class="introduced"><a href="">医院机构</a></div>
       </div>
     </li>
     <li class="fr">
       <div>
-        <a href=""><%= image_tag("Technology.png") %></a>
+        <%= link_to image_tag("Technology.png"),home_path(:技术设备) %>
         <div class="introduced"><a href="">技术设备</a></div>
       </div>
     </li>
