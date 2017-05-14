@@ -96,7 +96,7 @@
     vertical-align: middle;
 }
 /*读片中心*/
-//白内障屈光中心
+/*白内障屈光中心*/
 .cataractList{
     width: 220px;
     border: 1px solid #d9d9d9;
@@ -125,6 +125,7 @@
     padding: 0 30px;
     box-sizing: border-box;
     margin-bottom: 30px;
+    display: none;
 }
 .careUnit h5{
     line-height: 100px;
@@ -141,6 +142,8 @@
     padding: 0 10px;
     position: relative;
     z-index: 2;
+    font-size: 18px;
+    /*font-weight: 600;*/
     background: #fafafa;
 }
 .careUnitTitle:after{
@@ -159,4 +162,105 @@
     text-indent: 2rem;
     line-height: 30px;
 }
-//白内障屈光中心
+/*专家团队介绍*/
+.careUnitContent .proName{
+    font-size: 18px;
+    padding-top: 10px;
+    line-height: 50px;
+}
+.show{
+   display: block;
+ }
+.proWork{
+    margin-left: 10px;
+    font-size: 14px;
+}
+.proImg{
+    float: left;
+    margin: 0 40px 10px 0;
+}
+.proContainer>div{
+    padding: 20px 0 30px;
+    border-top: 1px solid #d4d4d4;
+}
+.proContainer>div.proPart{
+    padding-top: 0;
+    border-top: 0;
+}
+.proContainer{
+    padding-top: 20px;
+}
+/*专家团队介绍*/
+/*手术方式*/
+.careUnitContent .surgeryTitle{
+    text-indent: 0;
+    font-size: 16px;
+}
+.surgeryDetail{
+    margin: 35px 0 42px;
+}
+.surgeryDetail h5{
+    line-height: 48px;
+    text-align: center;
+    font-size: 24px;
+}
+.surgeryContent h6{
+    line-height: 46px;
+    font-weight: normal;
+    font-size: 14px;
+}
+.advantage{
+    margin-bottom: 10px;
+}
+.listContainer{
+    padding-left: 2rem;
+    margin-bottom: 30px;
+}
+.listContainer p{
+    text-indent: 0;
+}
+.surgeryImg{
+    text-align: center;
+}
+.surgeryContent{
+    margin-bottom: 60px;
+}
+.surgeryContent .headings{
+    text-indent: 0;
+    margin-bottom: 10px;
+}
+.lastSurgery{
+    margin-bottom: 10px;
+}
+/*手术方式*/
+/*设备宣传*/
+.equipment .surgeryImg{
+    margin: 40px 0;
+}
+.equipment .lastSurImg{
+    margin-bottom: 0;
+}
+/*设备宣传*/
+/*问题解惑*/
+.surgeryContent .question{
+    line-height: 46px;
+    color: #fd0421;
+    margin-top: 30px;
+    text-indent: 0;
+}
+.surgeryContent .fiQuestion{
+    margin-top: 0;
+}
+.surgeryContent .question span{
+    font-size: 12px;
+    margin-right: 1.8rem;
+}
+.questions .surgeryTitle{
+    margin-top: 30px;
+}
+.questions{
+    margin-bottom: 0;
+}
+/*问题解惑*/
+/*白内障屈光中心*/
+
