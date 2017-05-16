@@ -168,9 +168,6 @@
     padding-top: 10px;
     line-height: 50px;
 }
-.show{
-   display: block;
- }
 .proWork{
     margin-left: 10px;
     font-size: 14px;
@@ -311,8 +308,10 @@
 .ChineseMed{
     position: relative;
     width: 933px;
+    min-height: 500px;
     border: 1px solid #a7680b;
     background: #fefbee;
+    display: none;
 }
 .medicineLeft{
     outline: 1px solid #d9d9d9;
@@ -421,5 +420,17 @@
 .nar-l{
     margin-right: 25px;
 }
+.padB h5{
+    margin-bottom: 30px;
+}
 /*中医眼科中心*/
+
+
+
+
+
+
+.show{
+    display: block;
+}
 
