@@ -1,5 +1,5 @@
 class CentersController < ApplicationController
   def show
-    render :action => params[:id]
+    render layout: "content",:action => params[:id]
   end
 end
