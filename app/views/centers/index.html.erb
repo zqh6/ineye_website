@@ -3,52 +3,30 @@
   <div class="column centerContainer">
     <ul class="center flParent">
       <li>
-        <a href="javascript:;">
-          <div class="icon">
-            <%= image_tag("zxtb_1.png") %>
-          </div>
-          <p>角膜移植与眼表病</p>
-        </a>
+        <%= link_to image_tag("zxtb_1.png"), center_path(:角膜移植与眼表病) %>
+        <p>角膜移植与眼表病</p>
+      </li>
+      <li>
+        <%= link_to image_tag("zxtb_2.png"), center_path(:干眼病) %>
+        <p>干眼病</p>
+      </li>
+      <li>
+        <%= link_to image_tag("zxtb_3.png"), center_path(:青光眼) %>
+        <p>青光眼</p>
+      </li>
+      <li>
+        <%= link_to image_tag("zxtb_4.png"), center_path(:小儿眼病) %>
+        <p>小儿眼病</p>
       </li>
       <li>
         <a href="javascript:;">
-          <div class="icon">
-            <%= image_tag("zxtb_2.png") %>
-          </div>
-          <p>干眼病</p>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:;">
-          <div class="icon">
-            <%= image_tag("zxtb_3.png") %>
-          </div>
-          <p>青光眼</p>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:;">
-          <div class="icon">
-            <%= image_tag("zxtb_4.png") %>
-          </div>
-          <p>小儿眼病</p>
-        </a>
-      </li>
-      <li>
-        <a href="javascript:;">
-          <div class="icon">
-            <%= image_tag("zxtb_5.png") %>
-          </div>
+          <%= link_to image_tag("zxtb_5.png"), center_path(:泪道病及眼眶病) %>
           <p>泪道病及眼眶病</p>
         </a>
       </li>
       <li class="lastCenter">
-        <a href="javascript:;">
-          <div class="icon">
-            <%= image_tag("zxtb_6.png") %>
-          </div>
-          <p>眼外伤与眼整形美容</p>
-        </a>
+        <%= link_to image_tag("zxtb_6.png"), center_path(:眼外伤与眼整形美容) %>
+        <p>眼外伤与眼整形美容</p>
       </li>
     </ul>
     <ul class="flParent flow guide">
