@@ -172,7 +172,7 @@
     margin-left: 10px;
     font-size: 14px;
 }
-.proImg{
+.careUnit .proImg{
     float: left;
     margin: 0 40px 10px 0;
 }
@@ -312,6 +312,7 @@
     border: 1px solid #a7680b;
     background: #fefbee;
     display: none;
+    margin-bottom: 30px;
 }
 .medicineLeft{
     outline: 1px solid #d9d9d9;
@@ -424,13 +425,70 @@
     margin-bottom: 30px;
 }
 /*中医眼科中心*/
-
-
-
-
-
+/*眼角疾病*/
+.goodAt li{
+    text-indent: 2rem;
+    line-height: 30px;
+}
+.popScience>div{
+    margin-bottom: 30px;
+}
+.popScience h6{
+    font-size: 16px;
+    line-height: 40px;
+}
+.careUnit{
+    padding-bottom: 50px;
+}
+.careUnit .fiList{
+    margin-top: 0;
+}
+.careUnit .noIndent{
+    text-indent: 0;
+}
+.marR-30{
+    margin-right: 30px;
+}
+.marb-15{
+    margin-bottom: 15px;
+}
+/*眼角疾病*/
+/*糖尿病*/
+.yd-proIntroduce p{
+    line-height: 36px;
+}
+.yd-proIntroduce>div{
+    margin-top: 30px;
+}
+.diabetesData{
+    width: 60%;
+    margin: 20px 100px;
+}
+.diabetesData td,.diabetesData th{
+    padding: 15px;
+}
+.diabetesData td,.diabetesData th{
+    border: 1px solid #333;
+}
+.diabetesType{
+    width: 100px;
+}
 
 .show{
     display: block;
 }
-
+.popScience .diabetesTeach{
+    margin-bottom: 0;
+}
+.diabetesTeach>div{
+    margin-bottom: 20px;
+}
+.diabetesTeach>div.bottom-0{
+    margin-bottom: 0;
+}
+/*糖尿病*/
+/*视光中心*/
+.marT-30{
+    margin-top: 30px;
+}
+/*视光中心*/
