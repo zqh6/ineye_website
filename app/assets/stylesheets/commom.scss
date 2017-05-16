@@ -201,6 +201,14 @@ input:focus{outline:none}
 }
 .centerNav{
     margin: 20px;
+    position: fixed;
+    width: 1160px;
+    height: 45px;
+    z-index: 10;
+    margin: 20px 20px;
+}
+.centerNav-container{
+    height: 85px;
 }
 .centerNav li{
     background: #0284cf;
