@@ -576,3 +576,48 @@ a.ctrl-slide{
     border: 0;
 }
 /*预约挂号*/
+/*来院指引*/
+.toHospital{
+    padding: 0 30px;
+    margin-bottom: 30px;
+}
+.toHospital h5,.healthCare h5{
+    text-align: left;
+    font-size: 24px;
+    line-height: 96px;
+    color: #0284cf;
+    font-weight: normal;
+}
+.toHospital p{
+    line-height: 36px;
+}
+.toHospital>div{
+    text-align: center;
+    margin :55px 0;
+}
+/*来院指引*/
+/*就医流程*/
+.hosProcess{
+    text-align: center;
+    margin-bottom: 30px;
+}
+/*就医流程*/
+/*医保政策*/
+.healthCare{
+    padding: 0 30px 60px;
+    line-height: 36px;
+    margin-bottom: 30px;
+}
+.healthCare h5{
+    text-align: center;
+}
+.healthCare>ul>li{
+    width: 100%;
+}
+.healthCare ul,.healthCare p{
+    text-indent: 2rem;
+}
+.middleWord{
+    margin: 20px 0;
+}
+/*医保政策*/

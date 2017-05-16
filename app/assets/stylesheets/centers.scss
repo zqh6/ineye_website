@@ -263,4 +263,163 @@
 }
 /*问题解惑*/
 /*白内障屈光中心*/
+/*青光眼*/
+.allWidth{
+    width: 100%;
+}
+.glaucoma p{
+    line-height: 30px;
+    text-indent: 2rem;
+}
+.glaucoma .careUnitTitle{
+    line-height: 24px;
+    margin: 20px 0;
+    text-indent: 0;
+}
+.fiproIntroduce{
+    margin-top: 40px;
+}
+.proFace{
+    width: 320px;
+    height: 350px;
+    float: left;
+}
+.proIntroduce{
+    border-top: 1px solid #d4d4d4;
+    padding: 25px 0;
+}
+.proImgLeft{
+    margin-right: 30px;
+}
+.proImgRight{
+    margin-left: 30px;
+    float: right;
+}
+.proName-glau{
+    font-size: 14px;
+}
+.proName-glau span{
+    font-size: 18px;
+}
+.instrument>img{
+    display: block;
+    margin: 20px auto;
+}
+/*青光眼*/
+/*中医眼科中心*/
+/*帮你看懂中医...*/
+.ChineseMed{
+    position: relative;
+    width: 933px;
+    border: 1px solid #a7680b;
+    background: #fefbee;
+}
+.medicineLeft{
+    outline: 1px solid #d9d9d9;
+    box-sizing: border-box;
+}
+.medicineLeft li.chineseFi{
+    border-top: 0;
+}
+.medicineLeft li{
+    line-height: 60px;
+    background: #ffffff;
+    width: 220px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    border-top: 1px solid #d9d9d9;
+    position: relative;
+    z-index: 2;
+}
+.medicineLeft li.active{
+    background: #fefbee;
+    color: #752e1a;
+    border: 1px solid #cc9966;
+}
+.ChineseMed{
+    padding: 25px 30px;
+    box-sizing: border-box;
+}
+.ChineseMed:before,.ChineseMed:after{
+    position: absolute;
+    width: 17px;
+    height: 19px;
+    left: 0;
+}
+.ChineseMed:before{
+    content: url("../../assets/images/pos_1.png");
+    top: 0;
+}
+.ChineseMed:after{
+    content: url("../../assets/images/pos_2.png");
+    bottom: 0;
+}
+.ChineseMedTit h5{
+    line-height: 54px;
+    color: #752e1a;
+    font-size: 30px;
+    text-align: center;
+    font-weight: normal;
+}
+.disease{
+    line-height: 18px;
+    background: url("../../assets/images/chinese-med_2.png") 0 26px repeat-x;
+}
+.disease span{
+    background: url("../../assets/images/chinese-med_1.png") 0 6px no-repeat #fefbee;
+    padding:0 8px 0 16px;
+}
+.diseaseOne{
+    margin-bottom: 30px;
+}
+.diseaseOne p,.bottomWord p{
+    line-height: 30px;
+}
+.bottomWord{
+    text-align: right;
+    padding: 20px 0 40px 0;
+}
+.diseaseOne p.disease{
+    line-height: 60px;
+    font-size: 18px;
+    font-weight: 600;
+}
+.ChineseCen-introduce p{
+    text-indent: 2rem;
+}
+/*帮你看懂中医...*/
+.noFloat li{
+    float: none;
+}
+.medicines>li{
+    width: 25%;
+    line-height: 30px;
+}
+.couplets>li{
+    width: 33%;
+}
+.couplets>li span{
+    display: block;
+}
+.couplets>li{
+    line-height: 30px;
+}
+.couplets li li{
+    margin-bottom: 20px;
+}
+.couplets .couplets-right{
+    text-indent: 2.3rem;
+}
+.couplets .couplets-right2{
+    text-indent: 2.8rem;
+}
+.diseaseOne .headline{
+    font-size: 16px;
+    line-height: 46px;
+    margin-bottom: 10px;
+}
+.nar-l{
+    margin-right: 25px;
+}
+/*中医眼科中心*/
 
