@@ -645,3 +645,83 @@ a.ctrl-slide{
     margin: 20px 0;
 }
 /*医保政策*/
+/*专家详情*/
+.expertsTitle{
+    line-height: 90px;
+    font-size: 30px;
+    text-align: center;
+}
+.expDetails{
+    padding: 0 20px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    box-sizing: border-box;
+}
+.BasicInformation{
+    padding: 20px 0 40px;
+    border-bottom: 1px solid #d4d4d4;
+    border-top: 1px solid #d4d4d4;
+}
+.expertsLeftImg{
+    width: 562px;
+    border-right: 2px solid #aacf52;
+    position: relative;
+}
+.expertsLeftImg img{
+    margin-right: 30px;
+}
+.expertsRightWord{
+    width: 520px;
+    padding: 24px 0 0 50px;
+}
+.expertsRightWord h6{
+    color: #0284cf;
+    font-size: 14px;
+}
+.expertsRightWord p,.expertsRightWord h6{
+    line-height: 30px;
+}
+.seniority{
+    color: #0284cf;
+}
+.seniority h5{
+    font-size: 24px;
+    line-height: 74px;
+    margin: 10px 0;
+    font-weight: normal;
+}
+.seniority p{
+    line-height: 30px;
+    font-size: 18px;
+}
+.expertsHref{
+    position: absolute;
+    bottom: 0;
+}
+.expertsHref input{
+    width: 74px;
+    height:32px;
+    margin-right: 20px;
+    border-radius: 5px;
+    color: #fff;
+    border: 0;
+}
+.online-appointment{
+    background: #f5cd15;
+}
+.look-scheduling{
+    background: #aacf52;
+}
+.expertsAllMessage{
+    padding: 30px 0 50px;
+    min-height: 300px;
+}
+.expertsAllMessage h6{
+    color: #0284cf;
+    font-size: 14px;
+}
+.expertsAllMessage{
+    line-height: 36px;
+}
+
+/*专家详情*/
