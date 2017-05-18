@@ -445,6 +445,7 @@ a.ctrl-slide{
 .banner > ul > li > a {
     display: block;
     font-size: 200px;
+
     font-weight: bold;
 }
 .banner > ul > li > a img{
@@ -722,4 +723,8 @@ a.ctrl-slide{
 }
 
 /*专家详情*/
+/*教学科研*/
+.allWidthImg img{
+    width: 100%;
+}
 /*教学科研*/

@@ -121,7 +121,7 @@
 .careUnit{
     width: 934px;
     border: 1px solid #d9d9d9;
-    background: #fafafa;
+    background: #fff;
     padding: 0 30px;
     box-sizing: border-box;
     margin-bottom: 30px;
@@ -533,6 +533,9 @@
 }
 .centerImg>div{
     text-align: center;
+}
+.wordPad .noIndent,.ChineseMed .noIndent{
+    text-indent: 0;
 }
 /*中医修改*/
 
