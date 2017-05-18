@@ -445,7 +445,6 @@ a.ctrl-slide{
 .banner > ul > li > a {
     display: block;
     font-size: 200px;
-    /*text-align: center;*/
     font-weight: bold;
 }
 .banner > ul > li > a img{
@@ -483,14 +482,12 @@ a.ctrl-slide{
     box-sizing: border-box;
     border-radius: 12px;
     margin: 0 5px;
-    /*background: rgba(0,0,0,0.8);*/
     border: 2px solid #b8b8b8;
     cursor: pointer;
 }
 
 .img-btn-list > span.current {
     border: 2px solid #048ddb;
-    /*background: rgba(255,255,255,0.8);*/
 }
 .imgTitle{
     height: 58px;

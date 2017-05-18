@@ -318,6 +318,9 @@
     outline: 1px solid #d9d9d9;
     box-sizing: border-box;
 }
+.medicineLeft *{
+    box-sizing: border-box;
+}
 .medicineLeft li.chineseFi{
     border-top: 0;
 }
@@ -455,6 +458,12 @@
 .marb-15{
     margin-bottom: 15px;
 }
+.marT-15{
+    margin-top: 15px;
+}
+.marL-30{
+    margin-left: 30px;
+}
 .Eye-disease .proIntroduce{
     border: 0;
 }
@@ -498,4 +507,32 @@
     margin-top: 30px;
 }
 /*视光中心*/
+/*中医修改*/
+.indent{
+    text-indent: 2rem;
+    line-height: 30px;
+}
+.teamMemberName{
+    margin-bottom: 30px;
+    padding-top: 10px;
+}
+.teamMemberName p{
+    color: #752e1a;
+    font-size: 16px;
+    text-indent: 0;
+}
+.teamMemberName h5{
+    line-height: 34px;
+    font-size: 18px;
+    color: #752e1a;
+}
+.divider{
+    height: 8px;
+    margin: 24px 0;
+    background-position: 0;
+}
+.centerImg>div{
+    text-align: center;
+}
+/*中医修改*/
 
