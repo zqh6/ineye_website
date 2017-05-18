@@ -728,3 +728,37 @@ a.ctrl-slide{
     width: 100%;
 }
 /*教学科研*/
+/*新闻*/
+.newsMain{
+    padding: 0 20px 50px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    line-height: 36px;
+}
+.newsMain p{
+    text-indent: 2rem;
+}
+.newsMain .noIndent{
+    text-indent: 0;
+}
+.rightWord{
+    text-align: right;
+    font-size: 12px;
+    line-height: 22px;
+}
+.newsTitle h5{
+    line-height: 68px;
+    margin-top: 16px;
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+}
+.newsTitle{
+    border-bottom: 1px solid #d4d4d4;
+    margin-bottom: 24px;
+}
+.newsImgMar{
+    margin: 10px 0 20px;
+    text-align: center;
+}
+/*新闻*/
