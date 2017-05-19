@@ -38,7 +38,7 @@ $(".centerNav li").click(function () {
         })
     }
 })
-
+console.log($(".banner"));
 bannerListFn(
     $(".banner"),
     $(".img-btn-list"),
