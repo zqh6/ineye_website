@@ -15,7 +15,6 @@
                 if(opts['isAnimate'] == true){
                     return;
                 }
-
                 var old = index;
                 if(index >= count - 1){
                     index = 0;
@@ -165,8 +164,8 @@
             opts['isAnimate'] = true;
 
         }else{
-            $(this).find('.slide-wrapper li').eq(hide).stop().animate({opacity:0},1000);
-            $(this).find('.slide-wrapper li').eq(show).show().css({opacity:0}).stop().animate({opacity:1},1000);
+            $(this).find('.slide-wrapper li').eq(hide).stop().animate({opacity:0},3000);
+            $(this).find('.slide-wrapper li').eq(show).show().css({opacity:0}).stop().animate({opacity:1},3000);
         }
        
         $(this).find('.slidebox li').removeClass('current');
