@@ -164,8 +164,8 @@
             opts['isAnimate'] = true;
 
         }else{
-            $(this).find('.slide-wrapper li').eq(hide).stop().animate({opacity:0},1000);
-            $(this).find('.slide-wrapper li').eq(show).show().css({opacity:0}).stop().animate({opacity:1},1000);
+            $(this).find('.slide-wrapper li').eq(hide).stop().animate({opacity:0},2000);
+            $(this).find('.slide-wrapper li').eq(show).show().css({opacity:0}).stop().animate({opacity:1},2000);
         }
        
         $(this).find('.slidebox li').removeClass('current');
