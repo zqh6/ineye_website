@@ -2,6 +2,15 @@
  * Created by Administrator on 2017/5/10.
  */
 console.log("into index");
+console.log($(".banner"));
+bannerListFn(
+    $(".banner"),
+    $(".img-btn-list"),
+    $(".left-btn"),
+    $(".right-btn"),
+    2000,
+    true
+);
 $('.slide.topSlide').ckSlide({
     autoPlay:true,
 });
@@ -38,12 +47,4 @@ $(".centerNav li").click(function () {
         })
     }
 })
-console.log($(".banner"));
-bannerListFn(
-    $(".banner"),
-    $(".img-btn-list"),
-    $(".left-btn"),
-    $(".right-btn"),
-    2000,
-    true
-);
+
