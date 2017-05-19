@@ -761,4 +761,47 @@ a.ctrl-slide{
     margin: 10px 0 20px;
     text-align: center;
 }
+.hosInstitution{
+    text-align: center;
+    margin: 30px 20px 0;
+}
+.wordContainer{
+    padding: 0 10px;
+}
+.wordBorder{
+    border: 1px solid rgb(249, 110, 87);
+    position: relative;
+    text-align: center;
+}
+.wordBorder>div{
+    position: absolute;
+}
+.borderTop{
+    width: 10px;
+    height: 10px;
+    border-top: 1px solid rgb(249, 110, 87);
+    border-left: 1px solid rgb(249, 110, 87);
+    left: -5px;
+    top: -5px;
+}
+.wordBorder:before,.wordBorder:after{
+    content: " ";
+    position: absolute;
+    width: 50px;
+    height: 20px;
+
+}
+.wordBorder p{
+    line-height: 50px;
+}
+.wordBorder:before{
+    border-bottom: 1px solid rgb(249, 110, 87);
+    bottom: -8px;
+    right: -12px;
+}
+.wordBorder:after{
+    border-right: 1px solid rgb(249, 110, 87);
+    right: -6px;
+    bottom: -14px;
+}
 /*新闻*/
