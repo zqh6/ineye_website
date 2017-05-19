@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/5/10.
  */
-console.log("into index");
+
 bannerListFn(
     $(".banner"),
     $(".img-btn-list"),
@@ -10,11 +10,6 @@ bannerListFn(
     2000,
     true
 );
-
-console.log($('.slide.topSlide'));
-console.log("11aaaaaaaaaaaa111");
-
-console.log($(".slide.slide-left"));
 
 
 $(".aboutHos li div a img").animate({

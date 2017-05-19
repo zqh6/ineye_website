@@ -5,15 +5,21 @@
     <div class="slide slide-left fl">
       <ul class="slide-wrapper">
         <li>
-          <a href="javascript:;"><%= image_tag("xwzx1.png") %></a>
+          <a href="javascript:;"><%= image_tag("shyhx_1.jpg") %></a>
           <div class="inner">
             <p>近视防控显成效，沙河源小学来中医大银海眼科医院致谢</p>
           </div>
         </li>
         <li style="display:none">
-          <a href="javascript:;"><%= image_tag("shyhx_14") %></a>
+          <a href="javascript:;"><%= image_tag("shy_3.jpg") %></a>
           <div class="inner">
             <p>守护心灵之窗—沙河源小学眼健康科普公益活动</p>
+          </div>
+        </li>
+        <li style="display:none">
+          <a href="javascript:;"><%= image_tag("pts_5 .jpg") %></a>
+          <div class="inner">
+            <p>【多彩漫画·童心绘】眼健康科普走进泡桐树小学（西区）</p>
           </div>
         </li>
       </ul>
@@ -22,11 +28,12 @@
           <ul class="dot-wrap">
             <li class="current"><em>1</em></li>
             <li><em>2</em></li>
+            <li><em>3</em></li>
           </ul>
         </div>
       </div>
-      <a href="javascript:" class="ctrl-slide prev"><%= image_tag("btn_left.png") %></a> 
-      <a href="javascript:" class="ctrl-slide next"><%= image_tag("btn_right.png") %></a>
+      <!--<a href="javascript:" class="ctrl-slide prev"><%= image_tag("btn_left.png") %></a> -->
+      <!--<a href="javascript:" class="ctrl-slide next"><%= image_tag("btn_right.png") %></a>-->
     </div>
     <!--轮播-->
     <!--视频-->
@@ -44,7 +51,7 @@
     $(".slide.slide-left").ckSlide({
         autoPlay:true,
         add:true,
-        // seamless:true,
+         seamless:true,
         dir:"x",
     });
 
