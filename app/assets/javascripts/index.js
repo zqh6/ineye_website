@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/5/10.
  */
-
+console.log("into index");
 $('.slide.topSlide').ckSlide({
     autoPlay:true,
 });
