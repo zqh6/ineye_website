@@ -16,7 +16,8 @@
             <div class="newsImgMar marT-15 marb-15"><%= image_tag("rsbrs_3.jpg") %></div>
             <div class="newsImgMar marT-15 marb-15"><%= image_tag("rsbrs_5.jpg") %></div>
             <div class="titleImg_find marT-15"><%= image_tag("rsbrs_6.jpg") %>/div>
-            <div class="newsImgMar marT-15 marb-15"><%= image_tag("rsbrs_7.jpg") %></div>
+                <div class="newsImgMar marT-15 marb-15"><%= image_tag("rsbrs_7.jpg") %></div>
+            </div>
         </div>
         <!--“弱视”变“弱势”-->
         <!--白浅上神家的烦恼-->
@@ -30,19 +31,17 @@
             <p class="remark">注：所有的图片均来自网络</p>
         </div>
         <!--白浅上神家的烦恼-->
+
     </div>
-
-
 </div>
 
-</div>
 
-<script src="../../assets/javascripts/jquery-1.8.3.min.js"></script>
+
 <script>
     $(".cataractList li").click(function(){
         var i = $(this).index();
         $(".cataractList li").removeClass("active").eq(i).addClass("active");
-        $(".careUnit").hide().eq(i).show();
+        $("rightContainer .careUnit").hide().eq(i).show();
     })
 </script>
 
