@@ -22,7 +22,6 @@
                 }else{
                     index++;
                 }
-                console.log(index);
                 change.call(that, index, old,count);
                 return false;
             });
@@ -38,11 +37,9 @@
                 }else{                                      
                     index--;
                 }
-                console.log(index);
                 change.call(that, index, old,count);
                 return false;
             });
-
             $(this).find('.slidebox li').each(function(cindex){
                 $(this).on('click.slidebox', function(){
                     if(opts.seamless){
