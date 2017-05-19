@@ -10,15 +10,7 @@ bannerListFn(
     2000,
     true
 );
-$(".slide.slide-left").ckSlide({
-    autoPlay:true,
-    add:true,
-    // seamless:true,
-    dir:"x",
-});
-$('.slide.topSlide').ckSlide({
-    autoPlay:true,
-});
+
 console.log($('.slide.topSlide'));
 console.log("11aaaaaaaaaaaa111");
 
