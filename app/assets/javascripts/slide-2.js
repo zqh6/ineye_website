@@ -148,7 +148,7 @@
                             });
                         }
 
-                    },opts.time);
+                    });
                 if(-parseInt($(this).find(".slide-wrapper").css("margin-left")) >= (con-1)*opts['width']){
                     $(this).find(".slide-wrapper li").eq(0).css({
                         left:(count)*opts['width']
@@ -180,7 +180,6 @@
         dir: null,
         isAnimate: false,
         add:false,
-        seamless:false,
-        time:3000
+        seamless:false
     };
 })(jQuery);
