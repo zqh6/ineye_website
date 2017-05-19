@@ -846,7 +846,12 @@ a.ctrl-slide{
 }
 /*仪器设备*/
 /*新闻轮播*/
-.slide-left img{
+.slide-left li img{
     width: 100%;
+}
+.slide-left li a{
+    width: 100%;
+    height:100%;
+    display: block;
 }
 /*新闻轮播*/
