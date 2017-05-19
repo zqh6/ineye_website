@@ -22,6 +22,7 @@
                 }else{
                     index++;
                 }
+                console.log(index);
                 change.call(that, index, old,count);
                 return false;
             });
@@ -37,6 +38,7 @@
                 }else{                                      
                     index--;
                 }
+                console.log(index);
                 change.call(that, index, old,count);
                 return false;
             });
