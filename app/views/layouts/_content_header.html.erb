@@ -5,12 +5,11 @@
         <%= image_tag("logo.png") %>
       </div>
       <ul class="flParent fl flow nav topNav">
-      
-        <li><a href="javascript:;">就诊 <span><%= image_tag("arrow-icon.png") %></span></a></li>
-        <li><a href="javascript:;">教学 <span><%= image_tag("arrow-icon.png") %></span></a></li>
-        <li><a href="javascript:;">科研 <span><%= image_tag("arrow-icon.png") %></span></a></li>
-        <li><a href="javascript:;">新闻 <span><%= image_tag("arrow-icon.png") %></span></a></li>
-        <li><a href="javascript:;">简介 <span><%= image_tag("arrow-icon.png") %></span></a></li>
+        <li><%= link_to :就诊,:medicals %></li>
+        <li><%= link_to :教学,:sciences %></li>
+        <li><%= link_to :科研,:sciences %></li>
+        <li><%= link_to :新闻,:news_index %></li>
+        <li><%= link_to :简介,home_path(:医院介绍) %></li>
       </ul>
       <div class="rightHeader">
         <div class="header flow header2">
