@@ -30,7 +30,7 @@
                 if(opts['isAnimate'] == true){
                     return;
                 }
-                console.log(opts['isAnimate']);
+                
                 var old = index;
                 if(index <= 0){
                     index = count - 1;
@@ -144,6 +144,7 @@
                                 'margin-left':0
                             });
                         }
+
                     });
                 if(-parseInt($(this).find(".slide-wrapper").css("margin-left")) >= (con-1)*opts['width']){
                     $(this).find(".slide-wrapper li").eq(0).css({
@@ -160,9 +161,8 @@
                             $(this).find(".inner").eq(show).show();
                         }
                     });
-                    opts['isAnimate'] = true;
             }
-            
+            opts['isAnimate'] = true;
 
         }else{
             $(this).find('.slide-wrapper li').eq(hide).stop().animate({opacity:0},1000);
