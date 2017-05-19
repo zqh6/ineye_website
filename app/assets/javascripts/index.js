@@ -6,6 +6,7 @@ $('.slide.topSlide').ckSlide({
     autoPlay:true,
 });
 console.log($('.slide.topSlide'));
+console.log("11aaaaaaaaaaaa111");
 $(".slide.slide-left").ckSlide({
     autoPlay:true,
     add:true,
