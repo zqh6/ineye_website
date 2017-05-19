@@ -2,9 +2,10 @@
  * Created by Administrator on 2017/5/10.
  */
 
-$('.slide').ckSlide({
+$('.slide.topSlide').ckSlide({
     autoPlay:true,
 });
+
 $(".slide.slide-left").ckSlide({
     autoPlay:true,
     add:true,
@@ -20,7 +21,6 @@ $(".aboutHos li div a img").animate({
 
 $(".centerNav li").click(function () {
     var i = $(this).index();
-    console.log(i);
     $(".middle .column").hide().eq(i).show();
     console.log(this);
     $(this).addClass("active").siblings().removeClass("active");
