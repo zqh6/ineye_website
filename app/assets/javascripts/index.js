@@ -11,10 +11,7 @@ $(".slide.slide-left").ckSlide({
     // seamless:true,
     dir:"x",
 });
-$(".proContainer .proImg").hover(function () {
-    var i = $(this).index();
-    $(this).parents(".proContainer").find(".proContent").hide().eq(i).show();
-})
+
 
 $(".aboutHos li div a img").animate({
     width: "540px",
