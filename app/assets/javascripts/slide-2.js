@@ -168,8 +168,8 @@
             $(this).find('.slide-wrapper li').eq(show).show().delay(1000).css({opacity:0}).stop().animate({opacity:1},1000);
         }
        if(opts.dir != 'x'){
-           $(this).find('.slidebox li').delay(1000).removeClass('current');
-           $(this).find('.slidebox li').delay(1000).eq(show).addClass('current');
+           $(this).find('.slidebox li').removeClass('current');
+           $(this).find('.slidebox li').eq(show).addClass('current');
        }else {
            $(this).find('.slidebox li').removeClass('current');
            $(this).find('.slidebox li').eq(show).addClass('current');
