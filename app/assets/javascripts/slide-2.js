@@ -164,18 +164,12 @@
             opts['isAnimate'] = true;
 
         }else{
-            $(this).find('.slide-wrapper li').eq(hide).stop().delay(1000).animate({opacity:0},1000);
-            $(this).find('.slide-wrapper li').eq(show).show().delay(1000).css({opacity:0}).stop().animate({opacity:1},1000);
+            $(this).find('.slide-wrapper li').eq(hide).stop().animate({opacity:0},1000);
+            $(this).find('.slide-wrapper li').eq(show).show().css({opacity:0}).stop().animate({opacity:1},1000);
         }
-       if(opts.dir != 'x'){
-            setTimeout(function () {
-                $(this).find('.slidebox li').removeClass('current');
-                $(this).find('.slidebox li').eq(show).addClass('current');
-            },1000)
-       }else {
-           $(this).find('.slidebox li').removeClass('current');
-           $(this).find('.slidebox li').eq(show).addClass('current');
-       }
+
+        $(this).find('.slidebox li').removeClass('current');
+        $(this).find('.slidebox li').eq(show).addClass('current');
     }
     $.fn.ckSlide.opts = {
         autoPlay: false,
