@@ -143,8 +143,7 @@
     position: relative;
     z-index: 2;
     font-size: 18px;
-    /*font-weight: 600;*/
-    background: #fafafa;
+    background: #fff;
 }
 .careUnitTitle:after{
     content: "";
@@ -538,4 +537,20 @@
     text-indent: 0;
 }
 /*中医修改*/
-
+/*小儿眼病*/
+.titleImg{
+    margin-left: 120px;
+}
+.titleImg_find{
+    margin-left: 60px;
+}
+.trouble{
+    padding: 0 0 50px;
+}
+.remark{
+    text-align: center;
+}
+.trouble .newsImgMar{
+    margin: 10px 0;
+}
+/*小儿眼病*/
