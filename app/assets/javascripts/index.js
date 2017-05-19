@@ -5,13 +5,14 @@
 $('.slide.topSlide').ckSlide({
     autoPlay:true,
 });
-
+console.log($('.slide.topSlide'));
 $(".slide.slide-left").ckSlide({
     autoPlay:true,
     add:true,
     // seamless:true,
     dir:"x",
 });
+console.log($(".slide.slide-left"));
 
 
 $(".aboutHos li div a img").animate({
