@@ -2,7 +2,6 @@
  * Created by Administrator on 2017/5/10.
  */
 console.log("into index");
-console.log($(".banner"));
 bannerListFn(
     $(".banner"),
     $(".img-btn-list"),
@@ -11,17 +10,18 @@ bannerListFn(
     2000,
     true
 );
-$('.slide.topSlide').ckSlide({
-    autoPlay:true,
-});
-console.log($('.slide.topSlide'));
-console.log("11aaaaaaaaaaaa111");
 $(".slide.slide-left").ckSlide({
     autoPlay:true,
     add:true,
     // seamless:true,
     dir:"x",
 });
+$('.slide.topSlide').ckSlide({
+    autoPlay:true,
+});
+console.log($('.slide.topSlide'));
+console.log("11aaaaaaaaaaaa111");
+
 console.log($(".slide.slide-left"));
 
 
