@@ -554,3 +554,54 @@
     margin: 10px 0;
 }
 /*小儿眼病*/
+/*科普页面*/
+.popularTitle{
+    padding: 10px 0 16px;
+    border-bottom: 1px solid #d4d4d4;
+    text-align: center;
+}
+.popularTitle h5{
+    line-height: 70px;
+}
+.popularTitle p{
+    color: #999;
+    line-height: 30px;
+}
+.popularTitle span{
+    margin-left: 18px;
+}
+.eyePu{
+    padding-bottom: 0;
+}
+.eyePu .surgeryImg{
+    margin: 20px 0;
+}
+.eyeKp .careUnit{
+    padding-bottom: 20px;
+}
+.kp_container{
+    padding: 0 20px 50px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    line-height: 30px;
+}
+.kp_word{
+    padding-top: 12px;
+}
+.kp_word p{
+    text-indent: 2rem;
+}
+.kp_container h5{
+    line-height: 100px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: normal;
+}
+.kp_container .surgeryImg{
+    margin: 20px 0;
+}
+.signContainer img,.banner img{
+    width: 100%;
+    height: 100%;
+}
+/*科普页面*/
