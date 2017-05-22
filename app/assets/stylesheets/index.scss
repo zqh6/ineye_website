@@ -887,6 +887,10 @@ a.ctrl-slide{
     top: 50%;
     margin-left: -25px;
     margin-top: -25px;
+    display: none;
+}
+.videoScope>div:hover{
+    display: block;
 }
 /*视频区域*/
 /*视光中心*/
