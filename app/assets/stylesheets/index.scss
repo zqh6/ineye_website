@@ -880,16 +880,20 @@ a.ctrl-slide{
 .videoScope a div{
     height: 280px;
     overflow: hidden;
+    position: relative;
 }
 .videoScope a div img{
-    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
 }
 .playBtn{
     width: 50px;
     height: 50px;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 107px;
     margin-left: -25px;
     display: none;
 }
