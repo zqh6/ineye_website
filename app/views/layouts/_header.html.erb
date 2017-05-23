@@ -99,11 +99,11 @@
     $(".centerNav li").click(function(){
         SetCookie("path",$(this).find("a").attr("href"));
         console.log(getCookie("path"));
+        pos();
 
     })
   window.onload = function () {
       pos();
-      $(".centerNav").reload();
   }
 </script>
 
