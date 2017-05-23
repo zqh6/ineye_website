@@ -737,6 +737,7 @@ a.ctrl-slide{
     background: #fff;
     border: 1px solid #d9d9d9;
     line-height: 36px;
+    margin-bottom: 20px;
 }
 .newsMain p{
     text-indent: 2rem;
@@ -763,6 +764,9 @@ a.ctrl-slide{
 .newsImgMar{
     margin: 10px 0 20px;
     text-align: center;
+}
+.newsImgMar p{
+    text-indent: 0;
 }
 .hosInstitution{
     text-align: center;
@@ -945,3 +949,8 @@ a.ctrl-slide{
     margin-top: -25px;
 }
 /*视光中心*/
+/*眼科学院*/
+.teachReview .newsImgMar img{
+    width: 80%;
+}
+/*眼科学院*/
