@@ -72,7 +72,7 @@
 
 
     function pos() {
-        var str = window.location.pathname||"/homes"
+        var str = window.location.pathname == "/" ? "/homes" : window.location.pathname;
         console.log(str);
         $(".centerNav a").each(function () {
             if($(this).attr("href") == str){
