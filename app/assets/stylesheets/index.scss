@@ -980,3 +980,13 @@ a.ctrl-slide{
     color: #00b7d6;
 }
 /*游戏btn*/
+.relativeDiv{
+    position: relative;
+}
+.playBtnT{
+    top: 50%;
+    margin-top: -25px;
+}
+.relativeDiv:hover .playBtnT{
+    display: block;
+}
