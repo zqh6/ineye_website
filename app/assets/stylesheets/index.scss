@@ -101,19 +101,17 @@
 /*六大中心*/
 .center{
     width: 1056px;
-    height: 168px;
+    height: 150px;
     margin: 0 auto;
 }
 .center li{
     width: 176px;
-    height: 168px;
+    height: 150px;
     text-align: center;
-    
     background: url("zx-1.png") 0 44px no-repeat;
-    //background: url("../../assets/images/zx-1.png") 0 44px no-repeat;
 }
 .center .lastCenter{
-    background: url("../../assets/images/zx-2.png") 0 44px repeat-x;
+    background: url("zx-2.png") 0 44px repeat-x;
 }
 .center li img{
     transition: all 0.5s;
@@ -282,7 +280,8 @@ proIntroduce{
     left: 1064px;
 }
 .proContainer.proPad{
-    padding-bottom: 20px;
+    /*padding-bottom: 20px;*/ //专家间距
+    padding-bottom: 0;
 }
 .parMarB{
     margin-bottom: 20px;
