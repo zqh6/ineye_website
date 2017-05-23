@@ -89,7 +89,7 @@
         else
             return null;
     }
-    SetCookie("path","/homes");
+    console.log(getCookie("path"));
     function pos() {
         $(".centerNav a").each(function () {
             if($(this).attr("href") == getCookie("path")){
@@ -99,12 +99,12 @@
     }
     $(".centerNav li").click(function(){
         SetCookie("path",$(this).find("a").attr("href"));
-        console.log(getCookie("path"));
         pos();
 
     })
 
       pos();
+    console.log(window.location.pathname);
 
 </script>
 
