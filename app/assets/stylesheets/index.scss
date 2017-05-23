@@ -86,7 +86,7 @@
     text-align: center;
     padding: 10px 10px 0;
     background: #fff;
-    margin: 0 0 30px 20px;
+    margin: 0 0 20px 20px;
 }
 .guide li a img{
     width: 358px;
@@ -108,7 +108,9 @@
     width: 176px;
     height: 168px;
     text-align: center;
-    background: url("../../assets/images/zx-1.png") 0 44px no-repeat;
+    
+    background: url("zx-1.png") 0 44px no-repeat;
+    //background: url("../../assets/images/zx-1.png") 0 44px no-repeat;
 }
 .center .lastCenter{
     background: url("../../assets/images/zx-2.png") 0 44px repeat-x;
