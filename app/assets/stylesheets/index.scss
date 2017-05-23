@@ -511,7 +511,7 @@ a.ctrl-slide{
 /*医院介绍*/
 .hosIntroduce{
     margin: 0 auto 30px;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
     background: #fff;
     border: 1px solid #d9d9d9;
     box-sizing: border-box;
@@ -531,12 +531,16 @@ a.ctrl-slide{
     line-height: 36px;
     text-indent: 2rem;
 }
+
 .mainWord{
     padding: 0 30px;
     margin-bottom: 30px;
 }
 .wordPad{
     padding-top: 12px;
+}
+.sayContainer{
+    padding-top: 30px;
 }
 /*医院介绍*/
 /*设备介绍*/
