@@ -334,8 +334,8 @@ proIntroduce{
 .slide-left{
     /*width:650px;*/
     /*height: 364px;*/
-    width: 770px;
-    height: 446px;
+    width: 720px;
+    height: 418px;
     position: relative;
 }
 a.ctrl-slide{
@@ -862,25 +862,27 @@ a.ctrl-slide{
 /*新闻轮播*/
 /*视频区域*/
 .videoScope{
-    width: 385px;
-    height: 446px;
+    width: 436px;
+    height: 662px;
 }
 .videoScope>div{
     position: relative;
-    height: 213px;
+    height: 321px;
+    margin-bottom: 20px;
+    background: #fff;
 }
 .flVideo{
     margin-bottom: 20px;
 }
-.videoScope>div>a>div{
-    width: 100%;
-    height: 42px;
+.videoScope a p{
     line-height: 42px;
-    padding-left: 10px;
-    color: #fff;
-    background: rgba(0,0,0,.5);
-    bottom: 0;
-    position: absolute;
+}
+.videoScope a div{
+    height: 280px;
+    overflow: hidden;
+}
+.videoScope a div img{
+    width: 100%;
 }
 .playBtn{
     width: 50px;
@@ -889,7 +891,6 @@ a.ctrl-slide{
     left: 50%;
     top: 50%;
     margin-left: -25px;
-    margin-top: -25px;
     display: none;
 }
 .videoScope>div:hover .playBtn{
