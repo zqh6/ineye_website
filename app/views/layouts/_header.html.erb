@@ -91,18 +91,19 @@
     }
     function pos() {
         $(".centerNav a").each(function () {
-            if(this.attr("href") == getCookie("path")){
+            if($(this).attr("href") == getCookie("path")){
                 $(this).parent().addClass("active");
             }
         })
     }
-    pos();
     $(".centerNav li").click(function(){
         SetCookie("path",$(this).find("a").attr("href"));
         console.log(getCookie("path"));
-        pos();
-    })
 
+    })
+  window.onload = function () {
+      pos();
+  }
 </script>
 
 
