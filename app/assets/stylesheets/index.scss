@@ -955,7 +955,13 @@ a.ctrl-slide{
 }
 /*眼科学院*/
 /*楼层指引*/
+.floorImg>div{
+    margin-bottom: 20px;
+}
 .floorImg img{
     width: 100%;
+}
+.floorImg{
+    margin-bottom: 20px;
 }
 /*楼层指引*/
