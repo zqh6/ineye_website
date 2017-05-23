@@ -876,6 +876,7 @@ a.ctrl-slide{
 }
 .videoScope a p{
     line-height: 42px;
+    text-indent: 1rem;
 }
 .videoScope a div{
     height: 280px;
@@ -899,6 +900,28 @@ a.ctrl-slide{
 }
 .videoScope>div:hover .playBtn{
     display: block;
+}
+.newsContainer{
+    margin-top: 20px;
+    background: #fff;
+    min-height: 224px;
+    box-sizing: border-box;
+}
+.newsContainer>div{
+    height: 100px;
+    padding: 18px 30px 0 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.newsContainer a h5{
+    line-height: 35px;
+    font-weight: normal;
+}
+.newsContainer a p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 22px;
+    line-height: 22px;
 }
 /*视频区域*/
 /*视光中心*/
