@@ -73,6 +73,7 @@
 
     function pos() {
         var str = window.location.pathname||"/homes"
+        console.log(str);
         $(".centerNav a").each(function () {
             if($(this).attr("href") == str){
                 $(this).parent().addClass("active");
