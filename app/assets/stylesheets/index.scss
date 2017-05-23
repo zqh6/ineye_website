@@ -626,6 +626,9 @@ a.ctrl-slide{
     text-align: center;
     margin :55px 0;
 }
+.toHospital h5{
+    text-align: center;
+}
 /*来院指引*/
 /*就医流程*/
 .hosProcess{
@@ -993,4 +996,8 @@ a.ctrl-slide{
 }
 .relativeDiv:hover .playBtnT{
     display: block;
+}
+.hosServer{
+    text-align: center;
+    line-height: 30px;
 }
