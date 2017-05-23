@@ -55,7 +55,7 @@
 <!--轮播-->
 <!--中间导航-->
 <ul class="nav flow flParent centerNav">
-  <li><%= link_to :走进银海,  :homes,class: :active %></li>
+  <li><%= link_to :走进银海,  :homes,class: active %></li>
   <li><%= link_to :就医服务,  :medicals %></li>
   <li><%= link_to :六大中心,  :centers  %></li>
   <li><%= link_to :名医专家,  :experts  %></li>
@@ -68,6 +68,32 @@
     $('.slide.topSlide').ckSlide({
         autoPlay:true,
     });
+
+    function SetCookie(name, value)
+    {
+        //定义一天
+        var days = 1;
+        var exp = new Date();
+        //定义的失效时间，
+        exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000);
+        //写入Cookie  ，toGMTstring将时间转换成字符串。
+        document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString;
+    }
+    function getCookie(name)
+    {          //匹配字段
+        var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+
+        if(arr=document.cookie.match(reg))
+
+            return (arr[2]);
+        else
+            return null;
+    }
+    $(".centerNav li").click(function(){
+        SetCookie("path",$(this).find("a").attr("href"));
+        getCookie("path");
+    })
+
 </script>
 
 
