@@ -34,7 +34,7 @@
 <div class="topHeight"></div>
 <div class="centerNavFix">
   <ul class="nav flow flParent centerNav">
-    <li><%= link_to :走进银海,  :homes,class: :active %></li>
+    <li><%= link_to :走进银海,  :homes %></li>
     <li><%= link_to :就医服务,  :medicals %></li>
     <li><%= link_to :六大中心,  :centers  %></li>
     <li><%= link_to :名医专家,  :experts  %></li>
@@ -46,6 +46,21 @@
 
 <!--中间导航-->
 <div class="centerNav-container"></div>
+
+<script>
+    function pos() {
+        var str = window.location.pathname == "/" ? "/homes" : window.location.pathname;
+        console.log(str);
+        $(".centerNav a").each(function () {
+            if($(this).attr("href") == str){
+                $(this).parent().addClass("active");
+            }
+        })
+    }
+
+
+    pos();
+</script>
 
 
 
