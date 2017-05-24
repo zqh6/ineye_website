@@ -1034,7 +1034,12 @@ a.ctrl-slide{
 .admitTableContainer{
     min-height: 500px;
     background: #fff;
-    padding: 50px;
+    padding: 50px 0;
     box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.eyeResearchNews{
+    min-height: 300px;
+    padding: 30px 10px;
 }
 /*录取人员*/
