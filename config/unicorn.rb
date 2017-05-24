@@ -14,7 +14,7 @@ working_directory APP_HOME # available in 0.94.0+
 
 if 'production' == ENV['RAILS_ENV']
   listen "/data/project/ineye_website/tmp/sockets/unicorn.sock", :backlog => 64
-  pid "/data/project/zyd_meeting/tmp/pids/unicorn.pid"
+  pid "/data/project/ineye_website/tmp/pids/unicorn.pid"
   worker_processes 2
 else
   worker_processes 1
