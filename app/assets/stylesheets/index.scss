@@ -169,6 +169,7 @@ proIntroduce{
 }
 .proInWord{
     color: #3ebb2b;
+    line-height: 30px;
 }
 .professorName{
     text-align: center;
@@ -193,7 +194,7 @@ proIntroduce{
     margin-left: 20px;
 }
 .proContainer{
-    padding-bottom: 85px;
+    padding-bottom: 30px;
     margin-top: 20px;
 }
 .proIntroduce>div{
@@ -510,7 +511,7 @@ a.ctrl-slide{
 /*医院介绍*/
 .hosIntroduce{
     margin: 0 auto 30px;
-    padding-bottom: 100px;
+    padding-bottom: 60px;
     background: #fff;
     border: 1px solid #d9d9d9;
     box-sizing: border-box;
@@ -530,12 +531,16 @@ a.ctrl-slide{
     line-height: 36px;
     text-indent: 2rem;
 }
+
 .mainWord{
     padding: 0 30px;
     margin-bottom: 30px;
 }
 .wordPad{
     padding-top: 12px;
+}
+.sayContainer{
+    padding-top: 30px;
 }
 /*医院介绍*/
 /*设备介绍*/
@@ -620,6 +625,9 @@ a.ctrl-slide{
 .toHospital>div{
     text-align: center;
     margin :55px 0;
+}
+.toHospital h5{
+    text-align: center;
 }
 /*来院指引*/
 /*就医流程*/
@@ -926,6 +934,9 @@ a.ctrl-slide{
     font-weight: normal;
     font-size: 18px;
 }
+.hrefTitWord:hover{
+    color: #0284cf;
+}
 .newsContainer p{
     text-overflow: ellipsis;
     overflow: hidden;
@@ -964,6 +975,9 @@ a.ctrl-slide{
 }
 .floorImg{
     margin-bottom: 20px;
+    border: 1px solid #d9d9d9;
+    padding-top: 20px;
+    background: #fff;
 }
 /*楼层指引*/
 /*游戏btn*/
@@ -976,3 +990,24 @@ a.ctrl-slide{
     color: #00b7d6;
 }
 /*游戏btn*/
+.relativeDiv{
+    position: relative;
+}
+.playBtnT{
+    top: 50%;
+    margin-top: -25px;
+}
+.relativeDiv:hover .playBtnT{
+    display: block;
+}
+.hosServer{
+    text-align: center;
+    line-height: 30px;
+    font-size: 25px;
+    font-weight: normal;
+    color: #0284cf;
+    margin-bottom: 35px;
+}
+.hosServerCon{
+    padding-top: 20px;
+}

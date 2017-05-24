@@ -28,6 +28,7 @@ input:focus{outline:none}
     overflow: hidden;
     z-index: 100;
     overflow: hidden;
+    border-bottom: 1px solid #ccc;
 }
 .topShadow{
     height: 90px;
@@ -215,7 +216,7 @@ input:focus{outline:none}
     height: 45px;
 }
 .centerNav-container{
-    height: 85px;
+    height: 68px;
 }
 .centerNav li{
     background: #0284cf;
