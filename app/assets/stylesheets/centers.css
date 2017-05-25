@@ -100,7 +100,7 @@
 .cataractList{
     width: 220px;
     border: 1px solid #d9d9d9;
-    background: #fafafa;
+    background: #fff;
 }
 .cataractList li{
     line-height: 50px;
@@ -333,6 +333,7 @@
     border-top: 1px solid #d9d9d9;
     position: relative;
     z-index: 2;
+    cursor: pointer;
 }
 .medicineLeft li.active{
     background: #fefbee;
