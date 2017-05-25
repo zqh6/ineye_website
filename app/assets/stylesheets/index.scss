@@ -1021,6 +1021,7 @@ a.ctrl-slide{
     line-height: 52px;
     color: #0284cf;
     border-bottom: 1px solid #d9d9d9;
+    padding-left: 15px;
 }
 .eyeResearchNews span{
     padding: 0 5px;
@@ -1030,6 +1031,9 @@ a.ctrl-slide{
 }
 .eyeResearchNews div{
     line-height: 80px;
+}
+.eyeResearchNews>div{
+    padding-left: 20px;
 }
 /*录取人员*/
 .admitTable{
