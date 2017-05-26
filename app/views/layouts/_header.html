@@ -1,3 +1,4 @@
+<script src="../../../../website/app/assets/javascripts/index.js"></script>
 <style>
   .banner-box{width: 1200px;height:375px;margin:100px auto;position:relative;text-align:center;overflow: hidden;}
   .banner-box .img{width:5000px;position:absolute;top:0;left:0;}
@@ -53,15 +54,13 @@
     <li>
       <!--<%= link_to image_tag("banner1.png") %>-->
       <a href="../../views/news/守护心灵之窗沙河源小学眼健康科普公益活动.html.erb">
-        <!--<img src="../../assets/images/banner1.png" alt="">-->
-        <%= image_tag("banner1.png") %>
+        <img src="../../assets/images/banner1.png" alt="">
       </a>
     </li>
     <li>
       <!--<%= link_to image_tag("banner2.png") ,news_path(:成都中医药大学附属银海眼科医院引智引才建设一流学科) %>-->
       <a href="../../views/news/成都中医药大学附属银海眼科医院引智引才建设一流学科.html.erb">
-        <!--<img src="../../assets/images/banner2.png" alt="">-->
-        <%= image_tag("banner2.png") %>
+        <img src="../../assets/images/banner2.png" alt="">
       </a>
     </li>
   </ul>
@@ -130,8 +129,13 @@
     var w =$(".banner-box").width()
     var oImg = $(".banner-box .img");//获取图片盒子
     var s = $(".banner-box li").length;
-    var oImgfirst= $('.banner-box .img li:first').clone();//复制第一张图片
-    oImg.append(oImgfirst);//将复制的第一张图片放到最后
+    var flag = false;
+    if(!flag){
+        var oImgfirst= $('.banner-box .img li:first').clone();//复制第一张图片
+        oImg.append(oImgfirst);//将复制的第一张图片放到最后
+        flag = true;
+    }
+
     var imgNum = $(".banner-box .img li").size();//获取图片数量
 
     //根据图片个数添加圆点按钮
@@ -217,6 +221,10 @@
             $(".banner-box .li li").eq(i).addClass('index').siblings().removeClass('index');//给相应的按钮添加样式
         }
     }
+
+
 </script>
+
+
 
 
