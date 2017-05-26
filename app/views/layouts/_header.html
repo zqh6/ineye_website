@@ -52,15 +52,9 @@
   <ul class='img'>
     <li>
       <%= link_to image_tag("banner1.png") %>
-      <!--<a href="../../views/news/守护心灵之窗沙河源小学眼健康科普公益活动.html.erb">-->
-        <!--<img src="../../assets/images/banner1.png" alt="">-->
-      <!--</a>-->
     </li>
     <li>
       <%= link_to image_tag("banner2.png") ,news_path(:成都中医药大学附属银海眼科医院引智引才建设一流学科) %>
-      <!--<a href="../../views/news/成都中医药大学附属银海眼科医院引智引才建设一流学科.html.erb">-->
-        <!--<img src="../../assets/images/banner2.png" alt="">-->
-      <!--</a>-->
     </li>
   </ul>
   <ul class='li'></ul>
@@ -129,13 +123,13 @@
     var oImg = $(".banner-box .img");//获取图片盒子
     var s = $(".banner-box li").length;
     var num = 2;
-    if($(".banner-box .img li").size() <= num){
+//    if($(".banner-box .img li").size() <= num){
         var oImgfirst= $('.banner-box .img li:first').clone();//复制第一张图片
         oImg.append(oImgfirst);//将复制的第一张图片放到最后
         for (var j = 1; j <= num; j++) {
             $('.banner-box .li').append('<li></li>');
         }
-    }
+//    }
 
     var imgNum = 3;//获取图片数量
 
