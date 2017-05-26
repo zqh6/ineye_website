@@ -465,17 +465,17 @@ a.ctrl-slide{
 }
 
 .left-btn,.right-btn {
-    width: 61px;
-    height: 61px;
+    width: 46px;
+    height: 48px;
     position: absolute;
     top: 45%;
-    right: 30px;
+    right: 10px;
     background: url("btn_right.png");
     cursor: pointer;
 }
 
 .left-btn {
-    left: 30px;
+    left: 10px;
     background: url("btn_left.png");
 }
 
@@ -1069,3 +1069,44 @@ a.ctrl-slide{
 }
 
 /*录取人员*/
+/*预约报名*/
+.bmContainer{
+    background: url("bm_bg.png") 0 100% no-repeat #007cc2;
+    margin-bottom: 20px;
+}
+.bm_outer{
+    background: url("bm_1.png") 0 0 no-repeat;
+    color: #fff;
+    font-size: 18px;
+    padding-bottom: 400px;
+}
+.bm_titleImg{
+    text-align: center;
+    padding-top: 118px;
+    margin-bottom: 65px;
+}
+.activityMain{
+    padding-left: 285px;
+}
+.activityTitle{
+    width: 143px;
+    height: 64px;
+    margin-top: 30px;
+    line-height: 47px;
+    font-size: 20px;
+    text-align: center;
+    color: #007cc2;
+    background: url("bm_3.png");
+}
+.activityWord{
+    padding-top: 20px;
+    line-height: 36px;
+}
+.activityRight{
+    margin-left: 115px;
+}
+.activityCode{
+    text-align: right;
+    padding-right: 130px;
+}
+/*预约报名*/
