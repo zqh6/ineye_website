@@ -64,26 +64,6 @@
 </div>
 <!--修改轮播-->
 
-<!--轮播-->
-<div class="slide topSlide">
-  <ul class="slide-wrapper">
-    <li>
-      <%= link_to image_tag("banner1.png") %>
-    </li>
-    <li style="display:none">
-      <%= link_to image_tag("banner2.png") ,news_path(:成都中医药大学附属银海眼科医院引智引才建设一流学科) %>
-    </li>
-  </ul>
-  <div class="slidebox">
-    <div class="slideWrap">
-      <ul class="dot-wrap">
-        <li class="current"><em>1</em></li>
-        <li><em>2</em></li>
-      </ul>
-    </div>
-  </div>
-</div>
-<!--轮播-->
 <!--中间导航-->
 <ul class="nav flow flParent centerNav">
   <li><%= link_to :走进银海,  :homes,class: :active %></li>
@@ -96,10 +76,6 @@
 </ul>
 
 <script>
-    $('.slide.topSlide').ckSlide({
-        autoPlay:true,
-    });
-
 
     function pos() {
         var str = window.location.pathname == "/" ? "/homes" : window.location.pathname;
@@ -110,9 +86,7 @@
         })
     }
 
-
     pos();
-
 
 </script>
 <script type="text/javascript">
@@ -212,69 +186,6 @@
         }
     }
 
-
-//    var setting={
-//        speed:1000,
-//        speed2:3000
-//    };
-//    $.fn.extend({
-//        "lb":function(options){
-//            var ops= $.extend(options,setting);
-//            var i= 0,
-//                time=null,
-//                $this=$(this),
-//                $ls=$this.find("#lb").children(),
-//                l=$ls.length,
-//                $list=$this.find(".list"),
-//                $num=$list.children();
-//
-//            function change(){
-//                $num.stop(true,true);
-//                $ls.stop(true,true);
-//                if(i==l-1){
-//                    i=-1;
-//                }
-//                console.log(i);
-//                $ls.eq(i+1).animate({opacity:1}.css({zIndex:2}),ops.speed).siblings("li").animate({opacity:0},ops.speed).css({zIndex:0});
-//                $list.children().removeClass().eq(i+1).addClass("on");
-//                i++;
-//            }
-//
-//            function change2(){
-//                $num.stop(true,true);
-//                $ls.stop(true,true);
-//                if(i==0){
-//                    i=l;
-//                }
-//                console.log(i);
-//                $ls.eq(i-1).animate({opacity:1},ops.speed).css({zIndex:2}).siblings("li").animate({opacity:0},ops.speed).css({zIndex:0});
-//                $list.children().removeClass().eq(i-1).addClass("on");
-//                i--;
-//            }
-//            time=setInterval(change,ops.speed2);
-//            $num.click(function(){
-//                var $this=$(this);
-//                $ls.stop(true,true);
-//                $num.stop(true,true);
-//                clearInterval(time);$ls.eq($(this).index()).animate({opacity:1},1000).css({zIndex:2}).siblings("li").animate({opacity:0},1000).css({zIndex:0});
-//                $list.children().removeClass().eq($(this).index()).addClass("on");
-//                i=$(this).index();
-//                time=setInterval(change,ops.speed2);
-//            });
-//
-//            $ls.hover(function(){
-//                clearInterval(time);
-//
-//            },function(){
-//                time=setInterval(change,ops.speed2);
-//
-//            });
-//        }
-//    });
-//
-//    setTimeout(function(){
-//        $("#lb-container").lb()
-//    },500)
 </script>
 
 
