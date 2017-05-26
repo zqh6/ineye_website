@@ -12,11 +12,16 @@ function bannerListFn(a,b,c,d,e,f){
     var array=0;
     var timeOff=0;
     var num = 2;
+    var flag = false;
 
     var imgPos=$bannerMaxWapDom.find("ul").find("li");
 
     var cloneOne=imgPos.first().clone();
+    var $imgBtnList=b;
     if(a.find("li").size() <= num){
+        for (var i=0; i < num; i++ ){
+            $imgBtnList.append("<span></span>");
+        }
         $bannerMaxWapDom.find("ul").append(cloneOne);
     }
 
@@ -25,7 +30,7 @@ function bannerListFn(a,b,c,d,e,f){
     var liLength=$bannerMaxWapDom.find("li").length;
     $bannerMaxWapDom.find("ul").width(liWidth*(liLength+1));
 
-    var $imgBtnList=b;
+
 
     setTimeout(function(i){
         timeShow++;
@@ -35,11 +40,7 @@ function bannerListFn(a,b,c,d,e,f){
     (e === undefined) ? e=2000 : e=e;
 
     function imgListBtn (){
-        if(a.find("li").size() <= num) {
-            for (var i = 0; i <= num; i++) {
-                $imgBtnList.append("<span></span>");
-            }
-        }
+
         $imgBtnList.children().eq(0).addClass("current");
 
         $imgBtnList.children().click(function(){
