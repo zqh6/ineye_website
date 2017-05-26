@@ -2,15 +2,6 @@
  * Created by Administrator on 2017/5/10.
  */
 
-bannerListFn(
-    $(".banner"),
-    $(".img-btn-list"),
-    $(".left-btn"),
-    $(".right-btn"),
-    2000,
-    true
-);
-
 
 $(".aboutHos li div a img").animate({
     width: "540px",

@@ -17,44 +17,46 @@
       <div class="fl">
         <!--轮播-->
         <div class="banner">
-          <%= link_to image_tag("kpshd2_6.jpg"), kepu_path(:我院赴基层为眼健康公益事业继续前行) %>
-          <!--<img src="../../assets/images/kpshd2_6.jpg" alt="">-->
-          <!--<ul class="">-->
-            <!--<li>-->
-              <!--<a href=""><%= image_tag("dynamic-1.png") %></a>-->
-              <!--<div class="imgTitle">-->
-                <!--<p>2017年03月06日 21:46:55 | 来源：新华社</p>-->
-              <!--</div>-->
-            <!--</li>-->
-            <!--<li>-->
-              <!--<a href=""><%= image_tag("dynamic-2.jpg") %></a>-->
-              <!--<div class="imgTitle">-->
-                <!--<p>四川省视力保护科普基地流动科普馆在蓉启动</p>-->
-              <!--</div>-->
-            <!--</li>-->
-            <!--<li>-->
-              <!--<a href=""><%= image_tag("dynamic-3.jpg") %></a>-->
-              <!--<div class="imgTitle">-->
-                <!--<p>三月眼健康科普月-千里奔袭得荣县，“对口扶贫.精准复明”公益活动</p>-->
-              <!--</div>-->
-            <!--</li>-->
-            <!--<li>-->
-              <!--<a href=""><%= image_tag("dynamic-4.jpg") %></a>-->
-              <!--<div class="imgTitle">-->
-                <!--<p>四川省视力保护科普基地与得荣县签订“对口扶贫·精准复明”协议</p>-->
-              <!--</div>-->
-            <!--</li>-->
-          <!--</ul>-->
-          <!--<div class="left-btn"></div>-->
-          <!--<div class="right-btn"></div>-->
-          <!--<div class="img-btn-list"></div>-->
+          <!--<%= link_to image_tag("kpshd2_6.jpg"), kepu_path(:我院赴基层为眼健康公益事业继续前行) %>-->
+
+          <ul class="">
+            <li>
+              <%= link_to image_tag("kpshd2_6.jpg"), kepu_path(:我院赴基层为眼健康公益事业继续前行) %>
+              <div class="imgTitle">
+                <p>大爱无疆·善行天下” 我院赴基层为眼健康公益事业继续前行</p>
+              </div>
+            </li>
+            <li>
+              <%= link_to image_tag("kpshd1_4.jpg"), kepu_path(:社区公益行走进马家花园社区) %>
+              <div class="imgTitle">
+                <p>“关注眼健康，公益科普进万家”社区公益行走进马家花园社区</p>
+              </div>
+            </li>
+          </ul>
+          <div class="left-btn"></div>
+          <div class="right-btn"></div>
+          <div class="img-btn-list"></div>
         </div>
 
         <!--轮播-->
       </div>
       <div class="fr signContainer">
-        <%= link_to image_tag("kpshd1_4.jpg"), kepu_path(:社区公益行走进马家花园社区) %>
+        <%= link_to image_tag("yybm.png"), kepu_path(:预约报名) %>
+        <div class="signMask">
+          <p>预约报名</p>
+        </div>
       </div>
     </li>
   </ul>
 </div>
+
+<script>
+    bannerListFn(
+        $(".banner"),
+        $(".img-btn-list"),
+        $(".left-btn"),
+        $(".right-btn"),
+        2000,
+        true
+    );
+</script>
