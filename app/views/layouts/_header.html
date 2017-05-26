@@ -134,11 +134,10 @@
         oImg.append(oImgfirst);//将复制的第一张图片放到最后
     }
 
-    var imgNum = $(".banner-box .img li").size();//获取图片数量
+    var imgNum = 3;//获取图片数量
 
     //根据图片个数添加圆点按钮
-    if($(".banner-box .img li").size() <= 2) {
-        console.log(imgNum);
+    if($(".banner-box .img li").size() <= 3) {
         for (var j = 1; j <= imgNum - 1; j++) {
             $('.banner-box .li').append('<li></li>');
         }
