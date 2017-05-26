@@ -427,9 +427,10 @@ a.ctrl-slide{
     left: 0;
     position: absolute;
     font-size: 24px;
+}
+.signMask a{
     color: #fff;
 }
-
 /*轮播*/
 .banner {
     width: 584px;
