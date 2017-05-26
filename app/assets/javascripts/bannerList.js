@@ -12,14 +12,15 @@ function bannerListFn(a,b,c,d,e,f){
     var array=0;
     var timeOff=0;
     var num = 2;
-    var flag = false;
 
     var imgPos=$bannerMaxWapDom.find("ul").find("li");
 
     var cloneOne=imgPos.first().clone();
     var $imgBtnList=b;
-    if(a.find("li").size() <= num){
-        for (var i=0; i < num; i++ ){
+    if($bannerMaxWapDom.find("li").size() <= num){
+        console.log($bannerMaxWapDom);
+        for (var i=0; i <= num; i++ ){
+            console.log($imgBtnList);
             $imgBtnList.append("<span></span>");
         }
         $bannerMaxWapDom.find("ul").append(cloneOne);
