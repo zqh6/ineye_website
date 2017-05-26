@@ -129,22 +129,15 @@
     var w =$(".banner-box").width()
     var oImg = $(".banner-box .img");//获取图片盒子
     var s = $(".banner-box li").length;
-    var flag = false;
-    if(!flag){
-        var oImgfirst= $('.banner-box .img li:first').clone();//复制第一张图片
-        oImg.append(oImgfirst);//将复制的第一张图片放到最后
-
-        //根据图片个数添加圆点按钮
-        console.log(imgNum);
-        for(var j=1;j<=imgNum-1;j++){
-            $('.banner-box .li').append('<li></li>');
-        }
-        flag = true;
-    }
-
+    var oImgfirst= $('.banner-box .img li:first').clone();//复制第一张图片
+    oImg.append(oImgfirst);//将复制的第一张图片放到最后
     var imgNum = $(".banner-box .img li").size();//获取图片数量
 
-
+    //根据图片个数添加圆点按钮
+    console.log(imgNum);
+    for(var j=1;j<=imgNum-1;j++){
+        $('.banner-box .li').append('<li></li>');
+    }
 
     //给第一个按钮添加选中样式
     $('.banner-box .li li:first').addClass('index');
@@ -224,7 +217,78 @@
         }
     }
 
+$.fn.extend({
+    "lb":function () {
+        var $this = $(this);
+        $this.find(".img").firstChild().clone().appendTo($this.find(".img"))
+        var $num = $this.find(".img").children().length;
 
+        console.log($num);
+    }
+})
+    $("banner-box").lb();
+//    var setting={
+//        speed:1000,
+//        speed2:3000
+//    };
+//    $.fn.extend({
+//        "lb":function(options){
+//            var ops= $.extend(options,setting);
+//            var i= 0,
+//                time=null,
+//                $this=$(this),
+//                $ls=$this.find("#lb").children(),
+//                l=$ls.length,
+//                $list=$this.find(".list"),
+//                $num=$list.children();
+//
+//            function change(){
+//                $num.stop(true,true);
+//                $ls.stop(true,true);
+//                if(i==l-1){
+//                    i=-1;
+//                }
+//                console.log(i);
+//                $ls.eq(i+1).animate({opacity:1}.css({zIndex:2}),ops.speed).siblings("li").animate({opacity:0},ops.speed).css({zIndex:0});
+//                $list.children().removeClass().eq(i+1).addClass("on");
+//                i++;
+//            }
+//
+//            function change2(){
+//                $num.stop(true,true);
+//                $ls.stop(true,true);
+//                if(i==0){
+//                    i=l;
+//                }
+//                console.log(i);
+//                $ls.eq(i-1).animate({opacity:1},ops.speed).css({zIndex:2}).siblings("li").animate({opacity:0},ops.speed).css({zIndex:0});
+//                $list.children().removeClass().eq(i-1).addClass("on");
+//                i--;
+//            }
+//            time=setInterval(change,ops.speed2);
+//            $num.click(function(){
+//                var $this=$(this);
+//                $ls.stop(true,true);
+//                $num.stop(true,true);
+//                clearInterval(time);$ls.eq($(this).index()).animate({opacity:1},1000).css({zIndex:2}).siblings("li").animate({opacity:0},1000).css({zIndex:0});
+//                $list.children().removeClass().eq($(this).index()).addClass("on");
+//                i=$(this).index();
+//                time=setInterval(change,ops.speed2);
+//            });
+//
+//            $ls.hover(function(){
+//                clearInterval(time);
+//
+//            },function(){
+//                time=setInterval(change,ops.speed2);
+//
+//            });
+//        }
+//    });
+//
+//    setTimeout(function(){
+//        $("#lb-container").lb()
+//    },500)
 </script>
 
 
