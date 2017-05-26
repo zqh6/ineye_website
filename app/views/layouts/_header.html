@@ -123,13 +123,13 @@
     var oImg = $(".banner-box .img");//获取图片盒子
     var s = $(".banner-box li").length;
     var num = 2;
-//    if($(".banner-box .img li").size() <= num){
+    if($(".banner-box .img li").size() <= num){
         var oImgfirst= $('.banner-box .img li:first').clone();//复制第一张图片
         oImg.append(oImgfirst);//将复制的第一张图片放到最后
         for (var j = 1; j <= num; j++) {
             $('.banner-box .li').append('<li></li>');
         }
-//    }
+    }
 
     var imgNum = 3;//获取图片数量
 
