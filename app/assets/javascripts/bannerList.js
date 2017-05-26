@@ -20,7 +20,7 @@ function bannerListFn(a,b,c,d,e,f){
     console.log($bannerMaxWapDom.find("li").size());
     if($bannerMaxWapDom.find("li").size() <= num){
 
-        for (var i=0; i <= num; i++ ){
+        for (var i=0; i < num; i++ ){
             console.log($imgBtnList);
             $imgBtnList.append("<span></span>");
         }
