@@ -35,11 +35,11 @@ function bannerListFn(a,b,c,d,e,f){
     (e === undefined) ? e=2000 : e=e;
 
     function imgListBtn (){
-    
-        for (var i=0; i < num; i++ ){
-            $imgBtnList.append("<span></span>");
+        if(a.find("li").size() <= num) {
+            for (var i = 0; i <= num; i++) {
+                $imgBtnList.append("<span></span>");
+            }
         }
-
         $imgBtnList.children().eq(0).addClass("current");
 
         $imgBtnList.children().click(function(){
