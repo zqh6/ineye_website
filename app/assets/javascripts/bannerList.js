@@ -17,8 +17,9 @@ function bannerListFn(a,b,c,d,e,f){
 
     var cloneOne=imgPos.first().clone();
     var $imgBtnList=b;
+    console.log($bannerMaxWapDom.find("li").size());
     if($bannerMaxWapDom.find("li").size() <= num){
-        console.log($bannerMaxWapDom);
+
         for (var i=0; i <= num; i++ ){
             console.log($imgBtnList);
             $imgBtnList.append("<span></span>");
