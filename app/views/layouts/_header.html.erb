@@ -70,12 +70,14 @@
 <!--修改轮播2-->
 <div class="content" style="width:1000px;height:300px;margin:30px auto;overflow:hidden;">
   <div id="slider">
-    <a href="#"><img src="img/demo1.jpg"/></a>
-    <a href="#"><img src="img/demo2.jpg"/></a>
-    <a href="#"><img src="img/demo3.jpg"/></a>
-    <a href="#"><img src="img/demo4.jpg"/></a>
-    <a href="#"><img src="img/demo5.jpg"/></a>
-    <a href="#"><img src="img/demo6.jpg"/></a>
+    <%= link_to image_tag("banner1.png") %>
+    <%= link_to image_tag("banner2.png") ,news_path(:成都中医药大学附属银海眼科医院引智引才建设一流学科) %>
+    <!--<a href="#"><img src="img/demo1.jpg"/></a>-->
+    <!--<a href="#"><img src="img/demo2.jpg"/></a>-->
+    <!--<a href="#"><img src="img/demo3.jpg"/></a>-->
+    <!--<a href="#"><img src="img/demo4.jpg"/></a>-->
+    <!--<a href="#"><img src="img/demo5.jpg"/></a>-->
+    <!--<a href="#"><img src="img/demo6.jpg"/></a>-->
   </div>
 </div>
 <!--修改轮播2-->
@@ -231,8 +233,8 @@
 <script>
     $(function() {
         $('#slider').vmcSlider({
-            width: 1000,
-            height: 300,
+            width: 1200,
+            height: 375,
             gridCol: 10,
             gridRow: 5,
             gridVertical: 20,
