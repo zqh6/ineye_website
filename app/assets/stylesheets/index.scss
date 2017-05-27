@@ -61,11 +61,17 @@
 
 .schTable th,.schTable td{
     border: 1px solid #b7e1ef;
-    padding: 10px;
+    padding: 10px 5px;
+}
+.schTable .noTabBorder{
+    border: 0;
 }
 .schTable td{
     text-align: left;
     text-align: center;
+}
+.width-100{
+    width: 100px;
 }
 .tableType td{
     text-align: center;
