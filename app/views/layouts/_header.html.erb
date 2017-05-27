@@ -67,6 +67,19 @@
 </div>
 <!--修改轮播-->
 
+<!--修改轮播2-->
+<div class="content" style="width:1000px;height:300px;margin:30px auto;overflow:hidden;">
+  <div id="slider">
+    <a href="#"><img src="img/demo1.jpg"/></a>
+    <a href="#"><img src="img/demo2.jpg"/></a>
+    <a href="#"><img src="img/demo3.jpg"/></a>
+    <a href="#"><img src="img/demo4.jpg"/></a>
+    <a href="#"><img src="img/demo5.jpg"/></a>
+    <a href="#"><img src="img/demo6.jpg"/></a>
+  </div>
+</div>
+<!--修改轮播2-->
+
 <!--中间导航-->
 <ul class="nav flow flParent centerNav">
   <li><%= link_to :走进银海,  :homes,class: :active %></li>
@@ -213,6 +226,29 @@
 //            window.history.pushState('forward', null, './#forward');
         }
 
+    });
+</script>
+<script>
+    $(function() {
+        $('#slider').vmcSlider({
+            width: 1000,
+            height: 300,
+            gridCol: 10,
+            gridRow: 5,
+            gridVertical: 20,
+            gridHorizontal: 10,
+            autoPlay: true,
+            ascending: true,
+            effects: [
+                'fade', 'fadeLeft', 'fadeRight', 'fadeTop', 'fadeBottom', 'fadeTopLeft', 'fadeBottomRight',
+                'blindsLeft', 'blindsRight', 'blindsTop', 'blindsBottom', 'blindsTopLeft', 'blindsBottomRight',
+                'curtainLeft', 'curtainRight', 'interlaceLeft', 'interlaceRight', 'mosaic', 'bomb', 'fumes'
+            ],
+            ie6Tidy: false,
+            random: false,
+            duration: 2000,
+            speed: 900
+        });
     });
 </script>
 
