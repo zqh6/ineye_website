@@ -103,7 +103,7 @@
     var w =$(".banner-box").width()
     var oImg = $(".banner-box .img");//获取图片盒子
     var s = $(".banner-box li").length;
-    var num = 3;
+    var num = s;
     if($(".banner-box .img li").size() <= num){
         var oImgfirst= $('.banner-box .img li:first').clone();//复制第一张图片
         oImg.append(oImgfirst);//将复制的第一张图片放到最后
