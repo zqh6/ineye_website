@@ -403,11 +403,17 @@ a.ctrl-slide{
     background: rgba(0,0,0,.4);
     text-align: center;
 }
+
 .signMask p{
     line-height: 330px;
     font-size: 24px;
     text-align: center;
     color: #fff;
+}
+.signMask a{
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 .eyeHealth>li>div{
     width: 530px;
