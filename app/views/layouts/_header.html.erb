@@ -115,7 +115,7 @@
         }
     }
 
-    var imgNum = 4;//获取图片数量
+    var imgNum = 5;//获取图片数量
 
     //根据图片个数添加圆点按钮
     //给第一个按钮添加选中样式
@@ -133,7 +133,7 @@
         i--;
         if(i == -1){
             $('.banner-box .img').css('left',-(imgNum-1)*w);//用CSS进行图片位置变换，达到无缝拼接效果
-            i = imgNum-1;
+            i = imgNum-2;
         }
         oImg.stop().animate({left:-i*w},500);//动画效果
         clearInterval(oTime);
@@ -180,7 +180,7 @@
         i++;
         if(i == imgNum){
             oImg.css('left',0);//用CSS进行图片位置变换，达到无缝拼接效果
-            i = 0;
+            i = 1;
         }
         oImg.stop().animate({left:-i*w},500);//动画效果
         barAniMate();//进度条函数动画效果
