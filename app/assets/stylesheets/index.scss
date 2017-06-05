@@ -904,13 +904,16 @@ a.ctrl-slide{
 /*视频区域*/
 .videoScope{
     width: 436px;
-    height: 662px;
+    //height: 662px;
 }
 .videoScope>div{
     position: relative;
     height: 321px;
     margin-bottom: 20px;
     background: #fff;
+}
+videoScope>div:last-child{
+    margin-bottom: 0;
 }
 .flVideo{
     margin-bottom: 20px;
