@@ -912,9 +912,7 @@ a.ctrl-slide{
     margin-bottom: 20px;
     background: #fff;
 }
-.videoList>div:last-child{
-    margin-bottom: 0;
-}
+
 .flVideo{
     margin-bottom: 20px;
 }
@@ -925,6 +923,11 @@ a.ctrl-slide{
 .videoWordList>div{
     line-height: 60px;
     font-size: 16px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-left: 10px;
+}
+.videoWordList>div:last-child{
+    border-bottom: 0;
 }
 .videoList a p{
     line-height: 42px;
