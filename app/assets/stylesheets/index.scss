@@ -805,6 +805,14 @@ a.ctrl-slide{
 .newsImgMar p{
     text-indent: 0;
 }
+.newsImgMar ul{
+    overflow: hidden;
+}
+.newsImgMar ul li{
+    float: left;
+    width: 50%;
+    line-height: 30px;
+}
 .hosInstitution{
     text-align: center;
     margin: 30px 20px 0;
