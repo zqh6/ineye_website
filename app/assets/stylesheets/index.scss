@@ -1196,4 +1196,16 @@ a.ctrl-slide{
 .newsAllList a:hover{
     color: #007cc2;
 }
+.titBg span{
+    background: rgb(96, 156, 239);
+    padding: 0 5px;
+    line-height: 30px;
+    position: relative;
+}
+.titBg span:before{
+    position: absolute;
+    width: 90%;
+    height: 10px;
+    top: -5px;
+}
 /*新闻列表*/
