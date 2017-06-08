@@ -1176,14 +1176,17 @@ a.ctrl-slide{
 }
 /*预约报名*/
 /*新闻列表*/
-.newsAll ul{
-    border: 1px solid #d9d9d9;
+.newsAll{
     background: #fff;
+    border: 1px solid #d9d9d9;
 }
-.newsAll li{
+.newsAllList ul{
+    padding: 0 30px;
+}
+.newsAllList li{
     line-height: 64px;
 }
-.newsAll a{
+.newsAllList a{
     font-size: 16px;
     line-height: 64px;
 }
