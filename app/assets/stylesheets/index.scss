@@ -975,6 +975,21 @@ a.ctrl-slide{
     min-height: 224px;
     box-sizing: border-box;
 }
+.newsContainer h4{
+    line-height: 50px;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0 10px;
+}
+.newsContainer h4 span{
+    line-height: 50px;
+    display: inline-block;
+    border-bottom: 2px solid #0284cf;
+}
+.newsContainer h4 em a{
+    color: #818181;
+    display: inline-block;
+    border-bottom: 2px solid #0284cf;
+}
 .newsContainer>div{
     height: 100px;
     padding: 18px 30px 0 10px;
