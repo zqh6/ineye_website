@@ -1227,8 +1227,9 @@ a.ctrl-slide{
 }
 fieldset{
     border: 1px solid #0284cf;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
+    padding-right: 2rem;
 }
 legend{
     color: #0284cf;
@@ -1238,7 +1239,7 @@ legend{
     padding: 0 10px;
 }
 .actionsTle{
-    line-height: 45px;
+    line-height: 60px;
     color: #0284cf;
     font-size: 18px;
 }
@@ -1246,7 +1247,7 @@ legend{
 .actionsPoint{
     font-size: 16px;
     color: #0284cf;
-    line-height: 40px;
+    line-height: 45px;
 }
 .actionsCost{
     width: 80%;
