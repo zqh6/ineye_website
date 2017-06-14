@@ -1228,8 +1228,8 @@ a.ctrl-slide{
 fieldset{
     border: 1px solid #0284cf;
     width: 90%;
-    margin: 0 auto;
-    padding: 0 2rem;
+    margin: 20px auto 10px;
+    padding: 0 2rem 20px;
 }
 legend{
     color: #0284cf;
@@ -1256,5 +1256,8 @@ legend{
 .actionsNotes p{
     font-size: 12px;
     color: #666;
+}
+.actionsCost td{
+    text-align: left;
 }
 /*新闻列表*/
