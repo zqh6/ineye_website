@@ -60,9 +60,6 @@
       <%= link_to image_tag("banner2.png") ,news_path(:成都中医药大学附属银海眼科医院引智引才建设一流学科) %>
     </li>
     <li>
-      <%= link_to image_tag("banner3.png") %>
-    </li>
-    <li>
       <%= link_to image_tag("banner4.jpg") ,news_path(:爱眼月暨青少年近视防控能力提升计划在银海眼科启动) %>
     </li>
     <li>
@@ -112,7 +109,7 @@
     var w =$(".banner-box").width()
     var oImg = $(".banner-box .img");//获取图片盒子
     var s = $(".banner-box li").length;
-    var num = 6;
+    var num = 5;
     if($(".banner-box .img li").size() <= num){
         var oImgfirst= $('.banner-box .img li:first').clone();//复制第一张图片
         oImg.append(oImgfirst);//将复制的第一张图片放到最后
@@ -121,7 +118,7 @@
         }
     }
 
-    var imgNum = 7;//获取图片数量
+    var imgNum = 6;//获取图片数量
 
     //根据图片个数添加圆点按钮
     //给第一个按钮添加选中样式
