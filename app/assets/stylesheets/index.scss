@@ -1232,15 +1232,14 @@ fieldset{
     padding: 0 2rem 20px;
     box-sizing: border-box;
 }
-div fieldset p{
+fieldset.fessActions p{
     text-indent: 0;
 }
 legend{
     color: #0284cf;
     font-size: 18px;
     line-height: 38px;
-    margin-left: 50px;
-    padding: 0 10px;
+    padding: 0 50px;
 }
 .actionsTle{
     line-height: 60px;
