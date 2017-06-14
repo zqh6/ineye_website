@@ -1230,6 +1230,7 @@ fieldset{
     width: 90%;
     margin: 20px auto 10px;
     padding: 0 2rem 20px;
+    box-sizing: border-box;
 }
 legend{
     color: #0284cf;
@@ -1250,8 +1251,10 @@ legend{
     line-height: 45px;
 }
 .actionsCost{
-    width: 80%;
     margin: 20px auto;
+}
+.actionsCost table{
+    margin: 0 auto;
 }
 .actionsNotes p{
     font-size: 12px;
