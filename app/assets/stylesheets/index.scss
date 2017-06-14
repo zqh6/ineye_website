@@ -1232,6 +1232,9 @@ fieldset{
     padding: 0 2rem 20px;
     box-sizing: border-box;
 }
+fieldset p{
+    text-indent: 0;
+}
 legend{
     color: #0284cf;
     font-size: 18px;
