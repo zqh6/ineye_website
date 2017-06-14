@@ -1225,6 +1225,11 @@ a.ctrl-slide{
     width: 98%;
     margin-bottom: 10px;
 }
+fieldset{
+    border: 1px solid #0284cf;
+    width: 80%;
+    margin: 0 auto;
+}
 legend{
     color: #0284cf;
     font-size: 18px;
@@ -1233,11 +1238,18 @@ legend{
     padding: 0 10px;
 }
 .actionsTle{
+    line-height: 45px;
+    color: #0284cf;
+    font-size: 18px;
+}
+
+.actionsPoint{
     font-size: 16px;
-    line-height: 36px;
+    color: #0284cf;
+    line-height: 40px;
 }
 .actionsCost{
-    width: 60%;
+    width: 80%;
     margin: 20px auto;
 }
 .actionsNotes p{
