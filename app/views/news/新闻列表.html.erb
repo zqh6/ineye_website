@@ -212,7 +212,7 @@
     $(".newsAllList li").eq(news.num).nextAll().hide();
     $(".pages span").click(function () {
         var i = $(this).index();
-        $(".newsAllList li").show().eq(news.num*i).prevAll().hide();
+        $(".newsAllList li").show().eq(news.num*i+1).prevAll().hide();
         $(".newsAllList li").eq(news.num*(i+1)).nextAll().hide();
     })
 </script>
