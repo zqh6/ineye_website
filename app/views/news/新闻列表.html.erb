@@ -207,7 +207,7 @@
     for(var i=1;i<=Math.ceil($(".newsAllList li").length/news.num);i++){
         html+="<span>"+i+"</span>"
     }
-    console.log(Math.ceil($(".newsAllList li").length/news.num));
+    console.log($(".newsAllList li").length);
     $(".pages").html(html);
     $(".newsAllList li").eq(news.num).nextAll().hide();
     $(".pages span").click(function () {
