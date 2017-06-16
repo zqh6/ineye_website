@@ -208,4 +208,10 @@
         html+="<span>"+i+"</span>"
     }
     $(".pages").html(html);
+    $(".newsAllList li").eq(news.num).nextAll().hide();
+    $(".pages span").click(function () {
+        var i = $(this).index();
+        $(".newsAllList li").eq(news.num*i).prevAll().hide();
+        $(".newsAllList li").eq(news.num*(i+1)).nextAll().hide();
+    })
 </script>
