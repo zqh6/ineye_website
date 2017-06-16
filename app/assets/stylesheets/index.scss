@@ -1286,10 +1286,20 @@ legend{
 .newsMain p{
     margin-bottom: 15px;
 }
-
+.pagesContainer{
+    margin:30px 0;
+}
 .pages span{
-    color: #0284cf;
     padding: 0 5px;
+    cursor: pointer;
+    line-height: 30px;
+    display: inline-block;
+}
+.pages span:hover{
+    color: #0284cf;
+}
+.newsAll{
+    min-height: 300px;
 }
 /*新闻列表*/
 .copyRight{
