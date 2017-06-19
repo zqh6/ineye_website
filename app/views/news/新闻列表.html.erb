@@ -203,10 +203,13 @@
     }
     var html="";
     for(var i=1;i<=Math.ceil($(".newsAllList li").length/news.num);i++){
-        html+="<span>"+i+"</span>"
+        html+="<a href='page="+i+"'>"+i+"</a>"
     }
     $(".pages").html(html);
+console.log(window.location.href);
+//var page == window.location.href.toString().indexOf("page")<0?0:
     $(".newsAllList li").show().eq(news.num-1).nextAll().hide();
+//    $(".newsAllList li").show().eq(news.num-1).nextAll().hide();
     $(".pages span").click(function () {
         var i = $(this).index();
         console.log(i);
