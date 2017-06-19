@@ -206,7 +206,7 @@
         html+="<span>"+i+"</span>"
     }
     $(".pages").html(html);
-    $(".newsAllList li").eq(news.num-1).nextAll().hide();
+    $(".newsAllList li").show().eq(news.num-1).nextAll().hide();
     $(".pages span").click(function () {
         var i = $(this).index();
         console.log(i);
