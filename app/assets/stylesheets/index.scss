@@ -1309,3 +1309,35 @@ legend{
 .twoNewsTitle h5{
     line-height: 35px;
 }
+.recruitNotice{
+    line-height: 35px;
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    padding: 0 30px 30px;
+}
+.recruitNotice h5{
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+}
+.indentWord p{
+    text-indent: 2rem;
+}
+p>b{
+    padding: 5px 0;
+    display: inline-block;
+}
+.indentWord table{
+    margin: 20px 0 20px 2rem;
+    width: 70%;
+}
+.indentWord table p{
+    text-indent: 0;
+}
+.recruitNoticeTle{
+    padding: 10px 0;
+    border-bottom: 1px solid #d4d4d4;
+}
+.recruitNotice table tr th{
+    background: transparent;
+}
