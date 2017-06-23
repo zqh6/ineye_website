@@ -1345,6 +1345,10 @@ p>b{
 .downLoad{
     display: block;
 }
+.downLoad:hover{
+    color: #00b7d6;
+    text-decoration: underline;
+}
 .downLoad span{
     float: right;
 }
