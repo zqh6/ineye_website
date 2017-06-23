@@ -1319,13 +1319,14 @@ legend{
     line-height: 60px;
     font-size: 24px;
     text-align: center;
+    font-weight: normal;
 }
 .indentWord p{
     text-indent: 2rem;
 }
 p>b{
     padding: 5px 0;
-    display: inline-block;
+    display: block;
 }
 .indentWord table{
     margin: 20px 0 20px 2rem;
@@ -1340,4 +1341,10 @@ p>b{
 }
 .recruitNotice table tr th{
     background: transparent;
+}
+.downLoad{
+    display: block;
+}
+.downLoad span{
+    float: right;
 }
