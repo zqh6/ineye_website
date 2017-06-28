@@ -3,9 +3,9 @@
   <head>
     <title>银海眼科官网</title>
     <%= csrf_meta_tags %>
-
+    <%= yield :meta %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= yield :style %>
   </head>
 
   <body>
@@ -14,7 +14,8 @@
   	  <%= yield %>
   	  <%= render "layouts/footer" %>
   	</div>
+    <%= render partial: 'shared/script' %>
+    <%= yield :script %>
   </body>
-
 
 </html>

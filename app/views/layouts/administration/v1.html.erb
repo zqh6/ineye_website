@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang='zh-CN'>
+<head>
+
+	<%= yield :meta %>
+
+	<title><%= yield :title %></title>
+
+	<%= csrf_meta_tags %>
+
+	<%= render partial: 'administration/v1/shared/style' %>
+	<%= yield :style %>
+	<%= javascript_include_tag 'shared/jquery-2.1.4.min' %>
+
+
+</head>
+<body <%= (yield :body_attr).html_safe %> >
+
+	<%= yield %>
+
+	<%= render partial: 'administration/v1/shared/script' %>
+	<%= yield :script %>
+
+</body>
+</html>
