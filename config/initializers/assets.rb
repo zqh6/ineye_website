@@ -20,17 +20,22 @@ Rails.application.config.assets.precompile += %w(
     shared/theme.js
     shared/amazeui_template1.js
     shared/bootstrap-wgsiwyg.js
-    news/new.js
+    new/new.js
     administration/v1/sessions/new.js
+    administration/v1/dashboards/new.js
+    administration/v1/new/new.js
 
     shared/amazeui.min.css
     shared/amazeui.datatables.min.css
     shared/amazeui_template1.css.erb
     shared/editor/google-code-prettify/prettify.css
-    news/new.css.erb
+    new/new.css.erb
     administration/v1/sessions/new.css.erb
+    administration/v1/dashboards/new.css
+    administration/v1/new/new.css
 
     shared/browser_tab_title.ico
     shared/logo.png
+    shared/portrait.png
 
 )

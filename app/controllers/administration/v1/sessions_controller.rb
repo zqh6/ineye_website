@@ -1,4 +1,8 @@
-class Administration::V1::SessionsController < Administration::V1::PrivilegedController
+class Administration::V1::SessionsController < ::ApplicationController
+
+  layout 'administration/v1'
+
+  helper :administration
 
   def new
   end

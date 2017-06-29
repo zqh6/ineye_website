@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170628033717) do
   enable_extension "uuid-ossp"
   enable_extension "pgcrypto"
 
-  create_table "news", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+  create_table "new", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.uuid     "user_id",                                                null: false
     t.string   "title",      limit: 255, default: "",                    null: false
     t.string   "content",    limit: 255

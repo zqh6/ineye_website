@@ -1,0 +1,67 @@
+<div class="left-sidebar">
+	<!-- 用户信息 -->
+	<div class="tpl-sidebar-user-panel">
+		<div class="tpl-user-panel-slide-toggleable">
+			<div class="tpl-user-panel-profile-picture">
+				<%= image_tag 'shared/portrait.png', rel: '头像' %>
+			</div>
+			<span class="user-panel-logged-in-text">
+              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+              <%= session[:user]['name'] %>
+          </span>
+		</div>
+	</div>
+
+	<!-- 菜单 -->
+	<ul class="sidebar-nav">
+		<li class="sidebar-nav-heading"> <span class="sidebar-nav-heading-info"> 用户功能列表</span></li>
+
+		<li class="sidebar-nav-link">
+			<%= link_to administration_v1_dashboard_path('~'), class: options[:list_item]=='dashboard' ? 'active' : '' do  %>
+					<i class="am-icon-home sidebar-nav-link-logo"></i> 控制面板
+			<% end %>
+		</li>
+
+		<li class="sidebar-nav-link">
+			<a href="javascript:;" class="sidebar-nav-sub-title">
+				<i class="am-icon-newspaper-o sidebar-nav-link-logo"></i> 新闻中心
+				<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+			</a>
+			<ul class="sidebar-nav sidebar-nav-sub" <% if ['new_new', 'new_index'].include? options[:list_item] %>style="display: block;"<% end %>>
+				<li class="sidebar-nav-link">
+					<%= link_to new_administration_v1_new_path, class: options[:list_item]=='new_new' ? 'active' : '' do %>
+							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 添加
+					<% end %>
+				</li>
+
+				<li class="sidebar-nav-link">
+					<%= link_to administration_v1_new_index_path, class: options[:list_item]=='new_index' ? 'active' : '' do %>
+							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 列表
+					<% end %>
+				</li>
+			</ul>
+		</li>
+
+
+
+		<!--<li class="sidebar-nav-heading">Page<span class="sidebar-nav-heading-info"> 常用页面</span></li>
+
+		<li class="sidebar-nav-link">
+			<a href="sign-up.html">
+				<i class="am-icon-clone sidebar-nav-link-logo"></i> 注册
+				<span class="am-badge am-badge-secondary sidebar-nav-link-logo-ico am-round am-fr am-margin-right-sm">6</span>
+			</a>
+		</li>
+		<li class="sidebar-nav-link">
+			<a href="login.html">
+				<i class="am-icon-key sidebar-nav-link-logo"></i> 登录
+			</a>
+		</li>
+		<li class="sidebar-nav-link">
+			<a href="404.html">
+				<i class="am-icon-tv sidebar-nav-link-logo"></i> 404错误
+			</a>
+		</li>-->
+
+	</ul>
+</div>

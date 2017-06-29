@@ -9,12 +9,12 @@
 
 			<form class="am-form tpl-form-line-form">
 				<div class="am-form-group">
-					<input type="text" class="tpl-form-input" id="user-name" placeholder="请输入账号">
+					<input type="text" class="tpl-form-input js-phone-number" id="user-name" placeholder="请输入">
 
 				</div>
 
 				<div class="am-form-group">
-					<input type="password" class="tpl-form-input" id="user-name" placeholder="请输入密码">
+					<input type="password" class="tpl-form-input js-password" id="user-name" placeholder="请输入密码">
 
 				</div>
 				<div class="am-form-group tpl-login-remember-me">
@@ -33,7 +33,7 @@
 
 				<div class="am-form-group">
 
-					<button type="button" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn">提交</button>
+					<button type="button" class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn js-submit">提交</button>
 
 				</div>
 			</form>
@@ -64,13 +64,9 @@
 <% content_for :body_attr do %>data-type="login"<% end %>
 
 <% content_for :style do %>
-		<%= stylesheet_link_tag 'shared/amazeui.datatables.min' %>
-		<%= stylesheet_link_tag 'shared/amazeui_template1' %>
 		<%= stylesheet_link_tag 'administration/v1/sessions/new' %>
 <% end %>
 
 <% content_for :script do %>
-		<%= javascript_include_tag 'shared/amazeui_template1' %>
-		<%= javascript_include_tag 'shared/theme' %>
 		<%= javascript_include_tag 'administration/v1/sessions/new' %>
 <% end %>
