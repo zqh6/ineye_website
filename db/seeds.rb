@@ -22,4 +22,4 @@ def create_user(phone_number: nil, password: nil)
   end
 end
 
-create_user phone_number: '19999999999', password: '!n3y3_website'
+create_user phone_number: '19999999999', password: '123123'

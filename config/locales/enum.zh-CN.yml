@@ -1,0 +1,14 @@
+'zh-CN':
+  enum:
+
+    gender:
+      male:          男
+      female:        女
+      not_specified: 未指定
+
+    new_classify:
+      common: 普通新闻
+
+    state:
+      active: 生效
+      inactive: 不生效

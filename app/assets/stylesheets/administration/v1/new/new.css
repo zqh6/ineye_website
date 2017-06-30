@@ -1,0 +1,5 @@
+.required-hint{
+	color: red;
+}
+
+#editor {overflow:scroll; max-height:300px}

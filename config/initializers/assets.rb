@@ -19,7 +19,10 @@ Rails.application.config.assets.precompile += %w(
     shared/amazeui.min.js
     shared/theme.js
     shared/amazeui_template1.js
+    shared/amazeui.datatables.min.js
     shared/bootstrap-wgsiwyg.js
+    shared/echarts.min.js
+    shared/dataTables.responsive.min.js
     new/new.js
     administration/v1/sessions/new.js
     administration/v1/dashboards/new.js
@@ -37,5 +40,10 @@ Rails.application.config.assets.precompile += %w(
     shared/browser_tab_title.ico
     shared/logo.png
     shared/portrait.png
+
+    font/fontawesome-webfont.eot
+    font/fontawesome-webfont.woff2
+    font/fontawesome-webfont.woff
+    font/fontawesome-webfont.ttf
 
 )

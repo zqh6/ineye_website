@@ -58,3 +58,8 @@ gem 'rails_kindeditor'
 gem 'repres-dosser', '>= 1.8.3'
 
 gem 'font-awesome-rails'
+
+gem 'progne_tapera'
+
+gem 'i18n'
+gem 'rails-i18n'

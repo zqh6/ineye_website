@@ -1,0 +1,19 @@
+enum:
+
+  gender:
+    male:
+      code: '1'
+    female:
+      code: '2'
+    not_specified:
+      code: '9'
+
+  new_classify:
+    common:
+      code: '1'
+
+  state:
+    active:
+      code: 'A'
+    inactive:
+      code: 'I'
