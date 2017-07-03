@@ -6,4 +6,11 @@ class Administration::Dosser::V1::PresentationController < ActionController::Bas
 
   layout :nil
 
+  before_action :validate_login
+
+  def validate_login
+    Rails.logger.warn session[:user].inspect
+    @user = User.included_by(session[:user]['id']).first
+  end
+
 end

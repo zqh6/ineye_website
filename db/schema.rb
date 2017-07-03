@@ -17,17 +17,21 @@ ActiveRecord::Schema.define(version: 20170628033717) do
   enable_extension "uuid-ossp"
   enable_extension "pgcrypto"
 
-  create_table "new", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "user_id",                                                null: false
-    t.string   "title",      limit: 255, default: "",                    null: false
-    t.string   "content",    limit: 255
-    t.string   "state",      limit: 1,   default: "C",                   null: false
-    t.datetime "opened_at",              default: '1970-01-01 00:00:00', null: false
-    t.datetime "closed_at",              default: '3000-01-01 00:00:00', null: false
-    t.boolean  "defunct",                default: false,                 null: false
-    t.jsonb    "notation",               default: {},                    null: false
-    t.datetime "created_at",                                             null: false
-    t.datetime "updated_at",                                             null: false
+  create_table "news", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+    t.uuid     "user_id",                                                 null: false
+    t.string   "title",       limit: 255, default: "",                    null: false
+    t.string   "vice_title",  limit: 255
+    t.string   "key_words",   limit: 255
+    t.datetime "occurred_at",             default: '1970-01-01 00:00:00', null: false
+    t.integer  "classify"
+    t.text     "content"
+    t.string   "state",       limit: 1,   default: "C",                   null: false
+    t.datetime "opened_at",               default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",               default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                 default: false,                 null: false
+    t.jsonb    "notation",                default: {},                    null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
     t.index ["user_id"], name: "index_news_on_user_id", using: :btree
   end
 

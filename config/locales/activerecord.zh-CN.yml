@@ -1,9 +1,11 @@
 zh-CN:
   created_at: 创建时间
+  operate:    操作
+  list:       列表
 
   activerecord:
     models:
-      new: 团队
+      new: 新闻
 
     attributes:
       new:

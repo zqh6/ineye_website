@@ -63,3 +63,5 @@ gem 'progne_tapera'
 
 gem 'i18n'
 gem 'rails-i18n'
+
+gem 'will_paginate'

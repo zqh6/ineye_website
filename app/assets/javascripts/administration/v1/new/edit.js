@@ -7,8 +7,8 @@ $(function(){
 
 function submitData(){
 	$.ajax({
-		url: "/administration-api/v1/new",
-		type: "post",
+		url: "/administration-api/v1/new/"+$('.js-id').val(),
+		type: "put",
 		data: {
 			"title": $('#title').val(),
 			"vice_title": $('#vice_title').val(),
@@ -19,18 +19,17 @@ function submitData(){
 		},
 		dataType: "json"
 	})
-		.done(function( data ) {
-			if(data['success']){
-				window.location.href='/administration/v1/new';
-			}else{
-				alert(data['message']);
-			}
-		})
-		.fail(function( xhr, status, errorThrown ) {
-			alert('异常');
-			return false;
-		})
-		.always(function( xhr, status ) {
-		});
+	.done(function( data ) {
+		if(data['success']){
+			window.location.href='/administration/v1/new/'+$('.js-id').val();
+		}else{
+			alert(data['message']);
+		}
+	})
+	.fail(function( xhr, status, errorThrown ) {
+		alert('异常');
+		return false;
+	})
+	.always(function( xhr, status ) {
+	});
 }
-

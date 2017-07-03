@@ -4,12 +4,12 @@ class CreateNews < ActiveRecord::Migration[5.0]
 
       t.references :user,  type: :uuid, null: false
 
-      t.string   :title,      null: false, default: '',  limit: 255
-      t.string   :vice_title, null: true,  default: nil, limit: 255
-      t.string   :content,    null: true,  default: nil, limit: 255
-      t.string   :key_words,  null: true,  default: nil, limit: 255
-      t.datetime :occured_at, null: false, default: ::Time.utc(1970)
+      t.string   :title,       null: false, default: '',  limit: 255
+      t.string   :vice_title,  null: true,  default: nil, limit: 255
+      t.string   :key_words,   null: true,  default: nil, limit: 255
+      t.datetime :occurred_at, null: false, default: ::Time.utc(1970)
       t.integer  :classify
+      t.text     :content
 
       t.column   :state, 'char(1)', null: false, default: 'C'
       t.datetime :opened_at,        null: false, default: ::Time.utc(1970)
