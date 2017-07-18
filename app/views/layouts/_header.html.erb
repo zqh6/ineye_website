@@ -16,7 +16,8 @@
   <div class="topShadow">
     <div class="flow whiteBg titNav">
       <div class="fl flow">
-        <%= image_tag("logo.png") %>
+        <%= link_to image_tag("logo.jpg") home_path(:index) %>
+        <!--<%= image_tag("logo.png") %>-->
       </div>
       <ul class="flParent fl flow nav topNav">
         <li><%= link_to :就诊,:medicals %></li>
