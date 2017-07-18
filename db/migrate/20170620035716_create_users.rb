@@ -1,6 +1,7 @@
 class CreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users, id: :uuid do |t|
+      t.references  :role, referrences: :dictionary, type: :uuid, null: true
 
       t.string   :name,         null: true,  default: nil, limit: 255
       t.string   :nick_name,    null: true,  default: nil, limit: 255

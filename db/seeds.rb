@@ -8,6 +8,20 @@
 
 include RandomUtil
 
+def init_dictionary
+  file = File.new(Rails.root.join('lib', 'dictionaries.txt').to_s)
+  arrayD = []
+  file.each_line do |line|
+    next if line.lstrip.starts_with? '#'
+    array = line.split(',')
+    dictionary = Dictionary.new id: array[0], type: array[1], code: array[2], name: array[3], value: array[4]
+    arrayD.push dictionary
+  end
+  dictionaries = Dictionary.create arrayD
+end
+
+init_dictionary
+
 def create_user(phone_number: nil, password: nil)
   ActiveRecord::Base.transaction do
     user = User.phone_number_is(phone_number)

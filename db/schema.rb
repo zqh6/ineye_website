@@ -10,12 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170628033717) do
+ActiveRecord::Schema.define(version: 20170718064237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
   enable_extension "pgcrypto"
+
+  create_table "dictionaries", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+    t.string   "dictionary_type", limit: 50, default: "", null: false
+    t.string   "name",            limit: 50, default: "", null: false
+    t.string   "code",            limit: 50, default: "", null: false
+    t.integer  "value",                      default: 0,  null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
+  end
 
   create_table "news", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.uuid     "user_id",                                                 null: false
@@ -50,6 +59,7 @@ ActiveRecord::Schema.define(version: 20170628033717) do
   end
 
   create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
+    t.uuid     "role_id"
     t.string   "name",         limit: 255
     t.string   "nick_name",    limit: 255
     t.string   "phone_number", limit: 255, default: "",                    null: false
@@ -63,6 +73,7 @@ ActiveRecord::Schema.define(version: 20170628033717) do
     t.datetime "updated_at",                                               null: false
     t.index ["name"], name: "index_users_on_name", using: :btree
     t.index ["phone_number"], name: "index_users_on_phone_number", using: :btree
+    t.index ["role_id"], name: "index_users_on_role_id", using: :btree
   end
 
 end
