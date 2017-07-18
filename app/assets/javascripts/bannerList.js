@@ -11,7 +11,7 @@ function bannerListFn(a,b,c,d,e,f){
     var timeShow=0;
     var array=0;
     var timeOff=0;
-    var num = 4;
+    var num = 5;
 
     var imgPos=$bannerMaxWapDom.find("ul").find("li");
 
