@@ -1,6 +1,8 @@
-//= require kindeditor
-//= require_self
-
+/*
+ *= require kindeditor
+ *= require administration/v1/shared/share.js
+ *= require_self
+ */
 $(function(){
 	$('.js-create-new').on('click', submitData);
 })

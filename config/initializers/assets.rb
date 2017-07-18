@@ -23,9 +23,11 @@ Rails.application.config.assets.precompile += %w(
     shared/bootstrap-wgsiwyg.js
     shared/echarts.min.js
     shared/dataTables.responsive.min.js
-    new/new.js
+    new/show.js
+    administration/v1/shared/share.js
+    administration/v1/sessions/show.js
     administration/v1/sessions/new.js
-    administration/v1/dashboards/new.js
+    administration/v1/dashboards/show.js
     administration/v1/new/new.js
     administration/v1/new/index.js
     administration/v1/new/show.js
@@ -35,9 +37,10 @@ Rails.application.config.assets.precompile += %w(
     shared/amazeui.datatables.min.css
     shared/amazeui_template1.css.erb
     shared/editor/google-code-prettify/prettify.css
-    new/new.css.erb
-    administration/v1/sessions/new.css.erb
-    administration/v1/dashboards/new.css
+    new/show.css.erb
+    administration/v1/sessions/show.css
+    administration/v1/sessions/new.css
+    administration/v1/dashboards/show.css
     administration/v1/new/new.css
     administration/v1/new/index.css
     administration/v1/new/show.css

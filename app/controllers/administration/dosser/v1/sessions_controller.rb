@@ -11,6 +11,8 @@ class Administration::Dosser::V1::SessionsController < Administration::Dosser::V
   end
 
   def destroy
+    session[:user] = nil
+    render_ok and return
   end
 
 end

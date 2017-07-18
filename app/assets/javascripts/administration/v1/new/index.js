@@ -1,5 +1,7 @@
-//= require_self
-
+/*
+ *= require administration/v1/shared/share.js
+ *= require_self
+ */
 
 $(function(){
 	$('.js-delete-one-new').on('click',function(){

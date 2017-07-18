@@ -133,12 +133,25 @@
 
 				<!-- 退出 -->
 				<li class="am-text-sm">
-					<a href="javascript:;">
+					<%= link_to 'javascript: void(0);', class: 'js-alert-logout-confirm' do %>
 						<span class="am-icon-sign-out"></span> 退出
-					</a>
+					<% end %>
 				</li>
 			</ul>
 		</div>
 	</div>
 
 </header>
+
+<div class="am-modal am-modal-confirm" tabindex="-1" id="logout-confirm">
+	<div class="am-modal-dialog">
+		<div class="am-modal-hd">提示</div>
+		<div class="am-modal-bd">
+			您确定要退出吗？
+		</div>
+		<div class="am-modal-footer">
+			<span class="am-modal-btn" data-am-modal-cancel>取消</span>
+			<span class="am-modal-btn js-logout-confirm" data-am-modal-confirm data-user-id="<%= session[:user]['id'] %>">确定</span>
+		</div>
+	</div>
+</div>

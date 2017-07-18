@@ -1,6 +1,8 @@
 /*
+ *= require administration/v1/shared/share
  *= require_self
  */
+
  $(function(){
  	$('.js-submit').on('click', function(){
 		$.ajax(

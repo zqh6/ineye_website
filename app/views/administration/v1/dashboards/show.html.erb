@@ -11,6 +11,9 @@
 	<%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'dashboard'}} %>
 
 	<!-- 内容区域 -->
+	<div class="tpl-content-wrapper">
+
+	</div>
 </div>
 
 <% content_for :title do %>
@@ -20,12 +23,12 @@
 <% content_for :meta do %>
 <% end %>
 
-<% content_for :body_attr do %>data-type="index"<% end %>
+<% content_for :body_attr do %>data-type="widgets"<% end %>
 
 <% content_for :style do %>
-		<%= stylesheet_link_tag 'administration/v1/dashboards/new' %>
+		<%= stylesheet_link_tag 'administration/v1/dashboards/show' %>
 <% end %>
 
 <% content_for :script do %>
-		<%= javascript_include_tag 'administration/v1/dashboards/new' %>
+		<%= javascript_include_tag 'administration/v1/dashboards/show' %>
 <% end %>
