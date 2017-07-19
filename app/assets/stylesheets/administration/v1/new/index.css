@@ -1,3 +1,8 @@
+/*
+ *= require administration/v1/shared/share.css
+ *= require_self
+ */
+
 .delete-button{
     color: red;
     border: solid 1px red;
