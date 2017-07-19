@@ -8,7 +8,14 @@
 
     new_classify:
       common: 普通新闻
+      medicine: 医药新闻
+      activity: 活动新闻
 
     state:
       active: 生效
       inactive: 不生效
+
+    role:
+      sys_admin:   系统管理员
+      user_admin:  用户管理员
+      common_user: 普通用户

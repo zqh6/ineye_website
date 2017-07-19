@@ -6,6 +6,7 @@ zh-CN:
   activerecord:
     models:
       new: 新闻
+      user: 用户
 
     attributes:
       new:
@@ -19,3 +20,10 @@ zh-CN:
         occurred_at: 发生时间
         created_at:  发布时间
 
+      user:
+        name:         姓名
+        phone_number: 手机号码
+        role:         角色
+        role_code:    角色
+        create_user:  创建者
+        created_at:   创建时间

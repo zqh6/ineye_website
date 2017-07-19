@@ -20,7 +20,7 @@
     // attach default options to instance
     this.defaultOptions = flipTimer.defaults;
 
-    // merge default options with user options and attach to instance
+    // merge default options with users options and attach to instance
     this.options = $.extend({}, this.defaultOptions, this.userOptions);
 
     // detects if the seconds digits should be used

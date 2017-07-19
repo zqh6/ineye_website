@@ -68,7 +68,7 @@
 
 								<div class="am-form-group">
 									<label class="am-u-sm-3 am-form-label">
-										<%= New.human_attribute_name :user_id %> <span class="tpl-form-line-small-title"><%= :user.to_s.titleize %></span>：
+										<%= New.human_attribute_name :user_id %> <span class="tpl-form-line-small-title"><%= :users.to_s.titleize %></span>：
 									</label>
 									<label class="am-u-sm-9 field-value"><%= @new.user.try(:name).blank? ? '（暂无名称）' : @new.user.name %></label>
 								</div>

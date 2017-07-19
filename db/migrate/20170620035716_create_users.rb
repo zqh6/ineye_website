@@ -1,13 +1,12 @@
 class CreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users, id: :uuid do |t|
-      t.references  :role, referrences: :dictionary, type: :uuid, null: true
 
-      t.string   :name,         null: true,  default: nil, limit: 255
-      t.string   :nick_name,    null: true,  default: nil, limit: 255
-      t.string   :phone_number, null: false, default: '', limit: 255
+      t.references :user, :create_user, type: :uuid, null: true
 
-      t.column  :role_code,     'char(1)', null: false, default: 'C'
+      t.string   :role_code,    null: true,  default: '', limit: 20
+      t.string   :name,         null: true,  default: nil, limit: 50
+      t.string   :phone_number, null: false, default: '', limit: 50
 
       t.column   :state, 'char(1)', null: false, default: 'C'
       t.datetime :opened_at,        null: false, default: ::Time.utc(1970)

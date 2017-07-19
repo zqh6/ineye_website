@@ -2,7 +2,7 @@ class CreateNews < ActiveRecord::Migration[5.0]
   def change
     create_table :news, id: :uuid do |t|
 
-      t.references :user,  type: :uuid, null: false
+      t.references :user, type: :uuid, null: false
 
       t.string   :title,       null: false, default: '',  limit: 255
       t.string   :vice_title,  null: true,  default: nil, limit: 255

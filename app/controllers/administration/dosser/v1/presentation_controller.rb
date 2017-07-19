@@ -9,8 +9,7 @@ class Administration::Dosser::V1::PresentationController < ActionController::Bas
   before_action :validate_login
 
   def validate_login
-    Rails.logger.warn session[:user].inspect
-    @user = User.included_by(session[:user]['id']).first if session[:user].present?
+    @login_user = User.included_by(session[:user]['id']).first if session[:user].present?
   end
 
 end

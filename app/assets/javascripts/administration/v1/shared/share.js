@@ -13,7 +13,7 @@ $(function () {
 	}
 
 	function logout(){
-		var userId = $('.js-logout-confirm').attr('data-user-id');
+		var userId = $('.js-logout-confirm').attr('data-users-id');
 		$.ajax(
 			{
 				url: "/administration-api/v1/sessions/"+userId,

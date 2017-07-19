@@ -13,5 +13,9 @@ module IneyeWebsite
     # -- all .rb files in that directory are automatically loaded.
     config.i18n.available_locales = [ :en, :'zh-CN' ]
     config.i18n.default_locale    = :'zh-CN'
+
+    config.default_value = {
+        password: '123123'
+    }
   end
 end

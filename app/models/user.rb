@@ -3,8 +3,14 @@ class User < ApplicationRecord
   include Unidom::Common::Concerns::ModelExtension
 
   has_many :passwords
-  belongs_to :role, class_name: 'Dictionary'
+  belongs_to :create_user, class_name: 'User', foreign_key: 'create_user_id'
 
-  scope :phone_number_is, ->(phone_number) { where "#{table_name}.phone_number = :phone_number ", phone_number: phone_number }
+  validates :name,         presence:   true
+  validates :phone_number, presence:   true, uniqueness: true
+  validates :role_code,    presence:   true
 
+  scope :not_role_code,     ->(role_code)    { where "#{table_name}.role_code != :role_code", role_code: role_code }
+  scope :phone_number_is,   ->(phone_number) { where "#{table_name}.phone_number = :phone_number ", phone_number: phone_number }
+  scope :phone_number_like, ->(phone_number) { where "#{table_name}.phone_number LIKE :phone_number", phone_number: "%#{phone_number}%" }
+  scope :name_like,         ->(name)         { where "#{table_name}.name LIKE :name", name: "%#{name}%" }
 end

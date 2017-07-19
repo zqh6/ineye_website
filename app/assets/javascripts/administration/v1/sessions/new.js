@@ -21,15 +21,13 @@
 					$('.js-error-vector').html("&nbsp;");
 					window.location.href = "/administration/v1/dashboards/~";
 				}else{
-					console.log(data);
-					$('.js-error-vector').html(data['message']);
+					$('.js-error-vector').html(JSON.parse(xhr.responseText)['message']);
 					return false;
 				}
 				return true;
 			})
 			.fail(function( xhr, status, errorThrown ) {
-				console.log(data);
-				$('.js-error-vector').html(data['message']);
+				$('.js-error-vector').html(JSON.parse(xhr.responseText)['message']);
 				return false;
 			})
 			.always(function( xhr, status ) {

@@ -18,12 +18,19 @@ ActiveRecord::Schema.define(version: 20170718064237) do
   enable_extension "pgcrypto"
 
   create_table "dictionaries", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.string   "dictionary_type", limit: 50, default: "", null: false
-    t.string   "name",            limit: 50, default: "", null: false
-    t.string   "code",            limit: 50, default: "", null: false
-    t.integer  "value",                      default: 0,  null: false
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.string   "dictionary_type", limit: 50, default: "",                    null: false
+    t.string   "name",            limit: 50, default: "",                    null: false
+    t.string   "code",            limit: 50, default: "",                    null: false
+    t.integer  "value",                      default: 0,                     null: false
+    t.string   "state",           limit: 1,  default: "C",                   null: false
+    t.datetime "opened_at",                  default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",                  default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                    default: false,                 null: false
+    t.jsonb    "notation",                   default: {},                    null: false
+    t.datetime "created_at",                                                 null: false
+    t.datetime "updated_at",                                                 null: false
+    t.index ["code"], name: "index_dictionaries_on_code", using: :btree
+    t.index ["dictionary_type"], name: "index_dictionaries_on_dictionary_type", using: :btree
   end
 
   create_table "news", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
@@ -59,21 +66,22 @@ ActiveRecord::Schema.define(version: 20170718064237) do
   end
 
   create_table "users", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
-    t.uuid     "role_id"
-    t.string   "name",         limit: 255
-    t.string   "nick_name",    limit: 255
-    t.string   "phone_number", limit: 255, default: "",                    null: false
-    t.string   "role_code",    limit: 1,   default: "C",                   null: false
-    t.string   "state",        limit: 1,   default: "C",                   null: false
-    t.datetime "opened_at",                default: '1970-01-01 00:00:00', null: false
-    t.datetime "closed_at",                default: '3000-01-01 00:00:00', null: false
-    t.boolean  "defunct",                  default: false,                 null: false
-    t.jsonb    "notation",                 default: {},                    null: false
-    t.datetime "created_at",                                               null: false
-    t.datetime "updated_at",                                               null: false
+    t.uuid     "user_id"
+    t.uuid     "create_user_id"
+    t.string   "role_code",      limit: 20, default: ""
+    t.string   "name",           limit: 50
+    t.string   "phone_number",   limit: 50, default: "",                    null: false
+    t.string   "state",          limit: 1,  default: "C",                   null: false
+    t.datetime "opened_at",                 default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",                 default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                   default: false,                 null: false
+    t.jsonb    "notation",                  default: {},                    null: false
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
+    t.index ["create_user_id"], name: "index_users_on_create_user_id", using: :btree
     t.index ["name"], name: "index_users_on_name", using: :btree
     t.index ["phone_number"], name: "index_users_on_phone_number", using: :btree
-    t.index ["role_id"], name: "index_users_on_role_id", using: :btree
+    t.index ["user_id"], name: "index_users_on_user_id", using: :btree
   end
 
 end

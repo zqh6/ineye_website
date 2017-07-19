@@ -3,10 +3,11 @@ class Administration::Dosser::V1::NewController < Administration::Dosser::V1::Pr
   def create
     ActiveRecord::Base.transaction do
       new = New.new new_attributes
-      new.user = @user
+      new.user = @login_user
       if new.save!
         render_ok and return
       else
+        Rails.logger.warn new.errors.inspect
         render_bad_request and return
       end
     end
