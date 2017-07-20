@@ -18,10 +18,11 @@ Rails.application.routes.draw do
 
   namespace :administration do
     namespace :v1 do
-      resources :sessions,   only: [:new]
-      resources :dashboards, only: [:show]
-      resources :new
-      resources :users
+      resources :sessions,   only: [:new                                ]
+      resources :dashboards, only: [                     :show          ]
+      resources :new,        only: [:new, :edit, :index, :show          ]
+      resources :users,      only: [:new, :edit, :index, :show          ]
+      resources :passwords,  only: [      :edit,                :update ]
     end
   end
 

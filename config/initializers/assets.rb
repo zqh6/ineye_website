@@ -34,6 +34,8 @@ Rails.application.config.assets.precompile += %w(
     administration/v1/new/edit.js
     administration/v1/users/new.js
     administration/v1/users/index.js
+    administration/v1/passwords/edit.js
+    administration/v1/passwords/success.js
 
     shared/amazeui.min.css
     shared/amazeui.datatables.min.css
@@ -49,6 +51,7 @@ Rails.application.config.assets.precompile += %w(
     administration/v1/new/edit.css
     administration/v1/users/new.css
     administration/v1/users/index.css
+    administration/v1/passwords/edit.css
 
     shared/browser_tab_title.ico
     shared/logo.png

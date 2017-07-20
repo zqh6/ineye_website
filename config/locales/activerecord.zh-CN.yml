@@ -7,6 +7,7 @@ zh-CN:
     models:
       new: 新闻
       user: 用户
+      password: 密码
 
     attributes:
       new:
@@ -27,3 +28,8 @@ zh-CN:
         role_code:    角色
         create_user:  创建者
         created_at:   创建时间
+
+      password:
+        old_password:  旧密码
+        new_password:  新密码
+        new_password2: 新密码
