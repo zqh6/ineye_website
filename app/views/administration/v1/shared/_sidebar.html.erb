@@ -49,7 +49,7 @@
 			</a>
 			<ul class="sidebar-nav sidebar-nav-sub" <% if ['user_new', 'user_index', 'password_update'].include? options[:list_item] %>style="display: block;"<% end %>>
 				<li class="sidebar-nav-link">
-					<%= link_to new_administration_v1_user_path, class: options[:list_item]=='' ? 'active' : '' do %>
+					<%= link_to new_administration_v1_user_path, class: options[:list_item]=='user_new' ? 'active' : '' do %>
 							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增
 					<% end %>
 				</li>
@@ -60,11 +60,14 @@
 					<% end %>
 				</li>
 
-				<li class="sidebar-nav-link">
-					<%= link_to edit_administration_v1_password_path(session[:user]['id']), class: options[:list_item]=='password_update' ? 'active' : '' do %>
-							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 修改密码
-					<% end %>
-				</li>
+				<% unless RoleEnums.lookup(session[:user]['role_code']).name=='sys_admin' %>
+					<li class="sidebar-nav-link">
+						<%= link_to edit_administration_v1_password_path(session[:user]['id']), class: options[:list_item]=='password_update' ? 'active' : '' do %>
+								<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 修改密码
+						<% end %>
+					</li>
+				<% end %>
+
 			</ul>
 		</li>
 

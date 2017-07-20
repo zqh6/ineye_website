@@ -7,6 +7,8 @@ class Administration::V1::PasswordsController < Administration::V1::PrivilegedCo
 
   def update
     user = User.included_by(session[:user]['id']).first
+    redirect_to edit_administration_v1_password_path('~') and flash[:error]='系统管理员不能修改密码' and return if RoleEnums.lookup(user.role_code).name=='sys_admin'
+    redirect_to edit_administration_v1_password_path('~') and flash[:error]='新密码格式不正确' and return if params[:new_password].include?(' ') || params[:new_password2].include?(' ')
     redirect_to edit_administration_v1_password_path('~') and flash[:error]='新密码格式不正确' and return if params[:new_password].include?(' ') || params[:new_password2].include?(' ')
     redirect_to edit_administration_v1_password_path('~') and flash[:error]='新密码不能为空' and return if params[:new_password].blank? || params[:new_password2].blank?
     redirect_to edit_administration_v1_password_path('~') and flash[:error]='两次新密码不一样' and return if params[:new_password] != params[:new_password2]
