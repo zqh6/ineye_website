@@ -11,9 +11,15 @@ div.dIntroduction p{
 }
 .hrefTo{
   background: url("news_jszb_5.png") no-repeat;
-  padding:0 10px 30px;
+  padding:0 10px 50px;
   background-position: 0 bottom;
 }
+.hrefTo p{
+  margin-bottom: 0;
+}
 .hrefTo a{
-  text-indent: 2rem;
+  margin-left: 2rem;
+}
+.liveDetail{
+  width: 670px;
 }
