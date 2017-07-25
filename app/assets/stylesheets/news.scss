@@ -11,5 +11,9 @@ div.dIntroduction p{
 }
 .hrefTo{
   background: url("news_jszb_5.png");
-  padding:0 10px 50px;
+  padding:0 10px 30px;
+  background-position: 0 bottom;
+}
+.hrefTo a{
+  text-indent: 2rem;
 }
