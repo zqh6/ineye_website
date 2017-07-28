@@ -431,8 +431,11 @@ a.ctrl-slide{
 }
 .eyeHealth>li>div{
     width: 530px;
-    height: 330px;
+    //height: 330px;
     position: relative;
+}
+.eyeHealth .newsContainer{
+    width: 100%;
 }
 .eyeHealth>li>div.fl{
     width: 584px;
