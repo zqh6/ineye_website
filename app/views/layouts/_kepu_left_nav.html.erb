@@ -33,9 +33,12 @@
     function pathStr() {
         var pathStr =  window.location.pathname;
         console.log(pathStr);
-        $(".cataractList li").each(function () {
-            console.log($(this));
-            console.log(this);
+        $(".cataractList li").each(function (i) {
+            if($(this).find("a").attr("href")==pathStr){
+                $(this).addClass("active").siblings().removeClass("active")
+                console.log(i);
+            }
+
         })
 
 
