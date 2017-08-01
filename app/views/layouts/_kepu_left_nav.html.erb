@@ -27,3 +27,20 @@
     </li>
 </ul>
 <!--左边链接公共-->
+
+<script>
+
+    function pathStr() {
+        var pathStr =  window.location.pathname;
+        console.log(pathStr);
+        $(".cataractList li").each(function () {
+            console.log($(this));
+            console.log(this);
+        })
+
+
+    }
+
+    pathStr();
+
+</script>
