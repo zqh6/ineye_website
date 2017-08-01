@@ -29,14 +29,11 @@
 <!--左边链接公共-->
 
 <script>
-
     function pathStr() {
         var pathStr =  window.location.pathname;
-        console.log(pathStr);
-        $(".cataractList li").each(function (i) {
+        $(".cataractList li").each(function () {
             if($(this).find("a").attr("href")==pathStr){
                 $(this).addClass("active").siblings().removeClass("active")
-                console.log(i);
             }
 
         })
@@ -45,5 +42,4 @@
     }
 
     pathStr();
-
 </script>
