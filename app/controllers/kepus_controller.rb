@@ -1,5 +1,5 @@
 class KepusController < ApplicationController
   def show
-    render layout: "content",:action => params[:id]
+    render layout: "kepu",:action => params[:id]
   end
 end
