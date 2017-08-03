@@ -4,8 +4,8 @@
     <title>中医大银海眼科医院官网</title>
     <%= csrf_meta_tags %>
     <meta name="format-detection" content="telephone=no" />
-    <!--<link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />-->
-    <!--<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon"/>-->
+    <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon"/>
     <script>
         var sUserAgent = navigator.userAgent.toLowerCase();
         var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
@@ -26,16 +26,9 @@
 //              link.type = "text/css";
 //              link.rel = "stylesheet";
 //              link.href = "/assets/stylesheets/mobile_test.css";
-
-              var link = document.createElement("link");
-              link.type = "image/x-icon";
-              link.rel = "icon";
-              link.href = "/assets/favicon.ico";
-
             var links ="<%= stylesheet_link_tag   'mobile_test', media: 'all', 'data-turbolinks-track': 'reload' %>";
 
             document.getElementsByTagName("head")[0].appendChild(links);
-            document.getElementsByTagName("head")[0].appendChild(link);
         }
 
     </script>

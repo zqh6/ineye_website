@@ -1,7 +1,8 @@
-.centerNav li{
-    width: 1.56rem;
-    height: 0.7rem;
-    font-size: 0.24rem;
-    margin: 0 0.08rem;
+@media screen and (max-width: 768px) {
+    .centerNav li{
+        width: 1.56rem;
+        height: 0.7rem;
+        font-size: 0.24rem;
+        margin: 0 0.08rem;
+    }
 }
-
