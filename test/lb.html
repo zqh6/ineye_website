@@ -1,10 +1,485 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-3672694-9']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?fa98b91e638fc607d0335693fb173e7f";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script type="text/javascript" src="http://cbjs.baidu.com/js/s.js"></script>
+    <style type="text/css">
+        body{position:relative;margin:0;padding:55px 0 0 0;}
+        #demo_menu{position:absolute;top:0;left:0;width:100%;height:50px;line-height:50px;background:url(/statics/images/my/menu_bg.png) repeat-x;z-index:800;font-size:14px;text-align:center;color:#999;line-height:180%;border-bottom:1px solid #8A961C;}
+        #demo_menu .top_menu{width:1080px;margin:0 auto;color:#000;font-size:12px;overflow:hidden;z-index:1000;}
+        #demo_menu .top_menu strong{width:195px;display:block;height:50px;float:left;background:url(/statics/images/my/logo.png) no-repeat 0 8px;}
+        #demo_menu .top_left{float:left;width:550px;height:50px;line-height:50px;z-index:9999;overflow:hidden;}
+        #demo_menu .top_left ul{width:550px;float:right;overflow:hidden;list-style: none;margin:0;padding:0;}
+        #demo_menu .top_left li{float:left;margin:0 15px 0 0;padding:0;text-align:center;}
+        #demo_menu .top_left li a,#demo_menu .top_left li a:visited{font-size:14px;font-weight:bold;color:#333;text-decoration:none;width:60px;display:block;height:50px;line-height:50px;}
+        #demo_menu .top_left li a:hover,#demo_menu .top_left li a:hover span{cursor:pointer;color:#fff;text-decoration:none;}
+        #demo_menu .top_left a,#demo_menu .top_left a:visited{font-size:12px;white-space:nowrap;color:#fff;font-family:"宋体", "Times New Roman", Times, serif;line-height:140%;}
+        #demo_menu .top_left a:hover{color:#000;font-family:"宋体", "Times New Roman", Times, serif;}
+        #demo_menu .top_right{float:right;width:320px;padding:8px 0 0 0;z-index:1000;}
+        #bdshare{margin:-5px 0 0 0;}
+
+        .cont {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slider {
+            position: relative;
+            height: 100%;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: transform;
+            cursor: all-scroll;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .slider.animation {
+            -webkit-transition: -webkit-transform 750ms ease-in-out;
+            transition: -webkit-transform 750ms ease-in-out;
+            transition: transform 750ms ease-in-out;
+            transition: transform 750ms ease-in-out, -webkit-transform 750ms ease-in-out;
+        }
+        .slider.animation .slide__darkbg {
+            -webkit-transition: -webkit-transform 750ms ease-in-out;
+            transition: -webkit-transform 750ms ease-in-out;
+            transition: transform 750ms ease-in-out;
+            transition: transform 750ms ease-in-out, -webkit-transform 750ms ease-in-out;
+        }
+        .slider.animation .slide__text {
+            -webkit-transition: -webkit-transform 750ms ease-in-out;
+            transition: -webkit-transform 750ms ease-in-out;
+            transition: transform 750ms ease-in-out;
+            transition: transform 750ms ease-in-out, -webkit-transform 750ms ease-in-out;
+        }
+        .slider.animation .slide__letter {
+            -webkit-transition: -webkit-transform 750ms ease-in-out;
+            transition: -webkit-transform 750ms ease-in-out;
+            transition: transform 750ms ease-in-out;
+            transition: transform 750ms ease-in-out, -webkit-transform 750ms ease-in-out;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .slide--1 {
+            left: 0%;
+        }
+        .slide--2 {
+            left: 100%;
+        }
+        .slide--3 {
+            left: 200%;
+        }
+        .slide--4 {
+            left: 300%;
+        }
+        .slide--5 {
+            left: 400%;
+        }
+        .slide__darkbg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: transform;
+            z-index: 10;
+        }
+        .slide__text-wrapper {
+            position: absolute;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            z-index: 15;
+        }
+        .slide__letter {
+            position: absolute;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            -webkit-text-fill-color: transparent !important;
+            -webkit-background-clip: text !important;
+            font-size: 50vw;
+            font-weight: 800;
+            color: #000;
+            z-index: 2;
+            will-change: transform;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .slide__text {
+            font-size: 8vw;
+            font-weight: 800;
+            text-transform: uppercase;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            letter-spacing: 12px;
+            color: #fff;
+            will-change: transform;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+        .slide__text:nth-child(odd) {
+            z-index: 2;
+        }
+        .slide__text:nth-child(even) {
+            z-index: 1;
+        }
+        .slide--1__darkbg {
+            left: 0%;
+            background: url("../images/city--1-min-min.jpg") center center no-repeat;
+            background-size: cover;
+            background-position: 0px center, 0px center;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: transform;
+        }
+        .slide--1__darkbg:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 15, 39, 0.83);
+        }
+        .slide--1__letter {
+            background: url("../images/city--1-min-min.jpg") center center no-repeat;
+            background-position: 0px center, 0px center;
+            background-size: cover;
+        }
+        .slide--2__darkbg {
+            left: -50%;
+            background: url("../images/city--2-min-min.jpg") center center no-repeat;
+            background-size: cover;
+            background-position: 0px center, 0px center;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: transform;
+        }
+        .slide--2__darkbg:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 15, 39, 0.83);
+        }
+        .slide--2__letter {
+            background: url("../images/city--2-min-min.jpg") center center no-repeat;
+            background-position: 0px center, 0px center;
+            background-size: cover;
+        }
+        .slide--3__darkbg {
+            left: -100%;
+            background: url("http://www.5icool.org/demo/2017/a01330/images/city--3-min-min.jpg") center center no-repeat;
+            background-size: cover;
+            background-position: 0px center, 0px center;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: transform;
+        }
+        .slide--3__darkbg:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 15, 39, 0.83);
+        }
+        .slide--3__letter {
+            background: url("http://www.5icool.org/demo/2017/a01330/images/city--1-min-min.jpg") center center no-repeat;
+            background-position: 0px center, 0px center;
+            background-size: cover;
+        }
+        .slide--4__darkbg {
+            left: -150%;
+            background: url("http://www.5icool.org/demo/2017/a01330/images/city--2-min-min.jpg") center center no-repeat;
+            background-size: cover;
+            background-position: 0px center, 0px center;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: transform;
+        }
+        .slide--4__darkbg:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 15, 39, 0.83);
+        }
+        .slide--4__letter {
+            background: url("http://www.5icool.org/demo/2017/a01330/images/city--4-min-min.jpg") center center no-repeat;
+            background-position: 0px center, 0px center;
+            background-size: cover;
+        }
+        .slide--5__darkbg {
+            left: -200%;
+            background: url("http://www.5icool.org/demo/2017/a01330/images/city--5-min-min.jpg") center center no-repeat;
+            background-size: cover;
+            background-position: 0px center, 0px center;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            will-change: transform;
+        }
+        .slide--5__darkbg:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 15, 39, 0.83);
+        }
+        .slide--5__letter {
+            background: url("../images/city--5-min-min.jpg") center center no-repeat;
+            background-position: 0px center, 0px center;
+            background-size: cover;
+        }
+
+        .nav {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            list-style-type: none;
+            z-index: 10;
+        }
+        .nav__slide {
+            position: relative;
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        @media screen and (max-width: 400px) {
+            .nav__slide {
+                width: 22px;
+                height: 22px;
+            }
+        }
+        .nav__slide:hover:after {
+            -webkit-transform: translate(-50%, -50%) scale(1, 1);
+            transform: translate(-50%, -50%) scale(1, 1);
+            opacity: 1;
+        }
+        .nav__slide:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%) scale(0, 0);
+            transform: translate(-50%, -50%) scale(0, 0);
+            width: 75%;
+            height: 75%;
+            border-radius: 50%;
+            background-color: #fff;
+            opacity: 0;
+            -webkit-transition: 300ms;
+            transition: 300ms;
+        }
+        .nav__slide--1 {
+            margin-left: 0;
+        }
+
+        .nav-active:after {
+            -webkit-transform: translate(-50%, -50%) scale(1, 1);
+            transform: translate(-50%, -50%) scale(1, 1);
+            opacity: 1;
+        }
+
+        .side-nav {
+            position: absolute;
+            width: 10%;
+            height: 100%;
+            top: 0;
+            z-index: 20;
+            cursor: pointer;
+            opacity: 0;
+            -webkit-transition: 300ms;
+            transition: 300ms;
+        }
+        .side-nav:hover {
+            opacity: .1;
+        }
+        .side-nav--right {
+            right: 0;
+            background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #eed7ff 100%);
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #eed7ff 100%);
+        }
+        .side-nav--left {
+            left: 0;
+            background-image: -webkit-linear-gradient(right, rgba(255, 255, 255, 0) 0%, #eed7ff 100%);
+            background-image: linear-gradient(to left, rgba(255, 255, 255, 0) 0%, #eed7ff 100%);
+        }
+
+        html {
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #000;
+            overflow: hidden;
+        }
+        body, html { font-size: 100%; 	padding: 0; margin: 0;}
+
+        /* Reset */
+        *,
+        *:after,
+        *:before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        /* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+        .clearfix:before,
+        .clearfix:after {
+            content: " ";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        body{
+            background: #494A5F;
+            color: #D5D6E2;
+            font-weight: 500;
+            font-size: 1.05em;
+            font-family: "Microsoft YaHei","Segoe UI", "Lucida Grande", Helvetica, Arial,sans-serif;
+        }
+        a{ color: rgba(255, 255, 255, 0.6);outline: none;text-decoration: none;-webkit-transition: 0.2s;transition: 0.2s;}
+        a:hover,a:focus{color:#74777b;text-decoration: none;}
+        .htmleaf-container{
+            margin: 0 auto;
+        }
+        /* é…???????????????? è??è??è????¨???????¤? http://www.5icool.org */
+    </style><title>带视差滑动效果的jQuery图片轮播代码_酷站代码 www.5icool.org</title>
+
+    <!--<link rel="stylesheet" type="text/css" href="css/5icool.css">-->
+    <!--<link rel="stylesheet" href="css/style.css">-->
+
 </head>
 <body>
-$END$
+
+<div class="cont">
+    <div class="slider"></div>
+    <div class="nav"></div>
+<div data-target='right' class="side-nav side-nav--right"></div>
+<div data-target='left' class="side-nav side-nav--left"></div>
+</div>
+
+<script src="./3种复古翻牌时钟效果/js/jquery-1.11.3.min.js" charset="utf-8" type="text/javascript"></script>
+<script src="main.js" charset="utf-8"></script>
+
+<div align="center" style="clear:both;font-size:12px;color:#666;" id="foot_bm"><a href="http://www.5icool.org/a/201703/1330.html" target="_blank"><strong>带视差滑动效果的jQuery图片轮播代码</strong>   [源码下载][使用帮助]</a></div><div id="demo_menu">
+    <div class="top_menu">
+        <div class="top_right">
+            <!-- Baidu Button BEGIN -->
+            <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+                <a class="bds_qzone"></a>
+                <a class="bds_tsina"></a>
+                <a class="bds_tqq"></a>
+                <a class="bds_renren"></a>
+                <a class="bds_t163"></a>
+                <span class="bds_more"></span>
+                <a class="shareCount"></a>
+            </div>
+            <!-- Baidu Button END -->
+        </div>
+        <strong></strong>
+
+    </div>
+</div>
+
+
+<p align="center" style="font-size:12px;">代码整理：<a href="http://www.5icool.org/" target="_blank">酷站代码</a>，转载请注明出处。　本代码仅限于学习交流，请勿用于商业用途! </p>
+
+<!-- 广告位：底部728_90图片 -->
+<div align="center" style="margin:20px auto 0 auto;width:728px;z-index:9999;clear:both;"><script type="text/javascript">BAIDU_CLB_singleFillSlot("10305");</script></div>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=13844" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    var bds_config = {
+        'bdTop':'3',
+        'review':'off',
+        'searchPic':'1',
+        'wbuid':'1752410062',
+        'snsKey':{'tsina':'3445908626'}
+    }
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+<!-- Baidu Button END -->
 </body>
 </html>
