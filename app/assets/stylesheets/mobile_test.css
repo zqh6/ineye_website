@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     .centerNav li{
         width: 1.56rem;
         height: 0.7rem;
