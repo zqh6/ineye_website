@@ -22,10 +22,12 @@
               var deviceWidth = document.documentElement.clientWidth;
               if(deviceWidth > 720) deviceWidth = 720;
               document.documentElement.style.fontSize = deviceWidth / 7.2 + 'px';
-              var link = document.createElement("link");
-              link.type = "text/css";
-              link.rel = "stylesheet";
-              link.href = "/assets/stylesheets/mobile_test.css";
+//              var link = document.createElement("link");
+//              link.type = "text/css";
+//              link.rel = "stylesheet";
+//              link.href = "/assets/stylesheets/mobile_test.css";
+              var link ="<%= stylesheet_link_tag    'mobile_test', media: 'all', 'data-turbolinks-track': 'reload' %>";
+
               document.getElementsByTagName("head")[0].appendChild(link);
           }
 
