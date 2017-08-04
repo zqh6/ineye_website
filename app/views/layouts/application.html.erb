@@ -25,6 +25,7 @@
                 console.log(">720");
                 deviceWidth = 720;
             }
+            console.log(deviceWidth);
             document.documentElement.style.fontSize = deviceWidth / 7.2 + 'px';
             var link = document.createElement("link");
             link.rel="stylesheet";
@@ -39,11 +40,7 @@
 </head>
 
 <body>
-<div class="main">
-    <%= render "layouts/header" %>
-    <%= yield %>
-    <%= render "layouts/footer" %>
-</div>
+
 </body>
 
 
