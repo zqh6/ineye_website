@@ -8,34 +8,6 @@
     <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon"/>
 
-    <script>
-        var sUserAgent = navigator.userAgent.toLowerCase();
-        var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-        var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-        var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-        var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-        var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-        var bIsAndroid = sUserAgent.match(/android/i) == "android";
-        var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-        var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-        document.writeln("您的浏览设备为：");
-        if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
-            document.writeln("phone");
-            var deviceWidth = document.documentElement.clientWidth;
-            if(deviceWidth > 720) {
-                console.log(">720");
-                deviceWidth = 720;
-            }
-            console.log(deviceWidth);
-            document.documentElement.style.fontSize = deviceWidth / 7.2 + 'px';
-            var link = document.createElement("link");
-            link.rel="stylesheet";
-            link.href="assets/stylesheets/mobile_test.css";
-            document.getElementsByTagName("head")[0].appendChild(link);
-        }
-
-    </script>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>

@@ -11,16 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
 
- *= require abouts
- *= require centers
- *= require commom
- *= require experts
- *= require homes
- *= require index
- *= require kepus
- *= require medicals
- *= require news
- *= require sciences
- *= require mobile_test
+
+ *= require_tree
  *= require_self
  */
