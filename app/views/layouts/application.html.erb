@@ -30,7 +30,7 @@
             document.documentElement.style.fontSize = deviceWidth / 7.2 + 'px';
             var link = document.createElement("link");
             link.rel="stylesheet";
-            link.href="../../assets/stylesheets/mobile_test.css";
+            link.href="assets/stylesheets/mobile_test.css";
             document.getElementsByTagName("head")[0].appendChild(link);
         }
 
@@ -41,7 +41,11 @@
 </head>
 
 <body>
-
+<div class="main">
+    <%= render "layouts/header" %>
+    <%= yield %>
+    <%= render "layouts/footer" %>
+</div>
 </body>
 
 
