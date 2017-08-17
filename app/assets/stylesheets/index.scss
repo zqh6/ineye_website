@@ -1849,7 +1849,22 @@ p>b{
     padding-right: 20px;
 }
 .centerOneSituation p{
+    font-size: 14px;
+    position:relative;
+    line-height:1.4em;
+    /* 3 times the line-height to show 3 lines */
+    height:8em;
+    overflow:hidden;
+}
 
+.centerOneSituation p:after {
+    content:"...";
+    font-weight:bold;
+    position:absolute;
+    bottom:0;
+    right:0;
+    padding:0 20px 1px 45px;
+    background:#fff;
 }
 .icon_equipment{
     background-position: 0 -114px;
