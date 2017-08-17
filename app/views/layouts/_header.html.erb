@@ -170,6 +170,7 @@
             oImg.css('left',0);//用CSS进行图片位置变换，达到无缝拼接效果
             i = 1;
         }
+        console.log(i);
         oImg.stop().animate({left:-i*w},500);//动画效果
         barAniMate();//进度条函数动画效果
         clearInterval(oTime);
