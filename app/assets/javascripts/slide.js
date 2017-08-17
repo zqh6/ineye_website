@@ -11,7 +11,7 @@ var bar = $(".banner-box .bar");
 var w =$(".banner-box").width()
 var oImg = $(".banner-box .img");//获取图片盒子
 var s = $(".banner-box li").length;
-var num =3;
+var num =4;
 if($(".banner-box .img li").size() <= num){
     var oImgfirst= $('.banner-box .img li:first').clone();//复制第一张图片
     oImg.append(oImgfirst);//将复制的第一张图片放到最后
@@ -20,7 +20,7 @@ if($(".banner-box .img li").size() <= num){
     }
 }
 
-var imgNum = 4;//获取图片数量
+var imgNum = 5;//获取图片数量
 
 //根据图片个数添加圆点按钮
 //给第一个按钮添加选中样式
