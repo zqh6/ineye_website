@@ -1933,7 +1933,7 @@ p>b{
     color: #999;
 }
 .links{
-    width: 350px;
+    width: 340px;
 }
 .links p{
     width: 150px;
@@ -1945,10 +1945,12 @@ p>b{
 }
 
 .footContent li:nth-child(3){
-    padding: 0 0 0 70px;
+    padding: 0 0 0 30px;
 }
-.footContent li:nth-child(3) li{
+.footContent li:nth-child(4) li{
     padding: 0 20px;
+    color: #fff;
+    text-align: center;
 }
 .diseaseList li p{
     line-height: 1;
