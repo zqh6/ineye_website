@@ -1,46 +1,3 @@
-<div class="middle">
-  <!--走进银海-->
-  <ul class="aboutHos flParent flow column">
-    <li>
-      <div>
-        <%= link_to image_tag("hospital-environment"),home_path(:医院介绍) %>
-        <div class="introduced">
-          <%= link_to :'医院介绍',home_path(:医院介绍) %>
-        </div>
-      </div>
-    </li>
-    <li class="fr">
-      <div>
-        <%= link_to image_tag("Dean.png"),home_path(:院长寄语) %>
-        <div class="introduced">
-          <%= link_to :'院长寄语',home_path(:院长寄语) %>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div>
-        <%= link_to image_tag("hospital-institutions.png"),home_path(:医院机构) %>
-        <div class="introduced">
-          <%= link_to :'医院机构',home_path(:医院机构) %>
-        </div>
-      </div>
-    </li>
-    <li class="fr">
-      <div>
-        <%= link_to image_tag("Technology.jpg"),home_path(:技术设备) %>
-        <div class="introduced">
-          <%= link_to :'技术设备',home_path(:技术设备) %>
-        </div>
-      </div>
-    </li>
-  </ul>
-  <!--走进银海-->
-  <!-- 眼健康科普 -->
-</div>
-
-
-
-
 <!--病种-->
 <div class="diseaseList flow main plate">
   <div class="fl diseaseImg">
@@ -828,12 +785,31 @@
     }
   })
 
-  bannerListFn(
-    $(".banner"),
-    $(".img-btn-list"),
-    $(".left-btn"),
-    $(".right-btn"),
-    2000,
-    true
-    );
+
   </script>
+<script>
+    $(".slide").ckSlide({
+        autoPlay:true,
+        add:true,
+        seamless:true,
+        dir:"x",
+    });
+    for(var i =0;i<10;i++){
+        $(".doctorList li").eq(i).show();
+    }
+    var doctorDate={
+        index:1,
+        listNum:Math.ceil($(".doctorList li").length/10)
+    }
+    $(".doctorList li").hide().eq(doctorDate.index*10).prevAll().show();
+    $(".changeExperts").click(function(){
+        if(doctorDate.index == doctorDate.listNum){
+            doctorDate.index = 0;
+            $(".doctorList li").show().eq((doctorDate.index+1)*10-1).nextAll().hide();
+        }else {
+            $(".doctorList li").show().eq(doctorDate.index*10).prevAll().hide();
+            $(".doctorList li").eq((doctorDate.index+1)*10-1).nextAll().hide();
+        }
+        doctorDate.index++;
+    })
+</script>
