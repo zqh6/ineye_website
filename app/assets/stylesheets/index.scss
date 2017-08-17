@@ -1933,10 +1933,10 @@ p>b{
     color: #999;
 }
 .links{
-    width: 340px;
+    width: 330px;
 }
 .links p{
-    width: 150px;
+    width: 140px;
     float: left;
     margin-right: 20px;
 }
@@ -1945,7 +1945,10 @@ p>b{
 }
 
 .footContent li:nth-child(3){
-    padding: 0 0 0 30px;
+    padding: 0 0 0 10px;
+}
+.footContent li:nth-child(4){
+    padding-left: 20px;
 }
 .footContent li:nth-child(4) li{
     padding: 0 20px;
