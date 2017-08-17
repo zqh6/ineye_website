@@ -726,8 +726,8 @@
     <li>资质荣誉</li>
     <li>交流剪影</li>
   </ul>
-  <div>
-    <!--资质荣誉-->
+  <!--资质荣誉-->
+  <div class="honorContainer honorplate">
     <ul class="flParent flow honorImgs">
       <li><%= image_tag("honor_1.jpg") %></li>
       <li><%= image_tag("honor_2.jpg") %></li>
@@ -735,9 +735,85 @@
       <li><%= image_tag("honor_4.jpg") %></li>
       <li><%= image_tag("honor_5.jpg") %></li>
     </ul>
-    <!--资质荣誉-->
   </div>
+  <!--资质荣誉-->
 
+  <div class="honorplate">
+    <ul class="flParent flow honorImgs commitAllImgs">
+      <li>
+        <%= image_tag("jljy_1.jpg") %>
+        <div class="photoMask">
+          <span>2017.7.16-开业庆典外宾参观医院</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_2.jpg") %>
+        <div class="photoMask">
+          <span>2017.6.6与地铁运营有限公司签订“地铁司机眼健康服务”-协议</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_3.jpg") %>
+        <div class="photoMask">
+          <span>2017.7.5-中医药管理局局长来我院视察工作</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_4.jpg") %>
+        <div class="photoMask">
+          <span>2017.6.6与太极集团签订“太极员工眼健康服务”协议</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_5.jpg") %>
+        <div class="photoMask">
+          <span>2017.6.8举行国内眼科医院首台引进的阿玛仕1050RS准分子激光设备开机仪式</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_6.jpg") %>
+        <div class="photoMask">
+          <span>2017.6.6与金牛区教育局签订“青少年近视防控能力提升计划”协议</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_7.jpg") %>
+        <div class="photoMask">
+          <span></span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_8.jpg") %>
+        <div class="photoMask">
+          <span></span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_9.jpg") %>
+        <div class="photoMask">
+          <span></span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_10.jpg") %>
+        <div class="photoMask">
+          <span></span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_11.jpg") %>
+        <div class="photoMask">
+          <span></span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_15.jpg") %>
+        <div class="photoMask">
+          <span></span>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 <!--资质荣誉-->
 <!--医院环境-->
@@ -745,14 +821,58 @@
   <p class="syTitle">
     <i class="icon_tb icon_environment"></i> <em class="syTitleName">医院环境</em>
   </p>
-  <div>
-
-  </div>
+  <ul class="flParent flow honorImgs hosEnvironment">
+    <li>
+      <%= image_tag("yyhj_1.jpg") %>
+      <div class="photoMask">
+        <span>病房</span>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("yyhj_2.jpg") %>
+      <div class="photoMask">
+        <span>VIP病房</span>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("yyhj_3.jpg") %>
+      <div class="photoMask">
+        <span>服务中心</span>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("yyhj_4.jpg") %>
+      <div class="photoMask">
+        <span>国医大师工作室</span>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("yyhj_5.jpg") %>
+      <div class="photoMask">
+        <span>门诊一楼大厅</span>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("yyhj_6.jpg") %>
+      <div class="photoMask">
+        <span>药房</span>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("yyhj_7.jpg") %>
+      <div class="photoMask">
+        <span>医院外观</span>
+      </div>
+    </li>
+  </ul>
 </div>
 <!--医院环境-->
 
 
 <script>
+    $(".honorTitle li").hover(function(){
+        $(this).parents(".plate").find(".honorplate").hide().eq($(this).index()).show();
+    })
 
   $(".proContainer .proImg").hover(function () {
     var i = $(this).index();
@@ -792,7 +912,7 @@
         seamless:true,
         dir:"x",
     });
-    
+
     var doctorDate={
         index:1,
         listNum:Math.ceil($(".doctorList li").length/10)

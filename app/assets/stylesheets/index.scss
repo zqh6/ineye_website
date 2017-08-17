@@ -2168,4 +2168,87 @@ p>b{
         opacity:0
     }}
 /*css3动画结束*/
+.plate .honorplate{
+    display: none;
+}
+.plate div.honorContainer{
+    display: block;
+    padding: 28px 0;
+}
+.commitAllImgs img{
+    height: 181px;
+}
+.commitAllImgs{
+    padding: 6px 7px;
+}
+.hosEnvironment li{
+    text-align: center;
+    line-height: 224px;
+}
+.commitAllImgs li,.hosEnvironment li{
+    position: relative;
+}
+.photoMask{
+    opacity:0;
+    filter:alpha(opacity=0);
+    position:absolute;
+    bottom:0;
+    display:table;
+    width:100%;
+    height:100%;
+    background-color:#000000;
+    background-color:rgba(0,0,0,0.4);
+    color:#FFFFFF;
+    display:table-cell;
+    vertical-align:middle;
+    overflow:hidden;
+}
+.photoMask:before,.photoMask:after{
+    position:absolute;
+    top:30px;
+    right:30px;
+    bottom:30px;
+    left:30px;
+    content:'';
+    opacity:0;
+    pointer-events:none;
+    -webkit-transition:opacity 0.85s,
+    -webkit-transform 0.85s;
+    transition:opacity 0.85s,
+    transform 0.85s;
+}
+.photoMask:before{
+    border-top:1px solid #fff;
+    border-bottom:1px solid #fff;
+    -webkit-transform:scale(0,1);
+    transform:scale(0,1);
+    border-color:rgba(255,255,255,0.4);
+}
+.photoMask span{
+    display:inline-block;
+    font-size:14px;
+    margin: 20% 16%;
+    height:100%;
+}
+.hosEnvironment li span{
+    margin: 0 16px;
+}
+.photoMask:after{
+    border-right:1px solid #fff;
+    border-left:1px solid #fff;
+    -webkit-transform:scale(1,0);
+    transform:scale(1,0);
+    border-color:rgba(255,255,255,0.4);}
+.commitAllImgs li:hover .photoMask:before,.commitAllImgs li:hover .photoMask:after,
+.hosEnvironment li:hover .photoMask:before,.hosEnvironment li:hover .photoMask:after{
+    opacity:1;
+    -webkit-transform:scale(1);
+    transform:scale(1);
+}
+.commitAllImgs li:hover .photoMask{
+    opacity:1;
+}
+.hosEnvironment li:hover .photoMask{
+    opacity:1;
+}
 //改版新增
