@@ -1848,6 +1848,12 @@ p>b{
     width: 225px;
     padding-right: 20px;
 }
+.centerOneSituation p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 100%;   
+}
 .icon_equipment{
     background-position: 0 -114px;
 }
