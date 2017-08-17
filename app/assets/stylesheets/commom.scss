@@ -20,83 +20,11 @@ body{background: #f5f5f5}
 }
 input:focus{outline:none}
 .clear{clear: both}
-.top{
-    position: fixed;
-    height: 93px;
-    width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    z-index: 100;
-    overflow: hidden;
-    border-bottom: 1px solid #ccc;
-}
-.topShadow{
-    height: 90px;
-    background: #f4f4f4;
-    box-shadow: 0 1px 5px 0 #ccc;
-}
-.topHeight{
-    height: 90px;
-}
+
 .whiteBg{
     background: #fff;
 }
-.titNav{
-    height: 90px;
-    line-height: 85px;
-    padding: 5px 10px 0;
-}
-.titNav .nav{
-    padding-left: 16px;
-}
-.titNav .nav a{
-    padding: 0 16px;
-    display: inline-block;
-    height: 100%;
-}
-.header{
-    height: 40px;
-    line-height: 40px;
-}
-.header2{
-    width:455px
-}
-.rightHeader{
-    line-height: 34px;
-    float: right;
-}
-.headerMsg{
-    /*padding-right: 10px;*/
-    color: #666666;
-}
-.headerMsg li{
-    margin-left: 25px;
-}
-.language{
-    width: 100px;
-    height: 26px;
-    line-height: 26px;
-    border: 1px solid #00b7d6;
-    margin-top: 6px;
-}
-.language span{
-    text-align: center;
-    width: 50%;
-    height: 100%;
-    display: block;
-    float: left;
-    background: #fff;
-}
-.language .active{
-    background: #00b7d6;
-}
-.language .active a{
-    color: #fff;
-}
-.tele{
-    font-size: 18px;
-    color: #00b7d6;
-}
+
 .flParent li{
     float: left;
 }
