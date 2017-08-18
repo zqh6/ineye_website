@@ -1578,7 +1578,7 @@ p>b{
     line-height: 25px;
     margin-bottom: 8px;
 }
-.topList a{
+.topList.newsIndexList a{
     width: 75%;
     white-space: nowrap;
     overflow: hidden;
@@ -1711,6 +1711,7 @@ p>b{
     -moz-transition: all  .5s; /* Firefox 4 */
     -webkit-transition: all  .5s; /* Safari and Chrome */
     -o-transition: all  .5s; /* Opera */
+    cursor: pointer;
 }
 .IntroduceMask:hover{
     /*bottom: 0;*/

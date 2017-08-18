@@ -67,6 +67,7 @@
 
     function pos() {
         var str = window.location.pathname == "/" ? "/homes" : window.location.pathname;
+        str = "/"+str.split("/")[1];
         $(".topNav a").each(function () {
             if($(this).attr("href") == str){
                 $(this).parent().addClass("active");
