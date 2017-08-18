@@ -1801,9 +1801,9 @@ p>b{
     padding: 11px 30px;
     line-height: 45px;
 }
-.illnessCheck checkbox{
-    display: inline-block;
+.illnessCheck input[type=checkbox]{
     vertical-align: sub;
+    margin-right: 3px;
 }
 .illnessCheck span{
     width: 12%;
