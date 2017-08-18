@@ -313,7 +313,6 @@
     min-height: 500px;
     border: 1px solid #a7680b;
     background: #fefbee;
-    display: none;
     margin-bottom: 30px;
 }
 .medicineLeft{
@@ -345,6 +344,7 @@
 .ChineseMed{
     padding: 25px 30px;
     box-sizing: border-box;
+    min-height: 600px;
 }
 .ChineseMed:before,.ChineseMed:after{
     position: absolute;
