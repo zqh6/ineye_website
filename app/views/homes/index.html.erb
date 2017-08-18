@@ -139,7 +139,7 @@
   <!--新闻中心-->
   <div class="leftNew fl">
     <div class="topNews flow">
-      <p class="newTitle">新闻热点 <a href="">新闻视频</a> <a href="">媒体报道</a></p>
+      <p class="newTitle">新闻热点 <%= link_to :"视频新闻",news_path(:index) %> <%= link_to :"媒体报道",news_path(:index) %></p>
       <!--新闻轮播-->
 
       <div class="flow slide fl newsSlide">
@@ -167,6 +167,7 @@
         </div>
       </div>
       <!--新闻轮播-->
+      <marquee direction=up behavior=scroll loop=3 scrollamount=1 scrolldelay=10  height=100% width=100% hspace=20 vspace=10 onmouseover=this.stop() onmouseout=this.start()>
       <ul class="fr topList">
         <li><a href="">【招商公告】 成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告 </a></li>
         <li><a href="">成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计</a></li>
@@ -177,6 +178,7 @@
         <li><a href="">网友点赞！我院朱思泉副院长、周跃华主任手术直播圆满成功，双双获得肯定！</a></li>
         <li><a href="">网友点赞！我院朱思泉副院长、周跃华主任手术直播圆满成功，双双获得肯定！</a></li>
       </ul>
+      </marquee>
     </div>
   </div>
   <!--新闻中心-->
@@ -195,7 +197,7 @@
 <!--专家列表-->
 <div class="plate">
   <p class="syTitle">
-    <i class="icon_tb icon_my"></i> <em class="syTitleName">名医专家</em> <a href="">专家排班</a> <a href="">更多专家</a>
+    <i class="icon_tb icon_my"></i> <em class="syTitleName">名医专家</em> <%= link_to :"专家排班", medical_path(:index) %> <%= link_to :"更多专家", expert_path(:index) %>
     <span class="fr"><a href="javascript:;" class="changeExperts"><i class="little icon_lettle"></i> 换一组看看</a></span>
   </p>
 
