@@ -1438,7 +1438,7 @@ p>b{
 .search input{
     width: 236px;
     height: 38px;
-    border: 1px solid #abcd03;
+    border: 1px solid #72af2d;
     font-family: "Microsoft YaHei","Arial Narrow";
 }
 .searchBtn{
@@ -1446,7 +1446,7 @@ p>b{
     height: 40px;
     line-height: 40px;
     text-align: center;
-    background: #abcd03;
+    background: #72af2d;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -1488,7 +1488,7 @@ p>b{
 .diseaseList>div{
     width: 120px;
     height: 202px;
-    background: #abcd03;
+    background: #72af2d;
     color: #fff;
     text-align: center;
 }
@@ -1555,7 +1555,7 @@ p>b{
     display:block;
 }
 .newsSlide .slidebox ul li.current em{
-    background: #abcd03;
+    background: #72af2d;
 }
 /*轮播css*/
 /*新闻轮播css*/
@@ -1574,6 +1574,7 @@ p>b{
 }
 .topList{
     width: 540px;
+    padding-top: 10px;
 }
 .topList li{
     line-height: 25px;
@@ -1584,6 +1585,7 @@ p>b{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: inline-block;
 }
 .newTitle{
     font-size: 18px;
@@ -1737,7 +1739,7 @@ p>b{
     background: #008cd3;
 }
 .doctorBtn a:last-child{
-    background: #abcd03;
+    background: #72af2d;
 }
 .consults{
     width: 135px;
@@ -1888,7 +1890,7 @@ p>b{
     height: 45px;
     line-height: 45px;
     width: 50%;
-    background: #abcd03;
+    background: #72af2d;
 }
 .honorTitle li:last-child{
     background: #008cd3;
@@ -2059,7 +2061,7 @@ p>b{
     position:absolute;
     width:100%;
     height:100%;
-    background-color:#abcd03;
+    background-color:#72af2d;
     background-color:#fff \9;
     opacity:0;
     left: 0;
@@ -2074,7 +2076,7 @@ p>b{
     opacity:1;
     -webkit-animation:orangeIn 0.2s ease;
     animation:orangeIn 0.2s ease;
-    background-color:#abcd03 \9;
+    background-color:#72af2d \9;
 }
 
 @-webkit-keyframes orangeIn {
