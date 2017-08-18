@@ -145,15 +145,21 @@
       <div class="flow slide fl newsSlide">
         <ul class="slide-wrapper fl">
           <li>
-            <%= image_tag("news_ylsh_new.jpg") %>
+            <%= link_to image_tag("news_kyhd_1.jpg"),news_path(:成都中医大银海眼科医院隆重举行开业庆典仪式) %>
             <div class="inner">
               <p>大医精诚 银海启明--成都中医大银海眼科医院隆重举行开业庆典仪式</p>
             </div>
           </li>
           <li>
-            <%= image_tag("news_ylsh_new.jpg") %>
+            <%= link_to image_tag("news_ylsh_1.jpg"),news_path(:中国医疗保健国际交流促进会眼科分会首届学术年会等眼科四会在成都隆重召开) %>
             <div class="inner">
               <p>中国医疗保健国际交流促进会眼科分会首届学术年会等眼科四会在成都隆重召开</p>
+            </div>
+          </li>
+          <li>
+            <%= link_to image_tag("news_banner_lpz.jpg"),news_path(:第三届国医大师工作室廖品正大师工作室在蓉成立) %>
+            <div class="inner">
+              <p>第三届国医大师工作室廖品正大师工作室在蓉成立</p>
             </div>
           </li>
         </ul>
@@ -162,18 +168,19 @@
             <ul class="dot-wrap">
               <li class="current"><em>1</em></li>
               <li><em>2</em></li>
+              <li><em>3</em></li>
             </ul>
           </div>
         </div>
       </div>
       <!--新闻轮播-->
       <ul class="fr topList newsIndexList">
-        <li><a href="">【招商公告】 成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告 </a></li>
-        <li><a href="">成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计</a></li>
-        <li><a href="">【银海名医--潘学会】战火硝烟中手术的眼科专家</a></li>
-        <li><a href="">四川省及国家组织的白内障复明手术专家医疗队</a></li>
-        <li><a href="">网友点赞！我院朱思泉副院长、周跃华主任手术直播圆满成功，双双获得肯定！</a></li>
-        <li><a href="">网友点赞！我院朱思泉副院长、周跃华主任手术直播圆满成功，双双获得肯定！</a></li>
+        <li><%= link_to :'段俊国院长入选2016成都人才计划“国家级创业领军人才”',news_path(:段俊国院长入选2016国家级创业领军人才) %></li>
+        <li><%= link_to :'我国现代眼科学奠基人陈耀真教授诞辰 118 周年纪念学术研讨会在蓉召开',news_path(:我国现代眼科学奠基人陈耀真教授诞辰) %><a href="">成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计</a></li>
+        <li><%= link_to :'网友点赞！我院朱思泉副院长、周跃华主任手术直播圆满成功，双双获得肯定！',news_path(:周跃华主任手术直播圆满成功) %><a href="">【银海名医--潘学会】战火硝烟中手术的眼科专家</a></li>
+        <li><%= link_to :'金牛区区委书记刘玉泉书记一行来我院视察调研',news_path(:金牛区区委书记刘玉泉书记一行来我院视察调研) %>a href="">四川省及国家组织的白内障复明手术专家医疗队</a></li>
+        <li><%= link_to :'【华佗工程】中国首个眼科分级诊疗联盟在四川成立',news_path(:中国首个眼科分级诊疗联盟在四川成立) %></li>
+        <li><%= link_to :'中国医疗保健国际交流促进会眼科分会首届学术年会等眼科四会在成都隆重召开',news_path(:中国医疗保健国际交流促进会眼科分会首届学术年会等眼科四会在成都隆重召开) %></li>
       </ul>
     </div>
   </div>
@@ -181,11 +188,7 @@
   <div class="newsVideo fr">
     <p class="newTitle">通知公告 </p>
     <ul class="topList noticeList">
-      <li><a href="">【招商公告】 成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告 </a></li>
-      <li><a href="">成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计</a></li>
-      <li><a href="">【银海名医--潘学会】战火硝烟中手术的眼科专家</a></li>
-      <li><a href="">四川省及国家组织的白内障复明手术专家医疗队</a></li>
-      <li><a href="">网友点赞！我院朱思泉副院长、周跃华主任手术直播圆满成功，双双获得肯定！</a></li>
+      <li><%= link_to :"",news_path(:成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告) %></li>
     </ul>
   </div>
 </div>
