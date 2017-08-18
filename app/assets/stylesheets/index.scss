@@ -1408,7 +1408,7 @@ p>b{
 }
 .commits a{
     margin: 0 16px;
-    color: #0d97ff;
+    color: #008cd3;
 }
 .commits a:nth-child(4){
     margin-right: 0;
@@ -1438,7 +1438,7 @@ p>b{
 .search input{
     width: 236px;
     height: 38px;
-    border: 1px solid #10c55b;
+    border: 1px solid #abcd03;
     font-family: "Microsoft YaHei","Arial Narrow";
 }
 .searchBtn{
@@ -1446,18 +1446,18 @@ p>b{
     height: 40px;
     line-height: 40px;
     text-align: center;
-    background: #10c55b;
+    background: #abcd03;
     position: absolute;
     bottom: 0;
     right: 0;
     color: #fff;
 }
 .topNavContainer{
-    background: #0d97ff;
+    background: #008cd3;
 }
 .topNav{
     height: 50px;
-    background: #0d97ff;
+    background: #008cd3;
 }
 .topNav li.active{
     background: #055499;
@@ -1488,7 +1488,7 @@ p>b{
 .diseaseList>div{
     width: 120px;
     height: 202px;
-    background: #10c55b;
+    background: #abcd03;
     color: #fff;
     text-align: center;
 }
@@ -1555,7 +1555,7 @@ p>b{
     display:block;
 }
 .newsSlide .slidebox ul li.current em{
-    background: #10c55b;
+    background: #abcd03;
 }
 /*轮播css*/
 /*新闻轮播css*/
@@ -1616,10 +1616,10 @@ p>b{
     text-overflow:ellipsis;
 }
 .topList li a:hover{
-    color: #0d97ff;
+    color: #008cd3;
 }
 .topNews .newTitle a{
-    color: #0d97ff;
+    color: #008cd3;
     margin-left: 10px;
     font-size: 14px;
 }
@@ -1650,7 +1650,7 @@ p>b{
     color: #333;
 }
 .syTitle a{
-    color: #0d97ff;
+    color: #008cd3;
     margin-left: 20px;
 }
 .little{
@@ -1728,10 +1728,10 @@ p>b{
     display: inline-block;
 }
 .doctorBtn a:first-child{
-    background: #0d97ff;
+    background: #008cd3;
 }
 .doctorBtn a:last-child{
-    background: #10c55b;
+    background: #abcd03;
 }
 .consults{
     width: 135px;
@@ -1779,7 +1779,7 @@ p>b{
     line-height: 38px;
     text-align: center;
     display: inline-block;
-    background: #0d97ff;
+    background: #008cd3;
     color: #fff;
 }
 .illnessCheck{
@@ -1811,7 +1811,7 @@ p>b{
     line-height: 43px;
     font-size: 18px;
     display: inline-block;
-    border-bottom: 2px solid #0d97ff;
+    border-bottom: 2px solid #008cd3;
 }
 .sexCenters>li>p span{
     text-align: right;
@@ -1832,7 +1832,7 @@ p>b{
     line-height: 50px;
     text-align: center;
     height: 50px;
-    background: #0d97ff;
+    background: #008cd3;
     margin-right: 4px;
 }
 .sexCenters>li:nth-child(2n){
@@ -1849,11 +1849,7 @@ p>b{
     padding-right: 20px;
 }
 .centerOneSituation p{
-    font-size: 14px;
     position:relative;
-    line-height:1.4em;
-    /* 3 times the line-height to show 3 lines */
-    height:8em;
     overflow:hidden;
 }
 
@@ -1896,10 +1892,10 @@ p>b{
     height: 45px;
     line-height: 45px;
     width: 50%;
-    background: #10c55b;
+    background: #abcd03;
 }
 .honorTitle li:last-child{
-    background: #0d97ff;
+    background: #008cd3;
 }
 .honorImgs{
     padding: 6px;
@@ -1938,7 +1934,7 @@ p>b{
 }
 .toContact em{
     font-size: 24px;
-    color: #0d97ff;
+    color: #008cd3;
     font-style: italic;
     line-height: 1;
 }
@@ -2046,7 +2042,7 @@ p>b{
     font-size: 12px;
     position: absolute;
     bottom: 0;
-    background: #0d97ff;
+    background: #008cd3;
     color: #fff;
     width: 100%;
     padding-left: 10px;
@@ -2067,7 +2063,7 @@ p>b{
     position:absolute;
     width:100%;
     height:100%;
-    background-color:#10c55b;
+    background-color:#abcd03;
     background-color:#fff \9;
     opacity:0;
     left: 0;
@@ -2082,7 +2078,7 @@ p>b{
     opacity:1;
     -webkit-animation:orangeIn 0.2s ease;
     animation:orangeIn 0.2s ease;
-    background-color:#10c55b \9;
+    background-color:#abcd03 \9;
 }
 
 @-webkit-keyframes orangeIn {

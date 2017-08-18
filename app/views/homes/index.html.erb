@@ -861,16 +861,16 @@
         "眼影像分析与诊断中心2010年与美国维斯康新大学眼底读片中心合作，通过国家国际科技合作专项，引进ETDRS读片标准和标准操作规程，在国内率先实现糖尿病视网膜病变量化读片以及ETDRS分级，在国家重大仪器专项的支持下，已建立云计算眼科读片中心。眼影像分析与诊断中心重点开展临床读片、科研读片、慢病筛查、提供远程眼底病会诊等，运用图像分析技术、ETDRS读片技术、视网膜血氧分析技术等国际先进技术，建立符合中国人眼病特点的读片标准。"
     ];
     $(".centerOneSituation p").each(function (index) {
-        if(synopsisArr[index].length>190){
-            console.log(synopsisArr[index].substr(0,190)+"...");
-            $(this).html(synopsisArr[index].substr(0,190)+"...")
+        if(synopsisArr[index].length>180){
+            console.log(synopsisArr[index].substr(0,180)+"...");
+            $(this).html(synopsisArr[index].substr(0,180)+"...")
         }else {
             $(this).html(synopsisArr[index]);
         }
 
     })
 
-    
+
 
     $(".honorTitle li").hover(function(){
         $(this).parents(".plate").find(".honorplate").hide().eq($(this).index()).show();
