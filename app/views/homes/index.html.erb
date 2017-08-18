@@ -862,13 +862,15 @@
     ];
     $(".centerOneSituation p").each(function (index) {
         if(synopsisArr[index].length>190){
-            $(this).html(synopsisArr[$(this).index].substring(0,190)+"...")
+            console.log(synopsisArr[index].substr(0,190)+"...");
+            $(this).html(synopsisArr[index].substr(0,190)+"...")
         }else {
-            $(this).html(synopsisArr[$(this).index]);
+            $(this).html(synopsisArr[index]);
         }
 
     })
 
+    
 
     $(".honorTitle li").hover(function(){
         $(this).parents(".plate").find(".honorplate").hide().eq($(this).index()).show();
