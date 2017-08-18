@@ -348,8 +348,6 @@ proIntroduce{
 /*科学教研*/
 /*新闻中心*/
 .slide-left{
-    /*width:650px;*/
-    /*height: 364px;*/
     width: 720px;
     height: 418px;
     position: relative;
@@ -1512,13 +1510,13 @@ p>b{
 }
 /*新闻轮播css*/
 /*轮播css*/
-.slide {
+.newsSlide {
     overflow:hidden;
     position:relative;
     width:295px;
     height:225px;
 }
-.slide ul.slide-wrapper {
+.newsSlide ul.slide-wrapper {
     position:absolute;
     top:0;
     left:0;
@@ -1526,7 +1524,7 @@ p>b{
     width: 295px;
     height:225px;
 }
-.slide ul.slide-wrapper li {
+.newsSlide ul.slide-wrapper li {
     height: 100%;
     position:absolute
 }
