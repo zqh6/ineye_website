@@ -1399,15 +1399,18 @@ p>b{
 .telePhone span{
     margin-left: 10px;
     font-size: 18px;
-    color: #fac03d;
+    color: #ff9900;
 }
 .commits{
     width: 532px;
     font-size: 16px;
     margin-left: 42px;
 }
-.commits a:hover,.newTitle a:hover,.syTitle a:hover,.topList li a:hover{
+.commits a:hover,.newTitle a:hover,.syTitle a:hover{
     color: #72af2d;
+}
+.topList li a:hover{
+  color: #008cd3;
 }
 .commits a{
     margin: 0 16px;
@@ -1810,9 +1813,13 @@ p>b{
     background: #008cd3;
     color: #fff;
 }
+.askBtn a:hover{
+    background: #72af2d;
+}
 .illnessCheck{
     padding: 11px 30px;
     line-height: 45px;
+    color: #666;
 }
 .illnessCheck input[type=checkbox]{
     vertical-align: sub;
