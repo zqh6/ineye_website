@@ -1,53 +1,903 @@
-<div class="middle">
-  <!--走进银海-->
-  <ul class="aboutHos flParent flow column">
+<!--病种-->
+<div class="diseaseList flow  plate">
+  <div class="fl diseaseImg">
+    <i class="little icon_diseaseList"></i>
+    <p>就诊病种</p>
+  </div>
+  <ul class="flParent fr depRight">
     <li>
-      <div>
-        <%= link_to image_tag("hospital-environment"),home_path(:医院介绍) %>
-        <div class="introduced">
-          <%= link_to :'医院介绍',home_path(:医院介绍) %>
-        </div>
-      </div>
-    </li>
-    <li class="fr">
-      <div>
-        <%= link_to image_tag("Dean.png"),home_path(:院长寄语) %>
-        <div class="introduced">
-          <%= link_to :'院长寄语',home_path(:院长寄语) %>
-        </div>
-      </div>
+      <b></b>
+      <%= link_to center_path(:眼底病中心) do %>
+        <i class="icon_eye"></i>
+        <p>眼底病</p>
+      <% end %>
     </li>
     <li>
-      <div>
-        <%= link_to image_tag("hospital-institutions.png"),home_path(:医院机构) %>
-        <div class="introduced">
-          <%= link_to :'医院机构',home_path(:医院机构) %>
+      <b></b>
+      <%= link_to center_path(:糖尿病病变防治中心) do %>
+        <i class="icon_eye icon_eye2"></i>
+        <p>糖网病</p>
+      <% end %>
+    </li>
+    <li>
+      <b></b>
+      <%= link_to center_path(:干眼病) do %>
+        <i class="icon_eye icon_eye3"></i>
+        <p>干眼</p>
+      <% end %>
+    </li>
+    <li>
+      <b></b>
+      <a href="javascript:;">
+        <i class="icon_eye icon_eye4"></i>
+        <p>斜弱视</p>
+      </a>
+    </li>
+    <li>
+      <b></b>
+      <a href="javascript:;">
+        <i class="icon_eye icon_eye5"></i>
+        <p>屈光不正</p>
+      </a>
+    </li>
+    <li>
+      <b></b>
+      <%= link_to center_path(:白内障屈光治疗部介绍) do %>
+        <i class="icon_eye icon_eye6"></i>
+        <p>白内障</p>
+      <% end %>
+    </li>
+    <li>
+      <b></b>
+      <%= link_to center_path(:青光眼) do %>
+        <i class="icon_eye icon_eye7"></i>
+        <p>青光眼</p>
+      <% end %>
+    </li>
+    <li>
+      <b></b>
+      <%= link_to center_path(:角膜移植与眼表病) do %>
+        <i class="icon_eye icon_eye8"></i>
+        <p>角膜病</p>
+      <% end %>
+    </li>
+    <li>
+      <b></b>
+      <a href="javascript:;">
+        <i class="icon_eye icon_eye9"></i>
+        <p>葡萄膜病</p>
+      </a>
+    </li>
+    <li>
+      <b></b>
+      <a href="javascript:;">
+        <i class="icon_eye icon_eye10"></i>
+        <p>视疲劳</p>
+      </a>
+    </li>
+    <li>
+      <b></b>
+      <a href="javascript:;">
+        <i class="icon_eye icon_eye11"></i>
+        <p>泪器病</p>
+      </a>
+    </li>
+    <li>
+      <b></b>
+      <a href="javascript:;">
+        <i class="icon_eye icon_eye12"></i>
+        <p>眼眶疾病</p>
+      </a>
+    </li>
+    <li>
+      <b></b>
+      <a href="javascript:;">
+        <i class="icon_eye icon_eye13"></i>
+        <p>眼睑病</p>
+      </a>
+    </li>
+    <li>
+      <b></b>
+      <a href="javascript:;">
+        <i class="icon_eye icon_eye14"></i>
+        <p>结膜病</p>
+      </a>
+    </li>
+    <li>
+      <b></b>
+      <a href="javascript:;">
+        <i class="icon_eye icon_eye15"></i>
+        <p>巩膜病</p>
+      </a>
+    </li>
+    <li>
+      <b></b>
+      <a href="javascript:;">
+        <i class="icon_eye icon_eye16"></i>
+        <p>玻璃体疾病</p>
+      </a>
+    </li>
+    <li>
+      <b></b>
+      <a href="javascript:;">
+        <i class="icon_eye icon_eye17"></i>
+        <p>眼外伤</p>
+      </a>
+    </li>
+    <li>
+      <b></b>
+      <%= link_to :centers do %>
+        <i class="icon_eye icon_eye18"></i>
+        <p>其他</p>
+      <% end %>
+    </li>
+  </ul>
+</div>
+<!--病种-->
+<!--新闻列表-->
+<div class="plate flow">
+  <!--新闻中心-->
+  <div class="leftNew fl">
+    <div class="topNews flow">
+      <p class="newTitle">新闻热点 <%= link_to :"视频新闻",news_path(:index) %> <%= link_to :"媒体报道",news_path(:index) %></p>
+      <!--新闻轮播-->
+
+      <div class="flow slide fl newsSlide">
+        <ul class="slide-wrapper fl">
+          <li>
+            <%= link_to image_tag("xwrd_1.jpg"),news_path(:成都中医大银海眼科医院隆重举行开业庆典仪式) %>
+            <div class="inner">
+              <p>大医精诚 银海启明--成都中医大银海眼科医院隆重举行开业庆典仪式</p>
+            </div>
+          </li>
+          <li>
+            <%= link_to image_tag("xwrd_2.jpg"),news_path(:中国医疗保健国际交流促进会眼科分会首届学术年会等眼科四会在成都隆重召开) %>
+            <div class="inner">
+              <p>中国医疗保健国际交流促进会眼科分会首届学术年会等眼科四会在成都隆重召开</p>
+            </div>
+          </li>
+          <li>
+            <%= link_to image_tag("xwrd_3.jpg"),news_path(:第三届国医大师工作室廖品正大师工作室在蓉成立) %>
+            <div class="inner">
+              <p>第三届国医大师工作室廖品正大师工作室在蓉成立</p>
+            </div>
+          </li>
+        </ul>
+        <div class="slidebox">
+          <div class="slideWrap">
+            <ul class="dot-wrap">
+              <li class="current"><em>1</em></li>
+              <li><em>2</em></li>
+              <li><em>3</em></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--新闻轮播-->
+      <ul class="fr topList newsIndexList">
+        <li><%= link_to :'金牛区区委书记刘玉泉书记一行来我院视察调研',news_path(:金牛区区委书记刘玉泉书记一行来我院视察调研) %><span class="fr">2017-07-31</span></li>
+        <li><%= link_to :'我国现代眼科学奠基人陈耀真教授诞辰 118 周年纪念学术研讨会在蓉召开',news_path(:我国现代眼科学奠基人陈耀真教授诞辰) %><span class="fr">2017-07-21</span></li>
+        <li><%= link_to :'网友点赞！我院朱思泉副院长、周跃华主任手术直播圆满成功，双双获得肯定！',news_path(:周跃华主任手术直播圆满成功) %><span class="fr">2017-07-21</span></li>
+        <li><%= link_to :'段俊国院长入选2016成都人才计划“国家级创业领军人才”',news_path(:段俊国院长入选2016国家级创业领军人才) %><span class="fr">2017-07-19</span></li>
+        <li><%= link_to :'【华佗工程】中国首个眼科分级诊疗联盟在四川成立',news_path(:中国首个眼科分级诊疗联盟在四川成立) %><span class="fr">2017-07-18</span></li>
+        <li><%= link_to :'中国医疗保健国际交流促进会眼科分会首届学术年会等眼科四会在成都隆重召开',news_path(:中国医疗保健国际交流促进会眼科分会首届学术年会等眼科四会在成都隆重召开) %><span class="fr">2017-07-17</span></li>
+      </ul>
+    </div>
+  </div>
+  <!--新闻中心-->
+  <div class="newsVideo fr">
+    <p class="newTitle">通知公告 </p>
+    <ul class="topList noticeList">
+      <li><%= link_to :'【招标公告】 成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告',news_path(:成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告) %></li>
+    </ul>
+  </div>
+</div>
+<!--新闻列表-->
+<!--专家列表-->
+<div class="plate">
+  <p class="syTitle">
+    <i class="icon_tb icon_my"></i> <em class="syTitleName">名医专家</em> <%= link_to :"专家排班", medical_path(:index) %> <%= link_to :"更多专家", expert_path(:index) %>
+    <span class="fr"><a href="javascript:;" class="changeExperts"><i class="little icon_lettle"></i> 换一组看看</a></span>
+  </p>
+
+  <div class="flow">
+    <!--专家人员列表-->
+    <ul class="flParent flow doctorList fl">
+      <!--廖品正-->
+      <li>
+        <%= link_to image_tag("zj1.jpg"),expert_path(:廖品正教授) %>
+        <div class="IntroduceMask">
+          <h5>廖品正</h5>
+          <p>国医大师</p>
+          <p>教授/博士生导师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:廖品正教授) %>
+          </div>
+        </div>
+      </li>
+      <!--廖品正-->
+      <!--段俊国-->
+      <li>
+        <%= link_to image_tag("zj2.jpg"),expert_path(:段俊国教授) %>
+        <div class="IntroduceMask">
+          <h5>段俊国</h5>
+          <p>教授/博士生导师</p>
+          <p>主任医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:段俊国教授) %>
+          </div>
+        </div>
+      </li>
+      <!--段俊国-->
+      <!--邓亚萍-->
+      <li>
+        <a href="javascript:;">
+          <%= image_tag("zj3.jpg") %>
+        </a>
+        <div class="IntroduceMask">
+          <h5>邓亚萍</h5>
+          <p>教授</p>
+          <p>主任医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
+          </div>
+        </div>
+      </li>
+      <!--邓亚萍-->
+      <!--朱思泉-->
+      <li>
+        <%= link_to image_tag("zj4.jpg"),expert_path(:朱思泉教授) %>
+        <div class="IntroduceMask">
+          <h5>朱思泉</h5>
+          <p>教授/博士生导师</p>
+          <p>主任医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:朱思泉教授) %>
+          </div>
+        </div>
+      </li>
+      <!--朱思泉-->
+      <!--刘文-->
+      <li>
+        <%= link_to image_tag("zj5.jpg"),expert_path(:刘文教授) %>
+        <div class="IntroduceMask">
+          <h5>刘文</h5>
+          <p>教授 硕士研究生导师</p>
+          <p>主任医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:刘文教授) %>
+          </div>
+        </div>
+      </li>
+      <!--刘文-->
+      <!--周跃华-->
+      <li>
+        <%= link_to image_tag("zj6.jpg"),expert_path(:周跃华教授) %>
+        <div class="IntroduceMask">
+          <h5>周跃华</h5>
+          <p>教授 硕士生导师</p>
+          <p>主任医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:周跃华教授) %>
+          </div>
+        </div>
+      </li>
+      <!--周跃华-->
+      <!--周华祥-->
+      <li>
+        <%= link_to image_tag("zj7.jpg"),expert_path(:周华祥教授) %>
+        <div class="IntroduceMask">
+          <h5>周华祥</h5>
+          <p>教授/硕士生导师</p>
+          <p>主任医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:周华祥教授) %>
+          </div>
+        </div>
+      </li>
+      <!--周华祥-->
+
+      <!--袁晓辉-->
+      <li>
+        <%= link_to image_tag("zj8.jpg"),expert_path(:袁晓辉主任医师) %>
+        <div class="IntroduceMask">
+          <h5>袁晓辉</h5>
+          <p>教授</p>
+          <p>主任医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:袁晓辉主任医师) %>
+          </div>
+        </div>
+      </li>
+      <!--袁晓辉-->
+      <!--陆雪婧-->
+      <li>
+        <%= link_to image_tag("zj9.jpg"),expert_path(:路雪婧主任医师) %>
+        <div class="IntroduceMask">
+          <h5>路雪婧</h5>
+          <p>博士生导师</p>
+          <p>成都中医药大学研究员</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:路雪婧主任医师) %>
+          </div>
+        </div>
+      </li>
+      <!--陆雪婧-->
+      <!--张富文-->
+      <li>
+        <%= link_to image_tag("zj10.jpg"),expert_path(:张富文主治医师) %>
+        <div class="IntroduceMask">
+          <h5>张富文</h5>
+          <p>教授/硕士研究生导师</p>
+          <p>主任医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:张富文主治医师) %>
+          </div>
+        </div>
+      </li>
+      <!--张富文-->
+      <!--黄霄-->
+      <li>
+        <%= link_to image_tag("zj11.jpg"),expert_path(:黄霄主任医师) %>
+        <div class="IntroduceMask">
+          <h5>黄霄</h5>
+          <p>教授/硕士生导师</p>
+          <p>主任医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:黄霄主任医师) %>
+          </div>
+        </div>
+      </li>
+      <!--黄霄-->
+      <!--王智慧-->
+      <li>
+        <%= link_to image_tag("zj12.jpg"),expert_path(:王智慧主任医师) %>
+        <div class="IntroduceMask">
+          <h5>王智慧</h5>
+          <p>主任医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:王智慧主任医师) %>
+          </div>
+        </div>
+      </li>
+      <!--王智慧-->
+      <!--周春阳-->
+      <li>
+        <%= link_to image_tag("zj13.jpg"),expert_path(:周春阳主任医师) %>
+        <div class="IntroduceMask">
+          <h5>周春阳</h5>
+          <p>副教授</p>
+          <p>医学博士</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:周春阳主任医师) %>
+          </div>
+        </div>
+      </li>
+      <!--周春阳-->
+      <!--潘学会-->
+      <li>
+        <%= link_to image_tag("zj14.jpg"),expert_path(:潘学会) %>
+        <div class="IntroduceMask">
+          <h5>潘学会</h5>
+          <p>副主任医师</p>
+          <p>医学硕士</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:潘学会) %>
+          </div>
+        </div>
+      </li>
+      <!--潘学会-->
+      <!--王国平-->
+      <li>
+        <a href="javascript:;">
+          <%= image_tag("zj15.jpg") %>
+        </a>
+        <div class="IntroduceMask">
+          <h5>王国平</h5>
+          <p>副主任医师</p>
+          <p>医学硕士</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
+          </div>
+        </div>
+      </li>
+      <!--王国平-->
+      <!--谢艾芮-->
+      <li>
+        <%= link_to image_tag("zj16.jpg"),expert_path(:谢艾芮主任医师) %>
+        <div class="IntroduceMask">
+          <h5>谢艾芮</h5>
+          <p>主治医师</p>
+          <p>医学硕士</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:谢艾芮主任医师) %>
+          </div>
+        </div>
+      </li>
+      <!--谢艾芮-->
+      <!--陈小凤-->
+      <li>
+        <%= link_to image_tag("zj17.jpg"),expert_path(:陈小凤主治医师) %>
+        <div class="IntroduceMask">
+          <h5>陈小凤</h5>
+          <p>医学博士</p>
+          <p>主治医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:陈小凤主治医师) %>
+          </div>
+        </div>
+      </li>
+      <!--陈小凤-->
+      <!--李强-->
+      <li>
+        <%= link_to image_tag("zj18.jpg"),expert_path(:李强主治医师) %>
+        <div class="IntroduceMask">
+          <h5>李强</h5>
+          <p>医学博士</p>
+          <p>主治医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:李强主治医师) %>
+          </div>
+        </div>
+      </li>
+      <!--李强-->
+      <!--缪馨-->
+      <li>
+        <%= link_to image_tag("zj19.jpg"),expert_path(:缪馨主治医师) %>
+        <div class="IntroduceMask">
+          <h5>缪馨</h5>
+          <p>医学硕士</p>
+          <p>主治医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:缪馨主治医师) %>
+          </div>
+        </div>
+      </li>
+      <!--缪馨-->
+      <!--蹇文渊-->
+      <li>
+        <%= link_to image_tag("zj20.jpg"),expert_path(:蹇文渊主治医师) %>
+        <div class="IntroduceMask">
+          <h5>蹇文渊</h5>
+          <p>医学博士、博士后</p>
+          <p>主治医师</p>
+          <div class="doctorBtn">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:蹇文渊主治医师) %>
+          </div>
+        </div>
+      </li>
+      <!--蹇文渊-->
+
+    </ul>
+    <!--专家人员列表-->
+    <!--挂号、预约等功能-->
+    <ul class="consults fr">
+      <li>
+        <%= link_to medical_path(:就医流程) do %>
+          <i></i>
+          <p>就医流程</p>
+        <% end %>
+      </li>
+      <li>
+        <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">
+          <i></i>
+          <p>预约挂号</p>
+        </a>
+      </li>
+      <li>
+        <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">
+          <i></i>
+          <p>在线咨询</p>
+        </a>
+      </li>
+      <li>
+        <%= link_to medical_path(:医保政策) do %>
+          <i></i>
+          <p>医保政策</p>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to medical_path(:来院指引) do %>
+          <i></i>
+          <p>来院导航</p>
+        <% end %>
+      </li>
+    </ul>
+    <!--挂号、预约等功能-->
+  </div>
+
+
+
+</div>
+<!--专家列表-->
+<!--症状咨询-->
+<div class="plate">
+  <p class="syTitle">
+    <i class="icon_tb icon_attention"></i> <em class="syTitleName">症状咨询</em>  <span class="attentions">注：勾选符合您自身情况的选项，可就相关症状免费咨询专家和预约专家号。</span>
+  </p>
+  <div class="illnessCheck">
+    <span><input type="checkbox">视力下降</span>
+    <span><input type="checkbox">眼干涩</span>
+    <span><input type="checkbox">眼痒</span>
+    <span><input type="checkbox">眼胀痛</span>
+    <span><input type="checkbox">眼红肿</span>
+    <span><input type="checkbox">畏光流泪</span>
+    <span><input type="checkbox">视物变色</span>
+    <span><input type="checkbox">视物变形</span>
+    <span><input type="checkbox">视物重影</span>
+    <span><input type="checkbox">分泌物异常</span>
+    <span><input type="checkbox">眼前黑影飘动</span>
+    <span><input type="checkbox">眼前突然闪光</span>
+    <span><input type="checkbox">异物感</span>
+    <span><input type="checkbox">歪头</span>
+    <span><input type="checkbox">眩光</span>
+    <span><input type="checkbox">其他</span>
+  </div>
+  <p class="askBtn">
+    <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a>
+  </p>
+</div>
+<!--症状咨询-->
+<!--重点科室-->
+<div class="plate">
+  <p class="syTitle">
+    <i class="icon_tb icon_department"></i> <em class="syTitleName">重点科室</em><span class="fr"><%= link_to :"更多>>", :centers %></span>
+  </p>
+  <ul class="flParent flow sexCenters">
+    <!--眼底病中心-->
+    <li>
+      <p><em>眼底病中心</em></p>
+      <div class="centerOne flow">
+        <div class="fl marR16">
+          <%= image_tag("center_1.jpg") %>
+          <ul class="flParent centerOneHref">
+            <li><%= link_to :"中心简介",center_path(:眼底病中心,:anchor => "introduce") %></li>
+            <li><%= link_to :"专家团队",center_path(:眼底病中心,:anchor => "expertIntroduce") %></li>
+            <li><a href="javascript:;">诊疗设备</a></li>
+            <li><a href="javascript:;">诊疗项目</a></li>
+          </ul>
+        </div>
+        <div class="centerOneSituation fr">
+          <p>重点特色专科</p>
+          <p>权威专家打造</p>
+          <p>国内外先进技术</p>
+          <p>诊治各类眼底病及全身疾病相关眼病</p>
         </div>
       </div>
     </li>
-    <li class="fr">
-      <div>
-        <%= link_to image_tag("Technology.jpg"),home_path(:技术设备) %>
-        <div class="introduced">
-          <%= link_to :'技术设备',home_path(:技术设备) %>
+    <!--眼底病中心-->
+    <!--糖尿病视网膜病变防治中心-->
+    <li>
+      <p><em>糖尿病视网膜病变防治中心</em></p>
+      <div class="centerOne flow">
+        <div class="fl marR16">
+          <%= image_tag("center_2.jpg") %>
+          <ul class="flParent centerOneHref">
+            <li><%= link_to :"中心简介",center_path(:糖尿病病变防治中心,:anchor => "introduce") %></li>
+            <li><%= link_to :"专家团队",center_path(:糖尿病病变防治中心,:anchor => "expertIntroduce") %></li>
+            <li><%= link_to :"科普知识",center_path(:糖尿病病变防治中心,:anchor => "kepu") %></li>
+            <li><a href="javascript:;">诊疗项目</a></li>
+          </ul>
         </div>
+        <div class="centerOneSituation fr">
+          <p>早期发现、综合预防与治疗干预</p>
+          <p>权威专家团队20年攻关成果</p>
+          <p>虚瘀并治的中医药综合治疗方案</p>
+          <p>成效显著，优势突出</p>
+        </div>
+      </div>
+    </li>
+    <!--糖尿病视网膜病变防治中心-->
+    <!--白内障屈光中心-->
+    <li>
+      <p><em>白内障屈光中心 </em></p>
+      <div class="centerOne flow">
+        <div class="fl marR16">
+          <%= image_tag("center_3.jpg") %>
+          <ul class="flParent centerOneHref">
+            <li><%= link_to :"中心简介",center_path(:白内障屈光治疗部介绍) %></li>
+            <li><%= link_to :"专家团队",center_path(:白内障屈光专家团队) %></li>
+            <li><%= link_to :"诊疗设备",center_path(:白内障屈光设备宣传) %></li>
+            <li><%= link_to :"手术方式",center_path(:白内障屈光手术方式) %></li>
+          </ul>
+        </div>
+        <div class="centerOneSituation fr">
+          <p>权威专家团队</p>
+          <p>临床经验丰富</p>
+          <p>技术力量雄厚</p>
+          <p>国际先进水平</p>
+        </div>
+      </div>
+    </li>
+    <!--白内障屈光中心-->
+    <!--眼视光中心-->
+    <li>
+      <p><em>眼视光中心 </em></p>
+      <div class="centerOne flow">
+        <div class="fl marR16">
+          <%= image_tag("center_4.jpg") %>
+          <ul class="flParent centerOneHref">
+            <li><%= link_to :"中心简介",center_path(:视光中心) %></li>
+            <li><a href="javascript:;">专家团队</a></li>
+            <li><a href="javascript:;">诊疗设备</a></li>
+            <li><a href="javascript:;">诊疗项目</a></li>
+          </ul>
+        </div>
+        <div class="centerOneSituation fr">
+          <p>多位一体</p>
+          <p>团队班底实力雄厚</p>
+          <p>国际高端设备</p>
+          <p>前沿技术与传统中医相结合</p>
+        </div>
+      </div>
+    </li>
+    <!--眼视光中心-->
+    <!--中医眼科中心-->
+    <li>
+      <p><em>中医眼科中心 </em></p>
+      <div class="centerOne flow">
+        <div class="fl marR16">
+          <%= image_tag("center_5.jpg") %>
+          <ul class="flParent centerOneHref">
+            <li><%= link_to :"中心简介",center_path(:中医简介) %></li>
+            <li><%= link_to :"专家团队",center_path(:中医团队介绍) %></li>
+            <li><%= link_to :"健康讲堂",center_path(:中医药养生保健小讲堂) %></li>
+            <li><%= link_to :"时令贴士",center_path(:中医时令小贴士) %></li>
+          </ul>
+        </div>
+        <div class="centerOneSituation fr">
+          <p>百余年学术精华</p>
+          <p>雄厚临床经验</p>
+          <p>显著疗效</p>
+          <p>特色优势</p>
+        </div>
+      </div>
+    </li>
+    <!--中医眼科中心-->
+    <!--眼影像分析诊断中心-->
+    <li>
+      <p><em>眼影像分析诊断中心 </em></p>
+      <div class="centerOne flow">
+        <div class="fl marR16">
+          <%= image_tag("center_6.jpg") %>
+          <ul class="flParent centerOneHref">
+            <li><%= link_to :"中心简介",center_path(:读片中心) %></li>
+            <li><a href="javascript:;">专家团队</a></li>
+            <li><a href="javascript:;">诊疗设备</a></li>
+            <li><a href="javascript:;">诊疗项目</a></li>
+          </ul>
+        </div>
+        <div class="centerOneSituation fr">
+          <p>国内外强强联合</p>
+          <p>国家国际科技合作专项</p>
+          <p>前沿分析技术</p>
+          <p>资深读片团队</p>
+        </div>
+      </div>
+    </li>
+    <!--眼影像分析诊断中心-->
+  </ul>
+</div>
+<!--重点科室-->
+<!--医疗设备-->
+<div class="plate">
+  <p class="syTitle">
+    <i class="icon_tb icon_department"></i> <em class="syTitleName">医疗设备</em>
+  </p>
+  <ul class="flParent flow departmentsImg">
+    <li>
+      <div>
+        <%= link_to image_tag("ylsb1.jpg"),home_path(:技术设备, :anchor => "equipment_1") %>
+      </div>
+      <p>阿玛仕1050RS准分子激光治疗仪</p>
+    </li>
+    <li>
+      <div>
+        <%= link_to image_tag("ylsb2.jpg"),home_path(:技术设备, :anchor => "equipment_2") %>
+      </div>
+      <p>蔡司全飞秒Visu Max 激光系统</p>
+    </li>
+    <li>
+      <div>
+        <%= link_to image_tag("ylsb3.jpg"),home_path(:技术设备, :anchor => "equipment_3") %>
+      </div>
+      <p>LENSAR非接触式3D飞秒白内障激光手术系统</p>
+    </li>
+    <li>
+      <div>
+        <%= link_to image_tag("ylsb4.jpg"),home_path(:技术设备, :anchor => "equipment_4") %>
+      </div>
+      <p>爱尔康Constellation玻切机设备</p>
+    </li>
+    <li>
+      <div>
+        <%= link_to image_tag("ylsb5.jpg"),home_path(:技术设备, :anchor => "equipment_5") %>
+      </div>
+      <p>爱尔科医人Vision One 量子芯片多波长激光</p>
+    </li>
+    <li>
+      <div>
+        <%= link_to image_tag("ylsb6.jpg"),home_path(:技术设备, :anchor => "equipment_6") %>
+      </div>
+      <p>DRI OCT-1 Triton</p>
+    </li>
+  </ul>
+</div>
+<!--医疗设备-->
+<!--资质荣誉-->
+<div class="plate">
+  <ul class="flParent flow honorTitle">
+    <li>资质荣誉</li>
+    <li>交流剪影</li>
+  </ul>
+  <!--资质荣誉-->
+  <div class="honorContainer honorplate">
+    <ul class="flParent flow honorImgs">
+      <li><%= image_tag("honor_1.jpg") %></li>
+      <li><%= image_tag("honor_2.jpg") %></li>
+      <li><%= image_tag("honor_3.jpg") %></li>
+      <li><%= image_tag("honor_4.jpg") %></li>
+      <li><%= image_tag("honor_5.jpg") %></li>
+    </ul>
+  </div>
+  <!--资质荣誉-->
+
+  <div class="honorplate">
+    <ul class="flParent flow honorImgs commitAllImgs">
+      <li>
+        <%= image_tag("jljy_1.jpg") %>
+        <div class="photoMask">
+          <span>2017.7.16-开业庆典外宾参观医院</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_2.jpg") %>
+        <div class="photoMask">
+          <span>2017.6.6与地铁运营有限公司签订“地铁司机眼健康服务”-协议</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_3.jpg") %>
+        <div class="photoMask">
+          <span>2017.7.5-中医药管理局局长来我院视察工作</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_4.jpg") %>
+        <div class="photoMask">
+          <span>2017.6.6与太极集团签订“太极员工眼健康服务”协议</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_5.jpg") %>
+        <div class="photoMask">
+          <span>2017.6.8举行国内眼科医院首台引进的阿玛仕1050RS准分子激光设备开机仪式</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_6.jpg") %>
+        <div class="photoMask">
+          <span>2017.6.6与金牛区教育局签订“青少年近视防控能力提升计划”协议</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_7.jpg") %>
+        <div class="photoMask">
+          <span>2010年12月10日 澳门 成都中医药大学眼科学院与美国威斯康星大学签订合作备忘录</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_8.jpg") %>
+        <div class="photoMask">
+          <span>在2010年12月，在国际眼科药理及治疗研究会（澳门）上发言</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_9.jpg") %>
+        <div class="photoMask">
+          <span>2012年到美国加利福利亚州的希利眼科中心参观访问</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_10.jpg") %>
+        <div class="photoMask">
+          <span>客座教授参观重点学科实验室并提出建设性意见</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_11.jpg") %>
+        <div class="photoMask">
+          <span>2011国际眼科药物临床试验培训会 上海</span>
+        </div>
+      </li>
+      <li>
+        <%= image_tag("jljy_12.jpg") %>
+        <div class="photoMask">
+          <span>2012年8月-2012年9月,读片中心人员赴美就眼底评价技术进行培训</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<!--资质荣誉-->
+<!--医院环境-->
+<div class="plate">
+  <p class="syTitle">
+    <i class="icon_tb icon_environment"></i> <em class="syTitleName">医院环境</em>
+  </p>
+  <ul class="flParent flow honorImgs hosEnvironment">
+    <li>
+      <%= image_tag("yyhj_1.jpg") %>
+      <div class="photoMask">
+        <span>病房</span>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("yyhj_2.jpg") %>
+      <div class="photoMask">
+        <span>VIP病房</span>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("yyhj_3.jpg") %>
+      <div class="photoMask">
+        <span>服务中心</span>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("yyhj_4.jpg") %>
+      <div class="photoMask">
+        <span>药房</span>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("yyhj_5.jpg") %>
+      <div class="photoMask">
+        <span>医院外观</span>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("yyhj_6.jpg") %>
+      <div class="photoMask">
+        <span>国医大师工作室</span>
+      </div>
+    </li>
+    <li>
+      <%= image_tag("yyhj_7.jpg") %>
+      <div class="photoMask">
+        <span>门诊一楼大厅</span>
       </div>
     </li>
   </ul>
-  <!--走进银海-->
-  <!-- 眼健康科普 -->
 </div>
+<!--医院环境-->
+
 
 <script>
-  $('.slide').ckSlide({
-    autoPlay:true,
-  });
-  $(".slide.slide-left").ckSlide({
-    autoPlay:true,
-    add:true,
-      // seamless:true,
-      dir:"x",
-    });
+//    var synopsisArr = [
+//        "眼底病科是银海眼科的重点特色专科，由银海眼科院长段俊国教授、医疗质量总监/眼底外科主任刘文教授领衔一批经验丰富的眼底病医疗人员，打造国内一流眼底病专科。专科运用微创玻切手术、玻璃体消融术、激光、抗VEGF等国内外先进技术，专业诊治黄斑病变、视网膜疾病、葡萄膜病、视神经疾病、玻璃体及全身疾病相关眼病。",
+//        "主要针对糖尿病视网膜病变早期发现、综合预防与治疗干预，由院长段俊国教授带领的专家团队经过近20年的联合攻关，研究制定的虚瘀并治的中医药综合治疗方案，在控制糖尿病视网膜的进展、减少终点事件、维持视功能的稳定等方面具有显著的优势。专家团队开发出我国第一个治疗糖尿病视网膜病变的新药“芪明颗粒”，制订了第一个中医药防治糖尿病视网膜的临床指南及路径，其研究成果获四川省科学技术进步奖特等奖。",
+//        "该中心技术力量雄厚，由全国白内障手术量第一、中国著名的白内障手术专家、博士生导师朱思泉教授领衔，以及一批临床经验丰富的白内障专家组成。可开展飞秒辅助白内障手术、超声乳化术等各种类型的白内障手术治疗及各种类型的人工晶体植入术；在常规白内障、并发性白内障、外伤性白内障、青光眼白内障联合手术、难治性白内障的诊治方面达到国际先进水平，并开展ICL植入术治疗高度近视；开展区域折射多焦点和三焦点折叠式人工晶体植入术，满足高端人群的需求，使白内障患者术后获得良好的视觉效果。白内障屈光中心技术国际领先，实现了真正意义上的微创、“无”损伤、手术适应范围更广、视觉质量更完美。",
+//        "眼视光科是集临床诊疗、专业培训、科普宣教、产品研发、连锁运营为一体的医疗科室，以成都中医药大学附属医院眼视光专家团队为班底，充分整合国内中西医眼视光技术与资源，国内第一家同时引进阿玛仕1050RS准分子和ZEISSSMILE3.0全飞秒两套最先进的高精准设备，开展近视全飞秒激光、transPRK手术、医学验光配镜、儿童斜弱视诊疗、中西医近视防控、RGP&角膜塑形镜验配、视觉训练、低视力康复等项目。运用最前沿的眼视光学技术及传统中医康复治疗手段，为全年龄段的屈光不正患者提供有效、便捷、优质的诊疗服务。",
+//        "传承陈氏中医眼科百余年积淀之学术精华，师国内众家学术流派之长，集六十年临床经验于一体，我院中医眼科具有得天独厚的基础条件。科室运用中医理论治疗，在黄斑水肿、出血性眼病、葡萄膜病、视神经疾病等方面，具有显著的诊疗特色和临床优势。其“中医特色治疗室”将中医丰富的治疗手段运用于临床，多方法、多途径的综合治疗，显著地提高了眼科临床疗效。",
+//        "眼影像分析与诊断中心2010年与美国维斯康新大学眼底读片中心合作，通过国家国际科技合作专项，引进ETDRS读片标准和标准操作规程，在国内率先实现糖尿病视网膜病变量化读片以及ETDRS分级，在国家重大仪器专项的支持下，已建立云计算眼科读片中心。眼影像分析与诊断中心重点开展临床读片、科研读片、慢病筛查、提供远程眼底病会诊等，运用图像分析技术、ETDRS读片技术、视网膜血氧分析技术等国际先进技术，建立符合中国人眼病特点的读片标准。"
+//    ];
+//    $(".centerOneSituation p").each(function (index) {
+//        if(synopsisArr[index].length>170){
+//            console.log(synopsisArr[index].substr(0,170)+"...");
+//            $(this).html(synopsisArr[index].substr(0,170)+"...")
+//        }else {
+//            $(this).html(synopsisArr[index]);
+//        }
+//
+//    })
+
+
+
+    $(".honorTitle li").hover(function(){
+        $(this).parents(".plate").find(".honorplate").hide().eq($(this).index()).show();
+    })
+
   $(".proContainer .proImg").hover(function () {
     var i = $(this).index();
     $(this).parents(".proContainer").find(".proContent").hide().eq(i).show();
@@ -77,12 +927,30 @@
     }
   })
 
-  bannerListFn(
-    $(".banner"),
-    $(".img-btn-list"),
-    $(".left-btn"),
-    $(".right-btn"),
-    2000,
-    true
-    );
+
   </script>
+<script>
+    $(".slide").ckSlide({
+        autoPlay:true,
+        add:true,
+        seamless:true,
+        dir:"x",
+    });
+
+    var doctorDate={
+        index:1,
+        listNum:Math.ceil($(".doctorList li").length/10)
+    }
+    $(".doctorList li").hide().eq(doctorDate.index*10).prevAll().show();
+    $(".changeExperts").click(function(){
+        if(doctorDate.index == doctorDate.listNum){
+            doctorDate.index = 0;
+            $(".doctorList li").show().eq((doctorDate.index+1)*10-1).nextAll().hide();
+        }else {
+            $(".doctorList li").show().eq(doctorDate.index*10).prevAll().hide();
+            $(".doctorList li").eq((doctorDate.index+1)*10-1).nextAll().hide();
+        }
+        doctorDate.index++;
+    })
+</script>
+
