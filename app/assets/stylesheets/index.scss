@@ -1859,6 +1859,9 @@ p>b{
     background: #008cd3;
     margin-right: 4px;
 }
+.centerOneHref li:hover{
+    background: #72af2d;
+}
 .sexCenters>li:nth-child(2n){
     float: right;
 }
@@ -1907,10 +1910,10 @@ p>b{
     height: 45px;
     line-height: 45px;
     width: 50%;
-    background: #72af2d;
-}
-.honorTitle li:last-child{
     background: #008cd3;
+}
+.honorTitle li.active{
+    background: #72af2d;
 }
 .honorImgs{
     padding: 6px;
@@ -2228,6 +2231,9 @@ p>b{
 }
 .commitAllImgs li,.hosEnvironment li{
     position: relative;
+}
+.hosEnvironment .photoMask a{
+    font-size: 16px;
 }
 .photoMask{
     opacity:0;
