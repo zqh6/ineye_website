@@ -1406,6 +1406,9 @@ p>b{
     font-size: 16px;
     margin-left: 42px;
 }
+.commits a:hover,.newTitle a:hover,.syTitle a:hover,.topList li a:hover{
+    color: #72af2d;
+}
 .commits a{
     margin: 0 16px;
     color: #008cd3;
@@ -1635,9 +1638,7 @@ p>b{
     display: block;
     box-sizing: border-box;
 }
-.topList li a:hover{
-    color: #008cd3;
-}
+
 .topNews .newTitle a{
     color: #008cd3;
     margin-left: 10px;
