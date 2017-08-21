@@ -1761,11 +1761,10 @@ p>b{
     color: #fff;
     text-align: center;
     display: inline-block;
-}
-.doctorBtn a:first-child{
     background: #008cd3;
 }
-.doctorBtn a:last-child{
+
+.doctorBtn a :hover{
     background: #72af2d;
 }
 .consults{
