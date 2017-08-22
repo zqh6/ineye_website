@@ -2319,7 +2319,7 @@ p>b{
 //专家新版index页面
 .expertCommon{
     height: 75px;
-    margin: 0 20px;
+    margin: 10px 20px 0;
     border-bottom: 1px solid #a0a8ad;
 }
 .expertCommon>li{
@@ -2340,7 +2340,7 @@ p>b{
     color: #fff;
 }
 .expertsListContainer{
-    padding: 35px 20px 20px;
+    padding: 20px;
 }
 .expertsListContainer>li{
     width: 50%;
@@ -2395,7 +2395,6 @@ p>b{
 }
 .expertsBg{
     background: #fff;
-    margin-top: 10px;
 }
 .seeDetail:hover{
     background: #72af2d;
