@@ -2,8 +2,15 @@
     <%= image_tag("expert_top.jpg") %>
 </div>
 <ul class="expertCommon flParent flow">
-    <li class="active"><%= link_to :"著名专家",expert_path(:著名专家) %></li>
+    <li><%= link_to :"著名专家",expert_path(:著名专家) %></li>
     <li><%= link_to :"主任医师",expert_path(:主任医师) %></li>
     <li><%= link_to :"副主任医师",expert_path(:副主任医师) %></li>
     <li><%= link_to :"主治医师",expert_path(:主治医师) %></li>
 </ul>
+<script>
+    $(function(){
+        var doctorIndex = $(".expertCommon li").parents(".doctorContainer").attr("id");
+        console.log(doctorIndex);
+        $(".expertCommon li").eq(doctorIndex).addClass("active");
+    })
+</script>
