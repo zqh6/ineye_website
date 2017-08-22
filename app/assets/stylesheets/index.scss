@@ -1425,18 +1425,15 @@ p>b{
 }
 .logos{
     line-height: 88px;
-    padding-top: 5px;
 }
 .logos a{
     margin-right: 40px;
 }
 .logos a.lastLogo{
     margin-right: 0;
-    margin-left: 40px;
 }
 .logos .ineyeLogo{
-    margin-right: 85px;
-    width: 320px;
+    margin-right: 52px;
 }
 .search{
     width: 290px;
@@ -2319,3 +2316,80 @@ p>b{
     padding-top: 20px;
 }
 //改版新增
+//专家新版index页面
+.expertCommon{
+    height: 75px;
+    margin: 0 20px;
+    border-bottom: 1px solid #a0a8ad;
+}
+.expertCommon>li{
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    width: 92px;
+    margin:20px 10px 0 0;
+}
+.expertCommon>li a{
+    width: 100%;
+    height: 100%;
+    background: #e5e5e5;
+    display: block;
+}
+.expertCommon>li.active a{
+    background: #72af2d;
+    color: #fff;
+}
+.expertsListContainer{
+    padding: 35px 20px 20px;
+}
+.expertsListContainer>li{
+    width: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.photoBorder{
+    width: 220px;
+    height: 304px;
+    line-height: 304px;
+    box-sizing: border-box;
+    border: 1px solid #eaeded;
+    position: relative;
+    text-align: center;
+    margin-right: 15px;
+}
+.photoBorder:hover{
+    border-color: #72af2d;
+}
+.photoBorder img{
+    vertical-align: middle;
+}
+.expertSynopsis{
+    position: relative;
+    height: 304px;
+    width: 345px;
+}
+.expertSynopsis h5{
+    font-size: 24px;
+    color: #333;
+    line-height: 1;
+    margin: 20px 0 13px;
+    font-weight: normal;
+}
+.expertSynopsis p{
+    line-height: 24px;
+}
+.expertsGoodAt{
+    margin: 20px 0 2px;
+    color: #10c55b;
+}
+.seeDetail{
+    line-height: 36px;
+    width: 168px;
+    background: #008cd6;
+    color: #fff;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+}
+//专家新版index页面
