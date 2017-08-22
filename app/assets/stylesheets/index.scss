@@ -2385,11 +2385,15 @@ p>b{
 .seeDetail{
     line-height: 36px;
     width: 168px;
+    text-align: center;
     background: #008cd6;
     color: #fff;
     display: block;
     position: absolute;
     left: 0;
     bottom: 10px;
+}
+.seeDetail:hover{
+    background: #72af2d;
 }
 //专家新版index页面
