@@ -2380,7 +2380,7 @@ p>b{
 }
 .expertsGoodAt{
     margin: 20px 0 2px;
-    color: #10c55b;
+    color: #72af2d;
 }
 .seeDetail{
     line-height: 36px;
@@ -2393,8 +2393,12 @@ p>b{
     left: 0;
     bottom: 10px;
 }
+.expertsBg{
+    background: #fff;
+    margin-top: 10px;
+}
 .seeDetail:hover{
     background: #72af2d;
-    color: #666;
+    color: #fff;
 }
 //专家新版index页面
