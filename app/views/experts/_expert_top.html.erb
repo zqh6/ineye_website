@@ -1,12 +1,14 @@
 <div>
     <%= image_tag("expert_top.jpg") %>
 </div>
-<ul class="expertCommon flParent flow">
-    <li><%= link_to :"著名专家",expert_path(:著名专家) %></li>
-    <li><%= link_to :"主任医师",expert_path(:主任医师) %></li>
-    <li><%= link_to :"副主任医师",expert_path(:副主任医师) %></li>
-    <li><%= link_to :"主治医师",expert_path(:主治医师) %></li>
-</ul>
+<div class="expertCommonBg">
+    <ul class="expertCommon flParent flow">
+        <li><%= link_to :"著名专家",expert_path(:著名专家) %></li>
+        <li><%= link_to :"主任医师",expert_path(:主任医师) %></li>
+        <li><%= link_to :"副主任医师",expert_path(:副主任医师) %></li>
+        <li><%= link_to :"主治医师",expert_path(:主治医师) %></li>
+    </ul>
+</div>
 <script>
     $(function(){
         var doctorIndex = $(".expertCommon li").parents(".doctorContainer").attr("id");
