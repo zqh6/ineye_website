@@ -1388,14 +1388,13 @@ p>b{
     height: 5px;
 }
 .aboutUs{
-    height: 67px;
-    line-height: 67px;
+    height: 50px;
+    line-height: 50px;
 }
 .telePhone{
     color: #999;
     font-size: 14px;
-    line-height: 52px;
-    margin-top: 6px;
+    line-height: 50px;
 }
 .telePhone span{
     margin-left: 10px;
@@ -1424,21 +1423,24 @@ p>b{
     margin-left: 0;
 }
 .logos{
-    line-height: 88px;
+    line-height: 64px;
+    padding-top: 5px;
 }
 .logos a{
     margin-right: 40px;
 }
 .logos a.lastLogo{
     margin-right: 0;
+    margin-left: 40px;
 }
 .logos .ineyeLogo{
-    margin-right: 52px;
+    margin-right: 80px;
+    width: 340px;
 }
 .search{
     width: 290px;
     height: 40px;
-    margin-top: 14px;
+    margin-top: 5px;
     line-height: 1;
     position: relative;
 }
