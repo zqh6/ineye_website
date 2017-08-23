@@ -2601,13 +2601,17 @@ p>b{
     top: 0;
     text-align: center;
 }
-.icon_left{
+.leftBtn{
     left: 0;
+}
+.rightBtn{
+    right: 0;
+}
+.icon_arrow.icon_left{
     background-position: 0 -62px;
 }
-.icon_right{
-    right: 0;
-    background-position: 26px -62px;
+.icon_arrow.icon_right{
+    background-position: -26px -62px;
 }
 .icon_arrow{
     width: 15px;
