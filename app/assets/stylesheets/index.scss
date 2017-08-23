@@ -2400,4 +2400,155 @@ p>b{
 .expertsListContainer,.expertCommonBg{
     background: #fff;
 }
+.doctorBanner{
+    height: 600px;
+    overflow: hidden;
+}
+.doctorBanner img{
+    width: 100%;
+    display: block;
+    margin-top: -143px;
+}
+/*专家详情*/
+.doctorDetails{
+    padding: 20px;
+}
+.doctorPortrait{
+    width: 306px;
+    height: 430px;
+    position: relative;
+}
+.doctorPortrait img{
+    width: 306px;
+}
+.doctorBtns{
+    position: absolute;
+    padding: 0 25px;
+    bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.doctorBtns a{
+    background: #ff9900;
+    color: #fff;
+    display: block;
+    width: 120px;
+    text-align: center;
+    height:40px;
+    line-height: 40px;
+    border-radius: 4px;
+}
+.doctorBtns a:first-child{
+    background: #008cd6;
+}
+.doctorContent{
+    padding: 0 15px 0 35px;
+    width: 800px;
+    line-height: 24px;
+}
+.doctorContent h5{
+    font-size: 30px;
+    font-weight: normal;
+    color: #333;
+    line-height: 54px;
+}
+.doctorTitle{
+    margin: 8px 0 28px;
+}
+.doctorTitle span{
+    height: 45px;
+    line-height: 45px;
+    display: inline-block;
+    padding: 0 15px;
+    background: #72af2d;
+    color: #fff;
+    font-size: 18px;
+}
+.doctorHonor{
+    color: #008cd6;
+    margin-bottom: 5px;
+}
+.doctorGoodAt p{
+    display: inline-block;
+    width: 725px;
+    float: right;
+}
+.seePatientTime span,.doctorGoodAt span{
+    color: #72af2d;
+}
+.seePatientTime span{
+    margin-right: 14px;
+}
+.doctorIntroduce{
+    padding: 0 30px 16px;
+}
+.doctorIntroduce p{
+    line-height: 30px;
+    text-indent: 2rem;
+}
+.registered{
+    background: #72af2d;
+    color: #fff;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 45px;
+    margin-top: 18px;
+}
+.registered li{
+    margin-right: 45px;
+}
+.registered li:first-child{
+    font-size: 16px;
+}
+.registered input{
+    width: 120px;
+    height: 36px;
+    border-radius: 3px;
+    color: #333;
+    border: 0;
+}
+.registeredBtn{
+    background-color: #ff9900;
+}
+.registeredBtn{
+    color: #fff;
+    width: 80px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px;
+}
+.membersList{
+    padding: 8px;
+    margin-top: 20px;
+    border: 1px solid #eaeded;
+}
+.teamMemberWords{
+    width: 35px;
+    line-height: 35px;
+    height: 163px;
+    text-align: center;
+    background: #008cd6;
+    color: #fff;
+    writing-mode: vertical-lr;/*从左向右 从右向左是 writing-mode: vertical-rl;*/
+    writing-mode: tb-lr;/*IE浏览器的从左向右 从右向左是 writing-mode: tb-rl；*/
+}
+.lpzDoctor em{
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    color: #fff;
+    background: #008dd7;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: -2px;
+}
+.expertsName span{
+    float: left;
+    display: block;
+    margin: 18px 0 0 24px;
+}
+/*专家详情*/
 //专家新版index页面
