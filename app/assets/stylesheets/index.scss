@@ -2343,9 +2343,12 @@ p>b{
     padding: 20px;
 }
 .expertsListContainer>li{
-    width: 50%;
+    width: 555px;
     overflow: hidden;
     margin-bottom: 10px;
+}
+.expertsListContainer>li:nth-child(2n-1){
+    float: right;
 }
 .photoBorder{
     width: 220px;
@@ -2372,14 +2375,14 @@ p>b{
     font-size: 24px;
     color: #333;
     line-height: 1;
-    margin: 20px 0 13px;
+    margin: 10px 0 13px;
     font-weight: normal;
 }
 .expertSynopsis p{
     line-height: 24px;
 }
 .expertsGoodAt{
-    margin: 20px 0 2px;
+    margin: 10px 0 2px;
     color: #72af2d;
 }
 .seeDetail{
