@@ -1,30 +1,24 @@
 <div class="doctorDetails flow whiteBg">
     <div class="fl doctorPortrait flow">
-        <%= image_tag("zj5.jpg") %>
+        <%= image_tag("zj15.jpg") %>
         <div class="doctorBtns">
             <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
-            <%= link_to '查看排班表',medical_path(:index,:anchor=>"experts_5"),:class=>"fr" %>
+            <%= link_to '查看排班表',medical_path(:index,:anchor=>"experts_15"),:class=>"fr" %>
         </div>
     </div>
     <div class="fl doctorContent flow">
-        <h5>刘文</h5>
-        <p class="doctorTitle"><span>主任医师/教授/硕士生导师</span></p>
-        <div class="doctorHonor">
-            <p>成都中医大银海眼科医院医疗质量总监、眼底外科主任</p>
-            <p>获得国家和省级科研成果奖三项</p>
-            <p>被评为2015年度和2016年度广东省“岭南名医”</p>
-        </div>
+        <h5>王国平</h5>
+        <p class="doctorTitle"><span>副主任医师/医学硕士</span></p>
+        <div class="doctorHonor"></div>
         <div class="doctorGoodAt flow">
             <span>擅长领域：</span>
-            <p>从事眼科临床医疗工作35年。主要从事玻璃体视网膜疾病发病机制和诊断治疗的研究，特别擅长各种眼底疾病、复杂性视网膜脱离和外伤性视网膜脱离以及糖尿病性眼底疾病的手术和激光治疗。</p>
+            <p>"擅长眼底疾病的诊治、外路视网膜脱离复位手术、玻璃体切割手术、白内障超声乳化术、眼外伤救治以及眼底激光治疗。"</p>
         </div>
-        <p class="seePatientTime"><span>坐诊时间:</span>周一/三/五上午、周四下午,具体请以专家门诊时间表为准</p>
+        <p class="seePatientTime"><span>坐诊时间:</span>周一/五下午、周四上午,具体请以专家门诊时间表为准</p>
     </div>
 </div>
 <div class="doctorIntroduce whiteBg">
-    <p>从事眼科临床医疗工作35年。主要从事玻璃体视网膜疾病发病机制和诊断治疗的研究，特别擅长各种眼底疾病、复杂性视网膜脱离和外伤性视网膜脱离以及糖尿病性眼底疾病的手术和激光治疗。</p>
-    <p>在国内外最早用超声生物显微镜对前段增生性玻璃体视网膜病变进行系统分类，使这一复杂性玻璃体视网膜疾病的诊治有了客观的诊断标准。在国内外首创视网膜脱离外路显微手术技术和理论，将该手术方式提高到了显微手术时代，显著地提高了视网膜脱离外路手术的成功率。该手术技术和理论在国内外处于领先地位。</p>
-    <p>在多年研究前段增生性玻璃体视网膜病变的基础上，总结出了一整套全玻璃体切除的技术和理论，并应用到微创玻璃体手术中，对减少我国玻璃体手术并发症和提高手术成功率做出了卓有成效的贡献。</p>
+    <p>第四军医大学眼科学硕士。从事眼科临床工作20年。曾进修于第三军医大学西南医院及四川大学华西医院。先后撰写学术论文12篇。曾获武警部队科技进步三等奖1项，四川省科技进步三等奖1项和乐山市科技进步二等奖1项。</p>
 </div>
 <ul class="registered flow flParent">
     <li>预约挂号</li>
@@ -38,6 +32,18 @@
     <div class="fl teamMemberWords">团 队 成 员</div>
     <div class="teamContainer" >
         <ul class="teamMembers fr flParent flow" style="">
+            <!--刘文-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj5.jpg"),expert_path(:刘文教授) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>刘文</h4>
+                    <p>主任医师/教授/硕士生导师</p>
+                    <p>获得国家和省级科研成果奖三项</p>
+                </div>
+            </li>
+            <!--刘文-->
             <!--黄霄-->
             <li>
                 <div class="fl teamMemberPhoto">
@@ -50,18 +56,6 @@
                 </div>
             </li>
             <!--黄霄-->
-            <!--王国平-->
-            <li>
-                <div class="fl teamMemberPhoto">
-                    <%= link_to image_tag("zj15.jpg"),expert_path(:王国平) %>
-                </div>
-                <div class="fl memberIntroduce">
-                    <h4>王国平</h4>
-                    <p>副主任医师/医学硕士</p>
-                    <p>从事眼科临床工作20年</p>
-                </div>
-            </li>
-            <!--王国平-->
 
         </ul>
         <div class="leftBtn">
