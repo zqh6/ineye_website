@@ -2602,10 +2602,18 @@ p>b{
     text-align: center;
 }
 .leftBtn{
-    left: 0;
+    left: -40px;
 }
 .rightBtn{
+    right: 40px;
+}
+.leftBtn.active{
+    left: 0;
+    transition: all 1s;
+}
+.rightBtn.active{
     right: 0;
+    transition: all 1s;
 }
 .icon_arrow.icon_left{
     background-position: 0 -62px;
