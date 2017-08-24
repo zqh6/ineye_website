@@ -1,40 +1,147 @@
-<div class="middle flow">
-    <div class="flow expDetails bottom-Mar30">
-        <p class="expertsTitle">主任医师</p>
-        <ul class="flParent BasicInformation flow">
-            <li class="expertsLeftImg">
-                <div class="fl">
-                    <%= image_tag("experts_hx.png") %>
+<div class="doctorDetails flow whiteBg">
+    <div class="fl doctorPortrait flow">
+        <%= image_tag("zj11.jpg") %>
+        <div class="doctorBtns">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+            <%= link_to '查看排班表',medical_path(:index,:anchor=>"experts_11"),:class=>"fr" %>
+        </div>
+    </div>
+    <div class="fl doctorContent flow">
+        <h5>黄霄</h5>
+        <p class="doctorTitle"><span>主任医师/教授/硕士生导师</span></p>
+        <div class="doctorHonor">
+            <p>中国医师协会中西医结合眼科专业委员会委员</p>
+            <p>四川中西医结合学会及四川省中医药学会会员</p>
+            <p>四川眼免疫学会会员</p>
+        </div>
+        <div class="doctorGoodAt flow">
+            <span>擅长领域：</span>
+            <p>从事眼科医教研工作30余年。擅长老年黄斑变性、糖尿病性视网膜病变、视网膜静脉阻塞、葡萄膜炎等眼免疫性疾病、视神经疾病、泪道疾病等眼科疾病。</p>
+        </div>
+        <p class="seePatientTime"><span>坐诊时间:</span>周二/三/四上午、周五/六全天,具体请以专家门诊时间表为准</p>
+    </div>
+</div>
+<div class="doctorIntroduce whiteBg">
+  <p>从事眼科医教研工作30余年。擅长老年黄斑变性、糖尿病性视网膜病变、视网膜静脉阻塞、葡萄膜炎等眼免疫性疾病、视神经疾病、泪道疾病等眼科疾病。</p>
+  <p>曾在华西医大眼科、中山眼科中心、北京协和医院眼科、北京同仁医院眼科和天津眼科医院进修学习，擅长于疑难眼底病和眼免疫性疾病的中西医临床诊断和治疗。此外，在泪道疾病的诊疗方面有着丰富的临床经验。采用中西医结合方案，分期序贯治疗，疗效优于单纯西医效果，临床上出血吸收快，复发率低，治愈率高。</p>
+  <p>长期专注于眼免疫性疾病的临床及科研工作。在难治性葡萄膜炎治疗中，引入中医疮疡理论，对早期病变疗效明显，复发率低。对慢性难治性患者采用中西医结合方案，中药和免疫抑制剂的合理运用，在提高疗效的同时降低了长期使用免疫抑制剂的副作用，延长病变复发间期，在患者中有良好口碑，在行业内有较好声誉。</p>
+  <p>在视神经疾病的诊治中有独到之处。依托高诊断率和果断的治疗措施，并配合中医针刺和穴位注射等，临床治疗效果好，使不少患者重见光明，其病员来自全国各地。</p>
+  <p>长期指导研究生、住院医师，进修医师的临床教学工作。作为主研人员，先后承担国家自然科学基金、国家中医药管理局、四川省教育厅等各级研究课题10余项，公开发表学术论文30余篇。</p>
+</div>
+<ul class="registered flow flParent">
+    <li>预约挂号</li>
+    <li>姓名：<input type="text"></li>
+    <li>联系电话：<input type="text"></li>
+    <li>预约时间：<input type="text"></li>
+    <li>预约科室：<input type="text"></li>
+    <li><a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="registeredBtn">提交</a></li>
+</ul>
+<div class="membersList whiteBg flow">
+    <div class="fl teamMemberWords">团 队 成 员</div>
+    <div class="teamContainer" >
+        <ul class="teamMembers fr flParent flow" style="">
+            <!--廖品正-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj1.jpg"),expert_path(:廖品正教授) %>
                 </div>
-                <div class="fl seniority">
-                    <h5>黄霄</h5>
-                    <p>主任医师</p>
-                    <div class="expertsHref">
-                        <input type="button" value="在线预约" class="online-appointment">
-                        <input type="button" value="查看排班" class="look-scheduling">
-                    </div>
+                <div class="fl memberIntroduce">
+                    <h4>廖品正</h4>
+                    <p>国医大师/教授/博士生导师</p>
+                    <p>享受国务院政府特殊津贴专家</p>
                 </div>
             </li>
-            <li class="expertsRightWord">
-                <h6>擅长领域：</h6>
-                <p>1.老年性黄斑变性</p>
-                <p>2.视网膜静脉阻塞</p>
-                <p>3.糖尿病性视网膜病变</p>
-                <p>4.葡萄膜炎等眼免疫性疾病</p>
-                <p>5.视神经疾病</p>
-                <p>6.泪道疾病</p>
+            <!--廖品正-->
+            <!--邓亚萍-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj3.jpg"),expert_path(:邓亚平教授) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>邓亚平</h4>
+                    <p>主任医师/教授</p>
+                    <p>四川省名中医</p>
+                    <p>享受国务院政府特殊津贴</p>
+                </div>
             </li>
+            <!--邓亚萍-->
+            <!--周华祥-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj7.jpg"),expert_path(:周华祥教授) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>周华祥</h4>
+                    <p>主任医师/教授/硕士生导师</p>
+                    <p>四川省学术技术带头人</p>
+                </div>
+            </li>
+            <!--周华祥-->
+            <!--陆雪婧-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj9.jpg"),expert_path(:路雪婧主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>陆雪婧</h4>
+                    <p>成都中医药大学研究员/博士生导师</p>
+                    <p>全国首批中医药传承博士后</p>
+                </div>
+            </li>
+            <!--陆雪婧-->
+
         </ul>
-        <div class="expertsAllMessage">
-            <h6>专家简介：</h6>
-            <p>黄霄，教授，主任医师，医学博士，硕士研究生导师。中国医师协会中西医结合眼科专业委员会委员、四川中西医结合学会及四川省中医药学会会员。</p>
-            <p>从事眼科医教研工作30余年。曾在华西医大眼科、中山眼科中心、北京协和医院眼科、北京同仁医院眼科和天津眼科医院进修学习，擅长于疑难眼底病和眼免疫性疾病的中西医临床诊断和治疗。此外，在泪道疾病的诊疗方面有着丰富的临床经验。</p>
-            <p>黄霄教授在眼底病诊治方面有独到的见解，擅长老年性黄斑变性、糖尿病性视网膜病变、视网膜静脉阻塞、近视性黄斑病变等出血性眼底病变的治疗，采用中西医结合方案，分期序贯治疗，疗效优于单纯西医效果，临床上出血吸收快，复发率低，治愈率高。</p>
-            <p>黄霄教授长期专注于眼免疫性疾病的临床及科研工作。在难治性葡萄膜炎治疗中，引入中医疮疡理论，对早期病变疗效明显，复发率低。对慢性难治性患者采用中西医结合方案，中药和免疫抑制剂的合理运用，在提高疗效的同时降低了长期使用免疫抑制剂的副作用，延长病变复发间期，在患者中有良好口碑，在行业内有较好声誉。</p>
-            <p>黄霄教授在视神经疾病的诊治中有独到之处。依托高诊断率和果断的治疗措施，并配合中医针刺和穴位注射等，临床治疗效果好，使不少患者重见光明，其病员来自全国各地。</p>
-            <p>此外，黄霄教授热心公益事业，心系基层群众，长期关注老少边贫地区患者的视觉健康问题，先后10余次参加四川省卫生厅医疗下乡活动并成为优秀团体成员，相关事迹曾经中央电视台和四川电视台报道。</p>
-            <p>黄霄教授长期指导研究生、住院医师，进修医师的临床教学工作。作为主研人员，先后承担国家自然科学基金、国家中医药管理局、四川省教育厅等各级研究课题10余项，公开发表学术论文30余篇。</p>
+        <div class="leftBtn">
+            <i class="icon_arrow icon_left"></i>
+        </div>
+        <div class="rightBtn">
+            <i class="icon_arrow icon_right"></i>
         </div>
     </div>
 </div>
+<script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+        $(".leftBtn").addClass("active");
+        $(".rightBtn").addClass("active");
+    }
+    var rightMoveNum = members-4;
+    var leftMoveNum = 0;
+    function move() {
+        if(rightMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos-displacement
+            })
+            rightMoveNum--;
+            leftMoveNum++;
+        }
+        console.log(rightMoveNum);
+    }
+    function move2() {
+        if(leftMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos+displacement
+            })
+            rightMoveNum++;
+            leftMoveNum--;
+        }
+        console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+        if(rightMoveNum>0){
+            move();
+        }
+    })
+    $(".leftBtn").click(function() {
+        if(leftMoveNum>0){
+            move2();
+        }
+    })
 
+</script>
