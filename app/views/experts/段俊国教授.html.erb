@@ -1,31 +1,137 @@
-<div class="middle flow">
-    <div class="flow expDetails bottom-Mar30">
-        <p class="expertsTitle">著名专家</p>
-        <ul class="flParent BasicInformation flow">
-            <li class="expertsLeftImg">
-                <div class="fl">
-                    <%= image_tag("experts_djg.png") %>
+<div class="doctorDetails flow whiteBg">
+    <div class="fl doctorPortrait flow">
+        <%= image_tag("zj2.jpg") %>
+        <div class="doctorBtns">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+            <%= link_to '查看排班表',medical_path(:index,:anchor=>"experts_2"),:class=>"fr" %>
+        </div>
+    </div>
+    <div class="fl doctorContent flow">
+        <h5>段俊国</h5>
+        <p class="doctorTitle"><span>主任医师教授/博士生导师</span></p>
+        <div class="doctorHonor">
+            <p>成都中医药大学眼科学院/成都中医大银海眼科医院院长、书记/四川省眼与视觉健康产业技术研究院院长</p>
+            <p>享受国务院政府津贴专家</p>
+            <p>中国百名杰出青年中医</p>
+            <p>全国杰出专业技术人才</p>
+            <p>全国优秀科技工作者</p>
+            <p>国家卫生计生突出贡献中青年专家</p>
+            <p>四川省学术技术带头人</p>
+            <p>四川省名中医</p>
+            <p>四川省卫生计生委首席专家</p>
+        </div>
+        <div class="doctorGoodAt flow">
+            <span>擅长领域：</span>
+            <p>从事眼科医疗、教学、科研工作30余年，主要从事疑难眼病与视功能保护研究，长于糖尿病视网膜病变等眼底病的诊治。</p>
+        </div>
+        <p class="seePatientTime"><span>坐诊时间:</span>周三/五上午,具体请以专家门诊时间表为准</p>
+    </div>
+</div>
+<div class="doctorIntroduce whiteBg">
+ <p>从事眼科医疗、教学、科研工作30余年，主要从事疑难眼病与视功能保护的研究，长于糖尿病视网膜病变等眼底病的诊治。</p>
+ <p>国家重点学科（中医五官科学科）学科带头人、国家中医药管理局重点学科（中医眼科学）带头人、国家中医药管理局中医药视功能保护重点研究室主任、四川省视网膜图像技术与慢性血管性疾病防治协同创性中心主任、四川省眼病中医药防治及视功能保护重点实验室主任。为国务院学位委员会第六、七届学科评议组成员，全国临床医学中医学中药学专业学位研究生教育指导委员会委员、国家“百千万人才工程”国家级人选，获得“全国杰出专业技术人才”、“全国优秀科技工作者”、“国家卫生计生突出贡献中青年专家”、“中国百名杰出青年中医”等荣誉称号，为四川省学术技术带头人和四川省卫生计生委首席专家。</p>
+</div>
+<ul class="registered flow flParent">
+    <li>预约挂号</li>
+    <li>姓名：<input type="text"></li>
+    <li>联系电话：<input type="text"></li>
+    <li>预约时间：<input type="text"></li>
+    <li>预约科室：<input type="text"></li>
+    <li><a href="" class="registeredBtn">提交</a></li>
+</ul>
+<div class="membersList whiteBg flow">
+    <div class="fl teamMemberWords">团 队 成 员</div>
+    <div class="teamContainer" >
+        <ul class="teamMembers fr flParent flow" style="">
+            <!--陆雪婧-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj9.jpg"),expert_path(:路雪婧主任医师) %>
                 </div>
-                <div class="fl seniority">
-                    <h5>段俊国</h5>
-                    <p>主任医师</p>
-                    <p>教授，博士生导师</p>
-                    <p>成都中医药大学眼科学院院长</p>
-                    <div class="expertsHref">
-                        <input type="button" value="在线预约" class="online-appointment">
-                        <input type="button" value="查看排班" class="look-scheduling">
-                    </div>
+                <div class="fl memberIntroduce">
+                    <h4>陆雪婧</h4>
+                    <p>成都中医药大学研究员/博士生导师</p>
+                    <p>全国首批中医药传承博士后</p>
                 </div>
             </li>
-            <li class="expertsRightWord">
-                <h6>擅长领域：</h6>
-                <p>主要研究方向为中医药防治防治糖尿病视网膜病变、青光眼及视神经保护的研究，且在青少年近视防治方面有所突破。</p>
+            <!--陆雪婧-->
+            <!--张富文-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj10.jpg"),expert_path(:张富文主治医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>张富文</h4>
+                    <p>主任医师/教授/硕士生导师</p>
+                    <p>中华中医药学会眼科分会青年委员</p>
+                </div>
             </li>
+            <!--张富文-->
+            <!--蹇文渊-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj20.jpg"),expert_path(:蹇文渊主治医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>蹇文渊</h4>
+                    <p>主治医师/医学博士、博士后</p>
+                    <p>中国中医药研究促进会糖尿病专业委员会委员</p>
+                </div>
+            </li>
+            <!--蹇文渊-->
+
         </ul>
-        <div class="expertsAllMessage">
-            <h6>专家简介：</h6>
-            <P>段俊国，教授，博士导师，成都中医药大学眼科学院院长兼书记，为国家“百千万人才工程”国家(第一、二层次)人选，享受国务院政府津贴专家，“中国百名杰出青年中医”，“四川省学术和技术带头人”，“四川省名中医”，现任国务院学位委员会中医中药学科评议组成员，全国临床医学中医学、中药学专业学位研究生教育指导委员会委员，全国科学技术名词审定委员会中医药学名词审定委员会（国务院批准）委员，国家中药品种保护委员会委员，中华中医药学会眼科分会副主任委员，世界中医药联合会眼科专业委员会副会长，中国中西医结合学会眼科专业委员会副主任委员，国家中医临床研究基地糖尿病临床研究联盟副主席、中国中医药研究促进会糖尿病专业委员会副主任，中华中医药学会眼科专业委员会委员，中华预防医学会，四川省糖尿病协会会长。拥有包括四川省科技进步特等奖在内的科技奖励共8项，并荣获“国家杰出专业技术人才”（2014年，中组部、中宣部、人社部、科技部表彰，全国共99人），“全国优秀科技工作者”（2014年，中国科协表彰，全国共2000人），“国家卫生计生突出贡献中青年专家”（ 2015年，国家卫生计生委员会表彰，全国共108人）。</P>
-            <P>主要研究方向为中医药防治糖尿病视网膜病变、青光眼及视神经保护、青少年近视防治。已培养硕博士研究生62人。先后主持国家重大科技专项、国家重大仪器专项、国家国际科技合作专项、国家“863”计划、国家科技攻关计划、国家科技支撑计划、国家公益行业科技专项、国家自然科学基金等国家级课题27项，部省级11项，共计40余项。学科建设期间获得获国家新药证书1项、国家发明专利3项及软件著作权3项；主编 “十一五”规划教材《中医眼科临床研究》（人民卫生出版社,2009年），十二五规划教材《中医眼科学》（人民卫生出版社,2012年）和全国中医药行业高等教育十二五规划教材《中西医结合眼科学》（中国中医药出版社, 2013年）；建设期间公开发表学术论文44篇，其中SCI 5篇，核心期刊23篇；在糖尿病微血管病变、眼底病防治和中医药临床评价等领域处于领先地位，自主研制的芪灯明目胶囊已获临床研究批件，芪明颗粒已生产上市并获批中药保护品种。</P>
+        <div class="leftBtn">
+            <i class="icon_arrow icon_left"></i>
+        </div>
+        <div class="rightBtn">
+            <i class="icon_arrow icon_right"></i>
         </div>
     </div>
 </div>
+<script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+        $(".leftBtn").addClass("active");
+        $(".rightBtn").addClass("active");
+    }
+    var rightMoveNum = members-4;
+    var leftMoveNum = 0;
+    function move() {
+        if(rightMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos-displacement
+            })
+            rightMoveNum--;
+            leftMoveNum++;
+        }
+        console.log(rightMoveNum);
+    }
+    function move2() {
+        if(leftMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos+displacement
+            })
+            rightMoveNum++;
+            leftMoveNum--;
+        }
+        console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+        if(rightMoveNum>0){
+            move();
+        }
+    })
+    $(".leftBtn").click(function() {
+        if(leftMoveNum>0){
+            move2();
+        }
+    })
+
+</script>
