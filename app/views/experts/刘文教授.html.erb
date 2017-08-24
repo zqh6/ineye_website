@@ -1,32 +1,121 @@
-<div class="middle flow">
-    <div class="flow expDetails bottom-Mar30">
-        <p class="expertsTitle">著名专家</p>
-        <ul class="flParent BasicInformation flow">
-            <li class="expertsLeftImg">
-                <div class="fl">
-                    <%= image_tag("experts_lw.png") %>
+<div class="doctorDetails flow whiteBg">
+    <div class="fl doctorPortrait flow">
+        <%= image_tag("zj5.jpg") %>
+        <div class="doctorBtns">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+            <%= link_to '查看排班表',medical_path(:index,:anchor=>"experts_5"),:class=>"fr" %>
+        </div>
+    </div>
+    <div class="fl doctorContent flow">
+        <h5>刘文</h5>
+        <p class="doctorTitle"><span>主任医师/教授/硕士生导师</span></p>
+        <div class="doctorHonor">
+            <p>成都中医大银海眼科医院医疗质量总监、眼底外科主任</p>
+            <p>获得国家和省级科研成果奖三项</p>
+            <p>被评为2015年度和2016年度广东省“岭南名医”</p>
+        </div>
+        <div class="doctorGoodAt flow">
+            <span>擅长领域：</span>
+            <p>从事眼科临床医疗工作35年。主要从事玻璃体视网膜疾病发病机制和诊断治疗的研究，特别擅长各种眼底疾病、复杂性视网膜脱离和外伤性视网膜脱离以及糖尿病性眼底疾病的手术和激光治疗。</p>
+        </div>
+        <p class="seePatientTime"><span>坐诊时间:</span>周一/三/五上午、周四下午,具体请以专家门诊时间表为准</p>
+    </div>
+</div>
+<div class="doctorIntroduce whiteBg">
+    <p>从事眼科临床医疗工作35年。主要从事玻璃体视网膜疾病发病机制和诊断治疗的研究，特别擅长各种眼底疾病、复杂性视网膜脱离和外伤性视网膜脱离以及糖尿病性眼底疾病的手术和激光治疗。</p>
+    <p>在国内外最早用超声生物显微镜对前段增生性玻璃体视网膜病变进行系统分类，使这一复杂性玻璃体视网膜疾病的诊治有了客观的诊断标准。在国内外首创视网膜脱离外路显微手术技术和理论，将该手术方式提高到了显微手术时代，显著地提高了视网膜脱离外路手术的成功率。该手术技术和理论在国内外处于领先地位。</p>
+    <p>在多年研究前段增生性玻璃体视网膜病变的基础上，总结出了一整套全玻璃体切除的技术和理论，并应用到微创玻璃体手术中，对减少我国玻璃体手术并发症和提高手术成功率做出了卓有成效的贡献。</p>
+</div>
+<ul class="registered flow flParent">
+    <li>预约挂号</li>
+    <li>姓名：<input type="text"></li>
+    <li>联系电话：<input type="text"></li>
+    <li>预约时间：<input type="text"></li>
+    <li>预约科室：<input type="text"></li>
+    <li><a href="" class="registeredBtn">提交</a></li>
+</ul>
+<div class="membersList whiteBg flow">
+    <div class="fl teamMemberWords">团 队 成 员</div>
+    <div class="teamContainer" >
+        <ul class="teamMembers fr flParent flow" style="">
+            <!--黄霄-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj11.jpg"),expert_path(:黄霄主任医师) %>
                 </div>
-                <div class="fl seniority">
-                    <h5>刘文</h5>
-                    <p>主任医师</p>
-                    <p>教授 硕士研究生导师</p>
-                    <div class="expertsHref">
-                        <input type="button" value="在线预约" class="online-appointment">
-                        <input type="button" value="查看排班" class="look-scheduling">
-                    </div>
+                <div class="fl memberIntroduce">
+                    <h4>黄霄</h4>
+                    <p>主任医师/教授/硕士生导师</p>
+                    <p>四川眼免疫学会会员</p>
                 </div>
             </li>
-            <li class="expertsRightWord">
-                <h6>擅长领域：</h6>
-                <p>主要从事玻璃体视网膜疾病研究，擅长各种眼底疾病和复杂性视网膜脱离的手术治疗。</p>
+            <!--黄霄-->
+            <!--王国平-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj15.jpg"),expert_path(:王国平主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>王国平</h4>
+                    <p>副主任医师/医学硕士</p>
+                    <p>第四军医大学眼科学硕士</p>
+                    <p>从事眼科临床工作20年</p>
+                </div>
             </li>
+            <!--王国平-->
+
         </ul>
-        <div class="expertsAllMessage">
-            <h6>专家简介：</h6>
-            <p>刘文，教授，硕士研究生导师，获得国家和省级科研成果奖三项，从事眼科临床医疗工作35年。主要从事玻璃体视网膜疾病发病机制和诊断治疗的研究。特别擅长各种眼底疾病、复杂性视网膜脱离和外伤性视网膜脱离、以及糖尿病性眼底疾病的手术和激光治疗。</p>
-            <p>在国内外最早用超声生物显微镜对前段增生性玻璃体视网膜病变进行系统分类，使这一复杂性玻璃体视网膜疾病的诊治有了客观的诊断标准。在国内外首创视网膜脱离外路显微手术技术和理论，将该手术方式提高到了显微手术时代，显著地提高了视网膜脱离外路手术的成功率。该手术技术和理论在国内外处于领先地位。</p>
-            <p>在多年研究前段增生性玻璃体视网膜病变的基础上，总结出了一整套全玻璃体切除的技术和理论，并应用到微创玻璃体手术中，对减少我国玻璃体手术并发症和提高手术成功率做出了卓有成效的贡献。</p>
-            <p>在科研方面申请到省重点攻关课题2项，省卫生厅科研课题2项，协助申请各级课题8项。在国内外发表眼科学研究论文50余篇。出版115万字的个人专著《视网膜脱离显微手术学》和主编364万字《临床眼底病-内外科卷》，还参与主编眼科专著《活体超声显微镜眼科学》和《临床眼科护理学》二部，参与编写眼科专著十三部。获得国家和省级科研成果奖三项。连续二年被评为2015年度和2016年度广东省“岭南名医”。</p>
+        <div class="leftBtn">
+            <i class="icon_arrow icon_left"></i>
+        </div>
+        <div class="rightBtn">
+            <i class="icon_arrow icon_right"></i>
         </div>
     </div>
 </div>
+<script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+        $(".leftBtn").addClass("active");
+        $(".rightBtn").addClass("active");
+    }
+    var rightMoveNum = members-4;
+    var leftMoveNum = 0;
+    function move() {
+        if(rightMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos-displacement
+            })
+            rightMoveNum--;
+            leftMoveNum++;
+        }
+        console.log(rightMoveNum);
+    }
+    function move2() {
+        if(leftMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos+displacement
+            })
+            rightMoveNum++;
+            leftMoveNum--;
+        }
+        console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+        if(rightMoveNum>0){
+            move();
+        }
+    })
+    $(".leftBtn").click(function() {
+        if(leftMoveNum>0){
+            move2();
+        }
+    })
+
+</script>
