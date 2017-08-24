@@ -2600,6 +2600,7 @@ p>b{
     position: absolute;
     top: 0;
     text-align: center;
+    cursor: pointer;
 }
 .leftBtn{
     left: -40px;
@@ -2608,10 +2609,10 @@ p>b{
     right: -40px;
 }
 .leftBtn.active{
-    transition: all 1s;
+    transition: all .5s;
 }
 .rightBtn.active{
-    transition: all 1s;
+    transition: all .5s;
 }
 .teamContainer:hover .leftBtn.active{
     left: 0;
