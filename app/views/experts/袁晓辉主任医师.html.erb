@@ -1,30 +1,147 @@
-<div class="middle flow">
-    <div class="flow expDetails bottom-Mar30">
-        <p class="expertsTitle">主任医师</p>
-        <ul class="flParent BasicInformation flow">
-            <li class="expertsLeftImg">
-                <div class="fl">
-                    <%= image_tag("experts_yxh.png") %>
+<div class="doctorDetails flow whiteBg">
+    <div class="fl doctorPortrait flow">
+        <%= image_tag("zj8.jpg") %>
+        <div class="doctorBtns">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+            <%= link_to '查看排班表',medical_path(:index,:anchor=>"experts_8"),:class=>"fr" %>
+        </div>
+    </div>
+    <div class="fl doctorContent flow">
+        <h5>袁晓辉</h5>
+        <p class="doctorTitle"><span>主任医师/教授</span></p>
+        <div class="doctorHonor">
+            <p>成都中医药大学眼视光教研室学术带头人</p>
+            <p>全国知名小儿眼科专家</p>
+            <p>全国名老中医药专家学术经验继承人</p>
+            <p>中国民族医药学会眼科分会常务理事</p>
+            <p>四川省中西医结合学会眼科专业委员会委员</p>
+            <p>四川省医学会眼视光专业委员会委员</p>
+        </div>
+        <div class="doctorGoodAt flow">
+            <span>擅长领域：</span>
+            <p>擅长儿童弱视矫治，青少年近视的中医药防控、各类屈光性弱视、眼球震颤性弱视等多种疑难性弱视的诊断和治疗有独到见解。各类斜视的诊治，医学验光及渐变多焦镜、OK镜、RGP镜的验配。对白内障、青光眼、葡萄膜炎、眼底病等各类眼科常见病也有丰富的临床经验。</p>
+        </div>
+        <p class="seePatientTime"><span>坐诊时间:</span>周一/日上午、周三下午、周二/四全天,具体请以专家门诊时间表为准</p>
+    </div>
+</div>
+<div class="doctorIntroduce whiteBg">
+    <p>擅长儿童弱视矫治，在各类屈光性弱视、眼球震颤性弱视等多种疑难性弱视的诊断和治疗都有独到之处。对青少年近视的中医药防控有独到见解。各类斜视的诊治，医学验光及渐变多焦镜、OK镜、RGP镜的验配。对白内障、青光眼、葡萄膜炎、眼底病等各类眼科常见病也有丰富的临床经验。</p>
+    <p>1985年毕业于成都中医药大学，在成都中医药大学附属医院眼科、眼视光中心从事中西医眼科、眼视光工作30余年，曾在温州医科大学眼视光医院和北京医科大学第一附属医院小儿眼科学习进修，从事小儿斜弱视临床、科研、教学工作至今。</p>
+    <p>在临床诊疗工作之余，还定期到基层医院坐诊，帮助基层医疗人员提升斜弱视诊疗水平，使广泛的斜弱视病人受益；同时她负责或主研国家科技攻关、国家新药基金等各级课题7项，正式学术期刊发表论文20余篇，参加多部眼科专著的编写。</p>
+</div>
+<ul class="registered flow flParent">
+    <li>预约挂号</li>
+    <li>姓名：<input type="text"></li>
+    <li>联系电话：<input type="text"></li>
+    <li>预约时间：<input type="text"></li>
+    <li>预约科室：<input type="text"></li>
+    <li><a href="" class="registeredBtn">提交</a></li>
+</ul>
+<div class="membersList whiteBg flow">
+    <div class="fl teamMemberWords">团 队 成 员</div>
+    <div class="teamContainer" >
+        <ul class="teamMembers fr flParent flow" style="">
+            <!--周跃华-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj6.jpg"),expert_path(:周跃华教授) %>
                 </div>
-                <div class="fl seniority">
-                    <h5>袁晓辉</h5>
-                    <p>主任医师</p>
-                    <div class="expertsHref">
-                        <input type="button" value="在线预约" class="online-appointment">
-                        <input type="button" value="查看排班" class="look-scheduling">
-                    </div>
+                <div class="fl memberIntroduce">
+                    <h4>周跃华</h4>
+                    <p>主任医师/教授/硕士生导师</p>
+                    <p>国家发改委药审委员会委员</p>
                 </div>
             </li>
-            <li class="expertsRightWord">
-                <h6>擅长领域：</h6>
-                <p>青少年近视的综合防控，小儿弱视矫治，各类斜视的诊治与手术治疗，医学验光及渐变多焦镜、OK镜、RGP镜的验配，眼科常见病如白内障、青光眼、葡萄膜炎、眼底病的诊治。</p>
+            <!--周跃华-->
+            <!--周春阳-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj13.jpg"),expert_path(:周春阳主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>周春阳</h4>
+                    <p>副教授/医学博士</p>
+                    <p>成都中医药大学眼视光教研室主任</p>
+                </div>
             </li>
+            <!--周春阳-->
+            <!--谢艾芮-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj16.jpg"),expert_path(:谢艾芮主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>谢艾芮</h4>
+                    <p>主治医师/医学硕士</p>
+                    <p>四川省康复医学会视觉光学专委会委员</p>
+                </div>
+            </li>
+            <!--谢艾芮-->
+            <!--缪馨-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj19.jpg"),expert_path(:缪馨主治医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>缪馨</h4>
+                    <p>主治医师/医学硕士</p>
+                    <p>临床、科研经验丰富</p>
+                    <p>中西结合效果显著</p>
+                </div>
+            </li>
+            <!--缪馨-->
         </ul>
-        <div class="expertsAllMessage">
-            <h6>专家简介：</h6>
-            <p>袁晓辉，成都中医药大学眼视光教研室学术带头人，全国名老中医药专家学术经验继承人、中国民族医药学会眼科分会常务理事、四川省中西医结合学会眼科专业委员会委员、四川省医学会眼视光专业委员会委员。1985年毕业于成都t中医药大学，在成都中医药大学附属医院眼科、眼视光中心从事中西医眼科、眼视光工作30余年，曾在温州医科大学眼视光医院和北京医科大学第一附属医院小儿眼科学习进修，从事小儿斜弱视临床、科研、教学工作至今。</p>
-            <p>袁晓辉主任医师在繁忙的临床诊疗的工作之余，还定期到基层医院坐诊，帮助基层医疗人员提升斜弱视诊疗水平，使更广泛的斜弱视病人受益；同时她负责或主研国家科技攻关、国家新药基金等各级课题7项，正式学术期刊发表论文20余篇，参加多部眼科专著的编写。</p>
+        <div class="leftBtn">
+            <i class="icon_arrow icon_left"></i>
+        </div>
+        <div class="rightBtn">
+            <i class="icon_arrow icon_right"></i>
         </div>
     </div>
 </div>
+<script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+        $(".leftBtn").addClass("active");
+        $(".rightBtn").addClass("active");
+    }
+    var rightMoveNum = members-4;
+    var leftMoveNum = 0;
+    function move() {
+        if(rightMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos-displacement
+            })
+            rightMoveNum--;
+            leftMoveNum++;
+        }
+        console.log(rightMoveNum);
+    }
+    function move2() {
+        if(leftMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos+displacement
+            })
+            rightMoveNum++;
+            leftMoveNum--;
+        }
+        console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+        if(rightMoveNum>0){
+            move();
+        }
+    })
+    $(".leftBtn").click(function() {
+        if(leftMoveNum>0){
+            move2();
+        }
+    })
 
+</script>

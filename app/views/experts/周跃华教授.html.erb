@@ -1,31 +1,148 @@
-<div class="middle flow">
-    <div class="flow expDetails bottom-Mar30">
-        <p class="expertsTitle">著名专家</p>
-        <ul class="flParent BasicInformation flow">
-            <li class="expertsLeftImg">
-                <div class="fl">
-                    <%= image_tag("experts_zyh.png") %>
+<div class="doctorDetails flow whiteBg">
+    <div class="fl doctorPortrait flow">
+        <%= image_tag("zj6.jpg") %>
+        <div class="doctorBtns">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+            <%= link_to '查看排班表',medical_path(:index,:anchor=>"experts_6"),:class=>"fr" %>
+        </div>
+    </div>
+    <div class="fl doctorContent flow">
+        <h5>周跃华</h5>
+        <p class="doctorTitle"><span>主任医师/教授/硕士生导师</span></p>
+        <div class="doctorHonor">
+            <p>成都中医大银海眼科医院眼视光中心名誉主任</p>
+            <p>北京同仁医院视光中心主任</p>
+            <p>中华医学会眼科分会视光学组委员</p>
+            <p>国家发改委药审委员会委员</p>
+            <p>台湾白内障与屈光学会荣誉顾问</p>
+            <p>全国SMILE专家协作组成员</p>
+        </div>
+        <div class="doctorGoodAt flow">
+            <span>擅长领域：</span>
+            <p>主要从事角膜屈光手术的临床工作和近视理论的基础研究，长于Smart千频全激光、Smile全飞秒等各类屈光手术，共完成各类屈光手术15万余例。在角膜屈光手术及其并发症等的处理上，具有丰富的临床工作经验。</p>
+        </div>
+        <p class="seePatientTime"><span>坐诊时间:</span>周一下午,具体请以专家门诊时间表为准</p>
+    </div>
+</div>
+<div class="doctorIntroduce whiteBg">
+    <p>主要从事角膜屈光手术的临床工作和近视理论的基础研究，长于Smart千频全激光、Smile全飞秒等各类屈光手术，共完成各类屈光手术15万余例。在角膜屈光手术及其并发症等的处理上，具有丰富的临床工作经验。</p>
+    <p>全国大型医用设备使用人员上岗资格考试命审题委员会委员，台湾白内障与屈光学会荣誉顾问，全国SMILE专家协作组成员。《中华实验眼科杂志》编委，《中华眼科杂志》通讯编委，《中华眼科杂志（电子版）》编委，《眼科杂志》编委，《欧洲时代（中文版）》编委。</p>
+    <p>卫生部国家医学考试中心全国大型医用设备使用人员上岗资格考试命审题委员。1994年开始从事角膜屈光手术的临床工作和近视理论的基础研究，共完成各类屈光手术1万余例（其中包括国内知名人士和美国、英国、加拿大等近15个国家和地区的外宾）。在角膜屈光手术及其并发症等的处理上，具有丰富的临床工作经验。2000年11月开始巩膜扩张术矫治老花眼的临床工作和理论研究。</p>
+    <p>主持的《亚临床期圆锥角膜的角膜地形图早期诊断标准》获1996年北京市卫生局科技二等奖、《LASIK术中视网膜瞬间缺血重新灌注对视网膜的影响》获2000年北京市科技进步三等奖。2001年获北京市卫生系统青年岗位能手称号。主持科研课题3项：北京市青年科技骨干培养基金《视网膜脉络膜在鸡形觉剥夺性近视发病机制中的作用》、出国留学人员启动基金《鸡形觉剥夺性近视眼巩膜生长调控的机制》、2012年荣获“中国名医百强榜”上榜名医、北京市重点学科分枝项目《北京市重点学科分枝项目》。</p>
+</div>
+<ul class="registered flow flParent">
+    <li>预约挂号</li>
+    <li>姓名：<input type="text"></li>
+    <li>联系电话：<input type="text"></li>
+    <li>预约时间：<input type="text"></li>
+    <li>预约科室：<input type="text"></li>
+    <li><a href="" class="registeredBtn">提交</a></li>
+</ul>
+<div class="membersList whiteBg flow">
+    <div class="fl teamMemberWords">团 队 成 员</div>
+    <div class="teamContainer" >
+        <ul class="teamMembers fr flParent flow" style="">
+            <!--袁晓辉-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj8.jpg"),expert_path(:袁晓辉主任医师) %>
                 </div>
-                <div class="fl seniority">
-                    <h5>周跃华</h5>
-                    <p>教授 硕士生导师</p>
-                    <p>眼视光中心荣誉主任</p>
-                    <div class="expertsHref">
-                        <input type="button" value="在线预约" class="online-appointment">
-                        <input type="button" value="查看排班" class="look-scheduling">
-                    </div>
+                <div class="fl memberIntroduce">
+                    <h4>袁晓辉</h4>
+                    <p>主任医师/教授</p>
+                    <p>成都中医药大学眼视光教研室学术带头人</p>
                 </div>
             </li>
-            <li class="expertsRightWord">
-                <h6>擅长领域：</h6>
-                <p>主要从事角膜屈光手术的临床工作和近视理论的基础研究</p>
+            <!--袁晓辉-->
+            <!--周春阳-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj13.jpg"),expert_path(:周春阳主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>周春阳</h4>
+                    <p>副教授/医学博士</p>
+                    <p>成都中医药大学眼视光教研室主任</p>
+                </div>
             </li>
+            <!--周春阳-->
+            <!--谢艾芮-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj16.jpg"),expert_path(:谢艾芮主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>谢艾芮</h4>
+                    <p>主治医师/医学硕士</p>
+                    <p>四川省康复医学会视觉光学专委会委员</p>
+                </div>
+            </li>
+            <!--谢艾芮-->
+            <!--缪馨-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj19.jpg"),expert_path(:缪馨主治医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>缪馨</h4>
+                    <p>主治医师/医学硕士</p>
+                    <p>临床、科研经验丰富</p>
+                    <p>中西结合效果显著</p>
+                </div>
+            </li>
+            <!--缪馨-->
         </ul>
-        <div class="expertsAllMessage">
-            <h6>专家简介：</h6>
-            <p>北京同仁医院视光中心主任，中华医学会眼科分会视光学组委员，国家发改委药审委员会委员，全国大型医用设备使用人员上岗资格考试命审题委员会委员，台湾白内障与屈光学会荣誉顾问，全国SMILE专家协作组成员。《中华实验眼科杂志》编委，《中华眼科杂志》通讯编委，《中华眼科杂志（电子版）》编委，《眼科杂志》编委，《欧洲时代（中文版）》编委。主要从事角膜屈光手术的临床工作和近视理论的基础研究，共完成各类屈光手术15万余例。</p>
-            <p>卫生部国家医学考试中心全国大型医用设备使用人员上岗资格考试命审题委员。1994年开始从事角膜屈光手术的临床工作和近视理论的基础研究，共完成各类屈光手术1万余例（其中包括国内知名人士和美国、英国、加拿大等近15个国家和地区的外宾）。在角膜屈光手术及其并发症等的处理上，具有丰富的临床工作经验。2000年11月开始巩膜扩张术矫治老花眼的临床工作和理论研究。</p>
-            <p>主持的《亚临床期圆锥角膜的角膜地形图早期诊断标准》获1996年北京市卫生局科技二等奖、《LASIK术中视网膜瞬间缺血重新灌注对视网膜的影响》获2000年北京市科技进步三等奖。2001年获北京市卫生系统青年岗位能手称号。主持科研课题3项：北京市青年科技骨干培养基金《视网膜脉络膜在鸡形觉剥夺性近视发病机制中的作用》、出国留学人员启动基金《鸡形觉剥夺性近视眼巩膜生长调控的机制》、2012年荣获“中国名医百强榜”上榜名医  、北京市重点学科分枝项目《北京市重点学科分枝项目》。</p>
+        <div class="leftBtn">
+            <i class="icon_arrow icon_left"></i>
+        </div>
+        <div class="rightBtn">
+            <i class="icon_arrow icon_right"></i>
         </div>
     </div>
 </div>
+<script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+        $(".leftBtn").addClass("active");
+        $(".rightBtn").addClass("active");
+    }
+    var rightMoveNum = members-4;
+    var leftMoveNum = 0;
+    function move() {
+        if(rightMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos-displacement
+            })
+            rightMoveNum--;
+            leftMoveNum++;
+        }
+        console.log(rightMoveNum);
+    }
+    function move2() {
+        if(leftMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos+displacement
+            })
+            rightMoveNum++;
+            leftMoveNum--;
+        }
+        console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+        if(rightMoveNum>0){
+            move();
+        }
+    })
+    $(".leftBtn").click(function() {
+        if(leftMoveNum>0){
+            move2();
+        }
+    })
+
+</script>
