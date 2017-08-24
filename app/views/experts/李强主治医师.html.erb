@@ -1,30 +1,133 @@
-<div class="middle flow">
-    <div class="flow expDetails bottom-Mar30">
-        <p class="expertsTitle">主治医师</p>
-        <ul class="flParent BasicInformation flow">
-            <li class="expertsLeftImg">
-                <div class="fl">
-                    <%= image_tag("zzys2.jpg") %>
+<div class="doctorDetails flow whiteBg">
+    <div class="fl doctorPortrait flow">
+        <%= image_tag("zj18.jpg") %>
+        <div class="doctorBtns">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+            <%= link_to '查看排班表',medical_path(:index,:anchor=>"experts_18"),:class=>"fr" %>
+        </div>
+    </div>
+    <div class="fl doctorContent flow">
+        <h5>李强</h5>
+        <p class="doctorTitle"><span>主治医师/医学博士</span></p>
+        <div class="doctorHonor">
+            <p>四川省第五批老中医药专家学术经验继承人</p>
+            <p>世界中医药联合会眼科专业委员会会员</p>
+            <p>世界中医药联合会伦理审查专业委员会会员</p>
+            <p>四川省中医药学会眼科专业委员会委员</p>
+            <p>成都中医药大学科技青年联合会委员</p>
+        </div>
+        <div class="doctorGoodAt flow">
+            <span>擅长领域：</span>
+            <p>糖尿病视网膜病变、视网膜静脉阻塞、视网膜静脉周围炎、结膜病、角膜病、干眼症等的中西医综合防治。</p>
+        </div>
+        <p class="seePatientTime"><span>坐诊时间:</span>周一上午、周五下午、周日全天,具体请以专家门诊时间表为准</p>
+    </div>
+</div>
+<div class="doctorIntroduce whiteBg">
+  <p>2007年毕业于成都中医药大学，获医学硕士学位；2011年毕业于成都中医药大学，获医学博士学位。毕业后留校在眼科从事临床、教学、科研工作。在视觉电生理及细胞电生理方面有较深入的研究。于2010年1月至2011年2月作为联合培养生在复旦大学脑科学研究院完成了博士论文的相关研究。</p>
+  <p>现任世界中医药联合会眼科专业委员会会员、世界中医药联合会伦理审查专业委员会会员、四川省中医药学会眼科专业委员会委员、成都中医药大学科技青年联合会委员。国家卫计委“十三五”规划教材《中医眼科学》编写秘书、《中医眼科学学习指导与习题集》编写秘书。获校级教学成果奖二等奖1项。主要研究方向：糖尿病视网膜病变等难治性眼底病中医药防治及视功能保护研究。作为负责人主持国家教育部高等学校博士学科点专项科研基金1项、四川省科技厅科技支撑计划2项。主研了“国家自然科学基金”、“十一五重大新药创制”、“国家重大仪器专项”等国家课题8项、部省级课题4项；发表学术论文20篇。</p>
+</div>
+<ul class="registered flow flParent">
+    <li>预约挂号</li>
+    <li>姓名：<input type="text"></li>
+    <li>联系电话：<input type="text"></li>
+    <li>预约时间：<input type="text"></li>
+    <li>预约科室：<input type="text"></li>
+    <li><a href="" class="registeredBtn">提交</a></li>
+</ul>
+<div class="membersList whiteBg flow">
+    <div class="fl teamMemberWords">团 队 成 员</div>
+    <div class="teamContainer" >
+        <ul class="teamMembers fr flParent flow" style="">
+            <!--张富文-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj10.jpg"),expert_path(:张富文主治医师) %>
                 </div>
-                <div class="fl seniority">
-                    <h5>李强</h5>
-                    <p>主任医师</p>
-                    <div class="expertsHref">
-                        <input type="button" value="在线预约" class="online-appointment">
-                        <input type="button" value="查看排班" class="look-scheduling">
-                    </div>
+                <div class="fl memberIntroduce">
+                    <h4>张富文</h4>
+                    <p>主任医师/教授/硕士生导师</p>
+                    <p>中华中医药学会眼科分会青年委员</p>
                 </div>
             </li>
-            <li class="expertsRightWord">
-                <h6>擅长领域：</h6>
-                <p>擅长糖尿病视网膜病变、视网膜静脉阻塞、视网膜静脉周围炎、结膜病、角膜病、干眼症等的中西医综合防治。</p>
+            <!--张富文-->
+            <!--潘学会-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj14.jpg"),expert_path(:潘学会) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>潘学会</h4>
+                    <p>副主任医师/医学硕士</p>
+                    <p>四川省医学会眼科专委会委员</p>
+                </div>
             </li>
+            <!--潘学会-->
+            <!--陈小凤-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj17.jpg"),expert_path(:陈小凤) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>陈小凤</h4>
+                    <p>主治医师/医学博士</p>
+                    <p>师从名师</p>
+                    <p>擅长多种眼科手术</p>
+                </div>
+            </li>
+            <!--陈小凤-->
         </ul>
-        <div class="expertsAllMessage">
-            <h6>专家简介：</h6>
-            <p>2007年毕业于成都中医药大学，获医学硕士学位；2011年毕业于成都中医药大学，获医学博士学位。毕业后留校在眼科从事临床、教学、科研工作。在视觉电生理及细胞电生理方面有较深入的研究。于2010年1月至2011年2月作为联合培养生在复旦大学脑科学研究院完成了博士论文的相关研究。</p>
-            <p>现任世界中医药联合会眼科专业委员会会员、世界中医药联合会伦理审查专业委员会会员、四川省中医药学会眼科专业委员会委员、成都中医药大学科技青年联合会委员。国家卫计委“十三五”规划教材《中医眼科学》编写秘书、《中医眼科学学习指导与习题集》编写秘书。获校级教学成果奖二等奖1项。主要研究方向：糖尿病视网膜病变等难治性眼底病中医药防治及视功能保护研究。作为负责人主持国家教育部高等学校博士学科点专项科研基金1项、四川省科技厅科技支撑计划2项。主研了“国家自然科学基金”、“十一五重大新药创制”、“国家重大仪器专项”等国家课题8项、部省级课题4项；发表学术论文20篇。</p>
+        <div class="leftBtn">
+            <i class="icon_arrow icon_left"></i>
+        </div>
+        <div class="rightBtn">
+            <i class="icon_arrow icon_right"></i>
         </div>
     </div>
 </div>
+<script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+        $(".leftBtn").addClass("active");
+        $(".rightBtn").addClass("active");
+    }
+    var rightMoveNum = members-4;
+    var leftMoveNum = 0;
+    function move() {
+        if(rightMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos-displacement
+            })
+            rightMoveNum--;
+            leftMoveNum++;
+        }
+        console.log(rightMoveNum);
+    }
+    function move2() {
+        if(leftMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos+displacement
+            })
+            rightMoveNum++;
+            leftMoveNum--;
+        }
+        console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+        if(rightMoveNum>0){
+            move();
+        }
+    })
+    $(".leftBtn").click(function() {
+        if(leftMoveNum>0){
+            move2();
+        }
+    })
 
+</script>
