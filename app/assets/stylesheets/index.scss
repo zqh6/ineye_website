@@ -2249,11 +2249,12 @@ p>b{
 .commitAllImgs{
     padding: 6px 7px;
 }
-.hosEnvironment li{
+.hosEnvironmentDiv li{
     text-align: center;
     line-height: 224px;
+    display: none;
 }
-.commitAllImgs li,.hosEnvironment li{
+.commitAllImgs li,.hosEnvironmentDiv li{
     position: relative;
 }
 .hosEnvironment .photoMask span{
