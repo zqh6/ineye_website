@@ -22,9 +22,6 @@
             </a>
         </li>
         <li>
-            <%= link_to image_tag("banner_qz.jpg"),news_path(:心系九寨) %>
-        </li>
-        <li>
             <%= link_to image_tag("kaiye_banner.jpg"),news_path(:成都中医大银海眼科医院隆重举行开业庆典仪式) %>
         </li>
 
@@ -47,7 +44,7 @@
     var w =$(".banner-box").width()
     var oImg = $(".banner-box .img");//获取图片盒子
     var s = $(".banner-box li").length;
-    var num =6;
+    var num =5;
     if($(".banner-box .img li").size() <= num){
         var oImgfirst= $('.banner-box .img li:first').clone();//复制第一张图片
         oImg.append(oImgfirst);//将复制的第一张图片放到最后
@@ -56,7 +53,7 @@
         }
     }
 
-    var imgNum = 7;//获取图片数量
+    var imgNum = 6;//获取图片数量
 
     //根据图片个数添加圆点按钮
     //给第一个按钮添加选中样式
