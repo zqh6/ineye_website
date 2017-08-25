@@ -2765,8 +2765,10 @@ octorList li .IntroduceMask p{
     overflow: hidden;
 }
 .thingTime{
-    width: 70px;
-    height: 70px;
+    width: 130px;
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
     color: #fff;
     float: left;
     font-size: 12px;
@@ -2786,12 +2788,19 @@ octorList li .IntroduceMask p{
 .bigThing li:nth-child(4n+3) .thingTime{
     background: #ce207f;
 }
+.oneBigThing p{
+    line-height: 30px;
+    box-sizing: border-box;
+    padding-top: 30px;
+}
 .bigThing>li p{
     float: left;
-    width: 885px;
+    width: 825px;
     height: 104px;
     line-height: 105px;
     border-bottom: 1px solid #e5e8e9;
+    text-indent: 0;
+    padding-left: 2rem;
 }
 .hosTitle{
     border-bottom: 2px solid #72af2d;
