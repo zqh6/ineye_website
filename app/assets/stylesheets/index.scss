@@ -2249,14 +2249,7 @@ p>b{
 .commitAllImgs{
     padding: 6px 7px;
 }
-.hosEnvironmentDiv li{
-    text-align: center;
-    line-height: 224px;
-    display: none;
-}
-.commitAllImgs li,.hosEnvironmentDiv li{
-    position: relative;
-}
+
 .hosEnvironment .photoMask span{
     font-size: 16px;
 }
@@ -2861,6 +2854,14 @@ p>b{
     width: 980px;
     height: 655px;
     overflow: hidden;
+}
+.hosEnvironmentDiv li{
+    text-align: center;
+    line-height: 224px;
+    display: none;
+}
+.commitAllImgs li,.hosEnvironmentDiv li{
+    position: relative;
 }
 .smallImgContainer{
     height: 60px;
