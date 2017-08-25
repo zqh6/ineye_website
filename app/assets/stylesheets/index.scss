@@ -2863,6 +2863,9 @@ p>b{
 .commitAllImgs li,.hosEnvironmentDiv li{
     position: relative;
 }
+.hosEnvironmentDiv li.active{
+    display: block;
+}
 .smallImgContainer{
     height: 60px;
     line-height: 60px;
