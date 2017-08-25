@@ -2309,7 +2309,6 @@ octorList li .IntroduceMask p{
 .hosEnvironment li{
     text-align: center;
     line-height: 224px;
-    display: none;
 }
 .commitAllImgs li,.hosEnvironment li{
     position: relative;
@@ -2870,6 +2869,7 @@ octorList li .IntroduceMask p{
     width: 980px;
     height: 655px;
     overflow: hidden;
+    display: none;
 }
 .hosEnvironmentDiv li{
     position: relative;
