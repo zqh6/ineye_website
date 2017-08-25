@@ -2306,6 +2306,14 @@ octorList li .IntroduceMask p{
 .hosEnvironment li span{
     margin: 0 16px;
 }
+.hosEnvironment li{
+    text-align: center;
+    line-height: 224px;
+    display: none;
+}
+.commitAllImgs li,.hosEnvironment li{
+    position: relative;
+}
 .photoMask:after{
     border-right:1px solid #fff;
     border-left:1px solid #fff;
@@ -2864,11 +2872,6 @@ octorList li .IntroduceMask p{
     overflow: hidden;
 }
 .hosEnvironmentDiv li{
-    text-align: center;
-    line-height: 224px;
-    display: none;
-}
-.commitAllImgs li,.hosEnvironmentDiv li{
     position: relative;
 }
 .hosEnvironmentDiv li.active{
