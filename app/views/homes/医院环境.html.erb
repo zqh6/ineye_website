@@ -42,6 +42,6 @@
     $(".smallImg li").hover(function(){
         var imgIndex = $(this).index();
         console.log(imgIndex);
-        $(".hosEnvironment li").eq(imgIndex).show().siblings().hide();
+        $(".hosEnvironment li").eq(imgIndex).addClass("active").siblings().removeClass("active");
     })
 </script>
