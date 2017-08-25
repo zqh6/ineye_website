@@ -2474,6 +2474,7 @@ p>b{
 .doctorHonor{
     color: #008cd6;
     margin-bottom: 5px;
+    min-height: 70px;
 }
 .doctorGoodAt p{
     display: inline-block;
@@ -2513,6 +2514,8 @@ p>b{
     border-radius: 3px;
     color: #333;
     border: 0;
+    box-sizing: border-box;
+    padding-left: 5px;
 }
 .registeredBtn{
     background-color: #ff9900;
@@ -2528,7 +2531,7 @@ p>b{
 }
 .membersList{
     padding: 8px;
-    margin-top: 20px;
+    margin: 20px 0;
     border: 1px solid #eaeded;
 }
 .teamMemberWords{
@@ -2556,6 +2559,84 @@ p>b{
     float: left;
     display: block;
     margin: 18px 0 0 24px;
+}
+.teamMembers{
+    width: 1140px;
+    height: 163px;
+    background: #6e707d;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 11040px;
+    height: 163px;
+}
+.teamMembers>li{
+    width: 284px;
+    overflow: hidden;
+}
+.teamMemberPhoto img{
+    width: 100px;
+}
+.memberIntroduce{
+    width: 120px;
+    margin-left: 20px;
+    line-height: 26px;
+}
+.memberIntroduce h5{
+    font-size: 16px;
+    line-height: 40px;
+}
+.teamContainer{
+    position: relative;
+    width: 1140px;
+    height: 163px;
+    float: right;
+    overflow: hidden
+}
+.leftBtn,.rightBtn{
+    width: 50px;
+    height: 100%;
+    line-height: 163px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    cursor: pointer;
+}
+.leftBtn{
+    left: -40px;
+}
+.rightBtn{
+    right: -40px;
+}
+.leftBtn.active{
+    transition: all .5s;
+}
+.rightBtn.active{
+    transition: all .5s;
+}
+.teamContainer:hover .leftBtn.active{
+    left: 0;
+}
+.teamContainer:hover .rightBtn.active{
+    right: 0;
+}
+.icon_arrow.icon_left{
+    background-position: 0 -62px;
+}
+.icon_arrow.icon_right{
+    background-position: -26px -62px;
+}
+.icon_arrow{
+    width: 15px;
+    height: 26px;
+    display: inline-block;
+    background: url("icon_lettle.png") no-repeat;
+}
+.narB-20{
+    margin-bottom: 20px;
 }
 /*专家详情*/
 //专家新版index页面

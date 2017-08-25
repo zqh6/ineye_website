@@ -1,31 +1,148 @@
-<div class="middle flow">
-    <div class="flow expDetails bottom-Mar30">
-        <p class="expertsTitle">著名专家</p>
-        <ul class="flParent BasicInformation flow">
-            <li class="expertsLeftImg">
-                <div class="fl">
-                    <%= image_tag("experts_zhx.png") %>
+<div class="doctorDetails flow whiteBg">
+    <div class="fl doctorPortrait flow">
+        <%= image_tag("zj7.jpg") %>
+        <div class="doctorBtns">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+            <%= link_to '查看排班表',medical_path(:index,:anchor=>"experts_7"),:class=>"fr" %>
+        </div>
+    </div>
+    <div class="fl doctorContent flow">
+        <h5>周华祥</h5>
+        <p class="doctorTitle"><span>主任医师/教授/硕士生导师</span></p>
+        <div class="doctorHonor">
+            <p>成都中医大银海眼科医院中医眼科中心主任</p>
+            <p>四川省学术技术带头人</p>
+            <p>四川省拔尖中医师</p>
+            <p>四川省中医药学会眼科专业委员会常务副主任委员</p>
+            <p>四川省康复医学会眼科分会委员</p>
+            <p>成都市视力保护协会副会长</p>
+        </div>
+        <div class="doctorGoodAt flow">
+            <span>擅长领域：</span>
+            <p>擅长中西医治疗出血性眼病（糖尿病性视网膜病变、老年黄斑变性、黄斑出血、视网膜静脉周围炎、视网膜静脉阻塞）、葡萄膜炎、视神经疾病及防治青少年近视、高度近视眼底并发症的中医药诊治。</p>
+        </div>
+        <p class="seePatientTime"><span>坐诊时间:</span>周二下午、周三/五全天,具体请以专家门诊时间表为准</p>
+    </div>
+</div>
+<div class="doctorIntroduce whiteBg">
+    <p>擅长中西医治疗出血性眼病（糖尿病性视网膜病变、老年黄斑变性、黄斑出血、视网膜静脉周围炎、视网膜静脉阻塞）、葡萄膜炎、视神经疾病及防治青少年近视、高度近视眼底并发症的中医药诊治。</p>
+    <p>《中医眼耳鼻喉杂志》副主编、《中华医学百科全书》中医眼科学卷编委。从事中医眼科学的临床、科研、教学工作30余年。擅长运用传统理论于临床，探讨眼科难症、重症的新治疗途径并获得较好效果，如将金元时代医家刘完素提出的“玄府”理论运用于视神经疾病，提出“开玄府、利清窍、活血脉、补肝肾”四步递进治法治疗视神经萎缩；将《金匮要略》、《血证论》“死血”、“干血”理论结合与眼科临床，运用软坚散结、祛痰散结、活血散结方药治疗视网膜玻璃体出血；将“黄斑属脾”、“瘀血化水”、“肾虚血瘀”理论运用于糖尿病性视网膜病变及其黄斑水肿的临床治疗均取得良好效果。此外，以“脾肾双补”法治疗高度近视及其眼底并发症，以“凉肝滋肾、解毒排脓”法治疗葡萄膜炎，以“健脾生津、祛风通络”法治疗干眼症、视疲劳等都展示了鲜明的特色和疗效。其临床诊治较突出中医药简、便、效、廉的优势，体现“大医精诚”的医德医风，受到患者称许。</p>
+    <p>善将中医古典理论与现代最新研究成果结合于眼科科研课题中，迄今主持、主研课题16项，课题层次包括国家自然科学基金、国家新药基金、“十五”国家科技攻关计划、国家重点科技项目（攻关）计划及省、厅局级研究项目。先后获得四川省科技进步特等奖1项、二等奖1项、三等奖2项，获国家中医药管理局科技进步三等奖2项。编写、参编并出版专著9部，发表论文31篇。</p>
+</div>
+<ul class="registered flow flParent">
+    <li>预约挂号</li>
+    <li>姓名：<input type="text"></li>
+    <li>联系电话：<input type="text"></li>
+    <li>预约时间：<input type="text"></li>
+    <li>预约科室：<input type="text"></li>
+    <li><a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="registeredBtn">提交</a></li>
+</ul>
+<div class="membersList whiteBg flow">
+    <div class="fl teamMemberWords">团 队 成 员</div>
+    <div class="teamContainer" >
+        <ul class="teamMembers fr flParent flow" style="">
+            <!--廖品正-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj1.jpg"),expert_path(:廖品正教授) %>
                 </div>
-                <div class="fl seniority">
-                    <h5>周华祥</h5>
-                    <p>主任医师教授 硕士生导师</p>
-                    <p>中医眼科中心主任</p>
-                    <div class="expertsHref">
-                        <input type="button" value="在线预约" class="online-appointment">
-                        <input type="button" value="查看排班" class="look-scheduling">
-                    </div>
+                <div class="fl memberIntroduce">
+                    <h4>廖品正</h4>
+                    <p>国医大师/教授/博士生导师</p>
+                    <p>享受国务院政府特殊津贴专家</p>
                 </div>
             </li>
-            <li class="expertsRightWord">
-                <h6>擅长领域：</h6>
-                <p>主要从事中药治疗眼科常见病、多发病方面</p>
+            <!--廖品正-->
+            <!--邓亚萍-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj3.jpg"),expert_path(:邓亚平教授) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>邓亚平</h4>
+                    <p>主任医师/教授</p>
+                    <p>四川省名中医</p>
+                    <p>享受国务院政府特殊津贴</p>
+                </div>
             </li>
+            <!--邓亚萍-->
+            <!--陆雪婧-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj9.jpg"),expert_path(:路雪婧主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>陆雪婧</h4>
+                    <p>成都中医药大学研究员/博士生导师</p>
+                    <p>全国首批中医药传承博士后</p>
+                </div>
+            </li>
+            <!--陆雪婧-->
+            <!--黄霄-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj11.jpg"),expert_path(:黄霄主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>黄霄</h4>
+                    <p>主任医师/教授/硕士生导师</p>
+                    <p>四川眼免疫学会会员</p>
+                </div>
+            </li>
+            <!--黄霄-->
+
         </ul>
-        <div class="expertsAllMessage">
-            <h6>专家简介：</h6>
-            <p>周华祥教授，主任医师。成都中医药大学研究生导师，四川省学术技术带头人，四川省拔尖中医师。四川省中医药学会眼科专业委员会常务副主任委员，中华中医药学会眼科分会委员，四川省康复医学会眼科分会委员，成都市视力保护协会副理事长，国家中医药管理局中医师资格认证中心命审题专家。《中医眼耳鼻喉杂志》副主编、《中华医学百科全书》中医眼科学卷编委 。从事中医眼科学的临床、科研、教学工作30余年。</p>
-            <p>周华祥教授临床经验丰富，在眼科常见病、多发病方面有较好疗效，形成了自己独特的诊疗特色，尤长于运用传统理论于临床，探讨眼科难症、重症的新治疗途径并获得较好效果，如将金元时代医家刘完素提出的“玄府”理论运用于视神经疾病，提出“开玄府、利清窍、活血脉、补肝肾”四步递进治法治疗视神经萎缩；将《金匮要略》、《血证论》“死血”、“干血”理论结合与眼科临床，运用软坚散结、祛痰散结、活血散结方药治疗视网膜玻璃体出血；将“黄斑属脾”、“瘀血化水”、“肾虚血瘀”理论运用于糖尿病性视网膜病变及其黄斑水肿的临床治疗均取得良好效果。此外，以“脾肾双补”法治疗高度近视及其眼底并发症，以“凉肝滋肾、解毒排脓”法治疗葡萄膜炎，以“健脾生津，祛风通络”法治疗干眼症、视疲劳等都展示了鲜明的特色和疗效。其临床诊治较突出中医药简、便、效、廉的优势，体现“大医精诚”的医德医风，受到患者称许。</p>
-            <p>周华祥教授具有较敏锐的科研思维，熟悉本专业领域学术技术发展前沿动态，善将中医古典理论与现代最新研究成果结合于眼科科研课题中，迄今主持、主研课题16项，内容涵盖基础理论、新药开发、病症机理、预防保健等领域，课题层次包括国家自然科学基金、国家新药基金、“十五”国家科技攻关计划、国家重点科技项目（攻关）计划及省、厅局级研究项目。先后获得四川省科技进步特等奖1项、二等奖1项、三等奖2项，获国家中医药管理局科技进步三等奖2项。编写、参编并出版专著9部，发表论文31篇。</p>
+        <div class="leftBtn">
+            <i class="icon_arrow icon_left"></i>
+        </div>
+        <div class="rightBtn">
+            <i class="icon_arrow icon_right"></i>
         </div>
     </div>
 </div>
+<script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+        $(".leftBtn").addClass("active");
+        $(".rightBtn").addClass("active");
+    }
+    var rightMoveNum = members-4;
+    var leftMoveNum = 0;
+    function move() {
+        if(rightMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos-displacement
+            })
+            rightMoveNum--;
+            leftMoveNum++;
+        }
+        console.log(rightMoveNum);
+    }
+    function move2() {
+        if(leftMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos+displacement
+            })
+            rightMoveNum++;
+            leftMoveNum--;
+        }
+        console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+        if(rightMoveNum>0){
+            move();
+        }
+    })
+    $(".leftBtn").click(function() {
+        if(leftMoveNum>0){
+            move2();
+        }
+    })
+
+</script>

@@ -1,30 +1,139 @@
-<div class="middle flow">
-    <div class="flow expDetails bottom-Mar30">
-        <p class="expertsTitle">主治医师</p>
-        <ul class="flParent BasicInformation flow">
-            <li class="expertsLeftImg">
-                <div class="fl">
-                    <%= image_tag("experts_cxf.png") %>
+<div class="doctorDetails flow whiteBg">
+    <div class="fl doctorPortrait flow">
+        <%= image_tag("zj16.jpg") %>
+        <div class="doctorBtns">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+            <%= link_to '查看排班表',medical_path(:index,:anchor=>"experts_16"),:class=>"fr" %>
+        </div>
+    </div>
+    <div class="fl doctorContent flow">
+        <h5>陈小凤</h5>
+        <p class="doctorTitle"><span>主治医师/医学博士</span></p>
+        <div class="doctorHonor"></div>
+        <div class="doctorGoodAt flow">
+            <span>擅长领域：</span>
+            <p>"擅长白内障超声乳化+人工晶体植入术、各种抗青光眼手术、青光眼白内障联合手术、白内障、青光眼、眼整形及眼底疾病的诊治。"</p>
+        </div>
+        <p class="seePatientTime"><span>坐诊时间:</span>周一上午、周三下午、周五全天,具体请以专家门诊时间表为准</p>
+    </div>
+</div>
+<div class="doctorIntroduce whiteBg">
+    <p>擅长白内障超声乳化+人工晶体植入术、各种抗青光眼手术、青光眼白内障联合手术、白内障、青光眼、眼整形及眼底疾病的诊治。</p>
+    <p>天津医科大学临床医学院博士研究生，硕士研究生期间师从四川省眼科学术带头人樊映川教授，博士研究生师从亚太眼外伤协会副主席颜华教授。</p>
+    <p>曾在中山眼科中心接受白内障超声乳化发展培训，兼任爱尔康公司超乳发展项目带教教师。长期承担白内障防盲项目任务，多次参与贫困白内障患者复明工程。已主刀完成白内障防盲手术及超声乳化手术5000余例，具有丰富的白内障手术经验；且擅长各种抗青光眼手术，尤其对青光眼白内障联合手术经验丰富。期刊公开发表学术论文8篇。</p>
+</div>
+<ul class="registered flow flParent">
+    <li>预约挂号</li>
+    <li>姓名：<input type="text"></li>
+    <li>联系电话：<input type="text"></li>
+    <li>预约时间：<input type="text"></li>
+    <li>预约科室：<input type="text"></li>
+    <li><a href="" class="registeredBtn">提交</a></li>
+</ul>
+<div class="membersList whiteBg flow">
+    <div class="fl teamMemberWords">团 队 成 员</div>
+    <div class="teamContainer" >
+        <ul class="teamMembers fr flParent flow" style="">
+            <!--朱思泉-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj4.jpg"),expert_path(:朱思泉教授) %>
                 </div>
-                <div class="fl seniority">
-                    <h5>陈小凤</h5>
-                    <p>主治医师</p>
-                    <div class="expertsHref">
-                        <input type="button" value="在线预约" class="online-appointment">
-                        <input type="button" value="查看排班" class="look-scheduling">
-                    </div>
+                <div class="fl memberIntroduce">
+                    <h4>朱思泉</h4>
+                    <p>主任医师/教授/博士生导师</p>
+                    <p>四川省千人计划特聘专家</p>
                 </div>
             </li>
-            <li class="expertsRightWord">
-                <h6>擅长领域：</h6>
-                <p>擅长白内障超声乳化+人工晶体植入术、各种抗青光眼手术、青光眼白内障联合手术、白内障、青光眼、眼整形及眼底疾病的诊治。</p>
+            <!--朱思泉-->
+            <!--张富文-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj10.jpg"),expert_path(:张富文主治医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>张富文</h4>
+                    <p>主任医师/教授/硕士生导师</p>
+                    <p>中华中医药学会眼科分会青年委员</p>
+                </div>
             </li>
+            <!--张富文-->
+            <!--潘学会-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj14.jpg"),expert_path(:潘学会) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>潘学会</h4>
+                    <p>副主任医师/医学硕士</p>
+                    <p>四川省医学会眼科专委会委员</p>
+                </div>
+            </li>
+            <!--潘学会-->
+            <!--李强-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj18.jpg"),expert_path(:李强主治医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>李强</h4>
+                    <p>主治医师/医学博士</p>
+                    <p>四川省第五批老中医药专家学术经验继承人</p>
+                </div>
+            </li>
+            <!--李强-->
         </ul>
-        <div class="expertsAllMessage">
-            <h6>专家简介：</h6>
-            <p>天津医科大学临床医学院博士研究生，硕士研究生期间师从四川省眼科学术带头人樊映川教授，博士研究生师从亚太眼外伤协会副主席颜华教授。</p>
-            <p>曾在中山眼科中心接受白内障超声乳化发展培训，兼任爱尔康公司超乳发展项目带教教师。长期承担白内障防盲项目任务，多次参与贫困白内障患者复明工程。已主刀完成白内障防盲手术及超声乳化手术5000余例，具有丰富的白内障手术经验；且擅长各种抗青光眼手术，尤其对青光眼白内障联合手术经验丰富。期刊公开发表学术论文8篇。</p>
+        <div class="leftBtn">
+            <i class="icon_arrow icon_left"></i>
+        </div>
+        <div class="rightBtn">
+            <i class="icon_arrow icon_right"></i>
         </div>
     </div>
 </div>
+<script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+        $(".leftBtn").addClass("active");
+        $(".rightBtn").addClass("active");
+    }
+    var rightMoveNum = members-4;
+    var leftMoveNum = 0;
+    function move() {
+        if(rightMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos-displacement
+            })
+            rightMoveNum--;
+            leftMoveNum++;
+        }
+        console.log(rightMoveNum);
+    }
+    function move2() {
+        if(leftMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos+displacement
+            })
+            rightMoveNum++;
+            leftMoveNum--;
+        }
+        console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+        if(rightMoveNum>0){
+            move();
+        }
+    })
+    $(".leftBtn").click(function() {
+        if(leftMoveNum>0){
+            move2();
+        }
+    })
 
+</script>

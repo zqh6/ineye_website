@@ -1,29 +1,36 @@
-<div class="middle flow">
-    <div class="flow expDetails bottom-Mar30">
-        <p class="expertsTitle">主治医师</p>
-        <ul class="flParent BasicInformation flow">
-            <li class="expertsLeftImg">
-                <div class="fl">
-                    <%= image_tag("experts_wzh.png") %>
-                </div>
-                <div class="fl seniority">
-                    <h5>王智慧</h5>
-                    <p>主任医师</p>
-                    <div class="expertsHref">
-                        <input type="button" value="在线预约" class="online-appointment">
-                        <input type="button" value="查看排班" class="look-scheduling">
-                    </div>
-                </div>
-            </li>
-            <li class="expertsRightWord">
-                <h6>擅长领域：</h6>
-                <p>从事内科临床工作35年，对重症疑难糖尿病及并发症、内分泌代谢性疾病、高血压病、冠心病、脑血管疾病等内科疑难重症有着丰富的临床经验。</p>
-            </li>
-        </ul>
-        <div class="expertsAllMessage">
-            <h6>专家简介：</h6>
-            <p>先后在第三军医大学心血管专家何国祥、杨惠标教授，华西医科大学内分泌专家梁荩忠等教授带教下进修学习。西南师范大学心理学系黄希庭、张新立教授研究生。三级医院大内科主任内分泌专科主任。发表医学论文数十篇， 获区县科技进步一二等奖三项。</p>
+<div class="doctorDetails flow whiteBg">
+    <div class="fl doctorPortrait flow">
+        <%= image_tag("zj12.jpg") %>
+        <div class="doctorBtns">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+            <%= link_to '查看排班表',medical_path(:index,:anchor=>"experts_12"),:class=>"fr" %>
         </div>
     </div>
+    <div class="fl doctorContent flow">
+        <h5>王智慧</h5>
+        <p class="doctorTitle"><span>主任医师</span></p>
+        <div class="doctorHonor">
+            <p>主任医师</p>
+            <p>成都市內分泌及糖尿病专委会委员</p>
+            <p>四川省医师协会内分泌代谢科医师专科委员会委员</p>
+        </div>
+        <div class="doctorGoodAt flow">
+            <span>擅长领域：</span>
+            <p>从事内科临床工作35年，对重症疑难糖尿病及并发症、内分泌代谢性疾病、高血压病、冠心病、脑血管疾病等内科疑难重症有着丰富的临床经验</p>
+        </div>
+        <p class="seePatientTime"><span>坐诊时间:</span>周二上午,具体请以专家门诊时间表为准</p>
+    </div>
 </div>
+<div class="doctorIntroduce whiteBg">
+    <p>从事内科临床工作35年，对重症疑难糖尿病及并发症、内分泌代谢性疾病、高血压病、冠心病、脑血管疾病等内科疑难重症有着丰富的临床经验。</p>
+    <p>先后在第三军医大学心血管专家何国祥、杨惠标教授，华西医科大学内分泌专家梁荩忠等教授带教下进修学习。西南师范大学心理学系黄希庭、张新立教授研究生。三级医院大内科主任内分泌专科主任。发表医学论文数十篇，获区县科技进步一二等奖三项。</p>
+</div>
+<ul class="registered flow flParent narB-20">
+    <li>预约挂号</li>
+    <li>姓名：<input type="text"></li>
+    <li>联系电话：<input type="text"></li>
+    <li>预约时间：<input type="text"></li>
+    <li>预约科室：<input type="text"></li>
+    <li><a href="" class="registeredBtn">提交</a></li>
+</ul>
 
