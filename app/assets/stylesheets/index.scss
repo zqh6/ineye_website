@@ -3143,5 +3143,54 @@ textarea:focus{
     width: 150px;
 }
 /*医疗服务*/
-
+/*医疗设备*/
+.allEquipment li{
+    font-size: 12px;
+    line-height: 24px;
+    width: 560px;
+}
+.allEquipment li:nth-child(even){
+    float: right;
+}
+.equipmentName{
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 5px;
+    background: #6e707d;
+    margin-bottom: 10px;
+}
+.equipmentName h4{
+    font-size: 18px;
+    color: #008cd6;
+}
+.allEquipment{
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+}
+.allEquipment .equAdvantages{
+    color: #72af2d;
+    font-size: 14px;
+}
+.allEquipment li{
+    margin-bottom: 20px;
+}
+.allEquipment li>div{
+    height: 280px;
+    width: 350px;
+}
+.allEquipment li>div.equContainer{
+    width: 200px;
+    border: 1px solid #6e707d;
+}
+.equContainer{
+    line-height: 280px;
+    text-align: center;
+}
+.equContainer img{
+    vertical-align: middle;
+}
+/*医疗设备*/
 //专家新版index页面
