@@ -1,35 +1,52 @@
-<div class="middle">
-    <div class="regContainer">
-        <ul class="flParent flow">
-            <li>
-                <div class="regOneImg">
-                    <%= image_tag("subscribe_1.png") %>
-                    <p>电话预约</p>
-                    <p class="tel">预约电话：400-9900-766</p>
-                </div>
-                <p class="regContent">电话预约请详细说明您要预约的日期、具体时间、科室、医生。我们将首先安排预约客户就诊，非预约客户则需要等候就诊，并根据医生时间情况合理为您安排就诊。如您有关于医院的任何问题，欢迎您随时拨打，我们会尽全力给您满意的答复。</p>
-            </li>
-            <li>
-                <div class="regOneImg">
-                    <%= image_tag("subscribe_2.png") %>
-                    <p>微信预约</p>
-                </div>
-                <div class="regContent">
-                    <div>
-                        <%= image_tag("subscribe_4.png") %>
-                    </div>
-                    <p>扫描二维码，关注“银海启明ineyesight”,点击在线预约，即可微信预约</p>
-                </div>
-
-            </li>
-            <li class="lastReg">
-                <div class="regOneImg">
-                    <%= image_tag("subscribe_3.png") %>
-                    <p>网络预约</p>
-                </div>
-                <p class="regContent lastReg">您可以随时点击官网“在线咨询”按钮，然后在对话框里留下您的问题，我们将及时与您沟通，帮助您解答或处理相关疑难问题</p>
-            </li>
-        </ul>
+<%= render "medicals/medical_left" %>
+<div class="enterEyeContainer">
+    <%= render "medicals/medical_left" %>
+    <div class="enterEyeContent fr appointmentContainer">
+        <div class="teleAppointment flow">
+            <i class="iconAppointment iconAppointmentTele icon_enter fl"></i>
+            <div class="AppointmentTele fl">
+                <p>电话预约</p>
+                <p><span>预约电话：400-9900-766</span></p>
+            </div>
+        </div>
+        <p>电话预约请详细说明您要预约的 <span>日期、具体时间、科室、医生</span>。我们将首先安排预约客户就诊，非预约客户则需要等候就诊，并根据医生时间情况合理为您安排就诊。如您有关于医院的任何问题，欢迎您随时拨打，我们会尽全力给您满意的答复。</p>
+        <div class="teleAppointment flow">
+            <i class="iconAppointment iconAppointmentWifi icon_enter fl"></i>
+            <div class="AppointmentWifi fl">
+                <p>网络预约</p>
+            </div>
+        </div>
+        <div class="customerMessage">
+            <p><em>姓<i></i>名：</em> <input type="text" placeholder="请输入真实姓名"> <span>*</span></p>
+            <p><em>性<i></i>别：</em>
+                <select>
+                    <option selected="selected">请选择</option>
+                    <option>男</option>
+                    <option>女</option>
+                </select>
+            </p>
+            <p><em>年<i></i>龄：</em> <input type="text"> <span>*</span></p>
+            <p>
+                <em>预约日期：</em>
+                <input type="text">
+                <select>
+                    <option selected="selected">上午</option>
+                    <option>下午</option>
+                </select>
+                <span>*</span>
+            </p>
+            <p>
+                <em>电话号码：</em>
+                <input type="text">
+            </p>
+            <p>
+                <em>病情描述：</em>
+                <textarea rows="3" cols="20"></textarea>
+            </p>
+            <div class="customerMsgButtom">
+                <p class="customerMsgBtn"><a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">提交给我们</a></p>
+                <p>注：带 <span>*</span> 的为必填项</p>
+            </div>
+        </div>
     </div>
 </div>
-

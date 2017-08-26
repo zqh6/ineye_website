@@ -2660,6 +2660,7 @@ octorList li .IntroduceMask p{
 .narB-20{
     margin-bottom: 20px;
 }
+/*专家详情*/
 /*走进银海*/
 .enterEyeCommon>ul{
     position: relative;
@@ -2975,6 +2976,167 @@ octorList li .IntroduceMask p{
 .enterEyeHonor5{
     background: url("enter_honor5.png") 20px 20px no-repeat;
 }
+
 /*走进银海*/
-/*专家详情*/
+/*医疗服务*/
+.enterEyeContent.securityPolicy{
+    padding-top: 20px;
+}
+.securityPolicy p{
+    line-height: 30px;
+}
+.securityPolicy>div{
+    margin-bottom: 30px;
+}
+.securityPolicy>div p b{
+    margin-left: -2rem;
+}
+.securityPolicy .noIndent{
+    text-indent: 0;
+}
+.map{
+    width: 705px;
+    height: 320px;
+    margin: 10px 0 0 2rem;
+
+}
+.enterEyeContent.toIneye{
+    padding-top: 20px;
+}
+.enterEyeContent.toIneye p{
+    line-height: 40px;
+}
+.iconAppointment{
+    width: 46px;
+    height: 46px;
+}
+.iconAppointmentTele{
+    background-position: 0 -146px;
+}
+.teleAppointment{
+    margin: 20px 0 12px 0;
+}
+.AppointmentTele{
+    width: 210px;
+}
+.AppointmentTele p,.AppointmentWifi p{
+    text-indent: 0;
+    margin-left: 10px;
+}
+.AppointmentTele span{
+    color: #72af2d;
+}
+.iconAppointmentWifi{
+    background-position: 0 -212px;
+}
+.AppointmentWifi p{
+    line-height: 46px;
+    font-size: 18px;
+}
+.customerMessage p{
+    text-indent: 0;
+    margin-bottom: 10px;
+}
+.customerMessage em{
+    width: 75px;
+    display: inline-block;
+    line-height: 24px;
+}
+.customerMessage em i{
+    width: 2rem;
+    display: inline-block;
+}
+.customerMessage input{
+    height: 30px;
+    border: 1px solid #b4b2b2;
+    padding-left: 5px;
+    width: 130px;
+}
+.customerMessage span{
+    color: #ff1d1d;
+}
+.customerMessage select{
+    padding: 0 5px;
+    height: 20px;
+}
+.customerMessage textarea{
+    padding-left: 10px;
+    width: 360px;
+    height: 70px;
+}
+textarea:focus{
+    outline: 0;
+}
+.customerMsgButtom{
+    padding-left: 75px;
+}
+.customerMsgBtn a{
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background: #008cd6;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    border-radius: 4px;
+}
+.doctorScheduling>div{
+    margin-bottom: 20px;
+    background: #fff;
+    width: 1020px;
+}
+.doctorScheduling>div h4{
+    color: #282828;
+    font-size: 24px;
+    line-height: 56px;
+    font-weight: normal;
+    text-align: center;
+}
+.stopService{
+    padding:0 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+.stopService>ul li{
+    width: 30%;
+}
+.stopService span{
+    color: #ff1d1d;
+}
+.stopService p{
+    text-align: right;
+    padding-bottom: 10px;
+}
+.schedulingTab{
+    border: 1px solid #767676;
+    width: 100%;
+}
+.schedulingTabCon{
+    padding: 0 20px 20px;
+    box-sizing: border-box;
+}
+.schedulingTab td,.schedulingTab th{
+    line-height: 42px;
+    border: 1px solid #c7c2c5;
+    text-align: center;
+}
+.schedulingTab th{
+    border-right: 1px solid #fff;
+    background: #72af2d;
+    line-height: 60px;
+    color: #fff;
+}
+.schedulingTab th:last-child{
+    border-right: 1px solid #c7c2c5;
+}
+.schedulingTab a{
+    color: #008cd6;
+    font-size: 16px;
+}
+.schedulingTab .width150{
+    width: 150px;
+}
+/*医疗服务*/
+
 //专家新版index页面
