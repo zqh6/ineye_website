@@ -3061,6 +3061,9 @@ octorList li .IntroduceMask p{
     padding: 0 5px;
     height: 20px;
 }
+.customerMessage select:focus{
+    outline: 0;
+}
 .customerMessage textarea{
     padding-left: 10px;
     width: 360px;
