@@ -75,13 +75,13 @@
 
         loadFeatures();
 
-//        map.on('complete', function(){
+        map.on('complete', function(){
             map.plugin(["AMap.ToolBar", "AMap.OverView", "AMap.Scale"], function(){
                 map.addControl(new AMap.ToolBar({ruler: false, direction: false, locate: false}));
                 map.addControl(new AMap.OverView);
                 map.addControl(new AMap.Scale);
             });
-//        })
+        })
 
     }();
 </script>
