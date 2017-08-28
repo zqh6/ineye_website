@@ -157,7 +157,7 @@
                     <p class="marT20">目前屈光手术有两种：一种是针对角膜屈光手术，另一种是晶体屈光手术。部分患者因角膜问题，干眼，散光、近视度数高等问题，无法通过角膜手术达到摘镜的目的,ICL成为这部分人群矫正近视的首选。ICL的英文全称是Implantable Contact Lens（可植入式隐形眼镜），它的出现给屈光手术医生和患者带来了矫正高度近视的另一个安全有效的可行性方案。手术的原理非常容易理解，就是相当于在眼睛里面放入了一个隐形眼镜。</p>
                     <div class="allNoIndent">
                         <p class="advBlueTitle">ICL手术的优点：</p>
-                        <p>1、矫正屈光度范围更广：近视50度～1800度，散光50度～600度。<%= image_tag("cataract-mImg2.png") %></p>
+                        <p>1、矫正屈光度范围更广：近视50度～1800度，散光50度～600度。<%= image_tag("cataract-mImg2.png",:class=>"fr") %></p>
                         <p>2、安全可逆：不切削角膜组织，必要时可取出或更换。</p>
                         <p>3、防护紫外线：更好保护眼睛。</p>
                         <p class="advBlueTitle">ICL手术适应证：</p>
@@ -194,48 +194,9 @@
         </div>
     </div>
     <!--诊疗项目-->
-    <!--科室新闻-->
-    <div class="centerModule">
-        <p class="blueBTitle">
-            <span>科室新闻</span>
-        </p>
-        <div class="SectionNewsList">
-            <div>
-                <%= image_tag("cataractNewImg.jpg") %>
-                <div class="fr">
-                    <h4>“省千人”朱思泉教授实施我院 首批3D飞秒激光白内障手术获得成功</h4>
-                    <p>“陈老师，我这辈子都没看这么清楚过，做手术之前我觉得你模模糊糊的挺瘦的，怎么现在看清楚你了，觉得你还有点胖呢。”这是住在12号床的任婆婆术后第一天最大的感触。近日，我院首批3D飞秒激光白内障手术在四川省千人计划特聘专家、北京同仁医院白内障中心主任、成都中医大银海眼科医院副院长/白内障屈光中心主任朱思泉教授的亲自主刀下成功完成。</p>
-                </div>
-            </div>
-        </div>
 
-    </div>
-    <!--科室新闻-->
-    <!--科室科普-->
-    <div class="centerModule">
-        <p class="blueBTitle">
-            <span>科室科普</span>
-        </p>
-        <div class="SectionNewsList">
-            <div>
-                <%= image_tag("cataractKepuImg1.jpg") %>
-                <div class="fr">
-                    <h4>白内障科普</h4>
-                    <p>Q：什么是白内障？</p>
-                    <p>A: 白内障目前是我国第一致盲眼病，发病率居首位，是指随着年龄的增长，眼球内自然晶状体发生浑浊，由透明变成不透明，阻碍光线和图像到达视网膜，导致我们的视力下降。早期浑浊轻微或范围较小时不影响视力，而后逐渐加重至明显影响视力，甚至失明及其他严重并发症。</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <!--科室科普-->
 </div>
 </body>
 
-<script>
-    $(".cureProject em").click(function(){
-        $(this).addClass("active").siblings().removeClass("active")
-        $(".cureProjectContainer .cureProjectModule").eq($(this).index()-1).show().siblings().hide()
-    })
-</script>
+
 </html>
