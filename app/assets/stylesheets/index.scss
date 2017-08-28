@@ -3197,4 +3197,304 @@ textarea:focus{
     vertical-align: middle;
 }
 /*医疗设备*/
+/*医疗设备*/
+.allEquipment li{
+    font-size: 12px;
+    line-height: 24px;
+    width: 560px;
+}
+.allEquipment li:nth-child(even){
+    float: right;
+}
+.equipmentName{
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 5px;
+    background: #6e707d;
+    margin-bottom: 10px;
+}
+.equipmentName h4{
+    font-size: 18px;
+    color: #008cd6;
+}
+.allEquipment{
+    padding: 20px;
+    box-sizing: border-box;
+    background: #fff;
+}
+.allEquipment .equAdvantages{
+    color: #72af2d;
+    font-size: 14px;
+}
+.allEquipment li{
+    margin-bottom: 20px;
+}
+.allEquipment li>div{
+    height: 280px;
+    width: 350px;
+}
+.allEquipment li>div.equContainer{
+    width: 200px;
+    border: 1px solid #6e707d;
+}
+.equContainer{
+    line-height: 280px;
+    text-align: center;
+}
+.equContainer img{
+    vertical-align: middle;
+}
+/*医疗设备*/
+/*中心css*/
+.centerModule{
+    margin: 10px 0;
+    background: #fff;
+}
+.main .centerModule:first-child{
+    margin-top: 20px;
+}
+.cataractCenterWord{
+    padding: 10px;
+}
+.cataractCenterWord .centerWords{
+    width: 575px;
+    float: right;
+    margin-right: 10px;
+    line-height: 26px;
+    text-indent: 2rem;
+}
+.centerWords h5{
+    line-height: 64px;
+    font-size: 24px;
+    color: #008cd6;
+}
+.h5Title{
+    font-weight: normal;
+    text-align: center;
+}
+.blueBTitle{
+    line-height: 45px;
+    border-bottom: 1px solid #e5e8e9;
+}
+.blueBTitle span{
+    line-height: 45px;
+    display: inline-block;
+    font-size: 20px;
+    border-bottom: 2px solid #0185d0;
+    padding: 0 5px;
+}
+.CenterLeader{
+    position: relative;
+    width: 340px;
+    height: 484px;
+}
+.CenterLeader img{
+    width: 100%;
+}
+.leaderMask{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 180px;
+    width: 100%;
+    background: rgba(255,255,255,.75);
+    line-height: 24px;
+    font-size: 12px;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+.leaderMask>div{
+    text-align: center;
+}
+.leaderMask h4{
+    color: #0185d0;
+    font-size: 18px;
+    line-height: 36px;
+}
+.leaderMask>p>span{
+    color: #72af2d;
+}
+.cataractCenterMember{
+    width: 820px;
+    padding: 0 10px;
+    line-height: 26px;
+}
+.cataractCenterMember h4{
+    font-size: 18px;
+    line-height: 40px;
+}
+.cataractDoctorGood{
+    margin-top: 10px;
+    color: #72af2d;
+}
+.cataractCenterList ul li{
+    width: 50%;
+}
+.cataractDoctor {
+    width: 195px;
+    margin-right: 5px;
+}
+.cataractAdvantageCon{
+    height: 172px;
+    border: 3px solid #c8d5dd;
+    margin-top: 20px;
+    padding: 0 30px;
+    line-height: 26px;
+    text-align: center;
+}
+.icon_advantageList{
+    width: 17px;
+    height: 17px;
+    background-position: 0 -97px;
+    vertical-align: middle
+}
+.cataractAdvantage{
+    width: 100%;
+}
+.cataractAdvantage li{
+    width: 25%;
+    height: 26px;
+    margin-bottom: 20px;
+}
+.cataractAdvantageCon>p{
+    line-height: 78px;
+    font-size: 20px;
+}
+.cataractCenterDoctor{
+    padding: 10px;
+}
+.padB25{
+    padding-bottom: 25px;
+}
+.cataractEquipment{
+    padding: 5px 15px 15px;
+}
+.cataractEquipment li{
+    margin: 5px;
+    width: 33.3%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.cataractEquipment li>div{
+    height: 300px;
+    line-height: 300px;
+    border: 1px solid #ccc;
+}
+.cataractEquipment li>img{
+    vertical-align: middle;
+}
+.cataractEquipment li>p{
+    line-height: 46px;
+}
+.cureProject{
+    line-height: 47px;
+    padding: 0 10px;
+}
+.cureProject span{
+    font-size: 20px;
+}
+.cureProject em{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px 20px;
+    height: 31px;
+    line-height: 31px;
+    background: #ccc;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+.cureProject em.active{
+    background: #72af2d;
+    color: #fff;
+}
+.halfContainer li {
+    width: 48%;
+}
+.advListContainer{
+    padding: 0 30px 30px;
+}
+.advListContainer ul li{
+    height: 180px;
+    margin-bottom: 10px;
+}
+.advListContainer ul li:nth-child(even){
+    float: right;
+}
+.advListContainer li p{
+    text-indent: 2rem;
+    line-height: 24px;
+}
+.advListContainer li p.noIndent{
+    text-indent: 0;
+    color: #008cd6;
+    font-size: 18px;
+    line-height: 36px;
+}
+.advTitle{
+    color: #72af2d;
+    font-size: 18px;
+    text-align: center;
+    text-align: center;
+}
+.advListContainer p{
+    line-height: 24px;
+    text-indent: 2rem;
+}
+.advListContainer p.advTitle{
+    line-height: 60px;
+}
+.marT20{
+    margin-top: 20px;
+}
+.centerImgCon{
+    text-align: center;
+}
+.cataractAdvList dd{
+    width: 48%;
+    float: left;
+    line-height: 24px;
+}
+.cataractAdvList dd:nth-child(even){
+    float: right;
+}
+.allNoIndent p{
+    text-indent: 0;
+}
+.advBlueTitle,.advListContainer p.advBlueTitle{
+    color: #008cd6;
+    font-size: 18px;
+    line-height: 34px;
+    margin-top: 30px;
+    text-indent: 0;
+}
+.SectionNewsList>div{
+    padding: 20px;
+    overflow: hidden;
+}
+.SectionNewsList div:hover{
+    background: #f1f1f1;
+}
+.SectionNewsList div>img{
+    float: left;
+}
+.SectionNewsList>div>div{
+    width: 870px;
+}
+.SectionNewsList p{
+    line-height: 24px;
+    text-indent: 2rem;
+}
+.SectionNewsList h4{
+    line-height: 42px;
+    font-weight: normal;
+}
+.cureProjectContainer .cureProjectModule{
+    display: none;
+}
+.cureProjectContainer .cureProjectModule:first-child{
+    display: block;
+}
+/*中心css*/
 //专家新版index页面
