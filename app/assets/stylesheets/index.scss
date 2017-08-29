@@ -3227,6 +3227,7 @@ textarea:focus{
 .blueBTitle{
     line-height: 45px;
     border-bottom: 1px solid #e5e8e9;
+    padding-right: 20px;
 }
 .blueBTitle span{
     line-height: 45px;
@@ -3438,6 +3439,7 @@ textarea:focus{
 }
 .SectionNewsList h4{
     line-height: 42px;
+    font-size: 18px;
     font-weight: normal;
 }
 .cureProjectContainer .cureProjectModule{
@@ -3446,5 +3448,116 @@ textarea:focus{
 .cureProjectContainer .cureProjectModule:first-child{
     display: block;
 }
+/*视光中心*/
+.eyesightEquipment{
+    padding: 20px 15px;
+}
+.eyesightEquipment li .fr{
+    width: 345px;
+    line-height: 24px;
+    font-size: 12px;
+}
+.eyesightEquipment li:nth-child(even){
+    float: right;
+}
+.eyesightEquipment li .fr h4{
+    font-size: 16px;
+    color: #008cd6;
+    line-height: 40px;
+}
+.eyesightEquipment .equAdvantages{
+    color: #72af2d;
+    font-size: 14px;
+}
+.eyesightEquipment .equContainer{
+    width: 200px;
+    height: 278px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.eyesightProject{
+    width: 190px;
+    height: 72px;
+    line-height: 72px;
+    text-align: center;
+    color: #fff;
+    background: #0185d0;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.eyesightProject:after{
+    content: " ";
+    width: 0;
+    height: 0;
+    right: -24px;
+    top: 25px;
+    position: absolute;
+    border: 12px solid transparent;
+    border-left-color:#0185d0;
+}
+.eyesightProjectList dd:nth-child(even) .eyesightProject{
+    background: #72af2d;
+}
+.eyesightProjectList dd:nth-child(even) .eyesightProject:after{
+    border-left-color: #72af2d;
+}
+.eyesightProjectList dd .fr{
+    width: 920px;
+    padding: 10px;
+    background: #e7e7e7;
+    line-height: 24px;
+    margin-left: 30px;
+    font-size: 12px;
+}
+.eyesightProjectList dd{
+    overflow: hidden;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.eyesightProjectList{
+    padding: 10px;
+}
+.centerMemberCon li{
+    float: left;
+    width: 25%;
+    position: relative;
+}
+.centerMemberCon{
+    width: 820px;
+    padding: 0 5px;
+    margin-left: 10px;
+}
+.centerMemberCon .maskName{
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 55px;
+    bottom: -17px;
+    text-align: center;
+    background: #0185d0;
+    color: #fff;
+}
+.centerMemberList{
+    height: 297px;
+}
+.centerAdvantageCon{
+    margin-top: 10px;
+}
+.centerAdvantage li{
+    width: auto;
+    margin-right: 10px;
+    text-align: left;
+}
+.centerAdvantage li:nth-child(3n-2){
+    min-width: 450px;
+}
+.centerAdvantage li:nth-child(3n-1){
+    min-width: 150px;
+}
+/*视光中心*/
 /*中心css*/
 //专家新版index页面
