@@ -70,6 +70,25 @@
     <p class="blueBTitle">
         <span>医疗设备</span>
     </p>
+    <ul class="EquipmentSlides">
+        <li>
+            <div>
+                <div>
+                    <%= image_tag("ylsb3.jpg") %>
+                </div>
+                <p>Lens AR非接触式3D飞秒白内障</p>
+            </div>
+            <div>
+                <div>
+                    <%= image_tag("cataract-yq2") %>
+                </div>
+                <p>IOLMaster 500</p>
+            </div>
+
+        </li>
+
+    </ul>
+
     <ul class="cataractEquipment flParent flow">
         <li>
             <div>
@@ -193,7 +212,7 @@
 <!--科室新闻-->
 <div class="centerModule">
     <p class="blueBTitle">
-        <span>科室新闻</span><%= link_to :'更多>>',news_path(:新闻列表) %>
+        <span>科室新闻</span><%= link_to :'更多>>',news_path(:新闻列表),:class=>"fr" %>
     </p>
     <div class="SectionNewsList">
         <div>
@@ -212,7 +231,7 @@
 <!--科室科普-->
 <div class="centerModule">
     <p class="blueBTitle">
-        <span>科室科普</span><%= link_to :'更多>>',news_path(:新闻列表) %>
+        <span>科室科普</span><%= link_to :'更多>>',news_path(:新闻列表),:class=>"fr" %>
     </p>
     <div class="SectionNewsList">
         <div>
