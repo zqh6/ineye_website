@@ -3650,4 +3650,83 @@ textarea:focus{
     width: 200px;
 }
 /*中心css*/
+//中心入口
+.centerBg{
+    background: url("../image/centerBg.png") 115px 110px no-repeat;
+    min-height: 630px;
+    padding: 0 25px;
+}
+.departEntrance{
+    line-height: 80px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 48px;
+}
+.departList p{
+    line-height: 24px;
+}
+.departEntrance span{
+    color: #72af2d;
+}
+.departLeftList span,.departRightList span{
+    position: relative;
+    display: inline-block;
+}
+.departLeftList span{
+    padding-left: 10px;
+}
+.departLeftList span:before,.departRightList span:after{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #008cd6;
+    top: 10px;
+}
+.departLeftList span:before{
+    left: 0;
+}
+.departList p.departCenterTle. .departList p.departCenterTle a{
+    color: #008cd6;
+    font-size: 20px;
+    display: block;
+    line-height: 40px;
+}
+.departLeftList,.departRightList{
+    width: 400px;
+}
+.departLeftOneList p span:nth-child(1),.departLeftTwoList p span:nth-child(1){
+    width: 100px;
+}
+.departLeftTwoList,.departLeftThreeList{
+    margin-top: 25px;
+}
+.departLeftThreeList p span:nth-child(1){
+    width: 120px;
+}
+.departLeftFourList,.departFiveFourList{
+    margin-top: 22px;
+}
+.departRightList{
+    text-align: right;
+}
+.departRightList span{
+    padding-right: 10px;
+}
+.departRightList span:after{
+    right: 0;
+}
+.departRightTwoList p span:nth-child(2){
+    width: 200px;
+}
+.departRightTwoList{
+    margin-top: 20px;
+}
+.departRightThreeList,.departRightFourList{
+    margin-top: 25px;
+}
+.departRightThreeList p span:nth-child(2){
+    width: 120px;
+}
+//中心入口
 //专家新版index页面
