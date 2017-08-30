@@ -3570,6 +3570,9 @@ textarea:focus{
     height: 350px;
     margin-top: 10px;
 }
+.EquipmentSlides li{
+    text-align: center;
+}
 .EquipmentSlides>li{
     overflow: hidden;
     width: 1200px;
@@ -3592,8 +3595,12 @@ textarea:focus{
 }
 .EquipmentSlides>li>div>div{
     height: 300px;
+    line-height: 300px;
     border: 1px solid #ccc;
     overflow: hidden;
+}
+.EquipmentSlides>li>div>div img{
+    vertical-align: middle;
 }
 .jDiaporama_controls .prev{
     background:url(controls2.png) no-repeat bottom;
