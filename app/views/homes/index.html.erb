@@ -627,10 +627,10 @@
         <div class="fl marR16">
           <%= link_to image_tag("center_4.jpg"),center_path(:视光中心) %>
           <ul class="flParent centerOneHref">
-            <li><%= link_to :"中心简介",center_path(:视光中心) %></li>
-            <li><a href="javascript:;">专家团队</a></li>
-            <li><a href="javascript:;">医疗设备</a></li>
-            <li><a href="javascript:;">诊疗项目</a></li>
+            <li><%= link_to :"中心简介",center_path(:视光中心,:anchor => "module1") %></li>
+            <li><%= link_to :"专家团队",center_path(:视光中心,:anchor => "module2") %></li>
+            <li><%= link_to :"技术优势",center_path(:视光中心,:anchor => "module3") %></li>
+            <li><%= link_to :"开展工作",center_path(:视光中心,:anchor => "module4") %></li>
           </ul>
         </div>
         <div class="centerOneSituation fr">
