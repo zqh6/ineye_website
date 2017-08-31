@@ -3734,4 +3734,196 @@ textarea:focus{
     width: 120px;
 }
 //中心入口
+/*中医中心*/
+.marB20{
+    margin-bottom: 20px;
+}
+.centerModule .chinCenterWord{
+    width: 650px;
+}
+.chinCenterImg{
+    text-indent: 0;
+    margin-top: 35px;
+}
+.chinCenterDoctor{
+    padding: 10px;
+}
+.chinCenterDoctor .CenterLeader{
+    width: 730px;
+    height: auto;
+}
+.chinCenterDoctor .CenterLeader img{
+    width: 200px;
+}
+.CenterLeaderIntroduce{
+    width: 515px;
+    float: right;
+    line-height: 24px;
+    font-size: 12px;
+}
+.CenterLeaderIntroduce h4{
+    line-height: 34px;
+    font-size: 18px;
+    color: #7e0204;
+}
+.CenterLeaderTle{
+    color: #87612f;
+    margin-top: 5px;
+}
+.chinCenterDoctor .chinMedMemberCon{
+    padding: 10px 0 0;
+    margin: 0;
+    width: 100%;
+}
+.chinCenterDoctor .centerMemberList{
+    width: 835px;
+}
+.chinCenterDoctor .maskName{
+    background: #735015;
+}
+.padB20{
+    padding-bottom: 20px;
+}
+.chiWedSpecialItem{
+    padding: 0 10px;
+}
+.chiWedSpecialItem li{
+    width: 570px;
+    line-height: 24px;
+    text-indent: 2rem;
+}
+.chiWedSpecialItem li:nth-child(even){
+    float: right;
+}
+.chiWedSpecialItem li p:first-child{
+    line-height: 48px;
+    text-indent: 0;
+    margin-top: 5px;
+}
+.chiWedSpecialItem li p:last-child{
+    color: #7e0204;
+}
+.chiWedSpecialItem li p:first-child span{
+    background: #735015;
+    color: #fff;
+    width: 98px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 3px;
+}
+.chinMedModule .blueBTitle span{
+    border-color: #87612f;
+}
+/*中医中心*/
+/*读片中心*/
+.readCenterImg{
+    margin-top: 5px;
+    text-indent: 0;
+}
+.readCenterDoctor{
+    height: 310px;
+    width: 100%;
+    padding: 10px 30px 0;
+    box-sizing: border-box;
+}
+.readCenterDoctor li{
+    width: 20%;
+}
+.readCenterTle{
+    text-align: center;
+    font-size: 24px;
+    line-height: 30px;
+    color: #333333;
+    margin: 15px 0;
+}
+.readCenterTle span{
+    color: #72af2d;
+}
+.readCenterTle p:first-child{
+    font-family: Arial;
+}
+.readCenterFunc li{
+    width: 530px;
+    height: 558px;
+    line-height: 30px;
+    background: #fff;
+    margin: 10px 0;
+    padding: 0 30px;
+    text-align: center;
+}
+.readCenterFunc li h4{
+    font-size: 18px;
+    color: #0185d0;
+    font-weight: normal;
+}
+.readCenterFunc li:nth-child(1) h4,.readCenterFunc li:nth-child(2) h4{
+    margin-top: 60px;
+}
+.readCenterFunc li:nth-child(3) h4,.readCenterFunc li:nth-child(4) h4{
+    margin-top: 30px;
+}
+.readCenterFunc li p{
+    text-indent: 2rem;
+    text-align: left;
+}
+.readCenterFunc li:nth-child(even){
+    float: right;
+}
+.marT60{
+    margin-top: 60px;
+}
+.marT50{
+    margin-top: 50px;
+}
+.marT40{
+    margin-top: 40px;
+}
+.readCenterWork{
+    padding: 20px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+.readCenterWork h5{
+    color: #72af2d;
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: normal;
+}
+.readCenterWorkImg{
+    text-align: center;
+}
+.reportImg{
+    margin-left: 190px;
+}
+.wordIndent2 p{
+    text-indent: 2rem;
+}
+.wordIndent2 p.aPoint{
+    text-indent: 0;
+    color: #0185d0;
+    margin-top: 25px;
+}
+.diagnosisPlatform{
+    padding: 60px 190px 0 140px;
+}
+.diagnosisPlatform dl{
+    width: 350px;
+}
+.diagnosisPlatform dl dd{
+    line-height: 40px;
+    width: 50%;
+    float: left;
+}
+.diagnosisPlatform p{
+    line-height: 28px;
+    margin-top: 40px;
+    font-size: 18px;
+    color: #0185d0;
+}
+.line30 p{
+    line-height: 30px;
+}
+/*读片中心*/
 //专家新版index页面
