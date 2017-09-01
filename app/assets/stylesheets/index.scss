@@ -3929,4 +3929,165 @@ textarea:focus{
     line-height: 30px;
 }
 /*读片中心*/
+/*小儿眼科*/
+.childModule{
+    background: url("../image/childrenDepart-wordBg.jpg") right 118px no-repeat #fff;
+}
+.childrenTle{
+    line-height: 28px;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+    color: #333333;
+}
+.childrenTle p:nth-child(1){
+    font-family: Arial;
+}
+.childrenTle p:nth-child(1) span{
+    color: #0185d0;
+}
+.childrenProject{
+    border-bottom: 1px solid #e5e8e9;
+}
+.childrenProDetail{
+    width: 100%;
+    margin-top: 80px;
+}
+.childrenProDetail li p{
+    line-height: 24px;
+}
+.childrenProDetail li{
+    width: 33.3%;
+    text-align: center;
+    height: 280px;
+    box-sizing: border-box;
+    padding: 0 13px;
+}
+.childrenDepartCenter{
+    width: 373px;
+    padding-top: 80px;
+    height: 131px;
+    background: #acce22;
+    font-size: 24px;
+    line-height: 30px;
+}
+.childrenDepartCenter p:nth-child(1){
+    font-family: Arial;
+}
+.childrenDepartCenter span{
+    color: #fff;
+}
+.childrenTle em{
+    display: inline-block;
+    position: relative;
+    color: #0185d0;
+}
+.childrenTle em:before,.childrenTle em:after{
+    content: " ";
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    border-top: 1px solid #0185d0;
+}
+.childrenTle em:before{
+    left: -58px;
+}
+.childrenTle em:after{
+    right: -58px;
+}
+.pad15{
+    padding: 15px;
+}
+.childrenGlass{
+    width: 437px;
+}
+.glassAdvList{
+    margin-top: 14px;
+}
+.glassAdvList p{
+    padding-left: 22px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+.glassAdvList p i{
+    margin-left: -22px;
+}
+.glassCompare{
+    width: 610px;
+    border: 1px solid #dde3e7;
+}
+.glassCompare th{
+    background: #0185d0;
+    color: #fff;
+    font-weight: normal;
+}
+.glassCompare th,.glassCompare tr{
+    height: 48px;
+    text-align: center;
+}
+.glassCompare th,.glassCompare td{
+    border-right: 1px solid #cfd7dd;
+}
+.glassCompare tr:nth-child(odd) td{
+    background: #fff;
+}
+.glassCompare tr:nth-child(even) td{
+    background: #f6f9fa;
+}
+.width150{
+    width: 150px;
+}
+.alignCenter{
+    text-align: center;
+}
+.width560{
+    width: 560px;
+}
+.icon_glass{
+    width: 18px;
+    height: 18px;
+    background-position: -24px -97px;
+    vertical-align: middle;
+}
+.glassImg{
+    margin-top: 10px;
+}
+.aboutShortSight{
+    line-height: 30px;
+}
+.greenWord{
+    color: #72af2d;
+}
+.line24{
+    line-height: 24px;
+}
+.width250{
+    width: 250px;
+    padding-right: 20px;
+}
+.width270{
+    width: 270px;
+}
+.wordIndent p{
+    text-indent: 2rem;
+}
+.wordIndent p.advBlueTitle{
+    text-indent: 0;
+}
+.marL180{
+    margin-left: 180px;
+}
+.weakSightHarm li{
+    margin-bottom: 10px;
+}
+.line30{
+    line-height: 30px;
+}
+.lastChildProject{
+    padding: 15px 15px 0;
+}
+.thisIndent2{
+    text-indent: 2rem;
+}
+/*小儿眼科*/
 //专家新版index页面
