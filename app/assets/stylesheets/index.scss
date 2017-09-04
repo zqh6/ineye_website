@@ -3657,7 +3657,7 @@ textarea:focus{
 .centerBg{
     background: url("centerBg.png") 115px 110px no-repeat #fff;
     min-height: 630px;
-    padding: 0 25px;
+    padding: 0 20px;
     margin-bottom: 20px;
     margin-top: 20px;
 }
@@ -3704,13 +3704,14 @@ textarea:focus{
     width: 100px;
 }
 .departLeftTwoList,.departLeftThreeList{
-    margin-top: 25px;
+    margin-top: 62px;
 }
 .departLeftThreeList p span:nth-child(1){
     width: 120px;
 }
 .departLeftFourList,.departFiveFourList{
     margin-top: 22px;
+    margin-top: 62px;
 }
 .departRightList{
     text-align: right;
@@ -3726,9 +3727,13 @@ textarea:focus{
 }
 .departRightTwoList{
     margin-top: 20px;
+    margin-top: 45px;
 }
-.departRightThreeList,.departRightFourList{
-    margin-top: 25px;
+.departRightThreeList{
+    margin-top: 50px;
+}
+.departRightFourList{
+    margin-top: 42px;
 }
 .departRightThreeList p span:nth-child(2){
     width: 120px;
