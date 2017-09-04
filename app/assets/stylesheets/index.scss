@@ -3609,7 +3609,7 @@ textarea:focus{
     vertical-align: middle;
 }
 .jDiaporama_controls .prev{
-    background:url(controls2.png) no-repeat bottom;
+    background:url(../images/controls2.png) no-repeat bottom;
     top:45%;
     margin-top:-16px;
     height:32px;
@@ -3618,7 +3618,7 @@ textarea:focus{
 }
 
 .jDiaporama_controls .next{
-    background:url(controls2.png) no-repeat top;
+    background:url(../images/controls2.png) no-repeat top;
     top:50%;
     margin-top:-16px;
     height:32px;
@@ -4096,4 +4096,81 @@ textarea:focus{
     margin: 60px 0 10px;
 }
 /*小儿眼科*/
+/*糖尿病视网膜中心*/
+.diabetesCenter li{
+    margin-right: 20px;
+}
+.diabetesCenter li:nth-child(1),.diabetesCenter li:nth-child(4){
+    width: 280px;
+}
+.diabetesCenter li.lastAdvantage{
+    margin-right: 0;
+}
+.diabetesTle{
+    text-align: center;
+    font-size: 20px;
+    line-height: 34px;
+    margin: 10px 0 20px;
+}
+.diabetesTle p:first-child{
+    font-family: Arial;
+}
+.diabetesTle p:last-child span{
+    position: relative;
+}
+.diabetesTle p:last-child span:before,.diabetesTle p:last-child span:after{
+    position: absolute;
+    content: " ";
+    width: 106px;
+    border-top: 1px solid #72af2d;
+    top:50%;
+}
+.diabetesTle p:last-child span:before{
+    left: -110px;
+}
+.diabetesTle p:last-child span:after{
+    right: -110px;
+}
+.researchResults{
+    height: 550px;
+    overflow-y: scroll;
+
+}
+.researchResults p{
+    text-indent: 2rem;
+    margin-bottom: 10px;
+
+}
+.diabetesExplain p{
+    text-indent: 2rem;
+}
+.diabetesExplain p.greenWord{
+    text-indent: 0;
+    margin-top: 20px;
+}
+.diabetesExplain p.blueWord{
+    margin-top: 10px;
+}
+.blueWord{
+    color: #0185d0;
+}
+.diabetesTab{
+    margin: 20px auto;
+}
+.diabetesTab td{
+    padding: 0 5px;
+}
+.width100{
+    width: 100px;
+}
+/*糖尿病视网膜中心*/
+/*中心公用*/
+.eyesightProject p{
+    display: inline-block;
+    line-height: 24px;
+    text-align:left;
+    padding: 0 2px;
+    vertical-align: middle;
+}
+/*中心公用*/
 //专家新版index页面
