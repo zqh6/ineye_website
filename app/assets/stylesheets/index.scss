@@ -3738,10 +3738,14 @@ textarea:focus{
 .departRightThreeList p span:nth-child(2){
     width: 120px;
 }
-.departBottomList{
+.departBottomListCon{
     width: 420px;
     margin-left: 365px;
-    margin-top: -135px;
+    position: relative;
+}
+.departBottomList{
+    position: absolute;
+    top: -100px;
 }
 .centerBottomTle{
     text-align: center;
