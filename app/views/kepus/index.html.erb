@@ -142,3 +142,9 @@
 </div>
 
 <!--摘镜故事-->
+<script>
+    $(".kepuBtn li").click(function () {
+        $(".kepuBtn li").eq($(this).index()).addClass("active").siblings().removeClass("active");
+        $(".kepuModuleCon .kepuModule").eq($(this).index()).show().siblings().hide()
+    })
+</script>
