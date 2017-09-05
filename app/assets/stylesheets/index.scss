@@ -4193,4 +4193,85 @@ textarea:focus{
     vertical-align: middle;
 }
 /*中心公用*/
+/*科普*/
+.pad20{
+    padding: 20px;
+}
+.whiteModule{
+    background: #fff;
+    margin: 20px 0;
+}
+.kepuBtn{
+    text-align: center;
+}
+.kepuBtn>ul{
+    display: inline-block;
+}
+.kepuBtn li{
+    line-height: 40px;
+    padding: 0 5px;
+    font-size: 24px;
+    margin: 0 35px;
+    cursor: pointer;
+}
+.kepuBtn li.active{
+    color: #72af2d;
+    border-bottom: 2px solid #72af2d;
+}
+.relativeDiv{
+    position: relative;
+}
+.bottomMask{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.kepuImgMask{
+    height: 70px;
+    line-height: 70px;
+    padding: 0 10px;
+    background: #008cd6;
+    color: #fff;
+    box-sizing: border-box;
+    text-align: center;
+}
+.kepuImgMask>p{
+    display: inline-block;
+    line-height: 24px;
+    vertical-align: middle;
+}
+.kepuModuleCon p{
+    text-indent: 2rem;
+}
+.kepuModule{
+    display: none;
+}
+.fiKepuModule{
+    display: block;
+}
+.line40{
+    line-height: 40px;
+}
+.kepuArticles .kepuTle{
+    line-height: 48px;
+    border-bottom: 2px solid #666;
+    font-size: 20px;
+}
+
+.kepuArticles a{
+    display: block;
+}
+.kepuArticles .kepuTle a{
+    font-size: 14px;
+    color: #008cd6;
+    float: right;
+}
+.padL10{
+    padding-left: 10px;
+}
+.padR10{
+    padding-right: 10px;
+}
+/*科普*/
 //专家新版index页面

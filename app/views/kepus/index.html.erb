@@ -21,13 +21,13 @@
     <p class="noIndent">眼健康公益活动部分剪影：</p>
     <div class="flow marB10 marT10">
       <div class="fl relativeDiv">
-        <img src="./image/kepuActivity_1.jpg" alt="">
+        <%= image_tag("kepuActivity_1.jpg") %>
         <div class="bottomMask kepuImgMask">
           <p>2017年1月6日，成都中医大银海眼科医院副院长、白内障屈光中心主任朱思泉教授亲临家乡宜宾珙县为家乡老百姓做眼部检查。</p>
         </div>
       </div>
       <div class="fr relativeDiv">
-        <img src="./image/kepuActivity_2.jpg" alt="">
+        <%= image_tag("kepuActivity_2.jpg") %>
         <div class="bottomMask kepuImgMask">
           <p>2017年3月，走进沙河源小学开展3场眼健康公益活动。</p>
         </div>
@@ -35,13 +35,13 @@
     </div>
     <div class="flow marB10">
       <div class="fl relativeDiv">
-        <img src="./image/kepuActivity_3.jpg" alt="">
+        <%= image_tag("kepuActivity_3.jpg") %>
         <div class="bottomMask kepuImgMask">
           <p>段院长亲自为甘孜州得荣县藏族同胞做眼部检查</p>
         </div>
       </div>
       <div class="fr relativeDiv">
-        <img src="./image/kepuActivity_4.jpg" alt="">
+        <%= image_tag("kepuActivity_4.jpg") %>
         <div class="bottomMask kepuImgMask">
           <p>医技人员应用流动科普馆配备的“七合一”机器人为藏族同胞做眼部检查。</p>
         </div>
@@ -49,7 +49,7 @@
     </div>
     <div class="flow marB10">
       <div class="fl relativeDiv">
-        <img src="./image/kepuActivity_5.jpg" alt="">
+        <%= image_tag("kepuActivity_5.jpg") %>
         <div class="bottomMask kepuImgMask">
           <p>成都地铁运营有限公司地铁司机代表在成都银海眼科医院接受眼健康服务</p>
         </div>
@@ -60,8 +60,8 @@
   <div class="kepuModule">
     <p>首届成都“爱眼月”的一大亮点是全国首创“地铁护眼志愿者”，有十余辆穿梭于市内的地铁列车将作为本次公益活动的“特殊志愿者”以搭载科普视频和知识看板的方式向市民介绍、传递爱眼护眼的知识理念。此外，还有动态显示屏滚动播放爱眼护眼知识。</p>
     <div class="marB20 flow">
-      <img src="./image/kepuActivity_ayy1.jpg" alt="" class="fl">
-      <img src="./image/kepuActivity_ayy2.jpg" alt="" class="fr">
+      <%= image_tag("kepuActivity_ayy1.jpg",:class => "fl") %>
+      <%= image_tag("kepuActivity_ayy2.jpg.jpg",:class => "fr") %>
     </div>
     <div class="flow marB10">
       <%= image_tag("kepuActivity_ayy3.jpg",:class => "fl") %>
@@ -72,8 +72,8 @@
   <div class="kepuModule">
     <p>成都中医药大学眼科学院志愿者团队、成都中医大银海眼科医院全院职工，在成都十个地铁站点为市民提供免费的眼健康科普宣教、咨询及公益义诊，同时免费眼健康档案建立服务。活动当月就为6000余名成都市民提供了眼健康服务。</p>
     <div class="flow">
-      <img src="./image/kepuActivity_gy1.jpg" alt="" class="fl">
-      <img src="./image/kepuActivity_gy2.jpg" alt="" class="fr">
+      <%= image_tag("kepuActivity_gy1.jpg",:class => "fl") %>
+      <%= image_tag("kepuActivity_gy2.jpg",:class => "fr") %>
     </div>
   </div>
 
@@ -81,7 +81,7 @@
 <!--科普列表-->
 <div class="whiteModule flow">
   <div class="width560 fl line40 kepuArticles">
-    <p class="kepuTle padL10">科普活动 <a href="">更多>></a></p>
+    <p class="kepuTle padL10">科普活动  <%= link_to :"更多>>",news_path(:新闻列表) %></p>
     <ul class="padL10">
       <li>
         <a href="http://mp.weixin.qq.com/s?__biz=MzIwMzI4MTMxMA==&mid=100000317&idx=3&sn=43e454e2b90d0fca26049a9dbbd0b67d&chksm=16d084cc21a70dda93f2cda70cb7e336599a02ad8e2d3a1ec3c3a6b76346f95bb76f11b4cea0#rd
@@ -100,7 +100,7 @@
     </ul>
   </div>
   <div class="width560 fr line40 kepuArticles">
-    <p class="kepuTle padR10">科普文章 <a href="">更多>></a></p>
+    <p class="kepuTle padR10">科普文章 <%= link_to :"更多>>",news_path(:新闻列表) %></p>
     <ul class="padR10">
       <li><a href="http://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000424&idx=3&sn=897c1edbd788a859a7d60601d5742081&chksm=7d4c42fc4a3bcbea2fd547ffc4a08c6d6ae5a2da1d1149181c4ab6899bc5071dd96861bd5e0c#rd
 " target="_blank">我是一只蠕形螨番外篇：认输行不行？<span class="fr">2017-9-02</span></a></li>
@@ -122,7 +122,7 @@
 <!--摘镜故事-->
 <div class="whiteModule">
   <div class="line40 kepuArticles flow">
-    <p class="kepuTle padR10 padL10">摘镜故事 <a href="">更多>></a></p>
+    <p class="kepuTle padR10 padL10">摘镜故事 <%= link_to :"更多>>",news_path(:新闻列表) %></p>
     <ul class="padR10 padL10">
       <li><a href="http://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000374&idx=2&sn=a3d8791c69dd049fc866fcb24eb32581&chksm=7d4c42224a3bcb346bcfa8fef9613c97503fdb85ed9c01d92c0cd254a7511abf7330aa7c8805#rd
 " target="_blank">摘下眼镜的你，不要太好看哦！<span class="fr">2017-8-24</span></a></li>
