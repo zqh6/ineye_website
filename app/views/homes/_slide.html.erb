@@ -3,6 +3,14 @@
     <ul class='img'>
         <li>
             <a href="javascript:;">
+                <%= image_tag("banner-teacherDay.jpg") %>
+            </a>
+            <div class="bannerWord">
+                <p>【老师我想对您说】之教师节福利</p>
+            </div>
+        </li>
+        <li>
+            <a href="javascript:;">
                 <%= image_tag("banner_jiepai.jpg") %>
             </a>
             <div class="bannerWord">
@@ -59,8 +67,7 @@
     var bar = $(".banner-box .bar");
     var w =$(".banner-box").width()
     var oImg = $(".banner-box .img");//获取图片盒子
-    var s = $(".banner-box li").length;
-    var num =6;
+    var num =7;
     if($(".banner-box .img li").size() <= num){
         var oImgfirst= $('.banner-box .img li:first').clone();//复制第一张图片
         oImg.append(oImgfirst);//将复制的第一张图片放到最后
@@ -69,7 +76,7 @@
         }
     }
 
-    var imgNum = 7;//获取图片数量
+    var imgNum = 8;//获取图片数量
 
     //根据图片个数添加圆点按钮
     //给第一个按钮添加选中样式
