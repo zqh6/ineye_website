@@ -3673,7 +3673,7 @@ textarea:focus{
 .departEntrance span{
     color: #72af2d;
 }
-.departLeftList span,.departRightList span{
+.departLeftList span,.departRightList span,.departBottomList span{
     position: relative;
     display: inline-block;
 }
@@ -3688,7 +3688,7 @@ textarea:focus{
     background: #008cd6;
     top: 10px;
 }
-.departLeftList span:before{
+.departLeftList span:before,.departBottomList span:before{
     left: 0;
 }
 .departBottomList .departCenter1{
