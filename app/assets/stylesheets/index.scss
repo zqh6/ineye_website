@@ -3677,10 +3677,10 @@ textarea:focus{
     position: relative;
     display: inline-block;
 }
-.departLeftList span{
+.departLeftList span,.departBottomList span{
     padding-left: 10px;
 }
-.departLeftList span:before,.departRightList span:after{
+.departLeftList span:before,.departRightList span:after,.departBottomList span:before{
     content: "";
     position: absolute;
     width: 6px;
@@ -3690,6 +3690,9 @@ textarea:focus{
 }
 .departLeftList span:before{
     left: 0;
+}
+.departBottomList .departCenter1{
+    padding-left: 40px;
 }
 .departList p.departCenterTle,.departList p.departCenterTle a{
     color: #008cd6;
