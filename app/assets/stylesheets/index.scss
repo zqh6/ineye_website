@@ -3712,7 +3712,7 @@ textarea:focus{
 .departLeftThreeList p span:nth-child(1){
     width: 120px;
 }
-.departLeftFourList,.departFiveFourList{
+.departLeftFourList,.departFiveList{
     margin-top: 22px;
     margin-top: 62px;
 }
@@ -3724,6 +3724,9 @@ textarea:focus{
 }
 .departRightList span:after{
     right: 0;
+}
+.departFiveList .departCenter1 span:nth-child(1),.departFiveList .departCenter1 span:nth-child(3){
+    width: 150px;
 }
 .departRightTwoList p span:nth-child(2){
     width: 220px;
