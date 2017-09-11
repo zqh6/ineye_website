@@ -4302,6 +4302,9 @@ textarea:focus{
     width: 570px;
     overflow: hidden;
 }
+.glaucomaDoctors>li img{
+    width: 200px;
+}
 .glaucomaDoctors .expertSynopsis{
     height: auto;
 }
@@ -4310,7 +4313,7 @@ textarea:focus{
     height: 41px;
     padding: 40px 0;
     color: #72af2d;
-    background: url("../image/treatment-bg.jpg");
+    background: url("treatment-bg.jpg");
     text-align: center;
 }
 .glaucomaBg p{
