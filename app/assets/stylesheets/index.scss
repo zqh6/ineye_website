@@ -4280,4 +4280,68 @@ textarea:focus{
     padding-right: 10px;
 }
 /*科普*/
+/*青光眼*/
+.marR65{
+    margin-right: 65px;
+}
+.glaucomaCenter{
+    width: 820px;
+    height: 120px;
+    padding: 20px 30px;
+    border: 1px solid #280d02;
+    border-radius: 8px;
+}
+.centerH5{
+    color: #008cd6;
+    font-size: 24px;
+}
+.glaucomaDoctors{
+    padding: 20px;
+}
+.glaucomaDoctors>li{
+    width: 570px;
+    overflow: hidden;
+}
+.glaucomaDoctors .expertSynopsis{
+    height: auto;
+}
+.glaucomaBg{
+    width: 120px;
+    height: 41px;
+    padding: 40px 0;
+    color: #72af2d;
+    background: url("../image/treatment-bg.jpg");
+    text-align: center;
+}
+.glaucomaBg p{
+    line-height: 18px;
+}
+.glaucomaTreatment>div{
+    width: 545px;
+}
+.glaucomaTreatment{
+    margin-bottom: 25px;
+}
+.glaucomaTreatment>div>p{
+    line-height: 24px;
+    width: 405px;
+    margin-left: 15px;
+}
+.glaucomaTreatment>div>*{
+    display: inline-block;
+    vertical-align: middle;
+}
+.glaucomaTreatmentFiList>div{
+    height: 125px;
+    line-height: 125px;
+}
+.glaucomaTreatmentSeList{
+    height: 140px;
+    line-height: 140px;
+}
+.glaucomaTreatmentThList{
+    height: 168px;
+    line-height: 168px;
+}
+/*青光眼*/
 //专家新版index页面
