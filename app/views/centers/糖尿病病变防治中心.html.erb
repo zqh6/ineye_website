@@ -365,7 +365,8 @@
                 var _this = $(this); //_this 是 你的触发点
                 var oLi = _this.find(options.clickNode); // 切换按钮
                 var oWid = _this.find(options.sameNode).width(); //获取相同循环点的宽度
-                var oLen = _this.find(options.sameNode).length; //获取循环点的个数
+                var oLen = _this.find(options.loopNode.find(options.sameNode)).length; //获取循环点的个数
+                console.log(oLen);
                 var oBnnerWid = oWid * oLen; // 循环点外层赋值宽度
                 options.loopNode.width(oBnnerWid); // 外层 加上这个宽度
                 var time,page = 0; // 定义 参数，可以一起放在defaults上
@@ -381,6 +382,7 @@
                         $(this).children().first().appendTo(options.loopNode.css("left","0px"));
                         options.showButton = true;
                     });
+                    console.log(page);
                     oLi.eq(page).addClass(options.figureBtnAct).siblings().removeClass(options.figureBtnAct)
                 };
                 function moveRight(){ // 上一张
@@ -391,6 +393,7 @@
                     },options.loopTime,function(){
                         options.showButton = true;
                     });
+                    console.log(page);
                     oLi.eq(page).addClass(options.figureBtnAct).siblings().removeClass(options.figureBtnAct)
                 };
                 _this.mouseover(function(event) {  //鼠标在上边的时候停止运动
