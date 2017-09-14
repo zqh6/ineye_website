@@ -1,5 +1,5 @@
 <style>
-    .banner{
+    .dia-banner{
         width: 1200px;
         height: 250px;
         margin:100px  auto;
@@ -22,7 +22,7 @@
         display: block;
         vertical-align: middle;
     }
-    .banner .ctrlbtn a{
+    .dia-banner .ctrlbtn a{
         display: block;
         position: absolute;
         top: 50%;
@@ -40,7 +40,7 @@
     .next{
         left: 0;font-family: "宋体";
     }
-    .banner a:hover{
+    .dia-banner a:hover{
         background: rgba(0,255,255,0.5)
     }
     .pageCtrl{
@@ -51,12 +51,12 @@
         text-align: center;
     }
     .pageCtrl li{ display: inline-block; width: 10px; height: 10px; overflow: hidden; margin: 0 5px; background-color: rgba(255,255,255,.5); border-radius: 50%; z-index: 1111; cursor: pointer;}
-    .banner .active{
+    .dia-banner .active{
         background: rgba(0,255,255,1)
     }
 </style>
 <!--banner-->
-<div class="banner">
+<div class="dia-banner">
     <ul class="banner-inner">
         <li name="0">
             <%= image_tag("diabetes-banner0.jpg") %>
@@ -449,7 +449,7 @@
 
 </script>
 <script type="text/javascript">
-    $(".banner").changePic({
+    $(".dia-banner").changePic({
         figureBtnAct:"active",
         clickNode:$(".pageCtrl li"),
         loopNode:$(".banner-inner"),
