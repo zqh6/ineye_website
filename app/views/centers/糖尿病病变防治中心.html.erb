@@ -35,8 +35,8 @@
         color: white;
         background: rgba(114,175,45,.5);
     }
-    .ctrlbtn .prev{ right: 0; font-family: "宋体";}
-    .ctrlbtn .next{
+    .ctrlbtn .prevBtn{ right: 0; font-family: "宋体";}
+    .ctrlbtn .nextBtn{
         left: 0;font-family: "宋体";
     }
     .dia-banner a:hover{
@@ -66,8 +66,8 @@
 
     </ul>
     <div class="ctrlbtn">
-        <a href="javascript:;" class="prev">&gt;</a>
-        <a href="javascript:;" class="next">&lt;</a>
+        <a href="javascript:;" class="prevBtn">&gt;</a>
+        <a href="javascript:;" class="nextBtn">&lt;</a>
     </div>
     <ul class="pageCtrl">
         <li class="active"></li>
@@ -455,7 +455,7 @@
         loopCircle:"-1200px",
         sameNode:$("li"),
         attrData:"name",
-        leftBtn:$(".prev"),
-        rightBtn:$(".next")
+        leftBtn:$(".prevBtn"),
+        rightBtn:$(".nextBtn")
     })
 </script>
