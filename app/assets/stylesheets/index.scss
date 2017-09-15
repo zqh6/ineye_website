@@ -4534,16 +4534,16 @@ textarea:focus{
     min-height: 1518px;
     padding: 0 20px 30px;
 }
-.equRight{
+.equDetail .equRight{
     width: 300px;
 }
-.equRight,.equLeft{
+.equDetail.equRight,.equLeft{
     border-top: 2px solid #008cd6;
 }
-.equRight .consults{
+.equDetail.equRight .consults{
     width: 100%;
 }
-.equRight .consults li{
+.equDetail.equRight .consults li{
     width: 33.3%;
     border: 0;
     height: 90px;
