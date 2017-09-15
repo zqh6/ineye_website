@@ -2649,10 +2649,10 @@ octorList li .IntroduceMask p{
 .rightBtn.active{
     transition: all .5s;
 }
-.teamContainer:hover .leftBtn.active{
+.teamContainer:hover .leftBtn.active,.doctorRecommendDiv:hover .leftBtn.active{
     left: 0;
 }
-.teamContainer:hover .rightBtn.active{
+.teamContainer:hover .rightBtn.active,.doctorRecommendDiv:hover .rightBtn.active{
     right: 0;
 }
 .icon_arrow.icon_left{
