@@ -4528,4 +4528,145 @@ textarea:focus{
     margin: 20px 0 0 130px;
 }
 /*白内障添加*/
+/*仪器详情*/
+.equLeft{
+    width: 850px;
+    min-height: 1518px;
+    padding: 0 20px 30px;
+}
+.equRight{
+    width: 300px;
+}
+.equRight,.equLeft{
+    border-top: 2px solid #008cd6;
+}
+.equRight .consults{
+    width: 100%;
+}
+.equRight .consults li{
+    width: 33.3%;
+    border: 0;
+    height: 90px;
+}
+.equRight .consults i{
+    margin-top: 15px;
+}
+.equRight .consults li:nth-child(4) i{
+    background-position: 0 -240px;
+}
+.equRight .consults li:nth-child(5) i{
+    background-position: 0 -144px;
+}
+.equRight .consults li:nth-child(6) i {
+    background-position: 0 -192px;
+}
+.doctorRecommendList{
+    height: 590px;
+    padding: 0 0 10px;
+    box-sizing: border-box;
+}
+.doctorRecommendTle{
+    font-size: 20px;
+    line-height: 40px;
+    margin: 0 10px;
+}
+.doctorRecommendImg{
+    height: 300px;
+    overflow: hidden;
+}
+.doctorRecommendImg img{
+    width: 100%;
+}
+.doctorRecommendList{
+    position: relative;
+}
+.doctorRecommendList .centerWords{
+    text-align: center;
+}
+.doctorRecommendList .centerWords p:nth-child(1){
+    font-size: 18px;
+}
+.doctorRecommendList .doctorBtn{
+    bottom: 10px;
+    left: 10px;
+    width: 280px;
+}
+.doctorRecommendList .doctorBtn a{
+    background: #008cd3;
+}
+.doctorRecommendList .doctorBtn a:hover{
+    background: #72af2d;
+}
+.equ-hosMessage{
+    padding: 20px 20px 10px;
+}
+.equ-hosMessage>div{
+    width: 100%;
+    height: 70px;
+    border: 1px solid #e5e8e9;
+    margin-bottom: 10px;
+}
+.equ-hosMessage>div i{
+    width: 42px;
+    height: 42px;
+    margin: 15px;
+    float: left;
+}
+.equ-hosMessage>div:first-child i{
+    background-position: 0 -278px;
+}
+.equ-hosMessage>div:last-child i{
+    background-position: 0 -340px;
+}
+.equ-hosMessage>div>div{
+    display: inline-block;
+    line-height: 24px;
+    font-size: 18px;
+    float: left;
+    margin: 12px 0;
+}
+.hosPath{
+    padding: 10px 10px 20px;
+    font-size: 12px;
+}
+.doctorRecommendDiv{
+    width: 300px;
+    height: 550px;
+    overflow: hidden;
+}
+.doctorRecommendCon{
+    width: 2000px;
+    height: 550px;
+    position: relative;
+    top: 0;
+}
+.doctorRecommendCon li{
+    width: 280px;
+    height: 550px;
+    padding: 0 10px;
+    position: relative;
+}
+.fontCenter30{
+    font-size: 30px;
+    text-align: center;
+}
+.equLeft .fontCenter30{
+    line-height: 86px;
+}
+.equLeft .advBlueTitle{
+    margin: 10px 0;
+}
+.textCenter{
+    text-align: center;
+}
+.redWord{
+    color: #ff1d1d;
+}
+.equTwoTle{
+    line-height: 38px;
+    font-size: 30px;
+    text-align: center;
+    margin: 25px 0;
+}
+/*仪器详情*/
 //专家新版index页面

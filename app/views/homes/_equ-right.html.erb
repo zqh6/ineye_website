@@ -1,0 +1,184 @@
+<style>
+    .my-map { margin: 0 auto; width: 280px; height: 150px; }
+    .my-map .icon { background: url(http://lbs.amap.com/console/public/show/marker.png) no-repeat; }
+    .my-map .icon-cir { height: 31px; width: 28px; }
+    .my-map .icon-cir-red { background-position: -11px -5px; }
+    .amap-container{height: 100%;}
+    .map h5{
+        font-size: 14px;
+        line-height: 25px;
+    }
+</style>
+<div class="whiteBg marT10">
+    <ul class="consults flow flParent ">
+        <li>
+            <a href="/medicals/%E5%B0%B1%E5%8C%BB%E6%B5%81%E7%A8%8B">
+                <i></i>
+                <p>就医流程</p>
+            </a>
+        </li>
+        <li>
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&amp;cid=1492673497337873616010&amp;lng=cn&amp;sid=1494901384848349862390&amp;p=http%3A//www.ineyehospital.com/main.asp&amp;rf1=&amp;rf2=&amp;msg=&amp;d=1494901387174" target="_blank">
+                <i></i>
+                <p>预约挂号</p>
+            </a>
+        </li>
+        <li>
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&amp;cid=1492673497337873616010&amp;lng=cn&amp;sid=1494901384848349862390&amp;p=http%3A//www.ineyehospital.com/main.asp&amp;rf1=&amp;rf2=&amp;msg=&amp;d=1494901387174" target="_blank">
+                <i></i>
+                <p>在线咨询</p>
+            </a>
+        </li>
+        <li>
+            <a href="">
+                <i></i>
+                <p>专家排班</p>
+            </a>
+        </li>
+        <li>
+            <a href="/medicals/%E5%8C%BB%E4%BF%9D%E6%94%BF%E7%AD%96">
+                <i></i>
+                <p>医保政策</p>
+            </a>
+        </li>
+        <li>
+            <a href="/medicals/%E5%88%B0%E9%99%A2%E6%8C%87%E5%BC%95">
+                <i></i>
+                <p>来院导航</p>
+            </a>
+        </li>
+    </ul>
+    <div class="equ-hosMessage">
+        <div>
+            <i class="icon_enter"></i>
+            <div>
+                <p>咨询热线</p>
+                <p>400 9900 766</p>
+            </div>
+        </div>
+        <div>
+            <i class="icon_enter"></i>
+            <div>
+                <p>门诊时间</p>
+                <p>08:30-17:30</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="whiteBg marT10">
+    <p class="doctorRecommendTle">医院地图</p>
+    <div id="wrap" class="my-map">
+        <div id="mapContainer"></div>
+    </div>
+    <div class="line24 hosPath">
+        <p><b>公交乘车路线</b></p>
+        <p>乘42路、75路公交至“星辉西路站”，向南步行约200米。</p>
+        <p><b>地铁乘车路线</b></p>
+        <p>1号线“文殊院站K出口”向北行至星辉西路右转200米。</p>
+        <p>1号线“人民北路站B出口”向南行至星辉西路左转200米。</p>
+        <p>3号线“红星桥站C出口下”，转乘42路、75路公交（3站）星辉西路站下 。</p>
+        <p><b>自驾路线</b></p>
+        <p>成都市区请直接开至金牛区星辉西路8号，如中途线路不清楚，可电话咨询400-9900-766。</p>
+    </div>
+</div>
+<script src="//webapi.amap.com/maps?v=1.3&key=8325164e247e15eea68b59e89200988b"></script>
+<script>
+    !function(){
+        var infoWindow, map, level = 16,
+            center = {lng: 104.075484, lat: 30.678782},
+            features = [{type: "Marker", name: "成都中医大银海眼科医院", desc: "电话：400 9900 766", color: "red", icon: "cir", offset: {x: -9, y: -31}, lnglat: {lng: 104.075537, lat: 30.678579}}];
+
+        function loadFeatures(){
+            for(var feature, data, i = 0, len = features.length, j, jl, path; i < len; i++){
+                data = features[i];
+                switch(data.type){
+                    case "Marker":
+                        feature = new AMap.Marker({ map: map, position: new AMap.LngLat(data.lnglat.lng, data.lnglat.lat),
+                            zIndex: 3, extData: data, offset: new AMap.Pixel(data.offset.x, data.offset.y), title: data.name,
+                            content: '<div class="icon icon-' + data.icon + ' icon-'+ data.icon +'-' + data.color +'"></div>' });
+                        break;
+                    case "Polyline":
+                        for(j = 0, jl = data.lnglat.length, path = []; j < jl; j++){
+                            path.push(new AMap.LngLat(data.lnglat[j].lng, data.lnglat[j].lat));
+                        }
+                        feature = new AMap.Polyline({ map: map, path: path, extData: data, zIndex: 2,
+                            strokeWeight: data.strokeWeight, strokeColor: data.strokeColor, strokeOpacity: data.strokeOpacity });
+                        break;
+                    case "Polygon":
+                        for(j = 0, jl = data.lnglat.length, path = []; j < jl; j++){
+                            path.push(new AMap.LngLat(data.lnglat[j].lng, data.lnglat[j].lat));
+                        }
+                        feature = new AMap.Polygon({ map: map, path: path, extData: data, zIndex: 1,
+                            strokeWeight: data.strokeWeight, strokeColor: data.strokeColor, strokeOpacity: data.strokeOpacity,
+                            fillColor: data.fillColor, fillOpacity: data.fillOpacity });
+                        break;
+                    default: feature = null;
+                }
+                if(feature){ AMap.event.addListener(feature, "click", mapFeatureClick); }
+            }
+        }
+
+        function mapFeatureClick(e){
+            if(!infoWindow){ infoWindow = new AMap.InfoWindow({autoMove: true}); }
+            var extData = e.target.getExtData();
+            infoWindow.setContent("<h5>" + extData.name + "</h5><div>" + extData.desc + "</div>");
+            infoWindow.open(map, e.lnglat);
+        }
+
+        map = new AMap.Map("mapContainer", {center: new AMap.LngLat(center.lng, center.lat), level: level});
+
+        loadFeatures();
+
+        map.on('complete', function(){
+            map.plugin(["AMap.ToolBar"], function(){
+                map.addControl(new AMap.ToolBar);
+            });
+        })
+
+    }();
+</script>
+<script>
+    var members = $(".doctorRecommendCon li").length-1;
+    if(members>1){
+        $(".leftBtn").addClass("active");
+        $(".rightBtn").addClass("active");
+    }
+    var thisWidth = $(".doctorRecommendCon li").width()+20;
+    var rightMoveNum = members+(parseInt($(".doctorRecommendCon").css("left"))/thisWidth);
+    var leftMoveNum = -(parseInt($(".doctorRecommendCon").css("left"))/thisWidth);
+    function move() {
+        if(rightMoveNum>0){
+            $(".doctorRecommendCon").stop(true,true);
+            var nowPos = parseInt($(".doctorRecommendCon").css("left"));
+            $(".doctorRecommendCon").animate({
+                left:nowPos-thisWidth
+            })
+            rightMoveNum--;
+            leftMoveNum++;
+        }
+        console.log(rightMoveNum);
+    }
+    function move2() {
+        if(leftMoveNum>0){
+            $(".doctorRecommendCon").stop(true,true);
+            var nowPos = parseInt($(".doctorRecommendCon").css("left"));
+            $(".doctorRecommendCon").animate({
+                left:nowPos+thisWidth
+            })
+            rightMoveNum++;
+            leftMoveNum--;
+        }
+        console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+        if(rightMoveNum>0){
+            move();
+        }
+    })
+    $(".leftBtn").click(function() {
+        if(leftMoveNum>0){
+            move2();
+        }
+    })
+</script>
