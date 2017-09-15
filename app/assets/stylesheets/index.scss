@@ -4580,6 +4580,7 @@ textarea:focus{
 }
 .doctorRecommendList{
     position: relative;
+    overflow: hidden;
 }
 .doctorRecommendList .centerWords{
     text-align: center;
