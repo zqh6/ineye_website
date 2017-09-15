@@ -4534,8 +4534,9 @@ textarea:focus{
     min-height: 1518px;
     padding: 0 20px 30px;
 }
-.equDetail .equRight{
+.equDetail.equRight{
     width: 300px;
+    padding: 0;
 }
 .equDetail.equRight,.equLeft{
     border-top: 2px solid #008cd6;
