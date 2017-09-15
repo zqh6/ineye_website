@@ -22,10 +22,9 @@
                 <div  class="doctorRecommendDiv" style="">
                     <ul class="flParent flow doctorRecommendCon">
                         <li>
-                            <%= link_to expert_path(:朱思泉教授) do %>
 
                                 <div class="centerImgCon doctorRecommendImg">
-                                    <%= image_tag("zj4.jpg") %>
+                                    <%= link_to image_tag("zj4.jpg"),expert_path(:朱思泉教授) %>
                                 </div>
                                 <div class="centerWords line24">
                                     <p class="line30">朱思泉</p>
@@ -38,13 +37,11 @@
                                 <div class="doctorBtn">
                                     <a href="">咨询预约</a><a href="">查看详情</a>
                                 </div>
-                            <% end %>
 
                         </li>
                         <li>
-                            <%= link_to expert_path(:潘学会) do %>
                             <div class="centerImgCon doctorRecommendImg">
-                                <%= image_tag("zj13.jpg") %>
+                                <%= link_to image_tag("zj13.jpg"),expert_path(:潘学会) %>
                             </div>
                             <div class="centerWords line24">
                                 <p class="line30">潘学会</p>
@@ -57,12 +54,10 @@
                             <div class="doctorBtn">
                                 <a href="">咨询预约</a><a href="">查看详情</a>
                             </div>
-                            <% end %>
                         </li>
                         <li>
-                            <%= link_to expert_path(:陈小凤主治医师) do %>
                             <div class="centerImgCon doctorRecommendImg">
-                                <%= image_tag("zj17.jpg") %>
+                                <%= link_to image_tag("zj17.jpg"),expert_path(:陈小凤主治医师) %>
                             </div>
                             <div class="centerWords line24">
                                 <p class="line30">陈小凤</p>
@@ -75,7 +70,6 @@
                             <div class="doctorBtn">
                                 <a href="">咨询预约</a><a href="">查看详情</a>
                             </div>
-                            <% end %>
                         </li>
                     </ul>
                     <div>
