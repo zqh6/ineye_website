@@ -1,24 +1,25 @@
 <div class="doctorDetails flow whiteBg">
     <div class="fl doctorPortrait flow">
-        <%= image_tag("zj15.jpg") %>
+        <%= image_tag("zj21.jpg") %>
         <div class="doctorBtns">
             <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
-            <%= link_to '查看排班表',medical_path(:专家排班,:anchor=>"experts_15"),:class=>"fr" %>
+            <a href="javascript:;" class="fr">查看排班表</a>
         </div>
     </div>
     <div class="fl doctorContent flow">
-        <h5>王国平</h5>
-        <p class="doctorTitle"><span>副主任医师/医学硕士</span></p>
-        <div class="doctorHonor"></div>
+        <h5>李红惠</h5>
+        <p class="doctorTitle"><span>主治医师/医学博士</span></p>
+        <div class="doctorHonor">
+
+        </div>
         <div class="doctorGoodAt flow">
             <span>擅长领域：</span>
-            <p>擅长眼底疾病的诊治、外路视网膜脱离复位手术、玻璃体切割手术、白内障超声乳化术、眼外伤救治以及眼底激光治疗。</p>
+            <p>擅长常见眼病的诊断及治疗，包括眼视光、白内障、眼底病等。</p>
         </div>
-        <p class="seePatientTime"><span>坐诊时间:</span>周一/五下午、周四上午,具体请以专家门诊时间表为准</p>
     </div>
 </div>
 <div class="doctorIntroduce whiteBg">
-    <p>第四军医大学眼科学硕士。从事眼科临床工作20年。曾进修于第三军医大学西南医院及四川大学华西医院。先后撰写学术论文12篇。曾获武警部队科技进步三等奖1项，四川省科技进步三等奖1项和乐山市科技进步二等奖1项。</p>
+    <p>主要从事西医眼科疾病临床、科研及教学工作。中山大学中山眼科中心博士毕业并完成住院医师规范化培训，对眼科常见病及多发病有丰富的临床经验。</p>
 </div>
 <ul class="registered flow flParent">
     <li>预约挂号</li>
@@ -32,6 +33,18 @@
     <div class="fl teamMemberWords">团 队 成 员</div>
     <div class="teamContainer" >
         <ul class="teamMembers fr flParent flow" style="">
+            <!--段俊国-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj2.jpg"),expert_path(:段俊国教授) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>段俊国</h4>
+                    <p>主任医师教授/博士生导师</p>
+                    <p>享受国务院政府津贴专家</p>
+                </div>
+            </li>
+            <!--段俊国-->
             <!--刘文-->
             <li>
                 <div class="fl teamMemberPhoto">
@@ -44,30 +57,18 @@
                 </div>
             </li>
             <!--刘文-->
-            <!--黄霄-->
+            <!--王国平-->
             <li>
                 <div class="fl teamMemberPhoto">
-                    <%= link_to image_tag("zj11.jpg"),expert_path(:黄霄主任医师) %>
+                    <%= link_to image_tag("zj15.jpg"),expert_path(:王国平) %>
                 </div>
                 <div class="fl memberIntroduce">
-                    <h4>黄霄</h4>
-                    <p>主任医师/教授/硕士生导师</p>
-                    <p>中国眼免疫学会会员</p>
+                    <h4>王国平</h4>
+                    <p>副主任医师/医学硕士</p>
+                    <p>从事眼科临床工作20年</p>
                 </div>
             </li>
-            <!--黄霄-->
-            <!--李红惠-->
-            <li>
-                <div class="fl teamMemberPhoto">
-                    <%= link_to image_tag("zj21.jpg"),expert_path(:李红惠主治医师) %>
-                </div>
-                <div class="fl memberIntroduce">
-                    <h4>李红惠</h4>
-                    <p>主任医师/教授</p>
-                    <p>主任医师/医学博士</p>
-                </div>
-            </li>
-            <!--李红惠-->
+            <!--王国平-->
 
         </ul>
         <div class="leftBtn">
