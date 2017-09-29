@@ -103,13 +103,14 @@
         $(".leftBtn").addClass("active");
         $(".rightBtn").addClass("active");
     }
-    var rightMoveNum = members-4;
+    var rightMoveNum = members-4+((parseInt($(".teamMembers").css("left"))/$(".teamMembers li").width()));
     var leftMoveNum = 0;
     function move() {
         if(rightMoveNum>0){
             $(".teamMembers").stop(true,true);
             var nowPos = parseInt($(".teamMembers").css("left"));
             var displacement =$(".teamMembers li").width();
+            console.log(nowPos+" "+displacement);
             $(".teamMembers").animate({
                 left:nowPos-displacement
             })
