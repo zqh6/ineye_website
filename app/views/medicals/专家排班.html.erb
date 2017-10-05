@@ -222,25 +222,25 @@
           <td>
             <p>下午VIP门诊</p> 
           </td>
-          <td>上午</td>
+          <td> <p>上午专家门诊</p> </td>
           <td></td>
           <td></td>
         </tr>
         <tr id="experts_15">
           <td><%= link_to :"王国平", expert_path(:王国平)%></td>
           <td>副主任医师</td>
-          <td>下午</td>
+          <td> <p>下午普通门诊</p> </td>
           <td></td>
           <td></td>
-          <td>上午</td>
-          <td>下午</td>
+          <td> <p>上午专家门诊</p> </td>
+          <td> <p>下午普通门诊</p> </td>
           <td></td>
           <td></td>
         </tr>
         <tr id="experts_15">
           <td><p>李红惠</p></td>
           <td>主治医师</td>
-          <td>上午</td>
+          <td> <p>下午普通门诊</p> </td>
           <td></td>
           <td></td>
           <td>上午</td>
@@ -263,12 +263,12 @@
         <tr id="experts_16">
           <td><%= link_to :"谢艾芮", expert_path(:谢艾芮主任医师)%></td>
           <td>主治医师</td>
-          <td>下午</td>
-          <td>下午</td>
+          <td>下午视光门诊</td>
+          <td>下午屈光门诊</td>
           <td></td>
           <td></td>
-          <td>下午</td>
-          <td></td>
+          <td>全天视光门诊</td>
+          <td>上午视光门诊</td>
           <td></td>
         </tr>
         <tr id="experts_6">
@@ -280,17 +280,24 @@
           <td></td>
           <td></td>
           <td></td>
-          <td>下午</td>
+          <td> <p>下午专家门诊</p> </td>
         </tr>
         <tr id="experts_13">
           <td><%= link_to :"周春阳", expert_path(:周春阳主任医师)%></td>
           <td>副主任医师</td>
           <td></td>
           <td></td>
-          <td>全天</td>
+          <td> 
+            <p>上午屈光门诊</p>
+            <p>下午专家门诊</p> 
+          </td>
           <td></td>
-          <td>全天</td>
-          <td>下午</td>
+          <td>
+            <p>全天屈光门诊</p>
+          </td>
+          <td>
+            <p>下午专家门诊</p> 
+          </td>
           <td></td>
         </tr>
         <tr id="experts_18">
@@ -298,10 +305,13 @@
           <td>主治医师</td>
           <td></td>
           <td></td>
-          <td>上午</td>
+          <td>上午视光门诊</td>
           <td></td>
           <td></td>
-          <td>全天</td>
+          <td>
+            <p>上午屈光门诊<p>
+            <p>下午视光门诊<p>
+          </td>
           <td></td>
         </tr>
         <tr>
@@ -310,32 +320,35 @@
           <td></td>
           <td></td>
           <td></td>
-          <td>全天</td>
+          <td>全天屈光门诊</td>
           <td></td>
           <td></td>
-          <td>下午</td>
+          <td>下午视光门诊</td>
         </tr>
         <tr>
           <td><a href="javascript:;">杜玉芹</a></td>
           <td>医师</td>
-          <td>全天</td>
-          <td>上午</td>
+          <td>全天屈光门诊</td>
+          <td>上午屈光门诊</td>
           <td></td>
           <td></td>
           <td></td>
           <td></td>
-          <td>全天</td>
+          <td>全天屈光门诊</td>
         </tr>
         <tr id="experts_11">
           <td rowspan="2">综合眼科</td>
           <td><%= link_to :"黄 霄", expert_path(:黄霄主任医师)%></td>
           <td>主任医师</td>
           <td></td>
-          <td>上午</td>
-          <td>上午</td>
-          <td>上午</td>
-          <td>全天</td>
-          <td>全天</td>
+          <td>上午专家门诊</td>
+          <td>上午普通门诊</td>
+          <td>上午VIP门诊</td>
+          <td>全天普通门诊</td>
+          <td>
+            <p>上午专家门诊</p>
+            <p>下午普通门诊</p>
+          </td>
           <td></td>
         </tr>
         <tr id="experts_20">
@@ -346,7 +359,7 @@
           <td></td>
           <td></td>
           <td></td>
-          <td>全天</td>
+          <td>全天普通门诊</td>
           <td></td>
         </tr>
         <tr id="experts_4">
@@ -358,14 +371,17 @@
           <td></td>
           <td></td>
           <td></td>
-          <td>上午</td>
+          <td>上午VIP门诊</td>
           <td></td>
         </tr>
         <tr id="experts_10">
           <td><%= link_to :"张富文", expert_path(:张富文主治医师)%></td>
           <td>主任医师</td>
-          <td>上午</td>
-          <td>全天</td>
+          <td>上午VIP门诊</td>
+          <td>
+            <p>上午普通门诊</p>
+            <p>下午专家门诊</p>
+          </td>
           <td></td>
           <td></td>
           <td></td>
@@ -375,21 +391,21 @@
         <tr id="experts_14">
           <td><%= link_to :"潘学会", expert_path(:潘学会)%></td>
           <td>副主任医师</td>
-          <td>上午</td>
-          <td>下午</td>
-          <td>上午</td>
-          <td>全天</td>
-          <td>上午</td>
+          <td>上午普通门诊</td>
+          <td>下午普通门诊</td>
+          <td>上午专家门诊</td>
+          <td>全天普通门诊</td>
+          <td>上午专家门诊</td>
           <td></td>
           <td></td>
         </tr>
         <tr id="experts_17">
           <td><%= link_to :"陈小凤", expert_path(:陈小凤主治医师)%></td>
           <td>主治医师</td>
-          <td>上午</td>
+          <td>上午普通门诊</td>
           <td></td>
-          <td>下午</td>
-          <td>全天</td>
+          <td>下午普通门诊</td>
+          <td>全天普通门诊</td>
           <td></td>
           <td></td>
           <td></td>
@@ -398,11 +414,11 @@
           <td>内科</td>
           <td><%= link_to :"王智慧", expert_path(:王智慧主任医师)%></td>
           <td>主任医师</td>
-          <td>上午</td>
-          <td>上午</td>
-          <td>上午</td>
-          <td>上午</td>
-          <td>上午</td>
+          <td>上午普通门诊</td>
+          <td>上午普通门诊</td>
+          <td>上午普通门诊</td>
+          <td>上午普通门诊</td>
+          <td>上午普通门诊</td>
           <td></td>
           <td></td>
         </tr>
@@ -410,7 +426,7 @@
           <td rowspan="12">眼综合科</td>
           <td><a href="javascript:;">刘玲</a></td>
           <td>医师</td>
-          <td>上午</td>
+          <td>上午普通门诊</td>
           <td></td>
           <td></td>
           <td></td>
@@ -427,12 +443,12 @@
           <td></td>
           <td></td>
           <td></td>
-          <td>全天</td>
+          <td>全天普通门诊</td>
         </tr>
         <tr>
           <td><a href="javascript:;">吴青兰</a></td>
           <td>医师</td>
-          <td>下午</td>
+          <td>下午普通门诊</td>
           <td></td>
           <td></td>
           <td></td>
@@ -445,7 +461,7 @@
           <td>医师</td>
           <td></td>
           <td></td>
-          <td>上午</td>
+          <td>上午普通门诊</td>
           <td></td>
           <td></td>
           <td></td>
@@ -457,7 +473,7 @@
           <td></td>
           <td></td>
           <td></td>
-          <td>下午</td>
+          <td>下午普通门诊</td>
           <td></td>
           <td></td>
           <td></td>
@@ -468,7 +484,7 @@
           <td></td>
           <td></td>
           <td></td>
-          <td>上午</td>
+          <td>上午普通门诊</td>
           <td></td>
           <td></td>
           <td></td>
@@ -477,7 +493,7 @@
           <td><a href="javascript:;">陈星如</a></td>
           <td>医师</td>
           <td></td>
-          <td>上午</td>
+          <td>上午普通门诊</td>
           <td></td>
           <td></td>
           <td></td>
@@ -489,7 +505,7 @@
           <td>医师</td>
           <td></td>
           <td></td>
-          <td>下午</td>
+          <td>下午普通门诊</td>
           <td></td>
           <td></td>
           <td></td>
@@ -502,7 +518,7 @@
           <td></td>
           <td></td>
           <td></td>
-          <td>下午</td>
+          <td>下午普通门诊</td>
           <td></td>
           <td></td>
         </tr>
@@ -510,10 +526,10 @@
           <td><a href="javascript:;">王利萍</a></td>
           <td>医师</td>
           <td></td>
-          <td>下午</td>
+          <td>下午普通门诊</td>
           <td></td>
           <td></td>
-          <td>下午</td>
+          <td>下午普通门诊</td>
           <td></td>
           <td></td>
         </tr>
@@ -521,10 +537,10 @@
           <td><a href="javascript:;">杜聪睿</a></td>
           <td>医师</td>
           <td></td>
-          <td>下午</td>
+          <td>下午普通门诊</td>
           <td></td>
           <td></td>
-          <td>下午</td>
+          <td>下午普通门诊</td>
           <td></td>
           <td></td>
         </tr>
@@ -535,7 +551,7 @@
           <td></td>
           <td></td>
           <td></td>
-          <td>上午</td>
+          <td>上午普通门诊</td>
           <td></td>
           <td></td>
         </tr>
