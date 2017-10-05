@@ -1,513 +1,511 @@
 <%= render "homes/enter_banner" %>
 <div class="enterEyeContainer">
-    <%= render "medicals/medical_left" %>
-    <div class="fr doctorScheduling">
-        <div class="stopService">
-            <h4>本周停诊信息</h4>
-            <ul class="flow flParent">
-                <li>谢艾芮：<span>10月9日至10月15日</span></li>
-            </ul>
-            <p>有效时间：2017-10-09--2017-10-15</p>
-        </div>
-        <div class="schedulingTabCon padT20">
-            <table class="schedulingTab">
-                <tr>
-                    <th colspan="20">国庆期间排班表</th>
-                </tr>
-                <tr>
-                    <td>日期</td>
-                    <td colspan="2">10/1</td>
-                    <td colspan="2">10/2</td>
-                    <td colspan="2">10/3</td>
-                    <td colspan="3">10/4</td>
-                    <td colspan="2">10/5</td>
-                    <td colspan="4">10/6</td>
-                    <td colspan="2">10/7</td>
-                    <td colspan="2">10/8</td>
-                </tr>
-                <tr class="font12">
-                    <td>科室</td>
-                    <td>视光科</td>
-                    <td>综合眼科</td>
-                    <td>视光科</td>
-                    <td>眼底外科</td>
-                    <td>视光科</td>
-                    <td>白内障科</td>
-                    <td>眼底内科</td>
-                    <td>中医眼科</td>
-                    <td>视光科</td>
-                    <td>白内障科</td>
-                    <td>视光科</td>
-                    <td>眼底内科</td>
-                    <td>眼底内科</td>
-                    <td>视光科</td>
-                    <td>中医眼科</td>
-                    <td>视光科</td>
-                    <td>综合眼科</td>
-                    <td>视光科</td>
-                    <td>中医眼科</td>
-                </tr>
-                <tr class="font12">
-                    <td>医生</td>
-                    <td>谢艾芮</td>
-                    <td>黄霄</td>
-                    <td>文娟</td>
-                    <td>王国平</td>
-                    <td>杜玉芹</td>
-                    <td>张富文</td>
-                    <td>
-                        <p>段俊国</p>
-                        <p>(上午)</p>
-                    </td>
-                    <td>周华祥</td>
-                    <td>
-                        <p>文娟</p>
-                        <p>(上午)</p>
-                    </td>
-                    <td>陈小凤</td>
-                    <td>
-                        <p>李强</p>
-                        <p>(上午)</p>
-                    </td>
-                    <td>
-                        <p>邓亚平</p>
-                        <p>(上午)</p>
-                    </td>
-                    <td>
-                        <p>段俊国</p>
-                        <p>(上午)</p>
-                    </td>
-                    <td>李强</td>
-                    <td>缪馨</td>
-                    <td>周春阳</td>
-                    <td>蹇文渊</td>
-                    <td>袁晓辉</td>
-                    <td>路雪婧</td>
-                </tr>
-            </table>
-        </div>
-        <div class="schedulingTabCon">
-            <h4>门诊排班表</h4>
-            <table class="schedulingTab">
-                <tr>
-                    <th class="width150">科室</th>
-                    <th>姓名</th>
-                    <th>职称</th>
-                    <th>星期一</th>
-                    <th>星期二</th>
-                    <th>星期三</th>
-                    <th>星期四</th>
-                    <th>星期五</th>
-                    <th>星期六</th>
-                    <th>星期日</th>
-                </tr>
-                <tr id="experts_2">
-                    <td rowspan="2">眼底内科</td>
-                    <td><%= link_to :"段俊国", expert_path(:段俊国教授)%></td>
-                    <td>主任医师</td>
-                    <td></td>
-                    <td></td>
-                    <td>上午</td>
-                    <td></td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_3">
-                    <td><%= link_to :"邓亚平", expert_path(:邓亚平教授)%></td>
-                    <td>主任医师</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_1">
-                    <td rowspan="4">中医眼科</td>
-                    <td><%= link_to :"廖品正", expert_path(:廖品正教授)%></td>
-                    <td>国医大师</td>
-                    <td></td>
-                    <td>全天 </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_7">
-                    <td><%= link_to :"周华祥", expert_path(:周华祥教授)%></td>
-                    <td>主任医师</td>
-                    <td></td>
-                    <td>下午</td>
-                    <td>全天</td>
-                    <td></td>
-                    <td>全天</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_9">
-                    <td><%= link_to :"路雪婧", expert_path(:路雪婧主任医师)%></td>
-                    <td>主任医师</td>
-                    <td>全天</td>
-                    <td></td>
-                    <td></td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_x">
-                    <td>张大铮</td>
-                    <td>主任医师</td>
-                    <td></td>
-                    <td>下午</td>
-                    <td></td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_19">
-                    <td><%= link_to :"缪 馨", expert_path(:缪馨主治医师)%></td>
-                    <td>主治医师</td>
-                    <td>全天</td>
-                    <td>上午</td>
-                    <td></td>
-                    <td>全天</td>
-                    <td></td>
-                    <td></td>
-                    <td>全天</td>
-                </tr>
-                <tr id="experts_5">
-                    <td rowspan="2">眼底外科</td>
-                    <td><%= link_to :"刘 文", expert_path(:刘文教授)%></td>
-                    <td>主任医师</td>
-                    <td>上午</td>
-                    <td></td>
-                    <td>上午</td>
-                    <td>下午</td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_15">
-                    <td><%= link_to :"王国平", expert_path(:王国平)%></td>
-                    <td>副主任医师</td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                    <td>上午</td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_15">
-                    <td><p>李红惠</p></td>
-                    <td>主治医师</td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_8">
-                    <td rowspan="7">视光科</td>
-                    <td><%= link_to :"袁晓辉", expert_path(:袁晓辉主任医师)%></td>
-                    <td>主任医师</td>
-                    <td>上午</td>
-                    <td>全天</td>
-                    <td>上午</td>
-                    <td>全天</td>
-                    <td></td>
-                    <td></td>
-                    <td>上午</td>
-                </tr>
-                <tr id="experts_16">
-                    <td><%= link_to :"谢艾芮", expert_path(:谢艾芮主任医师)%></td>
-                    <td>主治医师</td>
-                    <td>下午</td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_6">
-                    <td><%= link_to :"周跃华", expert_path(:周跃华教授)%></td>
-                    <td>主任医师</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>下午</td>
-                </tr>
-                <tr id="experts_13">
-                    <td><%= link_to :"周春阳", expert_path(:周春阳主任医师)%></td>
-                    <td>副主任医师</td>
-                    <td></td>
-                    <td></td>
-                    <td>全天</td>
-                    <td></td>
-                    <td>全天</td>
-                    <td>下午</td>
-                    <td></td>
-                </tr>
-                <tr id="experts_18">
-                    <td><%= link_to :"李 强", expert_path(:李强主治医师)%></td>
-                    <td>主治医师</td>
-                    <td></td>
-                    <td></td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                    <td>全天</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="javascript:;">文娟</a></td>
-                    <td>医师</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>全天</td>
-                    <td></td>
-                    <td></td>
-                    <td>下午</td>
-                </tr>
-                <tr>
-                    <td><a href="javascript:;">杜玉芹</a></td>
-                    <td>医师</td>
-                    <td>全天</td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>全天</td>
-                </tr>
-                <tr id="experts_11">
-                    <td rowspan="2">综合眼科</td>
-                    <td><%= link_to :"黄 霄", expert_path(:黄霄主任医师)%></td>
-                    <td>主任医师</td>
-                    <td></td>
-                    <td>上午</td>
-                    <td>上午</td>
-                    <td>上午</td>
-                    <td>全天</td>
-                    <td>全天</td>
-                    <td></td>
-                </tr>
-                <tr id="experts_20">
-                    <td><%= link_to :"蹇文渊", expert_path(:蹇文渊主治医师)%></td>
-                    <td>主治医师</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>全天</td>
-                    <td></td>
-                </tr>
-                <tr id="experts_4">
-                    <td rowspan="4">白内障科</td>
-                    <td><%= link_to :"朱思泉", expert_path(:朱思泉教授)%></td>
-                    <td>主任医师</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>上午</td>
-                    <td></td>
-                </tr>
-                <tr id="experts_10">
-                    <td><%= link_to :"张富文", expert_path(:张富文主治医师)%></td>
-                    <td>主任医师</td>
-                    <td>上午</td>
-                    <td>全天</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_14">
-                    <td><%= link_to :"潘学会", expert_path(:潘学会)%></td>
-                    <td>副主任医师</td>
-                    <td>上午</td>
-                    <td>下午</td>
-                    <td>上午</td>
-                    <td>全天</td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_17">
-                    <td><%= link_to :"陈小凤", expert_path(:陈小凤主治医师)%></td>
-                    <td>主治医师</td>
-                    <td>上午</td>
-                    <td></td>
-                    <td>下午</td>
-                    <td>全天</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr id="experts_12">
-                    <td>内科</td>
-                    <td><%= link_to :"王智慧", expert_path(:王智慧主任医师)%></td>
-                    <td>主任医师</td>
-                    <td>上午</td>
-                    <td>上午</td>
-                    <td>上午</td>
-                    <td>上午</td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td rowspan="10">眼综合科</td>
-                    <td><a href="javascript:;">刘玲</a></td>
-                    <td>医师</td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="javascript:;">霍剑</a></td>
-                    <td>主治医师</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>全天</td>
-                </tr>
-                <tr>
-                    <td><a href="javascript:;">吴青兰</a></td>
-                    <td>医师</td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="javascript:;">蒙轩</a></td>
-                    <td>医师</td>
-                    <td></td>
-                    <td></td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="javascript:;">石梅琴</a></td>
-                    <td>医师</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="javascript:;">蒋媛明</a></td>
-                    <td>医师</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="javascript:;">陈星如</a></td>
-                    <td>医师</td>
-                    <td></td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                  <td><a href="javascript:;">代炳灵</a></td>
-                  <td>医师</td>
-                  <td></td>
-                  <td></td>
-                  <td>下午</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                    <td><a href="javascript:;">尹朔</a></td>
-                    <td>医师</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="javascript:;">王利萍</a></td>
-                    <td>医师</td>
-                    <td></td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="javascript:;">杜聪睿</a></td>
-                    <td>医师</td>
-                    <td></td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                    <td>下午</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><a href="javascript:;">肖建强</a></td>
-                    <td>医师</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>上午</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </div>
+  <%= render "medicals/medical_left" %>
+  <div class="fr doctorScheduling">
+    <div class="stopService">
+      <h4>本周停诊信息</h4>
+      <ul class="flow flParent">
+        <li>谢艾芮：<span>10月9日至10月15日</span></li>
+      </ul>
+      <p>有效时间：2017-10-09--2017-10-15</p>
     </div>
+    <div class="schedulingTabCon padT20">
+      <table class="schedulingTab">
+        <tr>
+          <th colspan="20">国庆期间排班表</th>
+        </tr>
+        <tr>
+          <td>日期</td>
+          <td colspan="2">10/1</td>
+          <td colspan="2">10/2</td>
+          <td colspan="2">10/3</td>
+          <td colspan="3">10/4</td>
+          <td colspan="2">10/5</td>
+          <td colspan="4">10/6</td>
+          <td colspan="2">10/7</td>
+          <td colspan="2">10/8</td>
+        </tr>
+        <tr class="font12">
+          <td>科室</td>
+          <td>视光科</td>
+          <td>综合眼科</td>
+          <td>视光科</td>
+          <td>眼底外科</td>
+          <td>视光科</td>
+          <td>白内障科</td>
+          <td>眼底内科</td>
+          <td>中医眼科</td>
+          <td>视光科</td>
+          <td>白内障科</td>
+          <td>视光科</td>
+          <td>眼底内科</td>
+          <td>眼底内科</td>
+          <td>视光科</td>
+          <td>中医眼科</td>
+          <td>视光科</td>
+          <td>综合眼科</td>
+          <td>视光科</td>
+          <td>中医眼科</td>
+        </tr>
+        <tr class="font12">
+          <td>医生</td>
+          <td>谢艾芮</td>
+          <td>黄霄</td>
+          <td>文娟</td>
+          <td>王国平</td>
+          <td>杜玉芹</td>
+          <td>张富文</td>
+          <td>
+            <p>段俊国</p>
+            <p>(上午)</p>
+          </td>
+          <td>周华祥</td>
+          <td>
+            <p>文娟</p>
+            <p>(上午)</p>
+          </td>
+          <td>陈小凤</td>
+          <td>
+            <p>李强</p>
+            <p>(上午)</p>
+          </td>
+          <td>
+            <p>邓亚平</p>
+            <p>(上午)</p>
+          </td>
+          <td>
+            <p>段俊国</p>
+            <p>(上午)</p>
+          </td>
+          <td>李强</td>
+          <td>缪馨</td>
+          <td>周春阳</td>
+          <td>蹇文渊</td>
+          <td>袁晓辉</td>
+          <td>路雪婧</td>
+        </tr>
+      </table>
+    </div>
+    <div class="schedulingTabCon">
+      <h4>门诊排班表</h4>
+      <table class="schedulingTab">
+        <tr>
+          <th class="width150">科室</th>
+          <th>姓名</th>
+          <th>职称</th>
+          <th>星期一</th>
+          <th>星期二</th>
+          <th>星期三</th>
+          <th>星期四</th>
+          <th>星期五</th>
+          <th>星期六</th>
+          <th>星期日</th>
+        </tr>
+        <tr id="experts_2">
+          <td rowspan="2">眼底内科</td>
+          <td><%= link_to :"段俊国", expert_path(:段俊国教授)%></td>
+          <td>主任医师</td>
+          <td></td>
+          <td></td>
+          <td>上午</td>
+          <td></td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_3">
+          <td><%= link_to :"邓亚平", expert_path(:邓亚平教授)%></td>
+          <td>主任医师</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_1">
+          <td rowspan="4">中医眼科</td>
+          <td><%= link_to :"廖品正", expert_path(:廖品正教授)%></td>
+          <td>国医大师</td>
+          <td></td>
+          <td>全天 </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_7">
+          <td><%= link_to :"周华祥", expert_path(:周华祥教授)%></td>
+          <td>主任医师</td>
+          <td></td>
+          <td>下午</td>
+          <td>全天</td>
+          <td></td>
+          <td>全天</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_9">
+          <td><%= link_to :"路雪婧", expert_path(:路雪婧主任医师)%></td>
+          <td>主任医师</td>
+          <td>全天</td>
+          <td></td>
+          <td></td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_x">
+          <td><a href="javascript:;">张大铮</a></td>
+          <td>主任医师</td>
+          <td></td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_19">
+          <td><%= link_to :"缪 馨", expert_path(:缪馨主治医师)%></td>
+          <td>主治医师</td>
+          <td>全天</td>
+          <td>上午</td>
+          <td></td>
+          <td>全天</td>
+          <td></td>
+          <td></td>
+          <td>全天</td>
+        </tr>
+        <tr id="experts_5">
+          <td rowspan="2">眼底外科</td>
+          <td><%= link_to :"刘 文", expert_path(:刘文教授)%></td>
+          <td>主任医师</td>
+          <td>上午</td>
+          <td></td>
+          <td>上午</td>
+          <td>下午</td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_15">
+          <td><%= link_to :"王国平", expert_path(:王国平)%></td>
+          <td>副主任医师</td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+          <td>上午</td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_15">
+          <td><p>李红惠</p></td>
+          <td>主治医师</td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_8">
+          <td rowspan="7">视光科</td>
+          <td><%= link_to :"袁晓辉", expert_path(:袁晓辉主任医师)%></td>
+          <td>主任医师</td>
+          <td>上午</td>
+          <td>全天</td>
+          <td>上午</td>
+          <td>全天</td>
+          <td></td>
+          <td></td>
+          <td>上午</td>
+        </tr>
+        <tr id="experts_16">
+          <td><%= link_to :"谢艾芮", expert_path(:谢艾芮主任医师)%></td>
+          <td>主治医师</td>
+          <td>下午</td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_6">
+          <td><%= link_to :"周跃华", expert_path(:周跃华教授)%></td>
+          <td>主任医师</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>下午</td>
+        </tr>
+        <tr id="experts_13">
+          <td><%= link_to :"周春阳", expert_path(:周春阳主任医师)%></td>
+          <td>副主任医师</td>
+          <td></td>
+          <td></td>
+          <td>全天</td>
+          <td></td>
+          <td>全天</td>
+          <td>下午</td>
+          <td></td>
+        </tr>
+        <tr id="experts_18">
+          <td><%= link_to :"李 强", expert_path(:李强主治医师)%></td>
+          <td>主治医师</td>
+          <td></td>
+          <td></td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+          <td>全天</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">文娟</a></td>
+          <td>医师</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>全天</td>
+          <td></td>
+          <td></td>
+          <td>下午</td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">杜玉芹</a></td>
+          <td>医师</td>
+          <td>全天</td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>全天</td>
+        </tr>
+        <tr id="experts_11">
+          <td rowspan="2">综合眼科</td>
+          <td><%= link_to :"黄 霄", expert_path(:黄霄主任医师)%></td>
+          <td>主任医师</td>
+          <td></td>
+          <td>上午</td>
+          <td>上午</td>
+          <td>上午</td>
+          <td>全天</td>
+          <td>全天</td>
+          <td></td>
+        </tr>
+        <tr id="experts_20">
+          <td><%= link_to :"蹇文渊", expert_path(:蹇文渊主治医师)%></td>
+          <td>主治医师</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>全天</td>
+          <td></td>
+        </tr>
+        <tr id="experts_4">
+          <td rowspan="4">白内障科</td>
+          <td><%= link_to :"朱思泉", expert_path(:朱思泉教授)%></td>
+          <td>主任医师</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>上午</td>
+          <td></td>
+        </tr>
+        <tr id="experts_10">
+          <td><%= link_to :"张富文", expert_path(:张富文主治医师)%></td>
+          <td>主任医师</td>
+          <td>上午</td>
+          <td>全天</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_14">
+          <td><%= link_to :"潘学会", expert_path(:潘学会)%></td>
+          <td>副主任医师</td>
+          <td>上午</td>
+          <td>下午</td>
+          <td>上午</td>
+          <td>全天</td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_17">
+          <td><%= link_to :"陈小凤", expert_path(:陈小凤主治医师)%></td>
+          <td>主治医师</td>
+          <td>上午</td>
+          <td></td>
+          <td>下午</td>
+          <td>全天</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="experts_12">
+          <td>内科</td>
+          <td><%= link_to :"王智慧", expert_path(:王智慧主任医师)%></td>
+          <td>主任医师</td>
+          <td>上午</td>
+          <td>上午</td>
+          <td>上午</td>
+          <td>上午</td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td rowspan="10">眼综合科</td>
+          <td><a href="javascript:;">刘玲</a></td>
+          <td>医师</td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">霍剑</a></td>
+          <td>主治医师</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>全天</td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">吴青兰</a></td>
+          <td>医师</td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">蒙轩</a></td>
+          <td>医师</td>
+          <td></td>
+          <td></td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">石梅琴</a></td>
+          <td>医师</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">蒋媛明</a></td>
+          <td>医师</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">陈星如</a></td>
+          <td>医师</td>
+          <td></td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">代炳灵</a></td>
+          <td>医师</td>
+          <td></td>
+          <td></td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">尹朔</a></td>
+          <td>医师</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">王利萍</a></td>
+          <td>医师</td>
+          <td></td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">杜聪睿</a></td>
+          <td>医师</td>
+          <td></td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+          <td>下午</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:;">肖建强</a></td>
+          <td>医师</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>上午</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
-
-
