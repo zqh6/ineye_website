@@ -96,4 +96,4 @@ production:
   encoding: <%= ENV['INEYE_WEBSITE_PRODUCTION_DATABASE_ENCODING']||'unicode'    %>
   username: <%= ENV['INEYE_WEBSITE_PRODUCTION_DATABASE_USERNAME']||'developer'  %>
   password: <%= ENV['INEYE_WEBSITE_PRODUCTION_DATABASE_PASSWORD']||'password'   %>
-  database: <%= ENV['INEYE_WEBSITE_PRODUCTION_DATABASE_NAME']    ||'picasso'    %>
+  database: <%= ENV['INEYE_WEBSITE_PRODUCTION_DATABASE_NAME']    ||'ineye_website' %>
