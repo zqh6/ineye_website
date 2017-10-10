@@ -1,0 +1,75 @@
+<div class="left-sidebar">
+	<!-- 用户信息 -->
+	<div class="tpl-sidebar-user-panel">
+		<div class="tpl-user-panel-slide-toggleable">
+			<div class="tpl-user-panel-profile-picture">
+				<%= image_tag 'shared/portrait.png', rel: '头像' %>
+			</div>
+			<span class="user-panel-logged-in-text">
+              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+              <%= session[:user]['name'] %>
+          </span>
+		</div>
+	</div>
+
+	<!-- 菜单 -->
+	<ul class="sidebar-nav">
+		<li class="sidebar-nav-heading"> <span class="sidebar-nav-heading-info"> 用户功能列表</span></li>
+
+		<li class="sidebar-nav-link">
+			<%= link_to administration_v1_dashboard_path('~'), class: options[:list_item]=='dashboard' ? 'active' : '' do  %>
+					<i class="am-icon-home sidebar-nav-link-logo"></i> 控制面板
+			<% end %>
+		</li>
+
+		<li class="sidebar-nav-link">
+			<a href="javascript:;" class="sidebar-nav-sub-title">
+				<i class="am-icon-newspaper-o sidebar-nav-link-logo"></i> 新闻中心
+				<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+			</a>
+			<ul class="sidebar-nav sidebar-nav-sub" <% if ['new_new', 'new_index'].include? options[:list_item] %>style="display: block;"<% end %>>
+				<li class="sidebar-nav-link">
+					<%= link_to new_administration_v1_new_path, class: options[:list_item]=='new_new' ? 'active' : '' do %>
+							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增
+					<% end %>
+				</li>
+
+				<li class="sidebar-nav-link">
+					<%= link_to administration_v1_new_index_path, class: options[:list_item]=='new_index' ? 'active' : '' do %>
+							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 列表
+					<% end %>
+				</li>
+			</ul>
+		</li>
+
+		<li class="sidebar-nav-link">
+			<a href="javascript:;" class="sidebar-nav-sub-title">
+				<i class="am-icon-users sidebar-nav-link-logo"></i> 用户管理
+				<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
+			</a>
+			<ul class="sidebar-nav sidebar-nav-sub" <% if ['user_new', 'user_index', 'password_update'].include? options[:list_item] %>style="display: block;"<% end %>>
+				<li class="sidebar-nav-link">
+					<%= link_to new_administration_v1_user_path, class: options[:list_item]=='user_new' ? 'active' : '' do %>
+							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增
+					<% end %>
+				</li>
+
+				<li class="sidebar-nav-link">
+					<%= link_to administration_v1_users_path, class: options[:list_item]=='user_index' ? 'active' : '' do %>
+							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 列表
+					<% end %>
+				</li>
+
+				<% unless RoleEnums.lookup(session[:user]['role_code']).name=='sys_admin' %>
+					<li class="sidebar-nav-link">
+						<%= link_to edit_administration_v1_password_path(session[:user]['id']), class: options[:list_item]=='password_update' ? 'active' : '' do %>
+								<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 修改密码
+						<% end %>
+					</li>
+				<% end %>
+
+			</ul>
+		</li>
+
+	</ul>
+</div>

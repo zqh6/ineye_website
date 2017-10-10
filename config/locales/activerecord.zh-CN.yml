@@ -1,0 +1,35 @@
+zh-CN:
+  created_at: 创建时间
+  operate:    操作
+  list:       列表
+
+  activerecord:
+    models:
+      new: 新闻
+      user: 用户
+      password: 密码
+
+    attributes:
+      new:
+        user:        发布者
+        user_id:     发布者
+        title:       标题
+        vice_title:  副标题
+        content:     正文
+        key_words:   关键词
+        classify:    分类
+        occurred_at: 发生时间
+        created_at:  发布时间
+
+      user:
+        name:         姓名
+        phone_number: 手机号码
+        role:         角色
+        role_code:    角色
+        create_user:  创建者
+        created_at:   创建时间
+
+      password:
+        old_password:  旧密码
+        new_password:  新密码
+        new_password2: 新密码

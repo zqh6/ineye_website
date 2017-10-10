@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang='zh-CN'>
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<link rel="icon" type="image/png" href="<%= asset_path 'shared/browser_tab_title.ico' %>">
+	<link rel="apple-touch-icon-precomposed" href="shared/browser_tab_title.ico">
+	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	<%= yield :meta %>
+
+	<title><%= yield :title %></title>
+
+	<%= csrf_meta_tags %>
+
+	<%= render partial: 'administration/v1/shared/style' %>
+	<%= yield :style %>
+
+</head>
+<body <%= (yield :body_attr).html_safe %> >
+
+	<%= yield %>
+
+	<%= render partial: 'administration/v1/shared/script' %>
+	<%= yield :script %>
+
+</body>
+</html>

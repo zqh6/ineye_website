@@ -1,0 +1,4 @@
+#id                                    type          code         name           value
+#dc7c972c-972d-41ed-adc9-b6e8686f03aa,    role   ,    sys_admin ,    系统管理员    ,       900
+#dc7c972c-972d-41ed-adc9-b6e8686f03ab,    role   ,    user_admin ,   用户管理员    ,       800
+#dc7c972c-972d-41ed-adc9-b6e8686f03ac,    role   ,    common_user ,  普通用户      ,       500

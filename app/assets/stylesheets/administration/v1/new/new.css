@@ -1,0 +1,5 @@
+/*
+ *= require administration/v1/shared/share.css
+ *= require_self
+ */
+#editor {overflow:scroll; max-height:300px}

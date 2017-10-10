@@ -1,5 +1,11 @@
 class NewsController < ApplicationController
+
+  layout 'content'
+
   def show
-    render layout: "content",:action => params[:id]
+    render :action => params[:id]
+  end
+
+  def new
   end
 end
