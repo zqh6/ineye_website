@@ -1165,45 +1165,7 @@
 <!--医院环境-->
 
 
-<script>
-
-
-    $(".honorTitle li").hover(function(){
-        $(this).addClass("active").siblings().removeClass("active");
-        $(this).parents(".plate").find(".honorplate").hide().eq($(this).index()).show();
-    })
-
-  $(".proContainer .proImg").hover(function () {
-    var i = $(this).index();
-    $(this).parents(".proContainer").find(".proContent").hide().eq(i).show();
-  })
-
-  $(".aboutHos li div a img").animate({
-    width: "540px",
-    height: "340px"
-  })
-
-  $(".centerNav li").click(function () {
-    var i = $(this).index();
-    console.log(i);
-    $(".middle .column").hide().eq(i).show();
-    console.log(this);
-    $(this).addClass("active").siblings().removeClass("active");
-    if($(".middle .column").eq(i).hasClass("aboutHos")){
-      $(".aboutHos li div a img").animate({
-        width: "540px",
-        height: "340px"
-      })
-    }else {
-      $(".aboutHos li div a img").animate({
-        width:0,
-        height:0
-      })
-    }
-  })
-
-
-  </script>
+<% content_for :script do %>
 <script>
     $(".slide").ckSlide({
         autoPlay:true,
@@ -1228,3 +1190,4 @@
         doctorDate.index++;
     })
 </script>
+<% end %>
