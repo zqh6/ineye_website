@@ -36,6 +36,9 @@
                 <p>热烈祝贺我院四位教授荣获第五届“我心目中的名医”称号</p>
             </div>
         </li>
+        <li>
+            <%= link_to image_tag("banner_vipkz.jpg"),news_path(:关于调整门诊流程及增设VIP服务的通知) %>
+        </li>
     </ul>
     <ul class='li'></ul>
     <div class='but but-left'>&lt;</div>
@@ -53,7 +56,7 @@
     var bar = $(".banner-box .bar");
     var w =$(".banner-box").width()
     var oImg = $(".banner-box .img");//获取图片盒子
-    var num =5;
+    var num =6;
     if($(".banner-box .img li").size() <= num){
         var oImgfirst= $('.banner-box .img li:first').clone();//复制第一张图片
         oImg.append(oImgfirst);//将复制的第一张图片放到最后
@@ -62,7 +65,7 @@
         }
     }
 
-    var imgNum = 6;//获取图片数量
+    var imgNum =7;//获取图片数量
 
     //根据图片个数添加圆点按钮
     //给第一个按钮添加选中样式
