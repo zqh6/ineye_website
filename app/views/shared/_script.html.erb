@@ -1,1 +1,17 @@
 <%= javascript_include_tag '//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js' %>
+
+<script>
+
+  function pos() {
+   var str = window.location.pathname == "/" ? "/homes" : window.location.pathname;
+
+   $(".topNav a").each(function () {
+   if($(this).attr("href") == str){
+   $(this).parent().addClass("active");
+   }
+   })
+   }
+
+   pos();
+   
+</script>

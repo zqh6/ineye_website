@@ -34,39 +34,3 @@
     </ul>
   </div>
 </div>
-
-
-
-<script>
-
-    function pos() {
-        var str = window.location.pathname == "/" ? "/homes" : window.location.pathname;
-
-        $(".topNav a").each(function () {
-            if($(this).attr("href") == str){
-                $(this).parent().addClass("active");
-            }
-        })
-    }
-
-    pos();
-    $(".slide").ckSlide({
-        autoPlay:true,
-        add:true,
-        seamless:true,
-        dir:"x",
-    });
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-

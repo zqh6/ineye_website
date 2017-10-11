@@ -10,10 +10,3 @@
         <li><%= link_to :"住院医师",expert_path(:住院医师) %></li>
     </ul>
 </div>
-<script>
-    $(function(){
-        var doctorIndex = $(".expertCommon li").parents(".doctorContainer").attr("id");
-        console.log(doctorIndex);
-        $(".expertCommon li").eq(doctorIndex).addClass("active");
-    })
-</script>
