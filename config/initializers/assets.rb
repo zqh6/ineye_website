@@ -35,6 +35,7 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/passwords/edit.js
   administration/v1/passwords/success.js
 
+
   shared/amazeui.min.css
   shared/amazeui.datatables.min.css
   shared/amazeui_template1.css.erb
@@ -61,4 +62,5 @@ Rails.application.config.assets.precompile += %w(
   font/fontawesome-webfont.ttf
 
   mobile_test.css
+  index_slide.js
 )
