@@ -5,7 +5,6 @@ class User < ApplicationRecord
   has_many :passwords
   belongs_to :create_user, class_name: 'User', foreign_key: 'create_user_id'
 
-  validates :name,         allow_blank: true
   validates :phone_number, presence:   true, uniqueness: true
   validates :role_code,    presence:   true
 
