@@ -1,0 +1,80 @@
+<div class="am-g tpl-g">
+	<!-- 头部 -->
+	<%= render partial: 'administration/v1/shared/navigation_bar' %>
+	<!-- 风格切换 -->
+	<%= render partial: 'administration/v1/shared/change_theme' %>
+	<!-- 侧边导航栏 -->
+	<%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'password_update'}} %>
+
+	<!-- 内容区域 -->
+	<div class="tpl-content-wrapper">
+
+		<div class="row-content am-cf">
+			<div class="row">
+				<div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+					<div class="widget am-cf">
+						<div class="widget-head am-cf">
+							<div class="widget-title am-fl">修改密码</div>
+							<div class="widget-function am-fr">
+								<a href="javascript:;" class="am-icon-paperclip"></a>
+							</div>
+						</div>
+						<div class="widget-body am-fr">
+
+							<%= form_tag administration_v1_password_path('~'), method: :put, class: 'am-form tpl-form-line-form' do %>
+								<div class="am-form-group">
+									<label for="user-name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= Password.human_attribute_name :old_password %> <span class="tpl-form-line-small-title"><%= :old_password.to_s.titleize %></span></label>
+									<div class="am-u-sm-9">
+										<%= password_field_tag :old_password, nil, class: 'tpl-form-input', maxlength: 20 %>
+									</div>
+								</div>
+
+								<div class="am-form-group">
+									<label for="user-name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= Password.human_attribute_name :new_password %> <span class="tpl-form-line-small-title"><%= :new_password.to_s.titleize %></span></label>
+									<div class="am-u-sm-9">
+										<%= password_field_tag :new_password, nil, class: 'tpl-form-input', maxlength: 20 %>
+									</div>
+								</div>
+
+								<div class="am-form-group">
+									<label for="user-phone" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= Password.human_attribute_name :new_password %> <span class="tpl-form-line-small-title"><%= :new_password.to_s.titleize %></span></label>
+									<div class="am-u-sm-9">
+										<%= password_field_tag :new_password2, nil, class: 'tpl-form-input', maxlength: 20 %>
+									</div>
+								</div>
+
+								<div class="am-form-group">
+									<div class="am-u-sm-6 am-u-sm-push-3">
+										<button type="submit" class="am-btn am-btn-primary tpl-btn-bg-color-success js-create">提交</button>
+									</div>
+									<div class="am-text-danger"><% if flash[:error].present? %><%= flash[:error] %><% end %></div>
+								</div>
+
+							<% end %>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+
+<% content_for :title do %>
+		管理平台-修改密码
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :body_attr do %>data-type="widgets"<% end %>
+
+<% content_for :style do %>
+		<%= stylesheet_link_tag 'administration/v1/passwords/edit' %>
+<% end %>
+
+<% content_for :script do %>
+		<%= javascript_include_tag 'administration/v1/passwords/edit' %>
+<% end %>

@@ -1,0 +1,34 @@
+enum:
+
+  gender:
+    male:
+      code: '1'
+    female:
+      code: '2'
+    not_specified:
+      code: '9'
+
+  new_classify:
+    common:
+      code: '1'
+    medicine:
+      code: '2'
+    activity:
+      code: '3'
+
+  state:
+    active:
+      code: 'A'
+    inactive:
+      code: 'I'
+
+  role:
+    sys_admin:
+      code: '1'
+      value: 900
+    user_admin:
+      code: '2'
+      value: 800
+    common_user:
+      code: '3'
+      value: 500

@@ -1,0 +1,17 @@
+<%= kindeditor_tag :content, '',
+                   :window_onload => true,
+                   :width => 1198,
+                   :height => 600,
+                   :resizeType => 0
+%>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :style do %>
+    <%= stylesheet_link_tag 'new/new' %>
+<% end %>
+
+<% content_for :script do %>
+    <%= javascript_include_tag 'news/new' %>
+<% end %>
