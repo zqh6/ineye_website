@@ -565,9 +565,10 @@
     </div>
 
 </div>
-
+<% content_for :script do %>
 <script>
 //    Turbolinks.pagesCached(0);
+
     var news={
         num:15
     }
@@ -584,4 +585,5 @@
         $(".newsAllList li").eq(news.num*(i+1)-1).nextAll().hide();
     })
 </script>
+<% end %>
 
