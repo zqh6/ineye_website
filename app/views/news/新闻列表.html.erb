@@ -434,6 +434,7 @@
             <p>三月眼健康科普校园公益行走进成都师范附属小学 <span class="fr">2017-03-30</span></p>
             <% end %>
         </li>
+       
         <li>
             <%= link_to :'“关注眼健康，公益科普进万家”社区公益行走进城隍庙社区',"http://mp.weixin.qq.com/s?__biz=MzIwMzI4MTMxMA==&mid=100000153&idx=1&sn=2d2d15230f635e556b556c764d1e7bae&chksm=16d0876821a70e7ec8e6d64a3d178e4db82f8e71ce48ca727e840afe5ef9a08576fc11092923#rd",target: "_blank" %>
         </li>
@@ -565,8 +566,9 @@
     </div>
 
 </div>
-<!--<% content_for :script do %>-->
+
 <script>
+//    Turbolinks.pagesCached(0);
     var news={
         num:15
     }
@@ -583,5 +585,4 @@
         $(".newsAllList li").eq(news.num*(i+1)-1).nextAll().hide();
     })
 </script>
-<!--<% end %>-->
 
