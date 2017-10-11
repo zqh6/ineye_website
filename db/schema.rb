@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20170718064237) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
-  enable_extension "pgcrypto"
 
   create_table "dictionaries", id: :uuid, default: -> { "uuid_generate_v4()" }, force: :cascade do |t|
     t.string "dictionary_type", limit: 50, default: "", null: false
