@@ -19,7 +19,7 @@ default: &default
 
 development:
   <<: *default
-  host:     <%= ENV['INEYE_WEBSITE_DEVELOPMENT_DATABASE_HOST']    ||'127.0.0.1'     %>
+  host:     <%= ENV['INEYE_WEBSITE_DEVELOPMENT_DATABASE_HOST']    ||'39.108.154.69' %>
   port:     <%= ENV['INEYE_WEBSITE_DEVELOPMENT_DATABASE_PORT']    ||5432            %>
   pool:     <%= ENV['INEYE_WEBSITE_DEVELOPMENT_DATABASE_POOL']    ||200             %>
   adapter:  <%= ENV['INEYE_WEBSITE_DEVELOPMENT_DATABASE_ADAPTER'] ||'postgresql'    %>
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  host:     <%= ENV['INEYE_WEBSITE_TEST_DATABASE_HOST']    ||'127.0.0.1'     %>
+  host:     <%= ENV['INEYE_WEBSITE_TEST_DATABASE_HOST']    ||'39.108.154.69' %>
   port:     <%= ENV['INEYE_WEBSITE_TEST_DATABASE_PORT']    ||5432            %>
   pool:     <%= ENV['INEYE_WEBSITE_TEST_DATABASE_POOL']    ||200             %>
   adapter:  <%= ENV['INEYE_WEBSITE_TEST_DATABASE_ADAPTER'] ||'postgresql'    %>
