@@ -210,3 +210,12 @@
     </li>
     <!--石梅琴-->
 </ul>
+<% content_for :script do %>
+<script>
+    $(function(){
+        var doctorIndex = $(".expertCommon li").parents(".doctorContainer").attr("id");
+        console.log(doctorIndex);
+        $(".expertCommon li").eq(doctorIndex).addClass("active");
+    })
+</script>
+<% end %>

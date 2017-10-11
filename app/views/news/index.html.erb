@@ -132,7 +132,8 @@
     </div>
 </div>
 <!--新闻中心-->
-
+<% content_for :script do %>
+<%= javascript_include_tag 'slide-2' %>
 <script>
     $(".slide.slide-left").ckSlide({
         autoPlay:true,
@@ -142,3 +143,5 @@
     });
 
 </script>
+<% end %>
+
