@@ -156,7 +156,8 @@
     </div>
 </div>
 <!--诊疗项目-->
-
+<% content_for :script do %>
+<%= javascript_include_tag 'jquery.jDiaporama' %>
 <script>
     $(document).ready(function(){
 
@@ -167,3 +168,4 @@
         });
     });
 </script>
+<% end %>

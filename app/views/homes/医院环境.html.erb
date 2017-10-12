@@ -38,9 +38,11 @@
 
     </div>
 </div>
+<% content_for :script do %>
 <script>
     $(".smallImg li").hover(function(){
         var imgIndex = $(this).index();
         $(".hosEnvironmentDiv li").eq(imgIndex).addClass("active").siblings().removeClass("active");
     })
 </script>
+<% end %>

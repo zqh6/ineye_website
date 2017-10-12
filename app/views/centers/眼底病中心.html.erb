@@ -181,6 +181,8 @@
 
 </div>
 <!--科室新闻-->
+<% content_for :script do %>
+<%= javascript_include_tag 'jquery.jDiaporama' %>
 <script>
     $(document).ready(function(){
 
@@ -189,6 +191,6 @@
             delay:5,
             auto:true
         });
-
     });
 </script>
+<% end %>
