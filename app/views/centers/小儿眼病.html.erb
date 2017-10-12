@@ -329,6 +329,7 @@
     </div>
 </div>
 <!--诊疗项目-->
+<% content_for :script do %>
 <script>
     $(".cureProject em").click(function(){
         console.log($(this).index());
@@ -336,3 +337,4 @@
         $(".cureProjectContainer .cureProjectModule").eq($(this).index()-1).show().siblings().hide()
     })
 </script>
+<% end %>

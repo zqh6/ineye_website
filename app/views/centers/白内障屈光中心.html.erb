@@ -289,10 +289,12 @@
 </div>
 <!--科室科普-->
 
-
+<% content_for :script do %>
 <script>
     $(".cureProject em").click(function(){
         $(this).addClass("active").siblings().removeClass("active")
         $(".cureProjectContainer .cureProjectModule").eq($(this).index()-1).show().siblings().hide()
     })
 </script>
+<% end %>
+
