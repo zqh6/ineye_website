@@ -64,4 +64,5 @@ Rails.application.config.assets.precompile += %w(
   mobile_test.css
   index_slide.js
   slide-2.js
+  jquery.jDiaporama.js
 )
