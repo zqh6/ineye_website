@@ -1189,5 +1189,9 @@
         }
         doctorDate.index++;
     })
+    $(".honorTitle li").hover(function(){
+        $(this).addClass("active").siblings().removeClass("active");
+        $(this).parents(".plate").find(".honorplate").hide().eq($(this).index()).show();
+    })
 </script>
 <% end %>
