@@ -66,7 +66,7 @@
 													<tr class="gradeX">
 														<td><%= user.name %></td>
 														<td><%= user.phone_number %></td>
-														<td><%= RoleEnums.lookup(user.role_code).localized_name %></td>
+														<td><%= ShareEnum.roles[user.role_code.to_sym] %></td>
 														<td><%= user.create_user.present? ? (user.create_user.name.present? ? user.create_user.name : '（暂无名称）')  : '（无创建者）' %></td>
 														<td><%= l user.created_at, format: :human_time %></td>
 														<td>

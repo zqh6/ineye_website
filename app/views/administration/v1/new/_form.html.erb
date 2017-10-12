@@ -24,7 +24,7 @@
 	<div class="am-form-group">
 		<label for="user-phone" class="am-u-sm-3 am-form-label"><%= New.human_attribute_name :classify %> <span class="tpl-form-line-small-title"><%= :classify.to_s.titleize %></span></label>
 		<div class="am-u-sm-9">
-			<%= select_tag :classify, options_for_select(NewClassify.form_options, @new.key_words.to_s), include_blank: false, class: '', "data-am-selected"=> "{searchBox: 1}", style: "display: none;" %>
+			<%= select_tag :classify, options_for_select(ShareEnum.form_options('new_classifies'), @new.classify), include_blank: false, class: '', "data-am-selected"=> "{searchBox: 1}", style: "display: none;" %>
 		</div>
 	</div>
 

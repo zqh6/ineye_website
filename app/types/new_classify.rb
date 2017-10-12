@@ -1,3 +1,4 @@
+=begin
 class NewClassify < ActiveRecord::Type::Value
 
   include ProgneTapera::EnumConfig
@@ -5,3 +6,4 @@ class NewClassify < ActiveRecord::Type::Value
   enum :new_classify, :new_classify
 
 end
+=end

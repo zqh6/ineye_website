@@ -1,3 +1,4 @@
+=begin
 class Gender < ActiveRecord::Type::Value
 
   include ProgneTapera::EnumConfig
@@ -5,3 +6,4 @@ class Gender < ActiveRecord::Type::Value
   enum
 
 end
+=end

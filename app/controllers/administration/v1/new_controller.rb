@@ -14,7 +14,7 @@ class Administration::V1::NewController < Administration::V1::PrivilegedControll
 
   def index
     @new = New.alive
-    @new = @new.classify_is(params[:classify]) if params[:classify].present? && params[:classify].to_i!=0
+    @new = @new.classify_is(params[:classify]) if params[:classify].present? && params[:classify].to_s!='0'
     @new = @new.title_like(params[:title])     if params[:title].present?
     @new = @new.paginate(page: params[:page], per_page: 20)
   end

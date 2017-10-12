@@ -1,7 +1,5 @@
 class User < ApplicationRecord
 
-  include Unidom::Common::Concerns::ModelExtension
-
   has_many :passwords
   belongs_to :create_user, class_name: 'User', foreign_key: 'create_user_id'
 
