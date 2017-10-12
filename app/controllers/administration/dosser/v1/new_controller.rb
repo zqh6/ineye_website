@@ -30,7 +30,7 @@ class Administration::Dosser::V1::NewController < Administration::Dosser::V1::Pr
     ActiveRecord::Base.transaction do
       new = New.included_by(params[:id]).first
       render_conflict message: '找不到新闻' and return if new.blank?
-      if new.soft_destroy
+      if new.soft_destroy!
         render_ok and return
       else
         render_bad_request and return
