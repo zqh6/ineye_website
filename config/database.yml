@@ -21,4 +21,4 @@ production:
   encoding: <%= ENV['ENCODING'] ||'utf8'%>
   username: <%= ENV['USERNAME'] ||'hesheng'%>
   password: <%= ENV['PASSWORD'] ||''%>
-  database: <%= ENV['DATABASE'] ||'ineye_website_pro'%>
+  database: <%= ENV['DATABASE'] ||'ineye_website_dev'%>
