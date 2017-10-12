@@ -1,6 +1,6 @@
 class CreateDictionaries < ActiveRecord::Migration[5.0]
   def change
-    create_table :dictionaries, id: :uuid do |t|
+    create_table :dictionaries do |t|
 
       t.string :dictionary_type, null: false, default: '', limit: 50
       t.string :name, null: false, default: '', limit: 50
@@ -11,7 +11,6 @@ class CreateDictionaries < ActiveRecord::Migration[5.0]
       t.datetime :opened_at,        null: false, default: ::Time.utc(1970)
       t.datetime :closed_at,        null: false, default: ::Time.utc(3000)
       t.boolean  :defunct,          null: false, default: false
-      t.jsonb    :notation,         null: false, default: {}
 
       t.timestamps
     end

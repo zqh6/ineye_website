@@ -1,1 +1,1 @@
-Unidom::Common::YamlHelper.load_enum config: Rails.configuration, root: Rails.root
+#Unidom::Common::YamlHelper.load_enum config: Rails.configuration, root: Rails.root

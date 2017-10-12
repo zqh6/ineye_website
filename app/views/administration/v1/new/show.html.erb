@@ -49,7 +49,7 @@
 									<label class="am-u-sm-3 am-form-label">
 										<%= New.human_attribute_name :classify %> <span class="tpl-form-line-small-title"><%= :classify.to_s.titleize %></span>：
 									</label>
-									<label class="am-u-sm-9 field-value"><% classify = NewClassify.lookup(@new.classify.to_s) %><%= classify.blank? ? '未知类别' : classify.localized_name %></label>
+									<label class="am-u-sm-9 field-value"><% classify = ShareEnum.new_classifies[@new.classify.to_sym] %><%= classify.blank? ? '未知类别' : classify %></label>
 								</div>
 
 								<div class="am-form-group">
