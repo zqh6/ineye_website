@@ -8,7 +8,7 @@ Rails.application.config.assets.version = '1.0'
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-# Rails.application.config.assets.precompile += %w( search.js )
+Rails.application.config.assets.precompile += %w( mobile_test.css )
 
 #Todo Maybe remove shared/editor/google-code-prettify/prettify.css
 #Todo Maybe remove shared/bootstrap-wgsiwyg.js
