@@ -118,10 +118,10 @@
     width: 176px;
     height: 150px;
     text-align: center;
-    background: url("zx-1.png") 0 44px no-repeat;
+    background: url("<%= asset_path 'zx-1.png' %>") 0 44px no-repeat;
 }
 .center .lastCenter{
-    background: url("zx-2.png") 0 44px repeat-x;
+    background: url("<%= asset_path 'zx-2.png' %>") 0 44px repeat-x;
 }
 .center li img{
     transition: all 0.5s;
@@ -494,13 +494,13 @@ a.ctrl-slide{
     position: absolute;
     top: 45%;
     right: 10px;
-    background: url("btn_right.png");
+    background: url("<%= asset_path 'btn_right.png' %>");
     cursor: pointer;
 }
 
 .left-btn {
     left: 10px;
-    background: url("btn_left.png");
+    background: url("<%= asset_path 'btn_left.png' %>");
 }
 
 .img-btn-list {
@@ -1151,11 +1151,11 @@ a.ctrl-slide{
 /*录取人员*/
 /*预约报名*/
 .bmContainer{
-    background: url("bm_bg.png") 0 100% no-repeat #007cc2;
+    background: url("<%= asset_path 'bm_bg.png' %>") 0 100% no-repeat #007cc2;
     margin-bottom: 20px;
 }
 .bm_outer{
-    background: url("bm_1.png") 0 0 no-repeat;
+    background: url("<%= asset_path 'bm_1.png' %>") 0 0 no-repeat;
     color: #fff;
     font-size: 18px;
     padding-bottom: 400px;
@@ -1176,7 +1176,7 @@ a.ctrl-slide{
     font-size: 20px;
     text-align: center;
     color: #007cc2;
-    background: url("bm_3.png");
+    background: url("<%= asset_path 'bm_3.png' %>");
 }
 .activityWord{
     padding-top: 20px;
@@ -2676,7 +2676,7 @@ octorList li .IntroduceMask p{
     width: 15px;
     height: 26px;
     display: inline-block;
-    background: url("icon_lettle.png") no-repeat;
+    background:  url("<%= asset_path 'icon_lettle.png' %>") no-repeat;
 }
 .narB-20{
     margin-bottom: 20px;
@@ -2693,7 +2693,7 @@ octorList li .IntroduceMask p{
     position: absolute;
     left: 0;
     top: 0;
-    background: url("icon_enter.png") no-repeat;
+    background: url("<%= asset_path 'icon_enter.png' %>") no-repeat;
 }
 .enterEyeCommon{
     width: 160px;
@@ -2766,7 +2766,7 @@ octorList li .IntroduceMask p{
 }
 .icon_enter{
     display: inline-block;
-    background: url("icon_enter.png") no-repeat;
+    background: url("<%= asset_path 'icon_enter.png' %>") no-repeat;
 }
 .icon_enterIcon{
     width: 35px;
@@ -2983,19 +2983,19 @@ octorList li .IntroduceMask p{
     margin: 10px;
 }
 .enterEyeHonor1{
-    background: url("enter_honor1.png") 20px 20px no-repeat;
+    background: url("<%= asset_path 'enter_honor1.png' %>") 20px 20px no-repeat;
 }
 .enterEyeHonor2{
-    background: url("enter_honor2.png") 20px 20px no-repeat;
+    background: url("<%= asset_path 'enter_honor2.png' %>") 20px 20px no-repeat;
 }
 .enterEyeHonor3{
-    background: url("enter_honor3.png") 20px 20px no-repeat;
+    background: url("<%= asset_path 'enter_honor3.png' %>") 20px 20px no-repeat;
 }
 .enterEyeHonor4{
-    background: url("enter_honor4.png") 20px 20px no-repeat;
+    background: url("<%= asset_path 'enter_honor4.png' %>") 20px 20px no-repeat;
 }
 .enterEyeHonor5{
-    background: url("enter_honor5.png") 20px 20px no-repeat;
+    background: url("<%= asset_path 'enter_honor5.png' %>") 20px 20px no-repeat;
 }
 
 /*走进银海*/
@@ -3638,7 +3638,7 @@ textarea:focus{
     vertical-align: middle;
 }
 .jDiaporama_controls .prev{
-    background:url(controls2.png) no-repeat bottom;
+    background: url("<%= asset_path 'controls2.png' %>") no-repeat bottom;
     top:45%;
     margin-top:-16px;
     height:32px;
@@ -3647,7 +3647,7 @@ textarea:focus{
 }
 
 .jDiaporama_controls .next{
-    background:url(controls2.png) no-repeat top;
+    background:url("<%= asset_path 'controls2.png' %>") no-repeat top;
     top:50%;
     margin-top:-16px;
     height:32px;
@@ -3684,7 +3684,7 @@ textarea:focus{
 /*中心css*/
 //中心入口
 .centerBg{
-    background: url("centerBg.png") 115px 110px no-repeat #fff;
+    background: url("<%= asset_path 'centerBg.png' %>") 115px 110px no-repeat #fff;
     min-height: 630px;
     padding: 0 20px 50px;
     margin-bottom: 20px;
@@ -3985,7 +3985,7 @@ textarea:focus{
 /*读片中心*/
 /*小儿眼科*/
 .childModule{
-    background: url("childrenDepart-wordBg.jpg") right 118px no-repeat #fff;
+    background: url("<%= asset_path 'childrenDepart-wordBg.jpg' %>") right 118px no-repeat #fff;
 }
 .childrenTle{
     line-height: 28px;
@@ -4342,7 +4342,7 @@ textarea:focus{
     height: 41px;
     padding: 40px 0;
     color: #72af2d;
-    background: url("treatment-bg.jpg");
+    background: url("<%= asset_path 'treatment-bg.jpg' %>");
     text-align: center;
 }
 .glaucomaBg p{
