@@ -3,19 +3,28 @@
   <head>
     <title>中医大银海眼科医院官网</title>
     <%= csrf_meta_tags %>
+
       <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <%= yield :meta %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+
+    <%= yield :style %>
   </head>
 
   <body>
-  	<div class="main">
-  	  <%= render "layouts/content_header" %>
-  	  <%= yield %>
-  	  <%= render "layouts/footer" %>
-  	</div>
-  </body>
 
+  	  <%= render "layouts/header.html" %>
+      <div class="main">
+  	  <%= yield %>
+      </div>
+  	  <%= render "layouts/footer" %>
+
+    <%= render partial: 'shared/script' %>
+    <%= yield :script %>
+
+  </body>
 
 </html>

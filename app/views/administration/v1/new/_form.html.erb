@@ -1,0 +1,88 @@
+<form class="am-form tpl-form-line-form">
+	<%= hidden_field_tag :id, @new.id, class: 'js-id' %>
+	<div class="am-form-group">
+		<label for="user-name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= New.human_attribute_name :title %> <span class="tpl-form-line-small-title"><%= :title.to_s.titleize %></span></label>
+		<div class="am-u-sm-9">
+			<%= text_field_tag :title, @new.title, class: 'tpl-form-input' %>
+		</div>
+	</div>
+
+	<div class="am-form-group">
+		<label for="user-name" class="am-u-sm-3 am-form-label"><%= New.human_attribute_name :vice_title %> <span class="tpl-form-line-small-title"><%= :vice_title.to_s.titleize %></span></label>
+		<div class="am-u-sm-9">
+			<%= text_field_tag :vice_title, @new.vice_title, class: 'tpl-form-input' %>
+		</div>
+	</div>
+
+	<div class="am-form-group">
+		<label for="user-email" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= New.human_attribute_name :occurred_at %> <span class="tpl-form-line-small-title"><%= :occurred_at.to_s.titleize %></span></label>
+		<div class="am-u-sm-9">
+			<%= text_field_tag :occurred_at, (l @new.occurred_at, format: :human_date), class: 'am-form-field tpl-form-no-bg', :"data-am-datepicker" => "", readonly: "" %>
+		</div>
+	</div>
+
+	<div class="am-form-group">
+		<label for="user-phone" class="am-u-sm-3 am-form-label"><%= New.human_attribute_name :classify %> <span class="tpl-form-line-small-title"><%= :classify.to_s.titleize %></span></label>
+		<div class="am-u-sm-9">
+			<%= select_tag :classify, options_for_select(ShareEnum.form_options('new_classifies'), @new.classify), include_blank: false, class: '', "data-am-selected"=> "{searchBox: 1}", style: "display: none;" %>
+		</div>
+	</div>
+
+	<div class="am-form-group">
+		<label class="am-u-sm-3 am-form-label"><%= New.human_attribute_name :key_words %> <span class="tpl-form-line-small-title"><%= :key_words.to_s.titleize %></span></label>
+		<div class="am-u-sm-9">
+			<%= text_field_tag :key_words, @new.key_words, class: 'tpl-form-input' %>
+		</div>
+	</div>
+
+	<!--								<div class="am-form-group">
+										<label fusersuser-weibo" class="am-u-sm-3 am-form-label">封面图 <span class="tpl-form-line-small-title">Images</span></label>
+										<div class="am-u-sm-9">
+											<div class="am-form-group am-form-file">
+												<div class="tpl-form-file-img">
+													<img src="assets/img/a5.png" alt="">
+												</div>
+												<button type="button" class="am-btn am-btn-danger am-btn-sm">
+													<i class="am-icon-cloud-upload"></i> 添加封面图片</button>
+												<input id="doc-form-file" type="file" multiple="">
+											</div>
+
+										</div>
+									</div>-->
+
+
+	<!--								<div class="am-form-group">
+										<label fusersuser-intro" class="am-u-sm-3 am-form-label">显示文章</label>
+										<div class="am-u-sm-9">
+											<div class="tpl-switch">
+												<input type="checkbox" class="ios-switch bigswitch tpl-switch-btn" >
+												<div class="tpl-switch-btn-view">
+													<div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>-->
+
+	<div class="am-form-group">
+		<label for="user-intro" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= New.human_attribute_name :content %> <span class="tpl-form-line-small-title"><%= :content.to_s.titleize %></span></label>
+		<div class="am-u-sm-9">
+			<%= kindeditor_tag :content, @new.content,
+			                   :window_onload => true,
+			                   :width => 1198,
+			                   :height => 600,
+			                   :resizeType => 0,
+			                   :editor_id => 'content'
+			%>
+		</div>
+	</div>
+
+	<div class="am-form-group">
+		<div class="am-u-sm-9 am-u-sm-push-3">
+			<button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success js-create-new">提交</button>
+			<% if !@new.new_record? %><%= link_to :back, class: '' do %><button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success button-include-link">取消</button><% end %><% end %>
+		</div>
+	</div>
+
+</form>

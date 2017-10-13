@@ -309,11 +309,10 @@
 /*帮你看懂中医...*/
 .ChineseMed{
     position: relative;
-    width: 933px;
+    width: 1200px;
     min-height: 500px;
     border: 1px solid #a7680b;
     background: #fefbee;
-    display: none;
     margin-bottom: 30px;
 }
 .medicineLeft{
@@ -345,6 +344,7 @@
 .ChineseMed{
     padding: 25px 30px;
     box-sizing: border-box;
+    min-height: 600px;
 }
 .ChineseMed:before,.ChineseMed:after{
     position: absolute;
@@ -609,3 +609,25 @@
     height: 100%;
 }
 /*科普页面*/
+//中心页面
+.medicineLeft,.medicineRight{
+    width: 100%;
+    margin-top: 20px;
+}
+.middle.bnzContainer{
+    padding-top: 20px;
+}
+.middle .margin20,.margin20{
+    margin-top: 20px;
+}
+.centerOneHref a{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+//中心页面
+//中医
+.chinCenterWord .h5Title{
+    color: #7e0204;
+}
+//中医

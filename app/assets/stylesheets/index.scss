@@ -52,6 +52,7 @@
     width: 98%;
     margin-left: 1%;
     background: #fff;
+    margin-top: 20px;
 }
 .schTable th{
     font-size: 16px;
@@ -304,7 +305,7 @@ proIntroduce{
 /*名医专家*/
 /*科学教研*/
 .ophthalmology{
-    padding-bottom: 20px;
+    padding: 20px 0;
 }
 .ophthalmology>li{
     width: 556px;
@@ -320,7 +321,7 @@ proIntroduce{
     color: #0284cf;
 }
 .titImg div{
-    width: 555px;
+    width: 560px;
     height: 380px;
 }
 .titImg div img{
@@ -343,13 +344,14 @@ proIntroduce{
 }
 
 .mdlPad{
-    padding-bottom: 20px;
+    padding: 20px 0;
 }
 /*科学教研*/
 /*新闻中心*/
+.allWidth{
+    width: 100%;
+}
 .slide-left{
-    /*width:650px;*/
-    /*height: 364px;*/
     width: 720px;
     height: 418px;
     position: relative;
@@ -592,6 +594,7 @@ a.ctrl-slide{
 .eqContainer{
     padding :0 10px 20px;
     margin-bottom: 30px;
+    margin-top: 20px;
 }
 /*设备介绍*/
 /*预约挂号*/
@@ -770,6 +773,7 @@ a.ctrl-slide{
 /*教学科研*/
 /*新闻*/
 .newsMain{
+    margin-top: 20px;
     padding: 0 20px 50px;
     background: #fff;
     border: 1px solid #d9d9d9;
@@ -867,6 +871,7 @@ a.ctrl-slide{
 }
 /*新闻*/
 /*仪器设备*/
+
 .equipment  li h6{
     font-size: 16px;
 }
@@ -1189,7 +1194,7 @@ a.ctrl-slide{
 .newsAll{
     background: #fff;
     border: 1px solid #d9d9d9;
-    margin-bottom: 20px;
+    margin: 20px 0;
     padding: 0 30px;
 }
 .newsAllList li{
@@ -1369,6 +1374,7 @@ p>b{
 }
 .centerContainer{
     text-align: center;
+    margin: 30px 0;
 }
 //专家介绍index页面
 .largeInformation{
@@ -1378,3 +1384,3321 @@ p>b{
     width: 100%;
 }
 //专家介绍index页面
+//改版新增
+.header{
+    background: #fff;
+}
+.blueBg{
+    background: #055499;
+    height: 5px;
+}
+.aboutUs{
+    height: 50px;
+    line-height: 50px;
+}
+.telePhone{
+    color: #999;
+    font-size: 14px;
+    line-height: 50px;
+    width: 343px;
+}
+.telePhone span{
+    margin-left: 10px;
+    font-size: 18px;
+    color: #ff9900;
+}
+.telePhone span:first-child{
+    margin-left: 0;
+}
+.commits{
+    width: 520px;
+    font-size: 16px;
+    margin-left: 42px;
+}
+.commits a:hover,.newTitle a:hover,.syTitle a:hover{
+    color: #72af2d;
+}
+.topList li a:hover{
+  color: #008cd3;
+}
+.commits a{
+    margin: 0 12px;
+    color: #008cd3;
+}
+.commits a:nth-child(4){
+    margin-right: 0;
+}
+.commits a:nth-child(5){
+    margin-left: 0;
+}
+.logos{
+    line-height: 64px;
+    padding-top: 5px;
+}
+.logos a{
+    margin-right: 60px;
+}
+.logos a.lastLogo{
+    margin-right: 0;
+    margin-left: 15px;
+}
+.logos .ineyeLogo{
+    margin-right: 80px;
+}
+.ineyeLogo img{
+    width: 320px;
+}
+.search{
+    width: 290px;
+    height: 40px;
+    margin-top: 5px;
+    line-height: 1;
+    position: relative;
+}
+.search input{
+    width: 236px;
+    height: 38px;
+    border: 1px solid #72af2d;
+    font-family: "Microsoft YaHei","Arial Narrow";
+}
+.searchBtn{
+    width: 54px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #72af2d;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #fff;
+}
+.topNavContainer{
+    background: #008cd3;
+}
+.topNav{
+    height: 50px;
+    background: #008cd3;
+}
+.topNav li{
+    width: 11.1%;
+}
+.topNav li.active{
+    //background: #055499;
+}
+.topNav a{
+    line-height: 50px;
+    text-align: center;
+    width: 100%;
+    display: block;
+    color: #fff;
+}
+/*轮播*/
+.banner-box{width: 1200px;height:450px;position:relative;text-align:center;overflow: hidden;}
+.banner-box .img{width:10000px;position:absolute;top:0;left:0;}
+.banner-box .img li{float:left;}
+.banner-box img{  width: 1200px;  height: 450px}
+.banner-box .li{width:100%;position:absolute;left:0;bottom:10px;}
+.banner-box .li li{width:10px;height:10px;background:#fff;border-radius:50%;display:inline-block;margin:0 3px;cursor:pointer;}
+.banner-box .but{position: absolute;top:50%;margin-top:-30px;width:38px;height:60px;line-height:60px;text-align:center;font-size: 30px;background:rgba(0,0,0,0.5);color:#fff;font-family: '宋体';cursor:pointer;display: none;}
+.banner-box:hover .but{display:block;}
+.banner-box .but-left{left:0;}
+.banner-box .but-right{right:0;}
+.banner-box .li .index{background:#0284cf;border-radius:10px;}
+.banner-box .bar{ position: absolute; left: 0; bottom: 0; height: 5px; background-color: rgba(2,132,207,0.6); }
+.bannerWord{
+    width: 100%;
+    height: 60px;
+    background: rgba(0,0,0,.4);
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+}
+.bannerWord p{
+    line-height: 40px;
+}
+/*轮播*/
+.diseaseList{
+    font-size: 18px;
+}
+.diseaseList>div{
+    width: 120px;
+    height: 202px;
+    background: #72af2d;
+    color: #fff;
+    text-align: center;
+}
+.diseaseList ul{
+    width: 1080px;
+}
+.diseaseList li{
+    width: 118px;
+    height: 100px;
+    text-align: center;
+    border-right: 2px solid #f5f5f5;
+    position: relative;
+}
+.diseaseList li p{
+    color: #666;
+}
+.diseaseList li:nth-child(1),.diseaseList li:nth-child(2),.diseaseList li:nth-child(3),.diseaseList li:nth-child(4),
+.diseaseList li:nth-child(5),.diseaseList li:nth-child(6),.diseaseList li:nth-child(7),.diseaseList li:nth-child(8),
+.diseaseList li:nth-child(9){
+    border-bottom: 2px solid #f5f5f5;
+}
+/*新闻轮播css*/
+/*轮播css*/
+.newsSlide {
+    overflow:hidden;
+    position:relative;
+    width:295px;
+    height:225px;
+}
+.newsSlide ul.slide-wrapper {
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1;
+    width: 295px;
+    height:225px;
+}
+.newsSlide ul.slide-wrapper li {
+    height: 100%;
+    position:absolute
+}
+.slideLink img{
+    width:100%;
+}
+.newsSlide .slidebox {
+    position:absolute;
+    right: 10px;
+    left: auto;
+    z-index:30;
+    bottom:30px;
+}
+.newsSlide .slidebox ul li {
+    float:left;
+    height:12px;
+    margin:4px 4px;
+}
+.newsSlide .slidebox ul li em {
+    width:10px;
+    height:10px;
+    cursor:pointer;
+    background:#fff;
+    text-indent:-9999px;
+    border-radius: 0;
+    display:block;
+}
+.newsSlide .slidebox ul li.current em{
+    background: #72af2d;
+}
+/*轮播css*/
+/*新闻轮播css*/
+.plate{
+    margin-bottom: 20px;
+    background: #fff;
+}
+.marB10{
+    margin-bottom: 10px;
+}
+.topNews{
+    padding: 0 10px 0 5px;
+}
+.leftNew{
+    width: 870px;
+}
+.topList{
+    width: 540px;
+    padding-top: 10px;
+}
+.topList li{
+    line-height: 25px;
+    margin-bottom: 8px;
+}
+.topList.newsIndexList a{
+    width: 75%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+.newsIndexList span{
+    font-size: 12px;
+}
+.newTitle{
+    font-size: 18px;
+    line-height: 38px;
+}
+.listNew{
+    padding: 5px 10px 10px 5px;
+    height: 285px;
+}
+.listNew li{
+    line-height: 34px;
+}
+.listNew li span{
+    float: right;
+}
+.newsVideo{
+    height: 290px;
+    width: 328px;
+    box-sizing: border-box;
+    border-left: 1px solid #e5e8e9;
+}
+.newsVideo .newTitle{
+    padding: 0 10px;
+    border-bottom: 1px solid #e5e8e9;
+}
+.noticeList{
+    padding: 10px 10px 0;
+}
+.noticeList.topList{
+    width: 100%;
+    box-sizing: border-box;
+}
+.noticeList li{
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.topNav li.active {
+    //background: #005faa;
+}
+.topNav li a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
+.topNews .newTitle a{
+    color: #008cd3;
+    margin-left: 10px;
+    font-size: 14px;
+}
+.topNews .newTitle a:hover{
+    color: #72af2d;
+}
+.newTitle span{
+    float: right;
+    font-size: 12px;
+    color: #999;
+}
+.icon_tb{
+    background: url("icon_sy.png");
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+.icon_my{
+    background-position: 0 0;
+}
+.syTitle{
+    height: 46px;
+    line-height: 46px;
+    padding: 0 12px;
+    border-bottom: 1px solid #e5e8e9;
+}
+.syTitle .icon_tb{
+    margin-right: 5px;
+}
+.syTitleName{
+    font-size: 20px;
+    color: #333;
+}
+.syTitle a{
+    color: #008cd3;
+    margin-left: 20px;
+}
+.little{
+    background: url("icon_lettle.png");
+    display: inline-block;
+}
+.icon_lettle{
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+}
+.icon_diseaseList{
+    background-position: -18px 0;
+    width: 42px;
+    height: 52px;
+    margin: 58px 0 12px;
+}
+.doctorList{
+    padding: 5px 5px;
+    width: 1050px;
+}
+.doctorList li{
+    margin: 5px;
+    position: relative;
+    overflow: hidden;
+    width: 200px;
+    height: 284px;
+    display: none;
+}
+.doctorList li img{
+    width: 200px;
+}
+.doctorList li .IntroduceMask{
+    position: absolute;
+    left: 0;
+    bottom: -43px;
+    width: 100%;
+    height: 134px;
+    background: rgba(255,255,255,.75);
+    text-align: center;
+    transition: all  .5s;
+    transition: all  .5s;
+    -moz-transition: all  .5s; /* Firefox 4 */
+    -webkit-transition: all  .5s; /* Safari and Chrome */
+    -o-transition: all  .5s; /* Opera */
+    cursor: pointer;
+}
+.IntroduceMask:hover{
+    /*bottom: 0;*/
+    transform: translate(0,-43px);
+    -ms-transform: translate(0,-43px);		/* IE 9 */
+    -webkit-transform: translate(0,-43px);	/* Safari and Chrome */
+    -o-transform: translate(0,-43px);		/* Opera */
+    -moz-transform: translate(0,-43px);		/* Firefox */
+}
+.doctorList li .IntroduceMask h5{
+    color: #333;
+    font-size: 20px;
+    line-height: 34px;
+    margin-top: 7px;
+    font-weight: normal;
+}
+octorList li .IntroduceMask p{
+    line-height: 25px;
+}
+.doctorBtn{
+    margin-top: 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 38px;
+}
+.doctorBtn a{
+    width: 50%;
+    height: 38px;
+    line-height: 38px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+    background: #008cd3;
+}
+
+.doctorBtn a:hover{
+    background: #72af2d;
+}
+.consults{
+    width: 135px;
+    border-left: 1px solid #e5e8e9;
+    text-align: center;
+}
+.consults i{
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    margin: 27px 0 5px;
+    background: url("icon_commit.png");
+}
+.consults li{
+    border-bottom: 1px solid #f5f5f5;
+    height: 118px;
+}
+.consults li:nth-child(2) i{
+    background-position: 0 -48px;
+}
+.consults li:nth-child(3) i{
+    background-position: 0 -96px;
+}
+.consults li:nth-child(4) i{
+    background-position: 0 -144px;
+}
+.consults li:nth-child(5) i{
+    background-position: 0 -192px;
+}
+.syTitle .attentions{
+    float: none;
+    color: #999999;
+    margin-left: 5px;
+}
+.icon_attention{
+    background-position: 0 -38px;
+}
+.askBtn{
+    text-align: center;
+    padding-bottom: 10px;
+}
+.askBtn a{
+    width: 240px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    display: inline-block;
+    background: #008cd3;
+    color: #fff;
+}
+.askBtn a:hover{
+    background: #72af2d;
+}
+.illnessCheck{
+    padding: 11px 30px;
+    line-height: 45px;
+    color: #666;
+}
+.illnessCheck input[type=checkbox]{
+    vertical-align: sub;
+    margin-right: 3px;
+}
+.illnessCheck span{
+    width: 12%;
+    display: inline-block;
+}
+.icon_department{
+    background-position: 0 -76px;
+}
+.sexCenters{
+    padding: 4px 10px 20px;
+}
+.sexCenters>li{
+    width: 562px;
+}
+.sexCenters>li>p{
+    line-height: 43px;
+    border-bottom: 1px solid #e5e8e9;
+}
+.sexCenters>li>p em{
+    line-height: 43px;
+    font-size: 18px;
+    display: inline-block;
+    border-bottom: 2px solid #008cd3;
+}
+.sexCenters>li>p span{
+    text-align: right;
+}
+.centerOne{
+    height: 224px;
+    padding: 14px 0;
+}
+.marR16{
+    margin-right: 16px;
+}
+.centerOneHref{
+    margin-top: 4px;
+    overflow: hidden;
+}
+.centerOneHref li{
+    width: 72px;
+    line-height: 50px;
+    text-align: center;
+    height: 50px;
+    background: #008cd3;
+    margin-right: 4px;
+}
+.centerOneHref li:hover{
+    background: #72af2d;
+}
+.sexCenters>li:nth-child(2n){
+    float: right;
+}
+.centerOneHref li a{
+    color: #fff;
+}
+.centerOneHref li:last-child{
+    margin-right: 0;
+}
+.centerOneSituation{
+    width: 225px;
+    padding-right: 20px;
+}
+.centerOneSituation a h4{
+    font-size: 14px;
+    line-height: 30px;
+}
+.centerOneSituation a p{
+    line-height: 24px;
+    height: 24px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+.centerOneSituation>p{
+    line-height: 52px;
+}
+.icon_equipment{
+    background-position: 0 -114px;
+}
+.departmentsImg{
+    padding: 20px 14px 0;
+}
+.departmentsImg li{
+    margin: 0 5px;
+}
+.departmentsImg li div{
+    width: 378px;
+    height: 298px;
+    line-height: 298px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.departmentsImg li p{
+    line-height: 46px;
+    margin-bottom: 6px;
+    text-align: center;
+}
+.honorTitle{
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+}
+.honorTitle li{
+    height: 45px;
+    line-height: 45px;
+    width: 50%;
+    background: #008cd3;
+}
+.honorTitle li.active{
+    background: #72af2d;
+}
+.honorImgs{
+    padding: 6px;
+}
+.honorImgs li{
+    margin: 4px;
+}
+.icon_environment{
+    background-position: 0 -152px;
+}
+.blackBg{
+    background: #000;
+    color: #999;
+}
+.footContent{
+    background: #000;
+    padding: 16px 0 20px;
+}
+.footContent li{
+    padding-right: 20px;
+}
+.footContent li h5{
+
+}
+.footContent li p{
+    line-height: 36px;
+}
+.footContent h5{
+    color: #fff;
+}
+.tel p:first-child{
+    margin-top: 10px;
+}
+.tel p:last-child{
+    text-indent: 4rem;
+}
+.toContact em{
+    font-size: 24px;
+    color: #008cd3;
+    font-style: italic;
+    line-height: 1;
+}
+.footContent>ul>li:nth-child(2){
+    padding-top: 28px;
+}
+.links{
+    padding-top: 10px;
+}
+.links a{
+    color: #999;
+}
+.links{
+    width: 330px;
+}
+.links p{
+    width: 140px;
+    float: left;
+    margin-right: 20px;
+}
+.footContent li:nth-child(2){
+    padding: 0 30px 0 10px;
+}
+
+.footContent li:nth-child(3){
+    padding: 0;
+    margin-left: 15px;
+}
+
+.footContent li:nth-child(4) li{
+    padding: 0 10px;
+    color: #fff;
+    text-align: center;
+}
+.diseaseList li p{
+    line-height: 1;
+}
+.icon_eye{
+    width: 58px;
+    height: 56px;
+    margin-top: 10px;
+    display: inline-block;
+    background: url("eye_tb.png") 0 -11px;
+}
+.icon_eye2{
+    background-position: -78px -11px;
+}
+.icon_eye3{
+    background-position: -156px -11px;
+}
+.icon_eye4{
+    background-position: -235px -11px;
+}
+.icon_eye5{
+    margin: 0 0 10px;
+    background-position: -313px 0px;
+}
+.icon_eye6{
+    background-position: -391px -10px;
+}
+.icon_eye7{
+    background-position: -469px -11px;
+}
+.icon_eye8{
+    background-position: -547px -11px;
+}
+.icon_eye9{
+    background-position: -625px -11px;
+}
+.icon_eye10{
+    background-position: 0 -78px;
+}
+.icon_eye11{
+    background-position: -78px -78px;
+}
+.icon_eye12{
+    background-position: -156px -78px;
+}
+.icon_eye13{
+    background-position: -235px -78px;
+}
+.icon_eye14{
+    background-position: -313px -78px;
+}
+.icon_eye15{
+    background-position: -391px -78px;
+}
+.icon_eye16{
+    background-position: -469px -78px;
+}
+.icon_eye17{
+    background-position: -547px -70px;
+    height: 62px;
+    margin-top: 2px;
+}
+.icon_eye18{
+    background-position: -625px -78px;
+}
+/*新闻中心*/
+
+.newsSlide .inner{
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    background: #008cd3;
+    color: #fff;
+    width: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    left: 0;
+}
+.newsSlide .inner p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*新闻中心*/
+.depRight li *{
+    position: relative;
+}
+/*css3动画开始*/
+.depRight li b{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color:#72af2d;
+    background-color:#fff \9;
+    opacity:0;
+    left: 0;
+    top:0;
+    -webkit-animation:orangeOut 0.4s ease;
+    animation:orangeOut 0.4s ease;
+    z-index: 0;
+}
+.depRight li:hover b{
+    width:100%;
+    height:100%;
+    opacity:1;
+    -webkit-animation:orangeIn 0.2s ease;
+    animation:orangeIn 0.2s ease;
+    background-color:#72af2d \9;
+}
+
+@-webkit-keyframes orangeIn {
+    0% {
+        -webkit-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        transform:scale(0.8);
+        opacity:0
+    }
+    100% {
+        -webkit-transform:scale(1);
+        -ms-transform:scale(1);
+        transform:scale(1);
+        opacity:1
+    }
+}
+@-moz-keyframes orangeIn {
+    0% {
+        -webkit-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        transform:scale(0.8);
+        opacity:0
+    }
+    100% {
+        -webkit-transform:scale(1);
+        -ms-transform:scale(1);
+        transform:scale(1);
+        opacity:1
+    }
+}
+@-ms-keyframes orangeIn {
+    0% {
+        -webkit-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        transform:scale(0.8);
+        opacity:0
+    }
+    100% {
+        -webkit-transform:scale(1);
+        -ms-transform:scale(1);
+        transform:scale(1);
+        opacity:1
+    }
+}
+@keyframes orangeIn {
+    0% {
+        -webkit-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        transform:scale(0.8);
+        opacity:0
+    }
+    100% {
+        -webkit-transform:scale(1);
+        -ms-transform:scale(1);
+        transform:scale(1);
+        opacity:1
+    }
+}
+
+@-webkit-keyframes orangeOut {
+    0% {
+        -webkit-transform:scale(1);
+        -ms-transform:scale(1);
+        transform:scale(1);
+        opacity:1
+    }
+    100% {
+        -webkit-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        transform:scale(0.8);
+        opacity:0
+    }
+}
+@-moz-keyframes orangeOut {
+    0% {
+        -webkit-transform:scale(1);
+        -ms-transform:scale(1);
+        transform:scale(1);
+        opacity:1
+    }
+    100% {
+        -webkit-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        transform:scale(0.8);
+        opacity:0
+    }
+}
+@-ms-keyframes orangeOut {
+    0% {
+        -webkit-transform:scale(1);
+        -ms-transform:scale(1);
+        transform:scale(1);
+        opacity:1
+    }
+    100% {
+        -webkit-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        transform:scale(0.8);
+        opacity:0
+    }
+}
+@keyframes orangeOut {
+    0% {
+        -webkit-transform:scale(1);
+        -ms-transform:scale(1);
+        transform:scale(1);
+        opacity:1
+    }
+    100% {
+        -webkit-transform:scale(0.8);
+        -ms-transform:scale(0.8);
+        transform:scale(0.8);
+        opacity:0
+    }}
+/*css3动画结束*/
+.plate .honorplate{
+    display: none;
+}
+.plate div.honorContainer{
+    display: block;
+    padding: 28px 0;
+}
+.commitAllImgs img{
+    height: 181px;
+}
+.commitAllImgs{
+    padding: 6px 7px;
+}
+.hosEnvironment{
+    position: relative;
+}
+.hosEnvironment .photoMask span{
+    font-size: 16px;
+}
+.photoMask{
+    opacity:0;
+    filter:alpha(opacity=0);
+    position:absolute;
+    bottom:0;
+    display:table;
+    width:100%;
+    height:100%;
+    background-color:#000000;
+    background-color:rgba(0,0,0,0.4);
+    color:#FFFFFF;
+    display:table-cell;
+    vertical-align:middle;
+    overflow:hidden;
+}
+.photoMask:before,.photoMask:after{
+    position:absolute;
+    top:30px;
+    right:30px;
+    bottom:30px;
+    left:30px;
+    content:'';
+    opacity:0;
+    pointer-events:none;
+    -webkit-transition:opacity 0.85s,
+    -webkit-transform 0.85s;
+    transition:opacity 0.85s,
+    transform 0.85s;
+}
+.photoMask:before{
+    border-top:1px solid #fff;
+    border-bottom:1px solid #fff;
+    -webkit-transform:scale(0,1);
+    transform:scale(0,1);
+    border-color:rgba(255,255,255,0.4);
+}
+.photoMask span{
+    display:inline-block;
+    font-size:14px;
+    margin: 20% 16%;
+    height:100%;
+}
+.hosEnvironment li span{
+    margin: 0 16px;
+}
+.hosEnvironment li{
+    text-align: center;
+    line-height: 224px;
+}
+.commitAllImgs li,.hosEnvironment li{
+    position: relative;
+}
+.photoMask:after{
+    border-right:1px solid #fff;
+    border-left:1px solid #fff;
+    -webkit-transform:scale(1,0);
+    transform:scale(1,0);
+    border-color:rgba(255,255,255,0.4);}
+.commitAllImgs li:hover .photoMask:before,.commitAllImgs li:hover .photoMask:after,
+.hosEnvironment li:hover .photoMask:before,.hosEnvironment li:hover .photoMask:after{
+    opacity:1;
+    -webkit-transform:scale(1);
+    transform:scale(1);
+}
+.commitAllImgs li:hover .photoMask{
+    opacity:1;
+}
+.hosEnvironment li:hover .photoMask{
+    opacity:1;
+}
+.kepPad{
+    padding-top: 20px;
+}
+//改版新增
+//专家新版index页面
+.expertCommon{
+    height: 75px;
+    margin: 10px 20px 0;
+    border-bottom: 1px solid #a0a8ad;
+}
+.expertCommon>li{
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    width: 92px;
+    margin:20px 10px 0 0;
+}
+.expertCommon>li a{
+    width: 100%;
+    height: 100%;
+    background: #e5e5e5;
+    display: block;
+}
+.expertCommon>li.active a{
+    background: #72af2d;
+    color: #fff;
+}
+.expertsListContainer{
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.expertsListContainer>li{
+    width: 560px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.expertsListContainer li img{
+    width: 200px;
+}
+.expertsListContainer>li:nth-child(2n){
+    float: right;
+}
+.photoBorder{
+    width: 220px;
+    height: 304px;
+    line-height: 304px;
+    box-sizing: border-box;
+    border: 1px solid #eaeded;
+    position: relative;
+    text-align: center;
+    margin-right: 15px;
+}
+.photoBorder:hover{
+    border-color: #72af2d;
+}
+.photoBorder img{
+    vertical-align: middle;
+}
+.expertSynopsis{
+    position: relative;
+    height: 304px;
+    width: 325px;
+}
+.expertSynopsis h5{
+    font-size: 24px;
+    color: #333;
+    line-height: 1;
+    margin: 10px 0 13px;
+    font-weight: normal;
+}
+.expertSynopsis p{
+    line-height: 24px;
+}
+.expertsGoodAt{
+    margin: 10px 0 2px;
+    color: #72af2d;
+}
+.seeDetail{
+    line-height: 36px;
+    width: 168px;
+    text-align: center;
+    background: #008cd6;
+    color: #fff;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+}
+.seeDetail:hover{
+    background: #72af2d;
+    color: #fff;
+}
+.expertsListContainer,.expertCommonBg{
+    background: #fff;
+}
+.doctorBanner{
+    height: 410px;
+    overflow: hidden;
+}
+.doctorBanner img{
+    width: 100%;
+    display: block;
+    margin-top: -143px;
+}
+/*专家详情*/
+.doctorDetails{
+    padding: 20px;
+    margin-top: 20px;
+}
+.doctorPortrait{
+    width: 306px;
+    height: 430px;
+    position: relative;
+}
+.doctorPortrait img{
+    width: 306px;
+}
+.doctorBtns{
+    position: absolute;
+    padding: 0 25px;
+    bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.doctorBtns a{
+    background: #ff9900;
+    color: #fff;
+    display: block;
+    width: 120px;
+    text-align: center;
+    height:40px;
+    line-height: 40px;
+    border-radius: 4px;
+}
+.doctorBtns a:first-child{
+    background: #008cd6;
+}
+.doctorContent{
+    padding: 0 15px 0 35px;
+    width: 800px;
+    line-height: 24px;
+}
+.doctorContent h5{
+    font-size: 30px;
+    font-weight: normal;
+    color: #333;
+    line-height: 54px;
+}
+.doctorTitle{
+    margin: 8px 0 28px;
+}
+.doctorTitle span{
+    height: 45px;
+    line-height: 45px;
+    display: inline-block;
+    padding: 0 15px;
+    background: #72af2d;
+    color: #fff;
+    font-size: 18px;
+}
+.doctorHonor{
+    color: #008cd6;
+    margin-bottom: 5px;
+    min-height: 70px;
+}
+.doctorGoodAt p{
+    display: inline-block;
+    width: 725px;
+    float: right;
+}
+.seePatientTime span,.doctorGoodAt span{
+    color: #72af2d;
+}
+.seePatientTime span{
+    margin-right: 14px;
+}
+.doctorIntroduce{
+    padding: 0 30px 16px;
+}
+.doctorIntroduce p{
+    line-height: 30px;
+    text-indent: 2rem;
+}
+.registered{
+    background: #72af2d;
+    color: #fff;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 45px;
+    margin-top: 18px;
+}
+.registered li{
+    margin-right: 45px;
+}
+.registered li:first-child{
+    font-size: 16px;
+}
+.registered input{
+    width: 120px;
+    height: 36px;
+    border-radius: 3px;
+    color: #333;
+    border: 0;
+    box-sizing: border-box;
+    padding-left: 5px;
+}
+.registeredBtn{
+    background-color: #ff9900;
+}
+.registeredBtn{
+    color: #fff;
+    width: 80px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 4px;
+}
+.membersList{
+    padding: 8px;
+    margin: 20px 0;
+    border: 1px solid #eaeded;
+}
+.teamMemberWords{
+    width: 35px;
+    line-height: 35px;
+    height: 163px;
+    text-align: center;
+    background: #008cd6;
+    color: #fff;
+    writing-mode: vertical-lr;/*从左向右 从右向左是 writing-mode: vertical-rl;*/
+    writing-mode: tb-lr;/*IE浏览器的从左向右 从右向左是 writing-mode: tb-rl；*/
+}
+.lpzDoctor em{
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    color: #fff;
+    background: #008dd7;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: -2px;
+}
+.expertsName span{
+    float: left;
+    display: block;
+    margin: 18px 0 0 24px;
+}
+.teamMembers{
+    width: 1140px;
+    height: 163px;
+    background: #6e707d;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 11040px;
+    height: 163px;
+}
+.teamMembers>li{
+    width: 284px;
+    overflow: hidden;
+}
+.teamMemberPhoto img{
+    width: 100px;
+}
+.memberIntroduce{
+    width: 120px;
+    margin-left: 20px;
+    line-height: 26px;
+    font-size: 12px;
+}
+.memberIntroduce h5{
+    font-size: 16px;
+    line-height: 40px;
+}
+.teamContainer{
+    position: relative;
+    width: 1140px;
+    height: 163px;
+    float: right;
+    overflow: hidden
+}
+.leftBtn,.rightBtn{
+    width: 50px;
+    height: 100%;
+    line-height: 163px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    cursor: pointer;
+}
+.leftBtn{
+    left: -40px;
+}
+.rightBtn{
+    right: -40px;
+}
+.leftBtn.active{
+    transition: all .5s;
+}
+.rightBtn.active{
+    transition: all .5s;
+}
+.teamContainer:hover .leftBtn.active,.doctorRecommendDiv:hover .leftBtn.active{
+    left: 0;
+}
+.teamContainer:hover .rightBtn.active,.doctorRecommendDiv:hover .rightBtn.active{
+    right: 0;
+}
+.icon_arrow.icon_left{
+    background-position: 0 -62px;
+}
+.icon_arrow.icon_right{
+    background-position: -26px -62px;
+}
+.icon_arrow{
+    width: 15px;
+    height: 26px;
+    display: inline-block;
+    background: url("icon_lettle.png") no-repeat;
+}
+.narB-20{
+    margin-bottom: 20px;
+}
+/*专家详情*/
+/*走进银海*/
+.enterEyeCommon>ul{
+    position: relative;
+}
+.enterEyeCommon>ul:before{
+    content: " ";
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("icon_enter.png") no-repeat;
+}
+.enterEyeCommon{
+    width: 160px;
+}
+.enterEyeCommon ul li{
+    height: 45px;
+    line-height: 45px;
+    background: #008cd6;
+    text-align: center;
+    color: #fff;
+}
+.enterEyeCommon ul li:first-child{
+    height: 60px;
+    background: #303030;
+    line-height: 24px;
+    box-sizing: border-box;
+    padding-top: 8px;
+}
+.enterEyeCommon ul li:first-child h4{
+    color: #72af2d;
+    font-size: 18px;
+    font-weight: normal;
+}
+.enterEyeCommon ul a{
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.enterEyeCommon div.hosInformation{
+    border: 1px solid #e5e8e9;
+    line-height: 20px;
+    background: #fff;
+    padding: 15px 0;
+    margin-top: 10px;
+}
+.enterEyeCommon div.hosInformation i{
+    width: 34px;
+    height: 34px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.hosInformation>div{
+    float: right;
+    width: 100px;
+}
+.enterEyeContent{
+    width: 1020px;
+    padding: 0 30px 20px;
+    background: #fff;
+    box-sizing: border-box;
+    min-height: 580px;
+}
+.enterEyeContent h5{
+    font-size: 24px;
+    line-height: 75px;
+    font-weight: normal;
+    text-align: center;
+}
+.enterEyeContent p{
+    text-indent: 2rem;
+    line-height: 24px;
+}
+.enterEyeWord p{
+    margin-bottom: 20px;
+}
+.enterEyeContainer{
+    overflow: hidden;
+    margin: 20px 0;
+}
+.icon_enter{
+    display: inline-block;
+    background: url("icon_enter.png") no-repeat;
+}
+.icon_enterIcon{
+    width: 35px;
+    height: 35px;
+    margin-left: 10px;
+}
+.icon_telephone{
+    background-position: 0 -38px;
+}
+.icon_time{
+    background-position: 0 -92px;
+}
+.bigThing{
+    font-size: 18px;
+}
+.bigThing>li{
+    height: 105px;
+    overflow: hidden;
+}
+.thingTime{
+    width: 130px;
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    color: #fff;
+    float: left;
+    font-size: 12px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+.bigThing li:nth-child(4n) .thingTime{
+    background: #2076ce;
+}
+.bigThing li:nth-child(4n+1) .thingTime{
+    background: #fb6400;
+}
+.bigThing li:nth-child(4n+2) .thingTime{
+    background: #229403;
+}
+.bigThing li:nth-child(4n+3) .thingTime{
+    background: #ce207f;
+}
+
+.thingTime p{
+    line-height: 50px;
+}
+.bigThing>li  p{
+    float: left;
+    width: 805px;
+    height: 104px;
+    line-height: 105px;
+    border-bottom: 1px solid #e5e8e9;
+    text-indent: 0;
+    padding-left: 20px;
+}
+.bigThing>li.oneBigThing p{
+     line-height: 30px;
+     box-sizing: border-box;
+     padding-top: 20px;
+ }
+.hosTitle{
+    border-bottom: 2px solid #72af2d;
+    position: relative;
+    float: left;
+    text-align: left;
+    font-size: 12px;
+    margin: 20px 0;
+}
+.hosTitle p{
+    text-align: left;
+    text-indent: 0;
+    margin-bottom: 5px;
+}
+.hosTitle:after{
+    content: " ";
+    width: 70%;
+    height: 2px;
+    background: #008cd6;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    border-right: 3px solid #fff;
+}
+.hosTitle h4{
+    font-size: 28px;
+    color: #72af2d;
+}
+.course li{
+    line-height: 50px;
+    width: 915px;
+}
+.course li span{
+    margin-right: 45px;
+}
+.courseOneTime{
+    margin-bottom: 24px;
+}
+.courseOneTime>div p{
+    text-indent: 0;
+}
+.courseImg{
+    padding-top: 20px;
+}
+.processImg{
+    margin: 25px 0;
+    text-align: center;
+}
+.priceTable{
+    width: 100%;
+    margin: 20px 0;
+    border: 1px solid #cfd7dd;
+}
+.priceTable th{
+    border-bottom: 1px solid #cfd7dd;
+    line-height: 50px;
+    line-height: 50px;
+    border-top: 3px solid #48d5b2;
+}
+.priceTable th:nth-child(2){
+    border-top: 3px solid #ffc36d;
+}
+.priceTable th:nth-child(3){
+    border-top: 3px solid #ff7e7e;
+}
+.priceTable tr>td:nth-child(2),.priceTable tr>th:nth-child(2){
+    border-left: 1px solid #cfd7dd;
+    border-right: 1px solid #cfd7dd;
+}
+.priceTable td{
+    line-height: 50px;
+    padding-left: 40px;
+}
+.priceTable tr:nth-child(even) td{
+    background: #f6f9fa;
+}
+.priceTable tr>td:nth-child(3){
+    color: #f72c3a;
+}
+.hosEnvironmentDiv{
+    width: 980px;
+    height: 655px;
+    overflow: hidden;
+}
+.hosEnvironmentDiv li{
+    position: relative;
+    display: none;
+}
+.hosEnvironmentDiv li.active{
+    display: block;
+}
+.smallImgContainer{
+    height: 60px;
+    line-height: 60px;
+    background: rgba(255,255,255,.5);
+}
+.smallImgContainer li{
+    float: left;
+    width: 7.69%;
+}
+.smallImgContainer img{
+    width: 100%;
+}
+.enterEyeEnvironment{
+    padding: 20px;
+    position: relative;
+}
+.smallImgContainer{
+    position: absolute;
+    width: 980px;
+    bottom: 20px;
+}
+.chinWes,.Complementary{
+    width: 97px;
+    height: 97px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #008cd3;
+    text-align: center;
+    padding: 15px 0;
+    box-sizing: border-box;
+    border: 3px solid #008cd3;
+    margin-top: 100px;
+}
+.Complementary{
+    margin-left: 40px;
+}
+.chinWes{
+    color: #72af2d;
+    border-color: #72af2d;
+    margin-right: 40px;
+}
+.medicineContainer{
+    padding-left: 180px;
+}
+.medicineContent{
+    padding-top: 10px;
+}
+.medicineContent li{
+    width: 46%;
+}
+.medTitle{
+    color: #008cd3;
+}
+.imgCenter{
+    text-align: center;
+}
+.enterHonorContainer{
+    padding: 10px;
+}
+.enterEyeHonor li{
+    width: 310px;
+    height: 224px;
+    border: 1px solid #cdcdcd;
+    margin: 10px;
+}
+.enterEyeHonor1{
+    background: url("enter_honor1.png") 20px 20px no-repeat;
+}
+.enterEyeHonor2{
+    background: url("enter_honor2.png") 20px 20px no-repeat;
+}
+.enterEyeHonor3{
+    background: url("enter_honor3.png") 20px 20px no-repeat;
+}
+.enterEyeHonor4{
+    background: url("enter_honor4.png") 20px 20px no-repeat;
+}
+.enterEyeHonor5{
+    background: url("enter_honor5.png") 20px 20px no-repeat;
+}
+
+/*走进银海*/
+/*医疗服务*/
+.enterEyeContent.securityPolicy{
+    padding-top: 20px;
+}
+.securityPolicy p{
+    line-height: 30px;
+}
+.securityPolicy>div{
+    margin-bottom: 30px;
+}
+.securityPolicy>div p b{
+    margin-left: -2rem;
+}
+.securityPolicy .noIndent{
+    text-indent: 0;
+}
+.map{
+    width: 705px;
+    height: 320px;
+    margin: 10px 0 0 2rem;
+}
+.enterEyeContent p.indent5{
+    text-indent: 6.4rem;
+}
+.enterEyeContent.toIneye{
+    padding-top: 20px;
+}
+.enterEyeContent.toIneye p{
+    line-height: 40px;
+}
+.iconAppointment{
+    width: 46px;
+    height: 46px;
+}
+.iconAppointmentTele{
+    background-position: 0 -146px;
+}
+.teleAppointment{
+    margin: 20px 0 12px 0;
+}
+.AppointmentTele{
+    width: 210px;
+}
+.AppointmentTele p,.AppointmentWifi p{
+    text-indent: 0;
+    margin-left: 10px;
+}
+.AppointmentTele span{
+    color: #72af2d;
+}
+.iconAppointmentWifi{
+    background-position: 0 -212px;
+}
+.AppointmentWifi p{
+    line-height: 46px;
+    font-size: 18px;
+}
+.customerMessage p{
+    text-indent: 0;
+    margin-bottom: 10px;
+}
+.customerMessage em{
+    width: 75px;
+    display: inline-block;
+    line-height: 24px;
+}
+.customerMessage em i{
+    width: 2rem;
+    display: inline-block;
+}
+.customerMessage input{
+    height: 30px;
+    border: 1px solid #b4b2b2;
+    padding-left: 5px;
+    width: 130px;
+}
+.customerMessage span{
+    color: #ff1d1d;
+}
+.customerMessage select{
+    padding: 0 5px;
+    height: 20px;
+}
+.customerMessage select:focus{
+    outline: 0;
+}
+.customerMessage textarea{
+    padding-left: 10px;
+    width: 360px;
+    height: 70px;
+}
+textarea:focus{
+    outline: 0;
+}
+.customerMsgButtom{
+    padding-left: 75px;
+}
+.customerMsgBtn a{
+    width: 120px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background: #008cd6;
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    border-radius: 4px;
+}
+.doctorScheduling>div{
+    margin-bottom: 20px;
+    background: #fff;
+    width: 1020px;
+}
+.doctorScheduling>div h4{
+    color: #282828;
+    font-size: 24px;
+    line-height: 56px;
+    font-weight: normal;
+    text-align: center;
+}
+.stopService{
+    padding:0 30px;
+    line-height: 30px;
+    box-sizing: border-box;
+}
+.stopService>ul li{
+    width: 50%;
+}
+.stopService span{
+    color: #ff1d1d;
+}
+.stopService p{
+    text-align: right;
+    padding-bottom: 10px;
+}
+.schedulingTab{
+    border: 1px solid #767676;
+    width: 100%;
+}
+.font12{
+    font-size: 12px;
+}
+.schedulingTabCon{
+    padding: 0 20px 20px;
+    box-sizing: border-box;
+}
+.schedulingTab td,.schedulingTab th{
+    line-height: 42px;
+    border: 1px solid #c7c2c5;
+    text-align: center;
+}
+.schedulingTab td p{
+    line-height: 26px;
+}
+.newsMain .schedulingTab td p{
+    margin-bottom: 0;
+}
+.schedulingTab th{
+    border-right: 1px solid #fff;
+    background: #72af2d;
+    line-height: 60px;
+    color: #fff;
+}
+.schedulingTab th:last-child{
+    border-right: 1px solid #c7c2c5;
+}
+.schedulingTab a{
+    color: #008cd6;
+    font-size: 16px;
+}
+.schedulingTab .width150{
+    width: 150px;
+}
+.schedulingTab .textLeft{
+    text-align: left;
+}
+/*医疗服务*/
+/*医疗设备*/
+.allEquipment li{
+    font-size: 12px;
+    line-height: 24px;
+    width: 560px;
+}
+.allEquipment li:nth-child(even){
+    float: right;
+}
+.allEquipment{
+    margin-top: 20px;
+}
+.equipmentName{
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 5px;
+    background: #6e707d;
+    margin-bottom: 10px;
+}
+.equipmentName h4{
+    font-size: 18px;
+    color: #008cd6;
+}
+.allEquipment{
+    padding: 20px 20px 0;
+    box-sizing: border-box;
+    background: #fff;
+    margin-bottom: 20px;
+}
+.allEquipment .equAdvantages{
+    color: #72af2d;
+    font-size: 14px;
+}
+.allEquipment li{
+    margin-bottom: 20px;
+}
+.allEquipment li>div{
+    height: 284px;
+    width: 350px;
+}
+.allEquipment li>div.equContainer{
+    width: 200px;
+    border: 1px solid #6e707d;
+}
+.equContainer{
+    line-height: 284px;
+    text-align: center;
+}
+.equContainer img{
+    vertical-align: middle;
+}
+/*医疗设备*/
+/*中心css*/
+.centerModule{
+    margin: 10px 0;
+    background: #fff;
+}
+.imgW580 img{
+    width: 580px;
+}
+.main .centerModule:first-child{
+    margin-top: 20px;
+}
+.cataractCenterWord{
+    padding: 10px;
+}
+.cataractCenterWord .centerWords{
+    width: 575px;
+    float: right;
+    margin-right: 10px;
+    line-height: 26px;
+    text-indent: 2rem;
+}
+.centerWords h5{
+    line-height: 64px;
+    font-size: 24px;
+    color: #008cd6;
+}
+.h5Title{
+    font-weight: normal;
+    text-align: center;
+}
+.blueBTitle{
+    line-height: 45px;
+    border-bottom: 1px solid #e5e8e9;
+    padding-right: 20px;
+}
+.blueBTitle span{
+    line-height: 45px;
+    display: inline-block;
+    font-size: 20px;
+    border-bottom: 2px solid #0185d0;
+    padding: 0 5px;
+}
+.CenterLeader{
+    position: relative;
+    width: 340px;
+    height: 484px;
+}
+.CenterLeader img{
+    width: 100%;
+}
+.leaderMask{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 180px;
+    width: 100%;
+    background: rgba(255,255,255,.75);
+    line-height: 24px;
+    font-size: 12px;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+.leaderMask>div{
+    text-align: center;
+}
+.leaderMask h4{
+    color: #0185d0;
+    font-size: 18px;
+    line-height: 36px;
+}
+.leaderMask>p>span{
+    color: #72af2d;
+}
+.cataractCenterMember{
+    width: 820px;
+    padding: 0 10px;
+    line-height: 26px;
+}
+.cataractCenterMember h4{
+    font-size: 18px;
+    line-height: 40px;
+}
+.cataractDoctorGood{
+    margin-top: 10px;
+    color: #72af2d;
+}
+.cataractCenterList ul li{
+    width: 50%;
+}
+.cataractCenterList li img{
+    width: 200px;
+}
+.cataractDoctor {
+    width: 195px;
+    margin-right: 5px;
+}
+.cataractAdvantageCon{
+    height: 172px;
+    border: 3px solid #c8d5dd;
+    margin-top: 20px;
+    padding: 0 30px;
+    line-height: 26px;
+}
+.cataractAdvantageCon>p{
+    text-align: center;
+}
+.icon_advantageList{
+    width: 17px;
+    height: 17px;
+    background-position: 0 -97px;
+    vertical-align: middle
+}
+.cataractAdvantage{
+    width: 100%;
+}
+.cataractAdvantage li{
+    width: 25%;
+    height: 26px;
+    margin-bottom: 20px;
+}
+.cataractAdvantageCon>p{
+    line-height: 78px;
+    font-size: 20px;
+}
+.cataractCenterDoctor{
+    padding: 10px;
+}
+.padB25{
+    padding-bottom: 25px;
+}
+.cataractEquipment{
+    padding: 5px 15px 15px;
+}
+.cataractEquipment li{
+    margin: 5px;
+    width: 33.3%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.cataractEquipment li>div{
+    height: 300px;
+    line-height: 300px;
+    border: 1px solid #ccc;
+}
+.cataractEquipment li>img{
+    vertical-align: middle;
+}
+.cataractEquipment li>p{
+    line-height: 46px;
+}
+.cureProject{
+    line-height: 47px;
+    padding: 0 10px;
+}
+.cureProject span{
+    font-size: 20px;
+}
+.cureProject em{
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0px 20px;
+    height: 31px;
+    line-height: 31px;
+    background: #ccc;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+.cureProject em.active{
+    background: #72af2d;
+    color: #fff;
+}
+.halfContainer li {
+    width: 48%;
+}
+.advListContainer{
+    padding: 0 30px 30px;
+}
+.advListContainer ul li{
+    height: 180px;
+    margin-bottom: 10px;
+}
+.advListContainer ul li:nth-child(even){
+    float: right;
+}
+.advListContainer li p{
+    text-indent: 2rem;
+    line-height: 24px;
+}
+.advListContainer li p.noIndent{
+    text-indent: 0;
+    color: #008cd6;
+    font-size: 18px;
+    line-height: 36px;
+}
+.advTitle{
+    color: #72af2d;
+    font-size: 18px;
+    text-align: center;
+    text-align: center;
+}
+.advListContainer p{
+    line-height: 24px;
+    text-indent: 2rem;
+}
+.advListContainer p.advTitle{
+    line-height: 60px;
+}
+.marT20{
+    margin-top: 20px;
+}
+.centerImgCon{
+    text-align: center;
+}
+.cataractAdvList dd{
+    width: 48%;
+    float: left;
+    line-height: 24px;
+}
+.cataractAdvList dd:nth-child(even){
+    float: right;
+}
+.allNoIndent p{
+    text-indent: 0;
+}
+.advBlueTitle,.advListContainer p.advBlueTitle{
+    color: #008cd6;
+    font-size: 18px;
+    line-height: 34px;
+    margin-top: 30px;
+    text-indent: 0;
+}
+.SectionNewsList>div{
+    padding: 20px;
+    overflow: hidden;
+}
+.SectionNewsList div:hover{
+    background: #f1f1f1;
+}
+.SectionNewsList div>img{
+    float: left;
+}
+.SectionNewsList .SectionNewsRight{
+    width: 870px;
+}
+.SectionNewsList p{
+    line-height: 24px;
+    text-indent: 2rem;
+}
+.SectionNewsList h4{
+    line-height: 42px;
+    font-size: 18px;
+    font-weight: normal;
+}
+.cureProjectContainer .cureProjectModule{
+    display: none;
+}
+.cureProjectContainer .cureProjectModule:first-child{
+    display: block;
+}
+/*视光中心*/
+.eyesightEquipment{
+    padding: 20px 15px;
+}
+.eyesightEquipment li .fr{
+    width: 345px;
+    line-height: 24px;
+    font-size: 12px;
+}
+.eyesightEquipment li:nth-child(even){
+    float: right;
+}
+.eyesightEquipment li .fr h4{
+    font-size: 16px;
+    color: #008cd6;
+    line-height: 40px;
+}
+.eyesightEquipment .equAdvantages{
+    color: #72af2d;
+    font-size: 14px;
+}
+.eyesightEquipment .equContainer{
+    width: 200px;
+    height: 278px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.eyesightProject{
+    width: 190px;
+    height: 72px;
+    line-height: 72px;
+    text-align: center;
+    color: #fff;
+    background: #0185d0;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+.eyesightProject:after{
+    content: " ";
+    width: 0;
+    height: 0;
+    right: -24px;
+    top: 25px;
+    position: absolute;
+    border: 12px solid transparent;
+    border-left-color:#0185d0;
+}
+.eyesightProjectList dd:nth-child(even) .eyesightProject{
+    background: #72af2d;
+}
+.eyesightProjectList dd:nth-child(even) .eyesightProject:after{
+    border-left-color: #72af2d;
+}
+.eyesightProjectList dd .fr{
+    width: 920px;
+    padding: 10px;
+    background: #e7e7e7;
+    line-height: 24px;
+    margin-left: 30px;
+    font-size: 12px;
+}
+.eyesightProjectList dd{
+    overflow: hidden;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.eyesightProjectList{
+    padding: 10px;
+}
+.centerMemberCon li{
+    float: left;
+    width: 25%;
+    position: relative;
+}
+.centerMemberCon{
+    width: 820px;
+    padding: 0 5px;
+    margin-left: 10px;
+}
+.centerMemberCon .maskName{
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    left: 55px;
+    bottom: -17px;
+    text-align: center;
+    background: #0185d0;
+    color: #fff;
+}
+.centerMemberList{
+    height: 297px;
+}
+.centerAdvantageCon{
+    margin-top: 10px;
+}
+.centerAdvantage li{
+    width: auto;
+    margin-right: 10px;
+    text-align: left;
+}
+.eyesightCenterAdvantage li:nth-child(3n-2){
+    min-width: 450px;
+}
+.eyesightCenterAdvantage li:nth-child(3n-1){
+    min-width: 150px;
+}
+/*视光中心*/
+.EquipmentSlides{
+    width: 100%;
+    height: 350px;
+    margin-top: 10px;
+}
+.EquipmentSlides li{
+    text-align: center;
+}
+.EquipmentSlides>li{
+    overflow: hidden;
+    width: 1200px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    position: absolute;
+    overflow: hidden;
+}
+.EquipmentSlides>li>div{
+    float: left;
+    width: 380px;
+    height: 350px;
+    overflow: hidden;
+    margin: 0 6px;
+    border: 0;
+}
+.EquipmentSlides>li>div>p{
+    line-height: 40px;
+    text-align: center;
+}
+.EquipmentSlides>li>div>div{
+    height: 300px;
+    line-height: 300px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+}
+.EquipmentSlides>li>div>div img{
+    vertical-align: middle;
+}
+.jDiaporama_controls .prev{
+    background:url(controls2.png) no-repeat bottom;
+    top:45%;
+    margin-top:-16px;
+    height:32px;
+    width:32px;
+    left: 15px
+}
+
+.jDiaporama_controls .next{
+    background:url(controls2.png) no-repeat top;
+    top:50%;
+    margin-top:-16px;
+    height:32px;
+    width:32px;
+    right: 0px
+}
+.jDiaporama_controls a{
+    font-weight:normal;
+    width:10px;
+    height:13px;
+    text-indent:-9999px;
+    display:block;
+    margin:0 3px;
+    position:absolute;
+}
+.jDiaporama{
+    position: relative;
+}
+.jDiaporama_controls{
+    display: none;
+}
+.fundiDiseaseAdvantage li{
+    margin-right: 50px;
+}
+.towMembers li{
+    width: 50%;
+}
+.towMembers li img{
+    width: 200px;
+}
+.centerMemberList li img{
+    width: 200px;
+}
+/*中心css*/
+//中心入口
+.centerBg{
+    background: url("centerBg.png") 115px 110px no-repeat #fff;
+    min-height: 630px;
+    padding: 0 20px 50px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.departEntrance{
+    line-height: 80px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 48px;
+}
+.departList p{
+    line-height: 24px;
+}
+.departEntrance span{
+    color: #72af2d;
+}
+.departLeftList span,.departRightList span,.departBottomList span{
+    position: relative;
+    display: inline-block;
+}
+.departLeftList span,.departBottomList span{
+    padding-left: 10px;
+}
+.departLeftList span:before,.departRightList span:after,.departBottomList span:before{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #008cd6;
+    top: 10px;
+}
+.departLeftList span:before,.departBottomList span:before{
+    left: 0;
+}
+.departBottomList .departCenter1{
+    padding-left: 40px;
+}
+.departList p.departCenterTle,.departList p.departCenterTle a{
+    color: #008cd6;
+    font-size: 20px;
+    display: block;
+    line-height: 40px;
+}
+.departLeftList,.departRightList{
+    width: 400px;
+}
+.departLeftOneList p span:nth-child(1),.departLeftTwoList p span:nth-child(1){
+    width: 100px;
+}
+.departLeftTwoList,.departLeftThreeList{
+    margin-top: 62px;
+}
+.departLeftThreeList p span:nth-child(1){
+    width: 120px;
+}
+.departLeftFourList,.departFiveList{
+    margin-top: 22px;
+    margin-top: 62px;
+}
+.departRightList{
+    text-align: right;
+}
+.departRightList span{
+    padding-right: 10px;
+}
+.departRightList span:after{
+    right: 0;
+}
+.departFiveList .departCenter1 span:nth-child(1),.departFiveList .departCenter1 span:nth-child(3){
+    width: 150px;
+}
+.departRightTwoList p span:nth-child(2){
+    width: 220px;
+}
+.departRightTwoList{
+    margin-top: 20px;
+    margin-top: 45px;
+}
+.departRightThreeList{
+    margin-top: 50px;
+}
+.departRightFourList{
+    margin-top: 42px;
+}
+.departRightThreeList p span:nth-child(2){
+    width: 120px;
+}
+.departBottomListCon{
+    width: 420px;
+    margin-left: 365px;
+    position: relative;
+}
+.departBottomList{
+    position: absolute;
+    top: -140px;
+    width: 100%;
+}
+.departRightFourList .departCenter1 span:nth-child(2),.departRightFourList .departCenter1 span:nth-child(4){
+    width: 235px;
+}
+//中心入口
+/*中医中心*/
+.marB20{
+    margin-bottom: 20px;
+}
+.centerModule .chinCenterWord{
+    width: 650px;
+}
+.chinCenterImg{
+    text-indent: 0;
+    margin-top: 35px;
+}
+.chinCenterDoctor{
+    padding: 10px;
+}
+.chinCenterDoctor .CenterLeader{
+    width: 730px;
+    height: auto;
+}
+.chinCenterDoctor .CenterLeader img{
+    width: 200px;
+}
+.CenterLeaderIntroduce{
+    width: 515px;
+    float: right;
+    line-height: 24px;
+    font-size: 12px;
+}
+.CenterLeaderIntroduce h4{
+    line-height: 34px;
+    font-size: 18px;
+    color: #7e0204;
+}
+.CenterLeaderTle{
+    color: #87612f;
+    margin-top: 5px;
+}
+.chinCenterDoctor .chinMedMemberCon{
+    padding: 10px 0 0;
+    margin: 0;
+    width: 100%;
+}
+.chinCenterDoctor .centerMemberList{
+    width: 835px;
+}
+.chinCenterDoctor .maskName{
+    background: #735015;
+}
+.padB20{
+    padding-bottom: 20px;
+}
+.chiWedSpecialItem{
+    padding: 0 10px;
+}
+.chiWedSpecialItem li{
+    width: 570px;
+    line-height: 24px;
+    text-indent: 2rem;
+}
+.chiWedSpecialItem li:nth-child(even){
+    float: right;
+}
+.chiWedSpecialItem li p:first-child{
+    line-height: 48px;
+    text-indent: 0;
+    margin-top: 5px;
+}
+.chiWedSpecialItem li p:last-child{
+    color: #7e0204;
+}
+.chiWedSpecialItem li p:first-child span{
+    background: #735015;
+    color: #fff;
+    width: 98px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 3px;
+}
+.chinMedModule .blueBTitle span{
+    border-color: #87612f;
+}
+/*中医中心*/
+/*读片中心*/
+
+.readCenterImg{
+    margin-top: 5px;
+    text-indent: 0;
+}
+.readCenterDoctor{
+    height: 310px;
+    width: 100%;
+    padding: 10px 30px 0;
+    box-sizing: border-box;
+}
+.readCenterDoctor li{
+    width: 20%;
+}
+.readCenterDoctor li img{
+    width: 200px;
+}
+.readCenterTle{
+    text-align: center;
+    font-size: 24px;
+    line-height: 30px;
+    color: #333333;
+    margin: 15px 0;
+}
+.readCenterTle span{
+    color: #72af2d;
+}
+.readCenterTle p:first-child{
+    font-family: Arial;
+}
+.readCenterFunc li{
+    width: 530px;
+    height: 558px;
+    line-height: 30px;
+    background: #fff;
+    margin: 10px 0;
+    padding: 0 30px;
+    text-align: center;
+}
+.readCenterFunc li h4{
+    font-size: 18px;
+    color: #0185d0;
+    font-weight: normal;
+}
+.readCenterFunc li:nth-child(1) h4,.readCenterFunc li:nth-child(2) h4{
+    margin-top: 60px;
+}
+.readCenterFunc li:nth-child(3) h4,.readCenterFunc li:nth-child(4) h4{
+    margin-top: 30px;
+}
+.readCenterFunc li p{
+    text-indent: 2rem;
+    text-align: left;
+}
+.readCenterFunc li:nth-child(even){
+    float: right;
+}
+.marT60{
+    margin-top: 60px;
+}
+.marT50{
+    margin-top: 50px;
+}
+.marT40{
+    margin-top: 40px;
+}
+.readCenterWork{
+    padding: 20px;
+    line-height: 24px;
+    margin-bottom: 20px;
+}
+.readCenterWork h5{
+    color: #72af2d;
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: normal;
+}
+.readCenterWorkImg{
+    text-align: center;
+}
+.reportImg{
+    margin-left: 190px;
+}
+.wordIndent2 p{
+    text-indent: 2rem;
+}
+.wordIndent2 p.aPoint{
+    text-indent: 0;
+    color: #0185d0;
+    margin-top: 25px;
+}
+.diagnosisPlatform{
+    padding: 60px 190px 0 140px;
+}
+.diagnosisPlatform dl{
+    width: 350px;
+}
+.diagnosisPlatform dl dd{
+    line-height: 40px;
+    width: 50%;
+    float: left;
+}
+.diagnosisPlatform p{
+    line-height: 28px;
+    margin-top: 40px;
+    font-size: 18px;
+    color: #0185d0;
+}
+.line30 p{
+    line-height: 30px;
+}
+/*读片中心*/
+/*小儿眼科*/
+.childModule{
+    background: url("childrenDepart-wordBg.jpg") right 118px no-repeat #fff;
+}
+.childrenTle{
+    line-height: 28px;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+    color: #333333;
+}
+.childrenTle p:nth-child(1){
+    font-family: Arial;
+}
+.childrenTle p:nth-child(1) span{
+    color: #0185d0;
+}
+.childrenProject{
+    border-bottom: 1px solid #e5e8e9;
+}
+.childrenProDetail{
+    width: 100%;
+    margin-top: 80px;
+}
+.childrenProDetail li p{
+    line-height: 24px;
+}
+.childrenProDetail li{
+    width: 33.3%;
+    text-align: center;
+    height: 280px;
+    box-sizing: border-box;
+    padding: 0 13px;
+}
+.childrenDepartCenter{
+    width: 373px;
+    padding-top: 80px;
+    height: 131px;
+    background: #acce22;
+    font-size: 24px;
+    line-height: 30px;
+}
+.childrenDepartCenter p:nth-child(1){
+    font-family: Arial;
+}
+.childrenDepartCenter span{
+    color: #fff;
+}
+.childrenTle em{
+    display: inline-block;
+    position: relative;
+    color: #0185d0;
+}
+.childrenTle em:before,.childrenTle em:after{
+    content: " ";
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    border-top: 1px solid #0185d0;
+}
+.childrenTle em:before{
+    left: -58px;
+}
+.childrenTle em:after{
+    right: -58px;
+}
+.pad15{
+    padding: 15px;
+}
+.childrenGlass{
+    width: 437px;
+}
+.glassAdvList{
+    margin-top: 14px;
+}
+.glassAdvList p{
+    padding-left: 22px;
+    line-height: 24px;
+    margin-bottom: 10px;
+}
+.glassAdvList p i{
+    margin-left: -22px;
+}
+.glassCompare{
+    width: 610px;
+    border: 1px solid #dde3e7;
+}
+.glassCompare th{
+    background: #0185d0;
+    color: #fff;
+    font-weight: normal;
+}
+.glassCompare th,.glassCompare tr{
+    height: 48px;
+    text-align: center;
+}
+.glassCompare th,.glassCompare td{
+    border-right: 1px solid #cfd7dd;
+}
+.glassCompare tr:nth-child(odd) td{
+    background: #fff;
+}
+.glassCompare tr:nth-child(even) td{
+    background: #f6f9fa;
+}
+.width150{
+    width: 150px;
+}
+.alignCenter{
+    text-align: center;
+}
+.width560{
+    width: 560px;
+}
+.icon_glass{
+    width: 18px;
+    height: 18px;
+    background-position: -24px -97px;
+    vertical-align: middle;
+}
+.glassImg{
+    margin-top: 10px;
+}
+.aboutShortSight{
+    line-height: 30px;
+}
+.greenWord{
+    color: #72af2d;
+}
+.line24{
+    line-height: 24px;
+}
+.width250{
+    width: 250px;
+    padding-right: 20px;
+}
+.width270{
+    width: 270px;
+}
+.wordIndent p{
+    text-indent: 2rem;
+}
+.wordIndent p.advBlueTitle{
+    text-indent: 0;
+}
+.marL180{
+    margin-left: 180px;
+}
+.weakSightHarm li{
+    margin-bottom: 10px;
+}
+.line30{
+    line-height: 30px;
+}
+.lastChildProject{
+    padding: 15px 15px 0;
+}
+.thisIndent2{
+    text-indent: 2rem;
+}
+.marT10{
+    margin-top: 10px;
+}
+.visualChart{
+    margin: 60px 0 10px;
+}
+/*小儿眼科*/
+/*糖尿病视网膜中心*/
+.diabetesCenter li{
+    margin-right: 20px;
+    line-height: 34px;
+}
+.diabetesCenter li:nth-child(1),.diabetesCenter li:nth-child(4){
+    width: 280px;
+}
+.diabetesCenter li.lastAdvantage{
+    margin-right: 0;
+}
+.diabetesTle{
+    text-align: center;
+    font-size: 20px;
+    line-height: 34px;
+    margin: 10px 0 20px;
+}
+.diabetesTle p:first-child{
+    font-family: Arial;
+}
+.diabetesTle p:last-child span{
+    position: relative;
+}
+.diabetesTle p:last-child span:before,.diabetesTle p:last-child span:after{
+    position: absolute;
+    content: " ";
+    width: 106px;
+    border-top: 1px solid #72af2d;
+    top:50%;
+}
+.diabetesTle p:last-child span:before{
+    left: -110px;
+}
+.diabetesTle p:last-child span:after{
+    right: -110px;
+}
+.researchResults{
+    height: 550px;
+    overflow-y: scroll;
+
+}
+.researchResults p{
+    text-indent: 2rem;
+    margin-bottom: 10px;
+
+}
+.diabetesExplain p{
+    text-indent: 2rem;
+}
+.diabetesExplain p.greenWord{
+    text-indent: 0;
+    margin-top: 20px;
+}
+.diabetesExplain p.blueWord{
+    margin-top: 10px;
+}
+.blueWord{
+    color: #0185d0;
+}
+.diabetesTab{
+    margin: 20px auto;
+}
+.diabetesTab td{
+    padding: 0 5px;
+}
+.width100{
+    width: 100px;
+}
+/*糖尿病视网膜中心*/
+/*中心公用*/
+.eyesightProject p{
+    display: inline-block;
+    line-height: 24px;
+    text-align:left;
+    padding: 0 2px;
+    vertical-align: middle;
+}
+/*中心公用*/
+/*科普*/
+.pad20{
+    padding: 20px;
+}
+.whiteModule{
+    background: #fff;
+    margin: 20px 0;
+}
+.kepuBtn{
+    text-align: center;
+}
+.kepuBtn>ul{
+    display: inline-block;
+}
+.kepuBtn li{
+    line-height: 40px;
+    padding: 0 5px;
+    font-size: 24px;
+    margin: 0 35px;
+    cursor: pointer;
+}
+.kepuBtn li.active{
+    color: #72af2d;
+    border-bottom: 2px solid #72af2d;
+}
+.relativeDiv{
+    position: relative;
+}
+.bottomMask{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.kepuImgMask{
+    height: 70px;
+    line-height: 70px;
+    padding: 0 10px;
+    background: #008cd6;
+    color: #fff;
+    box-sizing: border-box;
+    text-align: center;
+}
+.kepuImgMask>p{
+    display: inline-block;
+    line-height: 24px;
+    vertical-align: middle;
+}
+.kepuModuleCon p{
+    text-indent: 2rem;
+}
+.kepuModule{
+    display: none;
+}
+.fiKepuModule{
+    display: block;
+}
+.line40{
+    line-height: 40px;
+}
+.kepuArticles .kepuTle{
+    line-height: 48px;
+    border-bottom: 2px solid #666;
+    font-size: 20px;
+}
+
+.kepuArticles a{
+    display: block;
+}
+.kepuArticles .kepuTle a{
+    font-size: 14px;
+    color: #008cd6;
+    float: right;
+}
+.padL10{
+    padding-left: 10px;
+}
+.padR10{
+    padding-right: 10px;
+}
+/*科普*/
+/*青光眼*/
+.marR65{
+    margin-right: 65px;
+}
+.glaucomaCenter{
+    width: 820px;
+    height: 120px;
+    padding: 20px 30px;
+    border: 1px solid #280d02;
+    border-radius: 8px;
+}
+.centerH5{
+    color: #008cd6;
+    font-size: 24px;
+}
+.glaucomaDoctors{
+    padding: 20px;
+}
+.glaucomaDoctors>li{
+    width: 570px;
+    overflow: hidden;
+}
+.glaucomaDoctors>li img{
+    width: 200px;
+}
+.glaucomaDoctors .expertSynopsis{
+    height: auto;
+}
+.glaucomaBg{
+    width: 120px;
+    height: 41px;
+    padding: 40px 0;
+    color: #72af2d;
+    background: url("treatment-bg.jpg");
+    text-align: center;
+}
+.glaucomaBg p{
+    line-height: 18px;
+}
+.glaucomaTreatment>div{
+    width: 545px;
+}
+.glaucomaTreatment{
+    margin-bottom: 25px;
+}
+.glaucomaTreatment>div>p{
+    line-height: 24px;
+    width: 405px;
+    margin-left: 15px;
+}
+.glaucomaTreatment>div>*{
+    display: inline-block;
+    vertical-align: middle;
+}
+.glaucomaTreatmentFiList>div{
+    height: 125px;
+    line-height: 125px;
+}
+.glaucomaTreatmentSeList{
+    height: 140px;
+    line-height: 140px;
+}
+.glaucomaTreatmentThList{
+    height: 168px;
+    line-height: 168px;
+}
+
+/*青光眼*/
+/*学院css*/
+.blueSmaTle{
+    color: #008cd6;
+    font-size: 14px;
+}
+.developHistory>ul{
+    width: 455px;
+}
+.developHistoryCon{
+    width: 1020px;
+    box-sizing: border-box;
+    padding: 20px 35px 40px;
+    color: #333;
+    min-height: 200px;
+    min-height: 627px;
+}
+.developHistory .time{
+    color: #008cd6;
+    line-height: 28px;
+}
+.developHistory li{
+    margin: 20px 0;
+}
+.developHistory .time span{
+    font-size: 18px;
+}
+.LargeTle{
+    font-size: 36px;
+    text-align: center;
+    font-weight: normal;
+    line-height: 90px;
+}
+.ThemeScript h4{
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 36px;
+}
+.ThemeScript p{
+    line-height: 22px;
+}
+.signatureDImg{
+    display: inline-block;
+    margin-top: -18px;
+}
+.collegeCenterImg{
+    margin-left: -35px;
+}
+.fontB18{
+    font-size: 18px;
+    color: #008cd3;
+}
+.bottomMarCon p{
+    margin-bottom: 15px;
+}
+.width1020{
+    width: 1020px;
+}
+.teacherTimeList div{
+    color: #34607b;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1;
+    font-weight: 600;
+    display: inline-block;
+    vertical-align: middle;
+}
+.teacherTimeList .teacherTime{
+    font-size: 10px;
+    transform: scale(0.8);
+    font-weight: normal;
+}
+.teacherTimeList>li{
+    height: 52px;
+    line-height: 52px;
+    margin-top: 10px;
+}
+.leadersCon>li{
+    width: 420px;
+}
+.leadersCon img{
+    width: 200px;
+}
+.leadersCon{
+    padding-left: 30px;
+    margin-top: 30px;
+}
+.leadersCon>li>div h5{
+    font-size: 18px;
+    line-height: 48px;
+    margin-top: 10px;
+}
+.leadersCon>li>div p{
+    color: #008cd3;
+}
+.marL50{
+    margin-left: 50px;
+}
+.borderBTle{
+    color: #666;
+}
+.borderBTle span{
+    display: inline-block;
+    border-bottom: 2px solid #008cd3;
+    color: #008cd3;
+    margin-right: 10px;
+    line-height: 45px;
+}
+.font24{
+    font-size: 24px;
+}
+.lineBBorder{
+    border-bottom: 1px solid #e5e8e9;
+}
+.projectList{
+    width: 780px;
+    margin: 20px auto 0;
+    text-align: center;
+}
+.projectList th{
+    background: #b4ced1;
+    color: #fff;
+    line-height: 70px;
+    border-right: 1px solid #f7f7f7;
+    font-size: 24px;
+}
+.projectList tr{
+    border-bottom: 1px solid #f7f7f7;
+}
+.projectList tr td:first-child{
+    background: #b4ced1;
+}
+.projectList td{
+    line-height: 65px;
+    border-right: 1px solid #f7f7f7;
+    background: #eeeeee;
+}
+.fontG16{
+    font-size: 16px;
+    color: #72af2d;
+}
+.collegePlatform{
+    padding-bottom: 20px;
+}
+.collegePlatform p{
+    text-indent: 2rem;
+}
+.collegePlatform .centerImgCon p{
+    text-indent: 0;
+}
+.collegePlatform p.fontG16{
+    margin: 10px 0;
+    text-indent: 0;
+}
+/*学院css*/
+/*白内障添加*/
+.centerIleWord{
+    text-align: center;
+    line-height: 38px;
+    font-size: 24px;
+    margin-top: 20px;
+}
+.centerIleWord h5{
+    font-size: 36px;
+    line-height: 60px;
+    font-weight: normal;
+}
+.width920{
+    width: 920px;
+    margin: 0 auto;
+}
+.marTNegative20{
+    margin-top: -20px;
+}
+.cataractMIntroduce{
+    width: 830px;
+    margin: 20px 0 0 130px;
+}
+/*白内障添加*/
+/*仪器详情*/
+.equLeft{
+    width: 850px;
+    min-height: 1488px;
+    padding: 0 20px 30px;
+}
+.equDetail.equRight{
+    width: 300px;
+    padding: 0;
+}
+.equDetail.equRight,.equLeft{
+    border-top: 2px solid #008cd6;
+}
+.equDetail.equRight .consults{
+    width: 100%;
+}
+.equDetail.equRight .consults li{
+    width: 33.3%;
+    border: 0;
+    height: 90px;
+}
+.equRight .consults i{
+    margin-top: 15px;
+}
+.equRight .consults li:nth-child(4) i{
+    background-position: 0 -240px;
+}
+.equRight .consults li:nth-child(5) i{
+    background-position: 0 -144px;
+}
+.equRight .consults li:nth-child(6) i {
+    background-position: 0 -192px;
+}
+.doctorRecommendList{
+    height: 590px;
+    padding: 0 0 10px;
+    box-sizing: border-box;
+}
+.doctorRecommendTle{
+    font-size: 20px;
+    line-height: 40px;
+    margin: 0 10px;
+}
+.doctorRecommendImg{
+    height: 300px;
+    overflow: hidden;
+}
+.doctorRecommendImg img{
+    width: 100%;
+}
+.doctorRecommendList{
+    position: relative;
+    overflow: hidden;
+}
+.doctorRecommendList .centerWords{
+    text-align: center;
+}
+.doctorRecommendList .centerWords p:nth-child(1){
+    font-size: 18px;
+}
+.doctorRecommendList .doctorBtn{
+    bottom: 10px;
+    left: 10px;
+    width: 280px;
+}
+.doctorRecommendList .doctorBtn a{
+    background: #008cd3;
+}
+.doctorRecommendList .doctorBtn a:hover{
+    background: #72af2d;
+}
+.equ-hosMessage{
+    padding: 20px 20px 10px;
+}
+.equ-hosMessage>div{
+    width: 100%;
+    height: 70px;
+    border: 1px solid #e5e8e9;
+    margin-bottom: 10px;
+}
+.equ-hosMessage>div i{
+    width: 42px;
+    height: 42px;
+    margin: 15px;
+    float: left;
+}
+.equ-hosMessage>div:first-child i{
+    background-position: 0 -278px;
+}
+.equ-hosMessage>div:last-child i{
+    background-position: 0 -340px;
+}
+.equ-hosMessage>div>div{
+    display: inline-block;
+    line-height: 24px;
+    font-size: 18px;
+    float: left;
+    margin: 12px 0;
+}
+.hosPath{
+    padding: 10px 10px 20px;
+    font-size: 12px;
+}
+.doctorRecommendDiv{
+    width: 300px;
+    height: 550px;
+    overflow: hidden;
+}
+.doctorRecommendCon{
+    width: 2000px;
+    height: 550px;
+    position: relative;
+    top: 0;
+}
+.doctorRecommendCon li{
+    width: 280px;
+    height: 550px;
+    padding: 0 10px;
+    position: relative;
+}
+.fontCenter30{
+    font-size: 30px;
+    text-align: center;
+}
+.equLeft .fontCenter30{
+    line-height: 86px;
+}
+.equLeft .advBlueTitle{
+    margin: 10px 0;
+}
+.textCenter{
+    text-align: center;
+}
+.redWord{
+    color: #ff1d1d;
+}
+.equTwoTle{
+    line-height: 38px;
+    font-size: 30px;
+    text-align: center;
+    margin: 25px 0;
+}
+.doctorRecommendDiv .leftBtn,.doctorRecommendDiv .rightBtn{
+    line-height: 600px;
+}
+/*仪器详情*/
+//专家新版index页面

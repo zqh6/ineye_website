@@ -1,72 +1,82 @@
 <!--六大中心-->
-<div class="middle">
-  <div class="column centerContainer">
-    <ul class="center flParent">
-      <li>
-        <%= link_to image_tag("zxtb_1.png"), center_path(:角膜移植与眼表病) %>
-        <p>角膜移植与眼表病</p>
-      </li>
-      <li>
-        <%= link_to image_tag("zxtb_2.png"), center_path(:干眼病) %>
-        <p>干眼病</p>
-      </li>
-      <li>
-        <%= link_to image_tag("zxtb_3.png"), center_path(:青光眼) %>
-        <p>青光眼</p>
-      </li>
-      <li>
-        <%= link_to image_tag("zxtb_4.png"),center_path(:小儿眼病) %>
-        <p>小儿眼病</p>
-      </li>
-      <li>
-        <a href="javascript:;">
-          <%= link_to image_tag("zxtb_5.png"), center_path(:泪道病及眼眶病) %>
-          <p>泪道病及眼眶病</p>
-        </a>
-      </li>
-      <li class="lastCenter">
-        <%= link_to image_tag("zxtb_6.png")%>
-        <p>眼外伤与眼整形美容</p>
-      </li>
-    </ul>
-    <ul class="flParent flow guide">
-      <li class="mar-L-z">
-        <div>
-          <%= link_to image_tag("center_1.png"), center_path(:视光中心) %>
+<div class="centerBg">
+  <p class="departEntrance"><span>银海眼科</span></p>
+  <div class="departList flow">
+    <div class="flow">
+      <div class="departLeftList fl">
+        <div class="departLeftOneList">
+          <p class="departCenterTle"><%= link_to :'眼底病中心',center_path(:眼底病中心) %></p>
+          <div class="departCenter1">
+            <p><span>重点特色专科</span> <span>国内外先进技术</span></p>
+            <p><span>权威专家打造</span> <span>诊治各类眼底病及全身疾病相关眼病</span></p>
+          </div>
         </div>
-        <p>眼视光中心</p>
-      </li>
-      <li>
-        <div>
-        <%= link_to image_tag("center_2.png"), center_path(:白内障屈光中心) %>
+        <div class="departLeftTwoList">
+          <p class="departCenterTle"><%= link_to :'白内障屈光中心',center_path(:白内障屈光中心) %></p>
+          <div>
+            <p><span>权威专家团队</span> <span>技术力量雄厚</span></p>
+            <p><span>临床经验丰富</span> <span>国际先进水平</span></p>
+          </div>
         </div>
-        <p>白内障屈光中心</p>
-      </li>
-      <li>
-        <div>
-        <%= link_to image_tag("center_3.png"), center_path(:中医眼科中心) %>
+        <div class="departLeftThreeList">
+          <p class="departCenterTle"><%= link_to :'中医眼科中心',center_path(:中医简介) %></p>
+          <div>
+            <p><span>百余年学术精华</span> <span>显著疗效</span></p>
+            <p><span>雄厚临床经验</span> <span>特色优势</span></p>
+          </div>
         </div>
-        <p>中医眼科中心</p>
-      </li>
-      <li class="mar-L-z">
-        <div>
-        <%= link_to image_tag("center_4.png"), center_path(:眼底病中心) %>
+        <div class="departLeftFourList">
+          <p class="departCenterTle"><%= link_to :'青光眼科',center_path(:青光眼) %> </p>
+          <div class="departCenter1">
+            <p><span>先进技术设备，完美早期发现</span></p>
+            <p><span>丰富临床经验，轻松诊断治疗</span></p>
+            <p><span>完善慢病管理，挽救视力功能</span></p>
+            <p><span>中西疗法结合，提高视觉质量</span></p>
+          </div>
         </div>
-        <p>眼底病中心</p>
-      </li>
-      <li>
-        <div>
-        <%= link_to image_tag("center_5.png"), center_path(:糖尿病病变防治中心) %>
+      </div>
+      <div class="departRightList fr">
+        <div class="departRightOneList">
+          <p class="departCenterTle"><%= link_to :'糖尿病视网膜病变防治中心',center_path(:糖尿病病变防治中心) %></p>
+          <div class="departCenter1">
+            <p><span>早期筛查、国际诊疗标准</span></p>
+            <p><span>名医专家团队，20年攻关成果</span></p>
+            <p><span>虚瘀并治综合治疗疗效显著</span></p>
+            <p><span>设备一流，中西结合优势突出</span></p>
+          </div>
         </div>
-        <p>糖尿病视网膜病变防治中心</p>
-      </li>
-      <li>
-        <div>
-          <%= link_to image_tag("center_6.png"), center_path(:读片中心) %>
+        <div class="departRightTwoList">
+          <p class="departCenterTle"><%= link_to :'眼视光中心',center_path(:视光中心) %></p>
+          <div class="departCenter1">
+            <p><span>国际高端设备</span><span>多位一体、自主研发的视觉训练</span></p>
+            <p><span>团队班底实力雄厚</span><span>前沿技术与传统中医相结合</span></p>
+          </div>
         </div>
-        <p>读片中心</p>
-      </li>
-    </ul>
+        <div class="departRightThreeList">
+          <p class="departCenterTle"><%= link_to :'眼影像分析与诊断中心',center_path(:读片中心) %></p>
+          <div class="departCenter1">
+            <p><span>国内外强强联合 </span><span>前沿分析技术</span></p>
+            <p><span>国家国际科技合作专项</span><span>资深读片团队 </span></p>
+          </div>
+        </div>
+        <div class="departRightFourList">
+          <p class="departCenterTle"><%= link_to :'小儿眼科',center_path(:小儿眼病) %></p>
+          <div class="departCenter1">
+            <p><span>国际高端设备</span><span>多位一体、自主研发的视觉训练</span></p>
+            <p><span>团队班底实力雄厚</span><span>前沿技术与传统中医相结合</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="departBottomListCon">
+      <div class="departBottomList">
+        <div class="departFiveList">
+
+        </div>
+      </div>
+
+    </div>
+    <div style="height: 80px"></div>
   </div>
 </div>
   <!--六大中心-->

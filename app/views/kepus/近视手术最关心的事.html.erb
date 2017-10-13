@@ -1,0 +1,959 @@
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<script>
+    var deviceWidth = document.documentElement.clientWidth;
+    if(deviceWidth > 720) deviceWidth = 720;
+    document.documentElement.style.fontSize = deviceWidth / 7.2 + 'px';
+</script>
+<style>
+    .blackBg,.header{
+        display: none;
+    }
+    body{
+        font-size: 14px;
+        line-height: 30px;
+        font-family: "Microsoft YaHei", "Arial", "黑体", "宋体", sans-serif;
+    }
+    body,p,ul,li,div,h1,h2,h3,h5,h4{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+    }
+    .tel p:last-child{
+        text-indent: 66px;
+    }
+    .fl{
+        float: left;
+    }
+    .fr{
+        float: right;
+    }
+    .flow{
+        overflow: hidden;
+    }
+    .main{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .whiteBg .main,.blueBg .main{
+        background: transparent;
+    }
+    .bannerSmall{
+        display: none;
+    }
+    .bannerLarge{
+        width: 100%;
+        min-width: 1200px;
+        height: 550px;
+        background: url("/assets/yk-banner.jpg") center 0 no-repeat;
+    }
+    .bannerLarge img,.bannerSmall img{
+        display: block;
+    }
+    .marT30{
+        margin-top: 30px;
+    }
+    .marT20{
+        margin-top: 20px;
+    }
+    .marB20{
+        margin-bottom: 20px;
+    }
+    .marB30{
+        margin-bottom: 30px;
+    }
+    .padT10{
+        padding-top: 10px;
+    }
+    .padT30{
+        padding-top: 30px;
+    }
+    .line40{
+        line-height: 40px;
+    }
+    .whiteBg{
+        background: #fff;
+    }
+    .blueBg{
+        background: #32a4b0;
+        color: #fff;
+        height: auto;
+    }
+    .blueBg .eyeTle,.blueBg .eyeTle h5{
+        color: #fff;
+    }
+    .bannerSmall img{
+        width: 100%;
+    }
+    .eyeTle{
+        text-align: center;
+        font-size: 24px;
+        color: #999;
+        margin: 15px 0;
+    }
+    .eyeTle h5{
+        font-size: 34px;
+        color: #33a5b0;
+        line-height: 40px;
+        font-weight: normal;
+    }
+    .refractiveCon>div{
+        width: 455px;
+        height: 190px;
+        background: #33a5b0;
+        color: #fff;
+        font-size: 16px;
+        line-height: 40px;
+        padding: 15px 30px;
+        position: relative;
+    }
+    .refractiveCon p:first-child{
+        font-size: 20px;
+    }
+    .refractiveCon{
+        overflow: hidden;
+        padding: 30px 35px 30px 65px;
+    }
+    .refractiveCon>div:before{
+        position: absolute;
+        content: " ";
+        width: 100%;
+        height: 100%;
+        border: 1px solid #33a5b0;
+        left: -30px;
+        top: -20px;
+    }
+    .correctRefractive{
+        height: 220px;
+    }
+    .correctRefractive>div{
+        width: 560px;
+        height: 176px;
+        padding-left: 10px;
+        line-height: 176px;
+        background: #f1f1f1;
+        position: relative;
+    }
+    .correctRefractive>div>p{
+        display: inline-block;
+        line-height: 26px;
+        vertical-align: middle;
+        width: 350px;
+    }
+    .correctRefractive>div>div{
+        position: absolute;
+        background: #33a5b0;
+        height: 40px;
+        width: 260px;
+        margin-left: -130px;
+        left: 50%;
+        bottom: -20px;
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        font-size: 20px;
+    }
+    .triangleDiv{
+        position: relative;
+    }
+    .triangleDiv:after{
+        content: " ";
+        width: 0;
+        height: 0;
+        border: 19px solid transparent;
+        border-top:30px solid #33a5b0;
+        margin-left: -26px;
+        left: 50%;
+        bottom: -48px;
+        position: absolute;
+    }
+    .correctRefractive img{
+        margin-right: 20px;
+    }
+    .chooseWords div{
+        position: relative;
+        margin-bottom: 30px;
+        min-height: 60px;
+        line-height: 60px;
+        padding-left: 20px;
+        border: 1px solid #fff;
+    }
+    .chooseWords div p{
+        line-height:24px;
+        vertical-align: middle;
+        display: inline-block;
+        margin: 6px 0;
+    }
+    .chooseWords div:before{
+        width: 60px;
+        height: 62px;
+        line-height: 62px;
+        text-align: center;
+        background: #fff;
+        position: absolute;
+        left: -60px;
+        top: -1px;
+        content: "01";
+        font-size: 40px;
+        color: #33a5b0;
+    }
+    .chooseWords div.tow:before{
+        content: "02";
+    }
+    .chooseWords div.three:before{
+        content: "03";
+    }
+    .chooseWords div.four:before{
+        content: "04";
+    }
+    .chooseWords div.five:before{
+        content: "05";
+    }
+    .landscapeWord{
+        writing-mode: tb-lr;
+        -webkit-writing-mode: vertical-lr;
+        writing-mode: vertical-lr;
+        position: absolute;
+        width: 80px;
+        top:0;
+        left:0;
+        height: 100%;
+        background: #32a4b0;
+        color: #fff;
+    }
+    .surgeryRelated>div{
+        position: relative;
+        padding-left: 80px;
+    }
+    .surgeryAskBtn{
+        position: absolute;
+        right: 0;
+        bottom: 20px;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        background: #32a4b0;
+        text-align: center;
+    }
+    .surgeryAskBtn a{
+        color: #fff;
+        display: block;
+        height: 100%;
+        text-decoration: none;
+    }
+    .listWordCon{
+        position: relative;
+    }
+    .photoImg{
+        border:1px solid #fff;
+        position: relative;
+        padding: 20px;
+    }
+    .photoImg:after{
+        content: " ";
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #fff;
+        transform: rotateZ(10deg);
+    }
+    .shareTle{
+        line-height: 56px;
+        display: inline-block;
+        margin: 0 auto 20px;
+        padding: 0 25px;
+        border: 1px solid #fff;
+        font-weight:normal;
+        text-align: center;
+        font-size: 20px;
+    }
+    .inlineCenter{
+        text-align: center;
+    }
+    .shareImgCon{
+        padding: 20px;
+        border: 1px solid #fff;
+    }
+    .shareWordCon{
+        margin: 30px 0;
+    }
+    .shareWordLast{
+        float: left;
+        width: 600px;
+        margin-left: 200px;
+    }
+    @media screen and (min-width: 720px){
+        .leadWord{
+            border: 1px solid #b6b6b6;
+            line-height: 170px;
+            height: 170px;
+            padding: 0 20px;
+        }
+        .leadWord p{
+            display: inline-block;
+            line-height: 34px;
+            width: 1030px;
+            margin-left: 20px;
+            vertical-align: middle;
+        }
+        .leadWord img,.correctRefractive img{
+            vertical-align: middle;
+        }
+        .choose{
+            width: 550px;
+            text-align: center;
+            border: 1px solid #fff;
+            padding: 20px 0;
+            font-size: 28px;
+        }
+        .choose p{
+            margin-bottom: 20px;
+        }
+        .chooseWords{
+            width: 455px;
+            margin-right: 40px;
+        }
+        .surgeryRelated>div{
+            height: 290px;
+            margin-bottom: 30px;
+            border: 1px solid #33a5b0;
+        }
+        .landscapeWord{
+            font-size: 26px;
+            text-align: center;
+            padding: 40px 0 40px 10px;
+        }
+        .listWordCon{
+            width: 1100px;
+            padding-left: 20px;
+        }
+        .listWordCon>.listWord{
+            width: 800px;
+            vertical-align: middle;
+            display: inline-block;
+            margin-left: 20px;
+            line-height: 46px;
+            font-size: 16px;
+        }
+        .listWordCon{
+            height: 290px;
+            line-height: 290px;
+        }
+        .listWordCon img{
+            vertical-align: middle;
+        }
+        .shareWord{
+            width: 580px;
+        }
+    }
+    @media screen and (min-width: 320px) and (max-width: 720px){
+        body{
+            font-size: 0.3rem;
+            line-height: 0.48rem;
+        }
+        .bannerSmall{
+            display: block;
+        }
+        .bannerLarge{
+            display: none;
+        }
+        .main{
+            width: 100%;
+            padding: 0 0.1rem;
+        }
+        .leadWord img{
+            float: left;
+            margin: 0.1rem 0.1rem 0.1rem 0;
+        }
+        .eyeTle h5{
+            font-size: 0.48rem;
+        }
+        .eyeTle p{
+            font-size: 0.36rem;
+        }
+        .refractiveCon{
+            padding: 0;
+        }
+        .refractiveCon>div{
+            width: 100%;
+            padding: 0 0.1rem;
+            margin-bottom: 0.2rem;
+            font-size: 0.28rem;
+        }
+        .correctRefractive{
+            height: auto;
+        }
+        .correctRefractive img{
+            float: left;
+            margin-top: 0.1rem;
+            width: 2.8rem;
+        }
+        .correctRefractive>div{
+            width: 100%;
+            line-height: 0.4rem;
+            margin-bottom: 0.6rem;
+        }
+        .correctRefractive>div>div{
+            height: 0.7rem;
+            line-height: 0.7rem;
+        }
+        .correctRefractive>div>p{
+            width: auto;
+            display: block;
+        }
+        .choose>p{
+            line-height: 1rem;
+            font-size: 0.4rem;
+            background: #fff;
+            margin-bottom: 0.2rem;
+            color: #33a5b0;
+            text-align: center;
+        }
+        .choose img{
+            width: 100%;
+        }
+        .landscapeWord{
+            width: 0.8rem;
+            padding: 0.1rem;
+            font-size: 0.36rem;
+            text-align: center;
+        }
+        .surgeryRelated>div{
+            border: 1px solid #33a5b0;
+            overflow: hidden;
+            padding-left: 0.9rem;
+            padding-top: 0.1rem;
+            margin: 0.3rem 0;
+        }
+        .listWordCon{
+            padding-right: 0.1rem;
+        }
+        .listWordCon img{
+            width: 100%;
+        }
+        .btnTopCon{
+            margin-bottom: 1rem;
+        }
+        .surgeryAskBtn{
+            right: 0.11rem;
+            bottom: 0.1rem;
+            width: 98%;
+        }
+        .photoImg,.shareImgCon{
+            width: 100%;
+            margin-bottom: 0.2rem;
+        }
+        .photoImg img,.shareImgCon img{
+            width: 100%;
+        }
+        .photoImg:after{
+            border: 0;
+        }
+        .shareWord p,.shareWordLast p{
+            color: #393631;
+        }
+        .shareWordLast{
+            margin: 0;
+            line-height: 0.5rem;
+            width: auto;
+        }
+        .inlineCenter h5{
+            font-size: 0.36rem;
+            padding: 0 0.15rem;
+        }
+        .triangleDiv:after{
+            border: 0.25rem solid transparent;
+            border-top: 0.4rem solid #33a5b0;
+            margin-left: -0.2rem;
+            bottom: -0.6rem;
+        }
+    }
+
+    /*眼健康档案*/
+    .blueTle{
+        color: #0062a0;
+        font-size: 24px;
+    }
+    .orangeTle{
+        font-size: 16px;
+        color: #f39800;
+    }
+
+    .pad20{
+        padding: 20px;
+    }
+    .marR20{
+        margin-right: 20px;
+    }
+    .font16{
+        font-size: 16px;
+    }
+    .record_topWord .noIndent p{
+        color: #0062a0;
+    }
+    .width550{
+        width: 550px;
+    }
+    .topBanner{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .topBanner img{
+        width: 100%;
+        display: block;
+    }
+    .largeTle{
+        font-size: 36px;
+        color: #333333;
+        text-align: center;
+        line-height: 48px;
+        margin: 15px 0;
+    }
+    .eyeImportant>div>div{
+        width: 550px;
+        height: 210px;
+        line-height: 210px;
+        background: #f1f1f1;
+        padding: 0 25px;
+        margin-top: 18px;
+    }
+    .eyeImportant>div>div>p{
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 30px;
+    }
+    .orangeBorTle{
+        border: 2px solid #e99314;
+        line-height: 45px;
+        text-align: center;
+    }
+    .eyeTest span,.eyeTest em{
+        display: inline-block;
+        border-radius: 50%;
+        text-align: center;
+    }
+    .eyeTest span{
+        width: 54px;
+        height: 54px;
+        border: 1px solid #b9baba;
+        margin-right: 20px;
+    }
+    .eyeTest em{
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        background: #e99314;
+        margin-top: 2px;
+        color: #fff;
+    }
+    .phoneNav,.phoneShow{
+        display: none;
+    }
+    .careEye>.width550>p,.careEye>.width520>p{
+        margin-bottom: 30px;
+    }
+    .width520{
+        width: 520px;
+    }
+    .fundusImgs div{
+        width: 100%;
+        border: 2px solid #e99314;
+    }
+    .fundusImgs div p{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .fundusImgs img{
+        vertical-align: middle;
+    }
+    .eyeArchives li{
+        float: left;
+    }
+    .eyeArchives li span{
+        text-align: center;
+        display: inline-block;
+        border-radius: 50%;
+        background: #f39800;
+        color: #fff;
+    }
+    @media screen and (min-width: 720px){
+        .indent2,.indent2 p{
+            text-indent: 34px;
+        }
+        .noIndent,.noIndent p{
+            text-indent: 0;
+        }
+        .borderContent,.borderContent:before{
+            border: 2px solid #e99314;
+            border-radius: 8px;
+        }
+        .borderContent{
+            font-size: 16px;
+        }
+        .borderContent{
+            width: 1140px;
+            padding: 30px 80px;
+            margin: 75px auto;
+            position: relative;
+        }
+        .borderContent:before{
+            content: " ";
+            width: 1060px;
+            height: 520px;
+            position: absolute;
+            left: 35px;
+            top: -50px;
+        }
+        .fundusImgs li{
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .fundusImgs div{
+            height: 120px;
+            line-height: 120px;
+            border-radius: 60px;
+            padding: 0 30px;
+        }
+        .fundusImgs div p{
+            width: 980px;
+        }
+        .fundusImgs div p{
+            line-height: 30px;
+        }
+        .flFundusImgs div:first-child{
+            width: 415px;
+        }
+        .flFundusImgs div:last-child{
+            width: 685px;
+        }
+        .flFundusImgs div:first-child p{
+            width: 225px;
+        }
+        .flFundusImgs div:last-child p{
+            width: 495px;
+            margin-right: 20px;
+        }
+        .fundusImgs img{
+            margin-top: 10px;
+        }
+        .fundusImgs img.fl{
+            margin-right: 10px;
+        }
+        .eyeArchives{
+            overflow: hidden;
+        }
+        .eyeArchives li{
+            width: 20%;
+            line-height: 58px;
+        }
+        .eyeArchives li span{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            margin-right: 10px;
+        }
+        .ourAdvantageList{
+            padding: 0 60px;
+        }
+        .ourAdvantageList li{
+            width: 460px;
+        }
+        .ourAdvantageList li p{
+            margin-bottom: 10px;
+        }
+    }
+    @media screen and (min-width: 320px) and (max-width: 720px){
+        .pcShow,.record_topWord .pcShow{
+            display: none;
+        }
+        .phoneShow{
+            display: block;
+        }
+        .phoneNav{
+            display: block;
+            padding-top: 0.2rem;
+        }
+        .phoneNav li{
+            width: 2.1rem;
+            height: 0.7rem;
+            line-height: 0.7rem;
+            float: left;
+            background: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 0.05rem;
+            text-align: center;
+            margin: 0 0.2rem 0.2rem 0;
+        }
+        .phoneNav li.active{
+            background: #0062a0;
+            border: 1px solid #0062a0;
+            color: #fff;
+        }
+        .phoneNav li.noMar{
+            margin: 0 0 0.2rem 0;
+        }
+        .topBanner{
+            width: 100%;
+        }
+        .record_topWord p{
+            margin-bottom: 0.2rem;
+        }
+        .noIndent p{
+            margin-bottom: 0;
+        }
+        .record_topWord img{
+            display: block;
+            margin-left: 1.1rem;
+            width: 4.6rem;
+        }
+        .phonePad{
+            padding: 0 0.1rem;
+        }
+        .largeTle{
+            font-size: 0.36rem;
+            line-height: 0.48rem;
+            margin: 0.3rem 0;
+        }
+        .eyeImportant>div>div{
+            width: 100%;
+            height: auto;
+            padding: 0.2rem;
+        }
+        .width550,.width520{
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+        .blueTle{
+            font-size: 0.32rem;
+        }
+        .eyeTest span{
+            width: 0.65rem;
+            height: 0.65rem;
+            border: 0;
+            margin-right: 0.1rem;
+        }
+        .eyeTest em{
+            width: 0.55rem;
+            height: 0.55rem;
+            line-height: 0.55rem;
+        }
+        .borderContent{
+            line-height: 0.5rem;
+        }
+        .borderContent p b{
+            padding: 0.1rem 0;
+            display: block;
+        }
+        .borderContent{
+            border: 1px solid #e99314;
+            padding: 0.2rem;
+            margin: 0.2rem 0.1rem;
+        }
+        .fundusImgs div{
+            border-radius: 0.8rem;
+            margin: 0.3rem 0;
+            padding: 0.2rem 0.2rem;
+        }
+        .fundusImgs div p{
+            width: auto;
+            display: block;
+        }
+        .flFundusImgs div:first-child p{
+            line-height: 1.6rem;
+        }
+        .fundusImgs img{
+            width: 1.5rem;
+        }
+        .eyeArchives li{
+            width: 50%;
+            line-height: 0.8rem;
+        }
+        .eyeArchives li span{
+            width: 0.5rem;
+            height: 0.5rem;
+            line-height: 0.5rem;
+            font-size: 0.28rem;
+            margin-right: 0.1rem;
+        }
+        .ourAdvantageList{
+            padding-bottom: 0.5rem;
+        }
+        .ourAdvantageList li{
+            width: 100%;
+            float: none;
+            margin-bottom: 0.3rem;
+        }
+        .ourAdvantageList li p{
+            margin-bottom: 0.1rem;
+        }
+        .ourAdvantageList li img{
+            width: 100%;
+        }
+        .archivesOne{
+            display: none;
+        }
+        .firstArchives{
+            display: block;
+        }
+
+    }
+    /*眼健康档案*/
+</style>
+<a href="https://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">
+    <div class="bannerLarge"></div>
+</a>
+<a href="https://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">
+    <div class="bannerSmall">
+        <%= image_tag("yk-bannner_s.jpg") %>
+    </div>
+</a>
+<div class="whiteBg marT30">
+    <div class="main">
+        <div class="leadWord">
+            <%= image_tag("leadWord.jpg") %>
+            <p>手机拍照永远对不准焦距，整个世界都渐行渐远渐迷蒙，像嫉妒蔑视一般，一不小心就会落下高傲的名声；早晨醒来，第一件事是摸眼镜，摸不到眼镜就会惊恐万分，每到暑期来临，学生党为了报考警校军校，爱美人士为了告别眼、隐形纷纷选择了近视矫正手术，医院也出现近视手术扎堆儿现象。但自己适不适合做近视手术，手术方式多样怎么选择适合自己的……各种近视手术问题却成为近视人群最关心的事情。</p>
+        </div>
+        <div class="eyeTle">
+            <h5>什么是屈光不正？</h5>
+            <p>What is refractive error?</p>
+        </div>
+        <div class="refractiveCon">
+            <div class="fl">
+                <p>①　屈光不正</p>
+                <p>当眼球调节松弛状态下，来自5 m以外的平行光线，经过眼的屈光系统屈折后，不能在视网 膜上清晰成像者，包括远视、近视及散光。 </p>
+            </div>
+            <div class="fr">
+                <p>②　近视眼</p>
+                <p>眼在不使用调节时，平行光线通过眼的屈光系统屈折后，成像在视网膜的前方，这种眼的屈光状态为近视眼。</p>
+            </div>
+        </div>
+        <div class="eyeTle">
+            <h5>如何矫正屈光不正？</h5>
+            <p>How to correct refractive error?</p>
+        </div>
+        <div class="correctRefractive flow">
+            <div class="fl">
+                <%= image_tag("glass.jpg") %>
+                <p>通常情况下近视眼，经过医学验光后测定准确的度数，可以用配戴合适近视眼镜（凹透镜）加 以矫正，也可佩戴隐形眼镜（角膜接触镜）矫正。</p>
+                <div>眼镜矫正</div>
+            </div>
+            <div class="fr">
+                <%= image_tag("shImg.jpg") %>
+                <p>近视不想戴眼镜或隐性眼睛，目前最安全可靠的方法是采用激光对角膜基质层进行手术，降低瞳孔区的的角膜曲率，可以达到脱掉眼镜获得良好视力的目的。 </p>
+                <div>近视激光手术</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="blueBg marT30 triangleDiv">
+    <div class="main">
+        <div class="eyeTle padT10">
+            <h5>近视手术 你最关心的事儿</h5>
+            <p>The things you care about most about myopic surgery</p>
+        </div>
+        <div class="marT20 flow">
+            <div class="choose fl">
+                <p>你适不适合做近视手术？</p>
+                <%= image_tag("sy-about.jpg") %>
+            </div>
+            <div class="fr chooseWords">
+                <div>
+                    <p>对普通框架眼镜和隐形眼镜不适应者。</p>
+                </div>
+                <div class="tow">
+                    <p>最近两年近视度数比较稳定，每年加深不超过50度。</p>
+                </div>
+                <div class="three">
+                    <p>年满18岁以上，有健康心理状态，有摘掉眼镜的愿望。</p>
+                </div>
+                <div class="four">
+                    <p>原则上各种度数的近视、远视、散光都可以接受手术矫正，理论上近视度数在1500度以内均可以接受角膜屈光手术矫正。</p>
+                </div>
+                <div class="five">
+                    <p>经过医生检查，眼部各项指标符合手术要求。如果近视患者有急性结膜炎、角膜炎、泪囊炎、眼底出血等眼科疾病，或是全身性严重疾病（如患有糖尿病、瘢痕体质、胶原病以及影响角膜伤口愈合疾病等）的患者，都是不宜进行近视手术的。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="whiteBg marT30">
+    <div class="main surgeryRelated padT30 ">
+        <div>
+            <div class="landscapeWord fl">手术后视力可以恢复到什么程度？</div>
+            <div class="fl listWordCon">
+                <%= image_tag("listImg1.jpg") %>
+                <div class="listWord">
+                    <p>成都中医大银海眼科医院专家介绍，手术后视力基本可以恢复或接近于术前的最佳戴镜视力，个别患者甚至术后视力会超过术前最佳戴镜视力。通俗地说，也就是患者手术后不戴眼镜相当于术前戴上眼镜以后的最佳视力，但恢复时间会因患者个体差异有所区别，术后视力在一个月内可能有上下波动。</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="landscapeWord fl">近视手术需要多长时间？</div>
+            <div class="fl listWordCon">
+                <%= image_tag("listImg2.jpg") %>
+                <div class="listWord">
+                    <p>目前的全激光近视手术是激光直接经角膜上皮进行治疗，主要是完成角膜上皮切削和屈光不正的精确矫正，所以手术时间仅需数分钟。目前，近视手术都是采用表面麻醉，而且手术过程与角膜无接触，一般也不会感觉到疼痛。</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="landscapeWord fl">做了近视手术后会反弹吗？</div>
+            <div class="fl listWordCon">
+                <%= image_tag("listImg3.jpg") %>
+                <div class="listWord">
+                    <p>其实手术后没有反弹这一说法，只是有些患者本身就伴随有度数逐渐增加的情况，手术后可能存在新增度数的情况。对此，成都中医大银海眼科医院专家指出以下几种情况会再次近视：</p>
+                    <p>1、患者术前度数较高，一般800度以上的近视相比中低度近视可能性稍大；</p>
+                    <p>2、患者术前度数不稳定情况下做手术（每年度数增长超过100度），度数可能会继续进展。</p>
+                    <p>3、患者术后用眼习惯如何，不注意用眼，过度疲劳，电脑游戏，手机小说可能会再近视。</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="landscapeWord fl">做完手术后多久能跑步锻炼？</div>
+            <div class="fl listWordCon">
+                <%= image_tag("listImg4.jpg") %>
+                <div class="listWord btnTopCon">
+                    <p>近视手术后，一般第二天就可以正常跑步，两周左右就可以进行健身打球等运动。不过对于700度以上的高度近视患者来说，术后还是应当避免坐“过山车”、“蹦极、跳伞”等剧烈运动。因为高度近视本身容易导致视网膜脱离及眼底问题。</p>
+                    <div class="surgeryAskBtn">
+                        <a href="https://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">在线咨询</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="blueBg marT30 flow">
+    <div class="main">
+        <div class="eyeTle padT10">
+            <h5>术后分享体验</h5>
+            <p>postoperative sharing experience</p>
+        </div>
+        <div class="flow shareWordCon">
+            <div class="fl photoImg">
+                <%= image_tag("sy-shareImg1.jpg") %>
+            </div>
+            <div class="shareWord fr marT30">
+                <div class="inlineCenter">
+                    <h5 class="shareTle">目之所及，眼镜走开————医学博士屈光手术后有感</h5>
+                </div>
+                <p>从小学起，眼睛成为我每日必伴的“老朋友”,日影随行，离不开也放不下。戴着眼睛感觉好大的负担，户外旅游和开车带太阳镜的不便，看3D电影是两副眼镜的压力，甚至于平时理发、游乐项目、游泳都是雾里看花，一片朦胧。多年的戴镜经历，鼻梁两侧被压出深深的痕印，夏天镜腿接触皮肤，也会因为寒夜二期皮疹，早已经厌烦戴眼镜的日子。但是作为一名医生，深知眼镜的重要性和手术的风险，对手术新村顾虑，担心安全和效果，直到看见蔡司Smile3.0全飞秒系统和中国第一胎阿玛仕1050PS准分子系统走进银海眼科医院，来到我身边经过银海眼科眼视光团队细致检查，与周春阳主任一起精心制定手术方案，在全面了解蔡司全飞秒和阿玛仕1050RS千频激光设备性能以及手术期注意事项后，我略带紧张但信心满满地走进了手术室，听见机器科幻一般的语音提示，十分钟后，我严重的世界发生了变化，第一次感觉到真实世界的美好，术后一周复查视力，左右眼稳定在2.0和1.5，堪称完美。</p>
+            </div>
+        </div>
+        <div class="flow shareWordCon">
+            <div class="inlineCenter">
+                <h5 class="shareTle marB20">医学硕士成为摘镜女神，且看其摘镜之旅</h5>
+            </div>
+            <div class="flow">
+                <div class="fl shareImgCon">
+                    <%= image_tag("sy-shareImg3.jpg") %>
+                </div>
+                <div class="shareWordLast line40 marT20">
+                    <p>成都中医大附属眼科医院引进了全激光手术，简直是“全宇宙”目前最先进、最完美的设备而且医院专家团队简直是全国一流。我就毫不犹豫预约了手术。2017年6月8日，是个令人激动的日子，在进行眼部冲洗、消毒等过程后，上了手术台，让我盯住一个绿灯看了20多秒，然后给我眼睛里带了枚角膜绷带镜，整个手术时间不到1分钟就结束了。从进手术室到出手术室也不超过10分钟，简直太方便、太快捷了，果然是顶级专家和顶级设备的强强联合呀!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

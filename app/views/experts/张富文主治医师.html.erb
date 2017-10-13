@@ -1,30 +1,169 @@
-<div class="middle flow">
-    <div class="flow expDetails bottom-Mar30">
-        <p class="expertsTitle">主治医师</p>
-        <ul class="flParent BasicInformation flow">
-            <li class="expertsLeftImg">
-                <div class="fl">
-                    <%= image_tag("zzys1.jpg") %>
+<div class="doctorDetails flow whiteBg">
+    <div class="fl doctorPortrait flow">
+        <%= image_tag("zj10.jpg") %>
+        <div class="doctorBtns">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+            <%= link_to '查看排班表',medical_path(:专家排班,:anchor=>"experts_10"),:class=>"fr" %>
+        </div>
+    </div>
+    <div class="fl doctorContent flow">
+        <h5>张富文</h5>
+        <p class="doctorTitle"><span>主任医师/教授/硕士生导师</span></p>
+        <div class="doctorHonor">
+            <p>中华中医药学会眼科分会青年委员</p>
+            <p>中国中西医结合学会四川分会眼科分会常务委员</p>
+            <p>中国中医药信息学会理事</p>
+            <p>四川省中医药信息学会副会长</p>
+        </div>
+        <div class="doctorGoodAt flow">
+            <span>擅长领域：</span>
+            <p>青光眼，眼底血管性疾病，如视网膜静脉阻塞、糖尿病视网膜病变，黄斑变性，视神经病变等疑难眼底病变。中医综合综合调节治疗干眼症、视疲劳，学龄儿童和青少年视力保护，延缓控制近视发展等。</p>
+        </div>
+        <p class="seePatientTime"><span>坐诊时间:</span>周二/五上午,具体请以专家门诊时间表为准</p>
+    </div>
+</div>
+<div class="doctorIntroduce whiteBg">
+    <p>长期从事眼科学临床、教学和科研工作，并从事中医信息化管理。在临床方面从事糖尿病及并发症的研究，青光眼中西医结合治疗、视神经保护研究，以及视网膜血管性疾病的研究。作为核心成员参与了治疗糖尿病视网膜病变的中药新药‘芪明颗粒’、‘芪灯明目胶囊’的开发研究。在临床中开展各种先进的抗青光眼手术，研究青光眼的视神经保护治疗，在中药保护视神经的研究中有重要的发现，开发出保护视神经中药和滴眼液各一种。</p>
+    <p>先后主持、承担国家“十一五重大新药创制”、国家十二五重大仪器设备专项、国家自然科学基金等国家级、部省级、厅局级课题20余项，获四川省科技进步特等奖、成都市科技进步特等奖。参与编写《中华医学百科全书》“中医眼科学卷”、《中药药效研究方法学》“眼科疾病篇”等。</p>
+</div>
+<ul class="registered flow flParent">
+    <li>预约挂号</li>
+    <li>姓名：<input type="text"></li>
+    <li>联系电话：<input type="text"></li>
+    <li>预约时间：<input type="text"></li>
+    <li>预约科室：<input type="text"></li>
+    <li><a href="" class="registeredBtn">提交</a></li>
+</ul>
+<div class="membersList whiteBg flow">
+    <div class="fl teamMemberWords">团 队 成 员</div>
+    <div class="teamContainer" >
+        <ul class="teamMembers fr flParent flow" style="">
+            <!--段俊国-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj2.jpg"),expert_path(:段俊国教授) %>
                 </div>
-                <div class="fl seniority">
-                    <h5>张富文</h5>
-                    <p>主任医师</p>
-                    <div class="expertsHref">
-                        <input type="button" value="在线预约" class="online-appointment">
-                        <input type="button" value="查看排班" class="look-scheduling">
-                    </div>
+                <div class="fl memberIntroduce">
+                    <h4>段俊国</h4>
+                    <p>主任医师教授/博士生导师</p>
+                    <p>享受国务院政府津贴专家</p>
                 </div>
             </li>
-            <li class="expertsRightWord">
-                <h6>擅长领域：</h6>
-                <p>眼底出血性疾病，如视网膜静脉阻塞、糖尿病导致眼病，青光眼、视神经萎缩等视神经损害疾病。调节治疗各种眼干涩、视疲劳，中药综合保护学龄儿童和青少年视力，延缓近视的发展。</p>
+            <!--段俊国-->
+            <!--路雪婧-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj9.jpg"),expert_path(:路雪婧主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>路雪婧</h4>
+                    <p>研究员/博士生导师</p>
+                    <p>全国首批中医药传承博士后</p>
+                </div>
             </li>
+            <!--路雪婧-->
+            <!--潘学会-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj14.jpg"),expert_path(:潘学会) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>潘学会</h4>
+                    <p>副主任医师/医学硕士</p>
+                    <p>四川省医学会眼科专委会委员</p>
+                </div>
+            </li>
+            <!--潘学会-->
+            <!--陈小凤-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj17.jpg"),expert_path(:陈小凤主治医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>陈小凤</h4>
+                    <p>主治医师/医学博士</p>
+                    <p>擅长多种眼科手术</p>
+                </div>
+            </li>
+            <!--陈小凤-->
+            <!--李强-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj18.jpg"),expert_path(:李强主治医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>李强</h4>
+                    <p>主治医师/医学博士</p>
+                    <p>四川省第五批老中医药专家学术经验继承人</p>
+                </div>
+            </li>
+            <!--李强-->
+            <!--蹇文渊-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj20.jpg"),expert_path(:蹇文渊主治医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>蹇文渊</h4>
+                    <p>主治医师/医学博士/博士后</p>
+                    <p>四川省糖尿病早期筛查专业委员会委员</p>
+                </div>
+            </li>
+            <!--蹇文渊-->
+
         </ul>
-        <div class="expertsAllMessage">
-            <h6>专家简介：</h6>
-            <p>长期从事眼科学临床、教学和科研工作，并从事中医信息化管理。在临床方面从事糖尿病及并发症的研究和青光眼治疗、视神经保护研究，在临床中开展青光眼的临床开展各种先进的抗青光眼手术，研究青光眼的视神经保护治疗，在中药保护视神经的研究中有重要的发现，开发出保护视神经中药和滴眼液各一种。</p>
-            <p>先后主持、承担国家“十一五重大新药创制”、国家十二五重大仪器设备专项等国家级、部省级、厅局级课题20余项，获四川省科技进步特等奖、成都市科技进步特等奖。参与编写《中华医学百科全书》“中医眼科学卷”、《中药药效研究方法学》“眼科疾病篇”等。</p>
+        <div class="leftBtn">
+            <i class="icon_arrow icon_left"></i>
+        </div>
+        <div class="rightBtn">
+            <i class="icon_arrow icon_right"></i>
         </div>
     </div>
 </div>
+<script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+        $(".leftBtn").addClass("active");
+        $(".rightBtn").addClass("active");
+    }
+    var rightMoveNum = members-4+((parseInt($(".teamMembers").css("left"))/$(".teamMembers li").width()));
+    var leftMoveNum = 0;
+    function move() {
+        if(rightMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            console.log(nowPos+" "+displacement);
+            $(".teamMembers").animate({
+                left:nowPos-displacement
+            })
+            rightMoveNum--;
+            leftMoveNum++;
+        }
+        console.log(rightMoveNum);
+    }
+    function move2() {
+        if(leftMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos+displacement
+            })
+            rightMoveNum++;
+            leftMoveNum--;
+        }
+        console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+        if(rightMoveNum>0){
+            move();
+        }
+    })
+    $(".leftBtn").click(function() {
+        if(leftMoveNum>0){
+            move2();
+        }
+    })
 
+</script>

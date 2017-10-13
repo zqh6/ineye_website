@@ -1,0 +1,1014 @@
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<script>
+    var deviceWidth = document.documentElement.clientWidth;
+    if(deviceWidth > 720) deviceWidth = 720;
+    document.documentElement.style.fontSize = deviceWidth / 7.2 + 'px';
+</script>
+<style>
+    .blackBg,.header{
+        display: none;
+    }
+    body{
+        font-size: 14px;
+        line-height: 30px;
+        font-family: "Microsoft YaHei", "Arial", "黑体", "宋体", sans-serif;
+    }
+    body,p,ul,li,div,h1,h2,h3,h5,h4{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+    }
+    .tel p:last-child{
+        text-indent: 66px;
+    }
+    .fl{
+        float: left;
+    }
+    .fr{
+        float: right;
+    }
+    .flow{
+        overflow: hidden;
+    }
+    .main{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .whiteBg .main,.blueBg .main{
+        background: transparent;
+    }
+    .bannerSmall{
+        display: none;
+    }
+    .bannerLarge{
+        width: 100%;
+        min-width: 1200px;
+        height: 550px;
+        background: url("/assets/yk-banner.jpg") center 0 no-repeat;
+    }
+    .bannerLarge img,.bannerSmall img{
+        display: block;
+    }
+    .marT30{
+        margin-top: 30px;
+    }
+    .marT20{
+        margin-top: 20px;
+    }
+    .marB20{
+        margin-bottom: 20px;
+    }
+    .marB30{
+        margin-bottom: 30px;
+    }
+    .padT10{
+        padding-top: 10px;
+    }
+    .padT30{
+        padding-top: 30px;
+    }
+    .line40{
+        line-height: 40px;
+    }
+    .whiteBg{
+        background: #fff;
+    }
+    .blueBg{
+        background: #32a4b0;
+        color: #fff;
+        height: auto;
+    }
+    .blueBg .eyeTle,.blueBg .eyeTle h5{
+        color: #fff;
+    }
+    .bannerSmall img{
+        width: 100%;
+    }
+    .eyeTle{
+        text-align: center;
+        font-size: 24px;
+        color: #999;
+        margin: 15px 0;
+    }
+    .eyeTle h5{
+        font-size: 34px;
+        color: #33a5b0;
+        line-height: 40px;
+        font-weight: normal;
+    }
+    .refractiveCon>div{
+        width: 455px;
+        height: 190px;
+        background: #33a5b0;
+        color: #fff;
+        font-size: 16px;
+        line-height: 40px;
+        padding: 15px 30px;
+        position: relative;
+    }
+    .refractiveCon p:first-child{
+        font-size: 20px;
+    }
+    .refractiveCon{
+        overflow: hidden;
+        padding: 30px 35px 30px 65px;
+    }
+    .refractiveCon>div:before{
+        position: absolute;
+        content: " ";
+        width: 100%;
+        height: 100%;
+        border: 1px solid #33a5b0;
+        left: -30px;
+        top: -20px;
+    }
+    .correctRefractive{
+        height: 220px;
+    }
+    .correctRefractive>div{
+        width: 560px;
+        height: 176px;
+        padding-left: 10px;
+        line-height: 176px;
+        background: #f1f1f1;
+        position: relative;
+    }
+    .correctRefractive>div>p{
+        display: inline-block;
+        line-height: 26px;
+        vertical-align: middle;
+        width: 350px;
+    }
+    .correctRefractive>div>div{
+        position: absolute;
+        background: #33a5b0;
+        height: 40px;
+        width: 260px;
+        margin-left: -130px;
+        left: 50%;
+        bottom: -20px;
+        text-align: center;
+        line-height: 40px;
+        color: #fff;
+        font-size: 20px;
+    }
+    .triangleDiv{
+        position: relative;
+    }
+    .triangleDiv:after{
+        content: " ";
+        width: 0;
+        height: 0;
+        border: 19px solid transparent;
+        border-top:30px solid #33a5b0;
+        margin-left: -26px;
+        left: 50%;
+        bottom: -48px;
+        position: absolute;
+    }
+    .correctRefractive img{
+        margin-right: 20px;
+    }
+    .chooseWords div{
+        position: relative;
+        margin-bottom: 30px;
+        min-height: 60px;
+        line-height: 60px;
+        padding-left: 20px;
+        border: 1px solid #fff;
+    }
+    .chooseWords div p{
+        line-height:24px;
+        vertical-align: middle;
+        display: inline-block;
+        margin: 6px 0;
+    }
+    .chooseWords div:before{
+        width: 60px;
+        height: 62px;
+        line-height: 62px;
+        text-align: center;
+        background: #fff;
+        position: absolute;
+        left: -60px;
+        top: -1px;
+        content: "01";
+        font-size: 40px;
+        color: #33a5b0;
+    }
+    .chooseWords div.tow:before{
+        content: "02";
+    }
+    .chooseWords div.three:before{
+        content: "03";
+    }
+    .chooseWords div.four:before{
+        content: "04";
+    }
+    .chooseWords div.five:before{
+        content: "05";
+    }
+    .landscapeWord{
+        writing-mode: tb-lr;
+        -webkit-writing-mode: vertical-lr;
+        writing-mode: vertical-lr;
+        position: absolute;
+        width: 80px;
+        top:0;
+        left:0;
+        height: 100%;
+        background: #32a4b0;
+        color: #fff;
+    }
+    .surgeryRelated>div{
+        position: relative;
+        padding-left: 80px;
+    }
+    .surgeryAskBtn{
+        position: absolute;
+        right: 0;
+        bottom: 20px;
+        width: 100px;
+        height: 40px;
+        line-height: 40px;
+        background: #32a4b0;
+        text-align: center;
+    }
+    .surgeryAskBtn a{
+        color: #fff;
+        display: block;
+        height: 100%;
+        text-decoration: none;
+    }
+    .listWordCon{
+        position: relative;
+    }
+    .photoImg{
+        border:1px solid #fff;
+        position: relative;
+        padding: 20px;
+    }
+    .photoImg:after{
+        content: " ";
+        left: 0;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #fff;
+        transform: rotateZ(10deg);
+    }
+    .shareTle{
+        line-height: 56px;
+        display: inline-block;
+        margin: 0 auto 20px;
+        padding: 0 25px;
+        border: 1px solid #fff;
+        font-weight:normal;
+        text-align: center;
+        font-size: 20px;
+    }
+    .inlineCenter{
+        text-align: center;
+    }
+    .shareImgCon{
+        padding: 20px;
+        border: 1px solid #fff;
+    }
+    .shareWordCon{
+        margin: 30px 0;
+    }
+    .shareWordLast{
+        float: left;
+        width: 600px;
+        margin-left: 200px;
+    }
+    @media screen and (min-width: 720px){
+        .leadWord{
+            border: 1px solid #b6b6b6;
+            line-height: 170px;
+            height: 170px;
+            padding: 0 20px;
+        }
+        .leadWord p{
+            display: inline-block;
+            line-height: 34px;
+            width: 1030px;
+            margin-left: 20px;
+            vertical-align: middle;
+        }
+        .leadWord img,.correctRefractive img{
+            vertical-align: middle;
+        }
+        .choose{
+            width: 550px;
+            text-align: center;
+            border: 1px solid #fff;
+            padding: 20px 0;
+            font-size: 28px;
+        }
+        .choose p{
+            margin-bottom: 20px;
+        }
+        .chooseWords{
+            width: 455px;
+            margin-right: 40px;
+        }
+        .surgeryRelated>div{
+            height: 290px;
+            margin-bottom: 30px;
+            border: 1px solid #33a5b0;
+        }
+        .landscapeWord{
+            font-size: 26px;
+            text-align: center;
+            padding: 40px 0 40px 10px;
+        }
+        .listWordCon{
+            width: 1100px;
+            padding-left: 20px;
+        }
+        .listWordCon>.listWord{
+            width: 800px;
+            vertical-align: middle;
+            display: inline-block;
+            margin-left: 20px;
+            line-height: 46px;
+            font-size: 16px;
+        }
+        .listWordCon{
+            height: 290px;
+            line-height: 290px;
+        }
+        .listWordCon img{
+            vertical-align: middle;
+        }
+        .shareWord{
+            width: 580px;
+        }
+    }
+    @media screen and (min-width: 320px) and (max-width: 720px){
+        body{
+            font-size: 0.3rem;
+            line-height: 0.48rem;
+        }
+        .bannerSmall{
+            display: block;
+        }
+        .bannerLarge{
+            display: none;
+        }
+        .main{
+            width: 100%;
+            padding: 0 0.1rem;
+        }
+        .leadWord img{
+            float: left;
+            margin: 0.1rem 0.1rem 0.1rem 0;
+        }
+        .eyeTle h5{
+            font-size: 0.48rem;
+        }
+        .eyeTle p{
+            font-size: 0.36rem;
+        }
+        .refractiveCon{
+            padding: 0;
+        }
+        .refractiveCon>div{
+            width: 100%;
+            padding: 0 0.1rem;
+            margin-bottom: 0.2rem;
+            font-size: 0.28rem;
+        }
+        .correctRefractive{
+            height: auto;
+        }
+        .correctRefractive img{
+            float: left;
+            margin-top: 0.1rem;
+            width: 2.8rem;
+        }
+        .correctRefractive>div{
+            width: 100%;
+            line-height: 0.4rem;
+            margin-bottom: 0.6rem;
+        }
+        .correctRefractive>div>div{
+            height: 0.7rem;
+            line-height: 0.7rem;
+        }
+        .correctRefractive>div>p{
+            width: auto;
+            display: block;
+        }
+        .choose>p{
+            line-height: 1rem;
+            font-size: 0.4rem;
+            background: #fff;
+            margin-bottom: 0.2rem;
+            color: #33a5b0;
+            text-align: center;
+        }
+        .choose img{
+            width: 100%;
+        }
+        .landscapeWord{
+            width: 0.8rem;
+            padding: 0.1rem;
+            font-size: 0.36rem;
+            text-align: center;
+        }
+        .surgeryRelated>div{
+            border: 1px solid #33a5b0;
+            overflow: hidden;
+            padding-left: 0.9rem;
+            padding-top: 0.1rem;
+            margin: 0.3rem 0;
+        }
+        .listWordCon{
+            padding-right: 0.1rem;
+        }
+        .listWordCon img{
+            width: 100%;
+        }
+        .btnTopCon{
+            margin-bottom: 1rem;
+        }
+        .surgeryAskBtn{
+            right: 0.11rem;
+            bottom: 0.1rem;
+            width: 98%;
+        }
+        .photoImg,.shareImgCon{
+            width: 100%;
+            margin-bottom: 0.2rem;
+        }
+        .photoImg img,.shareImgCon img{
+            width: 100%;
+        }
+        .photoImg:after{
+            border: 0;
+        }
+        .shareWord p,.shareWordLast p{
+            color: #393631;
+        }
+        .shareWordLast{
+            margin: 0;
+            line-height: 0.5rem;
+        }
+        .inlineCenter h5{
+            font-size: 0.36rem;
+            padding: 0 0.15rem;
+        }
+        .triangleDiv:after{
+            border: 0.25rem solid transparent;
+            border-top: 0.4rem solid #33a5b0;
+            margin-left: -0.2rem;
+            bottom: -0.6rem;
+        }
+    }
+
+    /*眼健康档案*/
+    .blueTle{
+        color: #0062a0;
+        font-size: 24px;
+    }
+    .orangeTle{
+        font-size: 16px;
+        color: #f39800;
+    }
+
+    .pad20{
+        padding: 20px;
+    }
+    .marR20{
+        margin-right: 20px;
+    }
+    .font16{
+        font-size: 16px;
+    }
+    .record_topWord .noIndent p{
+        color: #0062a0;
+    }
+    .width550{
+        width: 550px;
+    }
+    .topBanner{
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .topBanner img{
+        width: 100%;
+        display: block;
+    }
+    .largeTle{
+        font-size: 36px;
+        color: #333333;
+        text-align: center;
+        line-height: 48px;
+        margin: 15px 0;
+    }
+    .eyeImportant>div>div{
+        width: 550px;
+        height: 210px;
+        line-height: 210px;
+        background: #f1f1f1;
+        padding: 0 25px;
+        margin-top: 18px;
+    }
+    .eyeImportant>div>div>p{
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 30px;
+    }
+    .orangeBorTle{
+        border: 2px solid #e99314;
+        line-height: 45px;
+        text-align: center;
+    }
+    .eyeTest span,.eyeTest em{
+        display: inline-block;
+        border-radius: 50%;
+        text-align: center;
+    }
+    .eyeTest span{
+        width: 54px;
+        height: 54px;
+        border: 1px solid #b9baba;
+        margin-right: 20px;
+    }
+    .eyeTest em{
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        background: #e99314;
+        margin-top: 2px;
+        color: #fff;
+    }
+    .phoneNav,.phoneShow{
+        display: none;
+    }
+    .careEye>.width550>p,.careEye>.width520>p{
+        margin-bottom: 30px;
+    }
+    .width520{
+        width: 520px;
+    }
+    .fundusImgs div{
+        width: 100%;
+        border: 2px solid #e99314;
+    }
+    .fundusImgs div p{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .fundusImgs img{
+        vertical-align: middle;
+    }
+    .eyeArchives li{
+        float: left;
+    }
+    .eyeArchives li span{
+        text-align: center;
+        display: inline-block;
+        border-radius: 50%;
+        background: #f39800;
+        color: #fff;
+    }
+    @media screen and (min-width: 720px){
+        .indent2,.indent2 p{
+            text-indent: 34px;
+        }
+        .noIndent,.noIndent p{
+            text-indent: 0;
+        }
+        .borderContent,.borderContent:before{
+            border: 2px solid #e99314;
+            border-radius: 8px;
+        }
+        .borderContent{
+            font-size: 16px;
+        }
+        .borderContent{
+            width: 1140px;
+            padding: 30px 80px;
+            margin: 75px auto;
+            position: relative;
+        }
+        .borderContent:before{
+            content: " ";
+            width: 1060px;
+            height: 520px;
+            position: absolute;
+            left: 35px;
+            top: -50px;
+        }
+        .fundusImgs li{
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .fundusImgs div{
+            height: 120px;
+            line-height: 120px;
+            border-radius: 60px;
+            padding: 0 30px;
+        }
+        .fundusImgs div p{
+            width: 980px;
+        }
+        .fundusImgs div p{
+            line-height: 30px;
+        }
+        .flFundusImgs div:first-child{
+            width: 415px;
+        }
+        .flFundusImgs div:last-child{
+            width: 685px;
+        }
+        .flFundusImgs div:first-child p{
+            width: 225px;
+        }
+        .flFundusImgs div:last-child p{
+            width: 495px;
+            margin-right: 20px;
+        }
+        .fundusImgs img{
+            margin-top: 10px;
+        }
+        .fundusImgs img.fl{
+            margin-right: 10px;
+        }
+        .eyeArchives{
+            overflow: hidden;
+        }
+        .eyeArchives li{
+            width: 20%;
+            line-height: 58px;
+        }
+        .eyeArchives li span{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            margin-right: 10px;
+        }
+        .ourAdvantageList{
+            padding: 0 60px;
+        }
+        .ourAdvantageList li{
+            width: 460px;
+        }
+        .ourAdvantageList li p{
+            margin-bottom: 10px;
+        }
+    }
+    @media screen and (min-width: 320px) and (max-width: 720px){
+        .pcShow,.record_topWord .pcShow{
+            display: none;
+        }
+        .phoneShow{
+            display: block;
+        }
+        .phoneNav{
+            display: block;
+            padding-top: 0.2rem;
+        }
+        .phoneNav li{
+            width: 2.1rem;
+            height: 0.7rem;
+            line-height: 0.7rem;
+            float: left;
+            background: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 0.05rem;
+            text-align: center;
+            margin: 0 0.2rem 0.2rem 0;
+        }
+        .phoneNav li.active{
+            background: #0062a0;
+            border: 1px solid #0062a0;
+            color: #fff;
+        }
+        .phoneNav li.noMar{
+            margin: 0 0 0.2rem 0;
+        }
+        .topBanner{
+            width: 100%;
+        }
+        .record_topWord p{
+            margin-bottom: 0.2rem;
+        }
+        .noIndent p{
+            margin-bottom: 0;
+        }
+        .record_topWord img{
+            display: block;
+            margin-left: 1.1rem;
+            width: 4.6rem;
+        }
+        .phonePad{
+            padding: 0 0.1rem;
+        }
+        .largeTle{
+            font-size: 0.36rem;
+            line-height: 0.48rem;
+            margin: 0.3rem 0;
+        }
+        .eyeImportant>div>div{
+            width: 100%;
+            height: auto;
+            padding: 0.2rem;
+        }
+        .width550,.width520{
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+        .blueTle{
+            font-size: 0.32rem;
+        }
+        .eyeTest span{
+            width: 0.65rem;
+            height: 0.65rem;
+            border: 0;
+            margin-right: 0.1rem;
+        }
+        .eyeTest em{
+            width: 0.55rem;
+            height: 0.55rem;
+            line-height: 0.55rem;
+        }
+        .borderContent{
+            line-height: 0.5rem;
+        }
+        .borderContent p b{
+            padding: 0.1rem 0;
+            display: block;
+        }
+        .borderContent{
+            border: 1px solid #e99314;
+            padding: 0.2rem;
+            margin: 0.2rem 0.1rem;
+        }
+        .fundusImgs div{
+            border-radius: 0.8rem;
+            margin: 0.3rem 0;
+            padding: 0.2rem 0.2rem;
+        }
+        .fundusImgs div p{
+            width: auto;
+            display: block;
+        }
+        .flFundusImgs div:first-child p{
+            line-height: 1.6rem;
+        }
+        .fundusImgs img{
+            width: 1.5rem;
+        }
+        .eyeArchives li{
+            width: 50%;
+            line-height: 0.8rem;
+        }
+        .eyeArchives li span{
+            width: 0.5rem;
+            height: 0.5rem;
+            line-height: 0.5rem;
+            font-size: 0.28rem;
+            margin-right: 0.1rem;
+        }
+        .ourAdvantageList{
+            padding-bottom: 0.5rem;
+        }
+        .ourAdvantageList li{
+            width: 100%;
+            float: none;
+            margin-bottom: 0.3rem;
+        }
+        .ourAdvantageList li p{
+            margin-bottom: 0.1rem;
+        }
+        .ourAdvantageList li img{
+            width: 100%;
+        }
+        .ourAdvantageList span{
+            display: none;
+        }
+        .archivesOne{
+            display: none;
+        }
+        .firstArchives{
+            display: block;
+        }
+
+    }
+    /*眼健康档案*/
+</style>
+<div class="topBanner">
+    <img src="/assets/da_banner.jpg" alt="">
+</div>
+<div class="main">
+    <div class="pad20 phonePad whiteBg">
+        <ul class="phoneNav flow phoneNavBtn">
+            <li class="active" id="0">检查必要性</li>
+            <li id="1">常见检查</li>
+            <li class="noMar" id="2">尽早检查</li>
+            <li id="3">疾病预知</li>
+            <li id="4">提早发现</li>
+            <li class="noMar" id="5">我们的优势</li>
+        </ul>
+        <div class="archivesModules">
+            <div class="archivesOne firstArchives">
+                <div class="indent2 record_topWord font16 flow">
+                    <%= image_tag("da_titleLeft.jpg",:class => "fl marR20 pcShow") %>
+                    <p>眼睛不适是许多症状的外在表现。很多情况下，不是眼睛有问题，而是身体其他部位出现病变。当我们到医院的外科或内科等科就诊时，常碰到医生建议去眼科会诊，要求检查眼睛。这些都是眼科检查的重要性与必要性。</p>
+                    <p>然而，没有感到眼睛不适时，为何医生还要要求检查眼睛？</p>
+                    <p>这是因为许多全身性疾病与眼睛有着密切关系。从眼部检查不仅可以查知全身性疾病，眼睑、结膜、眼球等部位的一些症状，同样也是一些全身性疾病的“暗号”。通过检查眼睛，可以：</p>
+                    <div class="noIndent">
+                        <p>1.帮助全身性疾病明确诊断；</p>
+                        <p>2.对全身性疾病进行有目的治疗；</p>
+                        <p>3.估计全身性疾病的预后。</p>
+                    </div>
+                    <%= image_tag("da_titleLeft.jpg",:class => "phoneShow marT20") %>
+                </div>
+                <p class="largeTle">重视眼部检查的必要性</p>
+                <div class="eyeImportant flow">
+                    <div class="fl marB20">
+                        <p class="orangeBorTle blueTle">婴幼儿期</p>
+                        <div>
+                            <p>在婴幼儿期，一些眼部有异常体征的婴儿、有眼部病变高危因素的，相应进行眼部体检的机会可能较多。但其他看似正常健康的婴儿，也应定期检查眼睛。流行病学调查发现，小儿低视力的发病率和可治愈率与早发现有密切关系，一岁时由专业眼科医生检查是目前认为最合理的普查方式。</p>
+                        </div>
+                    </div>
+                    <div class="fr marB20">
+                        <p class="orangeBorTle blueTle">学龄前与学龄期</p>
+                        <div>
+                            <p>学龄前期与学龄期，这一阶段的幼儿已经能够理解及配合许多眼科检查。如视力、眼位及双眼视功能等，而且这段时间还是视功能的可塑阶段，通过定期普查，可及早发现和治疗弱视、斜视等。另外定期检查，在医生的指导下合理用眼，有助于近视的防治。</p>
+                        </div>
+                    </div>
+                    <div class="fl">
+                        <p class="orangeBorTle blueTle">中青年期</p>
+                        <div>
+                            <p>在中青年期，这一年龄段的眼部检查，主要针对有眼部疾病遗传因素及全身高危因素的人群。如家族中有青光眼、视网膜色素变性、视网膜脱离等疾病史，应定期检查。除常规眼科检查外，还有相应的特殊检查。中高度近视患者也应定期检查眼底，以便早期发现视网膜变性、小裂孔，可防患于未然。糖尿病患者眼部检查的重要性是再怎么强调也不为过。</p>
+                        </div>
+                    </div>
+                    <div class="fr">
+                        <p class="orangeBorTle blueTle">中老年期</p>
+                        <div>
+                            <p>在中老年期，随着年龄的增长，心血管疾病发生率增加，而眼底检查是全身体检中，唯一能够直接早期发现心血管疾病在全身表现的一个窗口。另外眼部的一些年龄相关性病变，如白内障、老年性黄斑变性的发病率也随着年龄增长而明显增加。其中黄斑变性目前还没有很好的预防和治疗方法，通过早期检查早期发现，可治疗病变是目前保持有用视力最有效的手段。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="archivesOne eyeTestCon">
+                <p class="largeTle">常见的眼部检查</p>
+                <div class="flow">
+                    <div class="fl width550">
+                        <p class="blueTle eyeTest"><span><em>1</em></span>视力检查</p>
+                        <p class="marB30"><span class="orangeTle">A．</span>近视，现在已经成为严重危害青少年尤其是学生视力健康的一个严重问题。6-12岁的小学阶段是维护眼健康最 重要的阶段，在这个年龄段，孩子的眼球处于一生中发育最快的时期，稍不注意，就会发生眼部健康问题，从而影响孩子的一生。因此，不论孩子是否视物模糊，都应定期带孩子进行专业的眼部检查，给孩子建立属于他自己的眼健康档案，从而对孩子的眼部健康乃至全身健康了如指掌。</p>
+                        <p><span class="orangeTle">B．</span>远视，又称老花眼。一般人40岁以上就可能出现老花，严重影响中老年人的工作效率和生活质量。建立属于自己的眼健康档案，定期进行眼部检查，随时关注眼部健康，这是对自己和家人负责的体现。</p>
+                    </div>
+                    <div class="fr width550">
+                        <p class="blueTle eyeTest"><span><em>2</em></span>青光眼检查</p>
+                        <p>在40岁以上的正常人群中，每50人中就有一个患病者，而有些类型的青光眼患者，大多无任何自觉症状，就是靠每年一次的健康体检查出来的。急性闭角型青光眼可以表现出眼睛胀痛、头痛、视物模糊，恶心、呕吐、看灯光周围有彩环，甚至视力骤然下降等明显症状。</p>
+                        <p class="blueTle eyeTest marT30"><span><em>3</em></span>白内障检查</p>
+                        <p>白内障的相关因素很多，先天性白内障、并发性白内障、代谢性白内障、中毒性白内障、外伤性白内障辐射性白内障、后发性白内障以及与白内障有关的综合症，但以老年性白内障最为常见，50～60岁的人有60%～70%患有白内障，若不及时检查治疗，可能会导致患者眼睛失明。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="archivesOne flow careEye">
+                <p class="largeTle">当眼睛出现以下这些情况的时候，一定要小心处理，尽早检查</p>
+                <div class="fl width550">
+                    <p><span class="orangeTle">●  眉毛脱落</span>——甲亢或甲减。眉毛会随着衰老而逐渐稀疏。但是眉毛外侧脱落1/3则是甲状腺疾病(甲亢或甲减)的症状,发现症状应及时就医。</p>
+                    <p><span class="orangeTle">●  眼睛发干畏光</span>——干燥综合征。干燥综合征是一种慢性、系统性的自身免疫性外分泌腺病变,常见于40岁以上女性类风湿关节炎或狼疮患者。眼干畏光和口干一般同时发生。建议一定要及时就医。</p>
+                    <p><span class="orangeTle">●  眼睑处长黄斑</span>——胆固醇过高。眼睑处长黄斑是因胆固醇过高而在眼睑部位形成的脂肪堆积物。</p>
+                    <p><span class="orangeTle">●  眼睛分泌物增多</span>——眼睑炎。眼睛分泌物增多是眼睑炎所致,而该病通常与掉头屑和痤疮关系密切。伴随症状包括:眼灼痛、流泪或者干涩。</p>
+                    <p><span class="orangeTle">●  视野出现盲点、闪光或波浪线</span>——偏头痛。大脑血流变化是其病因。开车时出现这一症状,应立即停车休息。症状超过1小时,应看医生,若伴有发烧、肌无力或言语模糊,则应考虑中风危险,必须赶紧就医。</p>
+                    <p><span class="orangeTle">●  突然发生重影、眼前发暗或者看不见东西</span>——中风。除了视觉变化之外,中风症状还包括:四肢或面部(特别是一侧)突然麻木或无力、步行困难、眩晕、
+                        失去平衡或协调能力、说话不清或头痛难忍,建议立即就诊。</p>
+                </div>
+                <div class="fr width520">
+                    <p><span class="orangeTle">●  消不掉的麦粒肿</span>——皮脂腺癌。如果眼睑内外出现的红色小包(麦粒肿)3个月不消失或者反复在同一处出现,并出现睫毛脱落,应当心皮脂腺癌。建议早做
+                        诊断,手术摘除。</p>
+                    <p><span class="orangeTle">●  眼睑莫名水肿</span>——可能是由肾炎、慢性肝病、营养不良、贫血、血管神经性水肿等。</p>
+                    <p><span class="orangeTle">●  结膜发黄</span>——急性或慢性肝病引发的黄疸所致。</p>
+                    <p><span class="orangeTle">●  结膜下大片出血</span>——高血压和动脉硬化最常见。</p>
+                    <p><span class="orangeTle">●  突然出现的双眼眼球下陷</span>——严重脱水或老人眼眶内脂肪萎缩导致。</p>
+                    <p><span class="orangeTle">●  瞳孔缩小</span>——虹膜炎症、中毒、药物反应等。</p>
+                    <p><span class="orangeTle">●  瞳孔扩大</span>——外伤、视神经萎缩等。</p>
+                    <p><span class="orangeTle">●  如果两边瞳孔不一样大小，且对光线反应微弱</span>——可能是中脑功能受到损害，应尽早到相关科室检查、确诊。</p>
+                </div>
+            </div>
+
+            <div class="archivesOne">
+                <p class="largeTle">哪些常见的全身疾病可由眼睛检查中预知呢</p>
+                <p class="blueTle marT20">● 眼外观异常</p>
+                <div class="borderContent">
+                    <p class="noIndent"><b>结膜下出血：</b></p>
+                    <p>1、外伤性；2、自发性:中老年、高血脂、高血压等</p>
+                    <p class="noIndent">葡萄膜炎（常见致盲性眼病）：</p>
+                    <p>1、感染性：细菌、病毒、真 菌、立克次氏体、原虫、寄生虫等感染；2、非感染性：物理、化学、损伤等外源性因素引起的变态反应和由坏死肿瘤或变性组织等内源性因素引起的反应，微生物（如组织胞浆菌）或自身抗原（如晶状体源性和交感性眼炎）</p>
+                    <p class="noIndent"><b>甲亢突眼</b></p>
+                    <p class="noIndent"><b>巩膜黄染：</b></p>
+                    <p>新生儿黄疸、活动性肝炎、甲肝</p>
+                    <p class="noIndent"><b>Wilson's病患者角膜边缘的K-F环：</b></p>
+                    <p>常染色体隐性遗传性、先天性铜代谢障碍性疾病，以肝损害、锥体外系症状与角膜色素环为主要表现</p>
+                    <p class="noIndent"><b>晶体异位：</b></p>
+                    <p>1.外伤性晶状体脱位或半脱位； 2.先天性晶状体脱位与半脱位马凡氏综合征（Marfan氏综合征）</p>
+                </div>
+                <p class="blueTle marT20">● 眼底异常（出血、渗出、增生等）</p>
+                <ul class="fundusImgs">
+                    <li class="flFundusImgs flow">
+                        <div class="fl">
+                            <%= image_tag("yd_img1.png",:class => "fl") %>
+                            <p>  正常眼底</p>
+                        </div>
+                        <div class="fr">
+                            <%= image_tag("yd_img2.png",:class => "fr") %>
+                            <p>肾炎、白血病、贫血、心脏病、急性传染病等多种疾病都可能引起视网膜血管的改变，造成眼底出血和玻璃体积血。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <%= image_tag("yd_img3.jpg",:class => "fl") %>
+                            <p>  神经系统的疾病，尤其是颅脑疾患，也需要通过检查眼底来观察视神经乳头的改变，以此为诊断颅内病变提供可靠依据，如脑水肿、脑出血、脑肿瘤、脑炎以及脑血管畸形，都可能引起视神经乳头水肿。底出血和玻璃体积血。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <%= image_tag("yd_img4.jpg",:class => "fr") %>
+                            <p>原发性高血压病人，当病程发展到一定程度时，可以使眼底视网膜上的血管特别是动脉血管发生改变，出现小动脉壁硬化，视网膜上会出现水肿、出血、渗出等，严重的可导致视神经乳头的改变。此时可以通过检查眼底来了解高血压的轻重程度，确定治疗方案和作为高血压病人预后的判定依据。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <%= image_tag("yd_img5.jpg",:class => "fl") %>
+                            <p>糖尿病病人，可在全身其他器官出现器质性病变前就已经产生眼部病变，在患病中、后期，更会出现视网膜病变等并发症，可引起视网膜上微血管的形成以及出血，硬性渗出，软性渗出，还可导致增殖性改变，进而引起视网膜脱离，最后导致视力完全丧失。通过适时的眼部检查可以帮助我们及早发现糖尿病，及时进行治疗。方案和作为高血压病人预后的判定依据。</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <%= image_tag("yd_img6.jpg",:class => "fr") %>
+                            <p>妇产科常见的妊娠高血压综合症，也可通过眼底来了解其轻重程度，甚至决定是否需要中止妊娠，以保孕妇的安全。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="archivesOne">
+                <p class="largeTle">早发现，早治疗</p>
+                <p>　　很多人的眼底或其他部位出现了问题却浑然不知，直到出现明显的看东西模糊的症状，才去就医，或者自购眼水等，也许会导致眼病加重或耽误其他病症的治疗。建议所有人应该一年做一次专业的眼部检查，而学生和有“三高”等病史的人群则最好一个季度或者半年做一次检查。对于一些特殊行业甚至需要每个月检查一次。</p>
+                <p class="blueTle marT20">解决方案——建立您的个人眼健康档案</p>
+                <ul class="eyeArchives">
+                    <li><span>01</span>近视力</li>
+                    <li><span>02</span>远视力</li>
+                    <li><span>03</span>眼压</li>
+                    <li><span>04</span>电脑验光</li>
+                    <li><span>05</span>医学验光</li>
+                    <li><span>06</span>老视检查</li>
+                    <li><span>07</span>斜视筛查</li>
+                    <li><span>08</span>裂隙检查</li>
+                    <li><span>09</span>色盲色弱检查</li>
+                    <li><span>10</span>三维眼前节检查</li>
+                    <li><span>11</span>综合验光</li>
+                    <li><span>12</span>眼轴检查</li>
+                    <li><span>13</span>泪液分泌</li>
+                    <li><span>14</span>眼底检查</li>
+                </ul>
+            </div>
+
+            <div class="archivesOne">
+                <p class="largeTle">我们的优势</p>
+                <ul class="ourAdvantageList flow">
+                    <li class="fl">
+                        <p class="blueTle"><span>● </span>专业的眼科医护人员</p>
+                        <%= image_tag("our_adv1.jpg") %>
+                    </li>
+                    <li class="fr">
+                        <p class="blueTle"><span>● </span>先进的眼科检查设备</p>
+                        <%= image_tag("our_adv2.jpg") %>
+                    </li>
+                    <li class="fl">
+                        <p class="blueTle"><span>● </span>全面精准的检查项目</p>
+                        <%= image_tag("our_adv3.jpg") %>
+                    </li>
+                    <li class="fr">
+                        <p class="blueTle"><span>● </span>安全强大的后台存储</p>
+                        <%= image_tag("our_adv4.jpg") %>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    $(".phoneNavBtn li").click(function () {
+        var btnIndex = $(this).attr("id");
+        $(this).addClass("active").siblings().removeClass("active");
+        $(".archivesModules .archivesOne").hide();
+        $(".archivesModules .archivesOne").eq(btnIndex).show();
+    })
+</script>

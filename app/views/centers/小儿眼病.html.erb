@@ -1,50 +1,340 @@
-<div class="middle flow">
-    <!--左边链接公共-->
-    <ul class="cataractList fl">
-        <li class="active"><a href="javascript:;">“弱视”变“弱势”</a></li>
-        <li class="listLast"><a href="javascript:;">白浅上神家的烦恼</a></li>
-    </ul>
-    <!--左边链接公共-->
-
-    <div class="rightContainer">
-
-        <!--“弱视”变“弱势”-->
-        <div class="careUnit fr show">
-            <div class="newsImgMar marT-15 marb-15"><%= image_tag("rsbrs_0.jpg") %></div>
-            <div class="newsImgMar marT-15 marb-15"><%= image_tag("rsbrs_1.jpg") %></div>
-            <div class="titleImg marT-15"><%= image_tag("rsbrs_2.jpg") %></div>
-            <div class="newsImgMar marT-15 marb-15"><%= image_tag("rsbrs_3.jpg") %></div>
-            <div class="newsImgMar marT-15 marb-15"><%= image_tag("rsbrs_5.jpg") %></div>
-            <div class="titleImg_find marT-15"><%= image_tag("rsbrs_6.jpg") %></div>
-            <div class="newsImgMar marT-15 marb-15"><%= image_tag("rsbrs_7.jpg") %></div>
+<div>
+    <%= image_tag("childrenDepart-banner.jpg") %>
+</div>
+<!--科室简介-->
+<div class="centerModule flow cataractCenterWord childModule" id="module1">
+    <div class="fl">
+        <%= image_tag("childrenDepart-member.jpg") %>
+    </div>
+    <div class="fr centerWords chinCenterWord">
+        <h5 class="h5Title">小儿眼科</h5>
+        <p>成都中医大银海眼科医院小儿眼科是一个集临床诊疗、专业培训、科普宣教、产品研发、连锁运营为一体的医疗科室。中心以成都中医附院眼视光专家团队为班底，充分整合国内中西医眼视光技术与资源，引进国际高端设备，开展医学验光配镜、儿童斜弱视诊疗、中西医近视防控、RGP&角膜塑形镜验配、视觉训练、低视力康复等业务。中心秉承“银海圆梦、启明领航”的理念，运用最前沿的眼视光学技术及传统中医康复治疗手段，为全年龄段的屈光障碍患者提供有效、便捷、优质的诊疗服务体验。</p>
+    </div>
+</div>
+<!--科室简介-->
+<!--科室专家-->
+<div class="centerModule padB20" id="module2">
+    <p class="blueBTitle">
+        <span>科室专家</span>
+    </p>
+    <div class="readCenterDoctor  centerMemberCon">
+        <ul class="flParent flParent">
+            <li>
+                <%= link_to image_tag("zj6.jpg",:alt=>"周跃华"),expert_path(:周跃华教授) %>
+                <div class="maskName">
+                    <p>周跃华</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj8.jpg",:alt=>"袁晓辉"),expert_path(:袁晓辉主任医师) %>
+                <div class="maskName">
+                    <p>袁晓辉</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj13.jpg",:alt=>"周春阳"),expert_path(:周春阳主任医师) %>
+                <div class="maskName">
+                    <p>周春阳</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj16.jpg",:alt=>"周春阳"),expert_path(:谢艾芮主任医师) %>
+                <div class="maskName">
+                    <p>谢艾芮</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj19.jpg",:alt=>"缪馨"),expert_path(:缪馨主治医师) %>
+                <div class="maskName">
+                    <p>缪馨</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div >
+<!--科室专家-->
+<!--诊疗项目-->
+<div class="centerModule" id="module4">
+    <p class="cureProject childrenProject"><span>诊疗项目</span><em class="active">视觉训练中心</em><em>RGP</em><em>青少年近视防控</em><em>儿童弱视科普</em></p>
+    <div class="cureProjectContainer">
+        <div class="cureProjectModule">
+            <div class="childrenTle">
+                <p><span>Use </span>Flow</p>
+                <p>使用流程</p>
+            </div>
+            <%= image_tag("childrenDepart-process.jpg") %>
+            <ul class="childrenProDetail flow flParent">
+                <li>
+                    <%= image_tag("childrenDepart-proDetail1.jpg") %>
+                    <p>1. 打开浏览器，进入银海眼科官网www.ineyehospital.com</p>
+                </li>
+                <li>
+                    <%= image_tag("childrenDepart-proDetail2.jpg") %>
+                    <p>2.在官网点击“银海视觉训练中心”进入登陆界面。正确输入账号、密码后进行登陆，登陆成功核对患者信息。</p>
+                </li>
+                <li>
+                    <%= image_tag("childrenDepart-proDetail3.jpg") %>
+                    <p>3. 点击“开始练习”进行当日的训练程序。</p>
+                </li>
+                <li>
+                    <%= image_tag("childrenDepart-proDetail4.jpg") %>
+                    <p>4.刚开始会有温馨提示位于左侧，仔细阅读之后点击右侧开始练习。</p>
+                </li>
+                <li>
+                    <div class="childrenDepartCenter">
+                        <p><span>Operation </span>process</p>
+                        <p>操作流程</p>
+                    </div>
+                </li>
+                <li>
+                    <%= image_tag("childrenDepart-proDetail6.jpg") %>
+                    <p>5.阅读游戏说明，点击上图所示的开始练习。</p>
+                </li>
+                <li>
+                    <%= image_tag("childrenDepart-proDetail7.jpg") %>
+                    <p>6.训练界面有游戏得分显示、剩余时间显示。如中途需要暂停可点击右上角暂停。</p>
+                </li>
+                <li>
+                    <%= image_tag("childrenDepart-proDetail8.jpg") %>
+                    <p>7.训练结束后如提示休息，则说明当日还有训练待完成，如下图。休息结束后继续训练。</p>
+                </li>
+                <li>
+                    <%= image_tag("childrenDepart-proDetail9.jpg") %>
+                    <p>8.完成当日所有训练后将进入下图界面，点击"退出游戏"。</p>
+                </li>
+            </ul>
         </div>
-        <!--“弱视”变“弱势”-->
-        <!--白浅上神家的烦恼-->
-        <div class="careUnit fr trouble">
-            <div class="newsImgMar"><%= image_tag("bqssdfn_1.jpg") %></div>
-            <div class="newsImgMar"><%= image_tag("bqssdfn_2.jpg") %></div>
-            <div class="newsImgMar"><%= image_tag("bqssdfn_3.jpg") %></div>
-            <div class="newsImgMar"><%= image_tag("bqssdfn_4.jpg") %></div>
-            <div class="newsImgMar"><%= image_tag("bqssdfn_5.jpg") %></div>
-            <div class="newsImgMar"><%= image_tag("bqssdfn_6.jpg") %></div>
-            <p class="remark">注：所有的图片均来自网络</p>
+        <div class="cureProjectModule pad15">
+            <div class="childrenTle">
+                <p><em>RGP</em></p>
+                <p>眼睛自由呼吸 畅享清晰视力</p>
+            </div>
+            <p class="advBlueTitle">隐形眼镜配戴者最理想的选择</p>
+            <p class="thisIndent2">RGP——高透氧硬性角膜接触镜，被誉为“会呼吸的隐形眼镜”，是我国卫生部指定为“十年百项工程”眼科唯一推广的隐形眼镜产品，每年全球临床应用超过百万例，已经成为国际上眼科配镜的主流趋势。</p>
+            <div class="centerImgCon">
+                <%= image_tag("childrenDepart-glasses.jpg") %>
+            </div>
+            <div class="flow">
+                <div class="fl childrenGlass">
+                    <p class="advBlueTitle alignCenter">RGP的优点</p>
+                    <%= image_tag("childrenDepart-glassesChoose1.jpg") %>
+                    <div class="glassAdvList">
+                        <p><i class="little icon_advantageList"></i> 透氧性高，安全性高。</p>
+                        <p><i class="little icon_advantageList"></i> 光学性能良好，视觉质量优异。</p>
+                        <p><i class="little icon_advantageList"></i> 能有效控制青少年近视的增长。</p>
+                        <p><i class="little icon_advantageList"></i> 对高度近视、散光、屈光参差及屈光性弱视等有显著的矫正效果。</p>
+                        <p><i class="little icon_advantageList"></i> 对角膜不规则散光以及外伤引起的散光有很好的矫正效果。</p>
+                        <p><i class="little icon_advantageList"></i> 可用于早期及中期圆锥角膜的控制及治疗</p>
+                        <p><i class="little icon_advantageList"></i> 镜片韧性高，能稳定角膜形态。</p>
+                        <p><i class="little icon_advantageList"></i> 保养简单，使用寿命长。</p>
+                        <p><i class="little icon_advantageList"></i> 因配戴软性隐形眼镜而长期缺氧导致眼睛充血等不良反应者，改用RGP后症状可明显改善。</p>
+                    </div>
+                </div>
+                <div class="fr">
+                    <p class="advBlueTitle alignCenter">RGP与普通软性隐形眼镜的比较</p>
+                    <table class="glassCompare">
+                        <tr>
+                            <th>镜片特点</th>
+                            <th>RGP镜</th>
+                            <th class="width150">
+                                <p>长戴型软性隐形眼镜</p>
+                                <p>glassCompare</p>
+                            </th>
+                            <th class="width150">
+                                <p>短戴型软性隐形眼镜</p>
+                                <p>（日/周抛）</p>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>眼生理健康</td>
+                            <td>极好</td>
+                            <td>一般</td>
+                            <td>较好</td>
+                        </tr>
+                        <tr>
+                            <td>视力清晰度</td>
+                            <td>极好</td>
+                            <td>好</td>
+                            <td>一般</td>
+                        </tr>
+                        <tr>
+                            <td>散光矫正</td>
+                            <td>极好</td>
+                            <td>一般</td>
+                            <td>差</td>
+                        </tr>
+                        <tr>
+                            <td>高度数矫正</td>
+                            <td>极好</td>
+                            <td>一般</td>
+                            <td>一般</td>
+                        </tr>
+                        <tr>
+                            <td>控制近视发展</td>
+                            <td>能</td>
+                            <td>无</td>
+                            <td>无</td>
+                        </tr>
+                        <tr>
+                            <td>透氧率</td>
+                            <td>极好</td>
+                            <td>一般</td>
+                            <td>差</td>
+                        </tr>
+                        <tr>
+                            <td>防止沉积物</td>
+                            <td>极好</td>
+                            <td>一般</td>
+                            <td>差</td>
+                        </tr>
+                        <tr>
+                            <td>保养性</td>
+                            <td>极好</td>
+                            <td>一般</td>
+                            <td>差</td>
+                        </tr>
+                        <tr>
+                            <td>使用寿命</td>
+                            <td>1-2年</td>
+                            <td>1月/1年</td>
+                            <td>1天/1周</td>
+                        </tr>
+                        <tr>
+                            <td>初戴感觉</td>
+                            <td>一般</td>
+                            <td>好</td>
+                            <td>极好</td>
+                        </tr>
+                        <tr>
+                            <td>1~2周后舒适度</td>
+                            <td>极好</td>
+                            <td>好</td>
+                            <td>极好</td>
+                        </tr>
+                        <tr>
+                            <td>经济性</td>
+                            <td>好</td>
+                            <td>好</td>
+                            <td>一般</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
-        <!--白浅上神家的烦恼-->
+        <div class="cureProjectModule flow pad15">
+            <div class="flow">
+                <div class="fl width560">
+                    <p class="advBlueTitle">如何预防近视？</p>
+                    <p class="thisIndent2">对于青少年而言，每学期应到医院进行健康检查，预防近视的发生及发展。</p>
+                    <div class="centerImgCon glassImg">
+                        <%= image_tag("shortsight1.jpg") %>
+                    </div>
+                    <p class="greenWord">常用预防方式</p>
+                    <div class="glassAdvList">
+                        <p><i class="little icon_glass"></i> 加强体育锻炼，每天户外运动不低于2小时。</p>
+                        <p><i class="little icon_glass"></i> 养成良好的用眼习惯。看书写字保持正确的坐姿及握笔姿势；连续用眼40分钟，需要远眺10分钟；不在过强或过弱的光线下看书；不在走路或乘车时看书；尽量少用电子产品。</p>
+                        <p><i class="little icon_glass"></i> 养成良好的生活习惯，每天保证8小时的睡眠时间；少吃甜食，少喝碳酸饮料；多吃水果和蔬菜，不挑食。</p>
+                    </div>
+                </div>
+                <div class="aboutShortSight fr width560">
+                    <p class="advBlueTitle">高度近视的危害</p>
+                    <p class="thisIndent2">一般度数在600度以上为高度近视，高度近视患者随着年龄增加，眼部会出现以下病理改变，如：</p>
+                    <ul class="flow flParent halfContainer">
+                        <li>①玻璃体变性液化；</li>
+                        <li>②视网膜脱离；</li>
+                        <li>③黄斑出血；</li>
+                        <li>④后巩膜葡萄肿等，严重者可致盲。</li>
+                    </ul>
+                    <%= image_tag("shortsight2.jpg",:class=>"marT20") %>
+                </div>
+            </div>
+            <div class="flow">
+                <div class="fl width560">
+                    <p class="advBlueTitle">青少年近视有哪些科学的矫正方式？</p>
+                    <%= image_tag("shortsight3.jpg") %>
+                    <ul class="shortSightGlass line24 fl flParent">
+                        <li class="width250">
+                            <p class="greenWord">框架眼镜：</p>
+                            <p>配戴合适的框架眼镜，定期到医院复查，根据情况更换。</p>
+                        </li>
+                        <li class="width270">
+                            <p class="greenWord">硬性角膜接触镜：</p>
+                            <p>角膜塑形镜能有效控制近视发展，是青少年近视患者的首选。RGP适合不同年龄各类不正患者的验配，且控制近视效果优于框架镜</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="fr width560 line24">
+                    <p class="advBlueTitle">中医在青少年近视防控中的优势？？</p>
+                    <p>中医在医学验光配镜、科学用眼基础上，采用耳穴压丸、中药熏洗、中药煎剂等优势手段，形成中医药近视综合防控方案，有效防控近视的发生发展。</p>
+                    <div class="centerImgCon">
+                        <%= image_tag("shortsight4.jpg") %>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="cureProjectModule wordIndent lastChildProject">
+            <div class="flow">
+                <div class="fl width560 line24">
+                    <p class="advBlueTitle">什么是弱视？</p>
+                    <p class="thisIndent2">弱视是一种发育性疾病，一般眼科检查眼部无器质性病变，而矫正远视力低于正常同龄人视力下限（通俗的说就是佩戴了眼镜也看不清楚），或双眼矫正视力相差两行以上，考虑为弱视。</p>
+                    <div class="centerImgCon marT10">
+                        <%= image_tag("shortsight5.jpg") %>
+                    </div>
+                </div>
+                <div class="fr width560 line24">
+                    <div class="visualChart">
+                        <%= image_tag("childrenDepart-sightImg.png") %>
+                    </div>
+                    <p>若儿童视力低于以上标准，需到医院做进一步检查。</p>
+                    <%= image_tag("shortsight6.jpg") %>
+                </div>
+            </div>
+            <div class="flow">
+                <div class="fl width560 line24">
+                    <p class="advBlueTitle">弱视的危害有哪些？</p>
+                    <p>弱视最大的危害是患者不仅双眼或单眼视力低下，而且没有完善的双眼视功能，无法进行精细工作，影响学习，就业受限。如不及时防治，将会产生极大危害，具体如下：</p>
+                    <div class="flow marT10">
+                        <%= image_tag("shortsight7.jpg",:class=>"fl") %>
+                        <ul class="greenWord marL180 weakSightHarm">
+                            <li>1.错过了治疗期,患眼的视力会永远低下,影响一生。</li>
+                            <li>2.不能准确判断物体正常空间位置,影响驾驶。</li>
+                            <li>3.影响学习效率,导致学习成绩低下</li>
+                            <li>4.影响择业,不能选择如建筑、工程设计、医学、机械、美工等专业</li>
+                            <li>5.弱视对患儿身心的危害更不能忽视。学习成绩差,注意力不集中,孩子的心灵必将遭到极大  的摧残,使孩子变得孤僻、自闭、自卑、祸及孩子一生。</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="fr width560 line24">
+                    <p class="advBlueTitle">如何及早发现弱视？</p>
+                    <p>如果孩子有以下一项或多项情况，应尽早带孩子进行视力检查。</p>
+                    <%= image_tag("shortsight8.jpg") %>
+                </div>
+            </div>
+            <div class="flow">
+                <div class="fl width560 line24">
+                    <p class="advBlueTitle">家长应如何指导孩子治疗弱视？</p>
+                    <%= image_tag("shortsight9.jpg") %>
+                </div>
+                <div class="fr width560 line30">
+                    <p class="advBlueTitle">孩子得了弱视怎么办？</p>
+                    <p>弱视的孩子，首先到专业医院验光配镜，家长应监督孩子配合医生积极治疗。佩戴合适的眼镜，配合遮盖治疗，再进行视觉训练。视觉训练是弱视治疗的主要方法。训练的内容包括：增视训练、双眼功能训练、视觉技巧训练等。</p>
+                    <div class="centerImgCon marT20">
+                        <%= image_tag("shortsight10.jpg") %>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>
-
-
-
+<!--诊疗项目-->
+<% content_for :script do %>
 <script>
-    $(".cataractList li").click(function(){
-        var i = $(this).index();
-        $(".cataractList li").removeClass("active").eq(i).addClass("active");
-        $(".rightContainer .careUnit").hide().eq(i).show();
+    $(".cureProject em").click(function(){
+        console.log($(this).index());
+        $(this).addClass("active").siblings().removeClass("active")
+        $(".cureProjectContainer .cureProjectModule").eq($(this).index()-1).show().siblings().hide()
     })
 </script>
-
-
-
-
-
+<% end %>

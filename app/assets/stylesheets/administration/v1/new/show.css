@@ -1,0 +1,13 @@
+/*
+ *= require administration/v1/shared/share.css
+ *= require_self
+ */
+
+.field-value{
+    padding-top: 5px;
+    font-weight: inherit;
+}
+
+.button-include-link{
+    color: #fff;
+}

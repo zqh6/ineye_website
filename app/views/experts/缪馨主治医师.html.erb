@@ -1,28 +1,142 @@
-<div class="middle flow">
-    <div class="flow expDetails bottom-Mar30">
-        <p class="expertsTitle">主治医师</p>
-        <ul class="flParent BasicInformation flow">
-            <li class="expertsLeftImg">
-                <div class="fl">
-                    <%= image_tag("zzys4.jpg") %>
+<div class="doctorDetails flow whiteBg">
+    <div class="fl doctorPortrait flow">
+        <%= image_tag("zj19.jpg") %>
+        <div class="doctorBtns">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+            <%= link_to '查看排班表',medical_path(:专家排班,:anchor=>"experts_19"),:class=>"fr" %>
+        </div>
+    </div>
+    <div class="fl doctorContent flow">
+        <h5>缪馨</h5>
+        <p class="doctorTitle"><span>主治医师/医学硕士</span></p>
+        <div class="doctorHonor">
+            <p>中华中医药学会眼科分会青年委员</p>
+            <p>四川省中医药学会眼科分会委员</p>
+        </div>
+        <div class="doctorGoodAt flow">
+            <span>擅长领域：</span>
+            <p>从事眼科临床、科研多年，具有丰富的实际工作经验，擅长运用中西医结合方法治疗眼底疾病及眼表疾病，特别是在外眼疾病、出血性眼病、葡萄膜疾病等方面进行了较深入的探索，在治疗干眼症、角膜溃疡等疾病方面取得显著疗效。</p>
+        </div>
+        <p class="seePatientTime"><span>坐诊时间:</span>周一/四/日全天、周二上午,具体请以专家门诊时间表为准</p>
+    </div>
+</div>
+<div class="doctorIntroduce whiteBg">
+    <p>从事眼科临床、科研多年，具有丰富的工作经验，临床工作中，运用中西医结合方法治疗玻璃体积血、糖尿病视网膜病变、视网膜静脉阻塞、黄斑病变、视网膜色素变性等眼底疾病，视神经萎缩、前部缺血性视神经病变等视神经疾病，急慢性葡萄膜炎，干眼症、角膜炎、过敏性结膜炎等眼表疾病，并获得良好疗效。参研多项四川省中医药管理局科研项目，期刊公开发表学术论文5篇。</p>
+</div>
+<ul class="registered flow flParent">
+    <li>预约挂号</li>
+    <li>姓名：<input type="text"></li>
+    <li>联系电话：<input type="text"></li>
+    <li>预约时间：<input type="text"></li>
+    <li>预约科室：<input type="text"></li>
+    <li><a href="" class="registeredBtn">提交</a></li>
+</ul>
+<div class="membersList whiteBg flow">
+    <div class="fl teamMemberWords">团 队 成 员</div>
+    <div class="teamContainer" >
+        <ul class="teamMembers fr flParent flow" style="">
+            <!--周跃华-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj6.jpg"),expert_path(:周跃华教授) %>
                 </div>
-                <div class="fl seniority">
-                    <h5>缪馨</h5>
-                    <p>主治医师</p>
-                    <div class="expertsHref">
-                        <input type="button" value="在线预约" class="online-appointment">
-                        <input type="button" value="查看排班" class="look-scheduling">
-                    </div>
+                <div class="fl memberIntroduce">
+                    <h4>周跃华</h4>
+                    <p>主任医师/教授/硕士生导师</p>
+                    <p>国家发改委药审委员会委员</p>
                 </div>
             </li>
-            <li class="expertsRightWord">
-                <h6>擅长领域：</h6>
-                <p>从事眼科临床、科研多年，具有丰富的实际工作经验，擅长运用中西医结合方法治疗眼底疾病及眼表疾病，特别是在外眼疾病、出血性眼病、葡萄膜疾病等方面进行了较深入的探索，在治疗干眼症、角膜溃疡等疾病方面取得显著疗效。</p>
+            <!--周跃华-->
+            <!--袁晓辉-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj8.jpg"),expert_path(:袁晓辉主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>袁晓辉</h4>
+                    <p>主任医师/教授</p>
+                    <p>成都中医药大学眼视光教研室学术带头人</p>
+                </div>
             </li>
+            <!--袁晓辉-->
+            <!--周春阳-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj13.jpg"),expert_path(:周春阳主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>周春阳</h4>
+                    <p>副主任医师/副教授/医学博士</p>
+                    <p>成都中医药大学眼视光教研室主任</p>
+                </div>
+            </li>
+            <!--周春阳-->
+            <!--谢艾芮-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj16.jpg"),expert_path(:谢艾芮主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>谢艾芮</h4>
+                    <p>主治医师/医学硕士</p>
+                    <p>四川省康复医学会视觉光学专委会委员</p>
+                </div>
+            </li>
+            <!--谢艾芮-->
+
         </ul>
-        <div class="expertsAllMessage">
-            <h6>专家简介：</h6>
-            <p>从事眼科临床、科研多年，具有丰富的工作经验，临床工作中，运用中西医结合方法治疗玻璃体积血、糖尿病视网膜病变、视网膜静脉阻塞、黄斑病变、视网膜色素变性等眼底疾病，视神经萎缩、前部缺血性视神经病变等视神经疾病，急慢性葡萄膜炎，干眼症、角膜炎、过敏性结膜炎等眼表疾病，并获得良好疗效。参研多项四川省中医药管理局科研项目，期刊公开发表学术论文5篇。</p>
+        <div class="leftBtn">
+            <i class="icon_arrow icon_left"></i>
+        </div>
+        <div class="rightBtn">
+            <i class="icon_arrow icon_right"></i>
         </div>
     </div>
 </div>
+<script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+        $(".leftBtn").addClass("active");
+        $(".rightBtn").addClass("active");
+    }
+    var rightMoveNum = members-4+((parseInt($(".teamMembers").css("left"))/$(".teamMembers li").width()));
+    var leftMoveNum = 0;
+    function move() {
+        if(rightMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            console.log(nowPos+" "+displacement);
+            $(".teamMembers").animate({
+                left:nowPos-displacement
+            })
+            rightMoveNum--;
+            leftMoveNum++;
+        }
+        console.log(rightMoveNum);
+    }
+    function move2() {
+        if(leftMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos+displacement
+            })
+            rightMoveNum++;
+            leftMoveNum--;
+        }
+        console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+        if(rightMoveNum>0){
+            move();
+        }
+    })
+    $(".leftBtn").click(function() {
+        if(leftMoveNum>0){
+            move2();
+        }
+    })
+
+</script>

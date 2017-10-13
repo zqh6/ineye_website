@@ -1,111 +1,213 @@
-<div class="middle flow">
-    <div class="hosIntroduce eqContainer">
-        <div class="mainWord equipment">
-            <h5>设备技术</h5>
-            <ul class="flow flParent">
+<ul class="allEquipment flParent flow">
+    <li id="equipment_1">
 
-                <li>
-                    <%= image_tag("equipment_1.jpg") %>
-                </li>
-                <li class="equRight fiEquipment fr">
-                    <h6>阿玛仕1050RS准分子激光治疗仪</h6>
-                    <div class="advantage">
-                        <h6>优势：</h6>
-                        <p>1.快：削频率（1050 Hz），治疗转瞬完成；</p>
-                        <p>2.精：激光光斑（0.54mm），角膜表面细致平滑；</p>
-                        <p>3.准：高频七维全方位眼球跟踪系统超精准定位切削；</p>
-                        <p>4.逸：拥有smart全激光手术，无瓣，无痕，安全无忧。</p>
-                    </div>
-                </li>
-            </ul>
-
-            <ul class="flow flParent seEquipmentCon">
-                <li>
-                    <h6>蔡司全飞秒Visu Max 激光系统</h6>
-                    <p>无瓣、微创、全飞秒</p>
-                    <div class="advantage">
-                        <h6>优势：</h6>
-                        <p>1.全程飞秒——无刀治疗、无需联机；</p>
-                        <p>2.独创的smile微创技术，可减少对角膜神经纤维的损伤，提高视觉质量。</p>
-                        <p>3.精确的个性化角膜瓣制作，控制角膜瓣的厚度、大小等，提高手术的安全性和可预测性。</p>
-                        <p>4.模拟人体角膜设计的接触镜，保证了治疗时角膜的自然生理状态。</p>
-                        <p>5.术中低负压吸引，避免常规手术中由眼压升高带来的视力丧失。</p>
-                    </div>
-                </li>
-                <li class="equRight fr">
-                    <%= image_tag("equipment_2.jpg") %>
-                </li>
-            </ul>
-
-            <ul class="flow flParent">
-                <li>
-                    <%= image_tag("equipment_3.jpg") %>
-                </li>
-
-                <li class="equRight thEquipment fr">
-                    <h6>LENSAR非接触式3D飞秒白内障激光手术系统</h6>
-                    <div class="advantage">
-                        <h6>优势：</h6>
-                        <p>1. 使用精准的飞秒激光达到微米級以上的组织切削；</p>
-                        <p>2. 使用了3D影像技术精准定位眼內组织位置，提高手术的安全性和精准度。</p>
-                        <p>3.独特的360度眼球立体扫描，以及独家的非接触式的小型接口，减少了角膜变形。</p>
-                        <p>4.3D立体切割模式，可使术后切口密合度极佳完全不漏水，降低感染风险，术后恢复快。</p>
-                    </div>
-                </li>
-            </ul>
-
-            <ul class="flow flParent">
-
-                <li class="fourEquipment">
-                    <h6>爱尔康Constellation玻切机设备</h6>
-                    <div class="advantage">
-                        <h6>优势：</h6>
-                        <p>1. 独有动态眼内压控制技术：可以设置个性化的手术眼压，并提供手术全程稳定的眼内压，保证手术安全性。</p>
-                        <p>2.高达7500切/分钟的切割速率：减少对组织的牵引，提高了手术安全性。</p>
-                        <p>3.优化的25+系统：可以实现精细的切割，更贴近视网膜，更高效也更安全。</p>
-                        <p>4.内置一体式的532nm眼底激光：直接应用于玻切手术中，能够在不扩大切口的情况下完成25g+、27g+微创玻璃体手术。</p>
-                    </div>
-                </li>
-
-                <li class="equRight fr">
-                    <%= image_tag("equipment_4.jpg") %>
-                </li>
-            </ul>
-
-            <ul class="flow flParent thEquipmentCon">
-                <li>
-                    <%= image_tag("equipment_5.jpg") %>
-                </li>
-                <li class="equRight fivEquipment">
-                    <h6>爱尔科医人Vision One 量子芯片多波长激光</h6>
-                    <div class="advantage">
-                        <h6>技术优势：</h6>
-                        <p>1. 采用先进的量子芯片技术（QWL-OPSL），具有高稳定性和高可靠性。</p>
-                        <p>2. 同时完美常用的三种波长整合为一体，波长切换快速自如，可以根据病情给予恰当的治疗。</p>
-                        <p>3. ClearViewTM清澈高清眼睛保护滤光镜，100%过滤治疗激光，不影响其他可见光的透过率。</p>
-                        <p>4. 专利技术-锐亮光斑SureSpotTM，在视网膜上得到边缘锐利、能量均匀的光斑；在角膜和晶体上的能量密度更低，更安全。</p>
-                    </div>
-                </li>
-            </ul>
-
-            <ul class="flow flParent">
-                <li class="sixEquipmentCon">
-                    <h6>DRI OCT-1 Triton</h6>
-                    <div class="advantage">
-                        <h6>技术优势：</h6>
-                        <p>1.源扫描技术：采用了新的源扫描技术，扫描速度高达100000次A扫描/秒。</p>
-                        <p>2.扫描激光波长为1050nm：不仅能够清晰看到视网膜的分层，在不使用不透光造影剂的情况下还能看到脉络膜和巩膜。而且1050nm非可见光扫描可以减少患者眼球因刺激而产生的不适，进而提高扫面成功率及检查速度。</p>
-                        <p>3.涵盖黄斑和视盘的12mm 宽域扫描：能够在更大范围的基础上提供更多有用的疾病信息。</p>
-                    </div>
-                </li>
-                <li class="fr">
-                    <%= image_tag("equipment_6.jpg") %>
-                </li>
-            </ul>
-
+        <p class="equipmentName">阿玛仕1050RS准分子激光治疗仪</p>
+        <div class="fl equContainer">
+            <%= link_to image_tag("newEquipment_1.jpg"),home_path(:阿玛仕) %>
         </div>
-    </div>
-</div>
+        <div class="fr flow">
+            <h4>全国眼科医院第一台•首家引进</h4>
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.快：全球最高切削频率（1050 Hz），治疗转瞬完成</p>
+            <p>2.精：全球最小激光光斑（0.54mm），角膜表面细致平滑</p>
+            <p>3.准：全球最高频七维全方位眼球跟踪系统，超精准定位切削</p>
+            <p>4.逸：唯一拥有smart千频全激光手术，无瓣，无痕，安全无忧</p>
+        </div>
+    </li>
+    <li id="equipment_2">
+        <p class="equipmentName">蔡司全飞秒Visu Max 激光系统</p>
+        <div class="fl equContainer">
+            <%= link_to image_tag("newEquipment_2.jpg"),home_path(:蔡司飞秒) %>
+        </div>
+        <div class="fr flow">
+            <h4>无瓣、微创、全飞秒</h4>
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.全程飞秒——无刀治疗、无需联机</p>
+            <p>2.独创的smile微创技术，可减少对角膜神经纤维的损伤，提高视觉质量</p>
+            <p>3.精确的个性化角膜瓣制作，控制角膜瓣的厚度、大小等，提高手术的安全性和可预测性</p>
+            <p>4.模拟人体角膜设计的接触镜，保证了治疗时角膜的自然生理状态</p>
+            <p>5.术中低负压吸引，避免常规手术中由眼压升高带来的视力丧失</p>
+        </div>
+    </li>
+    <li id="equipment_3">
+        <p class="equipmentName">LENSAR非接触式3D飞秒白内障激光手术系统</p>
+        <div class="fl equContainer">
+            <%= link_to image_tag("newEquipment_3.jpg"),home_path(:'3d飞秒') %>
+        </div>
+        <div class="fr flow">
+            <h4>精准、安全、完美</h4>
+            <p class="equAdvantages">设备优势：</p>
+            <p>1. 使用精准的飞秒激光达到微米級以上的组织切削</p>
+            <p>2. 使用了3D影像技术精准定位眼內组织位置，提高手术的安全性和精准度</p>
+            <p>3.独特的360度眼球立体扫描，以及独家的非接触式的小型接口，减少了角膜变形</p>
+            <p>4.3D立体切割模式，可使术后切口密合度极佳完全不漏水，降低感染风险，术后恢复快</p>
+        </div>
+    </li>
+    <li id="equipment_4">
+        <p class="equipmentName">爱尔康Constellation玻切机设备</p>
+        <div class="fl equContainer">
+            <%= image_tag("newEquipment_4.jpg") %>
+        </div>
+        <div class="fr flow">
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.独有动态眼内压控制技术：可以设置个性化的手术眼压，并提供手术全程稳定的眼内压，保证手术安全性</p>
+            <p>2.最高7500切/分钟的切割速率：减少对组织的牵引，提高了手术安全性</p>
+            <p>3.优化的25+系统：可以实现精细的切割，更贴近视网膜，更高效也更安全</p>
+            <p>4.内置一体式的532nm眼底激光：直接应用于玻切手术中，能够在不扩大切口的情况下完成25g+、27g+微创玻璃体手术</p>
+        </div>
+    </li>
+    <li id="equipment_5">
+        <p class="equipmentName">科医人Vision One 量子芯片多波长激光</p>
+        <div class="fl equContainer">
+            <%= image_tag("newEquipment_5.jpg") %>
+        </div>
+        <div class="fr flow">
+            <p class="equAdvantages">设备优势：</p>
+            <p>1. 采用最先进的量子芯片技术（QWL-OPSL），具有高稳定性和高可靠性</p>
+            <p>2. 同时最完美最常用的三种波长整合为一体，波长切换快速自如，可以根据病情给予最恰当的治疗</p>
+            <p>3. ClearViewTM清澈高清眼睛保护滤光镜，100%过滤治疗激光，不影响其他可见光的透过率</p>
+            <p>4. 专利技术-锐亮光斑SureSpotTM，在视网膜上得到边缘锐利、能量均匀的光斑；在角膜和晶体上的能量密度更低，更安全</p>
+        </div>
+    </li>
+    <li id="equipment_6">
+        <p class="equipmentName">DRI OCT-1 Triton</p>
+        <div class="fl equContainer">
+            <%= image_tag("newEquipment_6.jpg") %>
+        </div>
+        <div class="fr flow">
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.全球最快源扫描技术：采用了最新的源扫描技术，扫描速度高达100000次A扫描/秒，为全球最快</p>
+            <p>2.扫描激光波长为1050nm：不仅能够清晰看到视网膜的分层，在不使用不透光造影剂的情况下还能看到脉络膜和巩膜。而且1050nm非可见光扫描可以减少患者眼球因刺激而产生的不适，进而提高扫面成功率及检查速度</p>
+            <p>3.涵盖黄斑和视盘的12mm 宽域扫描：能够在更大范围的基础上提供更多有用的疾病信息</p>
+        </div>
+    </li>
+    <li>
+        <p class="equipmentName">Daytona激光扫描检眼镜P200T（欧堡）</p>
+        <div class="fl equContainer">
+            <%= image_tag("newEquipment_7.jpg") %>
+        </div>
+        <div class="fr flow">
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.超广角：一次性成像范围达200°-220°，能够覆盖眼底82%的视网膜</p>
+            <p>2.免散瞳：通过最小2mm的瞳孔直径来进行操作，适用于青光眼等不能散瞳的患者和糖尿病等难于散瞳的患者</p>
+            <p>3.成像快：自动化程度高，0.4秒内完成一张图像的捕捉，检查快速、安全、精准</p>
+            <p>4.分辨率高：获取图像分辨率是14um，可拍摄到普通眼底照相机不能成像的眼底图像，并可分离成多种色彩成分</p>
+            <p>5.具有自发荧光功能：无需静脉注射荧光材料，就可显示多种眼底病的成像</p>
+        </div>
+    </li>
+    <li>
+        <p class="equipmentName">IOLMaster 500</p>
+        <div class="fl equContainer">
+            <%= image_tag("newEquipment_8.jpg") %>
+        </div>
+        <div class="fr flow">
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.快速生物测量：1分钟内可自动完成眼轴长和角膜曲率等所有参数的测量。切换完全自动，避免任何人为干扰</p>
+            <p> 2.精准、真实测量：对眼轴长度的测量不受调节、瞳孔大小、及屈光状态（高度近/远视）的影响，始终保证沿着视轴方向进行检查，因而能够获得真实的数值</p>
+            <p>3.最高白内障穿透力：采用新一代Advanced TechnologyTM组合信号处理技术，大大增强测量的信号强度，使结果更加精确可靠。此技术对白内障的检出率要优于同类设备20%</p>
+            <p>4.最小操作误差：“红绿灯”信号指示最佳的测量状态，减少主观误差，使测量结果更为可信</p>
+        </div>
+    </li>
+    <li>
+        <p class="equipmentName">Humphrey 750i视野分析仪</p>
+        <div class="fl equContainer">
+            <%= image_tag("newEquipment_9.jpg") %>
+        </div>
+        <div class="fr flow">
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.唯一拥有目前最大的与年龄相关的正常人视野数据库</p>
+            <p>12.包括实时眼位动态监视、Heiji-Krakau生理盲点监测、凝视跟踪、头位跟踪系统在内的全面固视监测，保证临床报告的高度精确</p>
+            <p>13.最尖端的SITA运算策略，实现了患者和视野计人机交互的最大化，可以更加高效地检测</p>
+            <p>14.全新的GPA分析软件，采用VFI定量疾病进展的程度，并预计与患者年龄相关的视功能丢失</p>
+            <p>15.代表当今视野检测的最新前沿的短波长自动视野检测尤其适用于高眼压症患者、疑似青光眼患者、早期视野缺损患者，完美早期发现青光眼</p>
+        </div>
+    </li>
+    <li>
+        <p class="equipmentName">CIRRUS HD-OCT 5000</p>
+        <div class="fl equContainer">
+            <%= image_tag("newEquipment_10.jpg") %>
+        </div>
+        <div class="fr flow">
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.择优像素成像：可在2mm直径的小瞳情况下进行扫描，获得组织轴向分辨率高达5μm的视网膜断层图像，择优像素成像技术进一步优化了图像质量</p>
+            <p>2.海量数据方：在6×6mm2范围进行快速高密度薄层扫描，获得海量数据方。针对眼底病进行强大的分析</p>
+            <p>3.高分辨率的眼前节断层图像：前后节一体机，无需添加任何附加镜头，即可获得高达5μm分辨率的眼前节断层图像</p>
+            <p>4.三维追踪技术（Fast TracTM）：实时追踪技术能在扫描中实现点到点对应，精确对位前后检查的眼底图像，保证对比的部位高度一致</p>
+        </div>
+    </li>
+    <li>
+        <p class="equipmentName">海德堡HRT3共焦激光角膜显微镜</p>
+        <div class="fl equContainer">
+            <%= image_tag("newEquipment_11.jpg") %>
+        </div>
+        <div class="fr flow">
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.全球唯一以共焦激光作为光源的角膜显微镜，800倍放大倍率，其分辨率高达1微米，能清晰显示角膜各层细胞结构，将角膜临床检查提高到细胞学水平</p>
+            <p>2.Section模式、Sequence模式、Volume模式等多种图像获取方式，适合不同疾病的角膜图像采集</p>
+            <p>3.自带功能强大的细胞计数软件，可对角膜内皮细胞，上皮细胞及基质细胞进行计数，评价细胞的密度</p>
+        </div>
+    </li>
+    <li>
+        <p class="equipmentName">海德堡Spectralis OCT</p>
+        <div class="fl equContainer">
+            <%= image_tag("newEquipment_12.jpg") %>
+        </div>
+        <div class="fr flow">
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.唯一t具有Eye-Tracking实时主动动眼追踪技术的OCT——“所见即所得”</p>
+            <p>2.扫描速度最快的OCT——“海量数据”</p>
+            <p>3.唯一实现OCT、HRA两大系统交互、数据共享——“双剑合璧”</p>
+            <p>4.唯一具有ART（Automatic Real Time）降噪技术的OCT，有效降低图像噪点，大大提高图像分辨率</p>
+            <p>5.唯一采用870nm光源扫描的OCT，适应症更广</p>
+            <p>6.唯一具有个性化扫描方式的OCT，可自定义进行任何区域的扫描</p>
+        </div>
+    </li>
+    <li>
+        <p class="equipmentName">海德堡Spectralis HRA</p>
+        <div class="fl equContainer">
+            <%= image_tag("newEquipment_13.jpg") %>
+        </div>
+        <div class="fr flow">
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.领先的共焦激光造影技术，开创激光造影新纪元</p>
+            <p>2.最高分辨率和对比度的脉络膜造影图像——PCV诊断金标准</p>
+            <p>3.独有的视网膜与脉络膜同步血管造影系统</p>
+            <p>4.独有动态造影，每秒16幅图像的海量数据采集，全程记录造影过程，教学好工具</p>
+            <p>5.多种非创伤性检查模式（眼底自发荧光成像、无赤光影像、红外成像），“一机多用，联合诊断”</p>
+            <p>6.独有三维造影，可用于肿瘤和视乳头疾病的立体造影观察</p>
+            <p>7.无需任何附加镜头，可进行虹膜造影</p>
+        </div>
+    </li>
+    <li>
+        <p class="equipmentName">CASIA眼前节OCT</p>
+        <div class="fl equContainer">
+            <%= image_tag("newEquipment_14.jpg") %>
+        </div>
+        <div class="fr flow">
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.1310纳米扫频激光光源，使其穿透性更强</p>
+            <p>2.超广角16mm扫描，全周房角一览无余；10μm高分辨率，使其成像更清晰</p>
+            <p>3.0.3-2.4秒极短的测量时间，就能将过去的二维成像提升至三维立体成像</p>
+            <p>4.30000次/秒A扫描业界最快，最大限度排出眨眼、头动等因素的影响</p>
+            <p>5.非接触的拍摄检查，尽可能避免了交叉感染的风险</p>
+        </div>
+    </li>
+    <li>
+        <p class="equipmentName">罗兰眼电生理RETI-Port/Scan 21</p>
+        <div class="fl equContainer">
+            <%= image_tag("newEquipment_15.jpg") %>
+        </div>
+        <div class="fr flow">
+            <p class="equAdvantages">设备优势：</p>
+            <p>1.1310纳米扫频激光光源，使其穿透性更强</p>
+            <p>2.超广角16mm扫描，全周房角一览无余；10μm高分辨率，使其成像更清晰</p>
+            <p>3.0.3-2.4秒极短的测量时间，就能将过去的二维成像提升至三维立体成像</p>
+            <p>4.30000次/秒A扫描业界最快，最大限度排出眨眼、头动等因素的影响</p>
+            <p>5.非接触的拍摄检查，尽可能避免了交叉感染的风险</p>
+        </div>
+    </li>
+</ul>
+
 
 
 

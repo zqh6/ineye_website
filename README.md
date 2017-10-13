@@ -1,24 +1,46 @@
-# README
+#测试服务用production部署
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##deploy server
+####create
+RAILS_ENV=production HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com USERNAME=hesheng PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:create
+####migrate
+RAILS_ENV=production HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com USERNAME=hesheng PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:migrate
+####seed
+RAILS_ENV=production HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com USERNAME=hesheng PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:seed
+####kind_editor
+rails g rails_kindeditor:install
+rails kindeditor:assets
+####start
+RAILS_ENV=production HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com USERNAME=hesheng PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D 
 
-Things you may want to cover:
 
-* Ruby version
+##restart server
+ps -ef | grep ineye_website
 
-* System dependencies
+kill -9 xxxx(进程号)
 
-* Configuration
+RAILS_ENV=production HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com USERNAME=hesheng PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
 
-* Database creation
+#正式服务用production部署
 
-* Database initialization
+##deploy server
+####create
+RAILS_ENV=production DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:create
+####migrate
+RAILS_ENV=production DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:migrate
+####seed
+RAILS_ENV=production DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:seed
+####assets precompile
+RAILS_ENV=production DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails assets:precompile
+####kind_editor
+rails g rails_kindeditor:install
+rails kindeditor:assets
+####start
+RAILS_ENV=production DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
 
-* How to run the test suite
+##restart server
+ps -ef | grep ineye_website
 
-* Services (job queues, cache servers, search engines, etc.)
+kill -9 xxxx(进程号)
 
-* Deployment instructions
-
-* ...
+RAILS_ENV=production DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D

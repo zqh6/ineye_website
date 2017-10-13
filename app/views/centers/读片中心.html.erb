@@ -1,57 +1,151 @@
-<div class="middle">
-  <!--读片中心-->
-    <ul class="readCenter flow flParent">
-        <li>
-            <%= image_tag("centerImg_1.png") %>
-            <div class="readMask">
-                <div class="rectangle">
-                    <p>读片中心</p>
+<!--banner-->
+<div>
+    <%= image_tag("readCenter-banner.jpg") %>
+</div>
+<!--banner-->
+<!--科室简介-->
+<div class="centerModule flow cataractCenterWord" id="module1">
+    <div class="fl">
+        <%= image_tag("readCenter-member.jpg") %>
+    </div>
+    <div class="fr centerWords chinCenterWord">
+        <h5 class="h5Title">眼影像分析与诊断中心</h5>
+        <p>眼影像分析与诊断中心2010年与美国威斯康星大学眼底读片中心合作，通过国家国际科技合作专项，引进ETDRS读片标准和标准操作规程，在国内率先实现糖尿病视网膜病变量化读片以及ETDRS分级。2013年，在国家重大仪器专项的支持下，正式建立云计算眼科读片中心。本中心重点开展临床读片、科研读片、慢病筛查、远程眼底病会诊等，运用图像分析技术、ETDRS读片技术、视网膜血氧分析技术等国际先进技术，建立符合中国人眼病特点的读片标准。中心面积300余平，配备先进设备和专业机房，与70余家医院与19家科研院所合作，形成了强大、全面的服务网络体系。</p>
+        <div class="readCenterImg">
+            <%= image_tag("readCenterImg.jpg") %>
+        </div>
+    </div>
+</div>
+<!--科室简介-->
+<!--科室专家-->
+<div class="centerModule padB20" id="module2">
+    <p class="blueBTitle">
+        <span>科室专家</span>
+    </p>
+    <div class="readCenterDoctor  centerMemberCon">
+        <ul class="flParent flParent">
+            <li>
+                <%= link_to image_tag("zj2.jpg"),expert_path(:段俊国教授) %>
+                <div class="maskName">
+                    <p>段俊国</p>
                 </div>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <%= image_tag("zj-wf.jpg") %>
+                </a>
+                <div class="maskName">
+                    <p>文峰</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj5.jpg"),expert_path(:刘文教授) %>
+                <div class="maskName">
+                    <p>刘文</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj9.jpg"),expert_path(:路雪婧主任医师) %>
+                <div class="maskName">
+                    <p>路雪婧</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj20.jpg"),expert_path(:蹇文渊主治医师) %>
+                <div class="maskName">
+                    <p>蹇文渊</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--科室专家-->
+<!--技术优势-->
+<div class="readCenterTle" id="module3">
+    <p><span>TECHNOLOGICAL </span>SUPERIORITY</p>
+    <p>技术优势</p>
+</div>
+<div class="padB20" >
+    <ul class="readCenterFunc flParent flow">
+        <li>
+            <div class="marT60">
+                <%= image_tag("readCenter-advantage1.jpg") %>
+            </div>
+            <div>
+                <h4>ETDRS分级【国际先进的科研分级标准】</h4>
+                <p>引进美国威斯康星大学ETDRS分级作为糖尿病视网膜病变科研读片的分级标准。ETDRS分级作为糖网国际科研分级标准，是对眼底相机拍摄的7张标准30°眼底立体照片进行复杂分析，从而得到较为科学与严谨的结果。ETDRS 分级相比较于临床分级更为细致，多用于糖尿病视网膜病变用药前后的眼底病变情况分析。</p>
             </div>
         </li>
-
-        <li class="lightBlue">
-            <ul>
-                <li>· 200余平 超大空间</li>
-                <li>· 独立整洁 安静明亮</li>
-                <li>· 24小时监控 读片人员配卡入内</li>
-            </ul>
-        </li>
-
         <li>
-            <%= image_tag("centerImg_2.png") %>
-        </li>
-
-        <li class="lightGreen">
-            <ul>
-                <li>· iMac 21.5寸 4K retina</li>
-                <li>· 高清 专业 准确 快速  </li>
-            </ul>
-        </li>
-
-        <li>
-            <%= image_tag("centerImg_3.png") %>
-        </li>
-
-
-        <li class="lightGreen">
-            <ul>
-                <li>· 建立读片员-审核员-读片顾问三级审核制度，确保读片质量</li>
-            </ul>
-        </li>
-        <li class="innerAllImg">
-            <div class="blueBorder">
-                <%= image_tag("centerImg_4.png") %>
+            <div class="marT50">
+                <%= image_tag("readCenter-advantage2.jpg") %>
+            </div>
+            <div>
+                <h4>血管参数检测</h4>
+                <p>率先采用计算机自动识别技术进行视网膜血管检测，有效识别血管边界，实现血管管径和血管弯曲度测量。眼底微血管在慢性血管疾病中出现改变较早，可以通过眼底微血管情况分析全身微血管状态。眼底血管参数测量可用于分析血管参数与病程、病情之间的关联性等，敏感的反映治疗方案及药物疗效。</p>
             </div>
         </li>
-        <li class="deepBlue">
-            <ul>
-                <li>· 专业读片团队和专家团队，经美国威斯康辛州立大学眼底读片中心培训和认证，具有丰富的临床经验 </li>
-            </ul>
+        <li>
+            <div class="marT20">
+                <%= image_tag("readCenter-advantage3.jpg") %>
+            </div>
+            <div>
+                <h4>病变量化检测</h4>
+                <p>利用计算机自动完成视盘和病灶的边界识别，定量测定微血管瘤、硬性渗出、出血、软性渗出等病变。病变量化检测可敏感反映病变变化与疾病病程、病情之间的关系。</p>
+                <p>目前该技术被运用到十二五科技支撑计划（北京、上海、广州、成都、广西、宁夏、厦门等），即通过眼底图像量化分析评价药物辨证治疗糖尿病视网膜病变的疗效等项目中，运用前景广阔。 </p>
+            </div>
         </li>
         <li>
-            <%= image_tag("centerImg_5.png") %>
+            <div class="marT40">
+                <%= image_tag("readCenter-advantage4.jpg") %>
+            </div>
+            <h4>血氧饱和度分析</h4>
         </li>
     </ul>
-  <!--读片中心-->
 </div>
+<!--技术优势-->
+<!--开展工作-->
+<div class="readCenterTle" id="module4">
+    <p><span>RESULTS OF </span>THE WORK</p>
+    <p>开展工作</p>
+</div>
+<div class="centerModule readCenterWork">
+    <h5>糖尿病视网膜病变远程诊断服务</h5>
+    <div class="readCenterWorkImg">
+        <%= image_tag("readCenter-server.jpg") %>
+        <%= image_tag("readCenter-report.jpg",:class=>"reportImg" ) %>
+    </div>
+    <div class="wordIndent2">
+        <p>将基层医疗卫生机构、专业的眼影像分析诊断中心与2级及以上综合医院或眼科专科医院联系起来。</p>
+        <p class="aPoint">● 远程诊断</p>
+        <p>基层医疗卫生机构的医生只需要花 1 分钟将患者眼底图像通过互联网上传至平台，便可以在30分钟内得到专业的眼影像分析报告。</p>
+        <p class="aPoint">●双向转诊 </p>
+        <p>基层医疗卫生机构在收到眼影像分析报告后，将需要转诊的糖尿病视网膜病变患者向上级转诊。2级及以上综合医院或眼科专科医院在接收转诊患者并完成治疗后，再通过平台将治疗康复期患者转回基层医疗卫生机构。</p>
+        <p>糖网远程诊断中心完全符合国家分级诊疗服务技术方案，解决了糖网临床诊断和管理的难题。</p>
+    </div>
+    <h5 class="marT20">眼科远程诊断平台</h5>
+    <p>通过互联网连接各级医院，实现眼底疾病的远程诊断和移动协作；同时实现患者图像资料互联网云存储和管理。</p>
+    <div class="diagnosisPlatform flow">
+        <div class="fl">
+            <p>平台功能</p>
+            <dl>
+                <dd><i class="little icon_advantageList"></i> 患者信息管理</dd>
+                <dd><i class="little icon_advantageList"></i> 治疗建议</dd>
+                <dd><i class="little icon_advantageList"></i> 眼科远程诊断</dd>
+                <dd><i class="little icon_advantageList"></i> 严重患者便捷转诊</dd>
+                <dd><i class="little icon_advantageList"></i> 图像采集培训</dd>
+                <dd><i class="little icon_advantageList"></i> 医疗培训</dd>
+            </dl>
+        </div>
+        <%= image_tag("readCenter-function.jpg",:class=>"fr") %>
+    </div>
+    <div class="line30">
+        <h5 class="marT20">药物疗效评价</h5>
+        <p><i class="little icon_advantageList"></i> 覆盖全流程的专业质控标准化体系+专家级读片团队</p>
+        <p><i class="little icon_advantageList"></i> 丰富的临床试验项目经验</p>
+        <h5 class="marT20">科研读片</h5>
+        <p><i class="little icon_advantageList"></i> 提供精准量化、大数据分析、多中心协作的科研解决方案</p>
+        <p><i class="little icon_advantageList"></i> 庞大的眼底医学图像数据库</p>
+    </div>
+</div>
+<!--开展工作-->

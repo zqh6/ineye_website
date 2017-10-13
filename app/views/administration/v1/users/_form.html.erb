@@ -1,0 +1,31 @@
+<form class="am-form tpl-form-line-form">
+	<%= hidden_field_tag :id, @user.id, class: 'js-id' %>
+	<div class="am-form-group">
+		<label for="user-name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :name %> <span class="tpl-form-line-small-title"><%= :name.to_s.titleize %></span></label>
+		<div class="am-u-sm-9">
+			<%= text_field_tag :name, @user.name, class: 'tpl-form-input', maxlength: 10 %>
+		</div>
+	</div>
+
+	<div class="am-form-group">
+		<label for="user-name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :phone_number %> <span class="tpl-form-line-small-title"><%= :phone_number.to_s.titleize %></span></label>
+		<div class="am-u-sm-9">
+			<%= text_field_tag :phone_number, @user.phone_number, class: 'tpl-form-input', maxlength: 11 %>
+		</div>
+	</div>
+
+	<div class="am-form-group">
+		<label for="user-phone" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :role_code %> <span class="tpl-form-line-small-title"><%= :role_code.to_s.titleize %></span></label>
+		<div class="am-u-sm-9">
+			<%= select_tag :role_code, options_for_select(ShareEnum.form_options('roles'), @user.role_code), include_blank: true, class: '' %>
+		</div>
+	</div>
+
+	<div class="am-form-group">
+		<div class="am-u-sm-9 am-u-sm-push-3">
+			<button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success js-create">提交</button>
+			<% if !@user.new_record? %><%= link_to :back, class: '' do %><button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success button-include-link">取消</button><% end %><% end %>
+		</div>
+	</div>
+
+</form>
