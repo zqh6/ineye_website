@@ -1686,7 +1686,7 @@ p>b{
     color: #999;
 }
 .icon_tb{
-    background: url("icon_sy.png");
+    background: url("<%= asset_path 'icon_sy.png' %>");
     width: 32px;
     height: 32px;
     display: inline-block;
@@ -1714,7 +1714,7 @@ p>b{
     margin-left: 20px;
 }
 .little{
-    background: url("icon_lettle.png");
+    background: url("<%= asset_path 'icon_lettle.png' %>");
     display: inline-block;
 }
 .icon_lettle{
@@ -1806,7 +1806,7 @@ octorList li .IntroduceMask p{
     width: 42px;
     height: 42px;
     margin: 27px 0 5px;
-    background: url("icon_commit.png");
+    background: url("<%= asset_path 'icon_commit.png' %>");
 }
 .consults li{
     border-bottom: 1px solid #f5f5f5;
@@ -2048,7 +2048,7 @@ octorList li .IntroduceMask p{
     height: 56px;
     margin-top: 10px;
     display: inline-block;
-    background: url("eye_tb.png") 0 -11px;
+    background: url("<%= asset_path 'eye_tb.png' %>") 0 -11px;
 }
 .icon_eye2{
     background-position: -78px -11px;
