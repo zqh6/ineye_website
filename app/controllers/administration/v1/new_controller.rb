@@ -16,6 +16,7 @@ class Administration::V1::NewController < Administration::V1::PrivilegedControll
     @new = New.alive
     @new = @new.classify_is(params[:classify]) if params[:classify].present? && params[:classify].to_s!='0'
     @new = @new.title_like(params[:title])     if params[:title].present?
+    @new = @new.reorder('created_at DESC')
     @new = @new.paginate(page: params[:page], per_page: 20)
   end
 
