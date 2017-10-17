@@ -5,6 +5,11 @@ class ShareEnum < ApplicationRecord
     inactive: '不生效'
   }
 
+  enum state: {
+    C: '生效',
+    D: '不生效'
+  }
+
   enum new_classify: {
     common: '普通新闻',
     medicion: '医药新闻',

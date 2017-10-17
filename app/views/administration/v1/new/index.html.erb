@@ -65,11 +65,11 @@
 												<td><%= new.title %></td>
 												<td><%= new.user.try(:name).blank? ? '（暂无名称）' : new.user.name %></td>
 												<td><%= ShareEnum.new_classifies[new.classify.to_sym] %></td>
-												<td><%= l new.occurred_at, format: :human_date %></td>
+												<td><%= new.occurred_at==Time.utc(1970) ? ' ' : (l new.occurred_at, format: :human_date) %></td>
 												<td><%= l new.created_at, format: :human_date %></td>
 												<td>
 													<div class="tpl-table-black-operation">
-														<%= link_to administration_v1_new_path(new.id) do %>
+														<%= link_to new.scan_rails_path.blank? ? administration_v1_new_path(new.id) : new.scan_rails_path do %>
 															<i class="am-icon-newspaper-o"></i> 详情
 														<% end %>
 														<% if session[:user]['id'] == new.user_id %>

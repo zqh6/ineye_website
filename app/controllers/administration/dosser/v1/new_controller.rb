@@ -39,7 +39,7 @@ class Administration::Dosser::V1::NewController < Administration::Dosser::V1::Pr
   end
 
   def new_attributes
-    params.permit(:title, :vice_title, :occurred_at, :classify, :key_words, :content)
+    params.permit(:title, :vice_title, :occurred_at, :classify, :key_words, :content, :scan_rails_path, :state)
   end
 
   private :new_attributes

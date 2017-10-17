@@ -17,6 +17,8 @@ function submitData(){
 			"occurred_at": $('#occurred_at').val(),
 			"classify": $('#classify').val(),
 			"key_words": $('#key_words').val(),
+            "scan_rails_path": $('#scan_rails_path').val(),
+            "state": $('#state').val(),
 			"content": content.html()
 		},
 		dataType: "json"

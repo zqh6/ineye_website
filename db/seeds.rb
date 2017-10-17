@@ -39,5 +39,31 @@ def create_user(phone_number: nil, password_str: nil)
   end
 end
 
-init_dictionary
+#init_dictionary
 create_user phone_number: '19999999999', password_str: '123123'
+
+def scan_new
+  ActiveRecord::Base.transaction do
+    Rails.logger.warn 'Start scan new...'
+    all_count =  0
+    save_count = 0
+    Dir.foreach(Rails.root.join('app', 'views', 'news').to_s) do |folder|
+      next if('..'==folder || '.'==folder)
+      next if(folder.include? 'DS_Store')
+      next if(%w(index.html.erb edit.html.erb new.html.erb show.html.erb).include? folder)
+      Rails.logger.warn folder.inspect
+      file_name = folder.gsub('.html.erb', '')
+      new = New.find_by_scan_file_id(file_name)
+      if new.blank?
+        new = New.new scan_file_id: file_name, classify: 'common', scan_rails_path: '/news/'+file_name, title: file_name, user_id: 1
+        new.save!
+        save_count += 1
+      end
+      all_count += 1
+    end
+    Rails.logger.warn 'Finish scan new.'
+    Rails.logger.warn 'Scan '+all_count.to_s+' files. Save '+save_count.to_s+' files.'
+  end
+end
+
+scan_new
