@@ -67,3 +67,4 @@ gem 'i18n'
 gem 'rails-i18n'
 
 gem 'will_paginate'
+gem 'will_paginate-bootstrap'

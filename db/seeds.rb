@@ -50,7 +50,7 @@ def scan_new
     Dir.foreach(Rails.root.join('app', 'views', 'news').to_s) do |folder|
       next if('..'==folder || '.'==folder)
       next if(folder.include? 'DS_Store')
-      next if(%w(index.html.erb edit.html.erb new.html.erb show.html.erb).include? folder)
+      next if(%w(新闻列表.html.erb index.html.erb edit.html.erb new.html.erb show.html.erb).include? folder)
       Rails.logger.warn folder.inspect
       file_name = folder.gsub('.html.erb', '')
       new = New.find_by_scan_file_id(file_name)
