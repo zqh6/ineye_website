@@ -1,0 +1,158 @@
+<div class="doctorDetails flow whiteBg">
+    <div class="fl doctorPortrait flow">
+        <%= image_tag("zj22.jpg") %>
+        <div class="doctorBtns">
+            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+            <%= link_to '查看排班表',medical_path(:专家排班,:anchor=>"experts_15"),:class=>"fr" %>
+        </div>
+    </div>
+    <div class="fl doctorContent flow">
+        <h5>张大铮</h5>
+        <p class="doctorTitle"><span>副主任医师/医学博士</span></p>
+        <div class="doctorHonor">
+          <p>中国中医药研究促进会糖尿病专委会副秘书长</p>
+          <p>世界中联伦理审查委员会理事</p>
+          <p>中国中医药学会眼科专委会青年委员</p>
+          <p>中国民族医药学会眼科专委会理事</p>
+          <p>四川省糖尿病防治协会理事</p>
+        </div>
+        <div class="doctorGoodAt flow">
+            <span>擅长领域：</span>
+            <p>变态反应（过敏）性疾病，眼睑痉挛（抽动）症，复发性眼部疖肿，眼底疾病（反复出血、渗出等病症）中西医结合治疗。</p>
+        </div>
+        <p class="seePatientTime"><span>坐诊时间:</span>周二下午、周四上午,具体请以专家门诊时间表为准</p>
+    </div>
+</div>
+<div class="doctorIntroduce whiteBg">
+    <p>成都中医药大学毕业，研究方向为五官疾病的中西医临床疗效评价及创新药物研发，提出基于“脾应四季”的变态反应性疾病中西医动态干预理论。</p>
+    <p>现为四川省青年科技创新团队成员，国家糖尿病视网膜病变与青少年近视视功能保护网建设项目川西节点负责人，科技部国际合作计划视网膜图像诊断分析中心建设项目川西节点负责人，省中管局首批青年科技创新基金获得者，成都市科技局科技惠民项目糖尿病眼底筛查技术川西节点负责人，担任中国中医药研究促进会糖尿病专委会副秘书长，世界中联伦理审查委员会理事、中国中医药学会眼科专委会青年委员、中国民族医药学会眼科专委会理事、四川省糖尿病防治协会理事等学术团体职务。参与主研部省级课题10项，发表核心期刊论文19篇，合著论著1部，获全国博士论坛二等奖，所在研究团队获四川省科技进步特等奖、二等奖各1项。</p>
+</div>
+<ul class="registered flow flParent">
+    <li>预约挂号</li>
+    <li>姓名：<input type="text"></li>
+    <li>联系电话：<input type="text"></li>
+    <li>预约时间：<input type="text"></li>
+    <li>预约科室：<input type="text"></li>
+    <li><a href="" class="registeredBtn">提交</a></li>
+</ul>
+<div class="membersList whiteBg flow">
+    <div class="fl teamMemberWords">团 队 成 员</div>
+    <div class="teamContainer" >
+        <ul class="teamMembers fr flParent flow" style="">
+            <!--廖品正-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj1.jpg"),expert_path(:廖品正教授) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>廖品正</h4>
+                    <p>国医大师/教授/博士生导师</p>
+                    <p>享受国务院政府特殊津贴专家</p>
+                </div>
+            </li>
+            <!--廖品正-->
+            <!--邓亚萍-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj3.jpg"),expert_path(:邓亚平教授) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>邓亚平</h4>
+                    <p>主任医师/教授</p>
+                    <p>四川省名中医</p>
+                    <p>享受国务院政府特殊津贴</p>
+                </div>
+            </li>
+            <!--邓亚萍-->
+            <!--周华祥-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj7.jpg"),expert_path(:周华祥教授) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>周华祥</h4>
+                    <p>主任医师/教授/硕士生导师</p>
+                    <p>四川省学术技术带头人</p>
+                </div>
+            </li>
+            <!--周华祥-->
+            <!--路雪婧-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj9.jpg"),expert_path(:路雪婧主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>路雪婧</h4>
+                    <p>研究员/博士生导师</p>
+                    <p>全国首批中医药传承博士后</p>
+                </div>
+            </li>
+            <!--路雪婧-->
+            <!--黄霄-->
+            <li>
+                <div class="fl teamMemberPhoto">
+                    <%= link_to image_tag("zj11.jpg"),expert_path(:黄霄主任医师) %>
+                </div>
+                <div class="fl memberIntroduce">
+                    <h4>黄霄</h4>
+                    <p>主任医师/教授/硕士生导师</p>
+                    <p>中国眼免疫学会会员</p>
+                </div>
+            </li>
+            <!--黄霄-->
+        </ul>
+        <div class="leftBtn">
+            <i class="icon_arrow icon_left"></i>
+        </div>
+        <div class="rightBtn">
+            <i class="icon_arrow icon_right"></i>
+        </div>
+    </div>
+</div>
+<script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+        $(".leftBtn").addClass("active");
+        $(".rightBtn").addClass("active");
+    }
+    var rightMoveNum = members-4+((parseInt($(".teamMembers").css("left"))/$(".teamMembers li").width()));
+    var leftMoveNum = 0;
+    function move() {
+        if(rightMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            console.log(nowPos+" "+displacement);
+            $(".teamMembers").animate({
+                left:nowPos-displacement
+            })
+            rightMoveNum--;
+            leftMoveNum++;
+        }
+        console.log(rightMoveNum);
+    }
+    function move2() {
+        if(leftMoveNum>0){
+            $(".teamMembers").stop(true,true);
+            var nowPos = parseInt($(".teamMembers").css("left"));
+            var displacement =$(".teamMembers li").width();
+            $(".teamMembers").animate({
+                left:nowPos+displacement
+            })
+            rightMoveNum++;
+            leftMoveNum--;
+        }
+        console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+        if(rightMoveNum>0){
+            move();
+        }
+    })
+    $(".leftBtn").click(function() {
+        if(leftMoveNum>0){
+            move2();
+        }
+    })
+
+</script>
