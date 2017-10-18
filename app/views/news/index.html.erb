@@ -37,7 +37,7 @@
 
             <div class="newsContainer">
                 <h4>
-                    <span>新闻动态</span><em><%= link_to :'更多>>',news_path(:新闻列表),class:"hrefTitWord" %></em>
+                    <span>新闻动态</span><em><%= link_to :'更多>>', news_index_path(function: '新闻列表'),class:"hrefTitWord" %></em>
                 </h4>
                 <div>
                     <%= link_to :"近视烦恼多，手术问题听我说",news_path(:近视烦恼多手术问题听我说),class: 'hrefTitWord' %>

@@ -13,7 +13,7 @@
           <% end %>
         <% end %>
     </ul>
-    <%= will_paginate @new, renderer: BootstrapPagination::Rails, :previous_label=> '上一页',:next_label=> '下一页' %>
+    <div class="paginate-container"><%= will_paginate @new, renderer: BootstrapPagination::Rails, :previous_label=> '上一页',:next_label=> '下一页' %></div>
     <!--<div class="flow pagesContainer">
         <div class="pages fr"></div>
     </div>-->
@@ -39,5 +39,9 @@
         $(".newsAllList li").eq(news.num*(i+1)-1).nextAll().hide();
     })
 </script>
+<% end %>
+
+<% content_for :style do %>
+    <%= stylesheet_link_tag 'news/list/新闻列表' %>
 <% end %>
 

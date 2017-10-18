@@ -61,6 +61,8 @@ Rails.application.config.assets.precompile += %w(
   font/fontawesome-webfont.woff
   font/fontawesome-webfont.ttf
 
+  news/list/新闻列表.css.erb
+
   mobile_test.css
   index_slide.js
   slide-2.js
