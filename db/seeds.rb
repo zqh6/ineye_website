@@ -72,4 +72,4 @@ def scan_new
   end
 end
 
-scan_new
+#scan_new
