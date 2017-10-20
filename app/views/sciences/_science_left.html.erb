@@ -51,6 +51,7 @@
         </div>
     </div>
 </div>
+<% content_for :script do %>
 <script>
     $(".classResource a").click(function () {
         if($(this).parent().find("ul").css("display")=="none"){
@@ -61,3 +62,4 @@
         }
     })
 </script>
+<% end %>
