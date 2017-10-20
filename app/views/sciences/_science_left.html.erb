@@ -29,7 +29,7 @@
             <%= link_to :'学生风采',science_path(:学生风采) %>
         </li>
         <li class="classResource">
-            <a href="javascript:;"></a>
+            <a href="javascript:;">课程资源</a>
             <ul>
                 <li><a href="http://cdzyywkds.fanya.chaoxing.com/bisaizuopin/info?zid=3724#" target="_blank">五轮学说概要</a></li>
                 <li><a href="http://cdzyywkds.fanya.chaoxing.com/bisaizuopin/info?zid=3671" target="_blank">弱视定义和主要发病机制</a></li>
@@ -51,3 +51,13 @@
         </div>
     </div>
 </div>
+<script>
+    $(".classResource a").click(function () {
+        if($(this).parent().find("ul").css("display")=="none"){
+            $(this).parent().find("ul").show();
+        }else {
+            $(this).parent().find("ul").hide();
+
+        }
+    })
+</script>
