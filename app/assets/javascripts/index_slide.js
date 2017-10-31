@@ -20,7 +20,7 @@ var oImg = $(".banner-box .img");//获取图片盒子
 // }
 
 // var imgNum =8;//获取图片数量
-var imgNum = $(".banner-box .img li").length();
+var imgNum = $(".banner-box .img li").length;
 //根据图片个数添加圆点按钮
 //给第一个按钮添加选中样式
 $('.banner-box .li li:first').addClass('index');
