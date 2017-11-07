@@ -2,9 +2,10 @@
 <div class='banner-box  marB10 main'>
     <ul class='img'>
         <li>
-            <a href="javascript:;">
-                <%= image_tag("banner_qphys.jpg") %>
-            </a>
+            <%= link_to image_tag("banner_qphys.jpg"),news_path(:朱思泉教授入选四川妙手仁心金口碑好医生十强) %>
+            <div class="bannerWord">
+                <p> 热烈祝贺我院常务副院长、眼科“飞刀手”朱思泉教授入选四川“妙手仁心•金口碑好医生”十强！ </p>
+            </div>
         </li>
         <li>
             <%= link_to image_tag("banner_vipkz.jpg"),news_path(:关于调整门诊流程及增设VIP服务的通知) %>
