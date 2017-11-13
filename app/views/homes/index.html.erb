@@ -153,9 +153,9 @@
             </div>
           </li>
           <li>
-            <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000648&idx=1&sn=5fd0e8f3be9bbf22f3f2b3806ad25a1b&chksm=7d4c43dc4a3bcaca5e3719bc665d61bb93bdab051c097207d56af3f79f89e7c89c9b4532c6ce#rd" target="_blank">
+            <%= link_to news_path(:美国哈佛大学RichardJackson博士访问银海眼科) do %>
               <%= image_tag("news_zydjl.jpg") %>
-            </a>
+            <% end %>
             <div class="inner">
               <p>美国哈佛大学Richard Jackson博士访问银海眼科</p>
             </div>
@@ -215,10 +215,6 @@
           <%= link_to :'青少年近视防控 我院迎来第二批实验班学生',news_path(:青少年近视防控我院迎来第二批实验班学生) %>
           <span class="fr">2017-10-26</span>
         </li>
-        <!--<li>-->
-          <!--<%= link_to :'好消息！银海眼科医保开通了，从地铁一号线到院有专车接送！',news_path(:银海眼科医保开通了从地铁一号线到院有专车接送) %>-->
-          <!--<span class="fr">2017-10-22</span>-->
-        <!--</li>-->
        </ul>
       <!--新闻列表-->
     </div>
