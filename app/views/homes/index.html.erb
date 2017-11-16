@@ -153,9 +153,9 @@
             </div>
           </li>
           <li>
-            <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000648&idx=1&sn=5fd0e8f3be9bbf22f3f2b3806ad25a1b&chksm=7d4c43dc4a3bcaca5e3719bc665d61bb93bdab051c097207d56af3f79f89e7c89c9b4532c6ce#rd" target="_blank">
+            <%= link_to news_path(:美国哈佛大学RichardJackson博士访问银海眼科) do %>
               <%= image_tag("news_zydjl.jpg") %>
-            </a>
+            <% end %>
             <div class="inner">
               <p>美国哈佛大学Richard Jackson博士访问银海眼科</p>
             </div>
@@ -192,29 +192,31 @@
       <!--新闻列表-->
       <ul class="fr topList newsIndexList">
         <li>
-          <%= link_to :'中华中医药学会副会长、四川省中医药学会会长杨殿兴莅临银海眼科视察工作',news_path(:中华中医药学会副会长四川省中医药学会会长杨殿兴莅临银海眼科视察工作) %>
-          <span class="fr">2017-11-02</span>
+          <%= link_to :'【世界糖尿病日】糖友们，别让糖网“网”住你',news_path(:别让糖网网住你) %>
+          <span class="fr">2017-11-13</span>
         </li>
         <li>
-          <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000686&idx=1&sn=d84667f8da93ac1a0226ee1b6b43de19&chksm=7d4c43fa4a3bcaec5d3595729d21ec65fa20caf38b8f8b5f2b361a54b016245196d0d277bb7e#rd" target="_blank">成都中医药大学眼科学院/附属银海眼科医院召开学习宣传贯彻党的十九大精神报告会</a>
-          <span class="fr">2017-10-31</span>
+          <%= link_to :'【感恩岁末】错过双11，其实我们只想把最好的都留给你',news_path(:错过双11其实我们只想把最好的都留给你) %>
+          <span class="fr">2017-11-12</span>
         </li>
         <li>
-          <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000672&idx=1&sn=04fc49e64acf01d716730ffc9427c2e2&chksm=7d4c43f44a3bcae2e3d9c92b4531ddb4159afdeaa4b6f425c03a5438cf2a394b07c477a520b9#rd" target="_blank">视界尽在我眼中 —— 银海眼科“全程精彩 无镜视界”近视屈光手术活动如约举行</a>
-          <span class="fr">2017-10-28</span>
+          <%= link_to :' 热烈祝贺我院廖品正、段俊国教授荣获学校“双一流”建设资深教授和首席教授称号 ',news_path(:荣获学校双一流建设资深教授和首席教授称号) %>
+          <span class="fr">2017-11-09</span>
         </li>
         <li>
-          <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000648&idx=1&sn=5fd0e8f3be9bbf22f3f2b3806ad25a1b&chksm=7d4c43dc4a3bcaca5e3719bc665d61bb93bdab051c097207d56af3f79f89e7c89c9b4532c6ce#rd" target="_blank">美国哈佛大学Richard Jackson博士访问银海眼科</a>
-          <span class="fr">2017-10-26</span>
+          <%= link_to :'四川省糖尿病防治协会2017学术年会圆满召开',news_path(:四川省糖尿病防治协会2017学术年会圆满召开) %>
+          <span class="fr">2017-11-05</span>
         </li>
         <li>
-          <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000648&idx=2&sn=f3131e5d5329d5930944d0f84333fbef&chksm=7d4c43dc4a3bcacabb8c481f05ee9e4923dce6d79b1f7feec9ecfa4c5d127c3798cc38ddd562#rd" target="_blank">青少年近视防控 我院迎来第二批实验班学生</a>
-          <span class="fr">2017-10-26</span>
+          <%= link_to :'四川省糖尿病防治协会开展大型义诊活动',news_path(:四川省糖尿病防治协会开展大型义诊活动) %>
+          <span class="fr">2017-11-05</span>
         </li>
         <li>
-          <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000612&idx=1&sn=a7dbd9ea2a762454002e6e653c303493&chksm=7d4c43304a3bca26b55714b8c432622b6d39936731e60813b9c3425687ce62426ed19e66766a#rd" target="_blank"> 好消息！银海眼科医保开通了，从地铁一号线到院有专车接送！ </a>
-          <span class="fr">2017-10-22</span>
+          <%= link_to :'四川省糖尿病防治提升计划在蓉启动',news_path(:四川省糖尿病防治提升计划在蓉启动) %>
+          <span class="fr">2017-11-05</span>
         </li>
+
+
        </ul>
       <!--新闻列表-->
     </div>
@@ -223,13 +225,13 @@
   <div class="newsVideo fr">
     <p class="newTitle">通知公告 </p>
     <ul class="topList noticeList">
+      <li><%= link_to :'成都中医药大学眼科学院管理类聘用人员招聘公告',news_path(:成都中医药大学眼科学院管理类聘用人员招聘公告) %></li>
       <li><%= link_to :'关于调整门诊流程及增设VIP服务的通知',news_path(:关于调整门诊流程及增设VIP服务的通知) %></li>
       <li><%= link_to :'眼科学院2017年推免试攻读硕士学位研究生办法',news_path(:成都中医药大学眼科学院2017年接收推荐免试攻读硕士学位研究生办法) %></li>
       <li><%= link_to :'【招标公告】 成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告',news_path(:成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告) %></li>
       <li><%= link_to :'关于开展2017年岗位晋升及聘任工作的通知',science_path(:关于开展2017年岗位晋升及聘任工作的通知) %></li>
       <li><%= link_to :'园林植物栽植招标公告',news_path(:园林植物栽植招标公告) %></li>
       <li><%= link_to :'成都中医大银海眼科医院互动多媒体设备（含软件程序设计、硬件制作、安装）采购项目招标公告',news_path(:成都中医大银海眼科医院互动多媒体设备采购项目招标公告) %></li>
-      <li><%= link_to :'成都中医大银海眼科医院广告导视物料（含设计、制作、安装）及医院院务接待室（含软装、陈设、视觉美工物料及家具）装修工程项目招标公告',news_path(:成都中医大银海眼科医院广告导视物料装修项目招标公告) %></li>
     </ul>
   </div>
 </div>

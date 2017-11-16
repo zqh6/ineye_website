@@ -1,3 +1,6 @@
+#部署需要
+##ruby 2.3.3
+
 #本地服务用development部署
 ##deploy server
 ####create db
