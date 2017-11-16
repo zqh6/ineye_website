@@ -3,7 +3,14 @@ class NewsController < ApplicationController
   layout 'content'
 
   def show
-    render :action => params[:id] and return
+    a = params[:id]
+    if params[:from]=='db'
+      @new = New.find_by_id(params[:id])
+      #Rails.logger.warn 'WWWWWWWWWWWWWWWWWWWWWWWWWWW'
+      #Rails.logger.warn @new.inspect
+      a = 'show'
+    end
+    render :action => a and return
   end
 
   def new
