@@ -1,0 +1,2 @@
+class ConEducationController < ApplicationController
+end
