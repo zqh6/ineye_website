@@ -65,9 +65,9 @@ class AllApi::CommentsController < AllApi::PresentationController
       render_conflict message: '需指定post_link和post_id中至少一个参数' and return
     end
     comments = comments.post_id_is(params[:post_id].strip.to_i) if params[:post_id].present?
-    comments = comments.post_link_is(params[:post_link].strip) if comments.blank? && params[:post_link].present?
+    comments = comments.post_link_is(params[:post_link].strip) if params[:post_link].present?
     if comments.blank?
-      render_conflict message: '没有顶级评论数据' and return
+      render_conflict message: '根据条件查询不到顶级评论数据' and return
     end
     collection = []
     comments.each do |top_comment|
