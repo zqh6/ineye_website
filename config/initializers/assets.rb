@@ -13,6 +13,9 @@ Rails.application.config.assets.precompile += %w( mobile_test.css )
 #Todo Maybe remove shared/editor/google-code-prettify/prettify.css
 #Todo Maybe remove shared/bootstrap-wgsiwyg.js
 Rails.application.config.assets.precompile += %w(
+  swagger_engine/print.css
+  swagger_engine/reset.css
+
   shared/jquery-2.1.4.min.js
   shared/amazeui.min.js
   shared/theme.js

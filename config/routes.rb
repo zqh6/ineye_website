@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "homes#index"
 
+  mount SwaggerEngine::Engine, at: "/api-docs"
+
   resources :homes,    only: [:index, :show      ]
   resources :medicals, only: [:index, :show      ]
   resources :centers,  only: [:index, :show      ]
