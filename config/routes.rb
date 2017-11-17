@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       resources :new,        only: [:new, :edit, :index, :show          ]
       resources :users,      only: [:new, :edit, :index, :show          ]
       resources :passwords,  only: [      :edit,                :update ]
+      resources :comments
     end
   end
 
