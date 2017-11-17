@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "homes#index"
 
+  mount SwaggerEngine::Engine, at: "/api-docs"
+
   resources :homes,    only: [:index, :show      ]
   resources :medicals, only: [:index, :show      ]
   resources :centers,  only: [:index, :show      ]
@@ -30,6 +32,10 @@ Rails.application.routes.draw do
     resources :sessions, only: [:create, :destroy]
     resources :new,      only: [:create, :destroy, :update]
     resources :users,    only: [:create, :destroy, :update]
+  end
+
+  scope '/all-api', module: 'all_api', as: 'all_api' do
+    resources :comments
   end
 
 end

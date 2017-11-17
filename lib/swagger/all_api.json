@@ -1,0 +1,128 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title":       "银海官网公共 API",
+    "description": "暂无描述",
+    "contact":     { "name": "mytxz", "email": "mytxz@foxmail.com" },
+    "version":     "1"
+  },
+  "basePath": "/all-api/",
+  "produces": [ "application/json" ],
+  "consumes": [ "application/json" ],
+  "paths":    {
+
+    "/comments": {
+      "post": {
+        "summary":     "创建评论",
+        "description": "创建评论的描述",
+        "tags":        [ "评论" ],
+        "parameters":  [
+          {
+            "name": "comment",
+            "in": "body",
+            "description": "parent_id 上级评论id \n\r * content 内容 \n\r post_link 帖子链接相对路径（和post_id至少指定一个，以post_id优先） \n\r post_id 帖子id（和post_link至少指定一个，以post_id优先）",
+            "required": true,
+            "schema": {
+              "description": "评论请求体",
+              "type": "object",
+              "properties": {
+                "parent_id": {
+                  "type": "integer"
+                },
+                "content": {
+                  "type": "string"
+                },
+                "post_link": {
+                  "type": "string"
+                },
+                "post_id": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        ],
+
+        "responses": {
+          "default": {
+            "description": "出现错误。",
+            "schema":      { "$ref": "#/definitions/ErrorResponseBody" }
+          }
+        }
+      }
+    },
+
+    "/comments/~":{
+      "get": {
+        "summary": "查询帖子的评论树",
+        "description": "暂无描述",
+        "tags": ["评论"],
+        "parameters": [
+          {
+            "name": "post_link",
+            "in": "query",
+            "description": "帖子链接相对路径（比post_id参数优先级低）",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "post_id",
+            "in": "query",
+            "description": "帖子id（比post_link参数优先高）",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "出现错误。",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseBody"
+            }
+          }
+        }
+      }
+    }
+
+
+
+  },
+
+  "definitions": {
+
+    "LinkList": { "type":  "array", "items": { "type": "object", "properties": { "rel":  { "type": "string" }, "href": { "type": "string" }, "title": { "type": "string" } } } },
+
+    "ResponseBodyCommonProperties": {
+      "type": "object",
+      "properties": {
+
+        "success": { "type": "boolean"                    },
+        "code":    { "type": "string"                     },
+        "message": { "type": "string"                     },
+        "size":    { "type": "integer", "format": "int32" },
+        "errors":  { "type": "string",  "additionalProperties": { "type": "array", "items": { "type": "string" } } },
+
+        "meta": {
+          "type": "object",
+          "properties": {
+            "timestamp":  { "type": "integer", "format":               "int32"              },
+            "request_id": { "type": "string",  "format":               "uuid"               },
+            "criteria":   { "type": "object",  "additionalProperties": { "type": "string" } }
+          }
+        }
+
+      }
+    },
+
+    "ErrorResponseBody": {
+      "description": "出现错误时的响应体",
+      "allOf": [
+        { "$ref": "#/definitions/ResponseBodyCommonProperties" },
+        { "type": "object", "properties": { "collection": { "type": "array", "items": { "type": "object",  "additionalProperties": { "type": "string" } } } } }
+      ]
+    }
+
+
+
+  }
+}
