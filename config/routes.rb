@@ -32,4 +32,8 @@ Rails.application.routes.draw do
     resources :users,    only: [:create, :destroy, :update]
   end
 
+  scope '/all-api', module: 'all_api', as: 'all_api' do
+    resources :comments
+  end
+
 end

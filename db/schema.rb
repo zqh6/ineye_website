@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171017065934) do
+ActiveRecord::Schema.define(version: 20171116082041) do
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "parent_id"
+    t.string   "content"
+    t.string   "post_link"
+    t.string   "post_id"
+    t.integer  "creator_id"
+    t.integer  "auditor_id"
+    t.string   "state",      limit: 1, default: "C",   null: false
+    t.boolean  "defunct",              default: false, null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
 
   create_table "dictionaries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "dictionary_type", limit: 50, default: "",                    null: false
