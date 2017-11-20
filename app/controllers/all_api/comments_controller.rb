@@ -44,10 +44,13 @@ class AllApi::CommentsController < AllApi::PresentationController
   def update
     ActiveRecord::Base.transaction do
       comment = Comment.find_by_id(params[:id])
+      Rails.logger.warn '111111111111111111111'
       if comment.blank?
         render_conflict message: '没有此评论数据' and return
       end
-      comment.assign_attributes auditor_id: params[:auditor_id], state: params[:state]
+      if params[:function] =='audit'
+        comment.assign_attributes auditor_id: @login_user.id, state: params[:state]
+      end
       if comment.save
         render_ok and return
       else
@@ -61,6 +64,9 @@ class AllApi::CommentsController < AllApi::PresentationController
 
   def show
     comments = Comment.where('parent_id is null or parent_id = ?', '')
+    if params[:state].present?
+      comments = comments.state_in(params[:state].split(','))
+    end
     if params[:post_link].blank? && params[:post_id].blank?
       render_conflict message: '需指定post_link和post_id中至少一个参数' and return
     end

@@ -45,17 +45,19 @@
                             <td><%= comment.creator_id_desc%></td>
                             <td><%= comment.created_at_desc %></td>
                             <td><%= comment.auditor_id_desc %></td>
-                            <td><%= comment.state_desc %></td>
+                            <td class="<% if comment.state=='A'%>text-success<% elsif comment.state=='D'%>am-text-danger<% end %>"><%= comment.state_desc %></td>
                             <td>
                               <div class="tpl-table-black-operation">
                                 <%= link_to administration_v1_comment_path(comment.id) do %>
                                     <i class="am-icon-newspaper-o"></i> 详情
                                 <% end %>
-                                <%= link_to 'javascript: void(0);', class: 'tpl-table-black-operation-suc js-approve-one', 'data-id' => comment.id do %>
-                                  <i class="am-icon-trash"></i> 通过
-                                <% end %>
-                                <%= link_to 'javascript: void(0);', class: 'tpl-table-black-operation-del js-deny-one', 'data-id' => comment.id do %>
-                                    <i class="am-icon-trash"></i> 不通过
+                                <% if comment.state =='C' %>
+                                  <%= link_to 'javascript: void(0);', class: 'tpl-table-black-operation-suc js-approve-one', 'data-id' => comment.id do %>
+                                    <i class="am-icon-trash"></i> 通过
+                                  <% end %>
+                                  <%= link_to 'javascript: void(0);', class: 'tpl-table-black-operation-del js-deny-one', 'data-id' => comment.id do %>
+                                      <i class="am-icon-trash"></i> 不通过
+                                  <% end %>
                                 <% end %>
                               </div>
                             </td>

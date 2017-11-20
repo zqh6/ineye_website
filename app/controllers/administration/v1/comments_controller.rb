@@ -6,7 +6,7 @@ class Administration::V1::CommentsController < Administration::V1::PrivilegedCon
 
   def index
     @comments = Comment.alive
-    @comments = @comments.state_in(['C']).reorder(created_at: :desc)
+    @comments = @comments.reorder(created_at: :desc)
     @comments = @comments.paginate(page: params[:page], per_page: 20)
   end
 
