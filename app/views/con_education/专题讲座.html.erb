@@ -1,20 +1,5 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../../assets/stylesheets/commom.scss">
-    <link rel="stylesheet" href="../../assets/stylesheets/index.scss.erb">
-    <link rel="stylesheet" href="../../../../../Desktop/继续教育原图/图片查看/baguetteBox/css/baguetteBox.min.css">
-</head>
-<body>
-
-<div>
-    <div class="main flow">
-        <%= render "con_education/_edu_left" %>
+    <div class="flow conEducation">
+        <%= render 'con_education/edu_left' %>
         <div class="fr width1020 eduContentCon">
             <div class="whiteBg">
                 <ul class="flow flParent educationList">
@@ -97,7 +82,7 @@
                             <p>sssss</p>
                         </div>
                     </li>
-                   
+
                 </ul>
 
             </div>
@@ -127,9 +112,7 @@
         </div>
 
     </div>
-</div>
 
-</body>
 <% content_for :script do %>
 <%= javascript_include_tag 'baguetteBox' %>
 <%= javascript_include_tag 'video.min' %>
