@@ -20,6 +20,7 @@ rails kindeditor:assets
 /opt/nginx/sbin/nginx -s reload
 
 
+
 #测试服务用production部署
 
 ##deploy server

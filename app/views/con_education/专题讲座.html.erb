@@ -14,40 +14,7 @@
 
 <div>
     <div class="main flow">
-        <div class="enterEyeCommon fl">
-            <ul class="">
-                <li>
-                    <h4>继续教育</h4>
-                    <p>Continuing education</p>
-                </li>
-                <li>
-                    <a href="">专题讲座</a>
-                </li>
-                <li>
-                    <a href="">典型病例</a>
-                </li>
-                <li>
-                    <a href="">疑难病例</a>
-                </li>
-                <li>
-                    <a href="">手术视频</a>
-                </li>
-            </ul>
-            <div class="hosInformation">
-                <i class="icon_enter icon_telephone icon_enterIcon"></i>
-                <div>
-                    <p>咨询热线</p>
-                    <p>400 9900 766</p>
-                </div>
-            </div>
-            <div class="hosInformation">
-                <i class="icon_enter icon_time icon_enterIcon"></i>
-                <div>
-                    <p>门诊时间</p>
-                    <p>08:30-17:30</p>
-                </div>
-            </div>
-        </div>
+        <%= render "con_education/_edu_left" %>
         <div class="fr width1020 eduContentCon">
             <div class="whiteBg">
                 <ul class="flow flParent educationList">
@@ -81,7 +48,7 @@
                         <p class="allComment">全部评论<span class="num">a</span> </p>
                         <div class="flow oneComment">
                             <div class="fl">
-                                <img src="../../assets/images/edu_user.png" alt="">
+                                <%= image_tag("edu_user.png") %>
                             </div>
                             <div class="fl comContent">
                                 <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
@@ -90,7 +57,7 @@
                         </div>
                         <div class="flow oneComment">
                             <div class="fl">
-                                <img src="../../assets/images/edu_user.png" alt="">
+                                <%= image_tag("edu_user.png") %>
                             </div>
                             <div class="fl comContent">
                                 <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
@@ -107,12 +74,21 @@
 
                     <li class="thumbnail">
                         <a class="lightbox" href="../../assets/images/park.jpg">
-                            <img src="../../assets/images/edu_smallimgs.jpg" alt="Park">
+                            <%= image_tag("edu_smallimgs.jpg") %>
                         </a>
                         <div class="caption">
                             <p>sssss</p>
                         </div>
                     </li>
+                    <li class="thumbnail">
+                        <a class="lightbox" href="../../assets/images/park.jpg">
+                            <%= image_tag("edu_smallimgs.jpg") %>
+                        </a>
+                        <div class="caption">
+                            <p>sssss</p>
+                        </div>
+                    </li>
+
                     <li class="thumbnail">
                         <a class="lightbox" href="../../assets/images/park.jpg">
                             <img src="../../assets/images/edu_smallimgs.jpg" alt="Park">
@@ -121,46 +97,7 @@
                             <p>sssss</p>
                         </div>
                     </li>
-                    <li class="thumbnail">
-                        <a class="lightbox" href="../../assets/images/park.jpg">
-                            <img src="../../assets/images/edu_smallimgs.jpg" alt="Park">
-                        </a>
-                        <div class="caption">
-                            <p>sssss</p>
-                        </div>
-                    </li>
-                    <li class="thumbnail">
-                        <a class="lightbox" href="../../assets/images/park.jpg">
-                            <img src="../../assets/images/edu_smallimgs.jpg" alt="Park">
-                        </a>
-                        <div class="caption">
-                            <p>sssss</p>
-                        </div>
-                    </li>
-                    <li class="thumbnail">
-                        <a class="lightbox" href="../../assets/images/park.jpg">
-                            <img src="../../assets/images/edu_smallimgs.jpg" alt="Park">
-                        </a>
-                        <div class="caption">
-                            <p>sssss</p>
-                        </div>
-                    </li>
-                    <li class="thumbnail">
-                        <a class="lightbox" href="../../assets/images/park.jpg">
-                            <img src="../../assets/images/edu_smallimgs.jpg" alt="Park">
-                        </a>
-                        <div class="caption">
-                            <p>sssss</p>
-                        </div>
-                    </li>
-                    <li class="thumbnail">
-                        <a class="lightbox" href="../../assets/images/park.jpg">
-                            <img src="../../assets/images/edu_smallimgs.jpg" alt="Park">
-                        </a>
-                        <div class="caption">
-                            <p>sssss</p>
-                        </div>
-                    </li>
+                   
                 </ul>
 
             </div>
@@ -193,8 +130,11 @@
 </div>
 
 </body>
-<script src="../../assets/javascripts/jquery-1.8.3.min.js"></script>
-<script src="../../assets/javascripts/baguetteBox.min.js"></script>
+<% content_for :script do %>
+<%= javascript_include_tag 'baguetteBox' %>
+<%= javascript_include_tag 'video.min' %>
+
+
 <script type="text/javascript">
     //    正文、照片、文档、视频切换
     $(".educationList li").click(function () {
@@ -214,4 +154,5 @@
     });
 
 </script>
-</html>
+
+<% end %>
