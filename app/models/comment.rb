@@ -29,7 +29,7 @@ class Comment < ApplicationRecord
   end
 
   def auditor_id_desc
-    self.auditor_id==nil ? '' : User.included_by(self.auditor_id).first.name
+    self.auditor_id.blank? ? '' : User.included_by(self.auditor_id).first.name
   end
 
 end

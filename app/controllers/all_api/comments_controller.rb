@@ -44,7 +44,6 @@ class AllApi::CommentsController < AllApi::PresentationController
   def update
     ActiveRecord::Base.transaction do
       comment = Comment.find_by_id(params[:id])
-      Rails.logger.warn '111111111111111111111'
       if comment.blank?
         render_conflict message: '没有此评论数据' and return
       end
