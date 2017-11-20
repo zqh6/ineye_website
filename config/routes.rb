@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :sciences, only: [:index, :show      ]
   resources :news,     only: [:index, :show, :new]
   resources :kepus,    only: [:index, :show      ]
+  resources :con_education,    only: [:index, :show      ]
+
 
   namespace :exhibition do
     namespace :v1 do
