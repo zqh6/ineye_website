@@ -77,12 +77,16 @@ class AllApi::CommentsController < AllApi::PresentationController
     collection = []
     comments.each do |top_comment|
       top_comment_json = top_comment.to_json_by(fields: [:id, :content, :created_at])
-      top_comment_json[:sons]    = get_later_generations(top_comment)
+      sons = []
+      top_comment_json[:sons]    = get_later_generations(top_comment, sons)
       collection.push(top_comment_json)
     end
+    Rails.logger.warn '1111111111'
+    Rails.logger.warn collection.inspect
     render_ok message: '获取帖子评论成功', collection: collection and return
   end
 
+=begin
   def get_later_generations(top_comment)
     tmp_collection = []
     if top_comment.present?
@@ -96,6 +100,21 @@ class AllApi::CommentsController < AllApi::PresentationController
       end
     end
     tmp_collection
+  end
+=end
+
+  def get_later_generations(top_comment, sons)
+    if top_comment.present?
+      comments = Comment.parent_id_is(top_comment.id)
+      if comments.present?
+        comments.each do |comment|
+          comment_json = comment.to_json_by(fields: [:id, :content, :created_at])
+          get_later_generations(comment, sons)
+          sons.push(comment_json)
+        end
+      end
+    end
+    sons
   end
 
   def attribute_fields
