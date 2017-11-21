@@ -30,7 +30,6 @@
                     </div>
                 </div>
                 <div class="comContainer">
-                    <!-- 111111111111111111111111111111111 -->
                     <p class="allComment">全部评论<span class="num">a</span> </p>
 
                     <div class="flow oneComment">
@@ -41,27 +40,17 @@
                             <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
                             <div class="flow">
                                 <p class="fl">喜欢这种颜色搭配与排版···</p>
-                                <div class="commentSubBtn fr userComment"><%= image_tag("comment_before.png") %></div>
+                                <div class="showSubBtn fr userComment"><%= image_tag("comment_before.png") %></div>
                             </div>
-                            <div class="thisComments">
-                                <div>
-                                    <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
-                                    <div class="flow">
-                                        <p class="fl">喜欢这种颜色搭配与排版···</p>
-                                        <div class="commentSubBtn fr userComment"><%= image_tag("comment_before.png") %></div>
-                                        <div class="commentCon">
-                                            <textarea class="commentInner" autofocus></textarea>
-                                            <div class="flow">
-                                                <p class="erroContent"></p><div class="commentSubBtn fr">评论</div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <!-- <div class="commentCon commentInnerCon">
+                                <textarea class=\"commentInner\" ></textarea>
+                                <div class=\"flow\">
+                                <p class=\"erroContent\"></p>
+                                <div class=\"commentSubBtn fr\">评论</div>
                                 </div>
-
-                            </div>
+                            </div> -->
                         </div>
                     </div>
-                    <!-- 1111111111111111111111111111111111111111 -->
                     <div class="flow oneComment">
                         <div class="fl">
                             <%= image_tag("edu_user.png") %>
@@ -148,10 +137,10 @@
         myPlayer.play();
     });
     window.onload = function(){
-        // getContent()
+        getContent()
 
     }
-    function getContent(){
+    function getContent(elm){
         $.ajax({
             url: '/all-api/comments/~',
             type: "GET",
@@ -167,7 +156,7 @@
                 var innerStr = "<p class='allComment'>全部评论<span class='num'>"+data.length+"</span> </p>";
                 for(var i = data.length-1;i >= 0; i--){
 
-                    innerStr+="<div class='flow oneComment' parent_id = "+ data[i].id +" >"
+                    innerStr+="<div class='flow oneComment' parent_id = "+ data[i].id +"  >"
                         +"<div class='fl'>"
                         +"<img src= '../../assets/edu_user.png' />"
                         +"</div>"
@@ -176,13 +165,14 @@
                         +"<span>游客</span></p>"
                         +"<div class='flow'>"
                         +"<p class='fl'>"+ data[i].content +"</p>"
-                        +"<div class=‘commentSubBtn fr userComment’>"
-                        +"<img src= '../../assets/comment_before.png'/></div>"
+                        +"<div class='commentSubBtn fr userComment' >"
+                        +"<img src= '../../assets/comment_before.png'  onclick=\"addChiComment("+ data[i].id +")\" /></div>"
                         +"</div>"
                         +"</div>"
                         +"</div>"
                 }
-                $(".comContainer").html(innerStr);
+                elm = elm?elm:$(".comContainer");
+                elm.html(innerStr);
             })
             .fail(function( xhr, status, errorThrown ) {
                 console.log('失败');
@@ -191,7 +181,7 @@
             });
     }
 
-    function postComment(parId){
+    function postComment(parId,num){
         if(/^[ ]+$/.test($(".commentInner").val())||$(".commentInner").val()==""){
             $(".erroContent").html("评论的内容不能为空");
         }else{
@@ -202,19 +192,19 @@
                 contentType: 'application/json',
                 dataType: "json",
                 data: JSON.stringify({
-                    parent_id: parId==null?null:parId,
-            content: $(".commentInner").val(),
-                post_link: "/con_education/专题讲座",
+                    parent_id: parId?parId:null,
+                    content: num?$(".commentInner").eq(1).val():$(".commentInner").eq(0).val(),
+                    post_link: "/con_education/专题讲座",
             })
         })
         .done(function( data ) {
                 var data = data.collection;
                 console.log(data.length);
             })
-                .fail(function( xhr, status, errorThrown ) {
+        .fail(function( xhr, status, errorThrown ) {
                     console.log('失败');
                 })
-                .always(function( xhr, status ) {
+        .always(function( xhr, status ) {
                 });
             getContent();
         }
@@ -224,9 +214,27 @@
         postComment();
 
     })
-    $(".userComment").click(function(){
-        postComment($(this).parents(".oneComment").attr("parent_id"))
-    })
+    function addChiComment(elem){
+        var pos = parseInt(elem);
+        for(var j = 0; j<$(".oneComment").length;j++){
+            $(".oneComment").eq(j).find(".commentInnerCon").remove();
+        }
+        console.log(pos);
+        var str  =  "<div class=\"commentCon commentInnerCon\">"
+                     +"<textarea class=\"commentInner\" ></textarea>"
+                     +"<div class=\"flow\">"
+                     +"<p class=\"erroContent\"></p>"
+                     +"<div class=\"commentSubBtn fr\" onclick=\" postComment（"+ elem +",1）\" >评论</div>"
+                     +"</div></div>"
+        for(var j = 0; j<$(".oneComment").length;j++){
+            console.log($(".oneComment").eq(j).attr("parent_id"));
+            if($(".oneComment").eq(j).attr("parent_id")== pos){
+                    $(str).appendTo($(".comContent")[j]);
+
+            }
+        }
+    }
+
 
 </script>
 
