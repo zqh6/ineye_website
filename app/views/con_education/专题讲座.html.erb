@@ -1,122 +1,129 @@
-    <div class="flow conEducation">
-        <%= render 'con_education/edu_left' %>
-        <div class="fr width1020 eduContentCon">
+<div class="flow conEducation">
+    <%= render 'con_education/edu_left' %>
+    <div class="fr width1020 eduContentCon">
+        <div class="whiteBg">
+            <ul class="flow flParent educationList">
+                <li class="on">正文</li>
+                <li>照片</li>
+                <li>文档</li>
+                <li>视频</li>
+            </ul>
+        </div>
+        <!--第一块 正文内容-->
+        <div class="edModule show">
             <div class="whiteBg">
-                <ul class="flow flParent educationList">
-                    <li class="on">正文</li>
-                    <li>照片</li>
-                    <li>文档</li>
-                    <li>视频</li>
-                </ul>
-            </div>
-            <!--第一块 正文内容-->
-            <div class="edModule show">
-                <div class="whiteBg">
-                    <div class="caseContent">
-                        <h3>标题</h3>
-                        <p>诊断</p>
-                        <p>处理</p>
-                    </div>
-
+                <div class="caseContent">
+                    <h3>标题</h3>
+                    <p>诊断</p>
+                    <p>处理</p>
                 </div>
-                <div class="marT10 whiteBg">
-                    <ul class="flow flParent educationList">
-                        <li class="on">评论</li>
-                    </ul>
-                    <div class="commentCon">
-                        <textarea class="commentInner" autofocus></textarea>
-                        <div class="flow">
-                            <p class="erroContent"></p><div class="commentSubBtn fr">评论</div>
-                        </div>
+
+            </div>
+            <div class="marT10 whiteBg">
+                <ul class="flow flParent educationList">
+                    <li class="on">评论</li>
+                </ul>
+                <div class="commentCon">
+                    <textarea class="commentInner" autofocus></textarea>
+                    <div class="flow">
+                        <p class="erroContent"></p><div class="commentSubBtn fr">评论</div>
                     </div>
-                    <div class="comContainer">
-                        <!-- 111111111111111111111111111111111 -->
-                        <p class="allComment">全部评论<span class="num">a</span> </p>
+                </div>
+                <div class="comContainer">
+                    <!-- 111111111111111111111111111111111 -->
+                    <p class="allComment">全部评论<span class="num">a</span> </p>
 
-                        <div class="flow oneComment">
-                            <div class="fl">
-                                <%= image_tag("edu_user.png") %>
+                    <div class="flow oneComment">
+                        <div class="fl">
+                            <%= image_tag("edu_user.png") %>
+                        </div>
+                        <div class="fl comContent">
+                            <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
+                            <div class="flow">
+                                <p class="fl">喜欢这种颜色搭配与排版···</p>
+                                <div class="commentSubBtn fr userComment"><%= image_tag("comment_before.png") %></div>
                             </div>
-                            <div class="fl comContent">
-                                <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
-                                <div class="flow">
-                                    <p class="fl">喜欢这种颜色搭配与排版···</p>
-                                    <div class="commentSubBtn fr userComment"><%= image_tag("comment_before.png") %></div>
-                                    <div class="thisComments">
-                                        <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
-                                        <div class="flow">
-                                            <p class="fl">喜欢这种颜色搭配与排版···</p>
-                                            <div class="commentSubBtn fr userComment"><%= image_tag("comment_before.png") %></div>
-
+                            <div class="thisComments">
+                                <div>
+                                    <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
+                                    <div class="flow">
+                                        <p class="fl">喜欢这种颜色搭配与排版···</p>
+                                        <div class="commentSubBtn fr userComment"><%= image_tag("comment_before.png") %></div>
+                                        <div class="commentCon">
+                                            <textarea class="commentInner" autofocus></textarea>
+                                            <div class="flow">
+                                                <p class="erroContent"></p><div class="commentSubBtn fr">评论</div>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
-                        <!-- 1111111111111111111111111111111111111111 -->
-                        <div class="flow oneComment">
-                            <div class="fl">
-                                <%= image_tag("edu_user.png") %>
-                            </div>
-                            <div class="fl comContent">
-                                <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
-                                <p>喜欢这种颜色搭配与排版···</p>
-                            </div>
+                    </div>
+                    <!-- 1111111111111111111111111111111111111111 -->
+                    <div class="flow oneComment">
+                        <div class="fl">
+                            <%= image_tag("edu_user.png") %>
+                        </div>
+                        <div class="fl comContent">
+                            <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
+                            <p>喜欢这种颜色搭配与排版···</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <!--第一块 正文内容-->
-            <!--第二块 照片内容-->
-            <div class="pad40 whiteBg edModule">
-                <ul class="tz-gallery flParent flow">
-
-                    <li class="thumbnail">
-                        <a class="lightbox" href="/assets/park.jpg">
-                            <%= image_tag("edu_smallimgs.jpg") %>
-                        </a>
-                        <div class="caption">
-                            <p>sssss</p>
-                        </div>
-                    </li>
-                    <li class="thumbnail">
-                        <a class="lightbox" href="/assets/park.jpg">
-                            <%= image_tag("edu_smallimgs.jpg") %>
-                        </a>
-                        <div class="caption">
-                            <p>sssss</p>
-                        </div>
-                    </li>
-
-                </ul>
-
-            </div>
-            <!--第二块 照片内容-->
-            <!--第三块 文档资料-->
-            <div class="whiteBg edModule downModule">
-                <p>
-                    <a href="" download="download">点我下载</a>
-                </p>
-            </div>
-            <!--第三块 文档资料-->
-            <!--第四块 视频-->
-            <div class="whiteBg edModule downModule">
-                <video id="my-video" class="video-js" controls preload="auto" width="1020" height="400" poster="m.png" data-setup="{}">
-                    <source src="http://jq22com.qiniudn.com/jq22-sp.mp4" type="video/mp4">
-                    <p class="vjs-no-js">
-                        To view this video please enable JavaScript, and consider upgrading to a web browser that
-                        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                    </p>
-                </video>
-                <script type="text/javascript">
-
-                </script>
-            </div>
-            <!--第四块 视频-->
         </div>
+        <!--第一块 正文内容-->
+        <!--第二块 照片内容-->
+        <div class="pad40 whiteBg edModule">
+            <ul class="tz-gallery flParent flow">
 
+                <li class="thumbnail">
+                    <a class="lightbox" href="/assets/park.jpg">
+                        <%= image_tag("edu_smallimgs.jpg") %>
+                    </a>
+                    <div class="caption">
+                        <p>sssss</p>
+                    </div>
+                </li>
+                <li class="thumbnail">
+                    <a class="lightbox" href="/assets/park.jpg">
+                        <%= image_tag("edu_smallimgs.jpg") %>
+                    </a>
+                    <div class="caption">
+                        <p>sssss</p>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+        <!--第二块 照片内容-->
+        <!--第三块 文档资料-->
+        <div class="whiteBg edModule downModule">
+            <p>
+                <a href="" download="download">点我下载</a>
+            </p>
+        </div>
+        <!--第三块 文档资料-->
+        <!--第四块 视频-->
+        <div class="whiteBg edModule downModule">
+            <video id="my-video" class="video-js" controls preload="auto" width="1020" height="400" poster="m.png" data-setup="{}">
+                <source src="http://jq22com.qiniudn.com/jq22-sp.mp4" type="video/mp4">
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a web browser that
+                    <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
+            <script type="text/javascript">
+
+            </script>
+        </div>
+        <!--第四块 视频-->
     </div>
+
+</div>
 
 <% content_for :script do %>
 <%= javascript_include_tag 'baguetteBox.min' %>
@@ -131,10 +138,10 @@
         $(".eduContentCon .edModule").removeClass("show").eq($(this).index()).addClass("show");
     })
 
-//    展示图片
+    //    展示图片
     baguetteBox.run('.tz-gallery');
 
-//    播放视频
+    //    播放视频
     var myPlayer = videojs('my-video');
     videojs("my-video").ready(function(){
         var myPlayer = this;
@@ -146,42 +153,42 @@
     }
     function getContent(){
         $.ajax({
-          url: '/all-api/comments/~',
-          type: "GET",
-          contentType: 'application/json',
-          dataType: "json",
-          data: {
+            url: '/all-api/comments/~',
+            type: "GET",
+            contentType: 'application/json',
+            dataType: "json",
+            data: {
                 post_link: "/con_education/专题讲座"
             }
         })
-        .done(function( data ) {
-            var data = data.collection;
-            console.log(data);
-            var innerStr = "<p class='allComment'>全部评论<span class='num'>"+data.length+"</span> </p>";
-            for(var i = data.length-1;i >= 0; i--){
+            .done(function( data ) {
+                var data = data.collection;
+                console.log(data);
+                var innerStr = "<p class='allComment'>全部评论<span class='num'>"+data.length+"</span> </p>";
+                for(var i = data.length-1;i >= 0; i--){
 
-                innerStr+="<div class='flow oneComment' parent_id = "+ data[i].id +" >"
-                            +"<div class='fl'>"
-                                +"<img src= '../../assets/edu_user.png' />"
-                            +"</div>"
-                             +"<div class='fl comContent'>"
-                               +"<p class='identity'>"+ data[i].created_at
-                               +"<span>游客</span></p>"
-                               +"<div class='flow'>"
-                                    +"<p class='fl'>"+ data[i].content +"</p>"
-                                    +"<div class=‘commentSubBtn fr userComment’>"
-                                    +"<img src= '../../assets/comment_before.png'/></div>"
-                                +"</div>"
-                            +"</div>"
+                    innerStr+="<div class='flow oneComment' parent_id = "+ data[i].id +" >"
+                        +"<div class='fl'>"
+                        +"<img src= '../../assets/edu_user.png' />"
                         +"</div>"
-            }
-            $(".comContainer").html(innerStr);
-        })
-        .fail(function( xhr, status, errorThrown ) {
-            console.log('失败');
-        })
-        .always(function( xhr, status ) {
-        });
+                        +"<div class='fl comContent'>"
+                        +"<p class='identity'>"+ data[i].created_at
+                        +"<span>游客</span></p>"
+                        +"<div class='flow'>"
+                        +"<p class='fl'>"+ data[i].content +"</p>"
+                        +"<div class=‘commentSubBtn fr userComment’>"
+                        +"<img src= '../../assets/comment_before.png'/></div>"
+                        +"</div>"
+                        +"</div>"
+                        +"</div>"
+                }
+                $(".comContainer").html(innerStr);
+            })
+            .fail(function( xhr, status, errorThrown ) {
+                console.log('失败');
+            })
+            .always(function( xhr, status ) {
+            });
     }
 
     function postComment(parId){
@@ -190,26 +197,26 @@
         }else{
             $(".erroContent").html("系统正在审核，审核成功我们将展示您的评论内容");
             $.ajax({
-          url: '/all-api/comments',
-          type: "POST",
-          contentType: 'application/json',
-          dataType: "json",
-          data: JSON.stringify({
-                parent_id: parId==null?null:parId:,
-                content: $(".commentInner").val(),
+                url: '/all-api/comments',
+                type: "POST",
+                contentType: 'application/json',
+                dataType: "json",
+                data: JSON.stringify({
+                    parent_id: parId==null?null:parId,
+            content: $(".commentInner").val(),
                 post_link: "/con_education/专题讲座",
             })
         })
         .done(function( data ) {
-            var data = data.collection;
-            console.log(data.length);
-        })
-        .fail(function( xhr, status, errorThrown ) {
-            console.log('失败');
-        })
-        .always(function( xhr, status ) {
-        });
-        getContent();
+                var data = data.collection;
+                console.log(data.length);
+            })
+                .fail(function( xhr, status, errorThrown ) {
+                    console.log('失败');
+                })
+                .always(function( xhr, status ) {
+                });
+            getContent();
         }
     }
 
