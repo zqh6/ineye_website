@@ -41,8 +41,17 @@
                                 <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
                                 <div class="flow">
                                     <p class="fl">喜欢这种颜色搭配与排版···</p>
-                                    <div class="commentSubBtn fr userComment">评论</div>
+                                    <div class="commentSubBtn fr userComment"><%= image_tag("comment_before.png") %></div>
+                                    <div class="thisComments">
+                                        <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
+                                        <div class="flow">
+                                            <p class="fl">喜欢这种颜色搭配与排版···</p>
+                                            <div class="commentSubBtn fr userComment"><%= image_tag("comment_before.png") %></div>
+
+                                            </div>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                         <!-- 1111111111111111111111111111111111111111 -->
@@ -132,7 +141,7 @@
         myPlayer.play();
     });
     window.onload = function(){
-        getContent()
+        // getContent()
 
     }
     function getContent(){
@@ -160,7 +169,8 @@
                                +"<span>游客</span></p>"
                                +"<div class='flow'>"
                                     +"<p class='fl'>"+ data[i].content +"</p>"
-                                    +"<div class='commentSubBtn fr userComment'>评论</div>"
+                                    +"<div class=‘commentSubBtn fr userComment’>"
+                                    +"<img src= '../../assets/comment_before.png'/></div>"
                                 +"</div>"
                             +"</div>"
                         +"</div>"
@@ -174,19 +184,18 @@
         });
     }
 
-    $(".commentSubBtn").click(function(){
+    function postComment(parId){
         if(/^[ ]+$/.test($(".commentInner").val())||$(".commentInner").val()==""){
             $(".erroContent").html("评论的内容不能为空");
         }else{
             $(".erroContent").html("系统正在审核，审核成功我们将展示您的评论内容");
-        }
-        $.ajax({
+            $.ajax({
           url: '/all-api/comments',
           type: "POST",
           contentType: 'application/json',
           dataType: "json",
           data: JSON.stringify({
-                parent_id: null,
+                parent_id: parId==null?null:parId:,
                 content: $(".commentInner").val(),
                 post_link: "/con_education/专题讲座",
             })
@@ -201,6 +210,15 @@
         .always(function( xhr, status ) {
         });
         getContent();
+        }
+    }
+
+    $(".commentSubBtn").click(function(){
+        postComment();
+
+    })
+    $(".userComment").click(function(){
+        postComment($(this).parents(".oneComment").attr("parent_id"))
     })
 
 </script>
