@@ -39,7 +39,10 @@
                             </div>
                             <div class="fl comContent">
                                 <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
-                                <p>喜欢这种颜色搭配与排版···</p>
+                                <div class="flow">
+                                    <p class="fl">喜欢这种颜色搭配与排版···</p>
+                                    <div class="commentSubBtn fr userComment">评论</div>
+                                </div>
                             </div>
                         </div>
                         <!-- 1111111111111111111111111111111111111111 -->
@@ -148,14 +151,17 @@
             var innerStr = "<p class='allComment'>全部评论<span class='num'>"+data.length+"</span> </p>";
             for(var i = data.length-1;i >= 0; i--){
 
-                innerStr+="<div class='flow oneComment'>"
+                innerStr+="<div class='flow oneComment' parent_id = "+ data[i].id +" >"
                             +"<div class='fl'>"
                                 +"<img src= '../../assets/edu_user.png' />"
                             +"</div>"
                              +"<div class='fl comContent'>"
                                +"<p class='identity'>"+ data[i].created_at
                                +"<span>游客</span></p>"
-                                +"<p>"+data[i].content+"</p>"
+                               +"<div class='flow'>"
+                                    +"<p class='fl'>"+ data[i].content +"</p>"
+                                    +"<div class='commentSubBtn fr userComment'>评论</div>"
+                                +"</div>"
                             +"</div>"
                         +"</div>"
             }
@@ -169,7 +175,7 @@
     }
 
     $(".commentSubBtn").click(function(){
-        if(/^[ ]+$/.test($(".commentInner").val())){
+        if(/^[ ]+$/.test($(".commentInner").val())||$(".commentInner").val()==""){
             $(".erroContent").html("评论的内容不能为空");
         }else{
             $(".erroContent").html("系统正在审核，审核成功我们将展示您的评论内容");
