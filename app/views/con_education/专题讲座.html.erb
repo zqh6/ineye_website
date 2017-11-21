@@ -26,11 +26,13 @@
                     <div class="commentCon">
                         <textarea class="commentInner" autofocus></textarea>
                         <div class="flow">
-                            <div class="commentSubBtn fr">评论</div>
+                            <p class="erroContent"></p><div class="commentSubBtn fr">评论</div>
                         </div>
                     </div>
-                    <div>
+                    <div class="comContainer">
+                        <!-- 111111111111111111111111111111111 -->
                         <p class="allComment">全部评论<span class="num">a</span> </p>
+
                         <div class="flow oneComment">
                             <div class="fl">
                                 <%= image_tag("edu_user.png") %>
@@ -40,6 +42,7 @@
                                 <p>喜欢这种颜色搭配与排版···</p>
                             </div>
                         </div>
+                        <!-- 1111111111111111111111111111111111111111 -->
                         <div class="flow oneComment">
                             <div class="fl">
                                 <%= image_tag("edu_user.png") %>
@@ -58,7 +61,7 @@
                 <ul class="tz-gallery flParent flow">
 
                     <li class="thumbnail">
-                        <a class="lightbox" href="../../assets/images/park.jpg">
+                        <a class="lightbox" href="/assets/park.jpg">
                             <%= image_tag("edu_smallimgs.jpg") %>
                         </a>
                         <div class="caption">
@@ -66,17 +69,8 @@
                         </div>
                     </li>
                     <li class="thumbnail">
-                        <a class="lightbox" href="../../assets/images/park.jpg">
+                        <a class="lightbox" href="/assets/park.jpg">
                             <%= image_tag("edu_smallimgs.jpg") %>
-                        </a>
-                        <div class="caption">
-                            <p>sssss</p>
-                        </div>
-                    </li>
-
-                    <li class="thumbnail">
-                        <a class="lightbox" href="../../assets/images/park.jpg">
-                            <img src="../../assets/images/edu_smallimgs.jpg" alt="Park">
                         </a>
                         <div class="caption">
                             <p>sssss</p>
@@ -96,8 +90,7 @@
             <!--第三块 文档资料-->
             <!--第四块 视频-->
             <div class="whiteBg edModule downModule">
-                <video id="my-video" class="video-js" controls preload="auto" width="1020" height="400"
-                       poster="m.png" data-setup="{}">
+                <video id="my-video" class="video-js" controls preload="auto" width="1020" height="400" poster="m.png" data-setup="{}">
                     <source src="http://jq22com.qiniudn.com/jq22-sp.mp4" type="video/mp4">
                     <p class="vjs-no-js">
                         To view this video please enable JavaScript, and consider upgrading to a web browser that
@@ -114,7 +107,7 @@
     </div>
 
 <% content_for :script do %>
-<%= javascript_include_tag 'baguetteBox' %>
+<%= javascript_include_tag 'baguetteBox.min' %>
 <%= javascript_include_tag 'video.min' %>
 
 
@@ -135,6 +128,74 @@
         var myPlayer = this;
         myPlayer.play();
     });
+    window.onload = function(){
+        getContent()
+
+    }
+    function getContent(){
+        $.ajax({
+          url: '/all-api/comments/~',
+          type: "GET",
+          contentType: 'application/json',
+          dataType: "json",
+          data: {
+                post_link: "/con_education/专题讲座"
+            }
+        })
+        .done(function( data ) {
+            var data = data.collection;
+            console.log(data);
+            var innerStr = "<p class='allComment'>全部评论<span class='num'>"+data.length+"</span> </p>";
+            for(var i = data.length-1;i >= 0; i--){
+
+                innerStr+="<div class='flow oneComment'>"
+                            +"<div class='fl'>"
+                                +"<img src= '../../assets/edu_user.png' />"
+                            +"</div>"
+                             +"<div class='fl comContent'>"
+                               +"<p class='identity'>"+ data[i].created_at
+                               +"<span>游客</span></p>"
+                                +"<p>"+data[i].content+"</p>"
+                            +"</div>"
+                        +"</div>"
+            }
+            $(".comContainer").html(innerStr);
+        })
+        .fail(function( xhr, status, errorThrown ) {
+            console.log('失败');
+        })
+        .always(function( xhr, status ) {
+        });
+    }
+
+    $(".commentSubBtn").click(function(){
+        if(/^[ ]+$/.test($(".commentInner").val())){
+            $(".erroContent").html("评论的内容不能为空");
+        }else{
+            $(".erroContent").html("系统正在审核，审核成功我们将展示您的评论内容");
+        }
+        $.ajax({
+          url: '/all-api/comments',
+          type: "POST",
+          contentType: 'application/json',
+          dataType: "json",
+          data: JSON.stringify({
+                parent_id: null,
+                content: $(".commentInner").val(),
+                post_link: "/con_education/专题讲座",
+            })
+        })
+        .done(function( data ) {
+            var data = data.collection;
+            console.log(data.length);
+        })
+        .fail(function( xhr, status, errorThrown ) {
+            console.log('失败');
+        })
+        .always(function( xhr, status ) {
+        });
+        getContent();
+    })
 
 </script>
 
