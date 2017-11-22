@@ -84,6 +84,8 @@
         <!--第三块 文档资料-->
         <div class="whiteBg edModule downModule">
             <p>
+                <a href="file:/assets/窦广志病历摘要修改版.doc"  onclick="openmydoc('file:/assets/窦广志病历摘要修改版.doc');" type="activxobject(word.application)">窦广志病历摘要修改版 网友版在线预览</a>
+
                 <a href="/assets/窦广志病历摘要修改版.doc" download>窦广志病历摘要修改版</a>
             </p>
         </div>
@@ -114,6 +116,15 @@
 
 
 <script type="text/javascript">
+    //网页上打开word文档
+    function openmydoc(path){
+        var doc=new ActiveXObject("Word.Application");
+        doc.visible=true;
+        doc.Documents.Open(path);
+    }
+
+
+
     //    正文、照片、文档、视频切换
     $(".educationList li").click(function () {
         $(this).addClass("on").siblings().removeClass("on");
