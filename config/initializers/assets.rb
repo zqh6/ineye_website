@@ -54,6 +54,7 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/users/new.css
   administration/v1/users/index.css
   administration/v1/passwords/edit.css
+  administration/v1/new/edit.css
 
   shared/browser_tab_title.ico
   shared/logo.png
