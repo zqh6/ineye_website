@@ -113,7 +113,9 @@
     </div>
 
 </div>
-
+# <% content_for :style do %>
+  # <%= stylesheet_link_tag 'video-js' %>
+# <% end %>
 <% content_for :script do %>
 <%= javascript_include_tag 'baguetteBox.min' %>
 <%= javascript_include_tag 'video.min' %>
@@ -161,7 +163,7 @@
                         +"<div class='fl'>"
                         +"<img src= '../../assets/edu_user.png' />"
                         +"</div>"
-                        +"<div class='fl comContent'>"
+                        +"<div class='fl comContent' parent_id = "+ data[i].id +" >"
                         +"<p class='identity'>"+ data[i].created_at
                         +"<span>游客"+data[i].id+"</span></p>"
                         +"<div class='flow'>"
@@ -178,7 +180,7 @@
                                 +"<div class='flow'>"
                                 +"<p class='fl'>"+ data[i].sons[s].content +"</p>"
                                 +"<div class='commentSubBtn fr userComment' >"
-                                +"<img src= '../../assets/comment_before.png'  onclick=\"addChiComment("+ data[i].id +","+data[i].sons[s].id+")\" />"
+                                +"<img src= '../../assets/comment_before.png'  onclick=\"addChiComment("+ data[i].sons[s].id +","+data[i].sons[s].id+")\" />"
                                 +"</div>"
                                 +"</div>"
                                 +"</div>"
@@ -242,20 +244,21 @@
     })
     function addChiComment(elem,num){//一个值是二级评论，两个值是三级评论
         var pos = parseInt(elem);
-        for(var j = 0; j<$(".oneComment").length;j++){
-            $(".oneComment").eq(j).find(".commentInnerCon").remove();
+        for(var j = 0; j<$(".comContent").length;j++){
+            $(".comContent").eq(j).find(".commentInnerCon").remove();
         }
         var num = num?num:elem;
-        console.log(pos);
+        console.log(pos+"测试以及评论");
         var str  =  "<div class=\"commentCon commentInnerCon\">"
             +"<textarea class=\"commentInner\" ></textarea>"
             +"<div class=\"flow\">"
             +"<p class=\"erroContent\"></p>"
             +"<div class=\"commentSubBtn fr\" onclick=\" postComment("+ num +",1)\" >评论</div>"
             +"</div></div>"
-        for(var j = 0; j<$(".oneComment").length;j++){
-            if($(".oneComment").eq(j).attr("parent_id")== pos){
-                $(str).appendTo($(".oneComment")[j]);
+        for(var j = 0; j<$(".comContent").length;j++){
+            if($(".comContent").eq(j).attr("parent_id")== pos){
+                console.log(j+"测试评论的位置");
+                $(str).appendTo($(".comContent")[j]);
 
             }
         }
