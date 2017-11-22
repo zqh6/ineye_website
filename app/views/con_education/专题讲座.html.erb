@@ -17,7 +17,6 @@
                     <p>诊断</p>
                     <p>处理</p>
                 </div>
-
             </div>
             <div class="marT10 whiteBg">
                 <ul class="flow flParent educationList">
@@ -42,13 +41,6 @@
                                 <p class="fl">喜欢这种颜色搭配与排版···</p>
                                 <div class="showSubBtn fr userComment"><%= image_tag("comment_before.png") %></div>
                             </div>
-                            <!-- <div class="commentCon commentInnerCon">
-                                <textarea class=\"commentInner\" ></textarea>
-                                <div class=\"flow\">
-                                <p class=\"erroContent\"></p>
-                                <div class=\"commentSubBtn fr\">评论</div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                     <div class="flow oneComment">
@@ -92,7 +84,7 @@
         <!--第三块 文档资料-->
         <div class="whiteBg edModule downModule">
             <p>
-                <a href="" download="download">点我下载</a>
+                <a href="/assets/窦广志 病历摘要 修改版.doc" download="download">点我下载</a>
             </p>
         </div>
         <!--第三块 文档资料-->
@@ -113,9 +105,9 @@
     </div>
 
 </div>
-# <% content_for :style do %>
-  # <%= stylesheet_link_tag 'video-js' %>
-# <% end %>
+<% content_for :style do %>
+<%= stylesheet_link_tag 'video-js' %>
+<% end %>
 <% content_for :script do %>
 <%= javascript_include_tag 'baguetteBox.min' %>
 <%= javascript_include_tag 'video.min' %>

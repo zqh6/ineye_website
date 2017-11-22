@@ -75,4 +75,5 @@ Rails.application.config.assets.precompile += %w(
   jquery.jDiaporama.js
   baguetteBox.min.js
   video.min.js
+  video-js.css
 )
