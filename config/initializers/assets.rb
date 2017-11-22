@@ -76,4 +76,5 @@ Rails.application.config.assets.precompile += %w(
   baguetteBox.min.js
   video.min.js
   video-js.css
+  edu_example.js
 )
