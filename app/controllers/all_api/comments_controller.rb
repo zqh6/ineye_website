@@ -63,8 +63,9 @@ class AllApi::CommentsController < AllApi::PresentationController
 
   def show
     comments = Comment.where('parent_id is null or parent_id = ?', '')
+    state_arr = params[:state].split(',')
     if params[:state].present?
-      comments = comments.state_in(params[:state].split(','))
+      comments = comments.state_in(state_arr)
     end
     if params[:post_link].blank? && params[:post_id].blank?
       render_conflict message: '需指定post_link和post_id中至少一个参数' and return
@@ -78,7 +79,7 @@ class AllApi::CommentsController < AllApi::PresentationController
     comments.each do |top_comment|
       top_comment_json = top_comment.to_json_by(fields: [:id, :content, :created_at])
       sons = []
-      top_comment_json[:sons]    = get_later_generations(top_comment, sons)
+      top_comment_json[:sons]    = get_later_generations(top_comment, sons, state_arr)
       collection.push(top_comment_json)
     end
     Rails.logger.warn '1111111111'
@@ -103,14 +104,16 @@ class AllApi::CommentsController < AllApi::PresentationController
   end
 =end
 
-  def get_later_generations(top_comment, sons)
+  def get_later_generations(top_comment, sons, state_arr)
     if top_comment.present?
       comments = Comment.parent_id_is(top_comment.id)
       if comments.present?
         comments.each do |comment|
           comment_json = comment.to_json_by(fields: [:id, :content, :created_at])
-          get_later_generations(comment, sons)
-          sons.push(comment_json)
+          if state_arr.include?(comment.state)
+            get_later_generations(comment, sons, state_arr)
+            sons.push(comment_json)
+          end
         end
       end
     end

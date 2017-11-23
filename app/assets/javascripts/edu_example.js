@@ -44,7 +44,7 @@
                         +"</div>"
                         +"<div class='fl comContent' parent_id = "+ data[i].id +" >"
                         +"<p class='identity'>"+ data[i].created_at
-                        +"<span>游客"+data[i].id+"</span></p>"
+                        +"<span>游客</span></p>"
                         +"<div class='flow'>"
                         +"<p class='fl'>"+ data[i].content +"</p>"
                         +"<div class='commentSubBtn fr userComment' >"
@@ -55,11 +55,11 @@
                         if(data[i].sons.length>0){
                             childComment[i]+="<div class='comContent' parent_id = "+ data[i].sons[s].id +" >"
                                 +"<p class='identity'>"+ data[i].sons[s].created_at
-                                +"<span>游客"+data[i].sons[s].id+"回复</span></p>"
+                                +"<span>游客</span></p>"
                                 +"<div class='flow'>"
                                 +"<p class='fl'>"+ data[i].sons[s].content +"</p>"
                                 +"<div class='commentSubBtn fr userComment' >"
-                                +"<img src= '../../assets/comment_before.png'  onclick=\"addChiComment("+ data[i].sons[s].id +","+data[i].sons[s].id+","+this+")\" />"
+                                +"<img src= '../../assets/comment_before.png'  onclick=\"addChiComment("+ data[i].sons[s].id +","+data[i].sons[s].id+")\" />"
                                 +"</div>"
                                 +"</div>"
                                 +"</div>"
@@ -88,6 +88,7 @@
 
     function postComment(parId,num){ //parId父级的id num为了确定是顶级评论框还是子级评论框，不传值的情况下是最高级别的评论，传值是子级的。
         var index = num?1:0;
+        var time = num?1000:0;
         console.log(index);
         if(/^[ ]+$/.test($(".commentInner").eq(index).val())||$(".commentInner").eq(index).val()==""){
             $(".erroContent").eq(index).html("评论的内容不能为空");
@@ -107,7 +108,10 @@
                 .done(function( data ) {
                     var data = data.collection;
                     console.log(data.length);
-                    getContent();
+                    setTimeout(function(){
+                        getContent();
+                    },time);
+                    console.log(time);
                 })
                 .fail(function( xhr, status, errorThrown ) {
                     console.log('失败');
@@ -122,14 +126,22 @@
         postComment();
 
     })
+    var openFlag = true; //判断前后是否是对一条信息评论，第二次点击时候清除评论区域。
     function addChiComment(elem,num){//一个值是二级评论，两个值是三级评论
         // console.log(this);
         var pos = parseInt(elem);
         for(var j = 0; j<$(".comContent").length;j++){
+            if($(".comContent").eq(j).attr("parent_id")== pos){
+                console.log(j+" "+pos)
+                if($(".comContent").eq(j).find(".commentInnerCon").length>0){
+                    console.log("同一个");
+                    openFlag = false;
+                }
+
+            }
             $(".comContent").eq(j).find(".commentInnerCon").remove();
         }
         var num = num?num:elem;
-        console.log(pos+"测试以及评论");
         var str  =  "<div class=\"commentCon commentInnerCon\">"
             +"<textarea class=\"commentInner\" ></textarea>"
             +"<div class=\"flow\">"
@@ -138,9 +150,15 @@
             +"</div></div>"
         for(var j = 0; j<$(".comContent").length;j++){
             if($(".comContent").eq(j).attr("parent_id")== pos){
-                console.log(j+"测试评论的位置");
                 $(str).appendTo($(".comContent")[j]);
-
-            }
+                if(!openFlag){
+                    $(".comContent").eq(j).find(".commentInnerCon").remove();
+                    openFlag = true;
+                }
+             }
         }
+
     }
+
+// 让图片具有显示评论框和隐藏评论框的功能
+// 点击评论字样的时候，如果它父级元素下有评论框，就隐藏它。
