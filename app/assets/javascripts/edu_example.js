@@ -11,12 +11,15 @@
     var myPlayer = videojs('my-video');
     videojs("my-video").ready(function(){
         var myPlayer = this;
-        myPlayer.play();
+        // myPlayer.play();
     });
     window.onload = function(){
         getContent()
 
     }
+    var locationHref = window.location.href;
+    locationHref = locationHref.substr(locationHref.lastIndexOf("/"),locationHref.length);
+
     function getContent(elm){
         $.ajax({
             url: '/all-api/comments/~',
@@ -24,7 +27,7 @@
             contentType: 'application/json',
             dataType: "json",
             data: {
-                post_link: "/con_education/专题讲座",
+                post_link: "/con_education"+locationHref,
                 state:"A"
             }
         })
@@ -56,7 +59,7 @@
                                 +"<div class='flow'>"
                                 +"<p class='fl'>"+ data[i].sons[s].content +"</p>"
                                 +"<div class='commentSubBtn fr userComment' >"
-                                +"<img src= '../../assets/comment_before.png'  onclick=\"addChiComment("+ data[i].sons[s].id +","+data[i].sons[s].id+")\" />"
+                                +"<img src= '../../assets/comment_before.png'  onclick=\"addChiComment("+ data[i].sons[s].id +","+data[i].sons[s].id+","+this+")\" />"
                                 +"</div>"
                                 +"</div>"
                                 +"</div>"
@@ -98,19 +101,20 @@
                 data: JSON.stringify({
                     parent_id: parId?parId:null,
                     content: num?$(".commentInner").eq(1).val():$(".commentInner").eq(0).val(),
-                    post_link: "/con_education/专题讲座",
+                    post_link: "/con_education"+locationHref,
                 })
             })
                 .done(function( data ) {
                     var data = data.collection;
                     console.log(data.length);
+                    getContent();
                 })
                 .fail(function( xhr, status, errorThrown ) {
                     console.log('失败');
                 })
                 .always(function( xhr, status ) {
                 });
-            getContent();
+
         }
     }
 
@@ -119,6 +123,7 @@
 
     })
     function addChiComment(elem,num){//一个值是二级评论，两个值是三级评论
+        // console.log(this);
         var pos = parseInt(elem);
         for(var j = 0; j<$(".comContent").length;j++){
             $(".comContent").eq(j).find(".commentInnerCon").remove();
