@@ -84,24 +84,34 @@
     <p class="kepuTle padL10">眼健康公益活动  <%= link_to :"更多>>",news_path(:新闻列表) %></p>
     <ul class="padL10">
       <li>
-      <%= link_to :'致美四川•健康校园 ——银海眼健康公益行走进简阳市五合乡中心小学', news_path(155, from: 'db') %>
-      <span class="fr">2017-12-06</span>
+        <%= link_to news_path(155, from: 'db') do %>
+        <span>致美四川•健康校园 ——银海眼健康公益行走进简阳市五合乡中心小学</span>
+        <span class="fr">2017-12-06</span>
+        <% end %>
       </li>
       <li>
-        <%= link_to :'端午佳节送健康 社区眼健康义诊暖人心', news_path(:端午佳节送健康社区眼健康义诊暖人心) %>
-        <span class="fr">2017-5-29</span>
+        <%= link_to news_path(:端午佳节送健康社区眼健康义诊暖人心) do %>
+          <span>端午佳节送健康 社区眼健康义诊暖人心</span>
+          <span class="fr">2017-5-29</span>
+        <% end %>
       </li>
       <li>
-        <%= link_to :'守护心灵之窗—沙河源小学眼健康科普公益活动', news_path(:守护心灵之窗沙河源小学眼健康科普公益活动) %>
-        <span class="fr">2017-05-05</span>
+        <%= link_to news_path(:守护心灵之窗沙河源小学眼健康科普公益活动) do %>
+          <span>守护心灵之窗—沙河源小学眼健康科普公益活动</span>
+          <span class="fr">2017-05-05</span>
+        <% end %>
       </li>
       <li>
-        <%= link_to :'“大爱无疆•善行天下”眼健康公益行之美视国际学校', news_path(:眼健康公益行之美视国际学校) %>
-        <span class="fr">2017-05-21</span>
+        <%= link_to news_path(:眼健康公益行之美视国际学校) do %>
+          <span>“大爱无疆•善行天下”眼健康公益行之美视国际学校</span>
+          <span class="fr">2017-05-21</span>
+        <% end %>
       </li>
       <li>
-        <%= link_to :'“关注眼健康，公益科普进万家” 社区公益行走进金仙桥社区', news_path(:社区公益行走进金仙桥社区) %>
-        <span class="fr">2017-04-20</span>
+        <%= link_to news_path(:社区公益行走进金仙桥社区) do %>
+          <span>“关注眼健康，公益科普进万家” 社区公益行走进金仙桥社区</span>
+          <span class="fr">2017-04-20</span>
+        <% end %>
       </li>
     </ul>
   </div>
@@ -113,14 +123,16 @@
       <li><a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000545&idx=1&sn=5b11c1b11a8028aa939dcb98d29dbfe7&chksm=7d4c43754a3bca63bf88a35f276853ca10fb256abafdb16572858ba0ddd3538173aa43b2bd35#rd" target="_blank">为何我的双眼常流泪，这不是演技而是病！ <span class="fr">2017-09-29</span></a></li>
       <li><a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000533&idx=1&sn=a1189007599a1432493ee5a38fc7874d&chksm=7d4c43414a3bca57c7588c9b55d8b45c06e2ef791b744e9809b6b231765846d415de43f4eed7#rd" target="_blank">科普小故事之不及格的小明 <span class="fr">2017-09-26</span></a></li>
       <li>
-        <%= link_to news_path(:科普小故事之糊涂的张大爷) do %>
+        <%= link_to kepu_path(:科普小故事之糊涂的张大爷) do %>
         <span>科普小故事之“糊涂”的张大爷</span>
-        <span class="fr">2017-09-15</span>
+        <span class="fr">2017-09-18</span>
         <% end %>
       </li>
       <li>
-        <%= link_to :'【银海科普】科普小故事之周奶奶的烦恼！', news_path(:科普小故事之周奶奶的烦恼) %>
+        <%= link_to kepu_path(:科普小故事之周奶奶的烦恼) do %>
+        <span>【银海科普】科普小故事之周奶奶的烦恼！</span>
         <span class="fr">2017-09-15</span>
+        <% end %>
       </li>
     </ul>
   </div>
