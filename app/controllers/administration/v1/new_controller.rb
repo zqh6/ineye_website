@@ -13,7 +13,7 @@ class Administration::V1::NewController < Administration::V1::PrivilegedControll
   end
 
   def index
-    @new = New.alive
+    @new = New.all
     @new = @new.classify_is(params[:classify]) if params[:classify].present? && params[:classify].to_s!='0'
     @new = @new.title_like(params[:title])     if params[:title].present?
     @new = @new.reorder('created_at DESC')

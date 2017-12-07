@@ -9,7 +9,7 @@
 
   <% if @new.user_id==1 %>
   <div class="am-form-group">
-    <label for="user-name" class="am-u-sm-3 am-form-label">路径 <span class="tpl-form-line-small-title"><%= :title.to_s.titleize %></span></label>
+    <label for="user-name" class="am-u-sm-3 am-form-label">路径 <span class="tpl-form-line-small-title"><%= :scan_rails_path.to_s.titleize %></span></label>
     <div class="am-u-sm-9">
       <%= text_field_tag :scan_rails_path, @new.scan_rails_path, class: 'tpl-form-input' %>
     </div>
@@ -45,6 +45,13 @@
 			<%= select_tag :classify, options_for_select(ShareEnum.form_options('new_classifies'), @new.classify), include_blank: false, class: '', "data-am-selected"=> "{searchBox: 1}", style: "display: none;" %>
 		</div>
 	</div>
+
+  <div class="am-form-group">
+    <label for="user-phone" class="am-u-sm-3 am-form-label"><%= New.human_attribute_name :aim_at_platform %> <span class="tpl-form-line-small-title"><%= :aim_at_platform.to_s.titleize %></span></label>
+    <div class="am-u-sm-9">
+      <%= select_tag :aim_at_platform, options_for_select(ShareEnum.form_options('aim_at_platforms'), @new.aim_at_platform), include_blank: false, class: '', "data-am-selected"=> "{searchBox: 1}", style: "display: none;" %>
+    </div>
+  </div>
 
 	<div class="am-form-group">
 		<label class="am-u-sm-3 am-form-label"><%= New.human_attribute_name :key_words %> <span class="tpl-form-line-small-title"><%= :key_words.to_s.titleize %></span></label>

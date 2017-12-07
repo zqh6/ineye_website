@@ -12,6 +12,7 @@ class ShareEnum < ApplicationRecord
 
   enum new_classify: {
     common: '普通新闻',
+    science: '科普新闻',
     medicion: '医药新闻',
     activity: '活动新闻'
   }
@@ -20,6 +21,12 @@ class ShareEnum < ApplicationRecord
     sys_admin: '系统管理员',
     user_admin: '用户管理员',
     common_user: '普通用户'
+  }
+
+  enum aim_at_platform: {
+    pc: 'PC端',
+    mobile: '手机端',
+    pc_and_mobile: 'PC端、手机端'
   }
 
   def self.form_options(enum_type)

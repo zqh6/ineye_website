@@ -11,6 +11,7 @@ zh-CN:
 
     attributes:
       new:
+        id:          编号
         user:        发布者
         user_id:     发布者
         title:       标题
@@ -20,6 +21,9 @@ zh-CN:
         classify:    分类
         occurred_at: 发生时间
         created_at:  发布时间
+        aim_at_platform: 针对平台
+        scan_rails_path: 路径
+        state: 状态
 
       user:
         name:         姓名

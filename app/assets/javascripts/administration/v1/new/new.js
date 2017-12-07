@@ -16,6 +16,7 @@ function submitData(){
 			"vice_title": $('#vice_title').val(),
 			"occurred_at": $('#occurred_at').val(),
 			"classify": $('#classify').val(),
+			"aim_at_platform": $('#aim_at_platform').val(),
 			"key_words": $('#key_words').val(),
             "scan_rails_path": $('#scan_rails_path').val(),
             "state": $('#state').val(),

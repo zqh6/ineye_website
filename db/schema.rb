@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116082041) do
+ActiveRecord::Schema.define(version: 20171207083840) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "parent_id"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20171116082041) do
     t.datetime "updated_at",                                                    null: false
     t.string   "scan_file_id"
     t.string   "scan_rails_path"
+    t.string   "aim_at_platform"
     t.index ["user_id"], name: "index_news_on_user_id", using: :btree
   end
 

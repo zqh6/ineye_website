@@ -31,6 +31,20 @@
 									<label class="am-u-sm-9 field-value"><%= @new.title %></label>
 								</div>
 
+                <div class="am-form-group">
+                  <label class="am-u-sm-3 am-form-label">
+                    <%= New.human_attribute_name :scan_rails_path %> <span class="tpl-form-line-small-title"><%= :scan_rails_path.to_s.titleize %></span>：
+                  </label>
+                  <label class="am-u-sm-9 field-value"><%= @new.scan_rails_path %></label>
+                </div>
+
+                <div class="am-form-group">
+                  <label class="am-u-sm-3 am-form-label">
+                    <%= New.human_attribute_name :state %> <span class="tpl-form-line-small-title"><%= :state.to_s.titleize %></span>：
+                  </label>
+                  <label class="am-u-sm-9 field-value"><%= ShareEnum.states[@new.state] %></label>
+                </div>
+
 								<div class="am-form-group">
 									<label class="am-u-sm-3 am-form-label">
 										<%= New.human_attribute_name :vice_title %> <span class="tpl-form-line-small-title"><%= :vice_title.to_s.titleize %></span>：
@@ -51,6 +65,13 @@
 									</label>
 									<label class="am-u-sm-9 field-value"><% classify = ShareEnum.new_classifies[@new.classify.to_sym] %><%= classify.blank? ? '未知类别' : classify %></label>
 								</div>
+
+                <div class="am-form-group">
+                  <label class="am-u-sm-3 am-form-label">
+                    <%= New.human_attribute_name :aim_at_platform %> <span class="tpl-form-line-small-title"><%= :aim_at_platform.to_s.titleize %></span>：
+                  </label>
+                  <label class="am-u-sm-9 field-value"><%= ShareEnum.aim_at_platforms[@new.aim_at_platform] %></label>
+                </div>
 
 								<div class="am-form-group">
 									<label class="am-u-sm-3 am-form-label">
