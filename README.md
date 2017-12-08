@@ -22,6 +22,7 @@ rails kindeditor:assets
 
 #测试服务用production部署
 
+
 ##deploy server
 ####create db
 RAILS_ENV=production HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com USERNAME=hesheng PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq SECRET_KEY_BASE=00aaeb1a06fcaf7d317b8f59b7710bfec8679825e50ebafcf797bc32af4e60b2b4ee7d070553846d2830153ae2f5e780a36a67c98937298b5f8512669cb86ff5 rails db:create
@@ -36,7 +37,6 @@ rails g rails_kindeditor:install
 rails kindeditor:assets
 ####start server
 HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com USERNAME=hesheng PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq SECRET_KEY_BASE=00aaeb1a06fcaf7d317b8f59b7710bfec8679825e50ebafcf797bc32af4e60b2b4ee7d070553846d2830153ae2f5e780a36a67c98937298b5f8512669cb86ff5 unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
-
 
 ##restart server
 ps -ef | grep ineye_website
