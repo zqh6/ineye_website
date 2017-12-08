@@ -52,7 +52,7 @@ RAILS_ENV=production HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com USERNAME=heshen
 RAILS_ENV=production SECRET_KEY_BASE= DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:create
 ####migrate db
 RAILS_ENV=production DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:migrate
-####seed db
+####seed db 
 RAILS_ENV=production DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:seed
 ####assets precompile
 RAILS_ENV=production DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails assets:precompile
