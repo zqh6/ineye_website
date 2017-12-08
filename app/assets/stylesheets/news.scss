@@ -72,6 +72,10 @@ div.dIntroduction p{
   line-height: 36px;
   margin-bottom: 0;
 }
-.downContainer a:hover{
+.downContainer a{
+  font-size: 16px;
   color: #008cd3;
+}
+.downContainer a:hover{
+  color: #72af2d;
 }
