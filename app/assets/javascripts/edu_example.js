@@ -80,6 +80,7 @@
                 elm.html(innerStr);
             })
             .fail(function( xhr, status, errorThrown ) {
+                elm.html();
                 console.log('失败');
             })
             .always(function( xhr, status ) {
