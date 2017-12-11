@@ -20,12 +20,14 @@ rails kindeditor:assets
 /opt/nginx/sbin/nginx -s reload
 
 
+
 #正式服务用production部署
 
 ##deploy server
 ####create db
 RAILS_ENV=production rails db:create
 ####migrate db
+<<<<<<< HEAD
 RAILS_ENV=production rails db:migrate
 ####seed db
 RAILS_ENV=production rails db:seed
