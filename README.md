@@ -27,7 +27,6 @@ rails kindeditor:assets
 ####create db
 RAILS_ENV=production rails db:create
 ####migrate db
-<<<<<<< HEAD
 RAILS_ENV=production rails db:migrate
 ####seed db
 RAILS_ENV=production rails db:seed
@@ -38,7 +37,7 @@ rails g rails_kindeditor:install
 rails kindeditor:assets
 ####start
 出于安全原因，请添加SECRET_KEY_BASE参数
-RAILS_ENV=production unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
+unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
 
 ##restart server
 ps -ef | grep ineye_website
@@ -46,4 +45,4 @@ ps -ef | grep ineye_website
 kill -9 xxxx(进程号)
 
 出于安全原因，请添加SECRET_KEY_BASE参数
-RAILS_ENV=production unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
+unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
