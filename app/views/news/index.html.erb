@@ -43,7 +43,7 @@
                 <% @newIndex.each do |new| %>
                 <div>
                     <%= link_to new.scan_rails_path.blank? ? news_path(new.id, from: 'db') : new.scan_rails_path do %>
-                    <p><%= new.title %><span class="fr"><%= new.occurred_at==Time.utc(1970) ? ' ' : (l new.occurred_at, format: :human_date) %></span></p>
+                    <p><%= new.title %></p><span class="fr"><%= new.occurred_at==Time.utc(1970) ? ' ' : (l new.occurred_at, format: :human_date) %></span>
                     <% end %>
                 </div>
                 <% end %>
