@@ -27,7 +27,6 @@ rails kindeditor:assets
 ####create db
 RAILS_ENV=production rails db:create
 ####migrate db
-<<<<<<< HEAD
 RAILS_ENV=production rails db:migrate
 ####seed db
 RAILS_ENV=production rails db:seed
