@@ -39,8 +39,8 @@
                 <h4>
                     <span>新闻动态</span><em><%= link_to :'更多>>', news_index_path(function: '新闻列表'),class:"hrefTitWord" %></em>
                 </h4>
-                <% if @new.present? %>
-                <% @new.each do |new| %>
+                <% if @newIndex.present? %>
+                <% @newIndex.each do |new| %>
                 <div>
                     <%= link_to new.scan_rails_path.blank? ? news_path(new.id, from: 'db') : new.scan_rails_path do %>
                     <p><%= new.title %><span class="fr"><%= new.occurred_at==Time.utc(1970) ? ' ' : (l new.occurred_at, format: :human_date) %></span></p>
