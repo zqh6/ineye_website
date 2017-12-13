@@ -15,7 +15,7 @@
     <p class="blueBTitle">
         <span>科室专家</span>
     </p>
-    <ul class="glaucomaDoctors flow">
+    <!-- <ul class="glaucomaDoctors flow">
         <li class="fl marB20">
             <div class="fl">
                 <%= link_to image_tag("zj14.jpg") %>
@@ -60,7 +60,41 @@
                 <p>擅长白内障超声乳化+人工晶体植入术、各种抗青光眼手术、青光眼白内障联合手术、白内障、青光眼、眼整形及眼底疾病的诊治。</p>
             </div>
         </li>
-    </ul>
+    </ul> -->
+    <div class="readCenterDoctor  centerMemberCon">
+        <ul class="flParent flParent">
+            <li>
+                <%= link_to image_tag("zj14.jpg"),expert_path(:潘学会) %>
+                <div class="maskName">
+                    <p>潘学会</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj10.jpg"),expert_path(:张富文主治医师) %>
+                <div class="maskName">
+                    <p>张富文</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj18.jpg"),expert_path(:李强主治医师) %>
+                <div class="maskName">
+                    <p>李强</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj17.jpg"),expert_path(:陈小凤主治医师) %>
+                <div class="maskName">
+                    <p>陈小凤</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj21.jpg"),expert_path(:李红惠主治医师) %>
+                <div class="maskName">
+                    <p>李红惠</p>
+                </div>
+            </li>
+        </ul>
+    </div>
 </div>
 <!--科室专家-->
 <!--医疗设备-->
