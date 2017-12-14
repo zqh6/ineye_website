@@ -168,7 +168,7 @@
               <p>银海引领眼科VIP高端医疗来了，国医大师亲诊！</p>
             </div>
           </li>
-          
+
         </ul>
         <div class="slidebox">
           <div class="slideWrap">
@@ -186,7 +186,7 @@
         <% if @new.present? %>
         <% @new.each do |new| %>
         <li>
-          <%= link_to news_path(new.id)  do %>
+          <%= link_to news_path(new.id, from: 'db')  do %>
           <span class="newsTle"><%= new.title %></span>
           <% end %>
           <span class="fr">
@@ -202,13 +202,15 @@
   <div class="newsVideo fr">
     <p class="newTitle">通知公告 </p>
     <ul class="topList noticeList">
+      <li>
+        <%= link_to :'银海眼科医院-材料工程招标公告2017.12.11' ,news_path(:材料制作工程招标公告)%>
+      </li>
       <li><%= link_to :'成都中医药大学眼科学院 成都中医大银海眼科医院  招聘信息',news_path(:成都中医大银海眼科医院招聘信息) %></li>
       <li><%= link_to :'成都中医药大学眼科学院/成都中医大银海眼科医院 2018年博士后招聘启事',news_path(:成都中医大银海眼科医院2018年博士后招聘启事) %></li>
       <li><%= link_to :'成都中医药大学眼科学院管理类聘用人员招聘公告',news_path(:成都中医药大学眼科学院管理类聘用人员招聘公告) %></li>
       <li><%= link_to :'关于调整门诊流程及增设VIP服务的通知',news_path(:关于调整门诊流程及增设VIP服务的通知) %></li>
       <li><%= link_to :'眼科学院2017年推免试攻读硕士学位研究生办法',news_path(:成都中医药大学眼科学院2017年接收推荐免试攻读硕士学位研究生办法) %></li>
       <li><%= link_to :'【招标公告】 成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告',news_path(:成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告) %></li>
-      <li><%= link_to :'关于开展2017年岗位晋升及聘任工作的通知',science_path(:关于开展2017年岗位晋升及聘任工作的通知) %></li>
     </ul>
   </div>
 </div>
