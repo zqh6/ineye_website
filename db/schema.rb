@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171207083840) do
+ActiveRecord::Schema.define(version: 20171215073827) do
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "parent_id"
@@ -42,18 +42,18 @@ ActiveRecord::Schema.define(version: 20171207083840) do
 
   create_table "news", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
-    t.string   "title",                         default: "",                    null: false
+    t.string   "title",                              default: "",                    null: false
     t.string   "vice_title"
     t.string   "key_words"
-    t.datetime "occurred_at",                   default: '1970-01-01 00:00:00', null: false
+    t.datetime "occurred_at",                        default: '1970-01-01 00:00:00', null: false
     t.string   "classify"
-    t.text     "content",         limit: 65535
-    t.string   "state",           limit: 1,     default: "C",                   null: false
-    t.datetime "opened_at",                     default: '1970-01-01 00:00:00', null: false
-    t.datetime "closed_at",                     default: '3000-01-01 00:00:00', null: false
-    t.boolean  "defunct",                       default: false,                 null: false
-    t.datetime "created_at",                                                    null: false
-    t.datetime "updated_at",                                                    null: false
+    t.text     "content",         limit: 4294967295
+    t.string   "state",           limit: 1,          default: "C",                   null: false
+    t.datetime "opened_at",                          default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",                          default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                            default: false,                 null: false
+    t.datetime "created_at",                                                         null: false
+    t.datetime "updated_at",                                                         null: false
     t.string   "scan_file_id"
     t.string   "scan_rails_path"
     t.string   "aim_at_platform"
