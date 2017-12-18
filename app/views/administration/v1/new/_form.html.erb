@@ -93,13 +93,8 @@
 	<div class="am-form-group">
 		<label for="user-intro" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= New.human_attribute_name :content %> <span class="tpl-form-line-small-title"><%= :content.to_s.titleize %></span></label>
 		<div class="am-u-sm-9">
-			<%= kindeditor_tag :content, @new.content,
-			                   :window_onload => true,
-			                   :width => 1198,
-			                   :height => 600,
-			                   :resizeType => 0,
-			                   :editor_id => 'content'
-			%>
+      <span class="am-text-warning">温馨提示：请尽量上传压缩过的图像，以确保用户在手机端访问更快速和节省流量。</span>
+      <textarea id="editor" name="content" class="editor" style="width: 1198px; height: 600px;"><% if !@new.new_record? %><%= @new.content %><% end %></textarea>
 		</div>
 	</div>
 
@@ -111,3 +106,5 @@
 	</div>
 
 </form>
+
+

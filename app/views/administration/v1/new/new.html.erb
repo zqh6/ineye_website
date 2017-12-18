@@ -45,5 +45,14 @@
 <% end %>
 
 <% content_for :script do %>
-	<%= javascript_include_tag 'administration/v1/new/new' %>
+  <%= javascript_include_tag 'administration/v1/shared/kindeditor/kindeditor' %>
+  <%= javascript_include_tag 'administration/v1/shared/kindeditor/zh' %>
+  <script type="text/javascript">
+    KindEditor.ready(function(K) {
+      editor = K.create('#editor', {
+        themeType : 'simple'
+      });
+    });
+  </script>
+  <%= javascript_include_tag 'administration/v1/new/new' %>
 <% end %>

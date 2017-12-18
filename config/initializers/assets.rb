@@ -26,6 +26,8 @@ Rails.application.config.assets.precompile += %w(
   shared/dataTables.responsive.min.js
   new/show.js
   administration/v1/shared/share.js
+  administration/v1/shared/kindeditor/kindeditor.js
+  administration/v1/shared/kindeditor/zh.js
   administration/v1/sessions/show.js
   administration/v1/sessions/new.js
   administration/v1/dashboards/show.js
