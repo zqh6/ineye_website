@@ -27,3 +27,5 @@ public/uploads
 
 .idea/*
 *.DS_Store
+
+config/database.yml
