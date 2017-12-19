@@ -74,4 +74,5 @@ Rails.application.config.assets.precompile += %w(
   index_slide.js
   slide-2.js
   jquery.jDiaporama.js
+  kindeditor.js
 )
