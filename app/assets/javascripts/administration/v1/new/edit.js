@@ -19,7 +19,7 @@ function submitData(){
 			"key_words": $('#key_words').val(),
       "scan_rails_path": $('#scan_rails_path').val(),
       "state": $('#state').val(),
-			"content": editor.text()
+			"content": editor.html()
 		},
 		dataType: "json"
 	})
