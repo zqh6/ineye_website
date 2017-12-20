@@ -4,6 +4,9 @@ class Administration::Dosser::V1::NewController < Administration::Dosser::V1::Pr
     ActiveRecord::Base.transaction do
       new = New.new new_attributes
       new.user = @login_user
+      Rails.logger.warn 'WWWWWWWWWWWWWWWWWW'
+      Rails.logger.warn new.valid?
+      Rails.logger.warn new.errors.inspect
       if new.save!
         render_ok and return
       else

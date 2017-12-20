@@ -43,9 +43,18 @@
 <% content_for :body_attr do %>data-type="widgets"<% end %>
 
 <% content_for :style do %>
-		<%= stylesheet_link_tag 'administration/v1/new/edit' %>
+  <%= stylesheet_link_tag 'administration/v1/new/edit' %>
 <% end %>
 
 <% content_for :script do %>
-		<%= javascript_include_tag 'administration/v1/new/edit' %>
+  <%= javascript_include_tag 'administration/v1/shared/kindeditor/kindeditor' %>
+  <%= javascript_include_tag 'administration/v1/shared/kindeditor/zh' %>
+  <script type="text/javascript">
+    KindEditor.ready(function(K) {
+      editor = K.create('#editor', {
+        themeType : 'simple'
+      });
+    });
+  </script>
+  <%= javascript_include_tag 'administration/v1/new/edit' %>
 <% end %>

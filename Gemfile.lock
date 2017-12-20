@@ -42,10 +42,6 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.0.6)
-    carrierwave (1.2.1)
-      activemodel (>= 4.0.0)
-      activesupport (>= 4.0.0)
-      mime-types (>= 1.16)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -83,7 +79,6 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mini_magick (4.8.0)
     mini_portile2 (2.3.0)
     minitest (5.10.3)
     multi_json (1.12.1)
@@ -116,9 +111,6 @@ GEM
     rails-i18n (5.0.4)
       i18n (~> 0.7)
       railties (~> 5.0)
-    rails_kindeditor (0.5.0)
-      carrierwave
-      mini_magick
     railties (5.0.6)
       actionpack (= 5.0.6)
       activesupport (= 5.0.6)
@@ -201,7 +193,6 @@ DEPENDENCIES
   progne_tapera
   rails (= 5.0.6)
   rails-i18n
-  rails_kindeditor
   repres-dosser (>= 1.8.3)
   sassc-rails
   spring
