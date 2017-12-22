@@ -2,9 +2,7 @@
 <div class='banner-box  marB10 main'>
     <ul class='img'>
         <li>
-            <a href="javascript:;">
-                <%= image_tag("banner_yd.jpg") %>
-            </a>
+            <%= link_to image_tag("banner_yd.jpg"),news_path(173, from: 'db') %>
         </li>
         <li>
             <%= link_to image_tag("banner_qphys.jpg"),news_path(:朱思泉教授入选四川妙手仁心金口碑好医生十强) %>
