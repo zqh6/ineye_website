@@ -2,15 +2,9 @@
 <div class="enterEyeContainer">
     <%= render "medicals/medical_left" %>
     <div class="fr doctorScheduling">
-        <div class="stopService">
-            <h4>本周停诊信息</h4>
-            <ul class="flParent flow">
-                <li>廖品正： <span>周二（1月9日）</span></li>
-                <li>李强： <span>周三（1月10日）</span></li>
-            </ul>
-            <p>有效时间：2018/1/8--2018/1/14</p>
-        </div>
+
         <div class="schedulingTabCon padT20">
+            <h4>专家排班表</h4>
             <%= image_tag("table.jpg") %>
             <!--<table class="schedulingTab">-->
                 <!--<tr>-->
@@ -679,6 +673,13 @@
                     <!--</td>-->
                 <!--</tr>-->
             <!--</table>-->
+        </div>
+        <div class="stopService padB10">
+            <h4>本周停诊信息</h4>
+            <ul class="flParent flow">
+                <li>廖品正： <span>周二（1月9日）</span></li>
+                <li>李强： <span>周三（1月10日）</span></li>
+            </ul>
         </div>
         <!--<div class="schedulingTabCon">-->
             <!--<h4>门诊排班表</h4>-->
