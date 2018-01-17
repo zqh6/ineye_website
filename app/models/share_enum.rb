@@ -29,6 +29,27 @@ class ShareEnum < ApplicationRecord
     pc_and_mobile: 'PC端、手机端'
   }
 
+  enum am_pms: {
+    am: '上午',
+    pm: '下午',
+    am_and_pm: '全天'
+  }
+
+  enum weeks: {
+    monday: '星期一',
+    tuesday: '星期二',
+    wednesday: '星期三',
+    tursday: '星期四',
+    friday: '星期五',
+    saturday: '星期六',
+    sunday: '星期日'
+  }
+
+  enum outpatient_services: {
+    common: '普通门诊',
+    professional: '专家门诊'
+  }
+
   def self.form_options(enum_type)
     h = {}
     ShareEnum.try(enum_type.to_sym).each do |key, value|

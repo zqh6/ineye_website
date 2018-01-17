@@ -1,0 +1,2 @@
+class OfficeUserRelation < ApplicationRecord
+end
