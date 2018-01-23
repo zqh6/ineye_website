@@ -40,7 +40,7 @@ def create_user(phone_number: nil, password_str: nil)
 end
 
 #init_dictionary
-create_user phone_number: '19999999999', password_str: '123123'
+#create_user phone_number: '19999999999', password_str: '123123'
 
 def scan_new
   ActiveRecord::Base.transaction do
@@ -73,3 +73,23 @@ def scan_new
 end
 
 #scan_new
+
+def init_office
+  ActiveRecord::Base.transaction do
+    Office.init_data.each do |data|
+      if Office.where(name: data[:name].strip)
+      office = Office.new name: data[:name].strip, vice_name: data[:vice_name].strip
+      office.save!
+      office_time_am = OfficeTime.new office_id: office.id, am_pm_code: 'am'
+      office_time_am.save!
+      office_time_pm = OfficeTime.new office_id: office.id, am_pm_code: 'pm'
+      office_time_pm.save!
+      end
+    end
+    Rails.logger.warn 'Finish init office data.'
+  end
+
+end
+
+init_office
+

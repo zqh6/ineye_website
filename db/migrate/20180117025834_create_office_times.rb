@@ -2,7 +2,7 @@ class CreateOfficeTimes < ActiveRecord::Migration[5.0]
   def change
     create_table :office_times do |t|
 
-      t.integer :office_id,  null: false
+      t.integer :office_id, null: false
       t.string :am_pm_code, null: false
 
       t.column   :state, 'char(1)', null: false, default: 'C'
