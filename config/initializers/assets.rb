@@ -39,6 +39,7 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/users/index.js
   administration/v1/passwords/edit.js
   administration/v1/passwords/success.js
+  administration/v1/office/index.js
 
 
   shared/amazeui.min.css

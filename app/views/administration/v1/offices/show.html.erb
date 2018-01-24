@@ -1,0 +1,35 @@
+ <div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'new_new'}} %>
+
+<div class="tpl-content-wrapper">
+  <div class="row-content am-cf">
+    <div class="row">
+      <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+        <div class="widget am-cf">
+
+            <div>
+                <p>科室名称： <span><%= @office.name %></span></p>
+            </div>
+            <div>
+                <p>科室副标题： <span><%= @office.vice_name %></span></p>
+            </div>
+
+            <%= link_to "返回列表页", administration_v1_offices_path %>
+
+          </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+<% content_for :title do %>
+    管理平台-中心编辑
+<% end %>
