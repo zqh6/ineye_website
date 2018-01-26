@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       resources :offices,    only: [:new, :edit, :index, :show, :update, :create, :destroy ]
 
       resources :schedulings, only: [:new, :edit, :index, :create, :update]
+      resources :leavings
     end
   end
 

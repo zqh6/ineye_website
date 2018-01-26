@@ -47,18 +47,25 @@
 				<i class="am-icon-users sidebar-nav-link-logo"></i> 用户管理
 				<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
 			</a>
-			<ul class="sidebar-nav sidebar-nav-sub" <% if ['user_new', 'user_index', 'password_update'].include? options[:list_item] %>style="display: block;"<% end %>>
-				<li class="sidebar-nav-link">
-					<%= link_to new_administration_v1_user_path, class: options[:list_item]=='user_new' ? 'active' : '' do %>
-							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增
-					<% end %>
-				</li>
+			<ul class="sidebar-nav sidebar-nav-sub" <% if ['user_new', 'user_index', 'user_scheduling', 'user_leave', 'password_update'].include? options[:list_item] %>style="display: block;"<% end %>>
 
 				<li class="sidebar-nav-link">
 					<%= link_to administration_v1_users_path, class: options[:list_item]=='user_index' ? 'active' : '' do %>
-							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 列表
+							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增用户
 					<% end %>
 				</li>
+
+        <li class="sidebar-nav-link">
+          <%= link_to new_administration_v1_scheduling_path(function: 'all_user'), class: options[:list_item]=='user_scheduling' ? 'active' : '' do %>
+              <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 专家排班
+          <% end %>
+        </li>
+
+        <li class="sidebar-nav-link">
+          <%= link_to new_administration_v1_leaving_path(function: 'all_user'), class: options[:list_item]=='user_leave' ? 'active' : '' do %>
+              <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 专家停诊
+          <% end %>
+        </li>
 
 				<% unless ShareEnum.roles.first.first=='sys_admin' %>
 					<li class="sidebar-nav-link">
@@ -73,7 +80,7 @@
 
 		<li class="sidebar-nav-link">
 			<a href="javascript:;" class="sidebar-nav-sub-title">
-				<i class="sidebar-nav-link-logo am-icon-circle"></i>中心操作
+				<i class="sidebar-nav-link-logo am-icon-circle"></i>科室管理
 				<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
 			</a>
 			<ul class="sidebar-nav sidebar-nav-sub" <% if ['new_office', 'index_office'].include? options[:list_item] %>style="display: block;"<% end %>>
