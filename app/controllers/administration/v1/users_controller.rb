@@ -1,6 +1,7 @@
 class Administration::V1::UsersController < Administration::V1::PrivilegedController
 
   def show
+    render :action => params[:id]
   end
 
   def edit

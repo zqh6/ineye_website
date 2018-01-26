@@ -1,0 +1,15 @@
+.am-tabs-bd.flowVisible,.flowVisible{
+  overflow: visible;
+}
+.workingExperts{
+  width:60%;
+}
+.workingExperts .am-selected{
+  width:100%;
+}
+.middleLine td{
+  vertical-align: middle !important;
+}
+.lineRight{
+  border-right:1px solid #ddd;
+}
