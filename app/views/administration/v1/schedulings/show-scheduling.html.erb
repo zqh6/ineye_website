@@ -1,0 +1,104 @@
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'user_index'}} %>
+
+  <!-- 内容区域 -->
+  <div class="tpl-content-wrapper">
+
+    <div class="row-content am-cf ">
+
+      <div class="widget am-cf">
+        <div class="row">
+          <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+            <div class="am-tabs-bd flowVisible">
+                <div  class="am-tab-panel am-active">
+                  <table class="am-table middleLine lineBorder">
+                      <tr>
+                        <td>科室</td>
+                        <td>周一</td>
+                        <td>周二</td>
+                        <td>周三</td>
+                        <td>周四</td>
+                        <td>周五</td>
+                        <td>周六</td>
+                        <td>周日</td>
+                      </tr>
+                      <tr>
+                        <td rowspan="2">科室一</td>
+                        <td>上午</td>
+                        <td >段老师 专家门诊</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>张老师门诊</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>下午</td>
+                        <td>段老师 专家门诊</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td rowspan="2" class="lineRight">科室二</td>
+                        <td>上午</td>
+                        <td >段老师 专家门诊</td>
+                        <td></td>
+                        <td>袁老师 专家门诊</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>下午</td>
+                        <td>段老师 专家门诊</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                  </table>
+                </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+<% content_for :title do %>
+    管理平台-用户列表
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :body_attr do %>data-type="widgets"<% end %>
+
+<% content_for :style do %>
+    <%= stylesheet_link_tag 'administration/v1/users/scheduling' %>
+<% end %>
+
+<% content_for :script do %>
+    <%#= javascript_include_tag 'administration/v1/users/scheduling' %>
+<% end %>
