@@ -19,8 +19,8 @@ class ShareEnum < ApplicationRecord
 
   enum role: {
     sys_admin: '系统管理员',
-    user_admin: '用户管理员',
-    common_user: '普通用户'
+    user_admin: '医生管理员',
+    common_user: '医生'
   }
 
   enum aim_at_platform: {

@@ -33,8 +33,10 @@ Rails.application.routes.draw do
   scope '/administration-api/v1', module: 'administration/dosser/v1', as: 'administration_dosser_v1' do
     resources :sessions, only: [:create, :destroy]
     resources :new,      only: [:create, :destroy, :update]
-    resources :users,    only: [:create, :destroy, :update]
+    resources :users,    only: [:create, :destroy, :update, :index]
     resources :ask_for_leaves, only: [:create, :destroy, :update]
+
+    resources :schedulings
   end
 
   scope '/all-api', module: 'all_api', as: 'all_api' do

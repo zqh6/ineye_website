@@ -3,7 +3,8 @@ class User < ApplicationRecord
   has_many :passwords
   belongs_to :create_user, class_name: 'User', foreign_key: 'create_user_id'
 
-  validates :phone_number, presence:   true, uniqueness: true
+  validates :name, presence: true
+  validates :phone_number, presence:   true, uniqueness: true, length: { is: 11 }, format: { with: /\A1\d{10}\z/, message: '格式不正确' }
   validates :role_code,    presence:   true
 
   scope :not_role_code,     ->(role_code)    { where "#{table_name}.role_code != :role_code", role_code: role_code }

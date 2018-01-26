@@ -36,6 +36,12 @@ zh-CN:
         role_code:    角色
         create_user:  创建者
         created_at:   创建时间
+        honour_brief_introduction: 荣誉简介
+        honour_specific: 荣誉详情
+        good_at_field: 擅长领域
+        work_time: 工作时间描述
+        detailed_introduction: 详细介绍
+        office_id: 所属科室
 
       password:
         old_password:  旧密码

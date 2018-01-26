@@ -8,14 +8,25 @@ $(function(){
 })
 
 function submitData(){
+  formDom = $('.js-form');
+  var requestData = {
+    "name": $('#name').val(),
+    "phone_number": $('#phone_number').val(),
+    "role_code": $('#role_code').val()
+  };
+  if($('.js-id').val()!=null && $('.js-id').val()!=''){
+    requestData['office_id'] = $('#office_id').val();
+    requestData['honour_brief_introduction'] = $('#honour_brief_introduction').val();
+    requestData['honour_specific'] = $('#honour_specific').val();
+    requestData['good_at_field'] = $('#good_at_field').val();
+    requestData['work_time'] = $('#work_time').val();
+    requestData['detailed_introduction'] = $('#detailed_introduction').val();
+  }
+
 	$.ajax({
-		url: "/administration-api/v1/users",
-		type: "post",
-		data: {
-			"name": $('#name').val(),
-			"phone_number": $('#phone_number').val(),
-			"role_code": $('#role_code').val()
-		},
+		url: formDom.attr('action'),
+		type: formDom.attr('method'),
+		data: requestData,
 		dataType: "json"
 	})
 		.done(function( data ) {

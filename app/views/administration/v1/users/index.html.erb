@@ -71,6 +71,7 @@
 														<td><%= l user.created_at, format: :human_time %></td>
 														<td>
 															<div class="tpl-table-black-operation">
+                                <% if user.role_code.to_sym==:common_user %><a class="btn am-btn" href="<%= edit_administration_v1_user_path(user.id) %>">编辑资料</a><% end %>
 															</div>
 														</td>
 													</tr>

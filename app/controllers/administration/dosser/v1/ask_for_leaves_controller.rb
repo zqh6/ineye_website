@@ -1,9 +1,52 @@
-class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::PresentationController
+class Administration::Dosser::V1::AskForLeavesController < Administration::Dosser::V1::PresentationController
 
   def create
+    ActiveRecord::Base.transaction do
+      render_conflict message: 'am_pm_code参数不正确' and return if ShareEnum.am_pms[params[:am_pm_code].to_sym].blank?
+
+      leave_day = nil
+      begin
+        leave_day = Time.parse params[:leave_day]
+      rescue
+        render_conflict message: 'leave_day格式不正确' and return
+      end
+
+      start_time = leave_day.beginning_of_day
+      end_time   = leave_day.end_of_day
+      if params[:am_pm_code]=='am'
+        start_time = Time.parse(params[:leave_day].strip+' 09:00:00')
+        end_time   = Time.parse(params[:leave_day].strip+' 12:00:00')
+      elsif params[:am_pm_code]=='pm'
+        start_time = Time.parse(params[:leave_day].strip+' 1:00:00')
+        end_time   = Time.parse(params[:leave_day].strip+' 18:00:00')
+      elsif params[:am_pm_code]=='am_and_pm'
+        start_time = Time.parse(params[:leave_day].strip+' 09:00:00')
+        end_time   = Time.parse(params[:leave_day].strip+' 18:00:00')
+      end
+
+      ask_for_leave = AskForLeave.new user_id: params[:user_id].to_i,
+                      am_pm_code: params[:am_pm_code],
+                      day: leave_day,
+                      opened_at: start_time,
+                      closed_at: end_time
+      if ask_for_leave.save
+        render_ok collection: [{leave_id: ask_for_leave.id}] and return
+      else
+        render_conflict message: error_message(ask_for_leave) and return
+      end
+    end
   end
 
-  def update
+  def destroy
+    ActiveRecord::Base.transaction do
+      render_conflict message: 'id参数不正确' and return if params[:id].blank?
+      ask_for_leave = AskForLeave.find(params[:id])
+      if ask_for_leave.soft_destroy
+        render_ok and return
+      else
+        render_conflict message: error_message(ask_for_leave) and return
+      end
+    end
   end
 
 end
