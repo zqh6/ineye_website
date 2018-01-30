@@ -6,7 +6,7 @@
   <%= render partial: 'administration/v1/shared/change_theme' %>
 
   <!-- 侧边导航栏 -->
-  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'user_index'}} %>
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'user_leave'}} %>
 
   <!-- 内容区域 -->
   <div class="tpl-content-wrapper">
@@ -14,23 +14,81 @@
     <div class="row-content am-cf ">
 
       <div class="widget am-cf">
-        <div class="row">
+
+        <div class="row flow">
           <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
 
             <div class="widget-head am-cf">
               <div class="widget-title  am-cf">停诊信息</div>
             </div>
-            <div>
-              <p>科室：</p>
-            </div>
+
           </div>
         </div>
+
+        <div class="row marT30">
+          <form>
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+              <div>
+                <span>科室：</span>
+                <select data-am-selected>
+                  <option value="a" selected>眼科诊室</option>
+                  <option value="b" >Banana</option>
+                  <option value="o">Orange</option>
+                  <option value="m">Mango</option>
+                  <option value="d" disabled>禁用鸟</option>
+                </select>
+                <select data-am-selected>
+                  <option value="a" selected>段俊国</option>
+                  <option value="b" >廖品正</option>
+                </select>
+              </div>
+
+              <p><span>停诊时间： <small>（点击加号添加停诊时间）</small></span></p>
+              <p class="addBtn"><i class="am-icon-plus cursor"></i></p>
+              <div class="time-area">
+
+              </div>
+              <div class="surestop">
+                <button type="button" class="am-btn am-btn-primary am-radius">确认停诊</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+
+        <div class="row marT30">
+          <div class="am-u-sm-10 am-u-md-10 am-u-lg-10">
+            <div class="stoplist">
+              <span>停诊信息列表：</span>
+            </div>
+            <table class="stopmsg">
+              <tr>
+                <td><b>科室</b></td>
+                <td><b>姓名</b></td>
+                <td><b>停诊日期</b></td>
+                <td><b>停诊时段</b></td>
+              </tr>
+              <tr>
+                <td>青光眼科</td>
+                <td>段俊国</td>
+                <td>2018-1-30</td>
+                <td>全天</td>
+              </tr>
+              <tr>
+                <td>青光眼科</td>
+                <td>段俊国</td>
+                <td>2018-1-31</td>
+                <td>下午</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
       </div>
-
-
-
     </div>
   </div>
+</div>
+
 
 
 
@@ -48,9 +106,10 @@
 <% content_for :body_attr do %>data-type="widgets"<% end %>
 
 <% content_for :style do %>
-    <%= stylesheet_link_tag 'administration/v1/schedulings/scheduling' %>
+    <%= stylesheet_link_tag 'administration/v1/leavings/new' %>
 <% end %>
 
 <% content_for :script do %>
-    <%#= javascript_include_tag 'administration/v1/users/scheduling' %>
+    <%= javascript_include_tag 'administration/v1/leavings/leaving' %>
+
 <% end %>

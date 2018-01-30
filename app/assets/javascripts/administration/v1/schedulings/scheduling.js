@@ -10,8 +10,10 @@ $(function(){
     })
     $(".workingExperts p").click(function(){
       if($(this).next().css("display")=="none"){
+        $(".doctorList").hide()
         $(this).next().show();
       }else{
+        $(".doctorList").hide()
         $(this).next().hide();
       }
 

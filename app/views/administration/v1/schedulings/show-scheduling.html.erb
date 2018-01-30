@@ -20,14 +20,14 @@
                 <div  class="am-tab-panel am-active">
                   <table class="am-table middleLine lineBorder">
                       <tr>
-                        <td>科室</td>
-                        <td>周一</td>
-                        <td>周二</td>
-                        <td>周三</td>
-                        <td>周四</td>
-                        <td>周五</td>
-                        <td>周六</td>
-                        <td>周日</td>
+                        <td><b>科室</b></td>
+                        <td><b>周一</b></td>
+                        <td><b>周二</b></td>
+                        <td><b>周三</b></td>
+                        <td><b>周四</b></td>
+                        <td><b>周五</b></td>
+                        <td><b>周六</b></td>
+                        <td><b>周日</b></td>
                       </tr>
                       <tr>
                         <td rowspan="2">科室一</td>
@@ -96,9 +96,9 @@
 <% content_for :body_attr do %>data-type="widgets"<% end %>
 
 <% content_for :style do %>
-    <%= stylesheet_link_tag 'administration/v1/users/scheduling' %>
+    <%= stylesheet_link_tag 'administration/v1/schedulings/scheduling' %>
 <% end %>
 
 <% content_for :script do %>
-    <%#= javascript_include_tag 'administration/v1/users/scheduling' %>
+    <%= javascript_include_tag 'administration/v1/schedulings/scheduling' %>
 <% end %>

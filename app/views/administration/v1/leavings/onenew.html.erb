@@ -1,0 +1,283 @@
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'one_user'}} %>
+
+  <!-- 内容区域 -->
+  <div class="tpl-content-wrapper">
+
+    <div class="row-content am-cf ">
+
+      <div class="widget am-cf">
+
+        <div class="row flow">
+          <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+
+            <div class="widget-head am-cf">
+              <div class="widget-title  am-cf">排班信息</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row marT30">
+          <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+            <div class="worklist">
+              <span>排班表：</span>
+            </div>
+            <table class="workmsg">
+              <tr>
+                <td><b>科室</b></td>
+                <td><b>姓名</b></td>
+                <td><b>时段</b></td>
+                <td><b>周一</b></td>
+                <td><b>周二</b></td>
+                <td><b>周三</b></td>
+                <td><b>周四</b></td>
+                <td><b>周五</b></td>
+                <td><b>周六</b></td>
+                <td><b>周日</b></td>
+              </tr>
+              <tr>
+                <td rowspan="2">青光眼科</td>
+                <td rowspan="2">段俊国</td>
+                <td>上午</td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+                <td></td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>下午</td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+                <td>
+                  <select data-am-selected="{searchBox: 1}">
+                    <option value="a">Apple</option>
+                    <option value="b">Banana</option>
+                    <option value="o">Orange</option>
+                    <option value="m">Mango</option>
+                    <option value="phone">iPhone</option>
+                    <option value="im">iMac</option>
+                    <option value="mbp">Macbook Pro</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+            <div class="flow">
+                <button type="button" class="am-btn am-btn-primary am-radius fr">修改排班</button>
+            </div>
+          </div>
+        </div>
+        <div class="row flow clear-both">
+          <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+            <hr>
+          </div>
+        </div>
+
+        <div class="row marT30">
+          <form>
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+
+              <p><span>增加停诊： <small>（点击加号添加停诊时间）</small></span></p>
+              <p class="addBtn"><i class="am-icon-plus cursor"></i></p>
+              <div class="time-area">
+
+              </div>
+              <div class="surestop">
+                <button type="button" class="am-btn am-btn-primary am-radius">确认停诊</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+
+        <div class="row marT30">
+          <div class="am-u-sm-10 am-u-md-10 am-u-lg-10">
+            <div class="stoplist">
+              <span>停诊信息列表：</span>
+            </div>
+            <table class="stopmsg">
+              <tr>
+                <td><b>科室</b></td>
+                <td><b>姓名</b></td>
+                <td><b>停诊日期</b></td>
+                <td><b>停诊时段</b></td>
+              </tr>
+              <tr>
+                <td>青光眼科</td>
+                <td>段俊国</td>
+                <td>2018-1-30</td>
+                <td>全天</td>
+              </tr>
+              <tr>
+                <td>青光眼科</td>
+                <td>段俊国</td>
+                <td>2018-1-31</td>
+                <td>下午</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<% content_for :title do %>
+    管理平台-用户列表
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :body_attr do %>data-type="widgets"<% end %>
+
+<% content_for :style do %>
+    <%= stylesheet_link_tag 'administration/v1/leavings/new' %>
+<% end %>
+
+<% content_for :script do %>
+     <%= javascript_include_tag 'administration/v1/leavings/leaving' %>
+
+<% end %>
