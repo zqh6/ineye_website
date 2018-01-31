@@ -1,5 +1,8 @@
 class Office < ApplicationRecord
 
+  has_many :office_user_relations
+  has_many :users, through: :office_user_relations
+
   def self.init_data
     [
       {
