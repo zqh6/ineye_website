@@ -16,4 +16,9 @@ class User < ApplicationRecord
   scope :phone_number_like, ->(phone_number) { where "#{table_name}.phone_number LIKE :phone_number", phone_number: "%#{phone_number}%" }
   scope :name_like,         ->(name)         { where "#{table_name}.name LIKE :name", name: "%#{name}%" }
   scope :create_user_is,    ->(create_user)  { where "#{table_name}.create_user_id = :create_user_id", create_user_id: create_user.id }
+
+  def get_office
+    office_user_relation = OfficeUserRelation.alive.user_id_is(self.id).reorder('created_at DESC').first
+    Office.find(office_user_relation.office_id)
+  end
 end

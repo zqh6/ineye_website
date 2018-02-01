@@ -36,5 +36,13 @@ module MytxzModelExtension
       result
     end
 
+    def created_at_desc
+      self.created_at.strftime('%Y-%m-%d %H:%M:%S')
+    end
+
+    def updated_at_desc
+      self.updated_at.strftime('%Y-%m-%d %H:%M:%S')
+    end
+
   end
 end

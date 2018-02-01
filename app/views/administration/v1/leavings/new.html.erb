@@ -19,7 +19,7 @@
           <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
 
             <div class="widget-head am-cf">
-              <div class="widget-title  am-cf">停诊信息</div>
+              <div class="widget-title  am-cf">停诊信息<span class="am-margin-left am-text-warning">此处添加医生停诊信息，实际排班结果会根据停诊信息生成<a href="www.baidu.com"><strong>《就诊排班表》</strong></a></span></div>
             </div>
 
           </div>
@@ -67,20 +67,19 @@
                 <td><b>姓名</b></td>
                 <td><b>停诊日期</b></td>
                 <td><b>停诊时段</b></td>
+                <td><b>创建时间</b></td>
               </tr>
+              <% @ask_for_leaves.each do |ask_for_leave| %>
               <tr>
-                <td>青光眼科</td>
-                <td>段俊国</td>
-                <td>2018-1-30</td>
-                <td>全天</td>
+                <td><%= ask_for_leave[:office_name] %></td>
+                <td><%= ask_for_leave[:user_name] %></td>
+                <td><%= ask_for_leave[:day] %></td>
+                <td><%= ask_for_leave[:am_pm_code_desc] %></td>
+                <td><%= ask_for_leave[:created_at_desc] %></td>
               </tr>
-              <tr>
-                <td>青光眼科</td>
-                <td>段俊国</td>
-                <td>2018-1-31</td>
-                <td>下午</td>
-              </tr>
+              <% end %>
             </table>
+            <%= will_paginate @ask_for_leaves_query %>
           </div>
         </div>
 

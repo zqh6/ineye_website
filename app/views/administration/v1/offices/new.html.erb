@@ -1,4 +1,4 @@
- <div class="am-g tpl-g">
+<div class="am-g tpl-g">
   <!-- 头部 -->
   <%= render partial: 'administration/v1/shared/navigation_bar' %>
   <!-- 风格切换 -->
@@ -6,33 +6,34 @@
   <!-- 侧边导航栏 -->
   <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'new_office'}} %>
 
-<div class="tpl-content-wrapper">
-  <div class="row-content am-cf">
-    <div class="row">
-      <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
-        <div class="widget am-cf">
+  <div class="tpl-content-wrapper">
+    <div class="row-content am-cf">
+      <div class="row">
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+          <div class="widget am-cf">
 
-          <form  class="am-form" action="/administration/v1/offices" method="POST">
-              <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
-            <fieldset>
-              <legend>添加科室</legend>
+            <form  class="am-form" action="/administration/v1/offices" method="POST">
+                <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />
+              <fieldset>
+                <legend>添加科室</legend>
 
-              <div class="am-form-group">
-                <label for="name">科室名</label>
-                <input type="text" class="" id="name" name="name" placeholder="输入科室名">
-              </div>
+                <div class="am-form-group">
+                  <label for="name">科室名</label>
+                  <input type="text" class="" id="name" name="name" placeholder="输入科室名">
+                </div>
 
-              <div class="am-form-group">
-                <label for="vice_name">中心副标题</label>
-                <input type="text" class="vice_name" id="vice_name" name="vice_name" placeholder="中心副标题">
-              </div>
-            </fieldset>
-            <input type="submit" value="添加中心" class="am-btn am-btn-primary" >
-          </form>
+                <div class="am-form-group">
+                  <label for="vice_name">中心副标题</label>
+                  <input type="text" class="vice_name" id="vice_name" name="vice_name" placeholder="中心副标题">
+                </div>
+              </fieldset>
+              <input type="submit" value="添加中心" class="am-btn am-btn-primary" >
+            </form>
 
+
+          </div>
 
         </div>
-
       </div>
     </div>
   </div>
