@@ -52,6 +52,7 @@ $(function(){
       return doctor;
 
     }
+    //保存数据
     $(".saveDoctor").click(function(){
       $(this).parents(".doctorListCon").find(".doctorList").hide()
        $.ajax({
@@ -61,21 +62,17 @@ $(function(){
                 dataType: "json",
                 data: JSON.stringify({
                     office_time_id: $(this).parents(".workingExperts").prev().attr("data-office-time-id"),
-                    users:doctorDate,
+                    users: doctorDate,
                     week:$(this).parents(".am-tab-panel").attr("data-week-key")
                 })
             })
-                .done(function( data ){
-
-                })
-                .fail(function( xhr, status, errorThrown ) {
-                })
-                .always(function( xhr, status ) {
-                });
-
-
+            .done(function( data ){
+            })
+            .fail(function( xhr, status, errorThrown ) {
+              alert(xhr.responseJSON.message);
+            })
+            .always(function( xhr, status ) {
+            });
     })
 
-
-
-  })
+ })
