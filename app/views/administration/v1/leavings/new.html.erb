@@ -19,7 +19,7 @@
           <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
 
             <div class="widget-head am-cf">
-              <div class="widget-title  am-cf">停诊信息<span class="am-margin-left am-text-warning">此处添加医生停诊信息，实际排班结果会根据停诊信息生成<a href="www.baidu.com"><strong>《就诊排班表》</strong></a></span></div>
+              <div class="widget-title  am-cf">停诊信息<span class="am-margin-left am-text-warning">此处添加医生停诊信息，实际排班结果会根据停诊信息生成<a href="/medicals/专家排班"><strong>《就诊排班表》</strong></a></span></div>
             </div>
 
           </div>
@@ -31,11 +31,9 @@
               <div>
                 <span>科室：</span>
                 <select data-am-selected>
-                  <option value="a" selected>眼科诊室</option>
-                  <option value="b" >Banana</option>
-                  <option value="o">Orange</option>
-                  <option value="m">Mango</option>
-                  <option value="d" disabled>禁用鸟</option>
+                  <% @offices.each do |office| %>
+                    <option value="<%= office.id %>"><%= office.name %></option>
+                  <% end %>
                 </select>
                 <select data-am-selected>
                   <option value="a" selected>段俊国</option>
