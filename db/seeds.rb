@@ -91,5 +91,6 @@ def init_office
 
 end
 
-init_office
+#此方法只执行一次，部署新的服务的时候请需要注释，但尽量不要提交
+#init_office
 

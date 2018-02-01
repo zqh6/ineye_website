@@ -10,6 +10,7 @@ class Administration::V1::SchedulingsController < Administration::V1::Privileged
   end
 
   def index
+
   end
 
 end

@@ -30,7 +30,7 @@
                   <div data-tab-panel-0 class="am-tab-panel am-active">
                     <table class="am-table middleLine lineBorder">
                         <tr>
-                          <td rowspan="2">科室一</td>
+                          <td rowspan="2"><%= session[:user].get_office.name %></td>
                           <td>上午</td>
                           <td class="workingExperts">
                             <div class="doctorListCon">
@@ -38,7 +38,7 @@
 
                               <ul class="hide doctorList">
                                 <li class="doctors">
-                                  <span class="doctorName">段老师</span>
+                                  <span class="doctorName"><%= session[:user].name %></span>
                                     <input type="checkbox" name="vehicle" value="段老师 vip传承门诊," /> vip传承门诊
                                     <input type="checkbox" name="vehicle" value="段老师 vip门诊," /> vip门诊
                                     <input type="checkbox" name="vehicle" value="段老师 vip门诊," /> vip门诊
@@ -150,16 +150,9 @@
           </div>
         </div>
       </div>
-
-
-
     </div>
   </div>
-
-
-
-
-
+</div>
 
 
 <% content_for :title do %>

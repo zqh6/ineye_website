@@ -28,176 +28,55 @@
         <div class="row marT30">
           <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
             <div class="worklist">
-              <span>排班表：</span>
+              <span>每周默认排班表：</span>
             </div>
             <table class="workmsg">
               <tr>
                 <td><b>科室</b></td>
                 <td><b>姓名</b></td>
                 <td><b>时段</b></td>
-                <td><b>周一</b></td>
-                <td><b>周二</b></td>
-                <td><b>周三</b></td>
-                <td><b>周四</b></td>
-                <td><b>周五</b></td>
-                <td><b>周六</b></td>
-                <td><b>周日</b></td>
+                <% ShareEnum.weeks.each do |week_key, week_value| %>
+                    <td><b><%= week_value %></b></td>
+                <% end %>
               </tr>
+
+              <% office_times = OfficeTime.alive.where(office_id: @office.id) %>
               <tr>
-                <td rowspan="2">青光眼科</td>
-                <td rowspan="2">段俊国</td>
-                <td>上午</td>
+                <td rowspan="2"><%= @office.name%></td>
+                <td rowspan="2"><%= @login_user.name %></td>
+                <% office_time = office_times.where(am_pm_code: 'am').first %>
+                <td data-office-time-id="<%= office_time.id %>">上午</td>
+                <% ShareEnum.weeks.each do |week_key, week_value| %>
                 <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
+                  <select data-am-selected="{searchBox: 1}" data-week-code="<%= week_key %>" placeholder="无">
+                    <option value="" selected></option>
+                    <% ShareEnum.outpatient_services.each do |os_key, os_value| %>
+                      <% schedulings = Scheduling.alive.office_time_id_is(office_time.id).user_id_is(@login_user).outpatient_service_type_is(os_key).week_code_is(week_key) %>
+                      <option value="<%= os_key %>" <% if schedulings.present? %>selected<% end %>><%= os_value %></option>
+                    <% end %>
                   </select>
                 </td>
-                <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
-                  </select>
-                </td>
-                <td></td>
-                <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
-                  </select>
-                </td>
-                <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
-                  </select>
-                </td>
-                <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
-                  </select>
-                </td>
-                <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
-                  </select>
-                </td>
+                <% end %>
               </tr>
+
               <tr>
-                <td>下午</td>
+                <% office_time = office_times.where(am_pm_code: 'pm').first %>
+                <td data-office-time-id="<%= office_time.id %>">下午</td>
+                <% ShareEnum.weeks.each do |week_key, week_value| %>
                 <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
+                  <select data-am-selected="{searchBox: 1}" data-week-code="<%= week_key %>" placeholder="无">
+                    <option value="" selected></option>
+                    <% ShareEnum.outpatient_services.each do |os_key, os_value|%>
+                      <% schedulings = Scheduling.alive.office_time_id_is(office_time.id).user_id_is(@login_user).outpatient_service_type_is(os_key).week_code_is(week_key) %>
+                      <option value="<%= os_key %>" <% if schedulings.present? %>selected<% end %>><%= os_value %></option>
+                    <% end %>
                   </select>
                 </td>
-                <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
-                  </select>
-                </td>
-                <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
-                  </select>
-                </td>
-                <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
-                  </select>
-                </td>
-                <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
-                  </select>
-                </td>
-                <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
-                  </select>
-                </td>
-                <td>
-                  <select data-am-selected="{searchBox: 1}">
-                    <option value="a">Apple</option>
-                    <option value="b">Banana</option>
-                    <option value="o">Orange</option>
-                    <option value="m">Mango</option>
-                    <option value="phone">iPhone</option>
-                    <option value="im">iMac</option>
-                    <option value="mbp">Macbook Pro</option>
-                  </select>
-                </td>
+                <% end %>
               </tr>
             </table>
             <div class="flow">
-                <button type="button" class="am-btn am-btn-primary am-radius fr">修改排班</button>
+                <button type="button" class="am-btn am-btn-primary am-radius fr">保存修改</button>
             </div>
           </div>
         </div>
@@ -210,7 +89,7 @@
         <div class="row marT30">
           <form>
             <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
-
+              <%= hidden_field_tag :user_id, @login_user.id %>
               <p><span>增加停诊： <small>（点击加号添加停诊时间）</small></span></p>
               <p class="addBtn"><i class="am-icon-plus cursor"></i></p>
               <div class="time-area">
@@ -235,20 +114,19 @@
                 <td><b>姓名</b></td>
                 <td><b>停诊日期</b></td>
                 <td><b>停诊时段</b></td>
+                <td><b>创建时间</b></td>
               </tr>
+              <% @ask_for_leaves.each do |ask_for_leave| %>
               <tr>
-                <td>青光眼科</td>
-                <td>段俊国</td>
-                <td>2018-1-30</td>
-                <td>全天</td>
+                <td><%= ask_for_leave[:office_name] %></td>
+                <td><%= ask_for_leave[:user_name] %></td>
+                <td><%= ask_for_leave[:day] %></td>
+                <td><%= ask_for_leave[:am_pm_code_desc] %></td>
+                <td><%= ask_for_leave[:created_at_desc] %></td>
               </tr>
-              <tr>
-                <td>青光眼科</td>
-                <td>段俊国</td>
-                <td>2018-1-31</td>
-                <td>下午</td>
-              </tr>
+              <% end %>
             </table>
+            <%= will_paginate @ask_for_leaves_query %>
           </div>
         </div>
 
@@ -256,13 +134,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
 
 <% content_for :title do %>
     管理平台-用户列表
