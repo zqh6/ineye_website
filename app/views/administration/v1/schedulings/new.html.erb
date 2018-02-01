@@ -27,56 +27,60 @@
               <div class="am-tabs-bd flowVisible">
                 <% count = 0%>
                 <% ShareEnum.weeks.each do |key, value| %>
-                    <div data-tab-panel-<%= count %> class="am-tab-panel <% if count==0 %>am-active<% end %>">
-                      <table class="am-table middleLine lineBorder doctor-working">
-                        <% Office.alive.each do |office| %>
-                        <tr>
-                          <td rowspan="2" data-office-id="<%= office.id %>"><%= office.name %></td>
-                          <% office_times = OfficeTime.where(office_id: office.id) %>
-                          <td data-office-time-id="<%= office_times.where(am_pm_code: 'am').first.id %>">上午</td>
-                          <td class="workingExperts">
-                            <div class="doctorListCon">
-                              <p>请选择排班医生 <i class="am-selected-icon am-icon-caret-down fr"></i></p>
-                              <ul class="hide doctorList">
-                                <% OfficeUserRelation.alive.office_id_is(office.id).each do |office_user_relation| %>
-                                  <% user = User.alive.where(id: office_user_relation.user_id).first %>
-                                  <li class="doctors">
-                                    <span class="doctorName"><%= user.name %></span>
-                                    <% ShareEnum.outpatient_services.each do |os_key, os_value| %>
-                                      <input type="checkbox" name="<%= os_key %>" /> <%= os_value %>
-                                    <% end %>
-                                  </li>
-                                <% end %>
-                                <input type="button" value="点击保存" class="saveDoctor am-btn-primary">
-                              </ul>
-                            </div>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td data-office-time-id="<%= office_times.where(am_pm_code: 'pm').first.id %>">下午</td>
-                          <td class="workingExperts">
-                            <div class="doctorListCon">
-                              <p>请选择排班医生 <i class="am-selected-icon am-icon-caret-down fr"></i></p>
-                              <ul class="hide doctorList">
-                                <% OfficeUserRelation.alive.office_id_is(office.id).each do |office_user_relation| %>
-                                  <% user = User.alive.where(id: office_user_relation.user_id).first %>
-                                  <li class="doctors">
-                                    <span class="doctorName"><%= user.name %></span>
-                                    <% ShareEnum.outpatient_services.each do |os_key, os_value| %>
-                                      <input type="checkbox" name="<%= os_key %>" /> <%= os_value %>
-                                    <% end %>
-                                  </li>
-                                <% end %>
-                                <input type="button" value="点击保存" class="saveDoctor am-btn-primary">
-                              </ul>
-                            </div>
+                  <div data-tab-panel-<%= count %> class="am-tab-panel <% if count==0 %>am-active<% end %>">
+                    <table class="am-table middleLine lineBorder doctor-working">
+                      <% Office.alive.each do |office| %>
+                      <tr>
+                        <td rowspan="2" data-office-id="<%= office.id %>"><%= office.name %></td>
+                        <% office_times = OfficeTime.where(office_id: office.id) %>
+                        <% office_time = office_times.where(am_pm_code: 'am').first %>
+                        <td data-office-time-id="<%= office_time.id %>">上午</td>
+                        <td class="workingExperts">
+                          <div class="doctorListCon">
+                            <p>请选择排班医生 <i class="am-selected-icon am-icon-caret-down fr"></i></p>
+                            <ul class="hide doctorList">
+                              <% OfficeUserRelation.alive.office_id_is(office.id).each do |office_user_relation| %>
+                                <% user = User.alive.where(id: office_user_relation.user_id).first %>
+                                <li class="doctors">
+                                  <span class="doctorName" data-user-id="<%= user.id %>"><%= user.name %></span>
+                                  <% ShareEnum.outpatient_services.each do |os_key, os_value| %>
+                                    <% schedulings = Scheduling.alive.office_time_id_is(office_time.id).user_id_is(user.id).outpatient_service_type_is(os_key).week_code_is(key) %>
+                                    <input type="checkbox" name="<%= os_key %>" <% if schedulings.present? %>checked<% end %>/> <span class="js-service-name" data-user-name="<%= user.name %>"><%= os_value %></span>
+                                  <% end %>
+                                </li>
+                              <% end %>
+                              <input type="button" value="点击保存" class="saveDoctor am-btn-primary">
                             </ul>
-                          </td>
-                        </tr>
-                        <% end %>
-                      </table>
-                    </div>
-                    <% count+=1 %>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <% office_time = office_times.where(am_pm_code: 'pm').first %>
+                        <td data-office-time-id="<%= office_time.id %>">下午</td>
+                        <td class="workingExperts">
+                          <div class="doctorListCon">
+                            <p>请选择排班医生 <i class="am-selected-icon am-icon-caret-down fr"></i></p>
+                            <ul class="hide doctorList">
+                              <% OfficeUserRelation.alive.office_id_is(office.id).each do |office_user_relation| %>
+                                <% user = User.alive.where(id: office_user_relation.user_id).first %>
+                                <li class="doctors">
+                                  <span class="doctorName" data-user-id="<%= user.id %>"><%= user.name %></span>
+                                  <% ShareEnum.outpatient_services.each do |os_key, os_value| %>
+                                      <% schedulings = Scheduling.alive.office_time_id_is(office_time.id).user_id_is(user.id).outpatient_service_type_is(os_key).week_code_is(key) %>
+                                      <input type="checkbox" name="<%= os_key %>" <% if schedulings.present? %>checked<% end %>/> <span class="js-service-name" data-user-name="<%= user.name %>"><%= os_value %></span>
+                                  <% end %>
+                                </li>
+                              <% end %>
+                              <input type="button" value="点击保存" class="saveDoctor am-btn-primary">
+                            </ul>
+                          </div>
+                          </ul>
+                        </td>
+                      </tr>
+                      <% end %>
+                    </table>
+                  </div>
+                  <% count+=1 %>
                 <% end %>
               </div>
             </div>

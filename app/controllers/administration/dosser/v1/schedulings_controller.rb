@@ -6,6 +6,9 @@ class Administration::Dosser::V1::SchedulingsController < Administration::Dosser
       render_conflict message: 'office_time_id参数不正确' and return if office_time.blank?
       render_conflict message: 'week参数不正确' and return if ShareEnum.weeks[params[:week].to_sym].blank?
 
+      schedulings = Scheduling.office_time_id_is(params[:office_time_id]).week_code_is(params[:week])
+      schedulings.delete_all
+
       collection = []
       params[:users].each do |user_info|
         render_conflict message: 'user_id参数错误' and return if user_info[:user_id].blank?

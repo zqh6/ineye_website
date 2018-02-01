@@ -25,7 +25,7 @@ $(function(){
       for(var l=0;l<$(dom).find(".doctors").length;l++){
         for(var i =0;i< $(dom).find(".doctors").eq(l).find("input[type=checkbox]").length;i++){
           if($(dom).find(".doctors").eq(l).find("input[type=checkbox]").eq(i).is(":checked")){
-              doctor.push($(dom).find(".doctors").eq(l).find("input[type=checkbox]").eq(i).val());
+              doctor.push($(dom).find(".doctors").eq(l).find(".js-service-name").attr('data-user-name')+' '+$(dom).find(".doctors").eq(l).find(".js-service-name").eq(i).html()+'，');
           }else{
           }
         }
