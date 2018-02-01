@@ -23,33 +23,27 @@
                     <td>编号</td>
                     <td>科室名称</td>
                     <td>科室副标题</td>
-                    <td colspan="2">操作</td>
+                    <td>操作</td>
                   </tr>
                 <% @office.each do |office| %>
                   <tr>
                     <td><%= office.id %></td>
                     <td><%= office.name %></td>
                     <td><%= office.vice_name %></td>
-                    <td><%= link_to "修改", edit_administration_v1_office_path(office.id) %></td>
-                    <td><%= link_to :delete,administration_v1_office_path(office.id), method: "delete",data: { confirm: '确定删除?' } %></td>
-
+                    <td>
+                      <%= link_to "修改", edit_administration_v1_office_path(office.id), class: 'am-btn am-btn-warning' %>
+                      <%= link_to administration_v1_office_path(office.id), method: "delete",data: { confirm: '确定删除?' }, class: 'am-btn am-btn-danger' do%>删除<% end %>
+                    </td>
                   </tr>
-
                 <% end %>
               </table>
-
-
               <div class="am-u-lg-12 am-cf aaa">
                   <div class="am-fr">
                     <%= will_paginate @office %>
                   </div>
                 </div>
-
-
             </div>
         </div>
-
-
       </div>
     </div>
   </div>

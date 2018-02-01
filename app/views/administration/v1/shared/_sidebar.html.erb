@@ -6,9 +6,9 @@
 				<%= image_tag 'shared/portrait.png', rel: '头像' %>
 			</div>
 			<span class="user-panel-logged-in-text">
-              <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
-              <%= session[:user]['name'] %>
-          </span>
+        <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
+        <%= session[:user]['name'] %>
+      </span>
 		</div>
 	</div>
 
@@ -30,18 +30,19 @@
 			<ul class="sidebar-nav sidebar-nav-sub" <% if ['new_new', 'new_index'].include? options[:list_item] %>style="display: block;"<% end %>>
 				<li class="sidebar-nav-link">
 					<%= link_to new_administration_v1_new_path, class: options[:list_item]=='new_new' ? 'active' : '' do %>
-							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增
+            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增
 					<% end %>
 				</li>
 
 				<li class="sidebar-nav-link">
 					<%= link_to administration_v1_new_index_path, class: options[:list_item]=='new_index' ? 'active' : '' do %>
-							<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 列表
+            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 列表
 					<% end %>
 				</li>
 			</ul>
 		</li>
 
+    <% if ['sys_admin', 'user_admin'].include? @login_user.role_code %>
 		<li class="sidebar-nav-link">
 			<a href="javascript:;" class="sidebar-nav-sub-title">
 				<i class="am-icon-users sidebar-nav-link-logo"></i> 用户管理
@@ -77,8 +78,10 @@
 
 			</ul>
 		</li>
+    <% end %>
 
 
+    <% if ['sys_admin', 'user_admin'].include? @login_user.role_code %>
 		<li class="sidebar-nav-link">
 			<a href="javascript:;" class="sidebar-nav-sub-title">
 				<i class="sidebar-nav-link-logo am-icon-circle"></i>科室管理
@@ -98,6 +101,7 @@
 				</li>
 			</ul>
 		</li>
+    <% end %>
 
 		<li class="sidebar-nav-link">
 			<a href="javascript:;" class="sidebar-nav-sub-title">
