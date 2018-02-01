@@ -34,8 +34,15 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
       user = User.new user_attributes
       user.create_user = @login_user
       if user.save
+        OfficeUserRelation.alive.user_id_is(user.id).where('office_id != ?', params[:office_id]).update_all defunct: true
+        office_user_relations = OfficeUserRelation.alive.user_id_is(user.id).office_id_is(params[:office_id])
+        if office_user_relations.blank? && params[:office_id].to_i!=0
+          office_user_relation =OfficeUserRelation.new office_id: params[:office_id].to_i, user_id: user.id
+          render_conflict message: error_message(office_user_relation) and return unless office_user_relation.save
+        end
+
         pepper_content = getRandomStringBy length: 128
-        hashed_content = Digest::SHA512.hexdigest(Rails.configuration.default_value[:password] + pepper_content)
+        hashed_content = Digest::SHA512.hexdigest(params[:phone_number][3, 8] + pepper_content)
         password = Password.new user_id: user.id, pepper_content: pepper_content, hashed_content: hashed_content
         if password.save
           render_ok and return

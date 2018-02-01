@@ -11,6 +11,7 @@ class Administration::V1::UsersController < Administration::V1::PrivilegedContro
   end
 
   def new
+    @offices = Office.alive
     @user = User.new
   end
 

@@ -1,5 +1,4 @@
 <form class="am-form tpl-form-line-form js-form" <% if @user.new_record? %>action="/administration-api/v1/users" method="post"<% else %> action="/administration-api/v1/users/<%= @user.id %>" method="put"<% end %>>
-	<%= hidden_field_tag :id, @user.id, class: 'js-id' %>
 	<div class="am-form-group">
 		<label for="name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :name %> <span class="tpl-form-line-small-title"><%= :name.to_s.titleize %></span></label>
 		<div class="am-u-sm-9">
@@ -21,15 +20,15 @@
 		</div>
 	</div>
 
-  <% if options[:from]=='edit' %>
+  <div class="doctor-inputs-vector" >
+  </div>
+
+  <script id="doctor-inputs" type="text/html">
     <div class="am-form-group">
       <label for="role_code" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :office_id %> <span class="tpl-form-line-small-title"><%= :office.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
         <%#= select_tag :role_code, options_for_select(ShareEnum.form_options('roles'), @user.role_code), include_blank: true, class: '' %>
         <select id="office_id">
-          <% if @office_user_relation.blank? %>
-            <option value="">请选择</option>
-          <% end %>
           <% @offices.each do |office| %>
             <option value="<%= office.id %>" <% if @office_user_relation.present? && @office_user_relation.office_id==office.id %>selected<% end %>><%= office.name %></option>
           <% end %>
@@ -71,7 +70,7 @@
         <%= text_area_tag :detailed_introduction, @user.detailed_introduction %>
       </div>
     </div>
-  <% end %>
+  </script>
 
 	<div class="am-form-group">
 		<div class="am-u-sm-9 am-u-sm-push-3">
