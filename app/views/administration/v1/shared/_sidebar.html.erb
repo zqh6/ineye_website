@@ -103,6 +103,7 @@
 		</li>
     <% end %>
 
+    <% if ['common_user'].include? @login_user.role_code %>
 		<li class="sidebar-nav-link">
 			<a href="javascript:;" class="sidebar-nav-sub-title">
 				<i class="am-icon-users sidebar-nav-link-logo"></i> 个人排班
@@ -119,6 +120,7 @@
 
 			</ul>
 		</li>
+    <% end %>
 
 	</ul>
 </div>
