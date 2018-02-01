@@ -26,7 +26,7 @@
               <div class="am-tabs-bd flowVisible">
                 <% count = 0%>
                 <% ShareEnum.weeks.each do |key, value| %>
-                  <div data-tab-panel-<%= count %> class="am-tab-panel <% if count==0 %>am-active<% end %>">
+                  <div data-tab-panel-<%= count %> class="am-tab-panel <% if count==0 %>am-active<% end %>" data-week-key="<%= key %>">
                     <table class="am-table middleLine lineBorder doctor-working">
                       <% Office.alive.each do |office| %>
                       <tr>
