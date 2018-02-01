@@ -3,10 +3,13 @@ class Administration::V1::LeavingsController < Administration::V1::PrivilegedCon
   def new
     if params[:function]=='all_user'
       @offices = Office.alive
-      @ask_for_leaves_query = AskForLeave.reorder('created_at DESC').paginate(page: params[:page], per_page: 20)
+      @ask_for_leaves_query = AskForLeave.alive.reorder('created_at DESC').paginate(page: params[:page], per_page: 20)
       @ask_for_leaves = show_ask_for_leaves @ask_for_leaves_query
       render action: 'new' and return
     elsif params[:function]=='one_user'
+      @office = @login_user.get_office
+      @ask_for_leaves_query = AskForLeave.alive.where(user_id: @login_user.id).reorder('created_at DESC').paginate(page: params[:page], per_page: 20)
+      @ask_for_leaves = show_ask_for_leaves @ask_for_leaves_query
       render action: 'onenew' and return
     end
   end

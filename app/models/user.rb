@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
   def get_office
     office_user_relation = OfficeUserRelation.alive.user_id_is(self.id).reorder('created_at DESC').first
-    Office.find(office_user_relation.office_id)
+    if office_user_relation.blank?
+      nil
+    else
+      Office.find(office_user_relation.office_id)
+    end
   end
 end
