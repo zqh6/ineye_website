@@ -124,7 +124,7 @@
                 <td><%= ask_for_leave[:day] %></td>
                 <td><%= ask_for_leave[:am_pm_code_desc] %></td>
                 <td><%= ask_for_leave[:created_at_desc] %></td>
-                <td>
+                <td data-ask-for-leave-id="<%= ask_for_leave[:id] %>" class="delete-stopserver" >
                   <span>删除停诊</span>
                 </td>
               </tr>
@@ -138,6 +138,8 @@
     </div>
   </div>
 </div>
+
+
 
 <% content_for :title do %>
     管理平台-用户列表
@@ -153,6 +155,27 @@
 <% end %>
 
 <% content_for :script do %>
-     <%= javascript_include_tag 'administration/v1/leavings/leaving' %>
-
+    <%= javascript_include_tag 'administration/v1/leavings/leaving' %>
+    <script type="text/html" id="javascript_template">
+        <tr>
+                <td><b>科室</b></td>
+                <td><b>姓名</b></td>
+                <td><b>停诊日期</b></td>
+                <td><b>停诊时段</b></td>
+                <td><b>创建时间</b></td>
+                <td><b>操作</b></td>
+              </tr>
+              <% @ask_for_leaves.each do |ask_for_leave| %>
+              <tr>
+                <td><%= ask_for_leave[:office_name] %></td>
+                <td><%= ask_for_leave[:user_name] %></td>
+                <td><%= ask_for_leave[:day] %></td>
+                <td><%= ask_for_leave[:am_pm_code_desc] %></td>
+                <td><%= ask_for_leave[:created_at_desc] %></td>
+                <td data-ask-for-leave-id="<%= ask_for_leave[:id] %>" class="delete-stopserver" >
+                  <span>删除停诊</span>
+                </td>
+              </tr>
+              <% end %>
+    </script>
 <% end %>

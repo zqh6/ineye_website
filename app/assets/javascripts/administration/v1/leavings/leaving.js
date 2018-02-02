@@ -108,6 +108,7 @@ $(function(){
         })
       })
       .done(function( data ){
+        window.location.reload();
       })
       .fail(function( xhr, status, errorThrown ) {
         alert(xhr.responseJSON.message);
@@ -117,7 +118,28 @@ $(function(){
 
 
   })
+  //专家删除停诊记录
 
+  $(".delete-stopserver span").on("click",function(){
+    var id=$(this).parent().attr("data-ask-for-leave-id");
+    $.ajax({
+      url: '/administration-api/v1/ask_for_leaves/'+id,
+      type: "DELETE",
+      contentType: 'application/json',
+      dataType: "json",
+      data: JSON.stringify({})
+      })
+      .done(function( data ){
+        window.location.reload();
+      })
+      .fail(function( xhr, status, errorThrown ) {
+        alert(xhr.responseJSON.message);
+      })
+      .always(function( xhr, status ) {
+      });
+
+
+  })
 
   //专家修改自己排版
   $(".savecheduling").on("click",function(){
