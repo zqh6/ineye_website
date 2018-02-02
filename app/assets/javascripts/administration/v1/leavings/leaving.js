@@ -96,14 +96,14 @@ $(function(){
         })
       }
     }
-
+    console.log($(".stopserver").find("input[type=hidden]").val());
     $.ajax({
       url: '/administration-api/v1/ask_for_leaves',
       type: "POST",
       contentType: 'application/json',
       dataType: "json",
       data: JSON.stringify({
-          user_id: $(".time-area .add-timegroup").find("input[type=hidden]").val(),
+          user_id: $(".stopserver").find("input[type=hidden]").val(),
           leave_info: stoplist
         })
       })
