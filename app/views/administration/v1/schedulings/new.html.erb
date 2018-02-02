@@ -40,6 +40,7 @@
                             <ul class="hide doctorList">
                               <% OfficeUserRelation.alive.office_id_is(office.id).each do |office_user_relation| %>
                                 <% user = User.alive.where(id: office_user_relation.user_id).first %>
+                                <% next if user.blank? %>
                                 <li class="doctors">
                                   <span class="doctorName" data-user-id="<%= user.id %>"><%= user.name %></span>
                                   <% ShareEnum.outpatient_services.each do |os_key, os_value| %>
@@ -62,6 +63,7 @@
                             <ul class="hide doctorList">
                               <% OfficeUserRelation.alive.office_id_is(office.id).each do |office_user_relation| %>
                                 <% user = User.alive.where(id: office_user_relation.user_id).first %>
+                                <% next if user.blank? %>
                                 <li class="doctors">
                                   <span class="doctorName" data-user-id="<%= user.id %>"><%= user.name %></span>
                                   <% ShareEnum.outpatient_services.each do |os_key, os_value| %>
