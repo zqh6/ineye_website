@@ -49,7 +49,7 @@
                 <% ShareEnum.weeks.each do |week_key, week_value| %>
                 <td>
                   <select data-am-selected="{searchBox: 1}" data-week-code="<%= week_key %>" placeholder="无" class="worktype">
-                    <option value="" selected></option>
+                    <option value="none" selected>无</option>
                     <% ShareEnum.outpatient_services.each do |os_key, os_value| %>
                       <% schedulings = Scheduling.alive.office_time_id_is(office_time.id).user_id_is(@login_user).outpatient_service_type_is(os_key).week_code_is(week_key) %>
                       <option value="<%= os_key %>" <% if schedulings.present? %>selected<% end %>><%= os_value %></option>
@@ -65,7 +65,7 @@
                 <% ShareEnum.weeks.each do |week_key, week_value| %>
                 <td>
                   <select data-am-selected="{searchBox: 1}" data-week-code="<%= week_key %>" placeholder="无">
-                    <option value="" selected></option>
+                    <option value="none" selected>无</option>
                     <% ShareEnum.outpatient_services.each do |os_key, os_value|%>
                       <% schedulings = Scheduling.alive.office_time_id_is(office_time.id).user_id_is(@login_user).outpatient_service_type_is(os_key).week_code_is(week_key) %>
                       <option value="<%= os_key %>" <% if schedulings.present? %>selected<% end %>><%= os_value %></option>

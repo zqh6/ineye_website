@@ -26,7 +26,7 @@ class Administration::Dosser::V1::SchedulingsController < Administration::Dosser
         end
         render_ok collection: collection and return
       elsif params[:function]=='own'
-        schedulings = Scheduling.office_time_id_is(params[:office_time_id])
+        schedulings = Scheduling.where('office_time_id in (?)', params[:scheduling_info].collect{|i| i[:office_time_id]}).user_id_is(@login_user.id)
         schedulings.delete_all
 
         collection = []
