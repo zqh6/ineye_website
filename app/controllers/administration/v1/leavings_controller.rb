@@ -27,6 +27,7 @@ class Administration::V1::LeavingsController < Administration::V1::PrivilegedCon
         user_id_keys.push(ask_for_leave.user_id)
         user_id_hash[ask_for_leave.user_id.to_s.to_sym]=user
       end
+      ask_for_leave_item[:id]=ask_for_leave.id
       ask_for_leave_item[:user_name] = user.name
       ask_for_leave_item[:office_name]=user.get_office.try(:name)
       ask_for_leave_item[:am_pm_code_desc]=ShareEnum.am_pms[ask_for_leave.am_pm_code.to_sym]

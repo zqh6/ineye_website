@@ -117,7 +117,7 @@
                 <td><b>创建时间</b></td>
               </tr>
               <% @ask_for_leaves.each do |ask_for_leave| %>
-              <tr data-ask-for-leave-id="<%= ask_for_leave.id %>">
+              <tr data-ask-for-leave-id="<%= ask_for_leave[:id] %>">
                 <td><%= ask_for_leave[:office_name] %></td>
                 <td><%= ask_for_leave[:user_name] %></td>
                 <td><%= ask_for_leave[:day] %></td>
