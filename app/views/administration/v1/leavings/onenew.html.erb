@@ -30,7 +30,7 @@
             <div class="worklist">
               <span>每周默认排班表：</span>
             </div>
-            <table class="workmsg">
+            <table class="workmsg doctorself">
               <tr>
                 <td><b>科室</b></td>
                 <td><b>姓名</b></td>
@@ -45,10 +45,10 @@
                 <td rowspan="2"><%= @office.name%></td>
                 <td rowspan="2" data-user-id="<%= @login_user.id %>"><%= @login_user.name %></td>
                 <% office_time = office_times.where(am_pm_code: 'am').first %>
-                <td data-office-time-id="<%= office_time.id %>">上午</td>
+                <td data-office-time-id="<%= office_time.id %>" class="worktime">上午</td>
                 <% ShareEnum.weeks.each do |week_key, week_value| %>
                 <td>
-                  <select data-am-selected="{searchBox: 1}" data-week-code="<%= week_key %>" placeholder="无">
+                  <select data-am-selected="{searchBox: 1}" data-week-code="<%= week_key %>" placeholder="无" class="worktype">
                     <option value="" selected></option>
                     <% ShareEnum.outpatient_services.each do |os_key, os_value| %>
                       <% schedulings = Scheduling.alive.office_time_id_is(office_time.id).user_id_is(@login_user).outpatient_service_type_is(os_key).week_code_is(week_key) %>
@@ -61,7 +61,7 @@
 
               <tr>
                 <% office_time = office_times.where(am_pm_code: 'pm').first %>
-                <td data-office-time-id="<%= office_time.id %>">下午</td>
+                <td data-office-time-id="<%= office_time.id %>" class="worktime" >下午</td>
                 <% ShareEnum.weeks.each do |week_key, week_value| %>
                 <td>
                   <select data-am-selected="{searchBox: 1}" data-week-code="<%= week_key %>" placeholder="无">
@@ -75,8 +75,8 @@
                 <% end %>
               </tr>
             </table>
-            <div class="flow">
-                <button type="button" class="am-btn am-btn-primary am-radius fr">保存修改</button>
+            <div class="flow savechedulingcon">
+                <button type="button" class="am-btn am-btn-primary am-radius fr savecheduling">保存修改</button>
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@
 
         <div class="row marT30">
           <form>
-            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12 stopserver">
               <%= hidden_field_tag :user_id, @login_user.id %>
               <p><span>增加停诊： <small>（点击加号添加停诊时间）</small></span></p>
               <p class="addBtn"><i class="am-icon-plus cursor"></i></p>
