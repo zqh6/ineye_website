@@ -3,6 +3,11 @@ class Administration::Dosser::V1::AskForLeavesController < Administration::Dosse
   def create
     ActiveRecord::Base.transaction do
       leave_ids = []
+
+      user = User.where(id: params[:user_id]).first
+      render_conflict message: 'user_id参数不正确' and return if user.blank?
+      render_conflict message: '用户已失效' and return if user.defunct
+
       params[:leave_info].each do |leave_info|
 
         render_conflict message: 'am_pm_code参数不正确' and return if ShareEnum.am_pms[leave_info[:am_pm_code].to_sym].blank?

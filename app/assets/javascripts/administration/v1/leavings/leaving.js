@@ -124,7 +124,8 @@ $(function(){
     console.log($(".doctorself select").length);
     var doctorworks=[];
     for(var i =0;i<$(".doctorself select").length;i++){
-      if($(".doctorself select").eq(i).val()!=""&&$(".doctorself select").eq(i).val()!=null){
+      var selectValue = $(".doctorself select").eq(i).val();
+      if(selectValue!="" && selectValue!=null && selectValue!='none'){
         doctorworks.push({
           office_time_id: $(".doctorself select").eq(i).parents("tr").find(".worktime").attr("data-office-time-id"),
           week: $(".doctorself select").eq(i).attr("data-week-code"),
