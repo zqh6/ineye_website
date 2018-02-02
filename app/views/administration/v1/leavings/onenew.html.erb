@@ -115,6 +115,7 @@
                 <td><b>停诊日期</b></td>
                 <td><b>停诊时段</b></td>
                 <td><b>创建时间</b></td>
+                <td><b>操作</b></td>
               </tr>
               <% @ask_for_leaves.each do |ask_for_leave| %>
               <tr>
@@ -123,6 +124,9 @@
                 <td><%= ask_for_leave[:day] %></td>
                 <td><%= ask_for_leave[:am_pm_code_desc] %></td>
                 <td><%= ask_for_leave[:created_at_desc] %></td>
+                <td>
+                  <span>删除停诊</span>
+                </td>
               </tr>
               <% end %>
             </table>
