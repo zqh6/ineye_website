@@ -17,17 +17,19 @@ class Administration::V1::OfficesController < Administration::V1::PrivilegedCont
     ActiveRecord::Base.transaction do
       @office = Office.new(name: params[:name],vice_name: params[:vice_name])
       @office.save!
+      @office_time = OfficeTime.new office_id: @office.id, am_pm_code: 'am'
+      @office_time.save!
+      @office_time2 = OfficeTime.new office_id: @office.id, am_pm_code: 'pm'
+      @office_time2.save!
     end
     redirect_to administration_v1_office_path(id: @office.id)
   end
 
   def update
-    Rails.logger.warn '111111111111111111'
     @office = Office.find(params[:id])
     @office.name=params[:name]
     @office.vice_name=params[:vice_name]
     @office.save!
-    Rails.logger.info @office.inspect
     redirect_to administration_v1_office_path(id: @office.id)
   end
 
@@ -38,7 +40,7 @@ class Administration::V1::OfficesController < Administration::V1::PrivilegedCont
   def destroy
     @office = Office.find(params[:id])
     @office.soft_destroy!
-
+    OfficeTime.where(id: @office.id).update_attributes defunct: true
     redirect_to administration_v1_offices_path
   end
 
