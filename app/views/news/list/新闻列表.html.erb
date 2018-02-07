@@ -21,24 +21,6 @@
 
 </div>
 <% content_for :script do %>
-<script>
-//    Turbolinks.pagesCached(0);
-    var news={
-        num:15
-    }
-    var html="";
-    for(var i=1;i<=Math.ceil($(".newsAllList li").length/news.num);i++){
-        html+="<span>"+i+"</span>"
-    }
-    $(".pages").html(html);
-    $(".newsAllList li").eq(news.num-1).nextAll().hide();
-    $(".pages span").click(function () {
-        var i = $(this).index();
-        console.log(i);
-        $(".newsAllList li").show().eq(news.num*i).prevAll().hide();
-        $(".newsAllList li").eq(news.num*(i+1)-1).nextAll().hide();
-    })
-</script>
 <% end %>
 
 <% content_for :style do %>

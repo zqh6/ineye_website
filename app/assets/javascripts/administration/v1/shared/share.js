@@ -1,7 +1,9 @@
+//= require administration/v1/shared/amazeui.dialog.min.js
+
 $(function () {
 
 	$('.js-alert-logout-confirm').on('click', showLogoutConfirm);
-	
+
 	function showLogoutConfirm() {
 		$('#logout-confirm').modal({
 			onConfirm: function(options) {
