@@ -30,12 +30,12 @@
             <div class="am-u-sm-12 am-u-md-12 am-u-lg-12 leavecenters">
               <div>
                 <span>科室：</span>
-                <select  class="choosecenter">
+                <select class="choosecenter" >
                   <% @offices.each do |office| %>
                     <option value="<%= office.id %>"><%= office.name %></option>
                   <% end %>
                 </select>
-                <select >
+                <select class="expertlist" >
                   <option value="a" selected>段俊国</option>
                   <option value="b" >廖品正</option>
                 </select>

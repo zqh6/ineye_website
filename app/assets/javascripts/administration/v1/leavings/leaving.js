@@ -1,4 +1,37 @@
 $(function(){
+  //管理员添加停诊
+  //1.管理员选择科室并显示专家名字
+  $(".choosecenter").on("change",function(){
+    var id = $(this).val();
+
+    $.ajax({
+      url: '/administration-api/v1/users?function=users_in_office&office_id='+id,
+      type: "GET",
+      contentType: 'application/json',
+      dataType: "json"
+      })
+      .done(function( data ){
+
+        console.log(data.collection);
+        var str = "";
+        for(var i=0;i<data.collection.length;i++){
+          if(id==0){
+            str+="<option value="+data.collection[i].id+" selected >"+data.collection[i].name+"</option>"
+          }else{
+            str+="<option value="+data.collection[i].id+">"+data.collection[i].name+"</option>"
+          }
+
+        }
+        $(".expertlist").html(str)
+      })
+      .fail(function( xhr, status, errorThrown ) {
+        alert(xhr.responseJSON.message);
+      })
+      .always(function( xhr, status ) {
+      });
+
+  })
+
 
   $('.am-icon-plus').trigger("click");
   function initstopmsg(){
@@ -85,7 +118,7 @@ $(function(){
   })
 
   //专家停诊（自己操作）
-  $(".surestop button").on("click",function(){
+  $(".expertself .surestop button").on("click",function(){
     var stoplist=[];
     for(var i=0;i<$(".time-area .add-timegroup").length;i++){
 

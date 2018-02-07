@@ -65,3 +65,9 @@
 .fr{
   float: right;
 }
+.leavecenters select{
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  padding:0 15px;
+}
