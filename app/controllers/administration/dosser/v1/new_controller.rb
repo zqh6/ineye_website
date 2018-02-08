@@ -4,9 +4,6 @@ class Administration::Dosser::V1::NewController < Administration::Dosser::V1::Pr
     ActiveRecord::Base.transaction do
       new = New.new new_attributes
       new.user = @login_user
-      Rails.logger.warn 'WWWWWWWWWWWWWWWWWW'
-      Rails.logger.warn new.valid?
-      Rails.logger.warn new.errors.inspect
       if new.save!
         render_ok and return
       else
@@ -31,9 +28,9 @@ class Administration::Dosser::V1::NewController < Administration::Dosser::V1::Pr
 
   def destroy
     ActiveRecord::Base.transaction do
-      new = New.included_by(params[:id]).first
-      render_conflict message: '找不到新闻' and return if new.blank?
-      if new.soft_destroy!
+      new_one = New.included_by(params[:id]).first
+      render_conflict message: '找不到新闻' and return if new_one.blank?
+      if new_one.soft_destroy!
         render_ok and return
       else
         render_bad_request and return
