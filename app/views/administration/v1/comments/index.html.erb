@@ -41,7 +41,7 @@
                             <td><%= comment.id %></td>
                             <td><%= comment.parent_id_desc %></td>
                             <td><%= comment.content.length>10 ? comment.content[0, 10]+'...' : comment.content %></td>
-                            <td><a href="<%= request.protocol+request.host_with_port+comment.post_link %>"><%= comment.post_link %></a></td>
+                            <td><a href="<%= request.protocol+request.host_with_port+comment.post_link %>"><%= URI.decode(comment.post_link) %></a></td>
                             <td><%= comment.creator_id_desc%></td>
                             <td><%= comment.created_at_desc %></td>
                             <td><%= comment.auditor_id_desc %></td>
