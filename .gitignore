@@ -27,4 +27,6 @@ public/assets
 public/uploads
 
 .idea/*
-
+.DS_Store
+*.DS_Store
+*/.DS_Store
