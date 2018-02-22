@@ -25,4 +25,13 @@ class User < ApplicationRecord
       Office.find(office_user_relation.office_id)
     end
   end
+
+  def self.get_users_by_office(office)
+    office_user_relations = OfficeUserRelation.office_id_is(office.id)
+    user_ids = []
+    office_user_relations.each do |office_user_relation|
+      user_ids.push(office_user_relation.user_id)
+    end
+    User.alive.where('id in (?)', user_ids)
+  end
 end
