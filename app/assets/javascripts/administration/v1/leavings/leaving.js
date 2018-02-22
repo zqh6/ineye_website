@@ -43,6 +43,9 @@ $(function(){
           am_pm_code:$(".time-area .add-timegroup").eq(i).find(".timechoose").val()
         })
       }
+      else{
+        alert("停诊时间不能为空");
+      }
     }
     console.log($(".stopserver").find("input[type=hidden]").val());
     $.ajax({

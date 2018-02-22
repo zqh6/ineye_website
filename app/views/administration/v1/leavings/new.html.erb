@@ -39,7 +39,7 @@
                     <% count += 1 %>
                   <% end %>
                 </select>
-                <select >
+                <select class="expertlist">
                   <% count2 = 1 %>
                   <% User.get_users_by_office(first_office).each do |user| %>
                     <option value="<%= user.id %>" <% if count2==1 %>selected<% end %>><%= user.name%></option>
