@@ -1,9 +1,74 @@
 $(function(){
+  //管理员添加停诊
+  //1.管理员选择科室并显示专家名字
+  $(".choosecenter").on("change",function(){
+    var id = $(this).val();
 
-  $('.am-icon-plus').trigger("click");
-  function initstopmsg(){
+    $.ajax({
+      url: '/administration-api/v1/users?function=users_in_office&office_id='+id,
+      type: "GET",
+      contentType: 'application/json',
+      dataType: "json"
+      })
+      .done(function( data ){
 
-  }
+        console.log(data.collection);
+        var str = "";
+        for(var i=0;i<data.collection.length;i++){
+          if(id==0){
+            str+="<option value="+data.collection[i].id+" selected >"+data.collection[i].name+"</option>"
+          }else{
+            str+="<option value="+data.collection[i].id+">"+data.collection[i].name+"</option>"
+          }
+
+        }
+        $(".expertlist").html(str)
+      })
+      .fail(function( xhr, status, errorThrown ) {
+        alert(xhr.responseJSON.message);
+      })
+      .always(function( xhr, status ) {
+      });
+
+  })
+  // 2.管理员添加停诊
+
+  $(".adminstop .surestop button").on("click",function(){
+    var stoplist=[];
+    for(var i=0;i<$(".time-area .add-timegroup").length;i++){
+
+      if($(".time-area .add-timegroup").eq(i).find(".am-form-field").val().trim()!="" && $(".time-area .add-timegroup").eq(i).find(".am-form-field").val() != null){
+        stoplist.push({
+          leave_day:$(".time-area .add-timegroup").eq(i).find(".am-form-field").val(),
+          am_pm_code:$(".time-area .add-timegroup").eq(i).find(".timechoose").val()
+        })
+      }
+    }
+    console.log($(".stopserver").find("input[type=hidden]").val());
+    $.ajax({
+      url: '/administration-api/v1/ask_for_leaves',
+      type: "POST",
+      contentType: 'application/json',
+      dataType: "json",
+      data: JSON.stringify({
+          user_id: $(".expertlist").val(),
+          leave_info: stoplist
+        })
+      })
+      .done(function( data ){
+        window.location.reload();
+      })
+      .fail(function( xhr, status, errorThrown ) {
+        alert(xhr.responseJSON.message);
+      })
+      .always(function( xhr, status ) {
+      });
+
+
+  })
+
+
+
   function initstop(){
     if($(".time-area .add-timegroup").length>0){
       for (var i =0;i<$(".time-area .add-timegroup").length;i++){
@@ -30,6 +95,7 @@ $(function(){
     }
     return indexNum;
   }
+  //点击加号添加停诊时间选框
   var thisIndex = initNun();
   var time =
         "<div class=\"add-timegroup clear-both\">"+
@@ -55,10 +121,9 @@ $(function(){
       })
       thisIndex = initNun();
       initstop();
-      console.log(thisIndex);
 
   })
-
+  $('.addBtn .am-icon-plus').trigger("click");
 
   //减少排版记录的时候，删除插件创建的日历html
   $(".time-area").on("click",".am-icon-minus",function(e){
@@ -85,7 +150,7 @@ $(function(){
   })
 
   //专家停诊（自己操作）
-  $(".surestop button").on("click",function(){
+  $(".expertself .surestop button").on("click",function(){
     var stoplist=[];
     for(var i=0;i<$(".time-area .add-timegroup").length;i++){
 
