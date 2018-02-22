@@ -1,6 +1,5 @@
 <div class="schedulingTabCon padT20">
             <h4>专家排班表</h4>
-            <%= image_tag("table.jpg") %>
             <table class="schedulingTab">
                 <tr>
                     <th colspan="20">成都中医大银海眼科医院门诊医师坐诊一览表</th>
@@ -16,60 +15,35 @@
                     <td><b>星期六</b></td>
                     <td><b>星期日</b></td>
                 </tr>
+                <% Office.alive.each do |office| %>
                 <tr>
                     <td rowspan="2">
-                        <p><b>国医大师工作室</b></p>
+                        <p><b><%= office.name %></b></p>
                     </td>
                     <td>上午</td>
+                    <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'am').first %>
+                    <% ShareEnum.weeks.each do |key, value| %>
                     <td>
-                        <p><b>张富文</b></p>
-                        <p>VIP门诊</p>
+                        <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
+                        <p><b><%= User.find(scheduling.user_id).name %></b></p>
+                        <p><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %></p>
+                        <% end %>
                     </td>
-                    <td>
-                        <p><b>廖品正</b></p>
-                        <p>VIP门诊</p>
-                    </td>
-                    <td>
-                        <p><b>段俊国</b></p>
-                        <p>VIP门诊</p>
-                    </td>
-                    <td>
-                        <p><b>黄  霄</b></p>
-                        <p>VIP门诊</p>
-                    </td>
-                    <td>
-                        <p><b>周华祥</b></p>
-                        <p>VIP门诊</p>
-                    </td>
-                    <td></td>
-                    <td></td>
+                    <% end %>
                 </tr>
                 <tr>
                     <td>下午</td>
+                    <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'pm').first %>
+                    <% ShareEnum.weeks.each do |key, value| %>
                     <td>
-                        <p><b>张富文</b></p>
-                        <p>VIP门诊</p>
+                        <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
+                        <p><b><%= User.find(scheduling.user_id).name %></b></p>
+                        <p><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %></p>
+                        <% end %>
                     </td>
-                    <td>
-                        <p><b>廖品正</b></p>
-                        <p>VIP门诊</p>
-                    </td>
-                    <td>
-                        <p><b>段俊国</b></p>
-                        <p>VIP门诊</p>
-                    </td>
-                    <td>
-                        <p><b>黄  霄</b></p>
-                        <p>VIP门诊</p>
-                    </td>
-                    <td>
-                        <p><b>周华祥</b></p>
-                        <p>VIP门诊</p>
-                    </td>
-                    <td></td>
-                    <td></td>
+                    <% end %>
                 </tr>
-
+                <% end %>
 
             </table>
         </div>
