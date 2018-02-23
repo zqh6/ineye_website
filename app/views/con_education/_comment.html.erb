@@ -1,0 +1,40 @@
+<div class="marT10 whiteBg">
+    <ul class="flow flParent educationList">
+        <li class="on">评论</li>
+    </ul>
+    <div class="commentCon">
+        <textarea class="commentInner" autofocus placeholder="您可以写下您的观点或意见..."></textarea>
+        <div class="flow">
+            <p class="erroContent"></p><div class="commentSubBtn fr">评论</div>
+        </div>
+    </div>
+    <div class="comContainer">
+        <!-- <p class="allComment">全部评论<span class="num">a</span> </p> -->
+
+        <!-- <div class="flow oneComment">
+            <div class="fl">
+                <%= image_tag("edu_user.png") %>
+            </div>
+            <div class="fl comContent">
+                <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
+                <div class="flow">
+                    <p class="fl">喜欢这种颜色搭配与排版···</p>
+                    <div class="showSubBtn fr userComment"><%= image_tag("comment_before.png") %></div>
+                </div>
+            </div>
+        </div> -->
+
+    </div>
+</div>
+
+<% content_for :style do %>
+<%= stylesheet_link_tag 'video-js' %>
+<% end %>
+<% content_for :script do %>
+<%= javascript_include_tag 'baguetteBox.min' %>
+<%= javascript_include_tag 'video.min' %>
+<%= javascript_include_tag 'edu_example' %>
+
+
+<% end %>
+
