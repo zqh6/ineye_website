@@ -31,6 +31,7 @@ class AllApi::CommentsController < AllApi::PresentationController
       end
       comment = Comment.new attribute_fields
       comment.creator_id = @login_user.id if @login_user.present?
+      comment.state = 'A'
       if comment.save
         render_ok message: '评论成功', collection: [{
           comment_id: comment.id
@@ -82,8 +83,6 @@ class AllApi::CommentsController < AllApi::PresentationController
       top_comment_json[:sons]    = get_later_generations(top_comment, sons, state_arr)
       collection.push(top_comment_json)
     end
-    Rails.logger.warn '1111111111'
-    Rails.logger.warn collection.inspect
     render_ok message: '获取帖子评论成功', collection: collection and return
   end
 

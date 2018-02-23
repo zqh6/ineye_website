@@ -51,10 +51,12 @@
                                 <%= link_to administration_v1_comment_path(comment.id) do %>
                                     <i class="am-icon-newspaper-o"></i> 详情
                                 <% end %>
-                                <% if comment.state =='C' %>
+                                <% if comment.state =='C'||comment.state=='D' %>
                                   <%= link_to 'javascript: void(0);', class: 'tpl-table-black-operation-suc js-approve-one', 'data-id' => comment.id do %>
                                     <i class="am-icon-trash"></i> 通过
                                   <% end %>
+                                <% end %>
+                                <% if comment.state=='C' || comment.state=='A' %>
                                   <%= link_to 'javascript: void(0);', class: 'tpl-table-black-operation-del js-deny-one', 'data-id' => comment.id do %>
                                       <i class="am-icon-trash"></i> 不通过
                                   <% end %>
