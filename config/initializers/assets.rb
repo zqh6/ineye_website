@@ -77,4 +77,5 @@ Rails.application.config.assets.precompile += %w(
   video.min.js
   video-js.css
   edu_example.js
+  videoon.js
 )

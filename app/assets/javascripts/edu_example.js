@@ -7,12 +7,7 @@
     //    展示图片
     baguetteBox.run('.tz-gallery');
 
-    //    播放视频
-    var myPlayer = videojs('my-video');
-    videojs("my-video").ready(function(){
-        var myPlayer = this;
-        // myPlayer.play();
-    });
+
     window.onload = function(){
         getContent()
 
@@ -32,7 +27,6 @@
             }
         })
             .done(function( data ) {
-                console.log(data);
                 var data = data.collection;
                 var childComment = [];
                 var innerStr = "<p class='allComment'>全部评论<span class='num'>"+data.length+"</span></p>";
@@ -80,7 +74,7 @@
                 elm.html(innerStr);
             })
             .fail(function( xhr, status, errorThrown ) {
-                elm.html();
+
                 console.log('失败');
             })
             .always(function( xhr, status ) {
@@ -90,11 +84,11 @@
     function postComment(parId,num){ //parId父级的id num为了确定是顶级评论框还是子级评论框，不传值的情况下是最高级别的评论，传值是子级的。
         var index = num?1:0;
         var time = num?1000:0;
-        console.log(index);
+        // console.log(index);
         if(/^[ ]+$/.test($(".commentInner").eq(index).val())||$(".commentInner").eq(index).val()==""){
             $(".erroContent").eq(index).html("评论的内容不能为空");
         }else{
-            $(".erroContent").eq(index).html("系统正在审核，审核成功我们将展示您的评论内容");
+            $(".erroContent").eq(index).html("添加评论成功");
             $.ajax({
                 url: '/all-api/comments',
                 type: "POST",
@@ -108,11 +102,9 @@
             })
                 .done(function( data ) {
                     var data = data.collection;
-                    console.log(data.length);
                     setTimeout(function(){
                         getContent();
                     },time);
-                    console.log(time);
                 })
                 .fail(function( xhr, status, errorThrown ) {
                     console.log('失败');
@@ -133,9 +125,9 @@
         var pos = parseInt(elem);
         for(var j = 0; j<$(".comContent").length;j++){
             if($(".comContent").eq(j).attr("parent_id")== pos){
-                console.log(j+" "+pos)
+                // console.log(j+" "+pos)
                 if($(".comContent").eq(j).find(".commentInnerCon").length>0){
-                    console.log("同一个");
+                    // console.log("同一个");
                     openFlag = false;
                 }
 
