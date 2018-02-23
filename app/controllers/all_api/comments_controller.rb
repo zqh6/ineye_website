@@ -31,6 +31,7 @@ class AllApi::CommentsController < AllApi::PresentationController
       end
       comment = Comment.new attribute_fields
       comment.creator_id = @login_user.id if @login_user.present?
+      comment.state = 'A'
       if comment.save
         render_ok message: '评论成功', collection: [{
           comment_id: comment.id
@@ -47,7 +48,9 @@ class AllApi::CommentsController < AllApi::PresentationController
       if comment.blank?
         render_conflict message: '没有此评论数据' and return
       end
-      comment.assign_attributes auditor_id: params[:auditor_id], state: params[:state]
+      if params[:function] =='audit'
+        comment.assign_attributes auditor_id: @login_user.id, state: params[:state]
+      end
       if comment.save
         render_ok and return
       else
@@ -61,6 +64,10 @@ class AllApi::CommentsController < AllApi::PresentationController
 
   def show
     comments = Comment.where('parent_id is null or parent_id = ?', '')
+    state_arr = params[:state].split(',')
+    if params[:state].present?
+      comments = comments.state_in(state_arr)
+    end
     if params[:post_link].blank? && params[:post_id].blank?
       render_conflict message: '需指定post_link和post_id中至少一个参数' and return
     end
@@ -72,12 +79,14 @@ class AllApi::CommentsController < AllApi::PresentationController
     collection = []
     comments.each do |top_comment|
       top_comment_json = top_comment.to_json_by(fields: [:id, :content, :created_at])
-      top_comment_json[:sons]    = get_later_generations(top_comment)
+      sons = []
+      top_comment_json[:sons]    = get_later_generations(top_comment, sons, state_arr)
       collection.push(top_comment_json)
     end
     render_ok message: '获取帖子评论成功', collection: collection and return
   end
 
+=begin
   def get_later_generations(top_comment)
     tmp_collection = []
     if top_comment.present?
@@ -91,6 +100,23 @@ class AllApi::CommentsController < AllApi::PresentationController
       end
     end
     tmp_collection
+  end
+=end
+
+  def get_later_generations(top_comment, sons, state_arr)
+    if top_comment.present?
+      comments = Comment.parent_id_is(top_comment.id)
+      if comments.present?
+        comments.each do |comment|
+          comment_json = comment.to_json_by(fields: [:id, :content, :created_at])
+          if state_arr.include?(comment.state)
+            get_later_generations(comment, sons, state_arr)
+            sons.push(comment_json)
+          end
+        end
+      end
+    end
+    sons
   end
 
   def attribute_fields

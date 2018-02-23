@@ -28,17 +28,19 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/shared/share.js
   administration/v1/shared/kindeditor/kindeditor.js
   administration/v1/shared/kindeditor/zh.js
+  administration/v1/shared/amazeui.dialog.min
   administration/v1/sessions/show.js
   administration/v1/sessions/new.js
   administration/v1/dashboards/show.js
   administration/v1/new/new.js
   administration/v1/new/index.js
   administration/v1/new/show.js
-  administration/v1/new/edit.js
+  administration/v1/new/show.js
   administration/v1/users/new.js
   administration/v1/users/index.js
-  administration/v1/passwords/edit.js
+  administration/v1/passwords/show.js
   administration/v1/passwords/success.js
+  administration/v1/comments/index
 
 
   shared/amazeui.min.css
@@ -52,11 +54,12 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/new/new.css
   administration/v1/new/index.css
   administration/v1/new/show.css
-  administration/v1/new/edit.css
+  administration/v1/new/show.css
   administration/v1/users/new.css
   administration/v1/users/index.css
   administration/v1/passwords/edit.css
   administration/v1/new/edit.css
+  administration/v1/passwords/show.css
 
   shared/browser_tab_title.ico
   shared/logo.png
@@ -75,4 +78,9 @@ Rails.application.config.assets.precompile += %w(
   slide-2.js
   jquery.jDiaporama.js
   kindeditor.js
+  baguetteBox.min.js
+  video.min.js
+  video-js.css
+  edu_example.js
+  videoon.js
 )

@@ -184,15 +184,15 @@
       <!--新闻列表-->
       <ul class="fr topList newsIndexList">
         <% if @new.present? %>
-        <% @new.each do |new| %>
-        <li>
-          <%= link_to news_path(new.id, from: 'db')  do %>
-          <span class="newsTle"><%= new.title %></span>
+          <% @new.each do |new| %>
+            <li>
+              <%= link_to news_path(new.id, from: 'db')  do %>
+              <span class="newsTle"><%= new.title %></span>
+              <% end %>
+              <span class="fr">
+                <%= new.occurred_at==Time.utc(1970) ? ' ' : new.occurred_at.strftime("%Y-%m-%d") %></span>
+            </li>
           <% end %>
-          <span class="fr">
-            <%= new.occurred_at==Time.utc(1970) ? ' ' : new.occurred_at.strftime("%Y-%m-%d") %></span>
-        </li>
-        <% end %>
         <% end %>
       </ul>
       <!--新闻列表-->

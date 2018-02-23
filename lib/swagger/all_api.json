@@ -6,7 +6,7 @@
     "contact":     { "name": "mytxz", "email": "mytxz@foxmail.com" },
     "version":     "1"
   },
-  "basePath": "/all-api/",
+  "basePath": "/all-api",
   "produces": [ "application/json" ],
   "consumes": [ "application/json" ],
   "paths":    {
@@ -71,6 +71,13 @@
             "description": "帖子id（比post_link参数优先高）",
             "required": false,
             "type": "integer"
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "帖子状态，\n\r C表示新创建的 \n\r A表示通过的 \n\r D表示禁用的 \n\r 以逗号分隔 \n\r 若没有state参数，则状态包含 C,A,D",
+            "required": false,
+            "type": "string"
           }
         ],
         "responses": {

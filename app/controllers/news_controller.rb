@@ -3,6 +3,7 @@ class NewsController < ApplicationController
   layout 'content'
 
   def show
+
     a = params[:id]
     if params[:from]=='db'
       @new = New.find_by_id(params[:id])

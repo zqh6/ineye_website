@@ -27,6 +27,7 @@ def create_user(phone_number: nil, password_str: nil)
   ActiveRecord::Base.transaction do
     user = User.phone_number_is(phone_number).first
     user = User.new phone_number: phone_number if user.blank?
+    user.name = '系统管理员'
     user.role_code  = ShareEnum.roles.first.first
     user.save!
     user.passwords.alive.each do |oldPassword|
@@ -50,7 +51,7 @@ def scan_new
     Dir.foreach(Rails.root.join('app', 'views', 'news').to_s) do |folder|
       next if('..'==folder || '.'==folder)
       next if(folder.include? 'DS_Store')
-      next if(%w(新闻列表.html.erb index.html.erb edit.html.erb new.html.erb show.html.erb list).include? folder)
+      next if(%w(新闻列表.html.erb index.html.erb show.erb new.html.erb show.html.erb list).include? folder)
       page = Nokogiri::HTML(open(Rails.root.join('app', 'views', 'news', folder).to_s))
       occurred_at_str = page.css('p.rightWord').text
       file_name = folder.gsub('.html.erb', '')

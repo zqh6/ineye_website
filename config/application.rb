@@ -17,5 +17,7 @@ module IneyeWebsite
     config.default_value = {
         password: '123123'
     }
+
+    config.time_zone = 'Beijing'
   end
 end
