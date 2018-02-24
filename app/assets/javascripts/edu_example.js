@@ -4,8 +4,7 @@
         $(".eduContentCon .edModule").removeClass("show").eq($(this).index()).addClass("show");
     })
 
-    //    展示图片
-    baguetteBox.run('.tz-gallery');
+
 
 
     window.onload = function(){
@@ -155,3 +154,8 @@
 
 // 让图片具有显示评论框和隐藏评论框的功能
 // 点击评论字样的时候，如果它父级元素下有评论框，就隐藏它。
+
+
+
+//    展示图片
+    baguetteBox.run('.tz-gallery');
