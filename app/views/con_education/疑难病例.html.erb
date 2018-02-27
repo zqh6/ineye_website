@@ -3,7 +3,11 @@
     <%= render 'con_education/edu_left' %>
     <div class="fr width1020 eduContentCon whiteBg">
         <ul class="edumsglist downModule">
-            <li><%= link_to :'疑难病例讨论一起死回生',con_education_path(:疑难病例讨论起死回生) %></li>
+          <li>
+              <%= link_to con_education_path(:疑难病例讨论起死回生)  do %>
+                  <p>疑难病例讨论一起死回生 <span class="fr">2018-2-25</span></p>
+              <% end %>
+          </li>
         </ul>
     </div>
 </div>

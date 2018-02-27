@@ -3,7 +3,11 @@
     <%= render 'con_education/edu_left' %>
     <div class="fr width1020 eduContentCon whiteBg">
         <ul class="edumsglist downModule">
-          <li><%= link_to :'裂孔性视网膜脱离1例',con_education_path(:裂孔性视网膜脱离1例) %></li>
+          <li>
+              <%= link_to con_education_path(:裂孔性视网膜脱离1例)  do %>
+                  <p>裂孔性视网膜脱离1例 <span class="fr">2018-2-25</span></p>
+              <% end %>
+          </li>
         </ul>
     </div>
 </div>

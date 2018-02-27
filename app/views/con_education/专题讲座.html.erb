@@ -3,7 +3,11 @@
     <%= render 'con_education/edu_left' %>
     <div class="fr width1020 eduContentCon whiteBg">
         <ul class="edumsglist downModule">
-          <li><%= link_to :'裂孔性视网膜脱离外路显微手术',con_education_path(:裂孔性视网膜脱离外路显微手术) %></li>
+          <li>
+            <%= link_to con_education_path(:裂孔性视网膜脱离外路显微手术)  do %>
+              <p>裂孔性视网膜脱离外路显微手术——第一节课 与视网膜脱离手术相关的解剖 <span class="fr">2018-2-27</span></p>
+            <% end %>
+          </li>
         </ul>
     </div>
 </div>
