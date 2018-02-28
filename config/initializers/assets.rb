@@ -43,6 +43,7 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/comments/index.js
 
 
+
   shared/amazeui.min.css
   shared/amazeui.datatables.min.css
   shared/amazeui_template1.css.erb
@@ -83,4 +84,11 @@ Rails.application.config.assets.precompile += %w(
   video-js.css
   edu_example.js
   videoon.js
+
+  pdfjs/debugger.js
+  pdfjs/viewer.js
+  pdfjs/pdf.js
+  pdfjs/l10n.js
+  pdfjs/compatibility.js
+  pdfjs/viewer.css
 )
