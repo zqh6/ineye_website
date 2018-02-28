@@ -88,7 +88,8 @@ Rails.application.config.assets.precompile += %w(
   pdfjs/debugger.js
   pdfjs/viewer.js
   pdfjs/pdf.js
+  pdfjs/pdf.worker.js
   pdfjs/l10n.js
   pdfjs/compatibility.js
-  pdfjs/viewer.css
+  viewer.css
 )

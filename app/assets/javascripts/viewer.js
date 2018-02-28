@@ -37,9 +37,9 @@ var SCALE_SELECT_PADDING = 22;
 var PAGE_NUMBER_LOADING_INDICATOR = 'visiblePageIsLoading';
 var DISABLE_AUTO_FETCH_LOADING_BAR_TIMEOUT = 5000;
 
-PDFJS.imageResourcesPath = '/assets/images/images/';
-  PDFJS.workerSrc = '/assets/pdf.worker.js';
-  PDFJS.cMapUrl = '/assets/images/cmaps/';
+PDFJS.imageResourcesPath = '/pdfjs/images/';
+  PDFJS.workerSrc = '/assets/pdfjs/pdf.worker.js';
+  PDFJS.cMapUrl = '/pdfjs/cmaps/';
   PDFJS.cMapPacked = true;
 
 var mozL10n = document.mozL10n || document.webL10n;

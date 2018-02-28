@@ -27,15 +27,15 @@ http://sourceforge.net/adobe/cmap/wiki/License/
 
     <link rel="stylesheet" href="/assets/viewer.css"/>
 
-    <script src="/assets/compatibility.js"></script>
+    <script src="/assets/pdfjs/compatibility.js"></script>
 
 
 
 <!-- This snippet is used in production (included from viewer.html) -->
-<link rel="resource" type="application/l10n" href="/assets/locale/locale.properties"/>
+<link rel="resource" type="application/l10n" href="/pdfjs/locale/locale.properties"/>
 
-<script src="/assets/l10n.js"></script>
-<script src="/assets/pdf.js"></script>
+<script src="/assets/pdfjs/l10n.js"></script>
+<script src="/assets/pdfjs/pdf.js"></script>
 
 <style type="text/css">
   #outerContainer{
@@ -46,12 +46,27 @@ http://sourceforge.net/adobe/cmap/wiki/License/
   }
 </style>
 
-    <script src="/assets/debugger.js"></script>
-    <script src="/assets/viewer.js"></script>
+    <script src="/assets/pdfjs/debugger.js"></script>
+    <script src="/assets/pdfjs/viewer.js"></script>
 
   <!-- </head> -->
 
-  <!-- <body tabindex="1" class="loadingInProgress"> -->
+
+
+
+
+
+
+
+<%= image_tag("/assets/education-banner.jpg",:class => 'marT10') %>
+<div class="flow conEducation">
+    <%= render 'con_education/edu_left' %>
+    <div class="fr width1020 eduContentCon whiteBg">
+        <div class="whiteBg downModule minh400">
+
+
+
+            <!-- <body tabindex="1" class="loadingInProgress"> -->
     <div tabindex="1" class="loadingInProgress"></div>
     <div id="outerContainer">
 
@@ -422,6 +437,27 @@ http://sourceforge.net/adobe/cmap/wiki/License/
   </div>
 </div>
 </div>
+
+
+
+
+
+        </div>
+        <div>
+          <%= render 'con_education/comment' %>
+        </div>
+    </div>
+
+
+</div>
+
+<% content_for :script do %>
+<%= javascript_include_tag 'edu_example' %>
+<% end %>
+
+
+
+
   <!-- </body> -->
 <!-- </html> -->
 
