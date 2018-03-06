@@ -35,12 +35,13 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/new/new.js
   administration/v1/new/index.js
   administration/v1/new/show.js
-  administration/v1/new/show.js
   administration/v1/users/new.js
   administration/v1/users/index.js
   administration/v1/passwords/show.js
   administration/v1/passwords/success.js
-  administration/v1/comments/index
+  administration/v1/new/edit.js
+  administration/v1/comments/index.js
+
 
 
   shared/amazeui.min.css
@@ -83,4 +84,12 @@ Rails.application.config.assets.precompile += %w(
   video-js.css
   edu_example.js
   videoon.js
+
+  pdfjs/debugger.js
+  pdfjs/viewer.js
+  pdfjs/pdf.js
+  pdfjs/pdf.worker.js
+  pdfjs/l10n.js
+  pdfjs/compatibility.js
+  viewer.css
 )

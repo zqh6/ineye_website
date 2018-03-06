@@ -3,31 +3,47 @@
     <%= render 'con_education/edu_left' %>
     <div class="fr width1020 eduContentCon whiteBg">
         <div class="whiteBg downModule minh400">
-          <ul class="videocontainer">
-              <li>
-                <iframe src="http://v.qq.com/iframe/player.html?vid=y0565q3isic" width="100%" height="400px"></iframe>
-                <!-- <video id="my-video" class="video-js" controls preload="auto" poster="m.png" data-setup="{}">
-                    <source src="http://v.qq.com/iframe/player.html?vid=y0565q3isic">
-                        To view this video please enable JavaScript, and consider upgrading to a web browser that
-                        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-                </video> -->
-                <p>Terson 综合征27G免缝合玻璃体切除术</p>
-              </li>
-              <p></p>
-            </ul>
+          <ul class="edumsglist">
+            <li>
+                <%= link_to con_education_path(:Terson综合征27G免缝合玻璃体切除术)  do %>
+                    <p>Terson综合征27G免缝合玻璃体切除术 <span class="fr">2018-2-25</span></p>
+                <% end %>
+            </li>
+            <li>
+                <%= link_to con_education_path(:分支静脉阻塞新生血管27G免缝合玻璃体切除术)  do %>
+                    <p>分支静脉阻塞新生血管27G免缝合玻璃体切除术 <span class="fr">2018-2-25</span></p>
+                <% end %>
+            </li>
+            <li>
+                <%= link_to con_education_path(:右眼裂孔性视网膜脱离硅压术)  do %>
+                    <p>右眼裂孔性视网膜脱离硅压术 <span class="fr">2018-2-25</span></p>
+                <% end %>
+            </li>
+            <li>
+                <%= link_to con_education_path(:经结膜面缝合27G玻璃体手术)  do %>
+                    <p>经结膜面缝合27G玻璃体手术 <span class="fr">2018-2-25</span></p>
+                <% end %>
+            </li>
+            <li>
+                <%= link_to con_education_path(:裂孔性视网膜脱离外路显微手术硅压术)  do %>
+                    <p>裂孔性视网膜脱离外路显微手术硅压术 <span class="fr">2018-2-25</span></p>
+                <% end %>
+            </li>
+            <li>
+                <%= link_to con_education_path(:裂孔性视网膜脱离全玻璃体切除术)  do %>
+                    <p>裂孔性视网膜脱离全玻璃体切除术 <span class="fr">2018-2-25</span></p>
+                <% end %>
+            </li>
+          </ul>
         </div>
     </div>
     <div>
 
     </div>
 </div>
-<% content_for :style do %>
-<%= stylesheet_link_tag 'video-js' %>
-<% end %>
-<% content_for :script do %>
-<%= javascript_include_tag 'video.min' %>
-<%= javascript_include_tag 'videoon' %>
-<% end %>
+
+
+
 
 
 
