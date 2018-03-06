@@ -9,15 +9,11 @@ class AllApi::CommentsController < AllApi::PresentationController
   before_action :validate_login, only: [:create, :update, :destory]
 
   def validate_login
-    @login_user = nil
     @login_user = User.included_by(session[:user]['id']).first if session[:user].present?
   end
 
   def create
     ActiveRecord::Base.transaction do
-      if @login_user.blank?
-        render_conflict message: '评论失败，请登录后评论' and return
-      end
       if params[:comment].blank?
         render_conflict message: '评论失败，没有评论的参数' and return
       end
