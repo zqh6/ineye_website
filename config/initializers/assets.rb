@@ -92,4 +92,5 @@ Rails.application.config.assets.precompile += %w(
   pdfjs/l10n.js
   pdfjs/compatibility.js
   viewer.css
+  wangEditor.js
 )
