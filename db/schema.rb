@@ -10,19 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171215073827) do
+ActiveRecord::Schema.define(version: 20180306054115) do
+
+  create_table "ask_for_leaves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                                              null: false
+    t.string   "am_pm_code",                                           null: false
+    t.datetime "day",                                                  null: false
+    t.string   "state",      limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",            default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",            default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",              default: false,                 null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+  end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "parent_id"
-    t.string   "content"
+    t.text     "content",    limit: 65535
     t.string   "post_link"
     t.string   "post_id"
     t.integer  "creator_id"
     t.integer  "auditor_id"
-    t.string   "state",      limit: 1, default: "C",   null: false
-    t.boolean  "defunct",              default: false, null: false
-    t.datetime "created_at",                           null: false
-    t.datetime "updated_at",                           null: false
+    t.string   "state",      limit: 1,     default: "C",   null: false
+    t.boolean  "defunct",                  default: false, null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
   end
 
   create_table "dictionaries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -60,6 +72,39 @@ ActiveRecord::Schema.define(version: 20171215073827) do
     t.index ["user_id"], name: "index_news_on_user_id", using: :btree
   end
 
+  create_table "office_times", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "office_id",                                            null: false
+    t.string   "am_pm_code",                                           null: false
+    t.string   "state",      limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",            default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",            default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",              default: false,                 null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+  end
+
+  create_table "office_user_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "office_id",                                            null: false
+    t.integer  "user_id",                                              null: false
+    t.string   "state",      limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",            default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",            default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",              default: false,                 null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+  end
+
+  create_table "offices", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",                 default: "",                    null: false
+    t.string   "vice_name"
+    t.string   "state",      limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",            default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",            default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",              default: false,                 null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+  end
+
   create_table "passwords", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                                                    null: false
     t.string   "pepper_content", limit: 128, default: "",                    null: false
@@ -73,18 +118,37 @@ ActiveRecord::Schema.define(version: 20171215073827) do
     t.index ["user_id"], name: "index_passwords_on_user_id", using: :btree
   end
 
+  create_table "schedulings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "office_time_id",                                                    null: false
+    t.integer  "user_id",                                                           null: false
+    t.string   "week_code",                                                         null: false
+    t.string   "outpatient_service_type"
+    t.string   "state",                   limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",                         default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",                         default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                           default: false,                 null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "create_user_id"
-    t.string   "role_code",      limit: 20, default: ""
-    t.string   "name",           limit: 50
-    t.string   "phone_number",   limit: 50, default: "",                    null: false
-    t.string   "state",          limit: 1,  default: "C",                   null: false
-    t.datetime "opened_at",                 default: '1970-01-01 00:00:00', null: false
-    t.datetime "closed_at",                 default: '3000-01-01 00:00:00', null: false
-    t.boolean  "defunct",                   default: false,                 null: false
-    t.datetime "created_at",                                                null: false
-    t.datetime "updated_at",                                                null: false
+    t.string   "role_code",                 limit: 20,    default: ""
+    t.string   "name",                      limit: 50
+    t.string   "phone_number",              limit: 50,    default: "",                    null: false
+    t.string   "state",                     limit: 1,     default: "C",                   null: false
+    t.datetime "opened_at",                               default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",                               default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                                 default: false,                 null: false
+    t.datetime "created_at",                                                              null: false
+    t.datetime "updated_at",                                                              null: false
+    t.string   "linked_url"
+    t.text     "honour_brief_introduction", limit: 65535
+    t.text     "honour_specific",           limit: 65535
+    t.text     "good_at_field",             limit: 65535
+    t.text     "work_time",                 limit: 65535
+    t.text     "detailed_introduction",     limit: 65535
     t.index ["create_user_id"], name: "index_users_on_create_user_id", using: :btree
     t.index ["name"], name: "index_users_on_name", using: :btree
     t.index ["phone_number"], name: "index_users_on_phone_number", using: :btree
