@@ -68,3 +68,5 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
 gem 'swagger_engine'
+gem 'yettings'
+gem 'china_sms'

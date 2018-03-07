@@ -19,5 +19,9 @@ module IneyeWebsite
     }
 
     config.time_zone = 'Beijing'
+
+    config.time_to_lives = {
+      validate_code_second: 900
+    }
   end
 end

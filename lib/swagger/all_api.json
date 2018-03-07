@@ -11,6 +11,84 @@
   "consumes": [ "application/json" ],
   "paths":    {
 
+    "/validate_codes": {
+      "post": {
+        "name": "validate_code",
+        "summary":     "生成验证码",
+        "description": "生成验证码",
+        "tags":        [ "验证码" ],
+        "parameters":  [
+          {
+            "name": "validate_code",
+            "in": "body",
+            "description": "* phone_number 手机号 \n\r",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "phone_number": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+
+        "responses": {
+          "default": {
+            "description": "出现错误。",
+            "schema":      { "$ref": "#/definitions/ErrorResponseBody" }
+          }
+        }
+      }
+    },
+
+    "/users": {
+      "post": {
+        "summary":     "创建普通用户",
+        "description": "创建普通用户",
+        "tags":        [ "普通用户" ],
+        "parameters":  [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "* name 真实姓名 \n\r* unit_name 医院名称 \n\r* phone_number 手机号 \n\r* validate_code 短信验证码 \n\r* password1 密码 \n\r* password2 确认密码",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "unit_name": {
+                  "type": "string"
+                },
+                "phone_number": {
+                  "type": "string"
+                },
+                "validate_code": {
+                  "type": "string"
+                },
+                "password1": {
+                  "type": "string"
+                },
+                "password2": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+
+        "responses": {
+          "default": {
+            "description": "出现错误。",
+            "schema":      { "$ref": "#/definitions/ErrorResponseBody" }
+          }
+        }
+      }
+    },
+
     "/comments": {
       "post": {
         "summary":     "创建评论",

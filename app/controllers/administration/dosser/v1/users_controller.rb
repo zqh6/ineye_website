@@ -1,6 +1,6 @@
 class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::PresentationController
 
-  include RandomUtil
+  include RandomUtil, ErrorMessage
 
   def create
     ActiveRecord::Base.transaction do
@@ -23,10 +23,6 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
 
   def user_attributes
     params.permit(:name, :phone_number, :role_code)
-  end
-
-  def error_message(obj)
-    obj.class.human_attribute_name(obj.errors.messages.first[0].to_sym)+obj.errors.messages.first[1].first
   end
 
   private :user_attributes

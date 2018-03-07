@@ -39,6 +39,8 @@ Rails.application.routes.draw do
 
   scope '/all-api', module: 'all_api', as: 'all_api' do
     resources :comments
+    resources :users
+    resources :validate_codes
   end
 
 end

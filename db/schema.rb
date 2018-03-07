@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306080604) do
+ActiveRecord::Schema.define(version: 20180307024736) do
 
   create_table "ask_for_leaves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                                              null: false
@@ -149,10 +149,22 @@ ActiveRecord::Schema.define(version: 20180306080604) do
     t.text     "good_at_field",             limit: 65535
     t.text     "work_time",                 limit: 65535
     t.text     "detailed_introduction",     limit: 65535
+    t.string   "unit_name"
     t.index ["create_user_id"], name: "index_users_on_create_user_id", using: :btree
     t.index ["name"], name: "index_users_on_name", using: :btree
     t.index ["phone_number"], name: "index_users_on_phone_number", using: :btree
     t.index ["user_id"], name: "index_users_on_user_id", using: :btree
+  end
+
+  create_table "validate_codes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "phone_number",                                            null: false
+    t.string   "validate_code"
+    t.string   "state",         limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",               default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",               default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                 default: false,                 null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
   end
 
 end
