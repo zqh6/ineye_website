@@ -1,0 +1,2 @@
+class OfficeTime < ApplicationRecord
+end

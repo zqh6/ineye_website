@@ -28,13 +28,19 @@ Rails.application.routes.draw do
       resources :users,      only: [:new, :edit, :index, :show          ]
       resources :passwords,  only: [      :edit,                :update ]
       resources :comments
+      resources :offices,    only: [:new, :edit, :index, :show, :update, :create, :destroy ]
+      resources :schedulings, only: [:new, :edit, :index, :create, :update]
+      resources :leavings
     end
   end
 
   scope '/administration-api/v1', module: 'administration/dosser/v1', as: 'administration_dosser_v1' do
     resources :sessions, only: [:create, :destroy]
     resources :new,      only: [:create, :destroy, :update]
-    resources :users,    only: [:create, :destroy, :update]
+    resources :users,    only: [:create, :destroy, :update, :index]
+    resources :ask_for_leaves, only: [:create, :destroy, :update]
+
+    resources :schedulings
   end
 
   scope '/all-api', module: 'all_api', as: 'all_api' do

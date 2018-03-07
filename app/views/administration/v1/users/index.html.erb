@@ -55,6 +55,7 @@
 										<th><%= User.human_attribute_name :name %></th>
 										<th><%= User.human_attribute_name :phone_number %></th>
 										<th><%= User.human_attribute_name :role_code %></th>
+                    <th>科室</th>
 										<th><%= User.human_attribute_name :create_user %></th>
 										<th><%= User.human_attribute_name :created_at %></th>
 										<th><%= t :operate %></th>
@@ -67,10 +68,12 @@
 														<td><%= user.name %></td>
 														<td><%= user.phone_number %></td>
 														<td><%= ShareEnum.roles[user.role_code.to_sym] %></td>
+                            <td><%= user.get_office.try(:name) %></td>
 														<td><%= user.create_user.present? ? (user.create_user.name.present? ? user.create_user.name : '（暂无名称）')  : '（无创建者）' %></td>
 														<td><%= l user.created_at, format: :human_time %></td>
 														<td>
 															<div class="tpl-table-black-operation">
+                                <% if user.role_code.to_sym==:common_user %><a class="btn am-btn" href="<%= edit_administration_v1_user_path(user.id) %>">编辑资料</a><% end %>
 															</div>
 														</td>
 													</tr>
@@ -82,7 +85,7 @@
 
 							<div class="am-u-lg-12 am-cf">
 								<div class="am-fr">
-									<%= will_paginate @users, :previous_label=> '上一页',:next_label=> '下一页' %>
+									<%= will_paginate @users %>
 								</div>
 							</div>
 						</div>
@@ -97,7 +100,7 @@
 </div>
 
 <% content_for :title do %>
-		管理平台-用户列表
+  管理平台-用户列表
 <% end %>
 
 <% content_for :meta do %>
@@ -106,9 +109,9 @@
 <% content_for :body_attr do %>data-type="widgets"<% end %>
 
 <% content_for :style do %>
-		<%= stylesheet_link_tag 'administration/v1/users/index' %>
+  <%= stylesheet_link_tag 'administration/v1/users/index' %>
 <% end %>
 
 <% content_for :script do %>
-		<%= javascript_include_tag 'administration/v1/users/index' %>
+  <%= javascript_include_tag 'administration/v1/users/index' %>
 <% end %>

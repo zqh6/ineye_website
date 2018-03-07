@@ -1,12 +1,17 @@
 class Administration::V1::UsersController < Administration::V1::PrivilegedController
 
   def show
+    render :action => params[:id]
   end
 
   def edit
+    @user = User.find(params[:id])
+    @office_user_relation = OfficeUserRelation.alive.user_id_is(@user.id).reorder('created_at DESC').first
+    @offices = Office.alive
   end
 
   def new
+    @offices = Office.alive
     @user = User.new
   end
 
@@ -18,7 +23,7 @@ class Administration::V1::UsersController < Administration::V1::PrivilegedContro
     end
     @users = @users.phone_number_like(params[:phone_number]) if params[:phone_number].present?
     @users = @users.name_like(params[:name])                 if params[:name].present?
-    @users = @users.paginate(page: params[:page], per_page: 20)
+    @users = @users.reorder('created_at DESC').paginate(page: params[:page], per_page: 20)
   end
 
 end

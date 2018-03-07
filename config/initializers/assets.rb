@@ -39,8 +39,13 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/users/index.js
   administration/v1/passwords/show.js
   administration/v1/passwords/success.js
+
   administration/v1/new/edit.js
   administration/v1/comments/index.js
+
+  administration/v1/office/index.js
+  administration/v1/schedulings/scheduling.js
+  administration/v1/leavings/leaving.js
 
 
 
@@ -60,7 +65,13 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/users/index.css
   administration/v1/passwords/edit.css
   administration/v1/new/edit.css
+<<<<<<< HEAD
   administration/v1/passwords/show.css
+=======
+  administration/v1/schedulings/scheduling.css
+  administration/v1/leavings/new.css
+
+>>>>>>> scheduling
 
   shared/browser_tab_title.ico
   shared/logo.png

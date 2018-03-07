@@ -1,0 +1,53 @@
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'new_new'}} %>
+
+  <div class="tpl-content-wrapper">
+    <div class="row-content am-cf">
+      <div class="row">
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+          <div class="widget am-cf">
+
+            <%= form_tag administration_v1_office_path,class:'am-form', method: :put do |f|%>
+            <fieldset>
+              <legend>修改科室</legend>
+
+              <div class="am-form-group">
+                <label for="name">科室名</label>
+                <input type="text" class="" id="name" name="name" placeholder="输入科室名" value="<%= @office.name %>">
+              </div>
+
+              <div class="am-form-group">
+                <label for="vice_name">中心副标题</label>
+                <input type="text" class="vice_name" id="vice_name" name="vice_name" placeholder="中心副标题" value="<%= @office.vice_name %>">
+              </div>
+            </fieldset>
+            <input type="submit" value="修改中心" class="am-btn  am-btn-warning">
+            <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% content_for :title do %>
+    管理平台-中心编辑
+<% end %>
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<!--[if lte IE 8 ]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+<script src="assets/js/amazeui.min.js"></script>
+
