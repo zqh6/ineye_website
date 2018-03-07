@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   def check_browser
     user_agent = request.env['HTTP_USER_AGENT']
-    if user_agent.include?('iPhone')||user_agent.include?('Android')
+    if user_agent.include?('iPhone')||user_agent.include?('Android')||user_agent.include?('iPad')
       redirect_to 'http://m.ineyehospital.com/' and return
     end
   end
