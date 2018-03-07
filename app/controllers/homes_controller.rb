@@ -6,7 +6,7 @@ class HomesController < ApplicationController
 
   def index
     @new = New.alive.order('occurred_at DESC').limit(7);
-    render layout: "content"
+    render layout: "content" and return
   end
 
 end
