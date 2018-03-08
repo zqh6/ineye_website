@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
     if user_agent.include?('iPhone')||user_agent.include?('Android')||user_agent.include?('iPad')
       redirect_to 'http://m.ineyehospital.com/' and return
     end
+
+    @login_user = nil
+    @login_user = User.included_by(session[:user]['id']).first if session[:user].present?
   end
 
 end

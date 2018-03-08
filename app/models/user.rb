@@ -6,7 +6,9 @@ class User < ApplicationRecord
   has_many :office_user_relations
   has_many :offices, through: :office_user_relations
 
-  validates :name, presence: true
+  validates :name,
+            presence: {message: '请填写您的姓名'},
+            length: {minimum: 0, maximum: 4, message: '姓名最长为4位' }
 
   validates :phone_number,
             uniqueness: {message: '该手机号已经注册'},
@@ -40,5 +42,13 @@ class User < ApplicationRecord
       user_ids.push(office_user_relation.user_id)
     end
     User.alive.where('id in (?)', user_ids)
+  end
+
+  def unit_name_desc
+    if self.role_code.to_sym == :outer_user
+      self.unit_name
+    elsif [:user_admin, :sys_admin, :common_user].include?(self.role_code.to_sym) && self.official_account=='is'
+      '银海眼科'
+    end
   end
 end

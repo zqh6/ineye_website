@@ -28,7 +28,8 @@ function submitData(){
   var requestData = {
     "name": $('#name').val(),
     "phone_number": $('#phone_number').val(),
-    "role_code": roleCode
+    "role_code": roleCode,
+    "official_account": $('#official_account').val()
   };
   if(roleCode=='common_user'){
     var officeId = $('#office_id').val();

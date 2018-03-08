@@ -20,6 +20,13 @@
 		</div>
 	</div>
 
+  <div class="am-form-group">
+    <label for="role_code" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :official_account %> <span class="tpl-form-line-small-title"><%= :official_account.to_s.titleize %></span></label>
+    <div class="am-u-sm-9">
+      <%= select_tag :official_account, options_for_select(ShareEnum.form_options(:official_accounts), @user.official_account), include_blank: false, class: '' %>
+    </div>
+  </div>
+
   <div class="doctor-inputs-vector" >
   </div>
 

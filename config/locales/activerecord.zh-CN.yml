@@ -42,6 +42,7 @@ zh-CN:
         work_time: 工作时间描述
         detailed_introduction: 详细介绍
         office_id: 所属科室
+        official_account: 官方账户
 
       password:
         old_password:  旧密码

@@ -37,7 +37,7 @@
                         +"</div>"
                         +"<div class='fl comContent' parent_id = "+ data[i].id +" >"
                         +"<p class='identity'>"+ data[i].created_at
-                        +"<span>游客</span></p>"
+                        +"<span>"+(data[i].creator_name==null ? '游客' : data[i].creator_name)+"</span>"+"<span class=\""+(data[i].official_account=='is' ? "official-account" : "")+"\">"+(data[i].creator_unit_name!=null ? data[i].creator_unit_name : "")+"</span></p>"
                         +"<div class='flow'>"
                         +"<div class='fl '>"+ data[i].content +"</div>"
                         +"<div class='commentSubBtn fr userComment' >"
@@ -48,7 +48,7 @@
                         if(data[i].sons.length>0){
                             childComment[i]+="<div class='comContent' parent_id = "+ data[i].sons[s].id +" >"
                                 +"<p class='identity'>"+ data[i].sons[s].created_at
-                                +"<span>游客</span></p>"
+                                +"<span>"+(data[i].creator_name==null ? '游客' : data[i].creator_name) +"</span>"+ "<span class=\""+(data[i].official_account=='is' ? "official-account" : "")+"\">"+(data[i].creator_unit_name!=null ? data[i].creator_unit_name : "")+"</span></p>"
                                 +"<div class='flow'>"
                                 +"<p class='fl'>"+ data[i].sons[s].content +"</p>"
                                 +"<div class='commentSubBtn fr userComment' >"

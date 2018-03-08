@@ -75,7 +75,11 @@ class AllApi::CommentsController < AllApi::PresentationController
     end
     collection = []
     comments.each do |top_comment|
-      top_comment_json = top_comment.to_json_by(fields: [:id, :content, :created_at])
+      top_comment_json = top_comment.to_json_by(fields: [:id, :content, :created_at, :creator_id])
+      creator = top_comment.creator_id.present? ? User.find(top_comment.creator_id) : nil
+      top_comment_json[:creator_name] = creator.try(:name)
+      top_comment_json[:creator_unit_name] = creator.try(:unit_name_desc)
+      top_comment_json[:official_account] = creator.try(:official_account)
       sons = []
       top_comment_json[:sons]    = get_later_generations(top_comment, sons, state_arr)
       collection.push(top_comment_json)
@@ -106,6 +110,10 @@ class AllApi::CommentsController < AllApi::PresentationController
       if comments.present?
         comments.each do |comment|
           comment_json = comment.to_json_by(fields: [:id, :content, :created_at])
+          creator = comment.creator_id.present? ? User.find(comment.creator_id) : nil
+          comment_json[:creator_name]      = creator.try(:name)
+          comment_json[:creator_unit_name] = creator.try(:unit_name_desc)
+          comment_json[:official_account]  = creator.try(:official_account)
           if state_arr.include?(comment.state)
             get_later_generations(comment, sons, state_arr)
             sons.push(comment_json)

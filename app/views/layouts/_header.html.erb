@@ -10,8 +10,13 @@
       <a href="http://171.221.236.106:5000/sw-amb/main.do" target="_blank">银海视觉训练中心</a>
       <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">预约挂号</a>
       <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">在线咨询</a>
-      <a href="javascript:;">【登录】</a>
-      <a href="javascript:;">【注册】</a>
+      <% if @login_user.present? %>
+        <a href="javascript: void(0);">欢迎您，<%= @login_user.name %></a>
+        <a href="javascript: void(0);">退出</a>
+      <% else %>
+        <a href="javascript:;">【登录】</a>
+        <a href="javascript:;">【注册】</a>
+      <% end %>
     </div>
     <div class="search fr">
       <input type="text" placeholder="请输入搜索关键字">
@@ -25,7 +30,7 @@
       <li><%= link_to :'网站首页',:homes %></li>
       <li><%= link_to :'走进银海',home_path(:医院简介) %></li>
       <li><%= link_to :'医疗服务',medical_path(:专家排班old) %></li>
-      <li><%= link_to :"重点科室",:centers %></li>
+      <li><%= link_to :'重点科室',:centers %></li>
       <li><%= link_to :'专家团队',expert_path(:著名专家) %></li>
       <li><%= link_to :'医疗设备',home_path(:技术设备) %></li>
       <li><%= link_to :'教学科研',science_path(:学院简介) %></li>

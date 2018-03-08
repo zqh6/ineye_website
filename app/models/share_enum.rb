@@ -55,6 +55,11 @@ class ShareEnum < ApplicationRecord
     expert: '专家门诊'
   }
 
+  enum official_accounts: {
+    no: '不是',
+    is: '是'
+  }
+
   def self.form_options(enum_type)
     h = {}
     ShareEnum.try(enum_type.to_sym).each do |key, value|
