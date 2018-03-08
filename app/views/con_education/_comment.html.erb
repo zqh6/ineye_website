@@ -1,13 +1,18 @@
+<link href="http://cdn.bootcss.com/wangeditor/2.1.20/css/wangEditor.css" rel="stylesheet">
+
 <div class="marT10 whiteBg">
     <ul class="flow flParent educationList">
         <li class="on">评论</li>
     </ul>
     <div class="commentCon">
-        <textarea class="commentInner" autofocus placeholder="您可以写下您的观点或意见..."></textarea>
+        <!-- <textarea class="commentInner" autofocus placeholder="您可以写下您的观点或意见..."></textarea> -->
+        <div id="editor" class="commentInner">
+        </div>
         <div class="flow">
             <p class="erroContent"></p><div class="commentSubBtn fr">评论</div>
         </div>
     </div>
+
     <div class="comContainer">
         <!-- <p class="allComment">全部评论<span class="num">a</span> </p> -->
 
@@ -26,6 +31,23 @@
 
     </div>
 </div>
+<% content_for :script do %>
+<%= javascript_include_tag 'wangEditor' %>
+<script>
+var E = window.wangEditor
+ var editor1 = new E('#editor')
+    editor1.customConfig.uploadImgShowBase64 = true;
+    editor1.customConfig.menus = [
+        'link',
+        'underline',
+        'emoticon',
+        'image',
+        'undo',
+        'redo'
+    ]
+    editor1.create()
+</script>
+<% end %>
 
 
 

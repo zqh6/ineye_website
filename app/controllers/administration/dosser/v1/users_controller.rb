@@ -1,6 +1,6 @@
 class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::PresentationController
 
-  include RandomUtil
+  include RandomUtil, ErrorMessage
 
   def index
     if params[:function] == 'users_in_office_time'

@@ -42,6 +42,7 @@ GEM
     bindex (0.5.0)
     builder (3.2.3)
     byebug (9.0.6)
+    china_sms (0.0.7)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -177,12 +178,14 @@ GEM
     will_paginate (3.1.6)
     will_paginate-bootstrap (1.0.1)
       will_paginate (>= 3.0.3)
+    yettings (0.1.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   byebug
+  china_sms
   coffee-rails (~> 4.2)
   font-awesome-rails
   i18n
@@ -205,6 +208,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
   will_paginate
   will_paginate-bootstrap
+  yettings
 
 BUNDLED WITH
    1.15.1
