@@ -6,7 +6,7 @@ class Administration::V1::UsersController < Administration::V1::PrivilegedContro
 
   def edit
     @user = User.find(params[:id])
-    @office_user_relation = OfficeUserRelation.alive.user_id_is(@user.id).reorder('created_at DESC').first
+    @user_office_ids = OfficeUserRelation.alive.user_id_is(@user.id).reorder('created_at DESC').collect{|i| i.office_id}
     @offices = Office.alive
   end
 

@@ -27,7 +27,7 @@
         <%#= select_tag :role_code, options_for_select(ShareEnum.form_options('roles'), @user.role_code), include_blank: true, class: '' %>
         <select id="office_id" multiple  data-am-selected="{btnWidth: '100%', btnSize: 'sm'}">
           <% @offices.each do |office| %>
-            <option value="<%= office.id %>" <% if @office_user_relation.present? && @office_user_relation.office_id==office.id %>selected<% end %>><%= office.name %></option>
+            <option value="<%= office.id %>" <% if @user_office_ids.present? && @user_office_ids.include?(office.id) %>selected<% end %>><%= office.name %></option>
           <% end %>
         </select>
       </div>

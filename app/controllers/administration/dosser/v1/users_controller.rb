@@ -32,9 +32,11 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
   def create
     ActiveRecord::Base.transaction do
       user = User.new user_attributes
+      if user.official_account.blank?
+        user.official_account = 'no'
+      end
       user.create_user = @login_user
       if user.save
-        render_conflict message: '医生需要指定科室' if user.role_code=='common_user' && params[:office_ids].blank?
         if params[:office_ids].present?
           OfficeUserRelation.alive.user_id_is(user.id).where('office_id in (?)', params[:office_ids]).update_all defunct: true
           params[:office_ids].each do |office_id|
