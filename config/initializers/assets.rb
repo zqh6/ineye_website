@@ -65,13 +65,10 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/users/index.css
   administration/v1/passwords/edit.css
   administration/v1/new/edit.css
-<<<<<<< HEAD
   administration/v1/passwords/show.css
-=======
   administration/v1/schedulings/scheduling.css
   administration/v1/leavings/new.css
 
->>>>>>> scheduling
 
   shared/browser_tab_title.ico
   shared/logo.png
@@ -84,6 +81,8 @@ Rails.application.config.assets.precompile += %w(
 
   news/list/新闻列表.css.erb
   news/newsContent.css
+
+  register.css
 
   mobile_test.css
   index_slide.js
@@ -104,4 +103,5 @@ Rails.application.config.assets.precompile += %w(
   pdfjs/compatibility.js
   viewer.css
   wangEditor.js
+
 )
