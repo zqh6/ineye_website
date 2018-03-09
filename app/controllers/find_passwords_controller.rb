@@ -1,6 +1,6 @@
 class FindPasswordsController < ApplicationController
 
-  layout 'ineye_website_common'
+  layout 'regpwd'
 
   def edit
     if params[:function] == 'check_phone_number'

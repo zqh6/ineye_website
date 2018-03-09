@@ -15,3 +15,28 @@
    pos();
    
 </script>
+
+<script type="application/javascript">
+  $('.js-logout').on('click', function(){
+    $.ajax(
+      {
+        url: "/administration-api/v1/sessions/~",
+        type: "delete",
+        dataType: "json"
+      }
+    )
+      .done(function( data ) {
+        if(data['success']){
+          window.location.reload();
+        }else{
+          alert(data['message']);
+          return false;
+        }
+        return true;
+      })
+      .fail(function( xhr, status, errorThrown ) {
+      })
+      .always(function( xhr, status ) {
+      });
+  });
+</script>

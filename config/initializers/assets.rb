@@ -47,8 +47,6 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/schedulings/scheduling.js
   administration/v1/leavings/leaving.js
 
-
-
   shared/amazeui.min.css
   shared/amazeui.datatables.min.css
   shared/amazeui_template1.css.erb
@@ -82,6 +80,8 @@ Rails.application.config.assets.precompile += %w(
   news/list/新闻列表.css.erb
   news/newsContent.css
 
+  registerss.css
+
   mobile_test.css
   index_slide.js
   slide-2.js
@@ -104,4 +104,6 @@ Rails.application.config.assets.precompile += %w(
 
   find_passwords/check_phone_number.js
   find_passwords/set_new_password.js
+
+  logins/index.js
 )
