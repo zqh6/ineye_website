@@ -34,11 +34,13 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
       user = User.new user_attributes
       user.create_user = @login_user
       if user.save
-        OfficeUserRelation.alive.user_id_is(user.id).where('office_id != ?', params[:office_id]).update_all defunct: true
-        office_user_relations = OfficeUserRelation.alive.user_id_is(user.id).office_id_is(params[:office_id])
-        if office_user_relations.blank? && params[:office_id].to_i!=0
-          office_user_relation =OfficeUserRelation.new office_id: params[:office_id].to_i, user_id: user.id
-          render_conflict message: error_message(office_user_relation) and return unless office_user_relation.save
+        render_conflict message: '医生需要指定科室' if user.role_code=='common_user' && params[:office_ids].blank?
+        if params[:office_ids].present?
+          OfficeUserRelation.alive.user_id_is(user.id).where('office_id in (?)', params[:office_ids]).update_all defunct: true
+          params[:office_ids].each do |office_id|
+            office_user_relation =OfficeUserRelation.new office_id: office_id, user_id: user.id
+            render_conflict message: error_message(office_user_relation) unless office_user_relation.save
+          end
         end
 
         pepper_content = getRandomStringBy length: 128
@@ -75,7 +77,7 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
   end
 
   def user_attributes
-    params.permit(:name, :phone_number, :role_code, :honour_brief_introduction, :honour_specific, :good_at_field, :work_time, :detailed_introduction)
+    params.permit(:name, :phone_number, :role_code, :honour_brief_introduction, :honour_specific, :good_at_field, :work_time, :detailed_introduction, :official_account)
   end
 
   private :user_attributes
