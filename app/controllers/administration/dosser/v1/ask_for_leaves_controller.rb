@@ -33,6 +33,7 @@ class Administration::Dosser::V1::AskForLeavesController < Administration::Dosse
         end
 
         ask_for_leave = AskForLeave.new user_id: params[:user_id].to_i,
+                                        office_id: params[:office_id].to_i,
                                         am_pm_code: leave_info[:am_pm_code],
                                         day: leave_day,
                                         opened_at: start_time,

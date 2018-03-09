@@ -16,19 +16,65 @@
 	<div class="am-form-group">
 		<label for="role_code" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :role_code %> <span class="tpl-form-line-small-title"><%= :role_code.to_s.titleize %></span></label>
 		<div class="am-u-sm-9">
-			<%= select_tag :role_code, options_for_select({:医生管理员=>"user_admin", :医生=>"common_user"}, @user.role_code), include_blank: true, class: '' %>
+			<%= select_tag :role_code, options_for_select({:医生管理员=>"user_admin", :医生=>"common_user"}, @user.role_code), include_blank: false, class: '' %>
 		</div>
 	</div>
 
   <div class="doctor-inputs-vector" >
-  </div>
-
-  <script id="doctor-inputs" type="text/html">
     <div class="am-form-group">
       <label for="role_code" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :office_id %> <span class="tpl-form-line-small-title"><%= :office.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
         <%#= select_tag :role_code, options_for_select(ShareEnum.form_options('roles'), @user.role_code), include_blank: true, class: '' %>
-        <select id="office_id">
+        <select id="office_id" multiple  data-am-selected="{btnWidth: '100%', btnSize: 'sm'}">
+          <% @offices.each do |office| %>
+            <option value="<%= office.id %>" <% if @user_office_ids.present? && @user_office_ids.include?(office.id) %>selected<% end %>><%= office.name %></option>
+          <% end %>
+        </select>
+      </div>
+    </div>
+
+    <div class="am-form-group">
+      <label for="honour_brief_introduction" class="am-u-sm-3 am-form-label"><%= User.human_attribute_name :honour_brief_introduction %> <span class="tpl-form-line-small-title"><%= :honour.to_s.titleize %></span></label>
+      <div class="am-u-sm-9">
+        <%= text_area_tag :honour_brief_introduction, @user.honour_brief_introduction %>
+      </div>
+    </div>
+
+    <div class="am-form-group">
+      <label for="honour_specific" class="am-u-sm-3 am-form-label"><%= User.human_attribute_name :honour_specific %> <span class="tpl-form-line-small-title"><%= :honour.to_s.titleize %></span></label>
+      <div class="am-u-sm-9">
+        <%= text_area_tag :honour_specific, @user.honour_specific %>
+      </div>
+    </div>
+
+    <div class="am-form-group">
+      <label for="good_at_field" class="am-u-sm-3 am-form-label"><%= User.human_attribute_name :good_at_field %> <span class="tpl-form-line-small-title"><%= :good_at_field.to_s.titleize %></span></label>
+      <div class="am-u-sm-9">
+        <%= text_area_tag :good_at_field, @user.good_at_field %>
+      </div>
+    </div>
+
+    <div class="am-form-group">
+      <label for="work_time" class="am-u-sm-3 am-form-label"><%= User.human_attribute_name :work_time %> <span class="tpl-form-line-small-title"><%= :work_time.to_s.titleize %></span></label>
+      <div class="am-u-sm-9">
+        <%= text_area_tag :work_time, @user.work_time %>
+      </div>
+    </div>
+
+    <div class="am-form-group">
+      <label for="detailed_introduction" class="am-u-sm-3 am-form-label"><%= User.human_attribute_name :detailed_introduction %> <span class="tpl-form-line-small-title"><%= :introduction.to_s.titleize %></span></label>
+      <div class="am-u-sm-9">
+        <%= text_area_tag :detailed_introduction, @user.detailed_introduction %>
+      </div>
+    </div>
+  </div>
+
+  <!--<script id="doctor-inputs" type="text/html">
+    <div class="am-form-group">
+      <label for="role_code" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :office_id %> <span class="tpl-form-line-small-title"><%= :office.to_s.titleize %></span></label>
+      <div class="am-u-sm-9">
+        <%#= select_tag :role_code, options_for_select(ShareEnum.form_options('roles'), @user.role_code), include_blank: true, class: '' %>
+        <select id="office_id"  data-am-selected>
           <% @offices.each do |office| %>
             <option value="<%= office.id %>" <% if @office_user_relation.present? && @office_user_relation.office_id==office.id %>selected<% end %>><%= office.name %></option>
           <% end %>
@@ -70,7 +116,7 @@
         <%= text_area_tag :detailed_introduction, @user.detailed_introduction %>
       </div>
     </div>
-  </script>
+  </script>-->
 
 	<div class="am-form-group">
 		<div class="am-u-sm-9 am-u-sm-push-3">

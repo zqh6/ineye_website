@@ -19,8 +19,8 @@
               <ul class="am-tabs-nav am-cf">
                 <% count = 0%>
                 <% ShareEnum.weeks.each do |key, value| %>
-                    <li class="<% if count==0 %>am-active<% end %>" data-week-key="<%= key %>" ><a href="[data-tab-panel-<%= count %>]"><%= value %></a></li>
-                    <% count+=1 %>
+                  <li class="<% if count==0 %>am-active<% end %>" data-week-key="<%= key %>" ><a href="[data-tab-panel-<%= count %>]"><%= value %></a></li>
+                  <% count+=1 %>
                 <% end %>
               </ul>
               <div class="am-tabs-bd flowVisible">

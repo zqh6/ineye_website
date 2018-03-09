@@ -40,7 +40,6 @@ class Administration::V1::OfficesController < Administration::V1::PrivilegedCont
   def destroy
     @office = Office.find(params[:id])
     @office.soft_destroy!
-    OfficeTime.where(id: @office.id).update_attributes defunct: true
     redirect_to administration_v1_offices_path
   end
 

@@ -55,7 +55,8 @@ $(function(){
       dataType: "json",
       data: JSON.stringify({
           user_id: $(".expertlist").val(),
-          leave_info: stoplist
+          leave_info: stoplist,
+          office_id: $('.choosecenter').val()
         })
       })
       .done(function( data ){

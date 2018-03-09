@@ -3,6 +3,7 @@
  */
 
 $(function(){
+
   showOrHide($('#role_code').val()=='common_user');
 	$('.js-create').on('click', submitData);
 	$('#role_code').on('change', showOrHideUserEditInputs);
@@ -15,10 +16,10 @@ function showOrHideUserEditInputs(){
 
 function showOrHide(ifTrue){
   if(ifTrue){
-    var doctorInputsDom = $($('#doctor-inputs').html());
-    $('.doctor-inputs-vector').append(doctorInputsDom);
+    //var doctorInputsDom = $($('#doctor-inputs').html());
+    $('.doctor-inputs-vector').show();
   }else{
-    $('.doctor-inputs-vector').html('');
+    $('.doctor-inputs-vector').hide();
   }
 }
 
@@ -31,19 +32,18 @@ function submitData(){
     "role_code": roleCode
   };
   if(roleCode=='common_user'){
-    var officeId = $('#office_id').val();
-    if(officeId==null||''==officeId){
+    var officeIds = $('#office_id').val();
+    if(officeIds==null||''==officeIds){
       alert('请选择科室');
       return;
     }
-    requestData['office_id'] = officeId;
+    requestData['office_ids'] = officeIds;
     requestData['honour_brief_introduction'] = $('#honour_brief_introduction').val();
     requestData['honour_specific'] = $('#honour_specific').val();
     requestData['good_at_field'] = $('#good_at_field').val();
     requestData['work_time'] = $('#work_time').val();
     requestData['detailed_introduction'] = $('#detailed_introduction').val();
   }
-
 	$.ajax({
 		url: formDom.attr('action'),
 		type: formDom.attr('method'),
