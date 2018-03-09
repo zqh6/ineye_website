@@ -32,13 +32,17 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
   def create
     ActiveRecord::Base.transaction do
       user = User.new user_attributes
+      if user.official_account.blank?
+        user.official_account = 'no'
+      end
       user.create_user = @login_user
       if user.save
-        OfficeUserRelation.alive.user_id_is(user.id).where('office_id != ?', params[:office_id]).update_all defunct: true
-        office_user_relations = OfficeUserRelation.alive.user_id_is(user.id).office_id_is(params[:office_id])
-        if office_user_relations.blank? && params[:office_id].to_i!=0
-          office_user_relation =OfficeUserRelation.new office_id: params[:office_id].to_i, user_id: user.id
-          render_conflict message: error_message(office_user_relation) and return unless office_user_relation.save
+        if params[:office_ids].present?
+          OfficeUserRelation.alive.user_id_is(user.id).where('office_id in (?)', params[:office_ids]).update_all defunct: true
+          params[:office_ids].each do |office_id|
+            office_user_relation =OfficeUserRelation.new office_id: office_id, user_id: user.id
+            render_conflict message: error_message(office_user_relation) unless office_user_relation.save
+          end
         end
 
         pepper_content = getRandomStringBy length: 128

@@ -22,6 +22,7 @@
 			<% end %>
 		</li>
 
+    <% if ['sys_admin', 'user_admin'].include?(@login_user.role_code) %>
 		<li class="sidebar-nav-link">
 			<a href="javascript:;" class="sidebar-nav-sub-title">
 				<i class="am-icon-newspaper-o sidebar-nav-link-logo"></i> 新闻中心
@@ -47,6 +48,7 @@
           <i class="am-icon-pencil-square-o sidebar-nav-link-logo"></i> 评论审核
       <% end %>
     </li>
+    <% end %>
 
     <% if ['sys_admin', 'user_admin'].include? @login_user.role_code %>
 		<li class="sidebar-nav-link">
@@ -110,7 +112,7 @@
     <% end %>
 
     <% if ['common_user'].include? @login_user.role_code %>
-		<li class="sidebar-nav-link">
+		<!--<li class="sidebar-nav-link">
 			<a href="javascript:;" class="sidebar-nav-sub-title">
 				<i class="am-icon-users sidebar-nav-link-logo"></i> 个人排班
 				<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
@@ -125,7 +127,7 @@
         </li>
 
 			</ul>
-		</li>
+		</li>-->
     <% end %>
 
 	</ul>

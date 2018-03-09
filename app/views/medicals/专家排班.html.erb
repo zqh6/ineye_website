@@ -26,7 +26,7 @@
                     <td>
                         <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
                         <p><b><%= User.find(scheduling.user_id).name %></b></p>
-                        <p><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %></p>
+                        <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
                         <% end %>
                     </td>
                     <% end %>
@@ -38,7 +38,7 @@
                     <td>
                         <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
                         <p><b><%= User.find(scheduling.user_id).name %></b></p>
-                        <p><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %></p>
+                        <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
                         <% end %>
                     </td>
                     <% end %>

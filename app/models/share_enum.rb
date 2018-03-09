@@ -48,11 +48,11 @@ class ShareEnum < ApplicationRecord
 
   enum outpatient_services: {
     common_service: '普通门诊',
-    optometry: '视光门诊',
-    refraction: '屈光门诊',
+    #optometry: '视光门诊',
+    #refraction: '屈光门诊',
     vip1: 'VIP门诊',
-    vip2: 'VIP传承门诊',
-    expert: '专家门诊'
+    vip2: 'VIP传承门诊'#,
+    #expert: '专家门诊'
   }
 
   enum official_accounts: {

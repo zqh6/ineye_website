@@ -26,12 +26,13 @@ class User < ApplicationRecord
   scope :name_like,         ->(name)         { where "#{table_name}.name LIKE :name", name: "%#{name}%" }
   scope :create_user_is,    ->(create_user)  { where "#{table_name}.create_user_id = :create_user_id", create_user_id: create_user.id }
 
-  def get_office
-    office_user_relation = OfficeUserRelation.alive.user_id_is(self.id).reorder('created_at DESC').first
-    if office_user_relation.blank?
-      nil
+  def get_offices
+    user_office_ids = OfficeUserRelation.alive.user_id_is(self.id).reorder('created_at DESC').collect{|i| i.office_id}
+
+    if user_office_ids.blank?
+      []
     else
-      Office.find(office_user_relation.office_id)
+      Office.alive.included_by(user_office_ids)
     end
   end
 
