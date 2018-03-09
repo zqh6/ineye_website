@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   resources :sciences, only: [:index, :show      ]
   resources :news,     only: [:index, :show, :new]
   resources :kepus,    only: [:index, :show      ]
-  resources :con_education,    only: [:index, :show      ]
+  resources :con_education,    only: [:index, :show]
+  resources :find_passwords
 
 
   namespace :exhibition do
@@ -47,6 +48,7 @@ Rails.application.routes.draw do
     resources :comments
     resources :users
     resources :validate_codes
+    resources :find_passwords
   end
 
 end

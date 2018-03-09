@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html lang='zh-CN'>
+<head>
+
+  <meta charset="utf-8">
+
+  <%= yield :meta %>
+
+  <title><%= yield :title %></title>
+
+  <%= csrf_meta_tags %>
+
+  <%= render partial: 'layouts/ineye_website_common/style' %>
+  <%= yield :style %>
+
+</head>
+<body <%= (yield :body_attr).html_safe %> >
+<%= render 'layouts/ineye_website_common/header' %>
+<%= yield %>
+
+<%= render partial: 'layouts/ineye_website_common/script' %>
+<%= yield :script %>
+
+</body>
+</html>

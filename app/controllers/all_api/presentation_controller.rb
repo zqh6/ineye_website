@@ -6,7 +6,10 @@ class AllApi::PresentationController < ActionController::Base
 
   layout :nil
 
+  before_action :validate_login
+
   def validate_login
+    @login_user = nil
     @login_user = User.included_by(session[:user]['id']).first if session[:user].present?
   end
 

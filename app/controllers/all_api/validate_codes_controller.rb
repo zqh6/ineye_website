@@ -43,4 +43,22 @@ class AllApi::ValidateCodesController < AllApi::PresentationController
     end
   end
 
+  def update
+    ActiveRecord::Base.transaction do
+      phone_number = params[:phone_number].to_s.strip
+      render_conflict message: '手机号码不正确' and return if (/\A1\d{10}\z/.match(params[:phone_number])).blank?
+      code = params[:validate_code].to_s.strip
+      render_conflict message: '验证码不正确' and return if (/\A\d{4}\z/.match(params[:validate_code])).blank?
+      validate_code = ValidateCode.find_by_phone_number(phone_number)
+      if validate_code.validate_code == code
+        validate_code.validate_code=nil
+        validate_code.save!
+        render_ok and return
+      else
+        render_conflict message: '验证码不正确' and return
+      end
+
+    end
+  end
+
 end
