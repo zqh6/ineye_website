@@ -40,6 +40,36 @@
             "schema":      { "$ref": "#/definitions/ErrorResponseBody" }
           }
         }
+      },
+
+      "get": {
+        "name": "validate_code_check",
+        "summary":     "检验验证码",
+        "description": "检验验证码",
+        "tags":        [ "验证码" ],
+        "parameters": [
+          {
+            "name": "phone_number",
+            "in": "query",
+            "description": "手机号",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "validate_code",
+            "in": "query",
+            "description": "验证码",
+            "required": true,
+            "type": "string"
+          }
+        ],
+
+        "responses": {
+          "default": {
+            "description": "出现错误。",
+            "schema":      { "$ref": "#/definitions/ErrorResponseBody" }
+          }
+        }
       }
     },
 

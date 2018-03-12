@@ -61,4 +61,18 @@ class AllApi::ValidateCodesController < AllApi::PresentationController
     end
   end
 
+  def index
+    phone_number = params[:phone_number].to_s.strip
+    render_conflict message: '手机号码不正确' and return if (/\A1\d{10}\z/.match(params[:phone_number])).blank?
+    code = params[:validate_code].to_s.strip
+    render_conflict message: '验证码格式不正确' and return if (/\A\d{4}\z/.match(params[:validate_code])).blank?
+    validate_code = ValidateCode.find_by_phone_number(phone_number)
+    render_ok code: '0', message: '验证不通过' and return if validate_code.blank? || validate_code.opened_at>Time.new || validate_code.closed_at<Time.new
+    if validate_code.validate_code == code
+      render_ok code: '1', message: '验证通过' and return
+    else
+      render_ok code: '0', message: '验证不通过' and return
+    end
+  end
+
 end
