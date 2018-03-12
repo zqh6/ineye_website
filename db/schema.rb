@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20180309025703) do
+ActiveRecord::Schema.define(version: 20180312013146) do
 
   create_table "ask_for_leaves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                                              null: false
@@ -143,6 +142,20 @@ ActiveRecord::Schema.define(version: 20180309025703) do
     t.datetime "created_at",                                           null: false
     t.datetime "updated_at",                                           null: false
     t.index ["url"], name: "index_statistics_urls_on_url", using: :btree
+  end
+
+  create_table "url_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "url",                     default: "",                    null: false
+    t.string   "suffix_params",           default: "",                    null: false
+    t.string   "method",                  default: "",                    null: false
+    t.integer  "count",                   default: 0,                     null: false
+    t.string   "state",         limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",               default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",               default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                 default: false,                 null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
+    t.index ["url"], name: "index_url_counts_on_url", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
