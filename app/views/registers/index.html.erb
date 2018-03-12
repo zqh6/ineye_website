@@ -22,6 +22,9 @@
         <div class="warnimg hide">
             <%= image_tag("warn.png") %> 验证码不正确
         </div>
+        <div class="warnimg hide warntel">
+            <%= image_tag("warn.png") %> 请输入正确的手机号码
+        </div>
         <div class="remind hide">
             <%= image_tag("ok.png") %>
         </div>
@@ -126,10 +129,12 @@
         }
     }
     var countNum = 60;
-    var validateCode = 0;
+
     $(".getcode").click(function(){
         clearInterval(setTime);
-        if($(".getcode").html()=="获取短信验证码"){
+        var checkphone=checkmsg($(".tel").val(),$(".tel").parent(),/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/);
+        if($(".getcode").html()=="获取短信验证码"&&checkphone){
+            $(".warntel").hide()
             var  setTime = setInterval(function(){
             if(countNum<=0){
                 clearInterval(setTime);
@@ -140,6 +145,8 @@
             countNum --;
             $(".getcode").html(countNum+"s后才能继续点击");
         },1000)
+        }else if(!checkphone){
+            $(".warntel").show(); //没输入电话或者电话号码格式不正确
         }
 
         if($(".getcode").html()=="获取短信验证码"){
@@ -153,7 +160,7 @@
 
             })
                 .done(function( data ) {
-                    validateCode = data.collection[0].validate_code
+
                 })
                 .fail(function( xhr, status, errorThrown ) {
 
@@ -163,20 +170,43 @@
         }
 
     })
-    function checkcode(){
-        console.log($(".importcode").val()+" "+validateCode);
-        if($(".importcode").val()== validateCode){
-            $(this).parent().find(".warnimg").hide()
-            $(this).parent().find(".remind").show();
-            return true
-        }else{
-            $(this).parent().find(".remind").hide();
-            $(this).parent().find(".warnimg").show()
-            return false
-        }
+    function checkcode(dom){
+
+        console.log("进入...")
+        $.ajax({
+                url: '/all-api/validate_codes',
+                type: "GET",
+                dataType: "json",
+                data: {
+                   "phone_number": $(".tel").val(),
+                   "validate_code": $(".importcode").val()
+                }
+
+            })
+                .done(function( data ) {
+                    console.log(data);
+                    if(data.code==0){
+                        $(dom).parent().find(".remind").hide();
+                        $(dom).parent().find(".warnimg").show();
+                        $(dom).parent().find(".warntel").hide();
+                        return false
+                    }else if(data.code==1){
+                        $(dom).parent().find(".warnimg").hide();
+                        $(dom).parent().find(".remind").show(); //正确
+                        $(dom).parent().find(".warntel").hide();
+                        return true
+                    }
+
+                })
+                .fail(function( xhr, status, errorThrown ) {
+
+                })
+                .always(function( xhr, status ) {
+                });
+
     }
     $(".importcode").blur(function(){
-        checkcode();
+        checkcode($(".importcode"));
     })
     $(".tel").blur(function () {
         checkmsg($(".tel").val(),$(".tel").parent(),/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/);
