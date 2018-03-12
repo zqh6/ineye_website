@@ -18,7 +18,7 @@ class AllApi::ValidateCodesController < AllApi::PresentationController
         new_flag = true
         validate_code = ValidateCode.new phone_number: phone_number
       else
-        if validate_code.opened_at<=now && validate_code.closed_at>=now
+        if validate_code.opened_at<=now && validate_code.closed_at>=now && validate_code.validate_code.present?
           #用旧的validate_code且不做变更
           new_flag = false
         else
@@ -30,15 +30,15 @@ class AllApi::ValidateCodesController < AllApi::PresentationController
         code = getRandomIntStringBy length: 4
         validate_code.assign_attributes validate_code: code, opened_at: Time.new, closed_at: (Time.new+Rails.configuration.time_to_lives[:validate_code_second].seconds)
         if validate_code.save
+          ChinaSMS.use :smsbao, username: Yetting.sms["user_name"], password: Yetting.sms["password"]
+          min_count = (Rails.configuration.time_to_lives[:validate_code_second]/60).to_s
+          sms_result = ChinaSMS.to phone_number, "您的验证码为#{code},在#{min_count}分钟内有效【中医大银海眼科医院】"
+          Rails.logger.warn sms_result.inspect
         else
           render_conflict message: error_message(validate_code) and return
         end
       end
       code = validate_code.validate_code
-      ChinaSMS.use :smsbao, username: Yetting.sms["user_name"], password: Yetting.sms["password"]
-      min_count = (Rails.configuration.time_to_lives[:validate_code_second]/60).to_s
-      sms_result = ChinaSMS.to phone_number, "您的验证码为#{code},在#{min_count}分钟内有效【中医大银海眼科医院】"
-      Rails.logger.warn sms_result.inspect
       render_ok collection: [{validate_code: validate_code.validate_code}] and return
     end
   end
