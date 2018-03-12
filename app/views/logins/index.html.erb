@@ -6,13 +6,15 @@
 <%= form_tag sessions_path, method: :post do |f| %>
 <div class="loginarea mart150">
     <div>
-        手机号：<input type="text" placeholder="请输入注册手机号" class="js-phone-number" maxlength="11">
+       <p>手机号：</p>
+       <input type="text" placeholder="请输入注册手机号" class="js-phone-number" maxlength="11">
     </div>
     <div>
-        登录密码：<input type="password" class="js-password" placeholder="请输入密码">
+        <p>登录密码：</p>
+        <input type="password" class="js-password" placeholder="请输入密码">
     </div>
     <p class="flow">
-        <span class="wrong fl warnword">
+        <span class="wrong fl warnword hide">
             用户名或密码不正确
         </span>
         <span class="fr">
