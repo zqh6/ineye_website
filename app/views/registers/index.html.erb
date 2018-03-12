@@ -70,6 +70,9 @@
         <div class="warnimg hide">
             <%= image_tag("warn.png") %> 密码不一致
         </div>
+        <div class="warnimg hide warnpwd">
+            <%= image_tag("warn.png") %> 密码不能为空
+        </div>
         <div class="okimg">
             <%= image_tag("ok.png") %>
         </div>
@@ -105,15 +108,20 @@
         }
     }
     function checkpwd() {
-        console.log($(".surepwd").val().trim());
         console.log($(".surepwd").val().trim()==$(".pwd").val().trim());
         if($(".surepwd").val().trim()==$(".pwd").val().trim()&&$(".surepwd").val().trim()!=""){
             $(".surepwd").parent().find(".okimg").show();
             $(".surepwd").parent().find(".warnimg").hide();
+            $(".warnpwd").hide();
             return true
-        }else {
+        }else if($(".surepwd").val().trim()==$(".pwd").val().trim()&&$(".surepwd").val().trim()==""){
+            $(".surepwd").parent().find(".okimg").hide();
+            $(".surepwd").parent().find(".warnimg").hide();
+            $(".warnpwd").show();
+        }else{
             $(".surepwd").parent().find(".okimg").hide();
             $(".surepwd").parent().find(".warnimg").show();
+            $(".warnpwd").hide();
             return false
         }
     }
@@ -188,13 +196,15 @@
         checkpwd();
     })
     $(".regsubmit input").click(function () {
-        if(checkmsg($(".tel").val(),$(".tel").parent(),/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/)&&
-            checkmsg($(".name").val(),$(".name").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/)&&
-            checkmsg($(".hospital").val(),$(".hospital").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/)&&
-            checkmsg($(".pwd").val(),$(".pwd").parent(),/^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/)&&
-            checkcode()&&
-            checkpwd()
-        ){
+        var checkphone=checkmsg($(".tel").val(),$(".tel").parent(),/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/);
+        var checkname=checkmsg($(".name").val(),$(".name").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/);
+        var checkhos=checkmsg($(".hospital").val(),$(".hospital").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/);
+        var checkonepwd=checkmsg($(".pwd").val(),$(".pwd").parent(),/^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/);
+        var checkpcode=checkcode();
+        var checktwopwd=checkpwd();
+
+
+        if(checkphone&&checkname&&checkhos&&checkonepwd&&checkpcode&&checktwopwd){
 
             $.ajax({
                 url: '/all-api/users',
