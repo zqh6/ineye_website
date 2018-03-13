@@ -5,7 +5,7 @@
 </div>
 <div class="regarea">
     <div>
-        <input type="text" placeholder="手机号：" class="tel" value="" maxlength="11" >
+        <input type="text" placeholder="手机号：" class="tel" value="13333333333" maxlength="11" >
         <div class="remind">
             <%= image_tag("remind.png") %> 建议使用常用手机，便于登录和找回密码
         </div>
@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="codeinput flow">
-        <input type="text" placeholder="手机验证码：" class="importcode" value="" maxlength="4">
+        <input type="text" placeholder="手机验证码：" class="importcode" value="6747" maxlength="4">
         <div class="getcode">获取短信验证码</div>
         <div class="warnimg hide">
             <%= image_tag("warn.png") %> 验证码不正确
@@ -30,7 +30,7 @@
         </div>
     </div>
     <div>
-        <input type="text" placeholder="真实姓名：" class="name" value="" maxlength="4">
+        <input type="text" placeholder="真实姓名：" class="name" value="啊啊啊" maxlength="4">
         <div class="remind">
             <%= image_tag("remind.png") %> 建议填写4位以内的字符
         </div>
@@ -42,7 +42,7 @@
         </div>
     </div>
     <div>
-        <input type="text" placeholder="医院：" class="hospital" value="" maxlength="50">
+        <input type="text" placeholder="医院：" class="hospital" value="啊啊啊" maxlength="50">
         <div class="remind">
             <%= image_tag("remind.png") %> 请输入医院/单位名称
         </div>
@@ -54,7 +54,7 @@
         </div>
     </div>
     <div>
-        <input type="password" placeholder="设置密码：" class="pwd" value="" >
+        <input type="password" placeholder="设置密码：" class="pwd" value="yjf123456" >
         <div class="remind">
             <%= image_tag("remind.png") %> 建议使用字母、数字和符号两种以上的组合，6-20位字符
         </div>
@@ -66,7 +66,7 @@
         </div>
     </div>
     <div>
-        <input type="password" placeholder="确认密码：" class="surepwd" value="" >
+        <input type="password" placeholder="确认密码：" class="surepwd" value="yjf123456" >
         <div class="remind hide">
             <%= image_tag("remind.png") %>
         </div>
@@ -85,7 +85,7 @@
     </div>
     <p class="datawarn warnword"></p>
 </div>
-
+<input type="hidden" name="" value="false" class="codeCheck">
 <div class="regmask hide">
    <div class="succeemain">
        <p class="successword">
@@ -132,7 +132,7 @@
 
     $(".getcode").click(function(){
         clearInterval(setTime);
-        var checkphone=checkmsg($(".tel").val(),$(".tel").parent(),/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/);
+        var checkphone=checkmsg($(".tel").val(),$(".tel").parent(),/^1\d{10}$/);
         if($(".getcode").html()=="获取短信验证码"&&checkphone){
             $(".warntel").hide()
             var  setTime = setInterval(function(){
@@ -171,6 +171,7 @@
 
     })
     function checkcode(dom){
+        //目前有bug,因为ajax返回值比较慢,导致return出来的值是不正确的
 
         $.ajax({
                 url: '/all-api/validate_codes',
@@ -184,16 +185,17 @@
             })
                 .done(function( data ) {
                     console.log(data);
+                    console.log("手机验证码")
                     if(data.code==0){
                         $(dom).parent().find(".remind").hide();
                         $(dom).parent().find(".warnimg").show();
                         $(dom).parent().find(".warntel").hide();
-                        return false
+                        $(".codeCheck").val("false");
                     }else if(data.code==1){
                         $(dom).parent().find(".warnimg").hide();
                         $(dom).parent().find(".remind").show(); //正确
                         $(dom).parent().find(".warntel").hide();
-                        return true
+                        $(".codeCheck").val("true");
                     }
 
                 })
@@ -202,13 +204,18 @@
                 })
                 .always(function( xhr, status ) {
                 });
+                console.log("aaaa"+$(".codeCheck").val())
+                // setTimeout(function(){
+                    return $(".codeCheck").val();
+                // },100)
+
 
     }
     $(".importcode").blur(function(){
         checkcode($(".importcode"));
     })
     $(".tel").blur(function () {
-        checkmsg($(".tel").val(),$(".tel").parent(),/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/);
+        checkmsg($(".tel").val(),$(".tel").parent(),/^1\d{10}$/);
     })
     $(".name").blur(function(){
         checkmsg($(".name").val(),$(".name").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,4}$/)
@@ -225,14 +232,13 @@
         checkpwd();
     })
     $(".regsubmit input").click(function () {
-        var checkphone=checkmsg($(".tel").val(),$(".tel").parent(),/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/);
+        var checkphone=checkmsg($(".tel").val(),$(".tel").parent(),/^1\d{10}$/);
         var checkname=checkmsg($(".name").val(),$(".name").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/);
         var checkhos=checkmsg($(".hospital").val(),$(".hospital").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/);
         var checkonepwd=checkmsg($(".pwd").val(),$(".pwd").parent(),/^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/);
         var checkpcode=checkcode();
         var checktwopwd=checkpwd();
-
-
+        console.log(checkpcode+"是不是老false");
         if(checkphone&&checkname&&checkhos&&checkonepwd&&checkpcode&&checktwopwd){
 
             $.ajax({
@@ -254,7 +260,7 @@
 
                 })
                 .fail(function( xhr, status, errorThrown ) {
-                    $(".datawarn").html(data.message);
+                    $(".datawarn").html(xhr.responseJSON.message);
                 })
                 .always(function( xhr, status ) {
                 });

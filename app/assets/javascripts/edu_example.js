@@ -81,15 +81,6 @@
     }
 
     //去除所有的标签和空格后返回字符串,用于判断客户不正当输入
-    function teststring(str){
-            // return str.replace(/&nbsp;/ig, "").replace(/<[^>]*>/g,"");
-            var str=str.replace(/&nbsp;/ig, "")
-            .replace(/<p[^>]*>(?:(?!<\/p>)[\s\S])*<\/p>/gi,"")
-            // .replace(/<br[^>]*>(?:(?!<\/br>)[\s\S])*<\/br>/gi,"");
-            console.log(str);
-            return str
-
-        }
 
 
 
@@ -97,12 +88,7 @@
     function postComment(parId,num){ //parId父级的id num为了确定是顶级评论框还是子级评论框，不传值的情况下是最高级别的评论，传值是子级的。
         var index = num?1:0;
         var time = num?1000:0;
-        console.log(teststring($(".w-e-text").html()).trim()=="")
-        if(false){
-        // if((index==0&&(/^[ ]+$/.test($(".w-e-text").html())||teststring($(".w-e-text").html()).trim()==""))||(index==1&&(/^[ ]+$/.test($(".commentInner").eq(index).val())||$(".commentInner").eq(index).val()==""))){
-            // $(".erroContent").eq(index).html("评论的内容不能为空");
-        }else{
-            $(".erroContent").eq(index).html("添加评论成功");
+
 
             $.ajax({
                 url: '/all-api/comments',
@@ -122,12 +108,16 @@
                     },time);
                 })
                 .fail(function( xhr, status, errorThrown ) {
-                    console.log('失败');
+                    if(xhr.responseJSON.message=="评论失败，请登录后评论"){
+                        console.log("111");
+                    }
+                    var str = "评论失败，请<a href='/logins'>登录</a>或<a href='/registers'>注册</a>后评论"
+                    $(".erroContent").eq(index).html(str);
                 })
                 .always(function( xhr, status ) {
                 });
 
-        }
+
     }
 
     $(".commentSubBtn").click(function(){
