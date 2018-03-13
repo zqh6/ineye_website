@@ -82,7 +82,12 @@
 
     //去除所有的标签和空格后返回字符串,用于判断客户不正当输入
     function teststring(str){
-            return str.replace(/&nbsp;/ig, "").replace(/<[^>]*>/g,"");
+            // return str.replace(/&nbsp;/ig, "").replace(/<[^>]*>/g,"");
+            var str=str.replace(/&nbsp;/ig, "")
+            .replace(/<p[^>]*>(?:(?!<\/p>)[\s\S])*<\/p>/gi,"")
+            // .replace(/<br[^>]*>(?:(?!<\/br>)[\s\S])*<\/br>/gi,"");
+            console.log(str);
+            return str
 
         }
 
@@ -93,8 +98,9 @@
         var index = num?1:0;
         var time = num?1000:0;
         console.log(teststring($(".w-e-text").html()).trim()=="")
-        if((index==0&&(/^[ ]+$/.test($(".w-e-text").html())||teststring($(".w-e-text").html()).trim()==""))||(index==1&&(/^[ ]+$/.test($(".commentInner").eq(index).val())||$(".commentInner").eq(index).val()==""))){
-            $(".erroContent").eq(index).html("评论的内容不能为空");
+        if(false){
+        // if((index==0&&(/^[ ]+$/.test($(".w-e-text").html())||teststring($(".w-e-text").html()).trim()==""))||(index==1&&(/^[ ]+$/.test($(".commentInner").eq(index).val())||$(".commentInner").eq(index).val()==""))){
+            // $(".erroContent").eq(index).html("评论的内容不能为空");
         }else{
             $(".erroContent").eq(index).html("添加评论成功");
 
