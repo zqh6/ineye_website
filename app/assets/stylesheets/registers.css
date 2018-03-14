@@ -227,6 +227,9 @@ input{
     cursor: pointer;
     border: 0;
 }
+.subbtn a{
+    color: #fff;
+}
 .minheight930{
     min-height: 930px;
 }
