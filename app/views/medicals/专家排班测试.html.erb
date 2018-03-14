@@ -24,7 +24,9 @@
                     <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'am').first %>
                     <% ShareEnum.weeks.each do |key, value| %>
                     <td>
+
                         <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
+                        <% next if OfficeUserRelation.alive.office_id_is(office.id).user_id_is(scheduling.user_id).blank? %>
                         <p><b><%= User.find(scheduling.user_id).name %></b></p>
                         <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
                         <% end %>

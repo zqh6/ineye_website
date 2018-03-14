@@ -41,7 +41,7 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
           OfficeUserRelation.alive.user_id_is(user.id).where('office_id in (?)', params[:office_ids]).update_all defunct: true
           params[:office_ids].each do |office_id|
             office_user_relation =OfficeUserRelation.new office_id: office_id, user_id: user.id
-            render_conflict message: error_message(office_user_relation) unless office_user_relation.save
+            render_conflict message: error_message(office_user_relation) and return unless office_user_relation.save
           end
         end
 
@@ -65,12 +65,11 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
       render_conflict message: '用户被删除或禁用，无法编辑' if user.defunct==true
       user.assign_attributes user_attributes
       if user.save
-        OfficeUserRelation.alive.user_id_is(user.id).where('office_id != ?', params[:office_id]).update_all defunct: true
-        office_user_relations = OfficeUserRelation.alive.user_id_is(user.id).office_id_is(params[:office_id])
-        if office_user_relations.blank? && params[:office_id].to_i!=0
-          office_user_relation =OfficeUserRelation.new office_id: params[:office_id].to_i, user_id: user.id
+        OfficeUserRelation.user_id_is(user.id).delete_all
+        params[:office_ids].each do |office_id|
+          office_user_relation =OfficeUserRelation.new office_id: office_id, user_id: user.id
           render_conflict message: error_message(office_user_relation) and return unless office_user_relation.save
-        end
+        end if params[:office_ids].present?
         render_ok and return
       else
         render_conflict message: error_message(user) and return

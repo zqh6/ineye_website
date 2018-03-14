@@ -45,6 +45,7 @@ function submitData(){
     requestData['work_time'] = $('#work_time').val();
     requestData['detailed_introduction'] = $('#detailed_introduction').val();
   }
+  console.log(requestData);
 	$.ajax({
 		url: formDom.attr('action'),
 		type: formDom.attr('method'),
