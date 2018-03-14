@@ -16,8 +16,7 @@ class Administration::V1::UsersController < Administration::V1::PrivilegedContro
   end
 
   def index
-    user = User.included_by(session[:user]['id']).first
-    @users = User.alive.not_role_code('1')
+    @users = User.alive.not_role_code('sys_admin').not_role_code('outer_user')
 =begin
     if session[:user]['role_code']!='1'
       @users = @users.create_user_is(user)

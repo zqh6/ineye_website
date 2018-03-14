@@ -62,23 +62,23 @@
 									</tr>
 									</thead>
 									<tbody>
-									<% if @users.present? %>
+										<% if @users.present? %>
 											<% @users.each do |user| %>
 													<tr class="gradeX">
 														<td><%= user.name %></td>
 														<td><%= user.phone_number %></td>
 														<td><%= ShareEnum.roles[user.role_code.to_sym] %></td>
-                            <td><%= user.get_offices.collect{|i| i.name}.to_sentence %></td>
+	                          <td><%= user.get_offices.collect{|i| i.name}.to_sentence %></td>
 														<td><%= user.create_user.present? ? (user.create_user.name.present? ? user.create_user.name : '（暂无名称）')  : '（无创建者）' %></td>
 														<td><%= l user.created_at, format: :human_time %></td>
 														<td>
 															<div class="tpl-table-black-operation">
-                                <% if user.role_code.to_sym==:common_user %><a class="btn am-btn" href="<%= edit_administration_v1_user_path(user.id) %>">编辑资料</a><% end %>
+	                              <% if user.role_code.to_sym==:common_user %><a class="btn am-btn" href="<%= edit_administration_v1_user_path(user.id) %>">编辑资料</a><% end %>
 															</div>
 														</td>
 													</tr>
 											<% end %>
-									<% end %>
+										<% end %>
 									</tbody>
 								</table>
 							</div>
