@@ -5,7 +5,7 @@
 </div>
 <div class="regarea">
     <div>
-        <input type="text" placeholder="手机号：" class="tel" value="13333333333" maxlength="11" >
+        <input type="text" placeholder="手机号：" class="tel" value="11111111111" maxlength="11" >
         <div class="remind">
             <%= image_tag("remind.png") %> 建议使用常用手机，便于登录和找回密码
         </div>
@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="codeinput flow">
-        <input type="text" placeholder="手机验证码：" class="importcode" value="6747" maxlength="4">
+        <input type="text" placeholder="手机验证码：" class="importcode" value="4535" maxlength="4">
         <div class="getcode">获取短信验证码</div>
         <div class="warnimg hide">
             <%= image_tag("warn.png") %> 验证码不正确
@@ -111,7 +111,6 @@
         }
     }
     function checkpwd() {
-        console.log($(".surepwd").val().trim()==$(".pwd").val().trim());
         if($(".surepwd").val().trim()==$(".pwd").val().trim()&&$(".surepwd").val().trim()!=""){
             $(".surepwd").parent().find(".okimg").show();
             $(".surepwd").parent().find(".warnimg").hide();
@@ -157,7 +156,6 @@
                 data: {
                    "phone_number": $(".tel").val()
                 }
-
             })
                 .done(function( data ) {
 
@@ -187,16 +185,20 @@
                     console.log(data);
                     console.log("手机验证码")
                     if(data.code==0){
+                        $(".codeCheck").val("false");
                         $(dom).parent().find(".remind").hide();
                         $(dom).parent().find(".warnimg").show();
                         $(dom).parent().find(".warntel").hide();
-                        $(".codeCheck").val("false");
+
                     }else if(data.code==1){
+                        $(".codeCheck").val("true");
                         $(dom).parent().find(".warnimg").hide();
                         $(dom).parent().find(".remind").show(); //正确
                         $(dom).parent().find(".warntel").hide();
-                        $(".codeCheck").val("true");
+                        // return $(".codeCheck").val();
+
                     }
+
 
                 })
                 .fail(function( xhr, status, errorThrown ) {
@@ -204,10 +206,11 @@
                 })
                 .always(function( xhr, status ) {
                 });
-                console.log("aaaa"+$(".codeCheck").val())
-                // setTimeout(function(){
+
+                setTimeout(function(){
+                    console.log("aaaa"+$(".codeCheck").val())
                     return $(".codeCheck").val();
-                // },100)
+                },100)
 
 
     }
@@ -232,14 +235,16 @@
         checkpwd();
     })
     $(".regsubmit input").click(function () {
+        var checkpcode=checkcode($(".importcode"));
         var checkphone=checkmsg($(".tel").val(),$(".tel").parent(),/^1\d{10}$/);
         var checkname=checkmsg($(".name").val(),$(".name").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/);
         var checkhos=checkmsg($(".hospital").val(),$(".hospital").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/);
         var checkonepwd=checkmsg($(".pwd").val(),$(".pwd").parent(),/^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/);
-        var checkpcode=checkcode();
         var checktwopwd=checkpwd();
-        console.log(checkpcode+"是不是老false");
-        if(checkphone&&checkname&&checkhos&&checkonepwd&&checkpcode&&checktwopwd){
+
+        setTimeout(function(){
+            console.log(checkpcode+"是不是老false");
+           if(checkphone&&checkname&&checkhos&&checkonepwd&&checkpcode&&checktwopwd){
 
             $.ajax({
                 url: '/all-api/users',
@@ -265,9 +270,11 @@
                 .always(function( xhr, status ) {
                 });
 
-        }else {
-            console.log("验证不通过");
-        }
+            }else {
+                console.log("验证不通过");
+            }
+        },1000)
+
     })
 </script>
 <% end %>
