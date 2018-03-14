@@ -10,7 +10,7 @@ class AllApi::ValidateCodesController < AllApi::PresentationController
     ActiveRecord::Base.transaction do
       render_conflict message: '手机格式不正确' and return if (/\A1\d{10}\z/.match(params[:phone_number])).blank?
       phone_number = params[:phone_number].strip
-      if params[:find_password] ==true
+      if params[:find_password] == 'true'
         render_conflict message: '账号信息异常，请联系管理员' and return if User.find_by_phone_number(phone_number).blank?
       end
       now = Time.new
@@ -40,7 +40,7 @@ class AllApi::ValidateCodesController < AllApi::PresentationController
           render_conflict message: error_message(validate_code) and return
         end
       end
-      if params[:find_password] == true
+      if params[:find_password] == 'true'
         session[:phone_number] = phone_number
       end
       code = validate_code.validate_code

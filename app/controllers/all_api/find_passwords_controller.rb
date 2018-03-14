@@ -20,6 +20,7 @@ class AllApi::FindPasswordsController < AllApi::PresentationController
     hashed_content = Digest::SHA512.hexdigest(params[:password1].strip + pepper_content)
     password = Password.new user_id: @login_user.id, pepper_content: pepper_content, hashed_content: hashed_content
     if password.save
+      session[:phone_number] = nil
       render_ok and return
     else
       render_conflict message: error_message(password) and return

@@ -10,7 +10,7 @@ $(function(){
       }
     })
       .done(function( data ) {
-        alert('成功');
+        window.location.href='/find_passwords/~/edit?function=finish'
       })
       .fail(function( xhr, status, errorThrown ) {
         $('.js-error-vector').html(xhr.responseJSON.message);
