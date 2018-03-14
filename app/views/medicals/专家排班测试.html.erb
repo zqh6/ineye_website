@@ -1,0 +1,49 @@
+<div class="schedulingTabCon padT20">
+            <h4>专家排班表</h4>
+            <table class="schedulingTab">
+                <tr>
+                    <th colspan="20">成都中医大银海眼科医院门诊医师坐诊一览表</th>
+                </tr>
+                <tr>
+                    <td><b>诊室</b></td>
+                    <td><b>时段</b></td>
+                    <td><b>星期一</b></td>
+                    <td><b>星期二</b></td>
+                    <td><b>星期三</b></td>
+                    <td><b>星期四</b></td>
+                    <td><b>星期五</b></td>
+                    <td><b>星期六</b></td>
+                    <td><b>星期日</b></td>
+                </tr>
+                <% Office.alive.each do |office| %>
+                <tr>
+                    <td rowspan="2">
+                        <p><b><%= office.name %></b></p>
+                    </td>
+                    <td>上午</td>
+                    <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'am').first %>
+                    <% ShareEnum.weeks.each do |key, value| %>
+                    <td>
+                        <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
+                        <p><b><%= User.find(scheduling.user_id).name %></b></p>
+                        <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
+                        <% end %>
+                    </td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>下午</td>
+                    <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'pm').first %>
+                    <% ShareEnum.weeks.each do |key, value| %>
+                    <td>
+                        <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
+                        <p><b><%= User.find(scheduling.user_id).name %></b></p>
+                        <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
+                        <% end %>
+                    </td>
+                    <% end %>
+                </tr>
+                <% end %>
+
+            </table>
+        </div>
