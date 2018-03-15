@@ -9,6 +9,10 @@ $(function(){
 	$('#role_code').on('change', showOrHideUserEditInputs);
 });
 
+function changeStr(strValue) {
+    return strValue.replace(/\r\n/g, '<br/>').replace(/\n/g, '<br/>').replace(/\s/g, ' ');
+}
+
 function showOrHideUserEditInputs(){
   var dom = $(this);
   showOrHide(dom.val()=='common_user');
@@ -39,11 +43,11 @@ function submitData(){
       return;
     }
     requestData['office_ids'] = officeIds;
-    requestData['honour_brief_introduction'] = $('#honour_brief_introduction').val();
+    requestData['honour_brief_introduction'] = changeStr($('#honour_brief_introduction').val());
     requestData['honour_specific'] = $('#honour_specific').val();
-    requestData['good_at_field'] = $('#good_at_field').val();
+    requestData['good_at_field'] = changeStr($('#good_at_field').val());
     requestData['work_time'] = $('#work_time').val();
-    requestData['detailed_introduction'] = $('#detailed_introduction').val();
+    requestData['detailed_introduction'] = changeStr($('#detailed_introduction').val());
   }
   console.log(requestData);
 	$.ajax({

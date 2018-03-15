@@ -83,7 +83,9 @@
     //去除所有的标签和空格后返回字符串,用于判断客户不正当输入
 
 
-
+    function changeStr(strValue) {
+        return strValue.replace(/\r\n/g, '<br/>').replace(/\n/g, '<br/>').replace(/\s/g, ' ');
+    }
 
     function postComment(parId,num){ //parId父级的id num为了确定是顶级评论框还是子级评论框，不传值的情况下是最高级别的评论，传值是子级的。
         var index = num?1:0;
@@ -97,7 +99,7 @@
                 dataType: "json",
                 data: JSON.stringify({
                     parent_id: parId?parId:null,
-                    content: num?$(".commentInner").eq(1).val():$(".w-e-text").html(),
+                    content: num?changeStr($(".commentInner").eq(1).val()):$(".w-e-text").html(),
                     post_link: "/con_education"+locationHref,
                 })
             })
