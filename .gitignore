@@ -34,7 +34,6 @@ public/uploads
 *.DS_Store
 *DS_Store*
 
-config/database.yml
 config/yetting.yml
 uploads
 public
