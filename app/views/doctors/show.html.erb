@@ -10,15 +10,13 @@
     <h5><%= @user.name %></h5>
     <p class="doctorTitle"><span><%= @user.honour_brief_introduction %></span></p>
     <div class="doctorHonor">
-      <% @user.honour_specific.split('#').each do |honour_specific| %>
-        <p><%= honour_specific %></p>
-      <% end %>
+      <p><%= @user.honour_specific.html_safe %></p>
     </div>
     <div class="doctorGoodAt flow">
       <span>擅长领域：</span>
-      <p><%= @user.good_at_field %></p>
+      <p><%= @user.good_at_field.html_safe %></p>
     </div>
-    <p class="seePatientTime"><span>坐诊时间:</span><%= @user.work_time %></p>
+    <p class="seePatientTime"><span>坐诊时间:</span><%= @user.work_time.html_safe %></p>
   </div>
 </div>
 <div class="doctorIntroduce whiteBg">
