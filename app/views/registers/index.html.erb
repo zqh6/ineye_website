@@ -42,7 +42,7 @@
         </div>
     </div>
     <div>
-        <input type="text" placeholder="医院：" class="hospital" value="" maxlength="50">
+        <input type="text" placeholder="医院：" class="hospital" value="" maxlength="20">
         <div class="remind">
             <%= image_tag("remind.png") %> 请输入医院/单位名称
         </div>
@@ -56,10 +56,10 @@
     <div>
         <input type="password" placeholder="设置密码：" class="pwd" value="" >
         <div class="remind">
-            <%= image_tag("remind.png") %> 建议使用字母、数字和符号两种以上的组合，6-20位字符
+            <%= image_tag("remind.png") %> 密码需要6-20位
         </div>
         <div class="warnimg hide">
-            <%= image_tag("warn.png") %> 密码需要6-20位使用字母、数字和符号两种以上的组合
+            <%= image_tag("warn.png") %> 密码需要6-20位
         </div>
         <div class="okimg">
             <%= image_tag("ok.png") %>
@@ -182,7 +182,6 @@
 
             })
                 .done(function( data ) {
-                    console.log(data);
                     if(data.code==0){
                         $(".codeCheck").val("false");
                         $(dom).parent().find(".remind").hide();
@@ -237,7 +236,7 @@
         var checkphone=checkmsg($(".tel").val(),$(".tel").parent(),/^1\d{10}$/);
         var checkname=checkmsg($(".name").val(),$(".name").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/);
         var checkhos=checkmsg($(".hospital").val(),$(".hospital").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/);
-        var checkonepwd=checkmsg($(".pwd").val(),$(".pwd").parent(),/^(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/);
+        var checkonepwd=checkmsg($(".pwd").val(),$(".pwd").parent(),/^.{6,20}$/);
         var checktwopwd=checkpwd();
         console.log($(".codeinput .remind").css("display"));
         setTimeout(function(){
