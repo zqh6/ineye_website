@@ -19,8 +19,8 @@
       <% end %>
     </div>
     <div class="search fr">
-      <input type="text" placeholder="请输入搜索关键字">
-      <div class="searchBtn">
+      <input type="text" class="js-search-input" placeholder="请输入搜索关键字" value="<% if @search_value.present? %><%= @search_value %><% end %>">
+      <div class="searchBtn js-search-btn">
         <p>搜索</p>
       </div>
     </div>

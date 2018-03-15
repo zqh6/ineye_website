@@ -11,6 +11,32 @@
   "consumes": [ "application/json" ],
   "paths":    {
 
+    "/search_websites":{
+      "get": {
+        "summary": "站内搜索",
+        "description": "站内搜索",
+        "tags": ["搜索"],
+        "parameters": [
+          {
+            "name": "searchValue",
+            "in": "query",
+            "description": "搜索内容",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "出现错误。",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseBody"
+            }
+          }
+        }
+      }
+    },
+
+
     "/validate_codes": {
       "post": {
         "name": "validate_code",

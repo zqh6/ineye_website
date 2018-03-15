@@ -39,4 +39,12 @@
       .always(function( xhr, status ) {
       });
   });
+
+  $('.js-search-btn').on('click', function(){
+    var searchValue = $('.js-search-input').val();
+    if(searchValue==null ||searchValue=='' || $.trim(searchValue)==''){
+      return;
+    }
+    window.location.href='/search_websites?search_value='+searchValue;
+  });
 </script>

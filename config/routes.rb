@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :logins
   resources :find_passwords
   resources :sessions
+  resources :search_websites
 
   namespace :exhibition do
     namespace :v1 do
@@ -51,6 +52,7 @@ Rails.application.routes.draw do
     resources :users
     resources :validate_codes
     resources :find_passwords
+    resources :search_websites
   end
 
 end
