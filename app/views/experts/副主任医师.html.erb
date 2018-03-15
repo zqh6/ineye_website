@@ -76,12 +76,14 @@
     </li>
     <!-- 朱玉芳 -->
   </ul>
-<%# content_for :script do %>
+<% content_for :script do %>
+  <%= javascript_include_tag 'shared/jquery-2.1.4.min' %>
   <script>
+    console.log("...")
     $(function(){
      var doctorIndex = $(".expertCommon li").parents(".doctorContainer").attr("id");
      console.log(doctorIndex);
      $(".expertCommon li").eq(doctorIndex).addClass("active");
      })
   </script>
-<%# end %>
+<% end %>
