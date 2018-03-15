@@ -6,6 +6,11 @@ class AllApi::UsersController < AllApi::PresentationController
 
   layout :nil
 
+  def show
+    user = User.find(params[:id])
+    render_ok collection: [{user: user}] and return
+  end
+
   def create
     ActiveRecord::Base.transaction do
       phone_number=params[:phone_number].strip

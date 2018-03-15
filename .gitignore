@@ -36,7 +36,6 @@ public/uploads
 
 config/yetting.yml
 uploads
-public
 test
 config/symmetric-encryption.yml
 .idea

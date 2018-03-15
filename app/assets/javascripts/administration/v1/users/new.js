@@ -20,10 +20,10 @@ function showOrHideUserEditInputs(){
 
 function showOrHide(ifTrue){
   if(ifTrue){
-    //var doctorInputsDom = $($('#doctor-inputs').html());
-    $('.doctor-inputs-vector').show();
+    //var doctorInputsDom = $($('#doctors-inputs').html());
+    $('.doctors-inputs-vector').show();
   }else{
-    $('.doctor-inputs-vector').hide();
+    $('.doctors-inputs-vector').hide();
   }
 }
 
