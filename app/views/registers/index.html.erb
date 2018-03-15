@@ -204,14 +204,13 @@
                 .always(function( xhr, status ) {
                 });
 
-            console.log($(".codeCheck").val())
             return $(".codeCheck").val();
 
 
     }
     $(".importcode").blur(function(){
-        var s=checkcode($(".importcode"));
-        console.log(s);
+        checkcode($(".importcode"));
+
     })
     $(".tel").blur(function () {
         checkmsg($(".tel").val(),$(".tel").parent(),/^1\d{10}$/);
@@ -238,11 +237,10 @@
         var checkhos=checkmsg($(".hospital").val(),$(".hospital").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/);
         var checkonepwd=checkmsg($(".pwd").val(),$(".pwd").parent(),/^.{6,20}$/);
         var checktwopwd=checkpwd();
-        console.log($(".codeinput .remind").css("display"));
         setTimeout(function(){
            if(checkphone&&checkname&&checkhos&&checkonepwd&&checktwopwd){
             if(checkpcode){
-                console.log("进入创建用户")
+                //console.log("进入创建用户")
                 $.ajax({
                 url: '/all-api/users',
                 type: "POST",
@@ -272,7 +270,7 @@
 
 
             }else {
-                console.log("验证不通过");
+                //console.log("验证不通过");
             }
         },1000)
 
