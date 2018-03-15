@@ -12,9 +12,9 @@ class AllApi::UsersController < AllApi::PresentationController
       render_conflict message: '请填写正确的手机号码' and return if phone_number.blank?
       render_conflict message: '请填写正确的手机号码格式' and return if (/\A1\d{10}\z/.match(phone_number)).blank?
       render_conflict message: '请填写第一个密码' and return if params[:password1].strip.blank?
-      render_conflict message: '第一个密码格式不正确' and return if (/\A(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}\z/.match(params[:password1])).blank?
+      render_conflict message: '第一个密码格式不正确' and return if params[:password1].length<6||params[:password1].length>20
       render_conflict message: '请填写第二个密码' and return if params[:password2].strip.blank?
-      render_conflict message: '第二个密码格式不正确' and return if (/\A(?![\d]+$)(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}\z/.match(params[:password2])).blank?
+      render_conflict message: '第二个密码格式不正确' and return if params[:password2].length<6||params[:password2].length>20
       render_conflict message: '两个密码不一致' and return if params[:password1].strip != params[:password2].strip
       render_conflict message: '请填写您的姓名' and return if params[:name].blank?
       render_conflict message: '请填写医院名称' and return if params[:unit_name].blank?
