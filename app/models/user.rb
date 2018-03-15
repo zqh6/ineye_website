@@ -24,6 +24,7 @@ class User < ApplicationRecord
   scope :role_code_is,      ->(role_code)    { where "#{table_name}.role_code = :role_code ", role_code: role_code }
   scope :phone_number_like, ->(phone_number) { where "#{table_name}.phone_number LIKE :phone_number", phone_number: "%#{phone_number}%" }
   scope :name_like,         ->(name)         { where "#{table_name}.name LIKE :name", name: "%#{name}%" }
+  scope :name_is,           ->(name)         { where "#{table_name}.name = :name", name: "#{name}" }
   scope :create_user_is,    ->(create_user)  { where "#{table_name}.create_user_id = :create_user_id", create_user_id: create_user.id }
 
   def get_offices

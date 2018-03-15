@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :medicals, only: [:index, :show      ]
   resources :centers,  only: [:index, :show      ]
   resources :experts,  only: [:index, :show      ]
+  resources :doctors
   resources :sciences, only: [:index, :show      ]
   resources :news,     only: [:index, :show, :new]
   resources :kepus,    only: [:index, :show      ]
