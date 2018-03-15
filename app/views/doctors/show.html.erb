@@ -35,52 +35,67 @@
   <li><a href="" class="registeredBtn">提交</a></li>
 </ul>
 
-<% if @user.name=='丰医生' %>
-    <% members = [
-        {
-            name: '路雪婧',
-            honour_brief_introduction: '研究员/博士生导师',
-            honour_specific: [
-                '全国首批中医药传承博士后'
-            ]
-        },
-        {
-            name: '张富文',
-            honour_brief_introduction: '主任医师/教授/硕士生导师',
-            honour_specific: [
-                '中华中医药学会眼科分会青年委员'
-            ]
-        },
-        {
-            name: '李红惠',
-            honour_brief_introduction: '主任医师/医学博士',
-            honour_specific: [
-            ]
-        },
-        {
-            name: '蹇文渊',
-            honour_brief_introduction: '主治医师/医学博士/博士后',
-            honour_specific: [
-                '四川省糖尿病早期筛查专业委员会委员'
-            ]
-        }
-    ] %>
+<% members = [] %>
+<% if @user.name=='段俊国' %>
+    <% members = %w(路雪婧 张富文 李红惠 蹇文渊) %>
+<% elsif @user.name=='廖品正' %>
+    <% members = %w(邓亚平 周华祥 路雪婧 黄霄 张大铮) %>
+<% elsif @user.name=='邓亚平' %>
+    <% members = %w(廖品正 周华祥 路雪婧 黄霄 张大铮) %>
+<% elsif @user.name=='朱思泉' %>
+    <% members = %w(潘学会 陈小凤) %>
+<% elsif @user.name=='刘文' %>
+    <% members = %w(黄霄 王国平 李红惠) %>
+<% elsif @user.name=='周跃华' %>
+    <% members = %w(袁晓辉 周春阳 谢艾芮 缪馨) %>
+<% elsif @user.name=='周华祥' %>
+    <% members = %w(廖品正 邓亚平 路雪婧 黄霄 张大铮) %>
+<% elsif @user.name=='袁晓辉' %>
+    <% members = %w(周跃华 周春阳 谢艾芮 缪馨) %>
+<% elsif @user.name=='路雪婧' %>
+    <% members = %w(廖品正 段俊国 邓亚平 周华祥 张富文 黄霄 张大铮 蹇文渊) %>
+<% elsif @user.name=='张富文' %>
+    <% members = %w(段俊国 路雪婧 潘学会 陈小凤 李强 蹇文渊) %>
+<% elsif @user.name=='黄霄' %>
+    <% members = %w(廖品正 邓亚平 刘文 周华祥 路雪婧 王国平) %>
+<% elsif @user.name=='潘学会' %>
+    <% members = %w(朱思泉 张富文 陈小凤 李强) %>
+<% elsif @user.name=='周春阳' %>
+    <% members = %w(周跃华 袁晓辉 谢艾芮 缪馨) %>
+<% elsif @user.name=='王国平' %>
+    <% members = %w(刘文 黄霄 李红惠) %>
+<% elsif @user.name=='张大铮' %>
+    <% members = %w(廖品正 邓亚平 周华祥 路雪婧 黄霄) %>
+<% elsif @user.name=='谢艾芮' %>
+    <% members = %w(周跃华 袁晓辉 周春阳 缪馨) %>
+<% elsif @user.name=='陈小凤' %>
+    <% members = %w(朱思泉 张富文 潘学会 李强) %>
+<% elsif @user.name=='李强' %>
+    <% members = %w(张富文 潘学会 陈小凤) %>
+<% elsif @user.name=='缪馨' %>
+    <% members = %w(周跃华 袁晓辉 周春阳 谢艾芮) %>
+<% elsif @user.name=='李红惠' %>
+    <% members = %w(段俊国 刘文 王国平) %>
+<% elsif @user.name=='蹇文渊' %>
+    <% members = %w(段俊国 路雪婧 张富文) %>
 <% end %>
+<% if members.present? %>
 <div class="membersList whiteBg flow">
   <div class="fl teamMemberWords">团 队 成 员</div>
   <div class="teamContainer" >
     <ul class="teamMembers fr flParent flow" style="">
-      <%= members.each do |member| %>
-          <% member_user = User.role_code_is('common_user').name_is(member[:name]).first%>
+      <%= members.each do |member_name| %>
+          <% member_user = User.role_code_is('common_user').name_is(member_name).first%>
+          <% member_info = UserConfiguration.doctors[member_name.to_sym]%>
       <li>
         <div class="fl teamMemberPhoto">
-          <%= link_to image_tag('doctors/'+member[:name]+'.jpg'), doctor_path(member_user.present? ? member_user.try(:id) : '~') %>
+          <%= link_to image_tag('doctors/'+member_name+'.jpg'), doctor_path(member_user.present? ? member_user.try(:id) : '~') %>
         </div>
         <div class="fl memberIntroduce">
-          <h4><%= member[:name] %></h4>
-          <p><%= member[:honour_brief_introduction] %></p>
-          <% member[:honour_specific].each do |honour_specific| %>
-          <p><%= honour_specific %></p>
+          <h4><%= member_name %></h4>
+          <p><%= member_info[:honour_brief_introduction] %></p>
+          <% member_info[:honour_specific].each do |honour_specific| %>
+            <p><%= honour_specific %></p>
           <% end %>
         </div>
       </li>
@@ -94,6 +109,7 @@
     </div>
   </div>
 </div>
+
 <script>
   var members = $(".teamMembers li").length;
   if(members>4){
@@ -139,6 +155,5 @@
       move2();
     }
   })
-
 </script>
-
+<% end %>
