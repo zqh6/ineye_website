@@ -1,51 +1,90 @@
 <div class="schedulingTabCon padT20">
-            <h4>专家排班表</h4>
-            <table class="schedulingTab">
-                <tr>
-                    <th colspan="20">成都中医大银海眼科医院门诊医师坐诊一览表</th>
-                </tr>
-                <tr>
-                    <td><b>诊室</b></td>
-                    <td><b>时段</b></td>
-                    <td><b>星期一</b></td>
-                    <td><b>星期二</b></td>
-                    <td><b>星期三</b></td>
-                    <td><b>星期四</b></td>
-                    <td><b>星期五</b></td>
-                    <td><b>星期六</b></td>
-                    <td><b>星期日</b></td>
-                </tr>
-                <% Office.alive.each do |office| %>
-                <tr>
-                    <td rowspan="2">
-                        <p><b><%= office.name %></b></p>
-                    </td>
-                    <td>上午</td>
-                    <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'am').first %>
-                    <% ShareEnum.weeks.each do |key, value| %>
-                    <td>
+    <h4 class="schedulingWord">专家排班表</h4>
+    <table class="schedulingTab">
+        <tr>
+            <th colspan="20">成都中医大银海眼科医院门诊医师坐诊一览表</th>
+        </tr>
+        <tr>
+            <td><b>诊室</b></td>
+            <td><b>时段</b></td>
+            <td><b>星期一</b></td>
+            <td><b>星期二</b></td>
+            <td><b>星期三</b></td>
+            <td><b>星期四</b></td>
+            <td><b>星期五</b></td>
+            <td><b>星期六</b></td>
+            <td><b>星期日</b></td>
+        </tr>
+        <% Office.alive.each do |office| %>
+        <tr>
+            <td rowspan="2">
+                <p><b><%= office.name %></b></p>
+            </td>
+            <td>上午</td>
+            <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'am').first %>
+            <% ShareEnum.weeks.each do |key, value| %>
+            <td>
 
-                        <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
-                        <% next if OfficeUserRelation.alive.office_id_is(office.id).user_id_is(scheduling.user_id).blank? %>
-                        <p><b><%= User.find(scheduling.user_id).name %></b></p>
-                        <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
-                        <% end %>
-                    </td>
-                    <% end %>
-                </tr>
-                <tr>
-                    <td>下午</td>
-                    <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'pm').first %>
-                    <% ShareEnum.weeks.each do |key, value| %>
-                    <td>
-                        <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
-                        <p><b><%= User.find(scheduling.user_id).name %></b></p>
-                        <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
-                        <% end %>
-                    </td>
-                    <% end %>
-                </tr>
+                <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
+                <% next if OfficeUserRelation.alive.office_id_is(office.id).user_id_is(scheduling.user_id).blank? %>
+                <p><b><%= User.find(scheduling.user_id).name %></b></p>
+                <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
                 <% end %>
+            </td>
+            <% end %>
+        </tr>
+        <tr>
+            <td>下午</td>
+            <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'pm').first %>
+            <% ShareEnum.weeks.each do |key, value| %>
+            <td>
+                <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
+                <p><b><%= User.find(scheduling.user_id).name %></b></p>
+                <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
+                <% end %>
+            </td>
+            <% end %>
+        </tr>
+        <% end %>
 
-            </table>
+    </table>
+</div>
+
+<div class="doctorClickMask">
+    <div class="doctorDetails flow whiteBg">
+        <div class="fl doctorPortrait flow">
+            <%= image_tag("zj22.jpg") %>
         </div>
+        <div class="fl doctorContent flow">
+            <h5>张大铮</h5>
+            <p class="doctorTitle"><span>副主任医师/医学博士</span></p>
+            <div class="doctorHonor">
+              <p>中国中医药研究促进会糖尿病专委会副秘书长</p>
+              <p>世界中联伦理审查委员会理事</p>
+              <p>中国中医药学会眼科专委会青年委员</p>
+              <p>中国民族医药学会眼科专委会理事</p>
+              <p>四川省糖尿病防治协会理事</p>
+            </div>
+            <div class="doctorGoodAt flow">
+                <span>擅长领域：</span>
+                <p>变态反应（过敏）性疾病，眼睑痉挛（抽动）症，复发性眼部疖肿，眼底疾病（反复出血、渗出等病症）中西医结合治疗。</p>
+            </div>
+            <p class="seePatientTime"><span>坐诊时间:</span>周二下午,具体请以专家门诊时间表为准</p>
+        </div>
+    </div>
+    <div class="doctorIntroduce whiteBg">
+            <p>成都中医药大学毕业，研究方向为五官疾病的中西医临床疗效评价及创新药物研发，提出基于“脾应四季”的变态反应性疾病中西医动态干预理论。</p>
+            <p>现为四川省青年科技创新团队成员，国家糖尿病视网膜病变与青少年近视视功能保护网建设项目川西节点负责人，科技部国际合作计划视网膜图像诊断分析中心建设项目川西节点负责人，省中管局首批青年科技创新基金获得者，成都市科技局科技惠民项目糖尿病眼底筛查技术川西节点负责人，担任中国中医药研究促进会糖尿病专委会副秘书长，世界中联伦理审查委员会理事、中国中医药学会眼科专委会青年委员、中国民族医药学会眼科专委会理事、四川省糖尿病防治协会理事等学术团体职务。参与主研部省级课题10项，发表核心期刊论文19篇，合著论著1部，获全国博士论坛二等奖，所在研究团队获四川省科技进步特等奖、二等奖各1项。</p>
+        </div>
+</div>
+
+<% content_for :script do %>
+<script type="text/javascript">
+    $(function(){
+        $(".doctorClickMask").click(function(){
+        $(this).hide();
+    })
+})
+</script>
+<% end %>
+
