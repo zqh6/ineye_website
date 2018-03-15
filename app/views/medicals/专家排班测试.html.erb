@@ -1,51 +1,78 @@
 <div class="schedulingTabCon padT20">
-            <h4>专家排班表</h4>
-            <table class="schedulingTab">
-                <tr>
-                    <th colspan="20">成都中医大银海眼科医院门诊医师坐诊一览表</th>
-                </tr>
-                <tr>
-                    <td><b>诊室</b></td>
-                    <td><b>时段</b></td>
-                    <td><b>星期一</b></td>
-                    <td><b>星期二</b></td>
-                    <td><b>星期三</b></td>
-                    <td><b>星期四</b></td>
-                    <td><b>星期五</b></td>
-                    <td><b>星期六</b></td>
-                    <td><b>星期日</b></td>
-                </tr>
-                <% Office.alive.each do |office| %>
-                <tr>
-                    <td rowspan="2">
-                        <p><b><%= office.name %></b></p>
-                    </td>
-                    <td>上午</td>
-                    <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'am').first %>
-                    <% ShareEnum.weeks.each do |key, value| %>
-                    <td>
+    <table class="schedulingTab">
+        <tr>
+            <th colspan="20">成都中医大银海眼科医院门诊医师坐诊一览表</th>
+        </tr>
+        <tr>
+            <td><b>诊室</b></td>
+            <td><b>时段</b></td>
+            <td><b>星期一</b></td>
+            <td><b>星期二</b></td>
+            <td><b>星期三</b></td>
+            <td><b>星期四</b></td>
+            <td><b>星期五</b></td>
+            <td><b>星期六</b></td>
+            <td><b>星期日</b></td>
+        </tr>
+        <% Office.alive.each do |office| %>
+        <tr>
+            <td rowspan="2">
+                <p><b><%= office.name %></b></p>
+            </td>
+            <td>上午</td>
+            <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'am').first %>
+            <% ShareEnum.weeks.each do |key, value| %>
+            <td>
 
-                        <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
-                        <% next if OfficeUserRelation.alive.office_id_is(office.id).user_id_is(scheduling.user_id).blank? %>
-                        <p><b><%= User.find(scheduling.user_id).name %></b></p>
-                        <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
-                        <% end %>
-                    </td>
-                    <% end %>
-                </tr>
-                <tr>
-                    <td>下午</td>
-                    <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'pm').first %>
-                    <% ShareEnum.weeks.each do |key, value| %>
-                    <td>
-                        <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
-                        <p><b><%= User.find(scheduling.user_id).name %></b></p>
-                        <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
-                        <% end %>
-                    </td>
-                    <% end %>
-                </tr>
+                <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
+                <% next if OfficeUserRelation.alive.office_id_is(office.id).user_id_is(scheduling.user_id).blank? %>
+                <p><b><%= User.find(scheduling.user_id).name %></b></p>
+                <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
                 <% end %>
+            </td>
+            <% end %>
+        </tr>
+        <tr>
+            <td>下午</td>
+            <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'pm').first %>
+            <% ShareEnum.weeks.each do |key, value| %>
+            <td>
+                <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
+                <p><b><%= User.find(scheduling.user_id).name %></b></p>
+                <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
+                <% end %>
+            </td>
+            <% end %>
+        </tr>
+        <% end %>
+    </table>
 
-            </table>
-        </div>
+    <table class="leave-table">
+      <tr>
+        <th class="title" colspan="20">最近医生停诊信息</th>
+      </tr>
+      <tr>
+        <th>科室</th>
+        <th>医生</th>
+        <th>停诊时间</th>
+      </tr>
+      <% user_id_keys = [] %>
+      <% user_id_hash = {} %>
+      <% AskForLeave.alive.where('day > ?', Time.new.beginning_of_day).each do |leave| %>
+        <tr>
+          <td><%= Office.where(id: leave.office_id).first.try(:name) %></td>
+          <td>
+            <% if user_id_keys.include?(leave.user_id) %>
+              <% user = user_id_hash[leave.user_id.to_s.to_sym] %>
+            <% else %>
+              <% user = User.find(leave.user_id) %>
+              <% user_id_hash[leave.user_id.to_s.to_sym] = user %>
+              <% user_id_keys.push(leave.user_id) %>
+            <% end %>
+            <%= user.name %>
+          </td>
+          <td><%= leave.day.strftime('%Y-%m-%d') %>&nbsp;<%= ShareEnum.am_pms[leave.am_pm_code.to_sym] %></td>
+        </tr>
+      <% end %>
+    </table>
+</div>
