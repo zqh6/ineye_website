@@ -8,7 +8,7 @@ $(function(){
       dataType: "json",
       data: {
         "phone_number": $('.js-phone-number').val(),
-        "find_password": true
+        "function": 'find_password'
       }
     })
       .done(function( data ) {

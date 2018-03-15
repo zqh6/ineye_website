@@ -43,35 +43,35 @@
     <div class="am-form-group">
       <label for="honour_brief_introduction" class="am-u-sm-3 am-form-label"><%= User.human_attribute_name :honour_brief_introduction %> <span class="tpl-form-line-small-title"><%= :honour.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
-        <%= text_area_tag :honour_brief_introduction, @user.honour_brief_introduction %>
+        <%= text_area_tag :honour_brief_introduction, @user.honour_brief_introduction, rows: 4 %>
       </div>
     </div>
 
     <div class="am-form-group">
       <label for="honour_specific" class="am-u-sm-3 am-form-label"><%= User.human_attribute_name :honour_specific %> <span class="tpl-form-line-small-title"><%= :honour.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
-        <%= text_area_tag :honour_specific, @user.honour_specific %>
+        <%= text_area_tag :honour_specific, @user.honour_specific, rows: 4 %>
       </div>
     </div>
 
     <div class="am-form-group">
       <label for="good_at_field" class="am-u-sm-3 am-form-label"><%= User.human_attribute_name :good_at_field %> <span class="tpl-form-line-small-title"><%= :good_at_field.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
-        <%= text_area_tag :good_at_field, @user.good_at_field %>
+        <%= text_area_tag :good_at_field, @user.good_at_field, rows: 4 %>
       </div>
     </div>
 
     <div class="am-form-group">
       <label for="work_time" class="am-u-sm-3 am-form-label"><%= User.human_attribute_name :work_time %> <span class="tpl-form-line-small-title"><%= :work_time.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
-        <%= text_area_tag :work_time, @user.work_time %>
+        <%= text_area_tag :work_time, @user.work_time, rows: 4 %>
       </div>
     </div>
 
     <div class="am-form-group">
       <label for="detailed_introduction" class="am-u-sm-3 am-form-label"><%= User.human_attribute_name :detailed_introduction %> <span class="tpl-form-line-small-title"><%= :introduction.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
-        <%= text_area_tag :detailed_introduction, @user.detailed_introduction %>
+        <%= text_area_tag :detailed_introduction, @user.detailed_introduction, rows: 4 %>
       </div>
     </div>
   </div>

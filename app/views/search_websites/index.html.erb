@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag '//apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css' %>
+
+<div class="middle flow">
+  <div class="newsAll">
+    <% if @collection.present? %>
+    <ul class="newsAllList">
+        <% @collection.each do |collection| %>
+          <li>
+            <%= link_to collection[:link] do %>
+              <p><%= collection[:name] %></p>
+            <% end %>
+          </li>
+        <% end %>
+    </ul>
+    <% else %>
+      未搜索到您需要的内容
+    <% end %>
+    <div class="paginate-container"></div>
+  </div>
+
+</div>
+
+<% content_for :script do %>
+<% end %>
+
+<% content_for :style do %>
+    <%= stylesheet_link_tag 'news/list/新闻列表' %>
+<% end %>
+

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :medicals, only: [:index, :show      ]
   resources :centers,  only: [:index, :show      ]
   resources :experts,  only: [:index, :show      ]
+  resources :doctors
   resources :sciences, only: [:index, :show      ]
   resources :news,     only: [:index, :show, :new]
   resources :kepus,    only: [:index, :show      ]
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   resources :logins
   resources :find_passwords
   resources :sessions
+  resources :search_websites
 
   namespace :exhibition do
     namespace :v1 do
@@ -51,6 +53,7 @@ Rails.application.routes.draw do
     resources :users
     resources :validate_codes
     resources :find_passwords
+    resources :search_websites
   end
 
 end
