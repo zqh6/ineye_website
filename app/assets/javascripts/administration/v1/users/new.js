@@ -10,7 +10,7 @@ $(function(){
 });
 
 function changeStr(strValue) {
-    return strValue.replace(/\r\n/g, '<br/>').replace(/\n/g, '<br/>').replace(/\s/g, ' ');
+    return strValue.replace(/\r\n/g, '</p><p>').replace(/\n/g, '</p><p>').replace(/\s/g, ' ');
 }
 
 function showOrHideUserEditInputs(){
@@ -31,7 +31,7 @@ function submitData(){
   var formDom = $('.js-form');
   var roleCode= $('#role_code').val();
   var requestData = {
-    "name": $('#name').val(),
+    "name": $.trim($('#name').val()),
     "phone_number": $('#phone_number').val(),
     "role_code": roleCode,
     "official_account": $('#official_account').val()
@@ -43,8 +43,8 @@ function submitData(){
       return;
     }
     requestData['office_ids'] = officeIds;
-    requestData['honour_brief_introduction'] = changeStr($('#honour_brief_introduction').val());
-    requestData['honour_specific'] = $('#honour_specific').val();
+    requestData['honour_brief_introduction'] = $('#honour_brief_introduction').val();
+    requestData['honour_specific'] = changeStr($('#honour_specific').val());
     requestData['good_at_field'] = changeStr($('#good_at_field').val());
     requestData['work_time'] = $('#work_time').val();
     requestData['detailed_introduction'] = changeStr($('#detailed_introduction').val());

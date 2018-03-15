@@ -122,6 +122,12 @@ class UserConfiguration < ApplicationRecord
         honour_specific: [
           '四川省千人计划特聘专家'
         ]
+      },
+      '黄霄': {
+        honour_brief_introduction: '主任医师/教授/硕士生导师',
+        honour_specific: [
+          '中国眼免疫学会会员'
+        ]
       }
     }
   end

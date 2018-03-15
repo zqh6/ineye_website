@@ -22,9 +22,7 @@
   </div>
 </div>
 <div class="doctorIntroduce whiteBg">
-  <% @user.detailed_introduction.split('#').each do |detailed_introduction| %>
-    <p><%= detailed_introduction %></p>
-  <% end %>
+  <p><%= @user.detailed_introduction.html_safe %></p>
 </div>
 <ul class="registered flow flParent">
   <li>预约挂号</li>
