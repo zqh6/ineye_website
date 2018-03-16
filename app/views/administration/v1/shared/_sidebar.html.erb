@@ -65,7 +65,7 @@
 				</li>
 
         <li class="sidebar-nav-link">
-          <%= link_to new_administration_v1_scheduling_path(function: 'all_user'), class: options[:list_item]=='user_scheduling' ? 'active' : '' do %>
+          <%= link_to new_administration_v1_scheduling_path(function: 'all_user', day: 'monday'), class: options[:list_item]=='user_scheduling' ? 'active' : '' do %>
               <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 专家排班
           <% end %>
         </li>
