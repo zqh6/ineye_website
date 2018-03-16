@@ -3,6 +3,7 @@
       <a href="/"><%= image_tag("reglogo.png") %></a> <span class="operationtle">用户登录</span>
     </p>
 </div>
+<input type="hidden" class="js-callback" value="<%= params[:callback] %>" />
 <%= form_tag sessions_path, method: :post do |f| %>
 <div class="loginarea mart150">
     <div>

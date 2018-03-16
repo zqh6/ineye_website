@@ -54,6 +54,7 @@ Rails.application.routes.draw do
     resources :validate_codes
     resources :find_passwords
     resources :search_websites
+    resources :sessions
   end
 
 end

@@ -4,9 +4,9 @@
     <div class="fr width1020 eduContentCon whiteBg">
         <ul class="edumsglist downModule">
           <li>
-            <a href="/con_education/viewer?file=/uploads/pdf/疑难病例讨论一起死回生.pdf">
+            <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: '/con_education/viewer?file=/uploads/pdf/疑难病例讨论一起死回生.pdf'}  do %>
               <p>疑难病例讨论一起死回生 <span class="fr">2018-2-25</span></p>
-            </a>
+            <% end %>
           </li>
           <li>
             <a href="/con_education/viewer?file=/uploads/pdf/继教栏目投稿-角膜内皮炎上.pdf">
@@ -16,3 +16,5 @@
         </ul>
     </div>
 </div>
+
+<%= render partial: 'con_education/script' %>

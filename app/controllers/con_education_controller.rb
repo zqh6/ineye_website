@@ -4,9 +4,8 @@ class ConEducationController < ApplicationController
     
     else
       ActiveRecord::Base.transaction do
+        redirect_to logins_path and return if session[:user].blank?
         relative_path = URI.decode(request.fullpath).strip
-        Rails.logger.warn '1111111111111'
-        Rails.logger.warn relative_path.inspect
         @url_count = UrlCount.where(url: relative_path).first
         if @url_count.present?
           @url_count.count = @url_count.count + 1
