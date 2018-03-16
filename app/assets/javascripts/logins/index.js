@@ -14,7 +14,7 @@ $(function(){
       .done(function( data ) {
         if(data['success']){
           $('.js-error-vector').html("&nbsp;");
-          window.location.href = "/";
+          window.location.href = $('.js-callback').val();
         }else{
           $('.js-error-vector').html(JSON.parse(xhr.responseText)['message']);
           return false;

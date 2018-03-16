@@ -14,7 +14,7 @@
         <a href="javascript: void(0);">欢迎您，<%= @login_user.name %></a>
         <a href="javascript: void(0);" class="js-logout">退出</a>
       <% else %>
-        <%= link_to logins_path do %>【登录】<% end %>
+        <%= link_to logins_path(callback: request.fullpath) do %>【登录】<% end %>
         <%= link_to :'【注册】', registers_path %>
       <% end %>
     </div>
@@ -27,16 +27,16 @@
   </div>
   <div class="topNavContainer">
     <ul class="headBg topNav flParent">
-      <li><%= link_to :'网站首页',:homes %></li>
-      <li><%= link_to :'走进银海',home_path(:医院简介) %></li>
-      <li><%= link_to :'医疗服务',medical_path(:专家排班) %></li>
-      <li><%= link_to :'重点科室',:centers %></li>
-      <li><%= link_to :'专家团队',expert_path(:著名专家) %></li>
-      <li><%= link_to :'医疗设备',home_path(:技术设备) %></li>
-      <li><%= link_to :'教学科研',science_path(:学院简介) %></li>
-      <li><%= link_to :'眼健康科普',:kepus %></li>
-      <li><%= link_to :'继续教育',con_education_path(:典型病例) %></li>
-      <li><%= link_to :'新闻中心',:news_index %></li>
+      <li><%= link_to :'网站首页', :homes %></li>
+      <li><%= link_to :'走进银海', home_path(:医院简介) %></li>
+      <li><%= link_to :'医疗服务', medical_path(:专家排班) %></li>
+      <li><%= link_to :'重点科室', :centers %></li>
+      <li><%= link_to :'专家团队', expert_path(:著名专家) %></li>
+      <li><%= link_to :'医疗设备', home_path(:技术设备) %></li>
+      <li><%= link_to :'教学科研', science_path(:学院简介) %></li>
+      <li><%= link_to :'眼健康科普', :kepus %></li>
+      <li><%= link_to :'继续教育', con_education_path(:典型病例) %></li>
+      <li><%= link_to :'新闻中心', :news_index %></li>
     </ul>
   </div>
 </div>
