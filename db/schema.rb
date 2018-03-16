@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180312013146) do
+ActiveRecord::Schema.define(version: 20180316071132) do
 
   create_table "ask_for_leaves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                                              null: false
@@ -23,6 +23,12 @@ ActiveRecord::Schema.define(version: 20180312013146) do
     t.datetime "created_at",                                           null: false
     t.datetime "updated_at",                                           null: false
     t.integer  "office_id",            default: 0,                     null: false
+    t.index ["am_pm_code"], name: "index_ask_for_leaves_on_am_pm_code", using: :btree
+    t.index ["day"], name: "index_ask_for_leaves_on_day", using: :btree
+    t.index ["defunct"], name: "index_ask_for_leaves_on_defunct", using: :btree
+    t.index ["office_id"], name: "index_ask_for_leaves_on_office_id", using: :btree
+    t.index ["state"], name: "index_ask_for_leaves_on_state", using: :btree
+    t.index ["user_id"], name: "index_ask_for_leaves_on_user_id", using: :btree
   end
 
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -82,6 +88,13 @@ ActiveRecord::Schema.define(version: 20180312013146) do
     t.boolean  "defunct",              default: false,                 null: false
     t.datetime "created_at",                                           null: false
     t.datetime "updated_at",                                           null: false
+    t.index ["am_pm_code"], name: "index_office_times_on_am_pm_code", using: :btree
+    t.index ["closed_at"], name: "index_office_times_on_closed_at", using: :btree
+    t.index ["created_at"], name: "index_office_times_on_created_at", using: :btree
+    t.index ["defunct"], name: "index_office_times_on_defunct", using: :btree
+    t.index ["office_id"], name: "index_office_times_on_office_id", using: :btree
+    t.index ["opened_at"], name: "index_office_times_on_opened_at", using: :btree
+    t.index ["state"], name: "index_office_times_on_state", using: :btree
   end
 
   create_table "office_user_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -104,6 +117,9 @@ ActiveRecord::Schema.define(version: 20180312013146) do
     t.boolean  "defunct",              default: false,                 null: false
     t.datetime "created_at",                                           null: false
     t.datetime "updated_at",                                           null: false
+    t.index ["defunct"], name: "index_offices_on_defunct", using: :btree
+    t.index ["name"], name: "index_offices_on_name", using: :btree
+    t.index ["state"], name: "index_offices_on_state", using: :btree
   end
 
   create_table "passwords", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -130,6 +146,24 @@ ActiveRecord::Schema.define(version: 20180312013146) do
     t.boolean  "defunct",                           default: false,                 null: false
     t.datetime "created_at",                                                        null: false
     t.datetime "updated_at",                                                        null: false
+    t.index ["defunct"], name: "index_schedulings_on_defunct", using: :btree
+    t.index ["office_time_id"], name: "index_schedulings_on_office_time_id", using: :btree
+    t.index ["outpatient_service_type"], name: "index_schedulings_on_outpatient_service_type", using: :btree
+    t.index ["state"], name: "index_schedulings_on_state", using: :btree
+    t.index ["user_id"], name: "index_schedulings_on_user_id", using: :btree
+    t.index ["week_code"], name: "index_schedulings_on_week_code", using: :btree
+  end
+
+  create_table "statistics_urls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "url",                                                  null: false
+    t.integer  "count",                default: 0,                     null: false
+    t.string   "state",      limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",            default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",            default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",              default: false,                 null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.index ["url"], name: "index_statistics_urls_on_url", using: :btree
   end
 
   create_table "url_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
