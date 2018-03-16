@@ -105,51 +105,61 @@
     </div>
   </div>
 </div>
+<% end %>
 
-<script>
-  var members = $(".teamMembers li").length;
-  if(members>4){
-    $(".leftBtn").addClass("active");
-    $(".rightBtn").addClass("active");
-  }
-  var rightMoveNum = members-4+((parseInt($(".teamMembers").css("left"))/$(".teamMembers li").width()));
-  var leftMoveNum = 0;
-  function move() {
-    if(rightMoveNum>0){
-      $(".teamMembers").stop(true,true);
-      var nowPos = parseInt($(".teamMembers").css("left"));
-      var displacement =$(".teamMembers li").width();
-      console.log(nowPos+" "+displacement);
-      $(".teamMembers").animate({
-        left:nowPos-displacement
-      })
-      rightMoveNum--;
-      leftMoveNum++;
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :style do %>
+<% end %>
+
+<% content_for :script do %>
+  <% if members.present? %>
+  <script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+      $(".leftBtn").addClass("active");
+      $(".rightBtn").addClass("active");
     }
-    console.log(rightMoveNum);
-  }
-  function move2() {
-    if(leftMoveNum>0){
-      $(".teamMembers").stop(true,true);
-      var nowPos = parseInt($(".teamMembers").css("left"));
-      var displacement =$(".teamMembers li").width();
-      $(".teamMembers").animate({
-        left:nowPos+displacement
-      })
-      rightMoveNum++;
-      leftMoveNum--;
+    var rightMoveNum = members-4+((parseInt($(".teamMembers").css("left"))/$(".teamMembers li").width()));
+    var leftMoveNum = 0;
+    function move() {
+      if(rightMoveNum>0){
+        $(".teamMembers").stop(true,true);
+        var nowPos = parseInt($(".teamMembers").css("left"));
+        var displacement =$(".teamMembers li").width();
+        console.log(nowPos+" "+displacement);
+        $(".teamMembers").animate({
+          left:nowPos-displacement
+        })
+        rightMoveNum--;
+        leftMoveNum++;
+      }
+      console.log(rightMoveNum);
     }
-    console.log(leftMoveNum);
-  }
-  $(".rightBtn").click(function() {
-    if(rightMoveNum>0){
-      move();
+    function move2() {
+      if(leftMoveNum>0){
+        $(".teamMembers").stop(true,true);
+        var nowPos = parseInt($(".teamMembers").css("left"));
+        var displacement =$(".teamMembers li").width();
+        $(".teamMembers").animate({
+          left:nowPos+displacement
+        })
+        rightMoveNum++;
+        leftMoveNum--;
+      }
+      console.log(leftMoveNum);
     }
-  })
-  $(".leftBtn").click(function() {
-    if(leftMoveNum>0){
-      move2();
-    }
-  })
-</script>
+    $(".rightBtn").click(function() {
+      if(rightMoveNum>0){
+        move();
+      }
+    })
+    $(".leftBtn").click(function() {
+      if(leftMoveNum>0){
+        move2();
+      }
+    })
+  </script>
+  <% end %>
 <% end %>
