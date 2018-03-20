@@ -17,7 +17,7 @@ class Administration::Dosser::V1::SchedulingsController < Administration::Dosser
           user = User.find(user_info[:user_id])
           render_conflict message: '用户不存在' and return if user.blank?
           render_conflict message: user.name.to_s+'在'+ShareEnum.weeks[params[:week].to_sym].to_s+'的'+Office.find(office_time.office_id).try(:name).to_s+ShareEnum.am_pms[office_time.am_pm_code.to_sym]+'已经排班，不能再次添加' and return if Scheduling.alive.office_time_id_is(office_time.id).user_id_is(user.id).week_code_is(params[:week]).present?
-          scheduling = Scheduling.new office_time_id: office_time.id, user_id: user.id, week_code: params[:week], outpatient_service_type: user_info[:outpatient_service_type]
+          scheduling = Scheduling.new office_time_id: office_time.id, office_id: office_time.office_id, am_pm_code: office_time.am_pm_code, user_id: user.id, week_code: params[:week], outpatient_service_type: user_info[:outpatient_service_type]
           if scheduling.save
             collection.push({sheduling_id: scheduling.id, user_name: user.name})
           else

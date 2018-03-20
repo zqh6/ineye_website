@@ -65,11 +65,19 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
       render_conflict message: '用户被删除或禁用，无法编辑' if user.defunct==true
       user.assign_attributes user_attributes
       if user.save
+        old_office_ids = user.get_offices.collect{|i| i.id}
         OfficeUserRelation.user_id_is(user.id).delete_all
-        params[:office_ids].each do |office_id|
-          office_user_relation =OfficeUserRelation.new office_id: office_id, user_id: user.id
-          render_conflict message: error_message(office_user_relation) and return unless office_user_relation.save
-        end if params[:office_ids].present?
+        if params[:office_ids].present?
+          params[:office_ids].each do |office_id|
+            office_user_relation =OfficeUserRelation.new office_id: office_id, user_id: user.id
+            render_conflict message: error_message(office_user_relation) and return unless office_user_relation.save
+          end
+          new_office_ids = params[:office_ids]
+        else
+          new_office_ids = []
+        end
+        removed_office_ids = old_office_ids - new_office_ids
+        Scheduling.where('office_id in (?)', removed_office_ids).user_id_is(user.id).delete_all
         render_ok and return
       else
         render_conflict message: error_message(user) and return

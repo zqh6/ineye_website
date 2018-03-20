@@ -40,6 +40,9 @@ class Administration::V1::OfficesController < Administration::V1::PrivilegedCont
   def destroy
     @office = Office.find(params[:id])
     @office.soft_destroy!
+    OfficeTime.where(office_id: @office.id).each do |office_time|
+      office_time.soft_destroy!
+    end
     redirect_to administration_v1_offices_path
   end
 

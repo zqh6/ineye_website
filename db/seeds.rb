@@ -92,6 +92,19 @@ def init_office
 
 end
 
-#此方法只执行一次，部署新的服务的时候请需要注释，但尽量不要提交
+#此方法只执行一次，部署新的服务的时候执行一次即可
 #init_office
 
+def deal_with_scheduling
+  ActiveRecord::Base.transaction do
+    Scheduling.all.each do |scheduling|
+      office_time = OfficeTime.find(scheduling.office_time_id)
+      scheduling.office_id = office_time.office_id
+      scheduling.am_pm_code = office_time.am_pm_code
+      scheduling.save!
+    end
+  end
+end
+
+#此方法只执行一次，部署新的服务的时候执行一次即可
+deal_with_scheduling
