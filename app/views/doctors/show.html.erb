@@ -85,7 +85,7 @@
           <% member_info = UserConfiguration.doctors[member_name.to_sym]%>
       <li>
         <div class="fl teamMemberPhoto">
-          <%= link_to image_tag('doctors/'+member_name+'.jpg'), doctor_path(member_user.present? ? member_user.try(:id) : '~') %>
+          <%= link_to image_tag('doctors/'+member_name+'.jpg'), member_user.present? ? doctor_path(member_user.try(:id)) : ('javascript: void(0);') %>
         </div>
         <div class="fl memberIntroduce">
           <h4><%= member_name %></h4>
