@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180316071132) do
+ActiveRecord::Schema.define(version: 20180320031021) do
 
   create_table "ask_for_leaves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                                              null: false
@@ -146,7 +146,11 @@ ActiveRecord::Schema.define(version: 20180316071132) do
     t.boolean  "defunct",                           default: false,                 null: false
     t.datetime "created_at",                                                        null: false
     t.datetime "updated_at",                                                        null: false
+    t.integer  "office_id",                                                         null: false
+    t.string   "am_pm_code",                                                        null: false
+    t.index ["am_pm_code"], name: "index_schedulings_on_am_pm_code", using: :btree
     t.index ["defunct"], name: "index_schedulings_on_defunct", using: :btree
+    t.index ["office_id"], name: "index_schedulings_on_office_id", using: :btree
     t.index ["office_time_id"], name: "index_schedulings_on_office_time_id", using: :btree
     t.index ["outpatient_service_type"], name: "index_schedulings_on_outpatient_service_type", using: :btree
     t.index ["state"], name: "index_schedulings_on_state", using: :btree

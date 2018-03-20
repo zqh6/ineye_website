@@ -20,27 +20,27 @@
                 <p><b><%= office.name %></b></p>
             </td>
             <td>上午</td>
-            <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'am').first %>
+            <% office_scheduling = @all_scheduling[office.id.to_s.to_sym] %>
             <% ShareEnum.weeks.each do |key, value| %>
             <td>
-                <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
-                <% next if OfficeUserRelation.alive.office_id_is(office.id).user_id_is(scheduling.user_id).blank? %>
-                <p><b class="js-user-name doctor-name" data-user-id="<%= scheduling.user_id %>"><% user = User.find(scheduling.user_id) %><%= user.name %></b></p>
-                <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
+                <% next if office_scheduling.blank? || office_scheduling[:am].blank? || office_scheduling[:am][key.to_sym].blank? %>
+                <% office_scheduling[:am][key.to_sym].each do |scheduling_info| %>
+                <p><b class="js-user-name doctor-name" data-user-id="<%= scheduling_info[:user_id] %>"><%= scheduling_info[:user_name] %></b></p>
+                  <p><% if [:vip1, :vip2].include?(scheduling_info[:outpatient_service_type].to_sym)%><%= scheduling_info[:outpatient_service_type_desc] %><% end %></p>
                 <% end %>
             </td>
             <% end %>
         </tr>
         <tr>
             <td>下午</td>
-            <% office_time = OfficeTime.alive.where(office_id: office.id).where(am_pm_code: 'pm').first %>
             <% ShareEnum.weeks.each do |key, value| %>
-            <td>
-                <% Scheduling.alive.office_time_id_is(office_time.id).week_code_is(key.to_s).each do |scheduling| %>
-                <p><b class="js-user-name doctor-name" data-user-id="<%= scheduling.user_id %>"><% user = User.find(scheduling.user_id) %><%= user.name %></b></p>
-                <p><% if [:vip1, :vip2].include?(scheduling.outpatient_service_type.to_sym)%><%= ShareEnum.outpatient_services[scheduling.outpatient_service_type.to_sym] %><% end %></p>
-                <% end %>
-            </td>
+                <td>
+                  <% next if office_scheduling.blank? || office_scheduling[:pm].blank? || office_scheduling[:pm][key.to_sym].blank? %>
+                  <% office_scheduling[:pm][key.to_sym].each do |scheduling_info| %>
+                      <p><b class="js-user-name doctor-name" data-user-id="<%= scheduling_info[:user_id] %>"><%= scheduling_info[:user_name] %></b></p>
+                      <p><% if [:vip1, :vip2].include?(scheduling_info[:outpatient_service_type].to_sym)%><%= scheduling_info[:outpatient_service_type_desc] %><% end %></p>
+                  <% end %>
+                </td>
             <% end %>
         </tr>
         <% end %>
