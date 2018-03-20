@@ -18,11 +18,11 @@ $(function(){
       }
 
     })
-    var doctorDate = [];
+
     //选择功能和替换排班内容  data为后台ajax传过来的排班信息
     function getVal(dom,data){
       var doctor = !data?[]:data;
-      doctorDate =[];
+      var doctorDate =[];
       for(var l=0;l<$(dom).find(".doctors").length;l++){
         for(var i =0;i< $(dom).find(".doctors").eq(l).find("input[type=checkbox]").length;i++){
           if($(dom).find(".doctors").eq(l).find("input[type=checkbox]").eq(i).is(":checked")){
@@ -49,11 +49,15 @@ $(function(){
       if(doctor.length==0){
         $($(dom).parents(".doctorListCon").find("p")).html("请选择排班医生 <i class='am-selected-icon am-icon-caret-down fr'></i>")
       }
-      return doctor;
-
+      return doctor={
+        doctorQ:doctor,
+        doctorH:doctorDate
+      };
+      // 返回的数据只有在下面点击按钮保存数据时使用
     }
     //保存数据
     $(".saveDoctor").click(function(){
+
       $(this).parents(".doctorListCon").find(".doctorList").hide()
        $.ajax({
                 url: '/administration-api/v1/schedulings',
@@ -62,7 +66,7 @@ $(function(){
                 dataType: "json",
                 data: JSON.stringify({
                     office_time_id: $(this).parents(".workingExperts").prev().attr("data-office-time-id"),
-                    users: doctorDate,
+                    users: getVal($(this).parents(".doctorList")).doctorH,
                     week:$(this).parents(".am-tab-panel").attr("data-week-key")
                 })
             })
