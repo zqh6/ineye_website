@@ -80,7 +80,7 @@
   <div class="fl teamMemberWords">团 队 成 员</div>
   <div class="teamContainer" >
     <ul class="teamMembers fr flParent flow" style="">
-      <%= members.each do |member_name| %>
+      <% members.each do |member_name| %>
           <% member_user = User.role_code_is('common_user').name_is(member_name).first%>
           <% member_info = UserConfiguration.doctors[member_name.to_sym]%>
       <li>
