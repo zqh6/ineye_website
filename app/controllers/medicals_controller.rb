@@ -44,6 +44,6 @@ class MedicalsController < ApplicationController
     render layout: "content", :action => params[:id]
   end
   def index
-    render '专家排班'
+    render '专家排班2'
   end
 end
