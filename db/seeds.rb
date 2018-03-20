@@ -107,4 +107,4 @@ def deal_with_scheduling
 end
 
 #此方法只执行一次，部署新的服务的时候执行一次即可
-deal_with_scheduling
+#deal_with_scheduling
