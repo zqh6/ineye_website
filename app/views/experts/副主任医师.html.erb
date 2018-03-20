@@ -15,7 +15,8 @@
         <p>副主任医师/医学硕士</p>
         <p class="expertsGoodAt"><span>擅长领域：</span></p>
         <p>长期从事青光眼、白内障和眼底病等临床工作，在青光眼的早期诊断和治疗上有丰富的临床经验。擅长各种抗青光眼手术、白内障人工晶体植入术、复杂眼底病的诊断和眼底出血性疾病中西医结合治疗。</p>
-        <div><%= link_to "查看详情",expert_path(:潘学会),:class =>'seeDetail' %></div>
+        <% doctor = User.role_code_is('common_user').name_is('潘学会').first %>
+        <div><%= link_to "查看详情", (doctor.present? ? doctor_path(doctor.try(:id)) : expert_path(:潘学会)),:class =>'seeDetail' %></div>
       </div>
     </li>
     <!--潘学会-->
@@ -29,7 +30,8 @@
         <p>副主任医师/副教授/医学博士</p>
         <p class="expertsGoodAt"><span>擅长领域：</span></p>
         <p>擅长Smart千频全激光、Smile全飞秒等各类屈光手术，激光近视手术、青少年近视综合防控、视疲劳防治。</p>
-        <div><%= link_to "查看详情",expert_path(:周春阳主任医师),:class =>'seeDetail' %></div>
+        <% doctor = User.role_code_is('common_user').name_is('周春阳').first %>
+        <div><%= link_to "查看详情", (doctor.present? ? doctor_path(doctor.try(:id)) : expert_path(:周春阳主任医师)),:class =>'seeDetail' %></div>
       </div>
     </li>
     <!--周春阳-->
@@ -43,7 +45,8 @@
         <p>副主任医师/医学硕士</p>
         <p class="expertsGoodAt"><span>擅长领域：</span></p>
         <p>擅长眼底疾病的诊治、外路视网膜脱离复位手术、玻璃体切割手术、白内障超声乳化术、眼外伤救治以及眼底激光治疗。</p>
-        <div><%= link_to "查看详情",expert_path(:王国平),:class =>'seeDetail' %></div>
+        <% doctor = User.role_code_is('common_user').name_is('王国平').first %>
+        <div><%= link_to "查看详情", (doctor.present? ? doctor_path(doctor.try(:id)) : expert_path(:王国平)),:class =>'seeDetail' %></div>
       </div>
     </li>
     <!--王国平-->
@@ -57,7 +60,8 @@
         <p>副主任医师/医学博士</p>
         <p class="expertsGoodAt"><span>擅长领域：</span></p>
         <p>变态反应（过敏）性疾病，眼睑痉挛（抽动）症，复发性眼部疖肿，眼底疾病（反复出血、渗出等病症）中西医结合治疗。</p>
-        <div><%= link_to "查看详情",expert_path(:张大铮),:class =>'seeDetail' %></div>
+        <% doctor = User.role_code_is('common_user').name_is('张大铮').first %>
+        <div><%= link_to "查看详情", (doctor.present? ? doctor_path(doctor.try(:id)) : expert_path(:张大铮)),:class =>'seeDetail' %></div>
       </div>
     </li>
     <!-- 张大铮 -->
@@ -71,7 +75,8 @@
         <p>副主任医师</p>
         <p class="expertsGoodAt"><span>擅长领域：</span></p>
         <p>心血管内科各种疾病的诊断与治疗。</p>
-        <div><%= link_to "查看详情",expert_path(:朱玉芳),:class =>'seeDetail' %></div>
+        <% doctor = User.role_code_is('common_user').name_is('朱玉芳').first %>
+        <div><%= link_to "查看详情", (doctor.present? ? doctor_path(doctor.try(:id)) : expert_path(:朱玉芳)),:class =>'seeDetail' %></div>
       </div>
     </li>
     <!-- 朱玉芳 -->
