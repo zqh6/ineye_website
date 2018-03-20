@@ -50,7 +50,7 @@ class User < ApplicationRecord
     if self.role_code.to_sym == :outer_user
       self.unit_name
     elsif [:user_admin, :sys_admin, :common_user].include?(self.role_code.to_sym) && self.official_account=='is'
-      '银海眼科'
+      '成都中医大银海眼科医院'
     end
   end
 end
