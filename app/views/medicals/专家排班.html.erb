@@ -63,7 +63,7 @@
             </tr>
             <% user_id_keys = [] %>
             <% user_id_hash = {} %>
-            <% AskForLeave.alive.where('day >= ?', Time.new.beginning_of_day).each do |leave| %>
+            <% AskForLeave.alive.where('day >= ?', Time.new.beginning_of_day).reorder('day ASC').each do |leave| %>
               <tr>
                 <td><%= Office.where(id: leave.office_id).first.try(:name) %></td>
                 <td class="js-user-name" data-user-id="<%= leave.user_id %>">
