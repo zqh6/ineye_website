@@ -43,6 +43,7 @@ zh-CN:
         detailed_introduction: 详细介绍
         office_id: 所属科室
         official_account: 官方账户
+        user_order: 用户按大排序
 
       password:
         old_password:  旧密码

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180320031021) do
+ActiveRecord::Schema.define(version: 20180328012418) do
 
   create_table "ask_for_leaves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                                              null: false
@@ -158,6 +158,18 @@ ActiveRecord::Schema.define(version: 20180320031021) do
     t.index ["week_code"], name: "index_schedulings_on_week_code", using: :btree
   end
 
+  create_table "statistics_urls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "url",                                                  null: false
+    t.integer  "count",                default: 0,                     null: false
+    t.string   "state",      limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",            default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",            default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",              default: false,                 null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.index ["url"], name: "index_statistics_urls_on_url", using: :btree
+  end
+
   create_table "url_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "url",                     default: "",                    null: false
     t.string   "suffix_params",           default: "",                    null: false
@@ -192,6 +204,7 @@ ActiveRecord::Schema.define(version: 20180320031021) do
     t.text     "detailed_introduction",     limit: 65535
     t.string   "unit_name"
     t.string   "official_account",                                                        null: false
+    t.integer  "user_order",                              default: 0
     t.index ["create_user_id"], name: "index_users_on_create_user_id", using: :btree
     t.index ["name"], name: "index_users_on_name", using: :btree
     t.index ["phone_number"], name: "index_users_on_phone_number", using: :btree

@@ -43,6 +43,7 @@ function submitData(){
       return;
     }
     requestData['office_ids'] = officeIds;
+    requestData['user_order'] = $('#user_order').val();
     requestData['honour_brief_introduction'] = $('#honour_brief_introduction').val();
     requestData['honour_specific'] = changeStr($('#honour_specific').val());
     requestData['good_at_field'] = changeStr($('#good_at_field').val());

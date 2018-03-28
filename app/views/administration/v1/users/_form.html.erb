@@ -41,6 +41,13 @@
     </div>
 
     <div class="am-form-group">
+      <label for="phone_number" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :user_order %> <span class="tpl-form-line-small-title"><%= :phone_number.to_s.titleize %></span></label>
+      <div class="am-u-sm-9">
+        <%= number_field_tag :user_order, @user.user_order, class: 'tpl-form-input', max: 10000 %>
+      </div>
+    </div>
+
+    <div class="am-form-group">
       <label for="honour_brief_introduction" class="am-u-sm-3 am-form-label"><%= User.human_attribute_name :honour_brief_introduction %> <span class="tpl-form-line-small-title"><%= :honour.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
         <%= text_area_tag :honour_brief_introduction, @user.honour_brief_introduction, rows: 4 %>
