@@ -39,8 +39,6 @@ class MedicalsController < ApplicationController
 
       @all_scheduling[scheduling.office_id.to_s.to_sym][scheduling.am_pm_code.to_s.to_sym][scheduling.week_code.to_s.to_sym].push(today_scheduling_info)
     end
-    Rails.logger.warn 'wwwwwwwwwwwwwwwwwwwwww'
-    Rails.logger.warn @all_scheduling.inspect
     render layout: "content", :action => params[:id]
   end
   def index
