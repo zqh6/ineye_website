@@ -106,4 +106,6 @@ Rails.application.config.assets.precompile += %w(
   find_passwords/set_new_password.js
 
   logins/index.js
+
+  smileface.png
 )
