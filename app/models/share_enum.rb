@@ -60,6 +60,19 @@ class ShareEnum < ApplicationRecord
     is: '是'
   }
 
+  enum con_education_article_classifies: {
+    special_lecture: '专题讲座',
+    typical_case: '典型病例',
+    difficult_case: '疑难病例',
+    surgical_video: '手术视频'
+  }
+
+  enum article_types: {
+    text: '文字',
+    pdf: 'PDF',
+    video: '视频'
+  }
+
   def self.form_options(enum_type)
     h = {}
     ShareEnum.try(enum_type.to_sym).each do |key, value|

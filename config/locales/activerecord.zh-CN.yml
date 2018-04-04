@@ -12,6 +12,7 @@ zh-CN:
       new: 新闻
       user: 用户
       password: 密码
+      con_education_article: 继续教育文章
 
     attributes:
       new:
@@ -49,3 +50,7 @@ zh-CN:
         old_password:  旧密码
         new_password:  新密码
         new_password2: 新密码
+
+      con_education_article:
+        article_classify: 文章归属
+        article_type: 文章媒体类型

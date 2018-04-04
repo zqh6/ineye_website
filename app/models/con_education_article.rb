@@ -1,0 +1,2 @@
+class ConEducationArticle < ApplicationRecord
+end

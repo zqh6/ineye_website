@@ -1,0 +1,58 @@
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'new_new'}} %>
+
+  <!-- 内容区域 -->
+  <div class="tpl-content-wrapper">
+
+    <div class="row-content am-cf">
+      <div class="row">
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+          <div class="widget am-cf">
+            <div class="widget-head am-cf">
+              <div class="widget-title am-fl">新增继续教育文章</div>
+              <div class="widget-function am-fr">
+                <a href="javascript:;" class="am-icon-paperclip"></a>
+              </div>
+            </div>
+            <div class="widget-body am-fr">
+              <%= render partial: 'form' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<% content_for :title do %>
+    管理平台-继续教育
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :body_attr do %>data-type="widgets"<% end %>
+
+<% content_for :style do %>
+    <%= stylesheet_link_tag 'administration/v1/new/new' %>
+<% end %>
+
+<% content_for :script do %>
+    <%= javascript_include_tag 'administration/v1/shared/kindeditor/kindeditor' %>
+    <%= javascript_include_tag 'administration/v1/shared/kindeditor/zh' %>
+    <script type="text/javascript">
+      KindEditor.ready(function(K) {
+        editor = K.create('#editor', {
+          themeType : 'simple'
+        });
+      });
+    </script>
+    <%= javascript_include_tag 'administration/v1/con_educations/new' %>
+<% end %>
