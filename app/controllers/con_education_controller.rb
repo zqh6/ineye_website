@@ -16,7 +16,7 @@ class ConEducationController < ApplicationController
         end
       end
     end
-    render :action => params[:id] and return
+    render  layout: "content",:action => params[:id] and return
   end
 end
 
