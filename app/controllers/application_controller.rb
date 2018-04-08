@@ -10,9 +10,8 @@ class ApplicationController < ActionController::Base
       redirect_to 'http://m.ineyehospital.com/' and return
     end
 =end
-
     @login_user = nil
-    @login_user = User.included_by(session[:user]['id']).first if session[:user].present?
+    @login_user = User.included_by(session[:user_id]).first if session[:user_id].present?
   end
 
 end

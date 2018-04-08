@@ -5,7 +5,7 @@ class AllApi::SessionsController < AllApi::PresentationController
   layout :nil
 
   def show
-    if session[:user].present?
+    if session[:user_id].present?
       render_ok and return
     else
       render_conflict message: '请登录后再操作' and return

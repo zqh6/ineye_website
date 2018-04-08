@@ -7,10 +7,10 @@ class Administration::V1::PrivilegedController < ::ApplicationController
   before_action :validate_login
 
   def validate_login
-    if session[:user].blank?
+    if session[:user_id].blank?
       redirect_to new_administration_v1_session_path and return
     else
-      @login_user = User.find(session[:user]['id'])
+      @login_user = User.find(session[:user_id])
     end
   end
 

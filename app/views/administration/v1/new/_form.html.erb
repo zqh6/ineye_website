@@ -16,7 +16,7 @@
   </div>
   <% end %>
 
-  <% if @new.user_id==session[:user]['id'] %>
+  <% if @new.user_id==@login_user.id %>
   <div class="am-form-group">
     <label for="user-name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span>状态 <span class="tpl-form-line-small-title"><%= :title.to_s.titleize %></span></label>
     <div class="am-u-sm-9">

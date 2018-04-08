@@ -10,7 +10,7 @@ class AllApi::PresentationController < ActionController::Base
 
   def validate_login
     @login_user = nil
-    @login_user = User.included_by(session[:user]['id']).first if session[:user].present?
+    @login_user = User.included_by(session[:user_id]).first if session[:user_id].present?
   end
 
 end
