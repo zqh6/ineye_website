@@ -67,6 +67,7 @@
 <script type="text/javascript">
 $(function(){
     var url =window.location.search.substr((window.location.search.indexOf("=")+1),window.location.search.length);
+    console.log(url);
     $(".edumsglist li").each(function(){
         var doctor = $(this).attr("doctor");
         if(doctor != url){
