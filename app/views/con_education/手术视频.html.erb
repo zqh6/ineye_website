@@ -4,7 +4,7 @@
     <div class="fr width1020 eduContentCon whiteBg">
         <div class="whiteBg downModule minh400">
           <ul class="edumsglist">
-            <% if params[:doctor]=='刘文' %>
+            <% if params[:doctor]=='刘文' || params[:doctor].blank? %>
             <li data-doctor='刘文'>
                 <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:Terson综合征27G免缝合玻璃体切除术)}  do %>
                     <p><span>1.刘文</span>Terson综合征27G免缝合玻璃体切除术 <span class="fr">2018-2-25</span></p>
@@ -51,7 +51,7 @@
                 <% end %>
             </li>
             <% end %>
-            <% if params[:doctor]=='陈小凤' %>
+            <% if params[:doctor]=='陈小凤' || params[:doctor].blank? %>
             <li data-doctor='陈小凤'>
                 <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:青白联合手术)}  do %>
                     <p><span>10.陈小凤</span>青光眼白内障联合手术 <span class="fr">2018-4-3</span></p>
