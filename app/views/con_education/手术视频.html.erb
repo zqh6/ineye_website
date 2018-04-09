@@ -66,8 +66,8 @@
 <% content_for :script do %>
 <script type="text/javascript">
 $(function(){
-    var url =window.location.search.substr((window.location.search.indexOf("=")+1),window.location.search.length);
-    console.log(url);
+    // var url =window.location.search.substr((window.location.search.indexOf("=")+1),window.location.search.length);
+    var url = "刘文";
     $(".edumsglist li").each(function(){
         var doctor = $(this).attr("doctor");
         if(doctor != url){
