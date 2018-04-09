@@ -80,6 +80,21 @@
       </div>
     </li>
     <!-- 朱玉芳 -->
+    <!-- 李蓓 -->
+    <li>
+      <div class="photoBorder fl">
+        <%= image_tag("/doctors/李蓓.jpg") %>
+      </div>
+      <div class="expertSynopsis fl">
+        <h5>李蓓</h5>
+        <p>副主任医师</p>
+        <p class="expertsGoodAt"><span>擅长领域：</span></p>
+        <p>眼部整形美容手术，以及甲状腺相关眼病矫正术、眼睑内/外翻矫正术、眼睑肿瘤切除术、眼眶肿瘤切除术、眼眶骨折整复术、眼睑外伤畸形矫正术、胬肉切除联合角膜缘干细胞移植术、内/外路泪囊鼻腔吻合术、内窥镜下经蝶筛径路眶减压术、内窥镜下经蝶筛径路视神经减压术等。</p>
+        <% doctor = User.role_code_is('common_user').name_is('李蓓').first %>
+        <div><%= link_to "查看详情", (doctor.present? ? doctor_path(doctor.try(:id)) : doctors_path(:72)),:class =>'seeDetail' %></div>
+      </div>
+    </li>
+    <!-- 李蓓 -->
   </ul>
 <% content_for :script do %>
   <%= javascript_include_tag 'shared/jquery-2.1.4.min' %>
