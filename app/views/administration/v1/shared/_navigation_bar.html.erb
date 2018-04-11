@@ -23,7 +23,7 @@
 			<ul>
 				<!-- 欢迎语 -->
 				<li class="am-text-sm tpl-header-navbar-welcome">
-					<a href="javascript:;">欢迎你, <span><%= session[:user]['name'] %></span> </a>
+					<a href="javascript:;">欢迎你, <span><% if @login_user.present? %><%= @login_user.name %><% end %></span> </a>
 				</li>
 
 				<!-- 新邮件 -->
@@ -151,7 +151,7 @@
 		</div>
 		<div class="am-modal-footer">
 			<span class="am-modal-btn" data-am-modal-cancel>取消</span>
-			<span class="am-modal-btn js-logout-confirm" data-am-modal-confirm data-user-id="<%= session[:user]['id'] %>">确定</span>
+			<span class="am-modal-btn js-logout-confirm" data-am-modal-confirm data-user-id="<%= @login_user.id %>">确定</span>
 		</div>
 	</div>
 </div>

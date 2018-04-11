@@ -7,7 +7,7 @@
 			</div>
 			<span class="user-panel-logged-in-text">
         <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
-        <%= session[:user]['name'] %>
+        <%= @login_user.name %>
       </span>
 		</div>
 	</div>
@@ -92,7 +92,7 @@
 
 				<% unless ShareEnum.roles.first.first=='sys_admin' %>
 					<li class="sidebar-nav-link">
-						<%= link_to edit_administration_v1_password_path(session[:user]['id']), class: options[:list_item]=='password_update' ? 'active' : '' do %>
+						<%= link_to edit_administration_v1_password_path(@login_user.id), class: options[:list_item]=='password_update' ? 'active' : '' do %>
 								<span class="am-icon-angle-right sidebar-nav-link-logo"></span> 修改密码
 						<% end %>
 					</li>

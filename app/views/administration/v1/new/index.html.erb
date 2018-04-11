@@ -74,7 +74,7 @@
 														<%= link_to new.scan_rails_path.blank? ? administration_v1_new_path(new.id) : new.scan_rails_path do %>
 															<i class="am-icon-newspaper-o"></i> 详情
 														<% end %>
-														<% if session[:user]['id'] == new.user_id %>
+														<% if @login_user.id == new.user_id %>
 															<%= link_to edit_administration_v1_new_path(new.id) do %>
 																<i class="am-icon-pencil"></i> 编辑
 															<% end %>

@@ -1,10 +1,10 @@
 class ConEducationController < ApplicationController
   def show
     if ['专题讲座', '典型病例', '疑难病例', '手术视频'].include?(params[:id])
-    
+
     else
       ActiveRecord::Base.transaction do
-        redirect_to logins_path and return if session[:user].blank?
+        redirect_to logins_path and return if session[:user_id].blank?
         relative_path = URI.decode(request.fullpath).strip
         @url_count = UrlCount.where(url: relative_path).first
         if @url_count.present?
@@ -16,6 +16,7 @@ class ConEducationController < ApplicationController
         end
       end
     end
-    render layout: "content",:action => params[:id] and return
+    render  layout: "content",:action => params[:id] and return
   end
 end
+

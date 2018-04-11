@@ -4,51 +4,60 @@
     <div class="fr width1020 eduContentCon whiteBg">
         <div class="whiteBg downModule minh400">
           <ul class="edumsglist">
-            <li>
+            <% if params[:doctor]=='刘文' || params[:doctor].blank? %>
+            <li data-doctor='刘文'>
                 <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:Terson综合征27G免缝合玻璃体切除术)}  do %>
-                    <p><span>1.</span>Terson综合征27G免缝合玻璃体切除术 <span class="fr">2018-2-25</span></p>
+                    <p><span>1.刘文</span>Terson综合征27G免缝合玻璃体切除术 <span class="fr">2018-2-25</span></p>
                 <% end %>
             </li>
-            <li>
+            <li data-doctor='刘文'>
                 <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:分支静脉阻塞新生血管27G免缝合玻璃体切除术)}  do %>
-                    <p><span>2.</span>分支静脉阻塞新生血管27G免缝合玻璃体切除术 <span class="fr">2018-2-25</span></p>
+                    <p><span>2.刘文</span>分支静脉阻塞新生血管27G免缝合玻璃体切除术 <span class="fr">2018-2-25</span></p>
                 <% end %>
             </li>
-            <li>
+            <li data-doctor='刘文'>
                 <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:右眼裂孔性视网膜脱离硅压术)}  do %>
-                    <p><span>3.</span>右眼裂孔性视网膜脱离硅压术 <span class="fr">2018-2-25</span></p>
+                    <p><span>3.刘文</span>右眼裂孔性视网膜脱离硅压术 <span class="fr">2018-2-25</span></p>
                 <% end %>
             </li>
-            <li>
+            <li data-doctor='刘文'>
                 <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:经结膜面缝合27G玻璃体手术)}  do %>
-                    <p><span>4.</span>经结膜面缝合27G玻璃体手术 <span class="fr">2018-2-25</span></p>
+                    <p><span>4.刘文</span>经结膜面缝合27G玻璃体手术 <span class="fr">2018-2-25</span></p>
                 <% end %>
             </li>
-            <li>
+            <li data-doctor='刘文'>
                 <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:裂孔性视网膜脱离外路显微手术硅压术)}  do %>
-                    <p><span>5.</span>裂孔性视网膜脱离外路显微手术硅压术 <span class="fr">2018-2-25</span></p>
+                    <p><span>5.刘文</span>裂孔性视网膜脱离外路显微手术硅压术 <span class="fr">2018-2-25</span></p>
                 <% end %>
             </li>
-            <li>
+            <li data-doctor='刘文'>
                 <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:裂孔性视网膜脱离全玻璃体切除术)}  do %>
-                    <p><span>6.</span>裂孔性视网膜脱离全玻璃体切除术 <span class="fr">2018-2-25</span></p>
+                    <p><span>6.刘文</span>裂孔性视网膜脱离全玻璃体切除术 <span class="fr">2018-2-25</span></p>
                 <% end %>
             </li>
-            <li>
+            <li data-doctor='刘文'>
                 <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:裂孔性视网膜脱离环扎和硅胶加压术)}  do %>
-                    <p><span>7.</span>裂孔性视网膜脱离环扎和硅胶加压术 <span class="fr">2018-3-7</span></p>
+                    <p><span>7.刘文</span>裂孔性视网膜脱离环扎和硅胶加压术 <span class="fr">2018-3-7</span></p>
                 <% end %>
             </li>
-            <li>
+            <li data-doctor='刘文'>
                 <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:一种取硅油的简易方法)}  do %>
-                    <p><span>8.</span>一种取硅油的简易方法 <span class="fr">2018-3-19</span></p>
+                    <p><span>8.刘文</span>一种取硅油的简易方法 <span class="fr">2018-3-19</span></p>
                 <% end %>
             </li>
-            <li>
+            <li data-doctor='刘文'>
                 <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:右眼玻璃体积血和视网膜下出血)}  do %>
-                    <p><span>9.</span>右眼玻璃体积血和视网膜下出血 <span class="fr">2018-3-19</span></p>
+                    <p><span>9.刘文</span>右眼玻璃体积血和视网膜下出血 <span class="fr">2018-3-19</span></p>
                 <% end %>
             </li>
+            <% end %>
+            <% if params[:doctor]=='陈小凤' || params[:doctor].blank? %>
+            <li data-doctor='陈小凤'>
+                <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:青白联合手术)}  do %>
+                    <p><span>10.陈小凤</span>青光眼白内障联合手术 <span class="fr">2018-4-3</span></p>
+                <% end %>
+            </li>
+            <% end %>
           </ul>
         </div>
     </div>
