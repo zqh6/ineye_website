@@ -84,6 +84,17 @@
             </li>
             <% end %>
 
+            <% if params[:doctor]=='刘文' || params[:doctor].blank? %>
+
+            <li>
+                <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_path(:右眼泡状裂孔性视网膜脱离外路显微手术)}  do %>
+                    <p><span>14.刘文</span>右眼泡状裂孔性视网膜脱离外路显微手术 <span class="fr">2018-4-11</span></p>
+                <% end %>
+            </li>
+
+
+            <% end %>
+
           </ul>
         </div>
     </div>
