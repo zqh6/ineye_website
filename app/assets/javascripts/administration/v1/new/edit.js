@@ -16,6 +16,7 @@ function submitData(){
 			"classify": $('#classify').val(),
       "aim_at_platform": $('#aim_at_platform').val(),
 			"key_words": $('#key_words').val(),
+      'tags': $('#tag').val(),
       "scan_rails_path": $('#scan_rails_path').val(),
       "state": $('#state').val(),
 			"content": editor.html()

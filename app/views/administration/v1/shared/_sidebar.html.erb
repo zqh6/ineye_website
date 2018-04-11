@@ -30,12 +30,6 @@
 			</a>
 			<ul class="sidebar-nav sidebar-nav-sub" <% if ['new_new', 'new_index'].include? options[:list_item] %>style="display: block;"<% end %>>
 				<li class="sidebar-nav-link">
-					<%= link_to new_administration_v1_new_path, class: options[:list_item]=='new_new' ? 'active' : '' do %>
-            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 新增
-					<% end %>
-				</li>
-
-				<li class="sidebar-nav-link">
 					<%= link_to administration_v1_new_index_path, class: options[:list_item]=='new_index' ? 'active' : '' do %>
             <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 列表
 					<% end %>

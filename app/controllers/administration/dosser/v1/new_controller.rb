@@ -1,14 +1,26 @@
 class Administration::Dosser::V1::NewController < Administration::Dosser::V1::PresentationController
 
+  include ErrorMessage
+
   def create
     ActiveRecord::Base.transaction do
       new = New.new new_attributes
       new.user = @login_user
-      if new.save!
+      if new.save
+        tags = params[:tags].to_s.strip
+        if tags.present?
+          render_conflict message: '标签不要乱输入，Okay?' and return if (/\A(;|；)+\z/.match(tags)).present?
+          tag_arr = tags.split(/[,，]/)
+          tag_arr.each do |tag_name|
+            if tag_name.present?
+              tag_relation = TagRelation.new relation_type: New.name.underscore, relation_id: new.id, tag_name: tag_name
+              tag_relation.save!
+            end
+          end if tag_arr.present?
+        end
         render_ok and return
       else
-        Rails.logger.warn new.errors.inspect
-        render_bad_request and return
+        render_conflict message: error_message(new) and return
       end
     end
   end
@@ -18,10 +30,22 @@ class Administration::Dosser::V1::NewController < Administration::Dosser::V1::Pr
       new = New.included_by(params[:id]).first
       render_conflict message: '找不到新闻' and return if new.blank?
       new.assign_attributes new_attributes
-      if new.save!
+      if new.save
+        tags = params[:tags].to_s.strip
+        TagRelation.where(relation_type: New.name.underscore).where(relation_id: new.id).delete_all
+        if tags.present?
+          render_conflict message: '标签不要乱输入，Okay?' and return if (/\A(;|；)+\z/.match(tags)).present?
+          tag_arr = tags.split(/[,，]/)
+          tag_arr.each do |tag_name|
+            if tag_name.present?
+              tag_relation = TagRelation.new relation_type: New.name.underscore, relation_id: new.id, tag_name: tag_name
+              tag_relation.save!
+            end
+          end if tag_arr.present?
+        end
         render_ok and return
       else
-        render_bad_request and return
+        render_conflict message: error_message(new) and return
       end
     end
   end

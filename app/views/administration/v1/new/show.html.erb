@@ -80,6 +80,13 @@
 									<label class="am-u-sm-9 field-value"><%= @new.key_words %></label>
 								</div>
 
+                <div class="am-form-group">
+                  <label class="am-u-sm-3 am-form-label">
+                    <%= New.human_attribute_name :tag %> <span class="tpl-form-line-small-title"><%= :tag.to_s.titleize %></span>：
+                  </label>
+                  <label class="am-u-sm-9 field-value"><%= TagRelation.get_tags_by(object: @new) %></label>
+                </div>
+
 								<div class="am-form-group">
 									<label class="am-u-sm-3 am-form-label">
 										<%= New.human_attribute_name :content %> <span class="tpl-form-line-small-title"><%= :content.to_s.titleize %></span>：
