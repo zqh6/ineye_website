@@ -29,6 +29,7 @@ zh-CN:
         aim_at_platform: 针对平台
         scan_rails_path: 路径
         state: 状态
+        tag: 标签
 
       user:
         name:         姓名
@@ -52,5 +53,14 @@ zh-CN:
         new_password2: 新密码
 
       con_education_article:
-        article_classify: 文章归属
-        article_type: 文章媒体类型
+        article_classify: 归属板块
+        article_type: 媒体类型
+        static_url: 静态相对地址
+        title: 标题
+        content: 正文
+        pdf_url: PDF文件
+        video_url: 视频路径
+        published_at: 发表日期
+        tag: 标签
+        created_at: 创建时间
+        id: 编号

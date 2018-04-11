@@ -57,6 +57,7 @@ Rails.application.routes.draw do
     resources :find_passwords
     resources :search_websites
     resources :sessions
+    resources :uploads
   end
 
 end

@@ -1,0 +1,125 @@
+
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'con_education_article_index'}} %>
+
+  <!-- 内容区域 -->
+  <div class="tpl-content-wrapper">
+    <div class="row-content am-cf">
+      <div class="row">
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+          <div class="widget am-cf">
+            <div class="widget-head am-cf">
+              <div class="widget-title  am-cf"><%= ConEducationArticle.model_name.human %><%= t :list %></div>
+
+
+            </div>
+            <div class="widget-body  am-fr">
+
+              <div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+                <div class="am-form-group">
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <%= link_to new_administration_v1_con_education_path, class: 'am-btn am-btn-default am-btn-success button-include-link' do %><span class="am-icon-plus"></span> 新增<% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <%= form_tag administration_v1_con_educations_path, method: :get do %>
+                  <div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+                    <div class="am-form-group tpl-table-list-select">
+                      <%= select_tag :article_classify, options_for_select({'所有类别' => '0'}.merge(ShareEnum.form_options('con_education_article_classifies')), params[:article_classify].present? ? params[:article_classify] : 0), include_blank: false, class: '', "data-am-selected"=> "{searchBox: 1, btnSize: 'sm'}", style: "display: none;" %>
+                    </div>
+                  </div>
+                  <div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
+                    <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
+                      <%= text_field_tag :title, params[:title], class: 'am-form-field', placeholder: '标题' %>
+                      <span class="am-input-group-btn">
+	                    <%= button_tag type: :submit, class: 'am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search' do %><% end %>
+										</span>
+                    </div>
+                  </div>
+              <% end %>
+              <div class="am-u-sm-12">
+                <table width="100%" class="am-table am-table-compact am-table-striped tpl-table-black " id="example-r">
+                  <thead>
+                  <tr>
+                    <th><%= ConEducationArticle.human_attribute_name :id %></th>
+                    <th><%= ConEducationArticle.human_attribute_name :title %></th>
+                    <th><%= ConEducationArticle.human_attribute_name :article_classify %></th>
+                    <th><%= ConEducationArticle.human_attribute_name :article_type %></th>
+                    <th><%= ConEducationArticle.human_attribute_name :tag %></th>
+                    <th><%= ConEducationArticle.human_attribute_name :published_at %></th>
+                    <th><%= ConEducationArticle.human_attribute_name :created_at %></th>
+                    <th><%= t :operate %></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <% if @con_education_articles.present? %>
+                      <% @con_education_articles.each do |con_education_article| %>
+                          <tr class="gradeX">
+                            <td><%= con_education_article.id %></td>
+                            <td><%= con_education_article.title %></td>
+                            <td><%= ShareEnum.con_education_article_classifies[con_education_article.article_classify.to_sym] %></td>
+                            <td><%= ShareEnum.article_types[con_education_article.article_type.to_sym] %></td>
+                            <td><%= TagRelation.get_tags_by object: con_education_article %></td>
+                            <td><%= con_education_article.published_at.present? ? (l con_education_article.published_at, format: :human_date) : '' %></td>
+                            <td><%= l con_education_article.created_at, format: :human_date %></td>
+                            <td>
+                              <div class="tpl-table-black-operation">
+                                <%= link_to con_education_article.static_url.blank? ? administration_v1_con_education_path(con_education_article.id) : con_education_article.static_url do %>
+                                    <i class="am-icon-newspaper-o"></i> 详情
+                                <% end %>
+                                <%= link_to edit_administration_v1_con_education_path(con_education_article.id) do %>
+                                    <i class="am-icon-pencil"></i> 编辑
+                                <% end %>
+                                <%= link_to 'javascript: void(0);', class: 'tpl-table-black-operation-del js-delete-one-new', 'data-new-id' => con_education_article.id do %>
+                                    <i class="am-icon-trash"></i> 删除
+                                <% end %>
+                              </div>
+                            </td>
+                          </tr>
+                      <% end %>
+                  <% end %>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="am-u-lg-12 am-cf aaa">
+                <div class="am-fr">
+                  <%= will_paginate @con_education_articles %>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<% content_for :title do %>
+    管理平台-继续教育
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :body_attr do %>data-type="widgets"<% end %>
+
+<% content_for :style do %>
+    <%= stylesheet_link_tag 'administration/v1/con_educations/index' %>
+<% end %>
+
+<% content_for :script do %>
+    <%= javascript_include_tag 'administration/v1/con_educations/index' %>
+<% end %>

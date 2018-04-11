@@ -68,9 +68,9 @@ class ShareEnum < ApplicationRecord
   }
 
   enum article_types: {
+    video: '视频',
     text: '文字',
-    pdf: 'PDF',
-    video: '视频'
+    pdf: 'PDF'
   }
 
   def self.form_options(enum_type)
@@ -80,5 +80,5 @@ class ShareEnum < ApplicationRecord
     end
     h
   end
-  
+
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180403052038) do
+ActiveRecord::Schema.define(version: 20180411075027) do
 
   create_table "ask_for_leaves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                                              null: false
@@ -45,20 +45,20 @@ ActiveRecord::Schema.define(version: 20180403052038) do
   end
 
   create_table "con_education_articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "article_classify",                                           null: false
-    t.string   "article_type",                                               null: false
+    t.string   "article_classify",                                                    null: false
+    t.string   "article_type",                                                        null: false
     t.string   "static_url"
-    t.string   "title",                                                      null: false
-    t.string   "content"
+    t.string   "title",                                                               null: false
+    t.text     "content",          limit: 4294967295
     t.string   "pdf_url"
     t.string   "video_url"
-    t.datetime "published_at",                                               null: false
-    t.string   "state",            limit: 1, default: "C",                   null: false
-    t.datetime "opened_at",                  default: '1970-01-01 00:00:00', null: false
-    t.datetime "closed_at",                  default: '3000-01-01 00:00:00', null: false
-    t.boolean  "defunct",                    default: false,                 null: false
-    t.datetime "created_at",                                                 null: false
-    t.datetime "updated_at",                                                 null: false
+    t.datetime "published_at"
+    t.string   "state",            limit: 1,          default: "C",                   null: false
+    t.datetime "opened_at",                           default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",                           default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                             default: false,                 null: false
+    t.datetime "created_at",                                                          null: false
+    t.datetime "updated_at",                                                          null: false
     t.index ["article_classify"], name: "index_con_education_articles_on_article_classify", using: :btree
     t.index ["article_type"], name: "index_con_education_articles_on_article_type", using: :btree
     t.index ["published_at"], name: "index_con_education_articles_on_published_at", using: :btree
@@ -180,6 +180,33 @@ ActiveRecord::Schema.define(version: 20180403052038) do
     t.index ["week_code"], name: "index_schedulings_on_week_code", using: :btree
   end
 
+  create_table "statistics_urls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "url",                                                  null: false
+    t.integer  "count",                default: 0,                     null: false
+    t.string   "state",      limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",            default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",            default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",              default: false,                 null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.index ["url"], name: "index_statistics_urls_on_url", using: :btree
+  end
+
+  create_table "tag_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "relation_type",                                           null: false
+    t.string   "relation_id",                                             null: false
+    t.string   "tag_name",                                                null: false
+    t.string   "state",         limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",               default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",               default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                 default: false,                 null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
+    t.index ["relation_id"], name: "index_tag_relations_on_relation_id", using: :btree
+    t.index ["relation_type"], name: "index_tag_relations_on_relation_type", using: :btree
+    t.index ["tag_name"], name: "index_tag_relations_on_tag_name", using: :btree
+  end
+
   create_table "url_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "url",                     default: "",                    null: false
     t.string   "suffix_params",           default: "",                    null: false
@@ -192,18 +219,6 @@ ActiveRecord::Schema.define(version: 20180403052038) do
     t.datetime "created_at",                                              null: false
     t.datetime "updated_at",                                              null: false
     t.index ["url"], name: "index_url_counts_on_url", using: :btree
-  end
-
-  create_table "statistics_urls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "url",                                                  null: false
-    t.integer  "count",                default: 0,                     null: false
-    t.string   "state",      limit: 1, default: "C",                   null: false
-    t.datetime "opened_at",            default: '1970-01-01 00:00:00', null: false
-    t.datetime "closed_at",            default: '3000-01-01 00:00:00', null: false
-    t.boolean  "defunct",              default: false,                 null: false
-    t.datetime "created_at",                                           null: false
-    t.datetime "updated_at",                                           null: false
-    t.index ["url"], name: "index_statistics_urls_on_url", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
