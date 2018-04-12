@@ -1,0 +1,22 @@
+<div class="doctorContainer" id="0">
+  <%= render 'doctors/doctor_top' %>
+</div>
+<ul class="flParent flow expertsListContainer">
+  <% @doctors.each do |doctor| %>
+  <li>
+    <div class="photoBorder fl">
+      <%= image_tag('doctors/'+doctor.name.strip+'.jpg') %>
+    </div>
+    <div class="expertSynopsis fl">
+      <h5><%= doctor.name %></h5>
+      <p><%= doctor.honour_brief_introduction %></p>
+      <p class="expertsGoodAt"><span>擅长领域：</span></p>
+      <p><%= doctor.good_at_field.html_safe %></p>
+      <div><%= link_to doctor_path(doctor.id), class: 'seeDetail' do %>查看详情<%end%></div>
+    </div>
+  </li>
+  <% end %>
+</ul>
+
+<% content_for :script do %>
+<% end %>

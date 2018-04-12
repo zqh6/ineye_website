@@ -73,6 +73,14 @@ class ShareEnum < ApplicationRecord
     pdf: 'PDF'
   }
 
+  enum doctor_levels: {
+    famous_expert: '著名专家',
+    chief_physician: '主任医师',
+    deputy_chief_physician: '副主任医师',
+    attending_doctor: '主治医师',
+    in_hospital_doctor: '住院医师'
+  }
+
   def self.form_options(enum_type)
     h = {}
     ShareEnum.try(enum_type.to_sym).each do |key, value|
