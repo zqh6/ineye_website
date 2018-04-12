@@ -78,17 +78,19 @@
     </li>
     <li>
       <b></b>
-      <a href="javascript:;">
+      <% doctor = User.alive.role_code_is('common_user').name_is('李蓓').first %>
+      <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
         <i class="icon_eye icon_eye11"></i>
         <p>泪器病</p>
-      </a>
+      <% end %>
     </li>
     <li>
       <b></b>
-      <a href="javascript:;">
+      <% doctor = User.alive.role_code_is('common_user').name_is('李蓓').first %>
+      <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
         <i class="icon_eye icon_eye12"></i>
         <p>眼眶疾病</p>
-      </a>
+      <% end %>
     </li>
     <li>
       <b></b>
@@ -99,10 +101,10 @@
     </li>
     <li>
       <b></b>
-      <a href="javascript:;">
+      <%= link_to center_path(:中医简介) do %>
         <i class="icon_eye icon_eye14"></i>
         <p>结膜病</p>
-      </a>
+      <% end %>
     </li>
     <li>
       <b></b>
@@ -120,10 +122,11 @@
     </li>
     <li>
       <b></b>
-      <a href="javascript:;">
+      <% doctor = User.alive.role_code_is('common_user').name_is('王国平').first %>
+      <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
         <i class="icon_eye icon_eye17"></i>
         <p>眼外伤</p>
-      </a>
+      <% end %>
     </li>
     <li>
       <b></b>
@@ -203,6 +206,9 @@
     <p class="newTitle">通知公告 </p>
     <ul class="topList noticeList">
       <li>
+        <%= link_to :'2018年眼科学院硕士研究生（统招）拟录取名单' ,news_path(:'2018年眼科学院硕士研究生统招拟录取名单')%>
+      </li>
+      <li>
         <%= link_to :'关于成都中医药大学眼科学院2018年硕士研究生复试办法更正通知' ,news_path(:关于成都中医药大学眼科学院2018年硕士研究生复试办法更正通知
 )%>
       </li>
@@ -224,7 +230,7 @@
         <%= link_to :'成都中医大银海眼科医院物料制作工程项目' ,news_path(:材料制作工程招标公告)%>
       </li>
       <li><%= link_to :'成都中医药大学眼科学院 成都中医大银海眼科医院  招聘信息',news_path(:成都中医大银海眼科医院招聘信息) %></li>
-      <li><%= link_to :'成都中医药大学眼科学院/成都中医大银海眼科医院 2018年博士后招聘启事',news_path(:成都中医大银海眼科医院2018年博士后招聘启事) %></li>
+      <li><%#= link_to :'成都中医药大学眼科学院/成都中医大银海眼科医院 2018年博士后招聘启事',news_path(:成都中医大银海眼科医院2018年博士后招聘启事) %></li>
       <li><%#= link_to :'成都中医药大学眼科学院管理类聘用人员招聘公告',news_path(:成都中医药大学眼科学院管理类聘用人员招聘公告) %></li>
       <li><%#= link_to :'关于调整门诊流程及增设VIP服务的通知',news_path(:关于调整门诊流程及增设VIP服务的通知) %></li>
       <li><%#= link_to :'眼科学院2017年推免试攻读硕士学位研究生办法',news_path(:成都中医药大学眼科学院2017年接收推荐免试攻读硕士学位研究生办法) %></li>
@@ -250,6 +256,7 @@
       <li>
         <%= link_to image_tag('doctors/'+doctor.name.strip+'.jpg'), doctor_path(doctor.id) %>
         <div class="IntroduceMask">
+
           <h5><%= doctor.name %></h5>
           <% honour_brief_arr = doctor.honour_brief_introduction.split('/') %>
           <p><% if honour_brief_arr.count>=1 %><%= honour_brief_arr[0] %><% end %></p>
@@ -729,20 +736,31 @@
     });
 
     var doctorDate={
-        index:1,
+        index:0,
         listNum:Math.ceil($(".doctorList li").length/10)
     }
-    $(".doctorList li").hide().eq(doctorDate.index*10).prevAll().show();
+    // $(".doctorList li").hide().eq(doctorDate.index*10).prevAll().show();
+
+    showDetail();
+    function showDetail(){
+      $(".doctorList li").show().eq(doctorDate.index*10).prevAll().hide();
+      $(".doctorList li").eq((doctorDate.index+1)*10-1).nextAll().hide();
+    }
+
     $(".changeExperts").click(function(){
-        if(doctorDate.index == doctorDate.listNum){
-            doctorDate.index = 0;
-            $(".doctorList li").show().eq((doctorDate.index+1)*10-1).nextAll().hide();
-        }else {
-            $(".doctorList li").show().eq(doctorDate.index*10).prevAll().hide();
-            $(".doctorList li").eq((doctorDate.index+1)*10-1).nextAll().hide();
-        }
         doctorDate.index++;
+        if(doctorDate.index == doctorDate.listNum-1){
+          console.log("==");
+          console.log(doctorDate.index*10);
+            showDetail();
+            doctorDate.index = -1;
+        }else {
+          console.log("!=")
+            showDetail();
+        }
+
     })
+
     $(".honorTitle li").hover(function(){
         $(this).addClass("active").siblings().removeClass("active");
         $(this).parents(".plate").find(".honorplate").hide().eq($(this).index()).show();

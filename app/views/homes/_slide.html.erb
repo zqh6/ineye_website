@@ -2,17 +2,13 @@
 <div class='banner-box  marB10 main'>
     <ul class='img'>
         <li>
-            <a href="javascript:;">
-                <%= image_tag("banne_yhtd.jpg") %>
-            </a>
+            <%= link_to image_tag("banne_yhtd.jpg"),expert_path(:著名专家) %>
         </li>
         <li>
             <%= link_to image_tag("banner_xbgh.png"),news_path(:成都中医药大学附属银海眼科医院关于增设便民门诊及门诊挂号费调整的通知) %>
         </li>
         <li>
-            <a href="javascript:;">
-                <%= image_tag("banner-doctors.jpg") %>
-            </a>
+            <%= link_to image_tag("banner-doctors.jpg"),science_path(:学院简介) %>
         </li>
         <li>
             <%= link_to image_tag("banner_cj.jpg"),news_path(195, from: 'db') %>
