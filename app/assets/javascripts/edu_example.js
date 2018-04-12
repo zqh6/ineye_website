@@ -43,12 +43,13 @@
                         +"<div class='commentSubBtn fr userComment' >"
                         +"<img src= '../../assets/comment_before.png'  onclick=\"addChiComment("+ data[i].id +")\" /></div></div></div>"
                     childComment[i]+= "<div class= 'childComments' >"
+                    console.log(data[i].sons);
                     for(var s =0;s<data[i].sons.length;s++){
 
                         if(data[i].sons.length>0){
                             childComment[i]+="<div class='comContent' parent_id = "+ data[i].sons[s].id +" >"
                                 +"<p class='identity'>"+ data[i].sons[s].created_at
-                                +"<span>"+(data[i].creator_name==null ? '游客' : data[i].creator_name) +"</span>"+ "<span class=\""+(data[i].official_account=='is' ? "official-account" : "")+"\">"+(data[i].creator_unit_name!=null ? data[i].creator_unit_name : "")+"</span></p>"
+                                +"<span>"+(data[i].sons[s].creator_name==null ? '游客' : data[i].sons[s].creator_name) +"</span>"+ "<span class=\""+(data[i].official_account=='is' ? "official-account" : "")+"\">"+(data[i].sons[s].creator_unit_name!=null ? data[i].sons[s].creator_unit_name : "")+"</span></p>"
                                 +"<div class='flow'>"
                                 +"<p class='fl'>"+ data[i].sons[s].content +"</p>"
                                 +"<div class='commentSubBtn fr userComment' >"
