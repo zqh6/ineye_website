@@ -1,6 +1,6 @@
 class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::PresentationController
 
-  include RandomUtil, ErrorMessage
+  include RandomUtil
 
   def index
     if params[:function] == 'users_in_office_time'
@@ -49,6 +49,7 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
         hashed_content = Digest::SHA512.hexdigest(params[:phone_number][3, 8] + pepper_content)
         password = Password.new user_id: user.id, pepper_content: pepper_content, hashed_content: hashed_content
         if password.save
+          TagRelation.tag_name_is(user.name.to_s.strip).update_all tag_flag: 'doctor_name'
           render_ok and return
         else
           render_conflict message: error_message(user) and return
@@ -69,7 +70,6 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
         new_office_ids = []
         OfficeUserRelation.user_id_is(user.id).delete_all
         if params[:office_ids].present?
-
           params[:office_ids].each do |office_id|
             office_user_relation =OfficeUserRelation.new office_id: office_id, user_id: user.id
             render_conflict message: error_message(office_user_relation) and return unless office_user_relation.save
@@ -78,6 +78,7 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
         end
         removed_office_ids = old_office_ids - new_office_ids
         Scheduling.where('office_id in (?)', removed_office_ids).user_id_is(user.id).delete_all
+        TagRelation.tag_name_is(user.name.to_s.strip).update_all tag_flag: 'doctor_name'
         render_ok and return
       else
         render_conflict message: error_message(user) and return
@@ -86,7 +87,7 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
   end
 
   def user_attributes
-    params.permit(:name, :phone_number, :role_code, :honour_brief_introduction, :honour_specific, :good_at_field, :work_time, :detailed_introduction, :official_account, :user_order)
+    params.permit(:name, :phone_number, :role_code, :honour_brief_introduction, :honour_specific, :good_at_field, :work_time, :detailed_introduction, :official_account, :user_order, :doctor_level)
   end
 
   private :user_attributes

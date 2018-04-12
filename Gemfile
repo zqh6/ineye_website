@@ -70,3 +70,6 @@ gem 'will_paginate-bootstrap'
 gem 'swagger_engine'
 gem 'yettings'
 gem 'china_sms'
+gem 'aliyun-oss-sdk', '~> 0.1.8'
+gem "carrierwave", "0.8.0"
+gem 'carrierwave-aliyun', '~> 0.7.0'

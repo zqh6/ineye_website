@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :sciences, only: [:index, :show      ]
   resources :news,     only: [:index, :show, :new]
   resources :kepus,    only: [:index, :show      ]
-  resources :con_education,    only: [:index, :show      ]
+  resources :con_educations, only: [:index, :show ]
   resources :registers
   resources :logins
   resources :find_passwords
@@ -36,6 +36,7 @@ Rails.application.routes.draw do
       resources :offices,    only: [:new, :edit, :index, :show, :update, :create, :destroy ]
       resources :schedulings, only: [:new, :edit, :index, :create, :update]
       resources :leavings
+      resources :con_educations
     end
   end
 
@@ -46,6 +47,7 @@ Rails.application.routes.draw do
     resources :ask_for_leaves, only: [:create, :destroy, :update]
 
     resources :schedulings
+    resources :con_educations
   end
 
   scope '/all-api', module: 'all_api', as: 'all_api' do
@@ -55,6 +57,7 @@ Rails.application.routes.draw do
     resources :find_passwords
     resources :search_websites
     resources :sessions
+    resources :uploads
   end
 
 end

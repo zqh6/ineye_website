@@ -1,0 +1,100 @@
+<div class="flow conEducation">
+    <%= render 'con_educations/edu_left' %>
+    <div class="fr width1020 eduContentCon">
+        <div class="whiteBg">
+            <ul class="flow flParent educationList">
+                <li class="on">正文</li>
+                <li>照片</li>
+                <li>文献</li>
+                <li>视频</li>
+            </ul>
+        </div>
+        <!--第一块 正文内容-->
+        <div class="edModule show">
+            <div class="whiteBg">
+                <div class="caseContent">
+                    <h3>标题: <span class="marl30">典型病例讨论一<small>（裂孔性视网膜脱离1例）</small></span></h3>
+                    <div class="marb10">
+                        <p>病情描述:</p>
+                        <p class="marl50">患者男性，48岁。因“右眼下方黑影遮挡伴视力下降3天”入院。既往双眼近视约-2.0DS。查右眼视力：裸眼0.25，戴镜0.15，矫正：+2.50DS/-2.00DC×85°=0.1，眼压10mmHg，晶体C1N1P0混浊，余前节（-）。玻璃体混浊（++），视网膜9:30-3:00泡状脱离，累及黄斑区，12:30钟点位见一马蹄形裂孔，大小约1*1/3DD，距角膜缘约16mm。余视网膜平伏，未见渗出及出血（如图1）。左眼视力：裸眼0.2，戴镜0.4，矫正：-0.75DS/-2.50DC×100°=1.2：眼球前段及眼底未见明显异常。</p>
+                        <div class="caseimgs">
+                            <%= image_tag("con_xgz_1.jpg") %>
+                            <p>图1 右眼广域眼底照相，上方视网膜泡状脱离，箭头指视网膜裂孔</p>
+                        </div>
+                        <div class="caseimgs">
+                            <%= image_tag("con_xgz_2.jpg") %>
+                            <p>图2  OCT显示右眼黄斑视网膜脱离</p>
+                        </div>
+                    </div>
+                    <p>诊断 :<span class="marl50">1.右眼裂孔性视网膜脱离（PVR B级）；2. 右眼年龄相关性白内障；3.双眼近视</span></p>
+                    <p>讨论:<span class="marl50">手术方式及效果？</span></p>
+                </div>
+                <div class="caseContent">
+                  <%= render 'con_educations/count' %>
+                </div>
+            </div>
+
+            <%= render 'con_educations/comment' %>
+        </div>
+        <!--第一块 正文内容-->
+        <!--第二块 照片内容-->
+        <div class="edModule">
+            <div class="whiteBg  minh400">
+                <!-- <ul class="tz-gallery flParent flow">
+                    <li class="thumbnail">
+                        <a class="lightbox" href="/assets/con_xgz_1.jpg">
+                            <%= image_tag("con_xgz_1.jpg.jpg") %>
+                        </a>
+                        <div class="caption">
+                            <p></p>
+                        </div>
+                    </li>
+                    <li class="thumbnail">
+                        <a class="lightbox" href="/assets/con_xgz_2.jpg">
+                            <%= image_tag("con_xgz_2.jpg.jpg") %>
+                        </a>
+                        <div class="caption">
+                            <p></p>
+                        </div>
+                    </li>
+
+                </ul> -->
+            </div>
+
+        </div>
+        <!--第二块 照片内容-->
+        <!--第三块 文档资料-->
+        <div class="whiteBg edModule downModule">
+            <div class="whiteBg  minh400">
+            </div>
+        </div>
+        <!--第三块 文档资料-->
+
+        <!--第四块 视频-->
+        <div class="edModule">
+            <div class="whiteBg downModule minh400">
+                <!-- <video id="my-video" class="video-js" controls preload="auto" poster="m.png" data-setup="{}">
+                    <source src="http://ugcws.video.gtimg.com/y0565q3isic.mp4?sdtfrom=v1010&guid=121ad212d6f264b585599729c3222582&vkey=5CB875CE5CF70D46EB50E082EA95172738F185058BD1467DFD2FD25198FEA2C39CEE38A77313B090FDF3EE779E34A569F5AFF4040DF7F7C079AB76972BD04FFCB3EAC780B764439B3C6FB53B0A7D2D8EC3F003C9B280B986798921FEBF546E8CB517D595690FFE17748592301A18227334D1BAB3504686B4">
+                        To view this video please enable JavaScript, and consider upgrading to a web browser that
+                        <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+
+                </video> -->
+            </div>
+            <div>
+            </div>
+        </div>
+        <!--第四块 视频-->
+    </div>
+
+</div>
+<% content_for :style do %>
+<%#= stylesheet_link_tag 'video-js' %>
+<% end %>
+<% content_for :script do %>
+<%= javascript_include_tag 'baguetteBox.min' %>
+<%#= javascript_include_tag 'video.min' %>
+<%= javascript_include_tag 'edu_example' %>
+
+
+
+<% end %>

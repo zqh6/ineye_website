@@ -1,0 +1,2 @@
+module ConEducationsHelper
+end

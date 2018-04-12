@@ -2,7 +2,7 @@ class Administration::Dosser::V1::PresentationController < ActionController::Bas
 
   clear_helpers
 
-  include Repres::Dosser::Concerns::ResourcePresentation, ControllerConcerns
+  include Repres::Dosser::Concerns::ResourcePresentation, ErrorMessage
 
   layout :nil
 

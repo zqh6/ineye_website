@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180328012418) do
+ActiveRecord::Schema.define(version: 20180412051256) do
 
   create_table "ask_for_leaves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                                              null: false
@@ -42,6 +42,28 @@ ActiveRecord::Schema.define(version: 20180328012418) do
     t.boolean  "defunct",                       default: false, null: false
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
+  end
+
+  create_table "con_education_articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "article_classify",                                                    null: false
+    t.string   "article_type",                                                        null: false
+    t.string   "static_url"
+    t.string   "title",                                                               null: false
+    t.text     "content",          limit: 4294967295
+    t.string   "pdf_url"
+    t.string   "video_url"
+    t.datetime "published_at"
+    t.string   "state",            limit: 1,          default: "C",                   null: false
+    t.datetime "opened_at",                           default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",                           default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                             default: false,                 null: false
+    t.datetime "created_at",                                                          null: false
+    t.datetime "updated_at",                                                          null: false
+    t.index ["article_classify"], name: "index_con_education_articles_on_article_classify", using: :btree
+    t.index ["article_type"], name: "index_con_education_articles_on_article_type", using: :btree
+    t.index ["published_at"], name: "index_con_education_articles_on_published_at", using: :btree
+    t.index ["static_url"], name: "index_con_education_articles_on_static_url", using: :btree
+    t.index ["title"], name: "index_con_education_articles_on_title", using: :btree
   end
 
   create_table "dictionaries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -158,6 +180,23 @@ ActiveRecord::Schema.define(version: 20180328012418) do
     t.index ["week_code"], name: "index_schedulings_on_week_code", using: :btree
   end
 
+  create_table "tag_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "relation_type",                                           null: false
+    t.string   "relation_id",                                             null: false
+    t.string   "tag_name",                                                null: false
+    t.string   "state",         limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",               default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",               default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                 default: false,                 null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
+    t.string   "tag_flag"
+    t.index ["relation_id"], name: "index_tag_relations_on_relation_id", using: :btree
+    t.index ["relation_type"], name: "index_tag_relations_on_relation_type", using: :btree
+    t.index ["tag_flag"], name: "index_tag_relations_on_tag_flag", using: :btree
+    t.index ["tag_name"], name: "index_tag_relations_on_tag_name", using: :btree
+  end
+
   create_table "url_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "url",                     default: "",                    null: false
     t.string   "suffix_params",           default: "",                    null: false
@@ -193,7 +232,9 @@ ActiveRecord::Schema.define(version: 20180328012418) do
     t.string   "unit_name"
     t.string   "official_account",                                                        null: false
     t.integer  "user_order",                              default: 0
+    t.string   "doctor_level"
     t.index ["create_user_id"], name: "index_users_on_create_user_id", using: :btree
+    t.index ["doctor_level"], name: "index_users_on_doctor_level", using: :btree
     t.index ["name"], name: "index_users_on_name", using: :btree
     t.index ["phone_number"], name: "index_users_on_phone_number", using: :btree
     t.index ["user_id"], name: "index_users_on_user_id", using: :btree

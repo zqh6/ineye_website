@@ -49,6 +49,7 @@ function submitData(){
     requestData['good_at_field'] = changeStr($('#good_at_field').val());
     requestData['work_time'] = $('#work_time').val();
     requestData['detailed_introduction'] = changeStr($('#detailed_introduction').val());
+    requestData['doctor_level'] = $('#doctor_level').val();
   }
   console.log(requestData);
 	$.ajax({

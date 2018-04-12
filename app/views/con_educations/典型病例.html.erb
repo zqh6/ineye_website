@@ -1,0 +1,25 @@
+<%= image_tag("/assets/education-banner.jpg",:class => 'marT10') %>
+<div class="flow conEducation">
+    <%= render 'con_educations/edu_left' %>
+    <div class="fr width1020 eduContentCon whiteBg">
+        <ul class="edumsglist downModule">
+          <li>
+            <a href="/con_education/viewer?file=/uploads/pdf/典型病例一讨论.pdf">
+              <p><span>1.</span>裂孔性视网膜脱离1例<span class="fr">2018-2-25</span></p>
+            </a>
+          </li>
+          <li>
+            <a href="/con_education/viewer?file=/uploads/pdf/典型病例二.pdf">
+              <p><span>2.</span>典型病例二<span class="fr">2018-3-22</span></p>
+            </a>
+          </li>
+          <li>
+            <a href="/con_education/viewer?file=/uploads/pdf/典型病例三病情.pdf">
+              <p><span>2.</span>典型病例三<span class="fr">2018-3-22</span></p>
+            </a>
+          </li>
+        </ul>
+    </div>
+</div>
+
+<%= render partial: 'con_educations/script' %>
