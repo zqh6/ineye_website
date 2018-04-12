@@ -78,17 +78,19 @@
     </li>
     <li>
       <b></b>
-      <a href="javascript:;">
+      <% doctor = User.alive.role_code_is('common_user').name_is('李蓓').first %>
+      <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
         <i class="icon_eye icon_eye11"></i>
         <p>泪器病</p>
-      </a>
+      <% end %>
     </li>
     <li>
       <b></b>
-      <a href="javascript:;">
+      <% doctor = User.alive.role_code_is('common_user').name_is('李蓓').first %>
+      <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
         <i class="icon_eye icon_eye12"></i>
         <p>眼眶疾病</p>
-      </a>
+      <% end %>
     </li>
     <li>
       <b></b>
@@ -99,16 +101,14 @@
     </li>
     <li>
       <b></b>
-      <% doctor = User.alive.role_code_is('common_user').name_is('李蓓').first %>
-      <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
+      <%= link_to center_path(:中医简介) do %>
         <i class="icon_eye icon_eye14"></i>
         <p>结膜病</p>
       <% end %>
     </li>
     <li>
       <b></b>
-      <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
-      <%#= link_to center_path(:中医简介) do %>
+      <%= link_to center_path(:中医简介) do %>
         <i class="icon_eye icon_eye15"></i>
         <p>巩膜病</p>
       <% end %>
