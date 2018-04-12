@@ -1,6 +1,6 @@
 <%= image_tag("/assets/education-banner.jpg",:class => 'marT10') %>
 <div class="flow conEducation">
-    <%= render 'con_education/edu_left' %>
+    <%= render 'con_educations/edu_left' %>
     <div class="fr width1020 eduContentCon whiteBg">
         <ul class="edumsglist downModule">
           <li>
@@ -14,6 +14,7 @@
             <% end %>
           </li>
           <li>
+<<<<<<< HEAD:app/views/con_education/专题讲座.html.erb
             <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: '/con_education/viewer?file=/uploads/pdf/视网膜脱离手术基本技能一(1).pdf'}  do %>
               <p><span>3.刘文</span>裂孔性视网膜脱离外路显微手术——第三节课  视网膜脱离手术基本技能一<span class="fr">2018-3-2</span></p>
             <% end %>
@@ -31,10 +32,29 @@
           <li>
             <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: '/con_education/viewer?file=/uploads/pdf/微创全玻璃体切除基本技术.pdf'}  do %>
               <p><span>6.刘文</span>微创全玻璃体切除基本技术<span class="fr">2018-4-4</span></p>
+=======
+            <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: '/con_educations/viewer?file=/uploads/pdf/视网膜脱离手术基本技能一(1).pdf'}  do %>
+              <p><span>3.</span>裂孔性视网膜脱离外路显微手术——第三节课  视网膜脱离手术基本技能一<span class="fr">2018-3-2</span></p>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: '/con_educations/viewer?file=/uploads/pdf/视网膜脱离手术基本技能二.pdf'}  do %>
+              <p><span>4.</span>裂孔性视网膜脱离外路显微手术——第四节课  视网膜脱离手术基本技能二<span class="fr">2018-3-5</span></p>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: '/con_educations/viewer?file=/uploads/pdf/裂孔性视网膜脱离的预防.pdf'}  do %>
+              <p><span>5.</span>裂孔性视网膜脱离外路显微手术——第五节课  裂孔性视网膜脱离的预防<span class="fr">2018-3-5</span></p>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: '/con_educations/viewer?file=/uploads/pdf/微创全玻璃体切除基本技术.pdf'}  do %>
+              <p><span>6.</span>微创全玻璃体切除基本技术<span class="fr">2018-4-4</span></p>
+>>>>>>> 49381f39ebffe36d71d70c824289d9802644a04f:app/views/con_educations/专题讲座.html.erb
             <% end %>
           </li>
         </ul>
     </div>
 </div>
 
-<%= render partial: 'con_education/script' %>
+<%= render partial: 'con_educations/script' %>

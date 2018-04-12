@@ -114,7 +114,7 @@ $(function(){
           "<option value=\"pm\" >下午</option>"+
           "<option value=\"am_and_pm\" >全天</option>"+
         "</select>"+
-        "<span class=\"minusbtn\"><i class=\"am-icon-minus cursor\"></i></span>"+
+        "<span class=\"minusbtn\"><i class=\"am-icon-minus cursor am-btn am-btn-danger\">删除</i></span>"+
       "</div>"
 
   $(".addBtn").on("click",".am-icon-plus",function(){

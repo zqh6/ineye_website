@@ -1,6 +1,6 @@
 class Administration::Dosser::V1::ConEducationsController < Administration::Dosser::V1::PresentationController
 
-  include ErrorMessage
+  include ControllerConcerns
 
   def create
     ActiveRecord::Base.transaction do
@@ -16,16 +16,8 @@ class Administration::Dosser::V1::ConEducationsController < Administration::Doss
       end
       if con_education_article.save
         tags = params[:tags].to_s.strip
-        if tags.present?
-          render_conflict message: '标签不要乱输入，Okay?' and return if (/\A(;|；)+\z/.match(tags)).present?
-          tag_arr = tags.split(/[,，]/)
-          tag_arr.each do |tag_name|
-            if tag_name.present?
-              tag_relation = TagRelation.new relation_type: ConEducationArticle.name.underscore, relation_id: con_education_article.id, tag_name: tag_name
-              tag_relation.save!
-            end
-          end if tag_arr.present?
-        end
+        render_conflict message: '标签不要乱输入，Okay?' and return if (/\A(;|；)+\z/.match(tags)).present?
+        deal_with_tags tags, con_education_article
         render_ok and return
       else
         render_conflict message: error_message(con_education_article) and return
@@ -46,18 +38,10 @@ class Administration::Dosser::V1::ConEducationsController < Administration::Doss
         con_education_article.content = params[:content]
       end
       if con_education_article.save
-        tags = params[:tags].to_s.strip
         TagRelation.where(relation_type: ConEducationArticle.name.underscore).where(relation_id: con_education_article.id).delete_all
-        if tags.present?
-          render_conflict message: '标签不要乱输入，Okay?' and return if (/\A(;|；)+\z/.match(tags)).present?
-          tag_arr = tags.split(/[,，]/)
-          tag_arr.each do |tag_name|
-            if tag_name.present?
-              tag_relation = TagRelation.new relation_type: ConEducationArticle.name.underscore, relation_id: con_education_article.id, tag_name: tag_name
-              tag_relation.save!
-            end
-          end if tag_arr.present?
-        end
+        tags = params[:tags].to_s.strip
+        render_conflict message: '标签不要乱输入，Okay?' and return if (/\A(;|；)+\z/.match(tags)).present?
+        deal_with_tags tags, con_education_article
         render_ok and return
       else
         render_conflict message: error_message(con_education_article) and return

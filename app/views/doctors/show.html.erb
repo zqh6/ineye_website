@@ -21,6 +21,14 @@
 </div>
 <div class="doctorIntroduce whiteBg">
   <p><%= @user.detailed_introduction.html_safe %></p>
+  <% con_education_article_ids = TagRelation.relation_type_is(ConEducationArticle.name.underscore).tag_flag_is('doctor_name').tag_name_is(@user.name.to_s.strip).collect{|i| i.relation_id} %>
+  <% con_education_articles = ConEducationArticle.alive.where('id in (?)', con_education_article_ids) %>
+  <% article_classifies = con_education_articles.collect{|i| i.article_classify }.uniq %>
+  <p>
+    <% article_classifies.each do |article_classify| %>
+      <a href="<%= con_educations_path(doctor_name: @user.name, article_classify: article_classify) %>"><%= ShareEnum.con_education_article_classifies[article_classify.to_sym] %></a>
+    <% end %>
+  </p>
 </div>
 <ul class="registered flow flParent">
   <li>预约挂号</li>
