@@ -8,6 +8,6 @@ class DoctorsController < ApplicationController
   end
 
   def index
-    @doctors = User.alive.role_code_is('common_user').where('doctor_level = ?', params[:doctor_level])
+    @doctors = User.alive.role_code_is('common_user').where('doctor_level = ?', params[:doctor_level]).reorder('user_order DESC')
   end
 end
