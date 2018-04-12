@@ -21,7 +21,7 @@
             contentType: 'application/json',
             dataType: "json",
             data: {
-                post_link: "/con_education"+locationHref,
+                post_link: "/con_educations"+locationHref,
                 state:"A"
             }
         })
@@ -100,7 +100,7 @@
                 data: JSON.stringify({
                     parent_id: parId?parId:null,
                     content: num?changeStr($(".commentInner").eq(1).val()):$(".w-e-text").html(),
-                    post_link: "/con_education"+locationHref,
+                    post_link: "/con_educations"+locationHref,
                 })
             })
                 .done(function( data ) {

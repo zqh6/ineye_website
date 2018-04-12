@@ -18,7 +18,7 @@
 
 		<li class="sidebar-nav-link">
 			<%= link_to administration_v1_dashboard_path('~'), class: options[:list_item]=='dashboard' ? 'active' : '' do  %>
-					<i class="am-icon-home sidebar-nav-link-logo"></i> 控制面板
+        <i class="am-icon-home sidebar-nav-link-logo"></i> 控制面板
 			<% end %>
 		</li>
 
@@ -39,13 +39,13 @@
 
     <li class="sidebar-nav-link">
       <a href="javascript:;" class="sidebar-nav-sub-title">
-        <i class="am-icon-newspaper-o sidebar-nav-link-logo"></i> 继续教育
+        <i class="am-icon-graduation-cap sidebar-nav-link-logo"></i> 继续教育
         <span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
       </a>
       <ul class="sidebar-nav sidebar-nav-sub" <% if ['con_education_article_index'].include? options[:list_item] %>style="display: block;"<% end %>>
         <li class="sidebar-nav-link">
           <%= link_to administration_v1_con_educations_path, class: options[:list_item]=='con_education_article_index' ? 'active' : '' do %>
-              <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 列表
+            <span class="am-icon-angle-right sidebar-nav-link-logo"></span> 列表
           <% end %>
         </li>
       </ul>
@@ -53,7 +53,7 @@
 
     <li class="sidebar-nav-link">
       <%= link_to administration_v1_comments_path, class: ['comment_index', 'comment_edit', 'comment_show'].include?(options[:list_item]) ? 'active' : '' do  %>
-          <i class="am-icon-pencil-square-o sidebar-nav-link-logo"></i> 评论审核
+        <i class="am-icon-pencil-square-o sidebar-nav-link-logo"></i> 评论审核
       <% end %>
     </li>
     <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180412023514) do
+ActiveRecord::Schema.define(version: 20180412051256) do
 
   create_table "ask_for_leaves", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                                              null: false
@@ -202,8 +202,10 @@ ActiveRecord::Schema.define(version: 20180412023514) do
     t.boolean  "defunct",                 default: false,                 null: false
     t.datetime "created_at",                                              null: false
     t.datetime "updated_at",                                              null: false
+    t.string   "tag_flag"
     t.index ["relation_id"], name: "index_tag_relations_on_relation_id", using: :btree
     t.index ["relation_type"], name: "index_tag_relations_on_relation_type", using: :btree
+    t.index ["tag_flag"], name: "index_tag_relations_on_tag_flag", using: :btree
     t.index ["tag_name"], name: "index_tag_relations_on_tag_name", using: :btree
   end
 
