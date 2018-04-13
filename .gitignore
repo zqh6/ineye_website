@@ -19,7 +19,7 @@ config/database.yml
 !/tmp/.keep
 log
 tmp
-public
+
 
 
 # Ignore Byebug command history file.
