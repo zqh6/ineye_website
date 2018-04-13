@@ -193,7 +193,7 @@
   // and script.
   // Please note that the Content-Type for JSON responses has to be text/plain
   // or text/html, if the browser doesn't include application/json in the
-  // Accept header, else IE will show a download dialog.
+  // Accept header, else IE will show_text a download dialog.
   // The Content-Type for XML responses on the other hand has to be always
   // application/xml or text/xml, so IE properly parses the XML response.
   // See also

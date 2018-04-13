@@ -7,7 +7,7 @@ class NewsController < ApplicationController
     a = params[:id]
     if params[:from]=='db'
       @new = New.find_by_id(params[:id])
-      a = 'show'
+      a = 'show_text'
     end
     render :action => a and return
   end

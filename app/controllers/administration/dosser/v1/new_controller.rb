@@ -7,8 +7,8 @@ class Administration::Dosser::V1::NewController < Administration::Dosser::V1::Pr
       new = New.new new_attributes
       new.user = @login_user
       if new.save
-        render_conflict message: '标签不要乱输入，Okay?' and return if (/\A(;|；)+\z/.match(tags)).present?
         tags = params[:tags].to_s.strip
+        render_conflict message: '标签不要乱输入，Okay?' and return if (/\A(;|；)+\z/.match(tags)).present?
         deal_with_tags tags, new
         render_ok and return
       else

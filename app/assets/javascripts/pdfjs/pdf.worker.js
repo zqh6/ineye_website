@@ -1067,7 +1067,7 @@ PDFJS.createPromiseCapability = createPromiseCapability;
  * The following promise implementation tries to generally implement the
  * Promise/A+ spec. Some notable differences from other promise libaries are:
  * - There currently isn't a seperate deferred and promise object.
- * - Unhandled rejections eventually show an error if they aren't handled.
+ * - Unhandled rejections eventually show_text an error if they aren't handled.
  *
  * Based off of the work in:
  * https://bugzilla.mozilla.org/show_bug.cgi?id=810490
@@ -16897,7 +16897,7 @@ var Font = (function FontClosure() {
    * problematic locations.
    * @return {Object} Two properties:
    * 'toFontChar' - maps original char codes(the value that will be read
-   * from commands such as show text) to the char codes that will be used in the
+   * from commands such as show_text text) to the char codes that will be used in the
    * font that we build
    * 'charCodeToGlyphId' - maps the new font char codes to glyph ids
    */

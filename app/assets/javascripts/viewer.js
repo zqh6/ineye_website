@@ -730,7 +730,7 @@ var DownloadManager = (function DownloadManagerClosure() {
   function download(blobUrl, filename) {
     var a = document.createElement('a');
     if (a.click) {
-      // Use a.click() if available. Otherwise, Chrome might show
+      // Use a.click() if available. Otherwise, Chrome might show_text
       // "Unsafe JavaScript attempt to initiate a navigation change
       //  for frame with URL" and not open the PDF at all.
       // Supported by (not mentioned = untested):
@@ -4044,7 +4044,7 @@ var TextLayerBuilder = (function TextLayerBuilderClosure() {
     },
 
     updateMatches: function TextLayerBuilder_updateMatches() {
-      // Only show matches when all rendering is done.
+      // Only show_text matches when all rendering is done.
       if (!this.renderingDone) {
         return;
       }
@@ -7240,7 +7240,7 @@ window.addEventListener('localized', function localized(evt) {
   PDFViewerApplication.animationStartedPromise.then(function() {
     // Adjust the width of the zoom box to fit the content.
     // Note: If the window is narrow enough that the zoom box is not visible,
-    //       we temporarily show it to be able to adjust its width.
+    //       we temporarily show_text it to be able to adjust its width.
     var container = document.getElementById('scaleSelectContainer');
     if (container.clientWidth === 0) {
       container.setAttribute('style', 'display: inherit;');

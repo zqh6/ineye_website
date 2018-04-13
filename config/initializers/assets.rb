@@ -76,7 +76,6 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/new/new.css
   administration/v1/new/index.css
   administration/v1/new/show.css
-  administration/v1/new/show.css
   administration/v1/users/new.css
   administration/v1/users/index.css
   administration/v1/passwords/edit.css
