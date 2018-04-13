@@ -68,6 +68,7 @@ $(function(){
       data['content'] = editor.html();
     }
 
+    data['static_url'] = $('#static_url').val();
     data['article_classify'] = $('#article_classify').val();
     data['article_type'] = $('#article_type').val();
     data['title'] = $('#title').val();
