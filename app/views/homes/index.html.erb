@@ -739,7 +739,6 @@
         index:0,
         listNum:Math.ceil($(".doctorList li").length/10)
     }
-    // $(".doctorList li").hide().eq(doctorDate.index*10).prevAll().show_text();
 
     showDetail();
     function showDetail(){
@@ -750,12 +749,9 @@
     $(".changeExperts").click(function(){
         doctorDate.index++;
         if(doctorDate.index == doctorDate.listNum-1){
-          console.log("==");
-          console.log(doctorDate.index*10);
             showDetail();
             doctorDate.index = -1;
         }else {
-          console.log("!=")
             showDetail();
         }
 
