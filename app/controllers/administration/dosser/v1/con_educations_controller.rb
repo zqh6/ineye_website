@@ -7,12 +7,14 @@ class Administration::Dosser::V1::ConEducationsController < Administration::Doss
       con_education_article = assign_attributes(p: params, object: ConEducationArticle.new)
       render_conflict message: '不要乱来，Okay?' and return if ShareEnum.con_education_article_classifies.collect{|a,b|a}.exclude?(con_education_article.article_classify)
       render_conflict message: '不要乱来，OK?' and return if ShareEnum.article_types.collect{|a,b|a}.exclude?(con_education_article.article_type)
-      if con_education_article.article_type=='video'
-        con_education_article.video_url = params[:video_url]
-      elsif con_education_article.article_type=='pdf'
-        con_education_article.pdf_url = params[:pdf_url]
-      elsif con_education_article.article_type=='text'
-        con_education_article.content = params[:content]
+      if con_education_article.static_url.blank?
+        if con_education_article.article_type=='video'
+          con_education_article.video_url = params[:video_url]
+        elsif con_education_article.article_type=='pdf'
+          con_education_article.pdf_url = params[:pdf_url]
+        elsif con_education_article.article_type=='text'
+          con_education_article.content = params[:content]
+        end
       end
       if con_education_article.save
         tags = params[:tags].to_s.strip
@@ -30,12 +32,14 @@ class Administration::Dosser::V1::ConEducationsController < Administration::Doss
       con_education_article = assign_attributes(p: params, object: ConEducationArticle.find(params[:id]))
       render_conflict message: '不要乱来，Okay?' and return if ShareEnum.con_education_article_classifies.collect{|a,b|a}.exclude?(con_education_article.article_classify)
       render_conflict message: '不要乱来，OK?' and return if ShareEnum.article_types.collect{|a,b|a}.exclude?(con_education_article.article_type)
-      if con_education_article.article_type=='video'
-        con_education_article.video_url = params[:video_url]
-      elsif con_education_article.article_type=='pdf'
-        con_education_article.pdf_url = params[:pdf_url]
-      elsif con_education_article.article_type=='text'
-        con_education_article.content = params[:content]
+      if con_education_article.static_url.blank?
+        if con_education_article.article_type=='video'
+          con_education_article.video_url = params[:video_url]
+        elsif con_education_article.article_type=='pdf'
+          con_education_article.pdf_url = params[:pdf_url]
+        elsif con_education_article.article_type=='text'
+          con_education_article.content = params[:content]
+        end
       end
       if con_education_article.save
         TagRelation.where(relation_type: ConEducationArticle.name.underscore).where(relation_id: con_education_article.id).delete_all

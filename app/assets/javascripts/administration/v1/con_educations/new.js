@@ -45,27 +45,30 @@ $(function(){
     var data = {};
     var articleType = $('#article_type').val();
 
-    if(articleType=='pdf'){
-      var pdfUploadDom = $('.js-one');
-      var pdfCount = pdfUploadDom.length;
-      if(pdfCount>1){
-        alert('只能上传一个pdf');
-        return;
+    var staticUrl = $('#static_url').val();
+    if(staticUrl==null || staticUrl==''){
+      if(articleType=='pdf'){
+        var pdfUploadDom = $('.js-one');
+        var pdfCount = pdfUploadDom.length;
+        if(pdfCount>1){
+          alert('只能上传一个pdf');
+          return;
+        }
+        if(pdfCount<=0){
+          alert('必须上传pdf');
+          return;
+        }
+        data['pdf_url'] = pdfUploadDom.attr('data-file-path');
+      }else if(articleType=='video'){
+        var videoUrl = $('#video_url').val();
+        if(videoUrl==null || videoUrl==''){
+          alert('请指定视频路径');
+          return;
+        }
+        data['video_url'] = videoUrl;
+      }else if(articleType=='text'){
+        data['content'] = editor.html();
       }
-      if(pdfCount<=0){
-        alert('必须上传pdf');
-        return;
-      }
-      data['pdf_url'] = pdfUploadDom.attr('data-file-path');
-    }else if(articleType=='video'){
-      var videoUrl = $('#video_url').val();
-      if(videoUrl==null || videoUrl==''){
-        alert('请指定视频路径');
-        return;
-      }
-      data['video_url'] = videoUrl;
-    }else if(articleType=='text'){
-      data['content'] = editor.html();
     }
 
     data['static_url'] = $('#static_url').val();
@@ -104,5 +107,14 @@ $(function(){
     .always(function( xhr, status ) {
     });
   });
+
+  $('#static_url').on('keyup', function(){
+    var dom = $(this);
+    if(dom.val()==null || dom.val()==''){
+      $('.js-article-content').show();
+    }else{
+      $('.js-article-content').hide();
+    }
+  })
 
 });
