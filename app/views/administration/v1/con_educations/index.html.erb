@@ -16,9 +16,11 @@
         <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
           <div class="widget am-cf">
             <div class="widget-head am-cf">
-              <div class="widget-title  am-cf"><%= ConEducationArticle.model_name.human %><%= t :list %></div>
-
-
+              <div class="widget-title  am-cf">
+                <%= ConEducationArticle.model_name.human %><%= t :list %>
+                <a class="am-btn am-btn-success" target="_blank" href="<%= con_educations_path(special_lecture: 'special_lecture') %>">新版继续教育</a>
+                <a class="am-btn am-btn-warning" target="_blank" href="/con_educations/典型病例">旧版继续教育</a>
+              </div>
             </div>
             <div class="widget-body  am-fr">
 
