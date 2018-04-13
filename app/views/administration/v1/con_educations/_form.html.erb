@@ -8,13 +8,6 @@
   </div>
 
   <div class="am-form-group">
-    <label for="article_type" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= ConEducationArticle.human_attribute_name :article_type %></label>
-    <div class="am-u-sm-9">
-      <%= select_tag :article_type, options_for_select(ShareEnum.form_options('article_types'), @con_education_article.article_type), class: 'tpl-form-input' %>
-    </div>
-  </div>
-
-  <div class="am-form-group">
     <label for="static_url" class="am-u-sm-3 am-form-label"><%= ConEducationArticle.human_attribute_name :static_url %></label>
     <div class="am-u-sm-9">
       <%= text_field_tag :static_url, @con_education_article.static_url, class: 'tpl-form-input' %>
@@ -42,68 +35,79 @@
     </div>
   </div>
 
-  <div class="am-form-group js-video-vector" <% if @con_education_article.article_type!='video' %>style="display: none;"<% end %>>
-    <label for="video_url" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= ConEducationArticle.human_attribute_name :video_url %> <span class="tpl-form-line-small-title"><%= :video_url.to_s.titleize %></span></label>
-    <div class="am-u-sm-9">
-      <%= text_field_tag :video_url, @con_education_article.video_url, class: 'tpl-form-input' %>
+  <div class="js-article-content" <% if @con_education_article.static_url.present? %>style="display: none"<% end %>>
+    <div class="am-form-group">
+      <label for="article_type" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= ConEducationArticle.human_attribute_name :article_type %></label>
+      <div class="am-u-sm-9">
+        <%= select_tag :article_type, options_for_select(ShareEnum.form_options('article_types'), @con_education_article.article_type), class: 'tpl-form-input' %>
+      </div>
     </div>
-  </div>
 
-  <div class="am-form-group js-pdf-vector" <% if @con_education_article.article_type!='pdf' %>style="display: none;"<% end %>>
-    <label for="pdf_file" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= ConEducationArticle.human_attribute_name :pdf_url %> <span class="tpl-form-line-small-title"><%= :pdf_url.to_s.titleize %></span></label>
-    <div class="am-u-sm-9">
-      <% if !@con_education_article.new_record? && @con_education_article.article_type=='pdf' %>
-        <a target="_blank" href="<%= request.protocol+request.host_with_port+'/' %><%= @con_education_article.pdf_url %>"><%= @con_education_article.pdf_url %></a>
-      <% end %>
-      <!-- 上传表单 -->
-      <form id="fileupload" action="/upload" method="POST" enctype="multipart/form-data"
-            class="am-form tpl-form-border-form tpl-form-border-br">
-        <div class="am-form-group">
-          <div class="am-u-sm-3">
-            <span class="btn btn-success fileinput-button">
-              <i class="am-icon-plus"></i>
-              <span><% if !@con_education_article.new_record? %>重新<% end %>上传PDF文件</span>
-              <input type="file" name="files[]">
-            </span>
 
-            <!-- <button type="button" class="btn btn-danger delete js-delete-all-files">
-              <i class="am-icon-trash"></i>
-              <span>取消上传</span>
-            </button> -->
+    <div class="am-form-group js-video-vector" <% if @con_education_article.article_type!='video' %>style="display: none;"<% end %>>
+      <label for="video_url" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= ConEducationArticle.human_attribute_name :video_url %> <span class="tpl-form-line-small-title"><%= :video_url.to_s.titleize %></span></label>
+      <div class="am-u-sm-9">
+        <%= text_field_tag :video_url, @con_education_article.video_url, class: 'tpl-form-input' %>
+      </div>
+    </div>
 
-            <!-- The global file processing state -->
-            <span class="fileupload-process"></span>
-          </div>
-          <div class="am-u-sm-3">
-            <div class="fileupload-progress fade">
-              <!-- The global progress bar -->
-              <div class="progress progress-striped active" role="progressbar" aria-valuemin="0"
-                   aria-valuemax="100">
-                <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+    <div class="am-form-group js-pdf-vector" <% if @con_education_article.article_type!='pdf' %>style="display: none;"<% end %>>
+      <label for="pdf_file" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= ConEducationArticle.human_attribute_name :pdf_url %> <span class="tpl-form-line-small-title"><%= :pdf_url.to_s.titleize %></span></label>
+      <div class="am-u-sm-9">
+        <% if !@con_education_article.new_record? && @con_education_article.article_type=='pdf' %>
+          <a target="_blank" href="<%= request.protocol+request.host_with_port+'/' %><%= @con_education_article.pdf_url %>"><%= @con_education_article.pdf_url %></a>
+        <% end %>
+        <!-- 上传表单 -->
+        <form id="fileupload" action="/upload" method="POST" enctype="multipart/form-data"
+              class="am-form tpl-form-border-form tpl-form-border-br">
+          <div class="am-form-group">
+            <div class="am-u-sm-3">
+              <span class="btn btn-success fileinput-button">
+                <i class="am-icon-plus"></i>
+                <span><% if !@con_education_article.new_record? %>重新<% end %>上传PDF文件</span>
+                <input type="file" name="files[]">
+              </span>
+
+              <!-- <button type="button" class="btn btn-danger delete js-delete-all-files">
+                <i class="am-icon-trash"></i>
+                <span>取消上传</span>
+              </button> -->
+
+              <!-- The global file processing state -->
+              <span class="fileupload-process"></span>
+            </div>
+            <div class="am-u-sm-3">
+              <div class="fileupload-progress fade">
+                <!-- The global progress bar -->
+                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0"
+                     aria-valuemax="100">
+                  <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                </div>
+                <!-- The extended global progress state -->
+                <div class="progress-extended">&nbsp;</div>
               </div>
-              <!-- The extended global progress state -->
-              <div class="progress-extended">&nbsp;</div>
+            </div>
+            <div class="row fileupload-buttonbar">
+              <!-- The global progress state -->
+
             </div>
           </div>
-          <div class="row fileupload-buttonbar">
-            <!-- The global progress state -->
-
-          </div>
-        </div>
-        <!-- The table listing the files available for upload/download -->
-        <table role="presentation" class="js-picture-table table table-striped">
-          <tbody class="files js-files-vector"></tbody>
-        </table>
-      </form>
+          <!-- The table listing the files available for upload/download -->
+          <table role="presentation" class="js-picture-table table table-striped">
+            <tbody class="files js-files-vector"></tbody>
+          </table>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <div class="am-form-group js-content-vector" <% if @con_education_article.article_type!='text' %>style="display: none;"<% end %>>
-    <label for="content" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= ConEducationArticle.human_attribute_name :content %> <span class="tpl-form-line-small-title"><%= :content.to_s.titleize %></span></label>
-    <div class="am-u-sm-9">
-      <span class="am-text-warning">温馨提示：请尽量上传压缩过的图像，以确保用户在手机端访问更快速和节省流量。<br/>（静态图片压缩网站：<a target="_blank" href="https://tinypng.com">TinyPng</a>）（动态图片压缩网站：<a target="_blank" href="https://ezgif.com/resize">EzGif</a>）</span>
-      <textarea id="editor" name="content" class="editor" style="width: 1198px; height: 600px;"><% if !@con_education_article.new_record? %><%= @con_education_article.content %><% end %></textarea>
+    <div class="am-form-group js-content-vector" <% if @con_education_article.article_type!='text' %>style="display: none;"<% end %>>
+      <label for="content" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= ConEducationArticle.human_attribute_name :content %> <span class="tpl-form-line-small-title"><%= :content.to_s.titleize %></span></label>
+      <div class="am-u-sm-9">
+        <span class="am-text-warning">温馨提示：请尽量上传压缩过的图像，以确保用户在手机端访问更快速和节省流量。<br/>（静态图片压缩网站：<a target="_blank" href="https://tinypng.com">TinyPng</a>）（动态图片压缩网站：<a target="_blank" href="https://ezgif.com/resize">EzGif</a>）</span>
+        <textarea id="editor" name="content" class="editor" style="width: 1198px; height: 600px;"><% if !@con_education_article.new_record? %><%= @con_education_article.content %><% end %></textarea>
+      </div>
     </div>
+
   </div>
 
   <div class="am-form-group">
