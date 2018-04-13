@@ -12,7 +12,7 @@ $(function(){
     singleFileUploads: false,
     sequentialUploads: true,
     autoUpload: true,
-    formData: {path: 'pdf/con_education_artiles'}
+    formData: {path: 'pdf/con_education_artiles', local: 'true'}
   });
 
   $('#fileupload').fileupload(

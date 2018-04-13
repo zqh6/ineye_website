@@ -1,4 +1,7 @@
 class ConEducationsController < ApplicationController
+
+  layout 'content'
+
   def show
     if ['专题讲座', '典型病例', '疑难病例', '手术视频'].include?(params[:id])
 
@@ -17,12 +20,12 @@ class ConEducationsController < ApplicationController
       end
       if params[:new]=='true'
         @con_education_article = ConEducationArticle.find(params[:id])
-        render :show_text and return if @con_education_article.article_type=='text'
-        render :show_pdf and return if @con_education_article.article_type=='pdf'
-        render :show_video and return if @con_education_article.article_type=='video'
+        render action: :show_text and return if @con_education_article.article_type=='text'
+        render action: :show_pdf and return if @con_education_article.article_type=='pdf'
+        render action: :show_video and return if @con_education_article.article_type=='video'
       end
     end
-    render layout: "content", :action => params[:id] and return
+    render :action => params[:id] and return
   end
 
   def index
