@@ -10,7 +10,7 @@
   <div class="am-form-group">
     <label for="static_url" class="am-u-sm-3 am-form-label"><%= ConEducationArticle.human_attribute_name :static_url %></label>
     <div class="am-u-sm-9">
-      <%= text_field_tag :static_url, @con_education_article.static_url, class: 'tpl-form-input' %>
+      <%= text_field_tag :static_url, @con_education_article.static_url, class: 'tpl-form-input', placeholder: '例如：/con_educations/viewer?file=/uploads/pdf/典型病例一讨论.pdf' %>
     </div>
   </div>
 
@@ -47,7 +47,7 @@
     <div class="am-form-group js-video-vector" <% if @con_education_article.article_type!='video' %>style="display: none;"<% end %>>
       <label for="video_url" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= ConEducationArticle.human_attribute_name :video_url %> <span class="tpl-form-line-small-title"><%= :video_url.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
-        <%= text_field_tag :video_url, @con_education_article.video_url, class: 'tpl-form-input' %>
+        <%= text_field_tag :video_url, @con_education_article.video_url, class: 'tpl-form-input', placeholder: '例如：http://v.qq.com/iframe/player.html?vid=b0558blgn8a' %>
       </div>
     </div>
 
