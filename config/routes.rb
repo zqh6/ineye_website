@@ -37,6 +37,7 @@ Rails.application.routes.draw do
       resources :schedulings, only: [:new, :edit, :index, :create, :update]
       resources :leavings
       resources :con_educations
+      resources :activity_enters
     end
   end
 

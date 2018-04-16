@@ -82,6 +82,10 @@ class ShareEnum < ApplicationRecord
     in_hospital_doctor: '住院医师'
   }
 
+  enum activity_types: {
+    netease_new: '网易新闻'
+  }
+
   def self.form_options(enum_type)
     h = {}
     ShareEnum.try(enum_type.to_sym).each do |key, value|

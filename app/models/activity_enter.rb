@@ -1,0 +1,2 @@
+class ActivityEnter < ApplicationRecord
+end
