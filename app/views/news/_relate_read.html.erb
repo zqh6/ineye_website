@@ -1,0 +1,16 @@
+<div class="newsAll">
+  <h3 class="marT10">相关阅读</h3>
+  <% if @relation_news.present? %>
+      <ul class="newsAllList">
+        <% @relation_news.each do |new| %>
+            <li>
+              <%= link_to new.scan_rails_path.blank? ? news_path(new.id, from: 'db') : new.scan_rails_path do %>
+                  <p><%= new.title %><span class="fr"><%= new.occurred_at==Time.utc(1970) ? ' ' : (l new.occurred_at, format: :human_date) %></span></p>
+              <% end %>
+            </li>
+        <% end %>
+      </ul>
+  <% else %>
+      <span class="marT10">暂无</span>
+  <% end %>
+</div>

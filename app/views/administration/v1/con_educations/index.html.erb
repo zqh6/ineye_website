@@ -75,15 +75,12 @@
                             <td><%= l con_education_article.created_at, format: :human_date %></td>
                             <td>
                               <div class="tpl-table-black-operation">
-                                <%= link_to con_education_article.static_url.blank? ? administration_v1_con_education_path(con_education_article.id) : con_education_article.static_url do %>
-                                    <i class="am-icon-newspaper-o"></i> 详情
-                                <% end %>
                                 <%= link_to edit_administration_v1_con_education_path(con_education_article.id) do %>
                                     <i class="am-icon-pencil"></i> 编辑
                                 <% end %>
-                                <%= link_to 'javascript: void(0);', class: 'tpl-table-black-operation-del js-delete-one-new', 'data-new-id' => con_education_article.id do %>
+                                <!--<%= link_to 'javascript: void(0);', class: 'tpl-table-black-operation-del js-delete-one-new', 'data-new-id' => con_education_article.id do %>
                                     <i class="am-icon-trash"></i> 删除
-                                <% end %>
+                                <% end %>-->
                               </div>
                             </td>
                           </tr>

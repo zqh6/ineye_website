@@ -4,7 +4,7 @@
 
 $(function(){
 
-  showOrHide($('#role_code').val()=='common_user');
+  //showOrHide($('#role_code').val()=='common_user');
 	$('.js-create').on('click', submitData);
 	$('#role_code').on('change', showOrHideUserEditInputs);
 });
@@ -20,7 +20,6 @@ function showOrHideUserEditInputs(){
 
 function showOrHide(ifTrue){
   if(ifTrue){
-    //var doctorInputsDom = $($('#doctors-inputs').html());
     $('.doctors-inputs-vector').show();
   }else{
     $('.doctors-inputs-vector').hide();
