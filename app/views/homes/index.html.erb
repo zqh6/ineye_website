@@ -208,40 +208,10 @@
       <% if @new_notice.present? %>
           <% @new_notice.each do |new_notice| %>
               <li>
-                <%= link_to new.scan_rails_path.blank? ? news_path(new.id, from: 'db') : new.scan_rails_path do %><%= new.title %><% end %>
+                <%= link_to new_notice.scan_rails_path.blank? ? news_path(new_notice.id, from: 'db') : new_notice.scan_rails_path do %><%= new_notice.title %><% end %>
               </li>
           <% end %>
       <% end %>
-      <li>
-        <%= link_to :'关于成都中医药大学眼科学院2018年硕士研究生复试办法更正通知' ,news_path(:关于成都中医药大学眼科学院2018年硕士研究生复试办法更正通知
-        )%>
-      </li>
-      <li>
-        <%= link_to :'成都中医药大学眼科学院2018年硕士研究生复试办法' ,news_path(:成都中医药大学眼科学院2018年硕士研究生复试办法
-        )%>
-      </li>
-      <li>
-        <%= link_to :'成都中医药大学眼科学院2018年博士研究生复试办法' ,news_path(:成都中医药大学眼科学院2018年博士研究生复试办法
-        )%>
-      </li>
-
-      </li>
-      <li>
-        <%= link_to :'成都中医药大学附属银海眼科医院关于增设便民门诊及门诊挂号费调整的通知' ,news_path(:成都中医药大学附属银海眼科医院关于增设便民门诊及门诊挂号费调整的通知
-        )%>
-      </li>
-      <li>
-        <%= link_to :'成都中医大银海眼科医院物料制作工程项目' ,news_path(:材料制作工程招标公告)%>
-      </li>
-      <li><%= link_to :'成都中医药大学眼科学院 成都中医大银海眼科医院  招聘信息',news_path(:成都中医大银海眼科医院招聘信息) %></li>
-      <li><%#= link_to :'成都中医药大学眼科学院/成都中医大银海眼科医院 2018年博士后招聘启事',news_path(:成都中医大银海眼科医院2018年博士后招聘启事) %></li>
-      <li><%#= link_to :'成都中医药大学眼科学院管理类聘用人员招聘公告',news_path(:成都中医药大学眼科学院管理类聘用人员招聘公告) %></li>
-      <li><%#= link_to :'关于调整门诊流程及增设VIP服务的通知',news_path(:关于调整门诊流程及增设VIP服务的通知) %></li>
-      <li><%#= link_to :'眼科学院2017年推免试攻读硕士学位研究生办法',news_path(:成都中医药大学眼科学院2017年接收推荐免试攻读硕士学位研究生办法) %></li>
-      <!-- <li> -->
-      <%#= link_to :'【招标公告】 成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告',news_path(:成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告) %>
-
-      <!-- </li> -->
     </ul>
   </div>
 </div>
