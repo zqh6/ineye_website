@@ -57,6 +57,7 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/leavings/leaving.js
   administration/v1/con_educations/new.js
   administration/v1/con_educations/index.js
+  administration/v1/activity_enters/index.js
 
   shared/amazeui.min.css
   shared/amazeui.datatables.min.css

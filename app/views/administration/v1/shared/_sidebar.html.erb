@@ -56,6 +56,12 @@
         <i class="am-icon-pencil-square-o sidebar-nav-link-logo"></i> 评论审核
       <% end %>
     </li>
+
+    <li class="sidebar-nav-link">
+      <%= link_to administration_v1_activity_enters_path, class: ['activity_enter_index'].include?(options[:list_item]) ? 'active' : '' do  %>
+          <i class="am-icon-bullhorn sidebar-nav-link-logo"></i> 活动报名
+      <% end %>
+    </li>
     <% end %>
 
     <% if ['sys_admin', 'user_admin'].include? @login_user.role_code %>

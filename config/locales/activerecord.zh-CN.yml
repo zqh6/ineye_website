@@ -13,6 +13,7 @@ zh-CN:
       user: 用户
       password: 密码
       con_education_article: 继续教育文章
+      activity_enter: 活动报名
 
     attributes:
       new:
@@ -65,3 +66,10 @@ zh-CN:
         tag: 标签
         created_at: 创建时间
         id: 编号
+
+      activity_enter:
+        id: 编号
+        created_at: 报名时间
+        name: 姓名
+        phone_number: 手机号码
+        activity_type: 活动标识
