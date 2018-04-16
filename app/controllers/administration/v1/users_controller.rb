@@ -12,7 +12,7 @@ class Administration::V1::UsersController < Administration::V1::PrivilegedContro
 
   def new
     @offices = Office.alive
-    @user = User.new
+    @user = User.new role_code: 'user_admin'
   end
 
   def index

@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <div class="doctor-inputs-vector" >
+  <div class="doctors-inputs-vector" <% if @user.role_code =='user_admin' %>style="display: none;"<% end %>>
     <div class="am-form-group">
       <label for="role_code" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :office_id %> <span class="tpl-form-line-small-title"><%= :office.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
@@ -48,7 +48,7 @@
     </div>
 
     <div class="am-form-group">
-      <label for="phone_number" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :user_order %> <span class="tpl-form-line-small-title"><%= :phone_number.to_s.titleize %></span></label>
+      <label for="phone_number" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :user_order %> <span class="tpl-form-line-small-title"><%= :user_order.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
         <%= number_field_tag :user_order, @user.user_order, class: 'tpl-form-input', max: 10000 %>
       </div>
