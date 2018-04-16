@@ -9,87 +9,87 @@
     <li>
       <b></b>
       <%= link_to center_path(:眼底病中心) do %>
-        <i class="icon_eye"></i>
-        <p>眼底病</p>
+          <i class="icon_eye"></i>
+          <p>眼底病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:糖尿病病变防治中心) do %>
-        <i class="icon_eye icon_eye2"></i>
-        <p>糖网病</p>
+          <i class="icon_eye icon_eye2"></i>
+          <p>糖网病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:中医简介) do %>
-        <i class="icon_eye icon_eye3"></i>
-        <p>干眼</p>
+          <i class="icon_eye icon_eye3"></i>
+          <p>干眼</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:视光中心) do %>
-        <i class="icon_eye icon_eye4"></i>
-        <p>斜弱视</p>
+          <i class="icon_eye icon_eye4"></i>
+          <p>斜弱视</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:视光中心) do %>
-        <i class="icon_eye icon_eye5"></i>
-        <p>屈光不正</p>
+          <i class="icon_eye icon_eye5"></i>
+          <p>屈光不正</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:白内障屈光中心) do %>
-        <i class="icon_eye icon_eye6"></i>
-        <p>白内障</p>
+          <i class="icon_eye icon_eye6"></i>
+          <p>白内障</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:青光眼) do %>
-        <i class="icon_eye icon_eye7"></i>
-        <p>青光眼</p>
+          <i class="icon_eye icon_eye7"></i>
+          <p>青光眼</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:角膜移植与眼表病) do %>
-        <i class="icon_eye icon_eye8"></i>
-        <p>角膜病</p>
+          <i class="icon_eye icon_eye8"></i>
+          <p>角膜病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:中医简介) do %>
-        <i class="icon_eye icon_eye9"></i>
-        <p>葡萄膜病</p>
+          <i class="icon_eye icon_eye9"></i>
+          <p>葡萄膜病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:中医简介) do %>
-        <i class="icon_eye icon_eye10"></i>
-        <p>视疲劳</p>
+          <i class="icon_eye icon_eye10"></i>
+          <p>视疲劳</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <% doctor = User.alive.role_code_is('common_user').name_is('李蓓').first %>
       <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
-        <i class="icon_eye icon_eye11"></i>
-        <p>泪器病</p>
+          <i class="icon_eye icon_eye11"></i>
+          <p>泪器病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <% doctor = User.alive.role_code_is('common_user').name_is('李蓓').first %>
       <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
-        <i class="icon_eye icon_eye12"></i>
-        <p>眼眶疾病</p>
+          <i class="icon_eye icon_eye12"></i>
+          <p>眼眶疾病</p>
       <% end %>
     </li>
     <li>
@@ -102,37 +102,37 @@
     <li>
       <b></b>
       <%= link_to center_path(:中医简介) do %>
-        <i class="icon_eye icon_eye14"></i>
-        <p>结膜病</p>
+          <i class="icon_eye icon_eye14"></i>
+          <p>结膜病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:中医简介) do %>
-        <i class="icon_eye icon_eye15"></i>
-        <p>巩膜病</p>
+          <i class="icon_eye icon_eye15"></i>
+          <p>巩膜病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:眼底病中心) do %>
-        <i class="icon_eye icon_eye16"></i>
-        <p>玻璃体疾病</p>
+          <i class="icon_eye icon_eye16"></i>
+          <p>玻璃体疾病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <% doctor = User.alive.role_code_is('common_user').name_is('王国平').first %>
       <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
-        <i class="icon_eye icon_eye17"></i>
-        <p>眼外伤</p>
+          <i class="icon_eye icon_eye17"></i>
+          <p>眼外伤</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to :centers do %>
-        <i class="icon_eye icon_eye18"></i>
-        <p>其他</p>
+          <i class="icon_eye icon_eye18"></i>
+          <p>其他</p>
       <% end %>
     </li>
   </ul>
@@ -149,7 +149,7 @@
         <ul class="slide-wrapper fl">
           <li>
             <%= link_to news_path(:刘敏如廖品正两位国医大师相聚在银海眼科医院) do %>
-              <%= image_tag("news_gydsm.jpg") %>
+                <%= image_tag("news_gydsm.jpg") %>
             <% end %>
             <div class="inner">
               <p>刘敏如、廖品正两位国医大师相聚在银海眼科医院</p>
@@ -157,7 +157,7 @@
           </li>
           <li>
             <%= link_to news_path(:美国哈佛大学RichardJackson博士访问银海眼科) do %>
-              <%= image_tag("news_zydjl.jpg") %>
+                <%= image_tag("news_zydjl.jpg") %>
             <% end %>
             <div class="inner">
               <p>美国哈佛大学Richard Jackson博士访问银海眼科</p>
@@ -187,15 +187,15 @@
       <!--新闻列表-->
       <ul class="fr topList newsIndexList">
         <% if @new.present? %>
-          <% @new.each do |new| %>
-            <li>
-              <%= link_to news_path(new.id, from: 'db')  do %>
-              <span class="newsTle"><%= new.title %></span>
-              <% end %>
-              <span class="fr">
+            <% @new.each do |new| %>
+                <li>
+                  <%= link_to new.scan_rails_path.blank? ? news_path(new.id, from: 'db') : new.scan_rails_path  do %>
+                      <span class="newsTle"><%= new.title %></span>
+                  <% end %>
+                  <span class="fr">
                 <%= new.occurred_at==Time.utc(1970) ? ' ' : new.occurred_at.strftime("%Y-%m-%d") %></span>
-            </li>
-          <% end %>
+                </li>
+            <% end %>
         <% end %>
       </ul>
       <!--新闻列表-->
@@ -205,26 +205,30 @@
   <div class="newsVideo fr">
     <p class="newTitle">通知公告 </p>
     <ul class="topList noticeList">
-      <li>
-        <%= link_to :'2018年眼科学院硕士研究生（统招）拟录取名单' ,news_path(:'2018年眼科学院硕士研究生统招拟录取名单')%>
-      </li>
+      <% if @new_notice.present? %>
+          <% @new_notice.each do |new_notice| %>
+              <li>
+                <%= link_to new.scan_rails_path.blank? ? news_path(new.id, from: 'db') : new.scan_rails_path do %><%= new.title %><% end %>
+              </li>
+          <% end %>
+      <% end %>
       <li>
         <%= link_to :'关于成都中医药大学眼科学院2018年硕士研究生复试办法更正通知' ,news_path(:关于成都中医药大学眼科学院2018年硕士研究生复试办法更正通知
-)%>
+        )%>
       </li>
       <li>
         <%= link_to :'成都中医药大学眼科学院2018年硕士研究生复试办法' ,news_path(:成都中医药大学眼科学院2018年硕士研究生复试办法
-)%>
+        )%>
       </li>
       <li>
         <%= link_to :'成都中医药大学眼科学院2018年博士研究生复试办法' ,news_path(:成都中医药大学眼科学院2018年博士研究生复试办法
-)%>
+        )%>
       </li>
 
       </li>
       <li>
         <%= link_to :'成都中医药大学附属银海眼科医院关于增设便民门诊及门诊挂号费调整的通知' ,news_path(:成都中医药大学附属银海眼科医院关于增设便民门诊及门诊挂号费调整的通知
-)%>
+        )%>
       </li>
       <li>
         <%= link_to :'成都中医大银海眼科医院物料制作工程项目' ,news_path(:材料制作工程招标公告)%>
@@ -235,7 +239,7 @@
       <li><%#= link_to :'关于调整门诊流程及增设VIP服务的通知',news_path(:关于调整门诊流程及增设VIP服务的通知) %></li>
       <li><%#= link_to :'眼科学院2017年推免试攻读硕士学位研究生办法',news_path(:成都中医药大学眼科学院2017年接收推荐免试攻读硕士学位研究生办法) %></li>
       <!-- <li> -->
-        <%#= link_to :'【招标公告】 成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告',news_path(:成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告) %>
+      <%#= link_to :'【招标公告】 成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告',news_path(:成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告) %>
 
       <!-- </li> -->
     </ul>
@@ -253,25 +257,25 @@
     <!--专家人员列表-->
     <ul class="flParent flow doctorList fl">
       <% @doctors.each do |doctor|%>
-      <li>
-        <%= link_to image_tag('doctors/'+doctor.name.strip+'.jpg'), doctor_path(doctor.id) %>
-        <div class="IntroduceMask">
+          <li>
+            <%= link_to image_tag('doctors/'+doctor.name.strip+'.jpg'), doctor_path(doctor.id) %>
+            <div class="IntroduceMask">
 
-          <h5><%= doctor.name %></h5>
-          <% honour_brief_arr = doctor.honour_brief_introduction.split('/') %>
-          <p><% if honour_brief_arr.count>=1 %><%= honour_brief_arr[0] %><% end %></p>
-          <% other_honour_brief_str = '' %>
-          <% honour_brief_arr[0]=nil %>
-          <% honour_brief_arr.each do |other_honour_brief| %>
-            <% other_honour_brief_str = other_honour_brief_str+' '+other_honour_brief if other_honour_brief.present?%>
-          <% end %>
-          <% other_honour_brief_str[0]='' if other_honour_brief_str.present? && other_honour_brief_str.first==' '%>
-          <p><%= other_honour_brief_str %></p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to doctor_path(doctor.id) do %>查看详情<% end %>
-          </div>
-        </div>
-      </li>
+              <h5><%= doctor.name %></h5>
+              <% honour_brief_arr = doctor.honour_brief_introduction.split('/') %>
+              <p><% if honour_brief_arr.count>=1 %><%= honour_brief_arr[0] %><% end %></p>
+              <% other_honour_brief_str = '' %>
+              <% honour_brief_arr[0]=nil %>
+              <% honour_brief_arr.each do |other_honour_brief| %>
+                  <% other_honour_brief_str = other_honour_brief_str+' '+other_honour_brief if other_honour_brief.present?%>
+              <% end %>
+              <% other_honour_brief_str[0]='' if other_honour_brief_str.present? && other_honour_brief_str.first==' '%>
+              <p><%= other_honour_brief_str %></p>
+              <div class="doctorBtn">
+                <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to doctor_path(doctor.id) do %>查看详情<% end %>
+              </div>
+            </div>
+          </li>
       <% end %>
     </ul>
     <!--专家人员列表-->
@@ -279,8 +283,8 @@
     <ul class="consults fr">
       <li>
         <%= link_to medical_path(:就医流程) do %>
-          <i></i>
-          <p>就医流程</p>
+            <i></i>
+            <p>就医流程</p>
         <% end %>
       </li>
       <li>
@@ -297,14 +301,14 @@
       </li>
       <li>
         <%= link_to medical_path(:医保政策) do %>
-          <i></i>
-          <p>医保政策</p>
+            <i></i>
+            <p>医保政策</p>
         <% end %>
       </li>
       <li>
         <%= link_to medical_path(:到院指引) do %>
-          <i></i>
-          <p>来院导航</p>
+            <i></i>
+            <p>来院导航</p>
         <% end %>
       </li>
     </ul>
@@ -727,39 +731,39 @@
 
 
 <% content_for :script do %>
-<script>
-    $(".slide").ckSlide({
+    <script>
+      $(".slide").ckSlide({
         autoPlay:true,
         add:true,
         seamless:true,
         dir:"x",
-    });
+      });
 
-    var doctorDate={
+      var doctorDate={
         index:0,
         listNum:Math.ceil($(".doctorList li").length/10)
-    }
+      }
 
-    showDetail();
-    function showDetail(){
-      $(".doctorList li").show().eq(doctorDate.index*10).prevAll().hide();
-      $(".doctorList li").eq((doctorDate.index+1)*10-1).nextAll().hide();
-    }
+      showDetail();
+      function showDetail(){
+        $(".doctorList li").show().eq(doctorDate.index*10).prevAll().hide();
+        $(".doctorList li").eq((doctorDate.index+1)*10-1).nextAll().hide();
+      }
 
-    $(".changeExperts").click(function(){
+      $(".changeExperts").click(function(){
         doctorDate.index++;
         if(doctorDate.index == doctorDate.listNum-1){
-            showDetail();
-            doctorDate.index = -1;
+          showDetail();
+          doctorDate.index = -1;
         }else {
-            showDetail();
+          showDetail();
         }
 
-    })
+      })
 
-    $(".honorTitle li").hover(function(){
+      $(".honorTitle li").hover(function(){
         $(this).addClass("active").siblings().removeClass("active");
         $(this).parents(".plate").find(".honorplate").hide().eq($(this).index()).show();
-    })
-</script>
+      })
+    </script>
 <% end %>

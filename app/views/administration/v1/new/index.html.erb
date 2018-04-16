@@ -53,7 +53,7 @@
 										<th><%= New.human_attribute_name :id %></th>
 										<th><%= New.human_attribute_name :title %></th>
 										<th><%= New.human_attribute_name :tag %></th>
-										<th><%= New.human_attribute_name :user %></th>
+										<!--<th><%= New.human_attribute_name :user %></th>-->
                     <th><%= New.human_attribute_name :classify %></th>
 										<th><%= New.human_attribute_name :occurred_at %></th>
 										<th><%= New.human_attribute_name :created_at %></th>
@@ -67,7 +67,7 @@
 												<td><%= new.id %></td>
 												<td><%= new.title %></td>
 												<td><%= TagRelation.get_tags_by(object: new) %></td>
-												<td><%= new.user.try(:name).blank? ? '（暂无名称）' : new.user.name %></td>
+												<!--<td><%= new.user.try(:name).blank? ? '（暂无名称）' : new.user.name %></td>-->
 												<td><%= ShareEnum.new_classifies[new.classify.to_sym] %></td>
 												<td><%= new.occurred_at==Time.utc(1970) ? ' ' : (l new.occurred_at, format: :human_date) %></td>
 												<td><%= l new.created_at, format: :human_date %></td>
@@ -76,14 +76,12 @@
 														<%= link_to new.scan_rails_path.blank? ? administration_v1_new_path(new.id) : new.scan_rails_path do %>
 															<i class="am-icon-newspaper-o"></i> 详情
 														<% end %>
-														<% if @login_user.id == new.user_id %>
-															<%= link_to edit_administration_v1_new_path(new.id) do %>
-																<i class="am-icon-pencil"></i> 编辑
-															<% end %>
-															<%= link_to 'javascript: void(0);', class: 'tpl-table-black-operation-del js-delete-one-new', 'data-new-id' => new.id do %>
-																<i class="am-icon-trash"></i> 删除
-															<% end %>
-														<% end %>
+                            <%= link_to edit_administration_v1_new_path(new.id) do %>
+                              <i class="am-icon-pencil"></i> 编辑
+                            <% end %>
+                            <%= link_to 'javascript: void(0);', class: 'tpl-table-black-operation-del js-delete-one-new', 'data-new-id' => new.id do %>
+                              <i class="am-icon-trash"></i> 删除
+                            <% end %>
 													</div>
 												</td>
 											</tr>

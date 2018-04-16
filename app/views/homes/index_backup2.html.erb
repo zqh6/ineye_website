@@ -189,7 +189,7 @@
         <% if @new.present? %>
             <% @new.each do |new| %>
                 <li>
-                  <%= link_to new.scan_rails_path.blank? ? news_path(new.id, from: 'db') : new.scan_rails_path  do %>
+                  <%= link_to news_path(new.id, from: 'db')  do %>
                       <span class="newsTle"><%= new.title %></span>
                   <% end %>
                   <span class="fr">
@@ -205,13 +205,9 @@
   <div class="newsVideo fr">
     <p class="newTitle">通知公告 </p>
     <ul class="topList noticeList">
-      <% if @new_notice.present? %>
-        <% @new_notice.each do |new_notice| %>
-          <li>
-            <%= link_to new.scan_rails_path.blank? ? news_path(new.id, from: 'db') : new.scan_rails_path do %><%= new.title %><% end %>
-          </li>
-        <% end %>
-      <% end %>
+      <li>
+        <%= link_to :'2018年眼科学院硕士研究生（统招）拟录取名单' ,news_path(:'2018年眼科学院硕士研究生统招拟录取名单')%>
+      </li>
       <li>
         <%= link_to :'关于成都中医药大学眼科学院2018年硕士研究生复试办法更正通知' ,news_path(:关于成都中医药大学眼科学院2018年硕士研究生复试办法更正通知
         )%>
