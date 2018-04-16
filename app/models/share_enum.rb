@@ -14,7 +14,8 @@ class ShareEnum < ApplicationRecord
     common: '普通新闻',
     science: '科普新闻',
     medicion: '医药新闻',
-    activity: '活动新闻'
+    activity: '活动新闻',
+    notice: '通知公告'
   }
 
   enum role: {
