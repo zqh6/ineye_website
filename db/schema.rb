@@ -198,18 +198,6 @@ ActiveRecord::Schema.define(version: 20180417060113) do
     t.index ["week_code"], name: "index_schedulings_on_week_code", using: :btree
   end
 
-  create_table "statistics_urls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "url",                                                  null: false
-    t.integer  "count",                default: 0,                     null: false
-    t.string   "state",      limit: 1, default: "C",                   null: false
-    t.datetime "opened_at",            default: '1970-01-01 00:00:00', null: false
-    t.datetime "closed_at",            default: '3000-01-01 00:00:00', null: false
-    t.boolean  "defunct",              default: false,                 null: false
-    t.datetime "created_at",                                           null: false
-    t.datetime "updated_at",                                           null: false
-    t.index ["url"], name: "index_statistics_urls_on_url", using: :btree
-  end
-
   create_table "tag_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "relation_type",                                           null: false
     t.string   "relation_id",                                             null: false
