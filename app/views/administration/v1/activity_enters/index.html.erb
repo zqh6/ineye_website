@@ -29,6 +29,11 @@
                     <th><%= ActivityEnter.human_attribute_name :phone_number %></th>
                     <th><%= ActivityEnter.human_attribute_name :created_at %></th>
                     <th><%= ActivityEnter.human_attribute_name :activity_type %></th>
+                    <% if @login_user.role_code=='sys_admin' %>
+                    <th><%= ActivityEnter.human_attribute_name :ip %></th>
+                    <th><%= ActivityEnter.human_attribute_name :remote_ip %></th>
+                    <th><%= ActivityEnter.human_attribute_name :user_agent %></th>
+                    <% end %>
                   </tr>
                   </thead>
                   <tbody>
@@ -40,6 +45,11 @@
                         <td><%= activity_enter.phone_number %></td>
                         <td><%= activity_enter.created_at_desc %></td>
                         <td><%= ShareEnum.activity_types[activity_enter.activity_type.to_sym] %></td>
+                        <% if @login_user.role_code=='sys_admin' %>
+                        <td><%= activity_enter.ip %></td>
+                        <td><%= activity_enter.remote_ip %></td>
+                        <td><%= activity_enter.user_agent %></td>
+                        <% end %>
                       </tr>
                     <% end %>
                   <% end %>
@@ -63,7 +73,7 @@
 </div>
 
 <% content_for :title do %>
-    管理平台-评论列表
+    管理平台-活动报名
 <% end %>
 
 <% content_for :meta do %>

@@ -55,7 +55,7 @@
       <label for="pdf_file" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= ConEducationArticle.human_attribute_name :pdf_url %> <span class="tpl-form-line-small-title"><%= :pdf_url.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
         <% if !@con_education_article.new_record? && @con_education_article.article_type=='pdf' %>
-          <a target="_blank" href="<%= request.protocol+request.host_with_port+'/' %><%= @con_education_article.pdf_url %>"><%= @con_education_article.pdf_url %></a>
+          <a class="js-old-pdf" target="_blank" href="<%= request.protocol+request.host_with_port %><%= @con_education_article.pdf_url %>"><%= @con_education_article.pdf_url %></a>
         <% end %>
         <!-- 上传表单 -->
         <form id="fileupload" action="/upload" method="POST" enctype="multipart/form-data"
