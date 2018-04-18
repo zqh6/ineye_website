@@ -54,11 +54,14 @@ $(function(){
           alert('只能上传一个pdf');
           return;
         }
-        if(pdfCount<=0){
-          alert('必须上传pdf');
-          return;
+        var oldPdfUrl = $('.js-old-pdf').html();
+        if(pdfCount<=0 ){
+          if(pdfUploadDom.attr('data-file-path')==undefined && oldPdfUrl==undefined) {
+            alert('必须上传pdf');
+            return;
+          }
         }
-        data['pdf_url'] = pdfUploadDom.attr('data-file-path');
+        data['pdf_url'] = pdfUploadDom.attr('data-file-path')==undefined ? oldPdfUrl : pdfUploadDom.attr('data-file-path');
       }else if(articleType=='video'){
         var videoUrl = $('#video_url').val();
         if(videoUrl==null || videoUrl==''){
