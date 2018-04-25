@@ -31,7 +31,9 @@ class MedicalsController < ApplicationController
       if user_ids.include?(scheduling.user_id)
         user_name = user_hash[scheduling.user_id.to_s.to_sym]
       else
-        user_name = User.find(scheduling.user_id).name
+        user = User.find(scheduling.user_id)
+        next if user.defunct==true
+        user_name = user.name
         user_ids.push(scheduling.user_id)
         user_hash[scheduling.user_id.to_s.to_sym] = user_name
       end
