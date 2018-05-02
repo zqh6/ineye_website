@@ -31,7 +31,7 @@ class ConEducationsController < ApplicationController
   def index
     @con_education_articles = ConEducationArticle.alive.article_classify_is(params[:article_classify])
     if params[:doctor_name].present?
-      relation_ids = TagRelation.relation_type_is(ConEducationArticle.name.underscore).tag_flag_is('doctor_name').collect{|i|i.relation_id}
+      relation_ids = TagRelation.relation_type_is(ConEducationArticle.name.underscore).tag_flag_is('doctor_name').tag_name_like(params[:doctor_name].to_s.strip).collect{|i|i.relation_id}
       @con_education_articles = @con_education_articles.where('id in (?)', relation_ids)
     end
     @con_education_articles = @con_education_articles.reorder('published_at ASC')
