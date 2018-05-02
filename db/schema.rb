@@ -228,17 +228,16 @@ ActiveRecord::Schema.define(version: 20180502040154) do
   end
 
   create_table "url_counts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "url",           limit: 1000, default: "",                    null: false
-    t.string   "suffix_params",              default: "",                    null: false
-    t.string   "method",                     default: "",                    null: false
-    t.integer  "count",                      default: 0,                     null: false
-    t.string   "state",         limit: 1,    default: "C",                   null: false
-    t.datetime "opened_at",                  default: '1970-01-01 00:00:00', null: false
-    t.datetime "closed_at",                  default: '3000-01-01 00:00:00', null: false
-    t.boolean  "defunct",                    default: false,                 null: false
-    t.datetime "created_at",                                                 null: false
-    t.datetime "updated_at",                                                 null: false
-    t.index ["url"], name: "index_url_counts_on_url", using: :btree
+    t.string   "url",           limit: 500, default: "",                    null: false
+    t.string   "suffix_params",             default: "",                    null: false
+    t.string   "method",                    default: "",                    null: false
+    t.integer  "count",                     default: 0,                     null: false
+    t.string   "state",         limit: 1,   default: "C",                   null: false
+    t.datetime "opened_at",                 default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",                 default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                   default: false,                 null: false
+    t.datetime "created_at",                                                null: false
+    t.datetime "updated_at",                                                null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
