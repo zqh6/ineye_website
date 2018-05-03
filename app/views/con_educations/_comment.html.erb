@@ -39,7 +39,7 @@
 
                 <div class= "childComments" >
                     <% if top_comment[:sons].present? %>
-                        <% top_comment[:sons].each do |son_comment| %>
+                        <% top_comment[:sons].sort_by{|i| i[:created_at]}.each do |son_comment| %>
                             <div class="comContent" parent_id = "<%= son_comment[:id] %>">
                                 <p class="identity">
                                     <%= son_comment[:created_at] %>

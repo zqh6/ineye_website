@@ -9,7 +9,8 @@ class ConEducationsController < ApplicationController
 
     else
       ActiveRecord::Base.transaction do
-        redirect_to logins_path and return if session[:user_id].blank?
+        redirect_to logins_path and return if @login_user.blank?
+=begin
         relative_path = URI.decode(request.fullpath).strip
         @url_count = UrlCount.where(url: relative_path).first
         if @url_count.present?
@@ -17,6 +18,15 @@ class ConEducationsController < ApplicationController
           @url_count.save!
         else
           @url_count = UrlCount.new url: relative_path, method: request.request_method, count: 1
+          @url_count.save!
+        end
+=end
+        @url_count = UrlCount.where('model_name2 = ? and model_id = ?', ConEducationArticle.name, params[:id].to_i).first
+        if @url_count.present?
+          @url_count.count = @url_count.count + 1
+          @url_count.save!
+        else
+          @url_count = UrlCount.new model_name2: ConEducationArticle.name, model_id: params[:id].to_i, method: request.request_method, count: 1
           @url_count.save!
         end
       end

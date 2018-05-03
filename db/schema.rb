@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502040154) do
+ActiveRecord::Schema.define(version: 20180503035259) do
 
   create_table "activity_enters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -238,6 +238,10 @@ ActiveRecord::Schema.define(version: 20180502040154) do
     t.boolean  "defunct",                   default: false,                 null: false
     t.datetime "created_at",                                                null: false
     t.datetime "updated_at",                                                null: false
+    t.string   "model_name2"
+    t.integer  "model_id"
+    t.index ["model_id"], name: "index_url_counts_on_model_id", using: :btree
+    t.index ["model_name2"], name: "index_url_counts_on_model_name2", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
