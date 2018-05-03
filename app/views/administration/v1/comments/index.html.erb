@@ -47,7 +47,7 @@
                                   <%= URI.decode(comment.post_link) %>
                                 </a>
                               <% elsif comment.post_id.present? %>
-                                <a href="<%= article_show(con_education_article: ConEducationArticle.find(commen.post_id)) %>">
+                                <a href="<%= article_show(con_education_article: ConEducationArticle.find(comment.post_id)) %>">
                                   <%= comment.id %>
                                 </a>
                               <% end %>
