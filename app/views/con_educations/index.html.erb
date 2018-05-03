@@ -7,7 +7,7 @@
       <% @con_education_articles.each do |con_education_article| %>
           <% %>
           <li>
-            <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: con_education_article.static_url.to_s.strip.present? ? con_education_article.static_url : (con_education_article.article_type=='pdf' ? con_education_path(con_education_article.id, new: 'true', file: URI.encode(con_education_article.pdf_url)) : con_education_path(con_education_article.id, new: 'true')) }  do %>
+            <%= link_to 'javascript: void(0)', class: 'js-check-login',  data: {url: article_show(con_education_article: con_education_article) }  do %>
               <p><span><%= count %>.<%= TagRelation.get_doctor_names_by(object: con_education_article).to_sentence %> </span><%= con_education_article.title %> <span class="fr"><%= con_education_article.published_at.present? ? (l con_education_article.published_at, format: :human_date) : '' %></span></p>
             <% end %>
           </li>

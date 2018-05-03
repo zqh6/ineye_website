@@ -8,7 +8,7 @@
 
 
     window.onload = function(){
-        getContent()
+        //getContent()
 
     }
     var locationHref = window.location.href;
@@ -92,7 +92,6 @@
         var index = num?1:0;
         var time = num?1000:0;
 
-
             $.ajax({
                 url: '/all-api/comments',
                 type: "POST",
@@ -101,14 +100,16 @@
                 data: JSON.stringify({
                     parent_id: parId?parId:null,
                     content: num?changeStr($(".commentInner").eq(1).val()):$(".w-e-text").html(),
-                    post_link: "/con_educations"+locationHref,
+                    //post_link: "/con_educations"+locationHref,
+                    post_id: $('.js-article-id').val()
                 })
             })
                 .done(function( data ) {
-                    var data = data.collection;
+                    /*var data = data.collection;
                     setTimeout(function(){
                         getContent();
-                    },time);
+                    },time);*/
+                    window.location.reload();
                 })
                 .fail(function( xhr, status, errorThrown ) {
                     if(xhr.responseJSON.message=="评论失败，请登录后评论"){
@@ -125,7 +126,6 @@
 
     $(".commentSubBtn").click(function(){
         postComment();
-
     })
     var openFlag = true; //判断前后是否是对一条信息评论，第二次点击时候清除评论区域。
     function addChiComment(elem,num){//一个值是二级评论，两个值是三级评论

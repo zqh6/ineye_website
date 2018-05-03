@@ -17,14 +17,14 @@ class AllApi::CommentsController < AllApi::PresentationController
       if params[:post_link].blank? && params[:post_id].blank?
         render_conflict message: '评论失败，评论没有指定任何帖子' and return
       end
+      if params[:post_id].present? && ConEducationArticle.find(params[:post_id]).blank?
+        render_conflict message: '评论失败，文章找不到' and return
+      end
       if params[:comment][:parent_id].present? && Comment.find_by_id(params[:comment][:parent_id]).blank?
-        render_conflict message: '评论失败，没有指定的上级评论' and return
+        render_conflict message: '评论失败，上级评论找不到' and return
       end
       if params[:comment][:content].blank?
         render_conflict message: '评论失败，评论没有内容' and return
-      end
-      if params[:comment][:post_id]!=nil
-        render_conflict message: '评论失败，post_id应为null' and return
       end
       comment = Comment.new attribute_fields
       comment.creator_id = @login_user.id if @login_user.present?

@@ -26,7 +26,7 @@
                       <th>评论编号</th>
                       <th>上级评论编号</th>
                       <th>内容预览</th>
-                      <th>帖子链接</th>
+                      <th>文章链接/文章编号</th>
                       <th>评论者</th>
                       <th>评论时间</th>
                       <th>审核员</th>
@@ -41,7 +41,17 @@
                             <td><%= comment.id %></td>
                             <td><%= comment.parent_id_desc %></td>
                             <td><%= comment.content.length>10 ? comment.content[0, 10]+'...' : comment.content %></td>
-                            <td><a href="<%= request.protocol+request.host_with_port+comment.post_link %>"><%= URI.decode(comment.post_link) %></a></td>
+                            <td>
+                              <% if comment.post_link.present? %>
+                                <a href="<%= request.protocol+request.host_with_port+comment.post_link %>">
+                                  <%= URI.decode(comment.post_link) %>
+                                </a>
+                              <% elsif comment.post_id.present? %>
+                                <a href="<%= article_show(con_education_article: ConEducationArticle.find(commen.post_id)) %>">
+                                  <%= comment.id %>
+                                </a>
+                              <% end %>
+                            </td>
                             <td><%= comment.creator_id_desc%></td>
                             <td><%= comment.created_at_desc %></td>
                             <td><%= comment.auditor_id_desc %></td>
