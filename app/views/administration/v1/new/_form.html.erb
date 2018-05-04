@@ -18,7 +18,7 @@
 
   <% if @new.user_id==@login_user.id %>
   <div class="am-form-group">
-    <label for="user-name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span>状态 <span class="tpl-form-line-small-title"><%= :title.to_s.titleize %></span></label>
+    <label for="user-name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span>状态 <span class="tpl-form-line-small-title"><%= :state.to_s.titleize %></span></label>
     <div class="am-u-sm-9">
       <%= select_tag :state, options_for_select(ShareEnum.form_options('states'), @new.state), class: 'tpl-form-input' %>
     </div>
