@@ -1,0 +1,173 @@
+<div class="doctorDetails flow whiteBg">
+  <div class="fl doctorPortrait flow">
+    <%= image_tag('doctors/'+@user.name.strip+'.jpg') %>
+    <div class="doctorBtns">
+      <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" class="fl">在线咨询</a>
+      <%= link_to '查看排班表',medical_path(:专家排班,:anchor=>"experts_5"),:class=>"fr" %>
+    </div>
+  </div>
+  <div class="fl doctorContent flow">
+    <h5><%= @user.name %></h5>
+    <p class="doctorTitle"><span><%= @user.honour_brief_introduction %></span></p>
+    <div class="doctorHonor">
+      <p><%= @user.honour_specific.html_safe %></p>
+    </div>
+    <div class="doctorGoodAt flow doctorGoodAtFloat">
+      <span>擅长领域：</span>
+      <p><%= @user.good_at_field.html_safe %></p>
+    </div>
+    <p class="seePatientTime"><span>坐诊时间:</span><%= @user.work_time.html_safe %></p>
+  </div>
+</div>
+<div class="doctorIntroduce whiteBg">
+  <p><%= @user.detailed_introduction.html_safe %></p>
+  <% con_education_article_ids = TagRelation.relation_type_is(ConEducationArticle.name.underscore).tag_flag_is('doctor_name').tag_name_is(@user.name.to_s.strip).collect{|i| i.relation_id} %>
+  <% con_education_articles = ConEducationArticle.alive.where('id in (?)', con_education_article_ids) %>
+  <% article_classifies = con_education_articles.collect{|i| i.article_classify }.uniq %>
+  <p>
+    <% article_classifies.each do |article_classify| %>
+      <a href="<%= con_educations_path(doctor_name: @user.name, article_classify: article_classify) %>"><%= ShareEnum.con_education_article_classifies[article_classify.to_sym] %></a>
+    <% end %>
+  </p>
+</div>
+<ul class="registered flow flParent">
+  <li>预约挂号</li>
+  <li>姓名：<input type="text"></li>
+  <li>联系电话：<input type="text"></li>
+  <li>预约时间：<input type="text"></li>
+  <li>预约科室：<input type="text"></li>
+  <li><a href="" class="registeredBtn">提交</a></li>
+</ul>
+
+<% members = [] %>
+<% if @user.name=='段俊国' %>
+    <% members = %w(路雪婧 张富文 李红惠 蹇文渊) %>
+<% elsif @user.name=='廖品正' %>
+    <% members = %w(邓亚平 周华祥 路雪婧 黄霄 张大铮) %>
+<% elsif @user.name=='邓亚平' %>
+    <% members = %w(廖品正 周华祥 路雪婧 黄霄 张大铮) %>
+<% elsif @user.name=='朱思泉' %>
+    <% members = %w(潘学会 陈小凤) %>
+<% elsif @user.name=='刘文' %>
+    <% members = %w(黄霄 王国平 李红惠) %>
+<% elsif @user.name=='周跃华' %>
+    <% members = %w(袁晓辉 周春阳 谢艾芮 缪馨) %>
+<% elsif @user.name=='周华祥' %>
+    <% members = %w(廖品正 邓亚平 路雪婧 黄霄 张大铮) %>
+<% elsif @user.name=='袁晓辉' %>
+    <% members = %w(周跃华 周春阳 谢艾芮 缪馨) %>
+<% elsif @user.name=='路雪婧' %>
+    <% members = %w(廖品正 段俊国 邓亚平 周华祥 张富文 黄霄 张大铮 蹇文渊) %>
+<% elsif @user.name=='张富文' %>
+    <% members = %w(段俊国 路雪婧 潘学会 陈小凤 李强 蹇文渊) %>
+<% elsif @user.name=='黄霄' %>
+    <% members = %w(廖品正 邓亚平 刘文 周华祥 路雪婧 王国平) %>
+<% elsif @user.name=='潘学会' %>
+    <% members = %w(朱思泉 张富文 陈小凤 李强) %>
+<% elsif @user.name=='周春阳' %>
+    <% members = %w(周跃华 袁晓辉 谢艾芮 缪馨) %>
+<% elsif @user.name=='王国平' %>
+    <% members = %w(刘文 黄霄 李红惠) %>
+<% elsif @user.name=='张大铮' %>
+    <% members = %w(廖品正 邓亚平 周华祥 路雪婧 黄霄) %>
+<% elsif @user.name=='谢艾芮' %>
+    <% members = %w(周跃华 袁晓辉 周春阳 缪馨) %>
+<% elsif @user.name=='陈小凤' %>
+    <% members = %w(朱思泉 张富文 潘学会 李强) %>
+<% elsif @user.name=='李强' %>
+    <% members = %w(张富文 潘学会 陈小凤) %>
+<% elsif @user.name=='缪馨' %>
+    <% members = %w(周跃华 袁晓辉 周春阳 谢艾芮) %>
+<% elsif @user.name=='李红惠' %>
+    <% members = %w(段俊国 刘文 王国平) %>
+<% elsif @user.name=='蹇文渊' %>
+    <% members = %w(段俊国 路雪婧 张富文) %>
+<% end %>
+<% if members.present? %>
+<div class="membersList whiteBg flow">
+  <div class="fl teamMemberWords">团 队 成 员</div>
+  <div class="teamContainer" >
+    <ul class="teamMembers fr flParent flow" style="">
+      <% members.each do |member_name| %>
+          <% member_user = User.role_code_is('common_user').name_is(member_name).first%>
+          <% member_info = UserConfiguration.doctors[member_name.to_sym]%>
+      <li>
+        <div class="fl teamMemberPhoto">
+          <%= link_to image_tag('doctors/'+member_name+'.jpg'), member_user.present? ? doctor_path(member_user.try(:id)) : ('javascript: void(0);') %>
+        </div>
+        <div class="fl memberIntroduce">
+          <h4><%= member_name %></h4>
+          <p><%= member_info[:honour_brief_introduction] %></p>
+          <% member_info[:honour_specific].each do |honour_specific| %>
+            <p><%= honour_specific %></p>
+          <% end %>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+    <div class="leftBtn">
+      <i class="icon_arrow icon_left"></i>
+    </div>
+    <div class="rightBtn">
+      <i class="icon_arrow icon_right"></i>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :style do %>
+<% end %>
+
+<% content_for :script do %>
+  <% if members.present? %>
+  <script>
+    var members = $(".teamMembers li").length;
+    if(members>4){
+      $(".leftBtn").addClass("active");
+      $(".rightBtn").addClass("active");
+    }
+    var rightMoveNum = members-4+((parseInt($(".teamMembers").css("left"))/$(".teamMembers li").width()));
+    var leftMoveNum = 0;
+    function move() {
+      if(rightMoveNum>0){
+        $(".teamMembers").stop(true,true);
+        var nowPos = parseInt($(".teamMembers").css("left"));
+        var displacement =$(".teamMembers li").width();
+        console.log(nowPos+" "+displacement);
+        $(".teamMembers").animate({
+          left:nowPos-displacement
+        })
+        rightMoveNum--;
+        leftMoveNum++;
+      }
+      console.log(rightMoveNum);
+    }
+    function move2() {
+      if(leftMoveNum>0){
+        $(".teamMembers").stop(true,true);
+        var nowPos = parseInt($(".teamMembers").css("left"));
+        var displacement =$(".teamMembers li").width();
+        $(".teamMembers").animate({
+          left:nowPos+displacement
+        })
+        rightMoveNum++;
+        leftMoveNum--;
+      }
+      console.log(leftMoveNum);
+    }
+    $(".rightBtn").click(function() {
+      if(rightMoveNum>0){
+        move();
+      }
+    })
+    $(".leftBtn").click(function() {
+      if(leftMoveNum>0){
+        move2();
+      }
+    })
+  </script>
+  <% end %>
+<% end %>

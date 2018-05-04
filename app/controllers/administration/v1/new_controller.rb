@@ -9,11 +9,11 @@ class Administration::V1::NewController < Administration::V1::PrivilegedControll
   end
 
   def new
-    @new = New.new occurred_at: DateTime.now, user_id: session[:user]['id']
+    @new = New.new occurred_at: DateTime.now, user_id: session[:user_id]
   end
 
   def index
-    @new = New.all
+    @new = New.alive
     @new = @new.classify_is(params[:classify]) if params[:classify].present? && params[:classify].to_s!='0'
     @new = @new.title_like(params[:title])     if params[:title].present?
     @new = @new.reorder('created_at DESC')

@@ -1,0 +1,83 @@
+<link href="http://cdn.bootcss.com/wangeditor/2.1.20/css/wangEditor.css" rel="stylesheet">
+
+<div class="marT10 whiteBg">
+    <ul class="flow flParent educationList">
+        <li class="on">评论</li>
+    </ul>
+    <div class="commentCon">
+        <!-- <textarea class="commentInner" autofocus placeholder="您可以写下您的观点或意见..."></textarea> -->
+        <div id="editor" class="commentInner">
+        </div>
+        <div class="flow">
+            <p class="erroContent"></p><div class="commentSubBtn fr">评论</div>
+        </div>
+    </div>
+
+    <div class="comContainer">
+        <p class="allComment">全部评论<span class="num"><%= @collection.count %></span></p>
+
+        <% @collection.each do |top_comment| %>
+            <div class="flow oneComment" parent_id = "<%= top_comment[:id] %>">
+                <div class="fl">
+                    <img src= "../../assets/edu_user.png" />
+                </div>
+                <div class="fl comContent" parent_id = "<%= top_comment[:id] %>">
+                    <p class="identity">
+                        <%= top_comment[:created_at] %>
+                        <span><%= top_comment[:creator_name]==nil ? '游客' : top_comment[:creator_name] %></span>
+                        <span class="<%= top_comment[:official_account]=='is' ? "official-account" : "" %>"><%= top_comment[:creator_unit_name]!=nil ? top_comment[:creator_unit_name] : '' %></span>
+                    </p>
+                    <div class="flow">
+                        <div class="fl">
+                            <%= top_comment[:content].html_safe %>
+                        </div>
+                        <div class="commentImg fr userComment" >
+                            <img src= "../../assets/comment_before.png"  onclick="addChiComment('<%= top_comment[:id] %>')" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class= "childComments" >
+                    <% if top_comment[:sons].present? %>
+                        <% top_comment[:sons].sort_by{|i| i[:created_at]}.each do |son_comment| %>
+                            <div class="comContent" parent_id = "<%= son_comment[:id] %>">
+                                <p class="identity">
+                                    <%= son_comment[:created_at] %>
+                                    <span>
+                                        <%= son_comment[:creator_name]==nil ? '游客' : son_comment[:creator_name] %>
+                                    </span>
+                                    <span class="<%= son_comment[:official_account]=='is' ? "official-account" : "" %>"><%= son_comment[:creator_unit_name]!=nil ? son_comment[:creator_unit_name] : '' %></span>
+                                </p>
+                                <div class="flow">
+                                    <p class="fl">
+                                        <%= son_comment[:content].html_safe %>
+                                    </p>
+                                    <div class="commentImg fr userComment" >
+                                        <img src= "../../assets/comment_before.png" onclick="addChiComment('<%= son_comment[:id] %>', '<%= son_comment[:id] %>')" />
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>
+<% content_for :script do %>
+<%= javascript_include_tag 'wangEditor' %>
+<script>
+var E = window.wangEditor
+ var editor1 = new E('#editor')
+    editor1.customConfig.uploadImgShowBase64 = true;
+    editor1.customConfig.menus = [
+        'link',
+        'underline',
+        'emoticon',
+        'image',
+        'undo',
+        'redo'
+    ]
+    editor1.create()
+</script>
+<% end %>

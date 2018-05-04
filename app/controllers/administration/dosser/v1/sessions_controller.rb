@@ -8,12 +8,12 @@ class Administration::Dosser::V1::SessionsController < Administration::Dosser::V
     password = user.passwords.alive.first
     this_hashed_content = Digest::SHA512.hexdigest params[:password] + password.pepper_content
     render_conflict message: '密码不正确' and return if this_hashed_content!=password.hashed_content
-    session[:user] = user
+    session[:user_id] = user.id
     render_ok and return
   end
 
   def destroy
-    session[:user] = nil
+    session[:user_id] = nil
     render_ok and return
   end
 

@@ -2,14 +2,14 @@ class Administration::Dosser::V1::PresentationController < ActionController::Bas
 
   clear_helpers
 
-  include Repres::Dosser::Concerns::ResourcePresentation
+  include Repres::Dosser::Concerns::ResourcePresentation, ErrorMessage
 
   layout :nil
 
   before_action :validate_login
 
   def validate_login
-    @login_user = User.included_by(session[:user]['id']).first if session[:user].present?
+    @login_user = User.included_by(session[:user_id]).first if session[:user_id].present?
   end
 
 end

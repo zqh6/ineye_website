@@ -1,0 +1,10 @@
+<div class="doctorBanner">
+  <%= image_tag("into.jpg") %>
+</div>
+<div class="expertCommonBg">
+  <ul class="expertCommon flParent flow">
+    <% ShareEnum.doctor_levels.each do |key, value| %>
+      <li class="<% if params[:doctor_level]==key.to_s %>active<% end %>"><%= link_to doctors_path(doctor_level: key.to_s) do %><%= ShareEnum.doctor_levels[key] %><% end %></li>
+    <% end %>
+  </ul>
+</div>

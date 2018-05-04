@@ -9,86 +9,88 @@
     <li>
       <b></b>
       <%= link_to center_path(:眼底病中心) do %>
-        <i class="icon_eye"></i>
-        <p>眼底病</p>
+          <i class="icon_eye"></i>
+          <p>眼底病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:糖尿病病变防治中心) do %>
-        <i class="icon_eye icon_eye2"></i>
-        <p>糖网病</p>
+          <i class="icon_eye icon_eye2"></i>
+          <p>糖网病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:中医简介) do %>
-        <i class="icon_eye icon_eye3"></i>
-        <p>干眼</p>
+          <i class="icon_eye icon_eye3"></i>
+          <p>干眼</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:视光中心) do %>
-        <i class="icon_eye icon_eye4"></i>
-        <p>斜弱视</p>
+          <i class="icon_eye icon_eye4"></i>
+          <p>斜弱视</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:视光中心) do %>
-        <i class="icon_eye icon_eye5"></i>
-        <p>屈光不正</p>
+          <i class="icon_eye icon_eye5"></i>
+          <p>屈光不正</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:白内障屈光中心) do %>
-        <i class="icon_eye icon_eye6"></i>
-        <p>白内障</p>
+          <i class="icon_eye icon_eye6"></i>
+          <p>白内障</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:青光眼) do %>
-        <i class="icon_eye icon_eye7"></i>
-        <p>青光眼</p>
+          <i class="icon_eye icon_eye7"></i>
+          <p>青光眼</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:角膜移植与眼表病) do %>
-        <i class="icon_eye icon_eye8"></i>
-        <p>角膜病</p>
+          <i class="icon_eye icon_eye8"></i>
+          <p>角膜病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:中医简介) do %>
-        <i class="icon_eye icon_eye9"></i>
-        <p>葡萄膜病</p>
+          <i class="icon_eye icon_eye9"></i>
+          <p>葡萄膜病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:中医简介) do %>
-        <i class="icon_eye icon_eye10"></i>
-        <p>视疲劳</p>
+          <i class="icon_eye icon_eye10"></i>
+          <p>视疲劳</p>
       <% end %>
     </li>
     <li>
       <b></b>
-      <a href="javascript:;">
-        <i class="icon_eye icon_eye11"></i>
-        <p>泪器病</p>
-      </a>
+      <% doctor = User.alive.role_code_is('common_user').name_is('李蓓').first %>
+      <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
+          <i class="icon_eye icon_eye11"></i>
+          <p>泪器病</p>
+      <% end %>
     </li>
     <li>
       <b></b>
-      <a href="javascript:;">
-        <i class="icon_eye icon_eye12"></i>
-        <p>眼眶疾病</p>
-      </a>
+      <% doctor = User.alive.role_code_is('common_user').name_is('李蓓').first %>
+      <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
+          <i class="icon_eye icon_eye12"></i>
+          <p>眼眶疾病</p>
+      <% end %>
     </li>
     <li>
       <b></b>
@@ -99,37 +101,38 @@
     </li>
     <li>
       <b></b>
-      <a href="javascript:;">
-        <i class="icon_eye icon_eye14"></i>
-        <p>结膜病</p>
-      </a>
+      <%= link_to center_path(:中医简介) do %>
+          <i class="icon_eye icon_eye14"></i>
+          <p>结膜病</p>
+      <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:中医简介) do %>
-        <i class="icon_eye icon_eye15"></i>
-        <p>巩膜病</p>
+          <i class="icon_eye icon_eye15"></i>
+          <p>巩膜病</p>
       <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to center_path(:眼底病中心) do %>
-        <i class="icon_eye icon_eye16"></i>
-        <p>玻璃体疾病</p>
+          <i class="icon_eye icon_eye16"></i>
+          <p>玻璃体疾病</p>
       <% end %>
     </li>
     <li>
       <b></b>
-      <a href="javascript:;">
-        <i class="icon_eye icon_eye17"></i>
-        <p>眼外伤</p>
-      </a>
+      <% doctor = User.alive.role_code_is('common_user').name_is('王国平').first %>
+      <%= link_to doctor_path(doctor.present? ? doctor.id : '~') do %>
+          <i class="icon_eye icon_eye17"></i>
+          <p>眼外伤</p>
+      <% end %>
     </li>
     <li>
       <b></b>
       <%= link_to :centers do %>
-        <i class="icon_eye icon_eye18"></i>
-        <p>其他</p>
+          <i class="icon_eye icon_eye18"></i>
+          <p>其他</p>
       <% end %>
     </li>
   </ul>
@@ -140,13 +143,13 @@
   <!--新闻中心-->
   <div class="leftNew fl">
     <div class="topNews flow">
-      <p class="newTitle">新闻热点 <%= link_to :"视频新闻",news_path(:index) %> <%= link_to :"媒体报道",news_path(:index) %></p>
+      <p class="newTitle">新闻热点 <%= link_to :"视频新闻",news_index_path %> <%= link_to :"媒体报道",news_index_path %></p>
       <!--新闻轮播-->
       <div class="flow slide fl newsSlide">
         <ul class="slide-wrapper fl">
           <li>
             <%= link_to news_path(:刘敏如廖品正两位国医大师相聚在银海眼科医院) do %>
-              <%= image_tag("news_gydsm.jpg") %>
+                <%= image_tag("news_gydsm.jpg") %>
             <% end %>
             <div class="inner">
               <p>刘敏如、廖品正两位国医大师相聚在银海眼科医院</p>
@@ -154,7 +157,7 @@
           </li>
           <li>
             <%= link_to news_path(:美国哈佛大学RichardJackson博士访问银海眼科) do %>
-              <%= image_tag("news_zydjl.jpg") %>
+                <%= image_tag("news_zydjl.jpg") %>
             <% end %>
             <div class="inner">
               <p>美国哈佛大学Richard Jackson博士访问银海眼科</p>
@@ -168,7 +171,7 @@
               <p>银海引领眼科VIP高端医疗来了，国医大师亲诊！</p>
             </div>
           </li>
-          
+
         </ul>
         <div class="slidebox">
           <div class="slideWrap">
@@ -183,31 +186,17 @@
       <!--新闻轮播-->
       <!--新闻列表-->
       <ul class="fr topList newsIndexList">
-
-        <li>
-          <%= link_to :'青少年近视防控 我院迎来首批中学示范班学生及家长', news_path(154, from: 'db') %>
-          <span class="fr">2017-12-06</span>
-        </li>
-        <li>
-          <%= link_to :'爱眼护眼，从眼保健操开始 ——我院承办的2017年“银海杯”成都市小学生眼保健操比赛圆满举行', news_path(156, from: 'db') %>
-          <span class="fr">2017-12-06</span>
-        </li>
-        <li>
-          <%= link_to :'西南医科大学附属中医医院副院长李志一行来我院参观指导', news_path(157, from: 'db') %>
-          <span class="fr">2017-12-06</span>
-        </li>
-        <li>
-          <%= link_to :'热烈祝贺中国微循环学会眼影像学组成立，我院段俊国教授、刘文教授分别当选名誉主任委员、常务委员', news_path(152, from: 'db') %>
-          <span class="fr">2017-12-05</span>
-        </li>
-        <li>
-          <%= link_to :'美国LensAR公司首席执行官Nicolas Curtis博士一行夜访银海眼科', news_path(151, from: 'db') %>
-          <span class="fr">2017-11-30</span>
-        </li>
-        <li>
-          <%= link_to :'重磅 | 四川地区唯一常规开展圆锥角膜交联术的大型专科医院', news_path(149, from: 'db') %>
-          <span class="fr">2017-11-30</span>
-        </li>
+        <% if @new.present? %>
+            <% @new.each do |new| %>
+                <li>
+                  <%= link_to new.scan_rails_path.blank? ? news_path(new.id, from: 'db') : new.scan_rails_path  do %>
+                      <span class="newsTle"><%= new.title %></span>
+                  <% end %>
+                  <span class="fr">
+                <%= new.occurred_at==Time.utc(1970) ? ' ' : new.occurred_at.strftime("%Y-%m-%d") %></span>
+                </li>
+            <% end %>
+        <% end %>
       </ul>
       <!--新闻列表-->
     </div>
@@ -216,13 +205,13 @@
   <div class="newsVideo fr">
     <p class="newTitle">通知公告 </p>
     <ul class="topList noticeList">
-      <li><%= link_to :'成都中医药大学眼科学院 成都中医大银海眼科医院  招聘信息',news_path(:成都中医大银海眼科医院招聘信息) %></li>
-      <li><%= link_to :'成都中医药大学眼科学院/成都中医大银海眼科医院 2018年博士后招聘启事',news_path(:成都中医大银海眼科医院2018年博士后招聘启事) %></li>
-      <li><%= link_to :'成都中医药大学眼科学院管理类聘用人员招聘公告',news_path(:成都中医药大学眼科学院管理类聘用人员招聘公告) %></li>
-      <li><%= link_to :'关于调整门诊流程及增设VIP服务的通知',news_path(:关于调整门诊流程及增设VIP服务的通知) %></li>
-      <li><%= link_to :'眼科学院2017年推免试攻读硕士学位研究生办法',news_path(:成都中医药大学眼科学院2017年接收推荐免试攻读硕士学位研究生办法) %></li>
-      <li><%= link_to :'【招标公告】 成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告',news_path(:成都中医大银海眼科医院成都总院二期装饰设计和重庆分院项目工程规划设计招标公告) %></li>
-      <li><%= link_to :'关于开展2017年岗位晋升及聘任工作的通知',science_path(:关于开展2017年岗位晋升及聘任工作的通知) %></li>
+      <% if @new_notice.present? %>
+          <% @new_notice.each do |new_notice| %>
+              <li>
+                <%= link_to new_notice.scan_rails_path.blank? ? news_path(new_notice.id, from: 'db') : new_notice.scan_rails_path do %><%= new_notice.title %><% end %>
+              </li>
+          <% end %>
+      <% end %>
     </ul>
   </div>
 </div>
@@ -230,531 +219,42 @@
 <!--专家列表-->
 <div class="plate">
   <p class="syTitle">
-    <i class="icon_tb icon_my"></i> <em class="syTitleName">专家团队</em> <%= link_to :"专家排班", medical_path(:专家排班) %> <%= link_to :"更多专家", expert_path(:著名专家) %>
+    <i class="icon_tb icon_my"></i> <em class="syTitleName">专家团队</em> <%= link_to :"专家排班", medical_path(:专家排班) %> <%= link_to :"更多专家", doctors_path(doctor_level: 'famous_expert') %>
     <span class="fr"><a href="javascript:;" class="changeExperts"><i class="little icon_lettle"></i> 换一组看看</a></span>
   </p>
 
   <div class="flow">
     <!--专家人员列表-->
     <ul class="flParent flow doctorList fl">
-      <!--段俊国-->
-      <li>
-        <%= link_to image_tag("zj2.jpg"),expert_path(:段俊国教授) %>
-        <div class="IntroduceMask">
-          <h5>段俊国</h5>
-          <p>教授</p>
-          <p>主任医师 博士生导师</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:段俊国教授) %>
-          </div>
-        </div>
-      </li>
-      <!--段俊国-->
-      <!--廖品正-->
-      <li>
-        <%= link_to image_tag("zj1.jpg"),expert_path(:廖品正教授) %>
-        <div class="IntroduceMask">
-          <h5>廖品正</h5>
-          <p>教授</p>
-          <p>主任医师 博士生导师</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:廖品正教授) %>
-          </div>
-        </div>
-      </li>
-      <!--廖品正-->
-      <!--邓亚平-->
-      <li>
-        <%= link_to image_tag("zj3.jpg"),expert_path(:邓亚平教授) %>
-        <div class="IntroduceMask">
-          <h5>邓亚平</h5>
-          <p>教授</p>
-          <p>主任医师</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--邓亚平-->
-      <!--朱思泉-->
-      <li>
-        <%= link_to image_tag("zj4.jpg"),expert_path(:朱思泉教授) %>
-        <div class="IntroduceMask">
-          <h5>朱思泉</h5>
-          <p>教授</p>
-          <p>主任医师 博士生导师</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:朱思泉教授) %>
-          </div>
-        </div>
-      </li>
-      <!--朱思泉-->
-      <!--刘文-->
-      <li>
-        <%= link_to image_tag("zj5.jpg"),expert_path(:刘文教授) %>
-        <div class="IntroduceMask">
-          <h5>刘文</h5>
-          <p>教授</p>
-          <p>主任医师 硕士生导师</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:刘文教授) %>
-          </div>
-        </div>
-      </li>
-      <!--刘文-->
-      <!--周跃华-->
-      <li>
-        <%= link_to image_tag("zj6.jpg"),expert_path(:周跃华教授) %>
-        <div class="IntroduceMask">
-          <h5>周跃华</h5>
-          <p>教授</p>
-          <p>主任医师 硕士生导师</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:周跃华教授) %>
-          </div>
-        </div>
-      </li>
-      <!--周跃华-->
-      <!--周华祥-->
-      <li>
-        <%= link_to image_tag("zj7.jpg"),expert_path(:周华祥教授) %>
-        <div class="IntroduceMask">
-          <h5>周华祥</h5>
-          <p>教授</p>
-          <p>主任医师 硕士生导师</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:周华祥教授) %>
-          </div>
-        </div>
-      </li>
-      <!--周华祥-->
+      <% @doctors.each do |doctor|%>
+          <li>
+            <%= link_to image_tag('doctors/'+doctor.name.strip+'.jpg'), doctor_path(doctor.id) %>
+            <div class="IntroduceMask">
 
-      <!--袁晓辉-->
-      <li>
-        <%= link_to image_tag("zj8.jpg"),expert_path(:袁晓辉主任医师) %>
-        <div class="IntroduceMask">
-          <h5>袁晓辉</h5>
-          <p>教授</p>
-          <p>主任医师</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:袁晓辉主任医师) %>
-          </div>
-        </div>
-      </li>
-      <!--袁晓辉-->
-      <!--陆雪婧-->
-      <li>
-        <%= link_to image_tag("zj9.jpg"),expert_path(:路雪婧主任医师) %>
-        <div class="IntroduceMask">
-          <h5>路雪婧</h5>
-          <p>研究员</p>
-          <p>博士生导师 医学博士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:路雪婧主任医师) %>
-          </div>
-        </div>
-      </li>
-      <!--陆雪婧-->
-      <!--张富文-->
-      <li>
-        <%= link_to image_tag("zj10.jpg"),expert_path(:张富文主治医师) %>
-        <div class="IntroduceMask">
-          <h5>张富文</h5>
-          <p>教授</p>
-          <p>主任医师 硕士生导师</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:张富文主治医师) %>
-          </div>
-        </div>
-      </li>
-      <!--张富文-->
-      <!--黄霄-->
-      <li>
-        <%= link_to image_tag("zj11.jpg"),expert_path(:黄霄主任医师) %>
-        <div class="IntroduceMask">
-          <h5>黄霄</h5>
-          <p>教授</p>
-          <p>主任医师 硕士生导师</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:黄霄主任医师) %>
-          </div>
-        </div>
-      </li>
-      <!--黄霄-->
-      <!--王智慧-->
-      <li>
-        <%= link_to image_tag("zj12.jpg"),expert_path(:王智慧主任医师) %>
-        <div class="IntroduceMask">
-          <h5>王智慧</h5>
-          <p>主任医师</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:王智慧主任医师) %>
-          </div>
-        </div>
-      </li>
-      <!--王智慧-->
-      <!--潘学会-->
-      <li>
-        <%= link_to image_tag("zj14.jpg"),expert_path(:潘学会) %>
-        <div class="IntroduceMask">
-          <h5>潘学会</h5>
-          <p>副主任医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:潘学会) %>
-          </div>
-        </div>
-      </li>
-      <!--潘学会-->
-      <!--周春阳-->
-      <li>
-        <%= link_to image_tag("zj13.jpg"),expert_path(:周春阳主任医师) %>
-        <div class="IntroduceMask">
-          <h5>周春阳</h5>
-          <p>副教授</p>
-          <p>副主任医师 医学博士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:周春阳主任医师) %>
-          </div>
-        </div>
-      </li>
-      <!--周春阳-->
-      <!--王国平-->
-      <li>
-        <%= link_to image_tag("zj15.jpg"),expert_path(:王国平) %>
-        <div class="IntroduceMask">
-          <h5>王国平</h5>
-          <p>副主任医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--王国平-->
-      <!-- 张大铮 -->
-      <li>
-        <%= link_to image_tag("zj22.jpg"),expert_path(:张大铮) %>
-        <div class="IntroduceMask">
-          <h5>张大铮</h5>
-          <p>副主任医师</p>
-          <p>医学博士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!-- 张大铮 -->
-      <!--谢艾芮-->
-      <li>
-        <%= link_to image_tag("zj16.jpg"),expert_path(:谢艾芮主任医师) %>
-        <div class="IntroduceMask">
-          <h5>谢艾芮</h5>
-          <p>主治医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:谢艾芮主任医师) %>
-          </div>
-        </div>
-      </li>
-      <!--谢艾芮-->
-      <!--陈小凤-->
-      <li>
-        <%= link_to image_tag("zj17.jpg"),expert_path(:陈小凤主治医师) %>
-        <div class="IntroduceMask">
-          <h5>陈小凤</h5>
-          <p>主治医师</p>
-          <p>医学博士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:陈小凤主治医师) %>
-          </div>
-        </div>
-      </li>
-      <!--陈小凤-->
-      <!--李强-->
-      <li>
-        <%= link_to image_tag("zj18.jpg"),expert_path(:李强主治医师) %>
-        <div class="IntroduceMask">
-          <h5>李强</h5>
-          <p>主治医师</p>
-          <p>医学博士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:李强主治医师) %>
-          </div>
-        </div>
-      </li>
-      <!--李强-->
-      <!--缪馨-->
-      <li>
-        <%= link_to image_tag("zj19.jpg"),expert_path(:缪馨主治医师) %>
-        <div class="IntroduceMask">
-          <h5>缪馨</h5>
-          <p>主治医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:缪馨主治医师) %>
-          </div>
-        </div>
-      </li>
-      <!--缪馨-->
-      <!--李红惠-->
-      <li>
-        <%= link_to image_tag("zj21.jpg"),expert_path(:李红惠主治医师) %>
-        <div class="IntroduceMask">
-          <h5>李红惠</h5>
-          <p>主治医师</p>
-          <p>医学博士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:李红惠主治医师) %>
-          </div>
-        </div>
-      </li>
-      <!--李红惠-->
-      <!--蹇文渊-->
-      <li>
-        <%= link_to image_tag("zj20.jpg"),expert_path(:蹇文渊主治医师) %>
-        <div class="IntroduceMask">
-          <h5>蹇文渊</h5>
-          <p>主治医师</p>
-          <p>医学博士 博士后</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to :'查看详情',expert_path(:蹇文渊主治医师) %>
-          </div>
-        </div>
-      </li>
-      <!--蹇文渊-->
-      <!--蒙轩-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_8.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>蒙轩</h5>
-          <p>住院医师</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--蒙轩-->
-      <!--刘欢-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_11.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>刘欢</h5>
-          <p>针灸医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--刘欢-->
-      <!--尹朔-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_5.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>尹朔</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--尹朔-->
-      <!--刘玲-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_12.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>刘玲</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--刘玲-->
-      <!--文娟-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_14.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>文娟</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--文娟-->
-      <!--王利萍-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_6.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>王利萍</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--王利萍-->
-      <!--杜聪睿-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_10.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>杜聪睿</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--杜聪睿-->
-      <!--肖恒-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_1.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>肖恒</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--肖恒-->
-      <!--杜玉芹-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_9.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>杜玉芹</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--杜玉芹-->
-      <!--代炳灵-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_7.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>代炳灵</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--代炳灵-->
-      <!--陈星如-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_15.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>陈星如</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--陈星如-->
-      <!--肖建强-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_3.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>肖建强</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--肖建强-->
-      <!--吴青兰-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_16.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>吴青兰</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--吴青兰-->
-      <!--蒋嫒明-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_4.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>蒋嫒明</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--蒋嫒明-->
-      <!--石梅琴-->
-      <li>
-        <a href="javascript:;">
-          <%= image_tag("zyys_2.jpg") %>
-        </a>
-        <div class="IntroduceMask">
-          <h5>石梅琴</h5>
-          <p>住院医师</p>
-          <p>医学硕士</p>
-          <div class="doctorBtn">
-            <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><a href="javascript:;">查看详情</a>
-          </div>
-        </div>
-      </li>
-      <!--石梅琴-->
+              <h5><%= doctor.name %></h5>
+              <% honour_brief_arr = doctor.honour_brief_introduction.split('/') %>
+              <p><% if honour_brief_arr.count>=1 %><%= honour_brief_arr[0] %><% end %></p>
+              <% other_honour_brief_str = '' %>
+              <% honour_brief_arr[0]=nil %>
+              <% honour_brief_arr.each do |other_honour_brief| %>
+                  <% other_honour_brief_str = other_honour_brief_str+' '+other_honour_brief if other_honour_brief.present?%>
+              <% end %>
+              <% other_honour_brief_str[0]='' if other_honour_brief_str.present? && other_honour_brief_str.first==' '%>
+              <p><%= other_honour_brief_str %></p>
+              <div class="doctorBtn">
+                <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">咨询预约</a><%= link_to doctor_path(doctor.id) do %>查看详情<% end %>
+              </div>
+            </div>
+          </li>
+      <% end %>
     </ul>
     <!--专家人员列表-->
     <!--挂号、预约等功能-->
     <ul class="consults fr">
       <li>
         <%= link_to medical_path(:就医流程) do %>
-          <i></i>
-          <p>就医流程</p>
+            <i></i>
+            <p>就医流程</p>
         <% end %>
       </li>
       <li>
@@ -771,14 +271,14 @@
       </li>
       <li>
         <%= link_to medical_path(:医保政策) do %>
-          <i></i>
-          <p>医保政策</p>
+            <i></i>
+            <p>医保政策</p>
         <% end %>
       </li>
       <li>
         <%= link_to medical_path(:到院指引) do %>
-          <i></i>
-          <p>来院导航</p>
+            <i></i>
+            <p>来院导航</p>
         <% end %>
       </li>
     </ul>
@@ -1150,6 +650,7 @@
   <p class="syTitle">
     <i class="icon_tb icon_environment"></i> <em class="syTitleName">医院环境</em>
   </p>
+  <iframe src="https://www.expoon.com/e/nu55nfz8p2s/panorama?from=singlemessage" style="width: 100%;height: 400px"></iframe>
   <ul class="flParent flow honorImgs hosEnvironment">
     <li>
       <%= image_tag("yyhj_1.jpg") %>
@@ -1198,33 +699,41 @@
 <!--医院环境-->
 
 
+
 <% content_for :script do %>
-<script>
-    $(".slide").ckSlide({
+    <script>
+      $(".slide").ckSlide({
         autoPlay:true,
         add:true,
         seamless:true,
         dir:"x",
-    });
+      });
 
-    var doctorDate={
-        index:1,
+      var doctorDate={
+        index:0,
         listNum:Math.ceil($(".doctorList li").length/10)
-    }
-    $(".doctorList li").hide().eq(doctorDate.index*10).prevAll().show();
-    $(".changeExperts").click(function(){
-        if(doctorDate.index == doctorDate.listNum){
-            doctorDate.index = 0;
-            $(".doctorList li").show().eq((doctorDate.index+1)*10-1).nextAll().hide();
-        }else {
-            $(".doctorList li").show().eq(doctorDate.index*10).prevAll().hide();
-            $(".doctorList li").eq((doctorDate.index+1)*10-1).nextAll().hide();
-        }
+      }
+
+      showDetail();
+      function showDetail(){
+        $(".doctorList li").show().eq(doctorDate.index*10).prevAll().hide();
+        $(".doctorList li").eq((doctorDate.index+1)*10-1).nextAll().hide();
+      }
+
+      $(".changeExperts").click(function(){
         doctorDate.index++;
-    })
-    $(".honorTitle li").hover(function(){
+        if(doctorDate.index == doctorDate.listNum-1){
+          showDetail();
+          doctorDate.index = -1;
+        }else {
+          showDetail();
+        }
+
+      })
+
+      $(".honorTitle li").hover(function(){
         $(this).addClass("active").siblings().removeClass("active");
         $(this).parents(".plate").find(".honorplate").hide().eq($(this).index()).show();
-    })
-</script>
+      })
+    </script>
 <% end %>

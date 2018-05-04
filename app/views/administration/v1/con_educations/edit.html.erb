@@ -1,0 +1,145 @@
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'con_education_article_index'}} %>
+
+  <!-- 内容区域 -->
+  <div class="tpl-content-wrapper">
+
+    <div class="row-content am-cf">
+      <div class="row">
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+          <div class="widget am-cf">
+            <div class="widget-head am-cf">
+              <div class="widget-title am-fl">编辑继续教育文章</div>
+              <div class="widget-function am-fr">
+                <a href="javascript:;" class="am-icon-paperclip"></a>
+              </div>
+            </div>
+            <div class="widget-body am-fr">
+              <%= render partial: 'form' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 图片放大 -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+<!-- 上传时的模版 -->
+<script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+  <tr class="template-upload fade">
+    <td>
+      <span class="preview">
+      </span>
+    </td>
+    <td>
+      <p class="name">{%=file.name%}</p>
+      <strong class="error text-danger"></strong>
+    </td>
+    <td>
+      <p class="size">Processing...</p>
+      <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+    </td>
+    <td>
+      {% if (!i && !o.options.autoUpload) { %}
+        <button class="btn btn-primary start" disabled>
+          <i class="am-icon-cloud-upload"></i>
+          <span>Start</span>
+        </button>
+      {% } %}
+      {% if (!i) { %}
+        <button class="btn btn-warning cancel">
+          <i class="am-icon-close"></i>
+          <span>Cancel</span>
+        </button>
+      {% } %}
+    </td>
+  </tr>
+{% } %}
+</script>
+
+<!-- 上传完毕后的模版 -->
+<script id="template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+  <tr class="template-download fade js-one" data-file-path="{%=file.path%}">
+    <td>
+      <span>{%=file.name%}</span>
+      {% if (file.error) { %}
+        <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+      {% } %}
+    </td>
+    <td>
+      <button class="btn btn-warning cancel">
+        <i class="am-icon-close"></i>
+        <span>Cancel</span>
+      </button>
+    </td>
+  </tr>
+{% } %}
+</script>
+
+<% content_for :title do %>
+    管理平台-继续教育
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :body_attr do %>data-type="widgets"<% end %>
+
+<% content_for :style do %>
+    <%= stylesheet_link_tag 'administration/v1/shared/fileupload/blueimp-gallery.min' %>
+    <%= stylesheet_link_tag 'administration/v1/shared/fileupload/bootstrap-3.2.0.min' %>
+    <%= stylesheet_link_tag 'administration/v1/shared/fileupload/jquery.fileupload' %>
+    <%= stylesheet_link_tag 'administration/v1/shared/fileupload/jquery.fileupload-ui' %>
+    <%= stylesheet_link_tag 'administration/v1/shared/fileupload/fileupload-custom' %>
+
+    <%= stylesheet_link_tag 'administration/v1/con_educations/new' %>
+<% end %>
+
+<% content_for :script do %>
+    <%= javascript_include_tag '//cdn.staticfile.org/jquery/1.11.3/jquery.min.js' %>
+    <%= javascript_include_tag 'administration/v1/shared/fileupload/jquery.ui.widget' %>
+    <%= javascript_include_tag '//blueimp.github.io/JavaScript-Templates/js/tmpl.min.js' %>
+    <%= javascript_include_tag '//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js' %>
+    <%= javascript_include_tag '//blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js' %>
+    <%= javascript_include_tag 'administration/v1/shared/fileupload/bootstrap-3.2.0.min' %>
+    <%= javascript_include_tag '//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js' %>
+    <%= javascript_include_tag 'administration/v1/shared/fileupload/jquery.iframe-transport' %>
+    <%= javascript_include_tag 'administration/v1/shared/fileupload/jquery.fileupload' %>
+    <%= javascript_include_tag 'administration/v1/shared/fileupload/jquery.fileupload-process' %>
+    <%= javascript_include_tag 'administration/v1/shared/fileupload/jquery.fileupload-image' %>
+    <%= javascript_include_tag 'administration/v1/shared/fileupload/jquery.fileupload-audio' %>
+    <%= javascript_include_tag 'administration/v1/shared/fileupload/jquery.fileupload-video' %>
+    <%= javascript_include_tag 'administration/v1/shared/fileupload/jquery.fileupload-validate' %>
+    <%= javascript_include_tag 'administration/v1/shared/fileupload/jquery.fileupload-ui' %>
+
+    <%= javascript_include_tag 'administration/v1/shared/kindeditor/kindeditor' %>
+    <%= javascript_include_tag 'administration/v1/shared/kindeditor/zh' %>
+    <script type="text/javascript">
+      KindEditor.ready(function(K) {
+        editor = K.create('#editor', {
+          themeType : 'simple'
+        });
+      });
+    </script>
+
+    <%= javascript_include_tag 'administration/v1/con_educations/new' %>
+<% end %>

@@ -1,0 +1,59 @@
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'index_office'}} %>
+
+  <div class="tpl-content-wrapper">
+    <div class="row-content am-cf">
+      <div class="row">
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+          <div class="widget am-cf">
+              <div class="widget-head am-cf">
+                <div class="widget-title am-fl">科室列表</div>
+                <div class="widget-function am-fr">
+                  <a href="javascript:;" class="am-icon-paperclip"></a>
+                </div>
+              </div>
+
+              <table class="am-table am-table-hover">
+                  <tr>
+                    <td>编号</td>
+                    <td>科室名称</td>
+                    <td>科室副标题</td>
+                    <td>操作</td>
+                  </tr>
+                <% @office.each do |office| %>
+                  <tr>
+                    <td><%= office.id %></td>
+                    <td><%= office.name %></td>
+                    <td><%= office.vice_name %></td>
+                    <td>
+                      <%= link_to "修改", edit_administration_v1_office_path(office.id), class: 'am-btn am-btn-warning' %>
+                      <%= link_to administration_v1_office_path(office.id), method: "delete",data: { confirm: '确定删除?' }, class: 'am-btn am-btn-danger' do%>删除<% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              </table>
+              <div class="am-u-lg-12 am-cf aaa">
+                  <div class="am-fr">
+                    <%= will_paginate @office %>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<% content_for :title do %>
+    管理平台-中心编辑
+<% end %>
+
+<% content_for :script do %>
+  <%= javascript_include_tag 'administration/v1/office/index' %>
+<% end %>

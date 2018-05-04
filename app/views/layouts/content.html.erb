@@ -21,11 +21,20 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
 
     <%= yield :style %>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112338179-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-112338179-1');
+    </script>
   </head>
 
   <body>
 
-    <%= render "layouts/header.html" %>
+    <%= render "layouts/header" %>
     <div class="main">
       <%= yield %>
     </div>

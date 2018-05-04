@@ -1,0 +1,123 @@
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'user_scheduling'}} %>
+
+  <style>
+    .am-tabs-nav li{
+      width: 14.25%;
+      float: left;
+      text-align: center;
+    }
+
+    .am-active a{
+      display: block;
+      width: 100%;
+    }
+  </style>
+
+  <!-- 内容区域 -->
+  <div class="tpl-content-wrapper">
+    <div class="row-content am-cf ">
+      <div class="widget am-cf">
+        <div class="row">
+          <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+            <span class="am-margin-left am-text-warning">此处排班是医生每周的默认排班表，实际结果请参阅<a href="/medicals/专家排班"><strong>《就诊排班表》</strong></a></span>
+            <div class="am-tabs am-tabs-default">
+              <ul class="am-tabs-nav am-cf">
+                <% ShareEnum.weeks.each do |key, value| %>
+                  <li class="<% if params[:day].to_s.strip==key.to_s %>am-active<% end %>" data-week-key="<%= key %>" ><a href="<%= new_administration_v1_scheduling_path(function: 'all_user', day: key.to_s) %>"><%= value %></a></li>
+                <% end %>
+              </ul>
+              <div class="am-tabs-bd flowVisible">
+                <% count = 0%>
+                <% ShareEnum.weeks.each do |key, value| %>
+                  <% next if params[:day].to_s.strip!=key.to_s %>
+                  <div class="am-tab-panel <% if count==0 %>am-active<% end %>" data-week-key="<%= key %>">
+                    <table class="am-table am-table-hover am-table-hover middleLine lineBorder doctor-working">
+                      <% Office.alive.each do |office| %>
+                      <tr>
+                        <td rowspan="2" data-office-id="<%= office.id %>"><%= office.name %></td>
+                        <% office_times = OfficeTime.where(office_id: office.id) %>
+                        <% office_time = office_times.where(am_pm_code: 'am').first %>
+                        <td data-office-time-id="<%= office_time.id %>">上午</td>
+                        <td class="workingExperts">
+                          <div class="doctorListCon">
+                            <p>请选择排班医生 <i class="am-selected-icon am-icon-caret-down fr"></i></p>
+                            <ul class="hide doctorList">
+                              <% OfficeUserRelation.alive.office_id_is(office.id).each do |office_user_relation| %>
+                                <% user = User.alive.where(id: office_user_relation.user_id).first %>
+                                <% next if user.blank? %>
+                                <li class="doctors">
+                                  <span class="doctorName" data-user-id="<%= user.id %>"><%= user.name %></span>
+                                  <% ShareEnum.outpatient_services.each do |os_key, os_value| %>
+                                    <% schedulings = Scheduling.alive.office_time_id_is(office_time.id).user_id_is(user.id).outpatient_service_type_is(os_key).week_code_is(key) %>
+                                    <input type="checkbox" name="<%= os_key %>" <% if schedulings.present? %>checked<% end %>/> <span class="js-service-name" data-user-name="<%= user.name %>"><%= os_value %></span>
+                                  <% end %>
+                                </li>
+                              <% end %>
+                              <input type="button" value="点击保存" class="saveDoctor am-btn-primary">
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <% office_time = office_times.where(am_pm_code: 'pm').first %>
+                        <td data-office-time-id="<%= office_time.id %>">下午</td>
+                        <td class="workingExperts">
+                          <div class="doctorListCon">
+                            <p>请选择排班医生 <i class="am-selected-icon am-icon-caret-down fr"></i></p>
+                            <ul class="hide doctorList">
+                              <% OfficeUserRelation.alive.office_id_is(office.id).each do |office_user_relation| %>
+                                <% user = User.alive.where(id: office_user_relation.user_id).first %>
+                                <% next if user.blank? %>
+                                <li class="doctors">
+                                  <span class="doctorName" data-user-id="<%= user.id %>"><%= user.name %></span>
+                                  <% ShareEnum.outpatient_services.each do |os_key, os_value| %>
+                                    <% schedulings = Scheduling.alive.office_time_id_is(office_time.id).user_id_is(user.id).outpatient_service_type_is(os_key).week_code_is(key) %>
+                                    <input type="checkbox" name="<%= os_key %>" <% if schedulings.present? %>checked<% end %>/> <span class="js-service-name" data-user-name="<%= user.name %>"><%= os_value %></span>
+                                  <% end %>
+                                </li>
+                              <% end %>
+                              <input type="button" value="点击保存" class="saveDoctor am-btn-primary">
+                            </ul>
+                          </div>
+                          </ul>
+                        </td>
+                      </tr>
+                      <% end %>
+                    </table>
+                  </div>
+                  <% count+=1 %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :title do %>
+    管理平台-用户列表
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :body_attr do %>data-type="widgets"<% end %>
+
+<% content_for :style do %>
+    <%= stylesheet_link_tag 'administration/v1/schedulings/scheduling' %>
+<% end %>
+
+<% content_for :script do %>
+    <%= javascript_include_tag 'administration/v1/schedulings/scheduling' %>
+<% end %>
+

@@ -1,0 +1,115 @@
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'user_leave'}} %>
+
+  <!-- 内容区域 -->
+  <div class="tpl-content-wrapper">
+
+    <div class="row-content am-cf ">
+
+      <div class="widget am-cf">
+
+        <div class="row flow">
+          <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+
+            <div class="widget-head am-cf">
+              <div class="widget-title  am-cf">停诊信息<span class="am-margin-left am-text-warning">此处添加医生停诊信息，实际排班结果会根据停诊信息生成<a href="/medicals/专家排班"><strong>《就诊排班表》</strong></a></span></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row marT30">
+          <form>
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12 leavecenters adminstop">
+              <div>
+                <span>科室：</span>
+                <% first_office = nil %>
+                <select  class="choosecenter">
+                  <% count = 1 %>
+                  <% @offices.each do |office| %>
+                    <% if count==1 %><% first_office = office %><% end %>
+                    <option value="<%= office.id %>" <% if count==1%>selected<% end %> ><%= office.name %></option>
+                    <% count += 1 %>
+                  <% end %>
+                </select>
+                <select class="expertlist">
+                  <% count2 = 1 %>
+                  <% User.get_users_by_office(first_office).each do |user| %>
+                    <option value="<%= user.id %>" <% if count2==1 %>selected<% end %>><%= user.name%></option>
+                    <% count2 += 1 %>
+                  <% end %>
+                </select>
+              </div>
+
+              <p><span>停诊时间： </span></p>
+              <p class="addBtn"><i class="am-icon-plus cursor am-btn am-btn-success">继续添加日期</i></p>
+              <div class="time-area">
+
+              </div>
+              <div class="surestop">
+                <button type="button" class="am-btn am-btn-primary am-radius">确认停诊</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+
+        <div class="row marT30">
+          <div class="am-u-sm-10 am-u-md-10 am-u-lg-10">
+            <div class="stoplist">
+              <span>停诊信息列表：</span>
+            </div>
+            <table class="stopmsg am-table am-table-hover">
+              <tr>
+                <td><b>科室</b></td>
+                <td><b>姓名</b></td>
+                <td><b>停诊日期</b></td>
+                <td><b>停诊时段</b></td>
+                <td><b>创建时间</b></td>
+                <td><b>操作</b></td>
+              </tr>
+              <% @ask_for_leaves.each do |ask_for_leave| %>
+              <tr data-ask-for-leave-id="<%= ask_for_leave[:id] %>">
+                <td><%= ask_for_leave[:office_name] %></td>
+                <td><%= ask_for_leave[:user_name] %></td>
+                <td><%= ask_for_leave[:day] %></td>
+                <td><%= ask_for_leave[:am_pm_code_desc] %></td>
+                <td><%= ask_for_leave[:created_at_desc] %></td>
+                <td data-ask-for-leave-id="<%= ask_for_leave[:id] %>" class="delete-stopserver" >
+                  <span class="am-btn-sm am-btn-danger">删除停诊</span>
+                </td>
+              </tr>
+              <% end %>
+            </table>
+            <%= will_paginate @ask_for_leaves_query %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :title do %>
+    管理平台-用户列表
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :body_attr do %>data-type="widgets"<% end %>
+
+<% content_for :style do %>
+  <%= stylesheet_link_tag 'administration/v1/leavings/new' %>
+<% end %>
+
+<% content_for :script do %>
+  <%= javascript_include_tag 'administration/v1/leavings/leaving' %>
+<% end %>

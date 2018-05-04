@@ -8,11 +8,18 @@ module MytxzModelExtension
 
     scope :valid_at, ->(now: Time.now) { where "? BETWEEN #{includer.table_name}.opened_at AND #{includer.table_name}.closed_at", now }
     scope :alive,    ->(living:  true) { where defunct: !living }
+    scope :state_alive, ->(state: 'C') { where state: state}
 
     def soft_destroy!
       self.closed_at = Time.now
       self.defunct = true
       self.save!
+    end
+
+    def soft_destroy
+      self.closed_at = Time.now
+      self.defunct = true
+      self.save
     end
 
     def to_json_by(fields: [])
@@ -27,6 +34,14 @@ module MytxzModelExtension
         end
       end
       result
+    end
+
+    def created_at_desc
+      self.created_at.strftime('%Y-%m-%d %H:%M:%S')
+    end
+
+    def updated_at_desc
+      self.updated_at.strftime('%Y-%m-%d %H:%M:%S')
     end
 
   end

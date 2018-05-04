@@ -1,0 +1,22 @@
+<%= image_tag("/assets/education-banner.jpg",:class => 'marT10') %>
+<div class="flow conEducation">
+  <%= render 'con_educations/edu_sidebar' %>
+  <%= render 'con_educations/shared_data' %>
+  <div class="fr width1020 eduContentCon whiteBg">
+    <div class="whiteBg downModule minh400">
+      <iframe src="<%= @con_education_article.video_url %>" width="100%" height="400px"></iframe>
+      <p class="centerImgCon"><%= @con_education_article.title %></p>
+      <%= render 'con_educations/count' %>
+    </div>
+    <div>
+      <%= render 'con_educations/comment' %>
+    </div>
+  </div>
+
+
+</div>
+
+<% content_for :script do %>
+    <%= javascript_include_tag 'edu_example' %>
+<% end %>
+

@@ -15,3 +15,36 @@
    pos();
    
 </script>
+
+<script type="application/javascript">
+  $('.js-logout').on('click', function(){
+    $.ajax(
+      {
+        url: "/administration-api/v1/sessions/~",
+        type: "delete",
+        dataType: "json"
+      }
+    )
+      .done(function( data ) {
+        if(data['success']){
+          window.location.reload();
+        }else{
+          alert(data['message']);
+          return false;
+        }
+        return true;
+      })
+      .fail(function( xhr, status, errorThrown ) {
+      })
+      .always(function( xhr, status ) {
+      });
+  });
+
+  $('.js-search-btn').on('click', function(){
+    var searchValue = $('.js-search-input').val();
+    if(searchValue==null ||searchValue=='' || $.trim(searchValue)==''){
+      return;
+    }
+    window.location.href='/search_websites?search_value='+searchValue;
+  });
+</script>

@@ -6,6 +6,15 @@ module RandomUtil
 
   def getRandomStringBy(length: 0)
     source = 'abcdefghijklmnopqrstuvwxyz0123456789'
+    generateRandomStringBy source: source, length: length
+  end
+
+  def getRandomIntStringBy(length: 0)
+    source = '0123456789'
+    generateRandomStringBy source: source, length: length
+  end
+
+  def generateRandomStringBy(source: nil, length: 0)
     source_length = source.length
     target = ''
     length.times do
@@ -15,5 +24,4 @@ module RandomUtil
     end
     target
   end
-
 end

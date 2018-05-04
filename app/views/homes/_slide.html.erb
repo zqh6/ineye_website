@@ -2,6 +2,19 @@
 <div class='banner-box  marB10 main'>
     <ul class='img'>
         <li>
+            <%= link_to image_tag("banner-entetnreye.jpg"),home_path(:医院简介) %>
+        </li>
+        <li>
+            <%= link_to image_tag("banne_yhtd.jpg"),expert_path(:著名专家) %>
+        </li>
+
+        <li>
+            <%= link_to image_tag("banner-doctors.jpg"),science_path(:学院简介) %>
+        </li>
+        <li>
+            <%= link_to image_tag("banner_cj.jpg"),news_path(195, from: 'db') %>
+        </li>
+        <li>
             <%= link_to image_tag("banner_qphys.jpg"),news_path(:朱思泉教授入选四川妙手仁心金口碑好医生十强) %>
             <div class="bannerWord">
                 <p> 热烈祝贺我院常务副院长、眼科“飞刀手”朱思泉教授入选四川“妙手仁心•金口碑好医生”十强！ </p>
@@ -19,7 +32,7 @@
             </div>
         </li>
         <li>
-            <%= link_to image_tag("kaiye_banner.jpg"),news_path(:成都中医大银海眼科医院隆重举行开业庆典仪式) %>
+            <%= link_to image_tag("kaiye_banner.jpg"),news_path(35, from: 'db') %>
             <div class="bannerWord">
                 <p>成都中医大银海眼科医院隆重举行开业庆典仪式</p>
             </div>
@@ -45,14 +58,6 @@
                 <p>热烈祝贺我院四位教授荣获第五届“我心目中的名医”称号</p>
             </div>
         </li>
-        <li>
-            <%= link_to image_tag("banner_s11.jpg"),news_path(:错过双11其实我们只想把最好的都留给你) %>
-            <div class="bannerWord">
-                <p>【感恩岁末】错过双11，其实我们只想把最好的都留给你</p>
-            </div>
-        </li>
-
-
     </ul>
     <ul class='li'></ul>
     <div class='but but-left'>&lt;</div>

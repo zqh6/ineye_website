@@ -15,10 +15,10 @@
     <p class="blueBTitle">
         <span>科室专家</span>
     </p>
-    <ul class="glaucomaDoctors flow">
+    <ul class="glaucomaDoctors flow threeDoctors">
         <li class="fl marB20">
             <div class="fl">
-                <%= link_to image_tag("zj14.jpg") %>
+                <%= link_to image_tag("zj14.jpg"),expert_path(:潘学会) %>
             </div>
             <div class="expertSynopsis fr">
                 <h5>潘学会</h5>
@@ -27,31 +27,10 @@
                 <p>长期从事青光眼、白内障和眼底病等临床工作，在青光眼的早期诊断和治疗上有丰富的临床经验。擅长各种抗青光眼手术、白内障人工晶体植入术、复杂眼底病的诊断和眼底出血性疾病中西医结合治疗。</p>
             </div>
         </li>
-        <li class="fr marB20">
-            <div class="fl">
-                <%= link_to image_tag("zj10.jpg") %>
-            </div>
-            <div class="expertSynopsis fr">
-                <h5>张富文</h5>
-                <p>主任医师/教授/硕士生导师</p>
-                <p class="expertsGoodAt"><span>擅长领域：</span></p>
-                <p>青光眼，眼底血管性疾病，如视网膜静脉阻塞、糖尿病视网膜病变，黄斑变性，视神经病变等疑难眼底病变。中医综合综合调节治疗干眼症、视疲劳，学龄儿童和青少年视力保护，延缓控制近视发展等。</p>
-            </div>
-        </li>
+
         <li class="fl">
             <div class="fl">
-                <%= link_to image_tag("zj18.jpg") %>
-            </div>
-            <div class="expertSynopsis fr">
-                <h5>李强</h5>
-                <p>主治医师/医学博士</p>
-                <p class="expertsGoodAt"><span>擅长领域：</span></p>
-                <p>糖尿病视网膜病变、视网膜静脉阻塞、视网膜静脉周围炎、结膜病、角膜病、干眼症等的中西医综合防治。</p>
-            </div>
-        </li>
-        <li class="fr">
-            <div class="fl">
-                <%= link_to image_tag("zj17.jpg") %>
+                <%= link_to image_tag("zj17.jpg"),expert_path(:陈小凤主治医师) %>
             </div>
             <div class="expertSynopsis fr">
                 <h5>陈小凤</h5>
@@ -60,7 +39,52 @@
                 <p>擅长白内障超声乳化+人工晶体植入术、各种抗青光眼手术、青光眼白内障联合手术、白内障、青光眼、眼整形及眼底疾病的诊治。</p>
             </div>
         </li>
+        <li class="fl">
+            <div class="fl">
+                <%= link_to image_tag("zj21.jpg"),expert_path(:李红惠主治医师) %>
+            </div>
+            <div class="expertSynopsis fr">
+                <h5>李红惠</h5>
+                <p>主治医师/医学博士</p>
+                <p class="expertsGoodAt"><span>擅长领域：</span></p>
+                <p>擅长常见眼病的诊断及治疗，包括眼视光、白内障、眼底病等。</p>
+            </div>
+        </li>
     </ul>
+    <!-- <div class="readCenterDoctor  centerMemberCon">
+        <ul class="flParent flParent">
+            <li>
+                <%= link_to image_tag("zj14.jpg"),expert_path(:潘学会) %>
+                <div class="maskName">
+                    <p>潘学会</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj10.jpg"),expert_path(:张富文主治医师) %>
+                <div class="maskName">
+                    <p>张富文</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj18.jpg"),expert_path(:李强主治医师) %>
+                <div class="maskName">
+                    <p>李强</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj17.jpg"),expert_path(:陈小凤主治医师) %>
+                <div class="maskName">
+                    <p>陈小凤</p>
+                </div>
+            </li>
+            <li>
+                <%= link_to image_tag("zj21.jpg"),expert_path(:李红惠主治医师) %>
+                <div class="maskName">
+                    <p>李红惠</p>
+                </div>
+            </li>
+        </ul>
+    </div> -->
 </div>
 <!--科室专家-->
 <!--医疗设备-->

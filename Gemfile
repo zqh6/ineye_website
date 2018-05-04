@@ -55,8 +55,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #gem 'unidom-common', '= 1.10'
 
-gem 'rails_kindeditor'
-
 gem 'repres-dosser', '>= 1.8.3'
 
 gem 'font-awesome-rails'
@@ -70,3 +68,8 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
 gem 'swagger_engine'
+gem 'yettings'
+gem 'china_sms'
+gem 'aliyun-oss-sdk', '~> 0.1.8'
+gem "carrierwave", "0.8.0"
+gem 'carrierwave-aliyun', '~> 0.7.0'
