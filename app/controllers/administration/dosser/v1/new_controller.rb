@@ -6,6 +6,7 @@ class Administration::Dosser::V1::NewController < Administration::Dosser::V1::Pr
     ActiveRecord::Base.transaction do
       new = New.new new_attributes
       new.user = @login_user
+      new.defunct = (params[:defunct]=='true')
       if new.save
         tags = params[:tags].to_s.strip
         render_conflict message: '标签不要乱输入，Okay?' and return if (/\A(;|；)+\z/.match(tags)).present?
@@ -22,6 +23,8 @@ class Administration::Dosser::V1::NewController < Administration::Dosser::V1::Pr
       new = New.included_by(params[:id]).first
       render_conflict message: '找不到新闻' and return if new.blank?
       new.assign_attributes new_attributes
+      new.defunct = (params[:defunct]=='true')
+      new.user = @login_user
       if new.save
         TagRelation.where(relation_type: New.name.underscore).where(relation_id: new.id).delete_all
         tags = params[:tags].to_s.strip
@@ -47,7 +50,7 @@ class Administration::Dosser::V1::NewController < Administration::Dosser::V1::Pr
   end
 
   def new_attributes
-    params.permit(:title, :vice_title, :occurred_at, :classify, :key_words, :content, :scan_rails_path, :state, :aim_at_platform)
+    params.permit(:title, :vice_title, :occurred_at, :classify, :key_words, :content, :scan_rails_path, :aim_at_platform)
   end
 
   private :new_attributes

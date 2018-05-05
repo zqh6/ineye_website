@@ -17,9 +17,13 @@
   <% end %>
 
   <div class="am-form-group">
-    <label for="user-name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span>状态 <span class="tpl-form-line-small-title"><%= :title.to_s.titleize %></span></label>
+    <label for="user-name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span>状态 <span class="tpl-form-line-small-title"><%= :defunct.to_s.titleize %></span></label>
     <div class="am-u-sm-9">
-      <%= select_tag :state, options_for_select(ShareEnum.form_options('states'), @new.state), class: 'tpl-form-input' %>
+      <%#= select_tag :defunct, options_for_select(ShareEnum.form_options('states'), @new.defunct), class: 'tpl-form-input' %>
+      <select class="tpl-form-input" id="defunct">
+        <option <% if @new.new_record? || @new.defunct==false %>selected<% end %> value="false">生效</option>
+        <option <% if @new.defunct==true %>selected<% end %> value="true">不生效</option>
+      </select>
     </div>
   </div>
 
