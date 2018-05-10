@@ -28,7 +28,7 @@ class NewsController < ApplicationController
   def index
     @newIndex = New.alive.classify_is_not('notice').where('aim_at_platform in (?)', ['pc', 'pc_and_mobile']).order('occurred_at DESC').limit(15);
     if params[:function]=='新闻列表'
-      @new = New.alive.order('occurred_at DESC').paginate(page: params[:page], per_page: 15)
+      @new = New.alive.reorder('occurred_at DESC').paginate(page: params[:page], per_page: 15)
       render action: 'list/'+params[:function] and return
     end
   end

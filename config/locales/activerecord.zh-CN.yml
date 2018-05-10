@@ -31,6 +31,7 @@ zh-CN:
         scan_rails_path: 路径
         state: 状态
         tag: 标签
+        defunct: 状态
 
       user:
         name:         姓名
