@@ -48,6 +48,7 @@ zh-CN:
         official_account: 官方账户
         user_order: 用户按大排序
         doctor_level: 级别划分
+        unit_name: 医院名称
 
       password:
         old_password:  旧密码
