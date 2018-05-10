@@ -14,21 +14,54 @@
     </div>
 
     <div class="comContainer">
-        <!-- <p class="allComment">全部评论<span class="num">a</span> </p> -->
+        <p class="allComment">全部评论<span class="num"><%= @collection.count %></span></p>
 
-        <!-- <div class="flow oneComment">
-            <div class="fl">
-                <%= image_tag("edu_user.png") %>
-            </div>
-            <div class="fl comContent">
-                <p class="identity">2017/10/30<span>11:59:25</span><span>游客</span></p>
-                <div class="flow">
-                    <p class="fl">喜欢这种颜色搭配与排版···</p>
-                    <div class="showSubBtn fr userComment"><%= image_tag("comment_before.png") %></div>
+        <% @collection.each do |top_comment| %>
+            <div class="flow oneComment" parent_id = "<%= top_comment[:id] %>">
+                <div class="fl">
+                    <img src= "../../assets/edu_user.png" />
+                </div>
+                <div class="fl comContent" parent_id = "<%= top_comment[:id] %>">
+                    <p class="identity">
+                        <%= top_comment[:created_at] %>
+                        <span><%= top_comment[:creator_name]==nil ? '游客' : top_comment[:creator_name] %></span>
+                        <span class="<%= top_comment[:official_account]=='is' ? "official-account" : "" %>"><%= top_comment[:creator_unit_name]!=nil ? top_comment[:creator_unit_name] : '' %></span>
+                    </p>
+                    <div class="flow">
+                        <div class="fl">
+                            <%= top_comment[:content].html_safe %>
+                        </div>
+                        <div class="commentImg fr userComment" >
+                            <img src= "../../assets/comment_before.png"  onclick="addChiComment('<%= top_comment[:id] %>')" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class= "childComments" >
+                    <% if top_comment[:sons].present? %>
+                        <% top_comment[:sons].sort_by{|i| i[:created_at]}.each do |son_comment| %>
+                            <div class="comContent" parent_id = "<%= son_comment[:id] %>">
+                                <p class="identity">
+                                    <%= son_comment[:created_at] %>
+                                    <span>
+                                        <%= son_comment[:creator_name]==nil ? '游客' : son_comment[:creator_name] %>
+                                    </span>
+                                    <span class="<%= son_comment[:official_account]=='is' ? "official-account" : "" %>"><%= son_comment[:creator_unit_name]!=nil ? son_comment[:creator_unit_name] : '' %></span>
+                                </p>
+                                <div class="flow">
+                                    <p class="fl">
+                                        <%= son_comment[:content].html_safe %>
+                                    </p>
+                                    <div class="commentImg fr userComment" >
+                                        <img src= "../../assets/comment_before.png" onclick="addChiComment('<%= son_comment[:id] %>', '<%= son_comment[:id] %>')" />
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
+                    <% end %>
                 </div>
             </div>
-        </div> -->
-
+        <% end %>
     </div>
 </div>
 <% content_for :script do %>

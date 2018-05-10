@@ -4,7 +4,7 @@ class TagRelation < ApplicationRecord
   scope :relation_id_is,  ->(relation_id) { where "#{table_name}.relation_id = :relation_id", relation_id: "#{relation_id}" }
   scope :tag_flag_is,  ->(tag_flag) { where "#{table_name}.tag_flag = :tag_flag", tag_flag: "#{tag_flag}" }
   scope :tag_name_is,  ->(tag_name) { where "#{table_name}.tag_name = :tag_name", tag_name: "#{tag_name}" }
-
+  scope :tag_name_like,  ->(tag_name)    { where "#{table_name}.tag_name LIKE :tag_name", tag_name: "%#{tag_name}%" }
 
   def self.get_tags_by(object: nil)
     result = ''

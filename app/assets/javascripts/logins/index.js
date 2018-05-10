@@ -14,7 +14,11 @@ $(function(){
       .done(function( data ) {
         if(data['success']){
           $('.js-error-vector').html("&nbsp;");
-          window.location.href = $('.js-callback').val();
+          reload_url = '/';
+          if(undefined!=$('.js-callback').val() && null!=$('.js-callback').val() && ''!=$('.js-callback').val()){
+            reload_url = $('.js-callback').val();
+          }
+          window.location.href = reload_url;
         }else{
           $('.js-error-vector').html(JSON.parse(xhr.responseText)['message']);
           return false;

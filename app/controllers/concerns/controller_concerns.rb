@@ -26,6 +26,26 @@ module ControllerConcerns
       result
     end
 
+    def get_later_generations(top_comment, sons, state_arr)
+      if top_comment.present?
+        comments = Comment.parent_id_is(top_comment.id)
+        if comments.present?
+          comments.each do |comment|
+            comment_json = comment.to_json_by(fields: [:id, :content, :created_at])
+            creator = comment.creator_id.present? ? User.find(comment.creator_id) : nil
+            comment_json[:creator_name]      = creator.try(:name)
+            comment_json[:creator_unit_name] = creator.try(:unit_name_desc)
+            comment_json[:official_account]  = creator.try(:official_account)
+            if state_arr.include?(comment.state)
+              get_later_generations(comment, sons, state_arr)
+              sons.push(comment_json)
+            end
+          end
+        end
+      end
+      sons
+    end
+
   end
 
 end
