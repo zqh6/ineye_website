@@ -59,7 +59,7 @@
 										<th><%= User.human_attribute_name :name %></th>
 										<th><%= User.human_attribute_name :phone_number %></th>
 										<th><%= User.human_attribute_name :role_code %></th>
-                    <th>科室</th>
+                    <th>单位/科室</th>
 										<th><%= User.human_attribute_name :create_user %></th>
 										<th><%= User.human_attribute_name :created_at %></th>
 										<th><%= t :operate %></th>
@@ -72,7 +72,7 @@
 														<td><%= user.name %></td>
 														<td><%= user.phone_number %></td>
 														<td><%= ShareEnum.roles[user.role_code.to_sym] %></td>
-	                          <td><%= user.get_offices.collect{|i| i.name}.to_sentence %></td>
+	                          <td><%= user.role_code=='common_user' ? user.get_offices.collect{|i| i.name}.to_sentence : user.unit_name %></td>
 														<td><%= user.create_user.present? ? (user.create_user.name.present? ? user.create_user.name : '（暂无名称）')  : '（无创建者）' %></td>
 														<td><%= l user.created_at, format: :human_time %></td>
 														<td>
