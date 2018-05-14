@@ -3,7 +3,9 @@ class Administration::V1::ActivityEntersController < Administration::V1::Privile
 
   def index
     @activity_enters = ActivityEnter.alive.reorder('created_at DESC')
-    #@activity_enters = @activity_enters.paginate(page: params[:page], per_page: 20)
+    if params[:export_file]!='true'
+      @activity_enters = @activity_enters.paginate(page: params[:page], per_page: 20)
+    end
     if params[:export_file]=='true'
       csv = CSV.generate do |csv|
         csv << [ (ActivityEnter.human_attribute_name :name), (ActivityEnter.human_attribute_name :phone_number), (ActivityEnter.human_attribute_name :created_at), (ActivityEnter.human_attribute_name :activity_type)]
