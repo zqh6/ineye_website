@@ -107,6 +107,7 @@ GEM
     progne_tapera (0.5.2)
       rails (>= 4.2)
     public_suffix (3.0.1)
+    puma (3.11.0)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -215,6 +216,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mysql2
   progne_tapera
+  puma
   rails (= 5.0.6)
   rails-i18n
   repres-dosser (>= 1.8.3)
@@ -232,4 +234,4 @@ DEPENDENCIES
   yettings
 
 BUNDLED WITH
-   1.15.1
+   1.15.3
