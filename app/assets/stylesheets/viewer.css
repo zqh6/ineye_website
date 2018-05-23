@@ -2005,8 +2005,8 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
           page-break-inside: avoid;
         }
       }
-        </style>
-        <style scoped>
+        /*</style>
+        <style scoped>*/
       #mozPrintCallback-shim {
         position: fixed;
         top: 0;

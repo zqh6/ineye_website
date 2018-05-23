@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #测试服务用production部署
 
 ##deploy server
@@ -14,7 +13,7 @@ RAILS_ENV=production HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com USERNAME=heshen
 rails g rails_kindeditor:install
 rails kindeditor:assets
 ####start
-HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com USERNAME=hesheng PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq SECRET_KEY_BASE=00aaeb1a06fcaf7d317b8f59b7710bfec8679825e50ebafcf797bc32af4e60b2b4ee7d070553846d2830153ae2f5e780a36a67c98937298b5f8512669cb86ff5 unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D 
+HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com USERNAME=hesheng PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq SECRET_KEY_BASE=00aaeb1a06fcaf7d317b8f59b7710bfec8679825e50ebafcf797bc32af4e60b2b4ee7d070553846d2830153ae2f5e780a36a67c98937298b5f8512669cb86ff5 unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
 
 
 ##restart server
@@ -46,21 +45,10 @@ rails kindeditor:assets
 /opt/nginx/sbin/nginx -s reload
 
 
->>>>>>> ba939a7b096b383e05503a735ce18be82646ac7b
 
 #正式服务用production部署
 
 ##deploy server
-<<<<<<< HEAD
-####create
-RAILS_ENV=production SECRET_KEY_BASE= DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:create
-####migrate
-RAILS_ENV=development DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:migrate
-
-RAILS_ENV=production DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:migrate
-####seed
-RAILS_ENV=production DATABASE=ineye_website_prd HOST=rds7riznz7riznz.mysql.rds.aliyuncs.com PASSWORD=buvXYxB2uNrAbiGpoZjHXNGPVVEs6mqq rails db:seed
-=======
 ####create db
 RAILS_ENV=production rails db:create
 ####migrate db
