@@ -21,34 +21,36 @@
                   <td><b>星期日</b></td>
               </tr>
               <% Office.alive.each do |office| %>
-              <tr>
-                  <td rowspan="2">
-                      <p><b><%= office.name %></b></p>
-                  </td>
-                  <td>上午</td>
-                  <% office_scheduling = @all_scheduling[office.id.to_s.to_sym] %>
-                  <% ShareEnum.weeks.each do |key, value| %>
-                  <td>
-                      <% next if office_scheduling.blank? || office_scheduling[:am].blank? || office_scheduling[:am][key.to_sym].blank? %>
-                      <% office_scheduling[:am][key.to_sym].each do |scheduling_info| %>
-                      <p><b class="js-user-name doctor-name" data-user-id="<%= scheduling_info[:user_id] %>"><%= scheduling_info[:user_name] %></b></p>
-                        <p><% if [:vip1, :vip2].include?(scheduling_info[:outpatient_service_type].to_sym)%><%= scheduling_info[:outpatient_service_type_desc] %><% end %></p>
-                      <% end %>
-                  </td>
-                  <% end %>
-              </tr>
-              <tr>
-                  <td>下午</td>
-                  <% ShareEnum.weeks.each do |key, value| %>
-                      <td>
-                        <% next if office_scheduling.blank? || office_scheduling[:pm].blank? || office_scheduling[:pm][key.to_sym].blank? %>
-                        <% office_scheduling[:pm][key.to_sym].each do |scheduling_info| %>
-                            <p><b class="js-user-name doctor-name" data-user-id="<%= scheduling_info[:user_id] %>"><%= scheduling_info[:user_name] %></b></p>
-                            <p><% if [:vip1, :vip2].include?(scheduling_info[:outpatient_service_type].to_sym)%><%= scheduling_info[:outpatient_service_type_desc] %><% end %></p>
+                <% office_scheduling = @all_scheduling[office.id.to_s.to_sym] %>
+                <% next if office_scheduling.blank?%>
+                <tr>
+                    <td rowspan="2">
+                        <p><b><%= office.name %></b></p>
+                    </td>
+                    <td>上午</td>
+
+                    <% ShareEnum.weeks.each do |key, value| %>
+                    <td>
+                        <% next if office_scheduling.blank? || office_scheduling[:am].blank? || office_scheduling[:am][key.to_sym].blank? %>
+                        <% office_scheduling[:am][key.to_sym].each do |scheduling_info| %>
+                        <p><b class="js-user-name doctor-name" data-user-id="<%= scheduling_info[:user_id] %>"><%= scheduling_info[:user_name] %></b></p>
+                          <p><% if [:vip1, :vip2].include?(scheduling_info[:outpatient_service_type].to_sym)%><%= scheduling_info[:outpatient_service_type_desc] %><% end %></p>
                         <% end %>
-                      </td>
-                  <% end %>
-              </tr>
+                    </td>
+                    <% end %>
+                </tr>
+                <tr>
+                    <td>下午</td>
+                    <% ShareEnum.weeks.each do |key, value| %>
+                        <td>
+                          <% next if office_scheduling.blank? || office_scheduling[:pm].blank? || office_scheduling[:pm][key.to_sym].blank? %>
+                          <% office_scheduling[:pm][key.to_sym].each do |scheduling_info| %>
+                              <p><b class="js-user-name doctor-name" data-user-id="<%= scheduling_info[:user_id] %>"><%= scheduling_info[:user_name] %></b></p>
+                              <p><% if [:vip1, :vip2].include?(scheduling_info[:outpatient_service_type].to_sym)%><%= scheduling_info[:outpatient_service_type_desc] %><% end %></p>
+                          <% end %>
+                        </td>
+                    <% end %>
+                </tr>
               <% end %>
           </table>
 
