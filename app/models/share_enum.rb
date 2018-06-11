@@ -84,7 +84,8 @@ class ShareEnum < ApplicationRecord
 
   enum activity_types: {
     netease_new: '网易新闻（421）',
-    netease_new_520: '网易新闻（520）'
+    netease_new_520: '网易新闻（520）',
+    zyh_activity: '周跃华高考活动（611）'
   }
 
   def self.form_options(enum_type)
