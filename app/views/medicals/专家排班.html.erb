@@ -85,26 +85,33 @@
       </div>
 
       <div class="doctorClickMask hide" >
-        <div class="doctorDetails flow whiteBg">
-          <div class="fl doctorPortrait flow">
-            <%= image_tag '#', class: 'js-image', rel: '图片' %>
-          </div>
-          <div class="fl doctorContent flow">
-            <h5 class="js-model-user-name"></h5>
-            <p class="doctorTitle"><span class="js-model-honour-brief-introduction"></span></p>
-            <div class="doctorHonor">
-              <p class="js-model-honour-specific"></p>
+        <div style="width: 760px;height: 760px;overflow-y: hidden;margin:0 auto">
+          <div style="width: 780px;height: 780px;overflow-y: scroll;">
+
+            <div class="doctorDetails flow whiteBg">
+              <div class="fl doctorPortrait flow">
+                <%= image_tag '#', class: 'js-image', rel: '图片' %>
+              </div>
+              <div class="fl doctorContent flow">
+                <h5 class="js-model-user-name"></h5>
+                <p class="doctorTitle"><span class="js-model-honour-brief-introduction"></span></p>
+                <div class="doctorHonor">
+                  <p class="js-model-honour-specific"></p>
+                </div>
+                <div class="doctorGoodAt flow">
+                  <span>擅长领域：</span>
+                  <p class="js-model-good-at-field"></p>
+                </div>
+                <p class="seePatientTime"><span>坐诊时间:</span><em class="js-model-work-time"></em></p>
+              </div>
             </div>
-            <div class="doctorGoodAt flow">
-              <span>擅长领域：</span>
-              <p class="js-model-good-at-field"></p>
+            <div class="doctorIntroduce whiteBg">
+                <p class="js-model-detailed-introduction"></p>
             </div>
-            <p class="seePatientTime"><span>坐诊时间:</span><em class="js-model-work-time"></em></p>
+
           </div>
         </div>
-        <div class="doctorIntroduce whiteBg">
-            <p class="js-model-detailed-introduction"></p>
-        </div>
+
       </div>
 
       <% content_for :script do %>
