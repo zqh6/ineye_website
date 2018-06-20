@@ -298,11 +298,73 @@ input:-webkit-autofill {
 }
 .right_fk{
     width:90px;
+    position:fixed;
+    right:0;
+    bottom: 20px;
 }
 .fkIcon{
     background: url("/assets/gwfc_icon.png");
     vertical-align: sub;
+    display:inline-block;
 }
 .fkIcon_close{
-    background-position: 0 -160px;
+    width:12px;
+    height:12px;
+    background-position: 0 -168px;
+    margin-left:5px;
+}
+.fl_closeBtn{
+    cursor: pointer;
+}
+.fkIcon_ask{
+    width:46px;
+    height:28px;
+    margin:20px 0 15px;
+}
+.fkIcon_tele{
+    width:34px;
+    height:34px;
+    margin:18px 0 16px;
+    background-position: 0 -33px;
+}
+.fkIcon_wechat{
+    width:54px;
+    height:54px;
+    background-position: 0 -72px;
+    margin:7px 0 9px;
+}
+.fkIcon_toTop{
+    width:35px;
+    height:32px;
+    background-position: 0 -130px;
+    margin:17px 0 13px;
+    cursor: pointer;
+}
+.fkList,.fkList a{
+    text-align:center;
+    color:#fff;
+}
+.fkList li{
+    height:90px;
+    margin-top:2px;
+}
+.fkList li p{
+    line-height:1;
+}
+.fl_closeBtn{
+    text-align: right;
+}
+.fkList li:first-child{
+    background:#00a9a9;
+    margin-top:4px;
+}
+.fkList li:nth-child(2){
+    background:#028dc7;
+}
+.fkList li:nth-child(3){
+    background:#78c340
+}
+.fkList li:nth-child(4){
+    background:#666666;
+    cursor: pointer;
 }
