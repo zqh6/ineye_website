@@ -86,7 +86,7 @@ class ShareEnum < ApplicationRecord
     netease_new: '网易新闻（421）',
     netease_new_520: '网易新闻（520）',
     zyh_activity: '周跃华高考活动（611）',
-    :'银海眼科金榜题名' => '金榜题名'
+    :'银海眼科祝您金榜题名' => '金榜题名(620)'
   }
 
   def self.form_options(enum_type)
