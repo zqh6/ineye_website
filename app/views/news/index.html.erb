@@ -5,24 +5,32 @@
             <!--轮播-->
             <div class="slide slide-left">
                 <ul class="slide-wrapper">
+
                     <li>
-                        <%= link_to image_tag("news_kyhd_1.jpg"),news_path(:成都中医大银海眼科医院隆重举行开业庆典仪式) %>
+                        <%= link_to 'javascript:void(0);' do %>
+                            <%= image_tag("news_page_s1.jpg") %>
+                        <% end %>
                         <div class="inner">
-                            <p>大医精诚 银海启明--成都中医大银海眼科医院隆重举行开业庆典仪式</p>
+                          <p>中国医促会全民眼健康提升计划系列活动暨爱眼全国行</p>
                         </div>
                     </li>
                     <li>
-                        <%= link_to image_tag("news_ylsh_1.jpg"),news_path(:中国医疗保健国际交流促进会眼科分会首届学术年会等眼科四会在成都隆重召开) %>
+                        <%= link_to 'javascript:void(0);' do %>
+                            <%= image_tag("news_page_s2.jpg") %>
+                        <% end %>
                         <div class="inner">
-                            <p>中国医疗保健国际交流促进会眼科分会首届学术年会等眼科四会在成都隆重召开</p>
+                          <p>成都第二届爱眼月公益活动暨金牛区眼健康工程正式启动</p>
                         </div>
-                    </li>
+                   </li>
                     <li>
-                        <%= link_to image_tag("news_banner_lpz.jpg"),news_path(:第三届国医大师首个工作室廖品正大师工作室在蓉成立) %>
+                        <%= link_to 'javascript:void(0);' do %>
+                            <%= image_tag("news_page_s3.jpg") %>
+                        <% end %>
                         <div class="inner">
-                            <p>第三届国医大师工作室廖品正大师工作室在蓉成立</p>
+                          <p>成都中医药大学“2018高考学子中医药文化体验营”学生来我院参观学习</p>
                         </div>
-                    </li>
+                   </li>
+
                 </ul>
                 <div class="slidebox">
                     <div class="slideWrap">
@@ -57,6 +65,15 @@
 
             <div class="videoList">
                 <div class="flVideo">
+                    <a href="https://v.qq.com/x/page/r0670rdzjui.html" target="_blank" >
+                        <div>
+                            <%= image_tag("video-zyzf.jpg",:class => 'allWidth') %>
+                        </div>
+                        <p>中央电视台权威专访成都中医大银海眼科医院专家：激光笔对儿童视力的可怕危害</p>
+                        <%= image_tag("play_btn.png",class: "playBtn") %>
+                    </a>
+                </div>
+                <div>
                     <a href="https://v.qq.com/x/page/b06061kotft.html" target="_blank" >
                         <div>
                             <%= image_tag("video_ineye_xc.jpg",:class => 'allWidth') %>
