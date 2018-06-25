@@ -16,18 +16,21 @@
 </div>
 <!--科室简介-->
 <!--科室专家-->
+
+
 <div class="centerModule padB20 chinMedModule" id="module2">
     <div class="chinCenterDoctor flow">
+        <% user = User.alive.role_code_is('common_user').name_is('廖品正').first %>
         <div class="flow">
             <div class="CenterLeader fl">
-                <%= link_to image_tag("zj1.jpg"),expert_path(:廖品正教授) %>
+                 <%= link_to image_tag('doctors/廖品正.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:廖品正教授) %>
                 <div class="CenterLeaderIntroduce">
-                    <h4>廖品正</h4>
-                    <p>教授 主任医师 博士生导师</p>
+                    <h4><%= user.try(:name) %></h4>
+                    <p><%= user.try(:honour_brief_introduction) %></p>
                     <p class="CenterLeaderTle">擅长领域：</p>
-                    <p>从事中医眼科教学、科研和临床53年，长于运用中医药诊治眼科疾病及相关疑难眼病。</p>
+                    <p><%= user.try(:good_at_field).try(:html_safe) %></p>
                     <p class="CenterLeaderTle">专家简介：</p>
-                    <p>曾被评为全国教育系统劳动模范并获“人民教师”奖章。先后担任国务院学位委员会第五届学科评议组成员、中华中医药学会科学技术奖评审专家、中华中医药学会眼科专业委员会委员、中华中医药学会糖尿病专业委员会特聘顾问、世界中医药学会内科糖尿病专业委员会学术顾问、四川省学术技术带头人、四川省首届十大名中医、四川省教学名师、四川省中医药学会常务理事暨中医眼科专业委员会副主任委员，成都中医药大学国家级重点学科《中医五官科学》与国家中医药局级重点学科《中医眼科学》的学术带头人。</p>
+                    <p><%= user.try(:detailed_introduction).try(:html_safe) %></p>
                 </div>
             </div>
             <!-- <div class="chinMedAdvantageCon fr"> -->
@@ -37,27 +40,22 @@
         </div>
         <div class="centerMemberCon chinMedMemberCon">
             <div class="centerMemberList fl">
+                 <% users = [
+                    {name: '邓亚平', fake_name: '邓亚平教授'},
+                    {name: '周华祥', fake_name: '周华祥教授'},
+                    {name: '路雪婧', fake_name: '路雪婧主任医师'},
+                    {name: '黄霄', fake_name: '黄霄主任医师'},
+                    {name: '张富文', fake_name: '张富文主治医师'}
+                ]%>
                 <ul class="flParent">
-                    <li>
-                        <%= link_to image_tag("zj3.jpg"),expert_path(:邓亚平教授) %>
-                        <div class="maskName">邓亚平</div>
-                    </li>
-                    <li>
-                        <%= link_to image_tag("zj7.jpg"),expert_path(:周华祥教授) %>
-                        <div class="maskName">周华祥</div>
-                    </li>
-                    <li>
-                        <%= link_to image_tag("zj9.jpg"),expert_path(:路雪婧主任医师) %>
-                        <div class="maskName">路雪婧</div>
-                    </li>
-                    <li>
-                        <%= link_to image_tag("zj11.jpg"),expert_path(:黄霄主任医师) %>
-                        <div class="maskName">黄霄</div>
-                    </li>
-                    <li>
-                        <%= link_to image_tag("zj10.jpg"),expert_path(:张富文主治医师) %>
-                        <div class="maskName">张富文</div>
-                    </li>
+                    <% users.each do |u|%>
+                      <li>
+                          <% user = User.alive.role_code_is('common_user').name_is(u[:name]).first %>
+                          <%= link_to image_tag('doctors/'+u[:name]+'.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(u[:fake_name].to_sym) %>
+                          <div class="maskName"><%= user.try(:name) %></div>
+                      </li>
+                    <% end %>
+
                 </ul>
             </div>
 
