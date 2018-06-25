@@ -21,14 +21,15 @@
     </p>
     <div class="cataractCenterDoctor flow">
         <div class="CenterLeader fl">
-            <%= link_to image_tag("zj2.jpg",:alt=>"段俊国"),expert_path(:段俊国教授) %>
+            <% user = User.alive.role_code_is('common_user').name_is('段俊国').first %>
+            <%= link_to image_tag('doctors/段俊国.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:段俊国教授) %>
             <div class="leaderMask">
                 <div class="">
-                    <h4 class="h5Title">段俊国</h4>
-                    <p>教授/主任医师/博士生导师</p>
+                    <h4 class="h5Title"><%= user.try(:name) %></h4>
+                    <p><%= user.try(:honour_brief_introduction) %></p>
                 </div>
                 <p><span>擅长领域：</span></p>
-                <p>长期从事青光眼、白内障和眼底病等临床工作，在青光眼的早期诊断和治疗上有丰富的临床经验。擅长各种抗青光眼手术、白内障人工晶体植入术、复杂眼底病的诊断和眼底出血性疾病中西医结合治疗。</p>
+                <p><%= user.try(:good_at_field).try(:html_safe) %></p>
             </div>
         </div>
         <div class="centerMemberCon fr">
@@ -36,16 +37,19 @@
             <div class="centerMemberList">
                 <ul class="flParent">
                     <li>
-                        <%= link_to image_tag("zj5.jpg"),expert_path(:刘文教授) %>
-                        <div class="maskName">刘文</div>
+                        <% user = User.alive.role_code_is('common_user').name_is('刘文').first %>
+                        <%= link_to image_tag('doctors/刘文.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:刘文教授) %>
+                        <div class="maskName"><%= user.try(:name) %></div>
                     </li>
                     <li>
-                        <%= link_to image_tag("zj15.jpg"),expert_path(:王国平) %>
-                        <div class="maskName">王国平</div>
+                        <% user = User.alive.role_code_is('common_user').name_is('王国平').first %>
+                        <%= link_to image_tag('doctors/王国平.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:王国平) %>
+                        <div class="maskName"><%= user.try(:name) %></div>
                     </li>
                     <li>
-                        <%= link_to image_tag("zj18.jpg"),expert_path(:李强主治医师) %>
-                        <div class="maskName">李强</div>
+                        <% user = User.alive.role_code_is('common_user').name_is('李强').first %>
+                        <%= link_to image_tag('doctors/李强.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:李强主治医师) %>
+                        <div class="maskName"><%= user.try(:name) %></div>
                     </li>
 
                 </ul>

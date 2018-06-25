@@ -53,4 +53,5 @@ class User < ApplicationRecord
       '成都中医大银海眼科医院'
     end
   end
+
 end
