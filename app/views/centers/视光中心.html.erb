@@ -21,35 +21,33 @@
     </p>
     <div class="cataractCenterDoctor flow">
         <div class="CenterLeader fl">
-            <%= link_to image_tag("zj6.jpg",:alt=>"周跃华"),expert_path(:周跃华教授) %>
+            <% user = User.alive.role_code_is('common_user').name_is('周跃华').first %>
+            <%= link_to image_tag('doctors/周跃华.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:周跃华教授) %>
             <div class="leaderMask">
                 <div class="">
-                    <h4 class="h5Title">周跃华</h4>
-                    <p>教授 主任医师 博士生导师</p>
+                    <h4 class="h5Title"><%= user.try(:name) %></h4>
+                    <p><%= user.try(:honour_brief_introduction) %></p>
                 </div>
                 <p><span>擅长领域：</span></p>
-                <p>主要从事角膜屈光手术的临床工作和近视理论的基础研究，长于Smart千频全激光、Smile全飞秒等各类屈光手术，共完成各类屈光手术15万余例。</p>
+                <p><%= user.try(:good_at_field).try(:html_safe) %></p>
             </div>
         </div>
         <div class="centerMemberCon fr">
             <div class="centerMemberList">
+                <% users = [
+                    {name: '袁晓辉', fake_name: '袁晓辉主任医师'},
+                    {name: '周春阳', fake_name: '周春阳主任医师'},
+                    {name: '谢艾芮', fake_name: '谢艾芮主任医师'},
+                    {name: '缪馨', fake_name: '缪馨主治医师'}
+                ]%>
                 <ul class="flParent">
+                  <% users.each do |u|%>
                     <li>
-                        <%= link_to image_tag("zj8.jpg",:alt=>"袁晓辉"),expert_path(:袁晓辉主任医师) %>
-                        <div class="maskName">袁晓辉</div>
+                      <% user = User.alive.role_code_is('common_user').name_is(u[:name]).first %>
+                      <%= link_to image_tag('doctors/'+u[:name]+'.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(u[:fake_name].to_sym) %>
+                      <div class="maskName"><%= u[:name] %></div>
                     </li>
-                    <li>
-                        <%= link_to image_tag("zj13.jpg",:alt=>"周春阳"),expert_path(:周春阳主任医师) %>
-                        <div class="maskName">周春阳</div>
-                    </li>
-                    <li>
-                        <%= link_to image_tag("zj16.jpg",:alt=>"谢艾芮"),expert_path(:谢艾芮主任医师) %>
-                        <div class="maskName">谢艾芮</div>
-                    </li>
-                    <li>
-                        <%= link_to image_tag("zj19.jpg",:alt=>"缪馨"),expert_path(:缪馨主治医师) %>
-                        <div class="maskName">缪馨</div>
-                    </li>
+                  <% end %>
                 </ul>
             </div>
             <div class="cataractAdvantageCon centerAdvantageCon">
