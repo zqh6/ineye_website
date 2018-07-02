@@ -49,7 +49,7 @@
     <% end %>
 
     <% if ['sys_admin', 'user_admin'].include? @login_user.role_code %>
-		<li class="sidebar-nav-link">
+		<!--<li class="sidebar-nav-link">
 			<a href="javascript:;" class="sidebar-nav-sub-title">
 				<i class="am-icon-users sidebar-nav-link-logo"></i> 用户管理
 				<span class="am-icon-chevron-down am-fr am-margin-right-sm sidebar-nav-sub-ico"></span>
@@ -83,7 +83,15 @@
 				<% end %>
 
 			</ul>
-		</li>
+		</li>-->
+    <% end %>
+
+    <% if ['sys_admin', 'user_admin'].include? @login_user.role_code %>
+      <li class="sidebar-nav-link">
+        <%= link_to administration_v1_users_path, class: options[:list_item]=='user_index' ? 'active' : '' do  %>
+          <i class="am-icon-user sidebar-nav-link-logo"></i> 用户管理
+        <% end %>
+      </li>
     <% end %>
 
 
