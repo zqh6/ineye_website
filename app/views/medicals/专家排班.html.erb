@@ -1,87 +1,21 @@
+<style>
+  .schedule{
+    width: 100%;
+    height: 1600px;
+    border: none;
+  }
+</style>
+
+
 <%= render "homes/enter_banner" %>
+
 <div class="enterEyeContainer">
     <%= render "medicals/medical_left" %>
     <div class="fr doctorScheduling">
 
 
       <div class="schedulingTabCon padT20">
-          <table class="schedulingTab">
-              <tr>
-                  <th colspan="20">成都中医大银海眼科医院门诊医师坐诊一览表</th>
-              </tr>
-              <tr>
-                  <td><b>诊室</b></td>
-                  <td><b>时段</b></td>
-                  <td><b>星期一</b></td>
-                  <td><b>星期二</b></td>
-                  <td><b>星期三</b></td>
-                  <td><b>星期四</b></td>
-                  <td><b>星期五</b></td>
-                  <td><b>星期六</b></td>
-                  <td><b>星期日</b></td>
-              </tr>
-              <% Office.alive.each do |office| %>
-                <% office_scheduling = @all_scheduling[office.id.to_s.to_sym] %>
-                <% next if office_scheduling.blank?%>
-                <tr>
-                    <td rowspan="2">
-                        <p><b><%= office.name %></b></p>
-                    </td>
-                    <td>上午</td>
-
-                    <% ShareEnum.weeks.each do |key, value| %>
-                    <td>
-                        <% next if office_scheduling.blank? || office_scheduling[:am].blank? || office_scheduling[:am][key.to_sym].blank? %>
-                        <% office_scheduling[:am][key.to_sym].each do |scheduling_info| %>
-                        <p><b class="js-user-name doctor-name" data-user-id="<%= scheduling_info[:user_id] %>"><%= scheduling_info[:user_name] %></b></p>
-                          <p><% if [:vip1, :vip2].include?(scheduling_info[:outpatient_service_type].to_sym)%><%= scheduling_info[:outpatient_service_type_desc] %><% end %></p>
-                        <% end %>
-                    </td>
-                    <% end %>
-                </tr>
-                <tr>
-                    <td>下午</td>
-                    <% ShareEnum.weeks.each do |key, value| %>
-                        <td>
-                          <% next if office_scheduling.blank? || office_scheduling[:pm].blank? || office_scheduling[:pm][key.to_sym].blank? %>
-                          <% office_scheduling[:pm][key.to_sym].each do |scheduling_info| %>
-                              <p><b class="js-user-name doctor-name" data-user-id="<%= scheduling_info[:user_id] %>"><%= scheduling_info[:user_name] %></b></p>
-                              <p><% if [:vip1, :vip2].include?(scheduling_info[:outpatient_service_type].to_sym)%><%= scheduling_info[:outpatient_service_type_desc] %><% end %></p>
-                          <% end %>
-                        </td>
-                    <% end %>
-                </tr>
-              <% end %>
-          </table>
-
-          <table class="leave-table">
-            <tr>
-              <th class="title" colspan="20">医生停诊信息</th>
-            </tr>
-            <tr>
-              <th>科室</th>
-              <th>医生</th>
-              <th>停诊时间</th>
-            </tr>
-            <% user_id_keys = [] %>
-            <% user_id_hash = {} %>
-            <% AskForLeave.alive.where('day >= ?', Time.new.beginning_of_day).reorder('day ASC').each do |leave| %>
-              <tr>
-                <td><%= Office.where(id: leave.office_id).first.try(:name) %></td>
-                <td class="js-user-name" data-user-id="<%= leave.user_id %>">
-                  <% if user_id_keys.include?(leave.user_id) %>
-                    <% user = user_id_hash[leave.user_id.to_s.to_sym] %>
-                  <% else %>
-                    <% user = User.find(leave.user_id) %>
-                    <% user_id_hash[leave.user_id.to_s.to_sym] = user %>
-                    <% user_id_keys.push(leave.user_id) %>
-                  <% end %>
-                  <span class="doctor-name"><%= user.name %></span>
-                </td>
-                <td><%= leave.day.strftime('%Y-%m-%d') %>&nbsp;<%= ShareEnum.am_pms[leave.am_pm_code.to_sym] %></td>
-              </tr>
-            <% end %>
-          </table>
+          <iframe src="//crm.ineyehospital.com/tcOrg/scheduleList.htm" class="schedule"></iframe>
       </div>
 
       <div class="doctorClickMask hide" >
@@ -160,6 +94,5 @@
 
   </div>
 </div>
-
 
 
