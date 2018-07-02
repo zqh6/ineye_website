@@ -1,6 +1,17 @@
 <!--修改轮播-->
 <div class='banner-box  marB10 main'>
     <ul class='img'>
+
+        <li>
+            <%= link_to 'javascript:;' do %>
+                <%= image_tag("banner_jdImg.jpg") %>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to 'javascript:;' do %>
+                <%= image_tag("banner_jdmeeting.jpg") %>
+            <% end %>
+        </li>
         <li>
             <%= link_to 'http://m.ineyehospital.com/activity_enters/new?activity_type=%E9%93%B6%E6%B5%B7%E7%9C%BC%E7%A7%91%E7%A5%9D%E6%82%A8%E9%87%91%E6%A6%9C%E9%A2%98%E5%90%8D' do %>
                 <%= image_tag("banner_zjss.jpg") %>
@@ -11,17 +22,7 @@
                 <%= image_tag('banner_chooseIneye.jpg') %>
             <% end %>
         </li>
-        <li>
-            <%= link_to  news_path(432,from: 'db') do %>
-                <%= image_tag('banner_ayyqd.jpg') %>
-            <% end %>
 
-        </li>
-        <li>
-            <a href="javascript:;">
-                <%= image_tag("banner_likeeye.jpg") %>
-            </a>
-        </li>
         <li>
             <%= link_to image_tag("banner-entetnreye.jpg"),home_path(:医院简介) %>
         </li>
@@ -35,14 +36,7 @@
         <li>
             <%= link_to image_tag("banner_vipkz.jpg"),news_path(:关于调整门诊流程及增设VIP服务的通知) %>
         </li>
-        <li>
-            <a href="javascript:;">
-                <%= image_tag("banner_jiepai.jpg") %>
-            </a>
-            <div class="bannerWord">
-                <p>成都中医大银海眼科医院揭牌仪式</p>
-            </div>
-        </li>
+
 
     </ul>
     <ul class='li'></ul>
