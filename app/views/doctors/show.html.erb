@@ -49,7 +49,7 @@
 <% elsif @user.name=='朱思泉' %>
     <% members = %w(潘学会 陈小凤) %>
 <% elsif @user.name=='刘文' %>
-    <% members = %w(黄霄 王国平 李红惠) %>
+    <% members = %w(王国平 刘小虎) %>
 <% elsif @user.name=='周跃华' %>
     <% members = %w(袁晓辉 周春阳 谢艾芮 缪馨) %>
 <% elsif @user.name=='周华祥' %>
@@ -97,7 +97,8 @@
         </div>
         <div class="fl memberIntroduce">
           <h4><%= member_name %></h4>
-          <p><%= member_info[:honour_brief_introduction] %></p>
+          <p><%= member_info.try(:honour_brief_introduction) %></p>
+          <p><%#= member_info[:honour_brief_introduction] %></p>
           <% member_info[:honour_specific].each do |honour_specific| %>
             <p><%= honour_specific %></p>
           <% end %>
