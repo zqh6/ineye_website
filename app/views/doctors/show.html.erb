@@ -89,21 +89,18 @@
   <div class="teamContainer" >
     <ul class="teamMembers fr flParent flow" style="">
       <% members.each do |member_name| %>
-          <% member_user = User.role_code_is('common_user').name_is(member_name).first%>
-          <% member_info = UserConfiguration.doctors[member_name.to_sym]%>
-      <li>
-        <div class="fl teamMemberPhoto">
-          <%= link_to image_tag('doctors/'+member_name+'.jpg'), member_user.present? ? doctor_path(member_user.try(:id)) : ('javascript: void(0);') %>
-        </div>
-        <div class="fl memberIntroduce">
-          <h4><%= member_name %></h4>
-          <p><%= member_info.try(:honour_brief_introduction) %></p>
-          <p><%#= member_info[:honour_brief_introduction] %></p>
-          <% member_info[:honour_specific].each do |honour_specific| %>
-            <p><%= honour_specific %></p>
-          <% end %>
-        </div>
-      </li>
+        <% member_user = User.role_code_is('common_user').name_is(member_name).first%>
+        <% member_info = UserConfiguration.doctors[member_name.to_sym]%>
+        <li>
+          <div class="fl teamMemberPhoto">
+            <%= link_to image_tag('doctors/'+member_name+'.jpg'), member_user.present? ? doctor_path(member_user.try(:id)) : ('javascript: void(0);') %>
+          </div>
+          <div class="fl memberIntroduce">
+            <h4><%= member_name %></h4>
+            <p><%= member_user.try(:honour_brief_introduction) %></p>
+            <p><%= member_user.honour_specific.html_safe %></p>
+          </div>
+        </li>
       <% end %>
     </ul>
     <div class="leftBtn">
