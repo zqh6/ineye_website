@@ -1,5 +1,6 @@
 class UserConfiguration < ApplicationRecord
 
+=begin
   def self.doctors
     {
       '路雪婧': {
@@ -131,4 +132,5 @@ class UserConfiguration < ApplicationRecord
       }
     }
   end
+=end
 end

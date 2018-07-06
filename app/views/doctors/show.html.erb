@@ -90,7 +90,6 @@
     <ul class="teamMembers fr flParent flow" style="">
       <% members.each do |member_name| %>
         <% member_user = User.role_code_is('common_user').name_is(member_name).first%>
-        <% member_info = UserConfiguration.doctors[member_name.to_sym]%>
         <li>
           <div class="fl teamMemberPhoto">
             <%= link_to image_tag('doctors/'+member_name+'.jpg'), member_user.present? ? doctor_path(member_user.try(:id)) : ('javascript: void(0);') %>
