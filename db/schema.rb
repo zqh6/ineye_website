@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180503035259) do
+ActiveRecord::Schema.define(version: 20180707084302) do
 
   create_table "activity_enters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -25,6 +25,9 @@ ActiveRecord::Schema.define(version: 20180503035259) do
     t.string   "ip"
     t.string   "remote_ip"
     t.string   "user_agent"
+    t.string   "dian_hua"
+    t.datetime "ordered_at"
+    t.string   "description"
     t.index ["activity_type"], name: "index_activity_enters_on_activity_type", using: :btree
     t.index ["name"], name: "index_activity_enters_on_name", using: :btree
     t.index ["phone_number"], name: "index_activity_enters_on_phone_number", using: :btree
@@ -196,6 +199,18 @@ ActiveRecord::Schema.define(version: 20180503035259) do
     t.index ["state"], name: "index_schedulings_on_state", using: :btree
     t.index ["user_id"], name: "index_schedulings_on_user_id", using: :btree
     t.index ["week_code"], name: "index_schedulings_on_week_code", using: :btree
+  end
+
+  create_table "statistics_urls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "url",                                                  null: false
+    t.integer  "count",                default: 0,                     null: false
+    t.string   "state",      limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",            default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",            default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",              default: false,                 null: false
+    t.datetime "created_at",                                           null: false
+    t.datetime "updated_at",                                           null: false
+    t.index ["url"], name: "index_statistics_urls_on_url", using: :btree
   end
 
   create_table "tag_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
