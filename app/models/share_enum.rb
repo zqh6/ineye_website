@@ -87,7 +87,9 @@ class ShareEnum < ApplicationRecord
     netease_new_520: '网易新闻（520）',
     zyh_activity: '周跃华高考活动（611）',
     :'银海眼科祝您金榜题名' => '金榜题名(620)',
-    laik: '屈光手术优惠活动'
+    laik: '屈光手术优惠活动',
+    :'青少年近视防控行动': '青少年近视防控行动',
+    :'2018夏季特惠活动': '2018夏季特惠活动'
   }
 
   def self.form_options(enum_type)
