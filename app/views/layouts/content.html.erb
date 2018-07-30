@@ -10,9 +10,9 @@
     })();
   </script>
   <head>
-    <title>成都中医大银海眼科</title>
-    <meta name="keywords" content="眼科、银海眼科、医院、眼科医院">
-    <meta name="description" content="成都中医大银海眼科医院为成都中医药大学附属眼科医院，与成都中医药大学眼科学院实行院院合一统一管理，是集医、教、研三位于一体的研究型大型专科医院。齐聚众多国内外中西医顶级专家、学者担任医院各专业领域学术技术带头人，以一流技术、一流设备、一流疗效、一流环境、一流服务面向广大眼病患者。">
+    <title><% if (yield :title).present? %><%= yield :title %><% else %>糖尿病视网膜病变_斜弱视矫正_干眼治疗-成都中医大银海眼科医院<% end %></title>
+    <meta name="keywords" content="<% if (yield :keywords).present? %><%= yield :keywords %><% else %>糖尿病视网膜病变_斜弱视矫正_干眼治疗-成都中医大银海眼科医院<% end %>">
+    <meta name="description" content="<% if (yield :desc).present? %><%= yield :desc %><% else %>成都中医大银海眼科医院为成都中医药大学附属眼科医院，是集医、教、研三位于一体的研究型大型专科医院.医院治疗项目包括白内障、糖尿病视网膜病变、斜弱视矫正、干眼治疗、玻璃体疾病、屈光手术、近视防控等。<% end %>">
     <%= csrf_meta_tags %>
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />

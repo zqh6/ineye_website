@@ -1,3 +1,4 @@
+<% render 'doctors/doctor_tkd' %>
 <div class="doctorDetails flow whiteBg">
   <div class="fl doctorPortrait flow">
     <%= image_tag('doctors/'+@user.name.strip+'.jpg') %>
@@ -97,7 +98,7 @@
           <div class="fl memberIntroduce">
             <h4><%= member_name %></h4>
             <p><%= member_user.try(:honour_brief_introduction) %></p>
-            <p><%= member_user.honour_specific.html_safe %></p>
+            <p><%= member_user.try(:honour_specific).try(:html_safe) %></p>
           </div>
         </li>
       <% end %>
