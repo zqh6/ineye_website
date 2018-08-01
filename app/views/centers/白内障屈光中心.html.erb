@@ -1,14 +1,14 @@
 <%= render 'centers/center_tkd' %>
 <!--banner-->
 <div>
-    <%= image_tag("cataract-banner.jpg") %>
+    <%= image_tag("cataract-banner.jpg",alt: '白内障banner') %>
 </div>
 <!--banner-->
 <!--科室简介-->
 
 <div class="centerModule flow cataractCenterWord" id="module1">
     <div class="fl">
-        <%= image_tag("cataract-member.jpg") %>
+        <%= image_tag("cataract-member.jpg",alt: '成员') %>
     </div>
     <div class="fr centerWords">
         <h5 class="h5Title">白内障屈光中心</h5>
@@ -98,19 +98,19 @@
         <li>
             <div>
                 <div>
-                    <%= image_tag("ylsb3.jpg") %>
+                    <%= image_tag("ylsb3.jpg",alt: '医疗设备') %>
                 </div>
                 <p>Lens AR非接触式3D飞秒白内障</p>
             </div>
             <div>
                 <div>
-                    <%= image_tag("cataract-yq2.jpg") %>
+                    <%= image_tag("cataract-yq2.jpg",alt: '医疗设备') %>
                 </div>
                 <p>iolmaster光学生物测量仪</p>
             </div>
             <div>
                 <div>
-                    <%= image_tag("cataract-yq3.jpg") %>
+                    <%= image_tag("cataract-yq3.jpg",alt: '医疗设备') %>
                 </div>
                 <p>centurion</p>
             </div>
@@ -124,7 +124,7 @@
     <p class="cureProject"><span>诊疗项目</span><em class="active">飞秒激光辅助白内障手术</em><em>白内障超声乳化手术</em><em>ICL</em><em>ZEISS三焦点人工晶体</em></p>
     <div class="cureProjectContainer">
         <div class="cureProjectModule">
-            <%= image_tag("cataract-m1.jpg") %>
+            <%= image_tag("cataract-m1.jpg",alt: '') %>
 
             <div class="advListContainer">
                 <p class="advTitle">相比传统手术具备四大优势</p>
@@ -150,12 +150,12 @@
         </div>
 
         <div class="cureProjectModule">
-            <%= image_tag("cataract-m2.jpg") %>
+            <%= image_tag("cataract-m2.jpg",alt: '白内障超声乳化技术') %>
             <div class="advListContainer">
                 <p class="marT20">白内障超声乳化技术是显微手术的重大成果。1967年美国的KELMAN医生发明了第一台超声乳化仪并用于临床，之后经过众多眼科专家30多年不断改进、完善，白内障超声乳化技术已成为世界主流的手术方式。超声乳化目前在发达国家已普及，我国自1992年开始引进并推广。</p>
                 <p> 进行手术时，在术眼角膜或巩膜的小切口处伸入超乳探头将浑浊的晶状体和皮质击碎为乳糜状后，借助抽吸灌注系统将乳糜状物吸出，同时保持前房充盈，然后植入人工晶体，使患者重见光明。超声乳化技术真正实现了切口小，无痛苦，手术时间短，不需住院，快速复明的手术理想。</p>
                 <div class="centerImgCon">
-                    <%= image_tag("cataract-mImg1.jpg") %>
+                    <%= image_tag("cataract-mImg1.jpg",alt: '白内障超声乳化技术') %>
                 </div>
                 <p class="advTitle">与传统手术相比，白内障超声乳化人工晶体植入术有以下优点</p>
                 <ul class="flParent flow halfContainer">
@@ -180,12 +180,12 @@
         </div>
 
         <div class="cureProjectModule">
-            <%= image_tag("cataract-m3.jpg") %>
+            <%= image_tag("cataract-m3.jpg",alt: '屈光手术') %>
             <div class="advListContainer">
                 <p class="marT20">目前屈光手术有两种：一种是针对角膜屈光手术，另一种是晶体屈光手术。部分患者因角膜问题，干眼，散光、近视度数高等问题，无法通过角膜手术达到摘镜的目的,ICL成为这部分人群矫正近视的首选。ICL的英文全称是Implantable Contact Lens（可植入式隐形眼镜），它的出现给屈光手术医生和患者带来了矫正高度近视的另一个安全有效的可行性方案。手术的原理非常容易理解，就是相当于在眼睛里面放入了一个隐形眼镜。</p>
                 <div class="allNoIndent">
                     <p class="advBlueTitle">ICL手术的优点：</p>
-                    <p>1、矫正屈光度范围更广：近视50度～1800度，散光50度～600度。<%= image_tag("cataract-mImg2.png",:class=>"fr") %></p>
+                    <p>1、矫正屈光度范围更广：近视50度～1800度，散光50度～600度。<%= image_tag("cataract-mImg2.png",alt: 'ICL手术的优点',:class=>"fr") %></p>
                     <p>2、安全可逆：不切削角膜组织，必要时可取出或更换。</p>
                     <p>3、防护紫外线：更好保护眼睛。</p>
                     <p class="advBlueTitle">ICL手术适应证：</p>
@@ -226,7 +226,7 @@
                 <p>“高精尖”人工晶体，术后无需配镜</p>
             </div>
             <div class="flow width920 line30">
-                <%= image_tag("cataract-crystalImg1.jpg",:class => "fr") %>
+                <%= image_tag("cataract-crystalImg1.jpg",alt: '私人订制的屈光性人工晶体',:class => "fr") %>
                 <div class="fl marT40">
                     <p><i class="little icon_advantageList"></i> 完美的远中近全程视力</p>
                     <p><i class="little icon_advantageList"></i> 白天、黑夜全天候优视力</p>
@@ -234,10 +234,10 @@
                 </div>
             </div>
             <div class="centerImgCon marTNegative20">
-                <%= image_tag("cataract-crystalImg2.jpg") %>
+                <%= image_tag("cataract-crystalImg2.jpg",alt: '视力距离') %>
             </div>
             <div class="flow cataractMIntroduce">
-                <%= image_tag("cataract-crystalImg3.jpg",:class => "fl") %>
+                <%= image_tag("cataract-crystalImg3.jpg",alt: '类型',:class => "fl") %>
                 <div class="fr marT60 line30">
                     <p><i class="little icon_advantageList"></i> 各种类型，多种厂家</p>
                     <p><i class="little icon_advantageList"></i> 人工晶体一应俱全</p>

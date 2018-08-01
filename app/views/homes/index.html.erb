@@ -149,7 +149,7 @@
         <ul class="slide-wrapper fl">
           <li>
             <%= link_to 'javascript:void(0);' do %>
-                <%= image_tag("news_index_s1.jpg") %>
+                <%= image_tag("news_index_s1.jpg",alt:'中国医促会全民眼健康提升计划系列活动暨爱眼全国行') %>
             <% end %>
             <div class="inner">
               <p>中国医促会全民眼健康提升计划系列活动暨爱眼全国行</p>
@@ -157,7 +157,7 @@
           </li>
            <li>
             <%= link_to 'javascript:void(0);' do %>
-                <%= image_tag("news_index_s2.jpg") %>
+                <%= image_tag("news_index_s2.jpg",alt:'成都第二届爱眼月公益活动暨金牛区眼健康工程正式启动') %>
             <% end %>
             <div class="inner">
               <p>成都第二届爱眼月公益活动暨金牛区眼健康工程正式启动</p>
@@ -165,7 +165,7 @@
           </li>
            <li>
             <%= link_to 'javascript:void(0);' do %>
-                <%= image_tag("news_index_s3.jpg") %>
+                <%= image_tag("news_index_s3.jpg",alt:'成都中医药大学“2018高考学子中医药文化体验营”学生来我院参观学习') %>
             <% end %>
             <div class="inner">
               <p>成都中医药大学“2018高考学子中医药文化体验营”学生来我院参观学习</p>
@@ -330,7 +330,7 @@
       <p><em>眼底病中心</em></p>
       <div class="centerOne flow">
         <div class="fl marR16">
-          <%= link_to image_tag("center_1.jpg"),center_path(:眼底病中心) %>
+          <%= link_to image_tag("center_1.jpg",alt:'眼底病中心'),center_path(:眼底病中心) %>
           <ul class="flParent centerOneHref">
             <li><%= link_to :"中心简介",center_path(:眼底病中心,:anchor => "module1") %></li>
             <li><%= link_to :"专家团队",center_path(:眼底病中心,:anchor => "module2") %></li>
@@ -361,7 +361,7 @@
       <p><em>糖尿病视网膜病变防治中心</em></p>
       <div class="centerOne flow">
         <div class="fl marR16">
-          <%= link_to image_tag("center_2.jpg"),center_path(:糖尿病病变防治中心) %>
+          <%= link_to image_tag("center_2.jpg",alt: '糖尿病病变防治中心'),center_path(:糖尿病病变防治中心) %>
           <ul class="flParent centerOneHref">
             <li><%= link_to :"中心简介",center_path(:糖尿病病变防治中心,:anchor => "module1") %></li>
             <li><%= link_to :"专家团队",center_path(:糖尿病病变防治中心,:anchor => "module2") %></li>
@@ -391,7 +391,7 @@
       <p><em>白内障屈光中心 </em></p>
       <div class="centerOne flow">
         <div class="fl marR16">
-          <%= link_to image_tag("center_3.jpg"),center_path(:白内障屈光中心) %>
+          <%= link_to image_tag("center_3.jpg",alt: '白内障屈光中心'),center_path(:白内障屈光中心) %>
           <ul class="flParent centerOneHref">
 
             <li><%= link_to :"中心简介",center_path(:白内障屈光中心, :anchor => "module1") %></li>
@@ -424,7 +424,7 @@
       <p><em>眼视光中心 </em></p>
       <div class="centerOne flow">
         <div class="fl marR16">
-          <%= link_to image_tag("center_4.jpg"),center_path(:视光中心) %>
+          <%= link_to image_tag("center_4.jpg",alt: '视光中心'),center_path(:视光中心) %>
           <ul class="flParent centerOneHref">
             <li><%= link_to :"中心简介",center_path(:视光中心,:anchor => "module1") %></li>
             <li><%= link_to :"专家团队",center_path(:视光中心,:anchor => "module2") %></li>
@@ -456,7 +456,7 @@
       <p><em>中医眼科中心 </em></p>
       <div class="centerOne flow">
         <div class="fl marR16">
-          <%= link_to image_tag("center_5.jpg"),center_path(:中医简介) %>
+          <%= link_to image_tag("center_5.jpg",alt: '中医简介'),center_path(:中医简介) %>
           <ul class="flParent centerOneHref">
             <li><%= link_to :"中心简介",center_path(:中医简介,:anchor => "module1") %></li>
             <li><%= link_to :"专家团队",center_path(:中医简介,:anchor => "module2") %></li>
@@ -486,7 +486,7 @@
       <p><em>眼影像分析与诊断中心 </em></p>
       <div class="centerOne flow">
         <div class="fl marR16">
-          <%= link_to image_tag("center_6.jpg"),center_path(:读片中心) %>
+          <%= link_to image_tag("center_6.jpg",alt: '读片中心'),center_path(:读片中心) %>
           <ul class="flParent centerOneHref">
             <li><%= link_to :"中心简介",center_path(:读片中心,:anchor => "module1") %></li>
             <li><%= link_to :"专家团队",center_path(:读片中心,:anchor => "module2") %></li>
@@ -514,37 +514,37 @@
   <ul class="flParent flow departmentsImg">
     <li>
       <div>
-        <%= link_to image_tag("ylsb1.jpg"),home_path(:技术设备, :anchor => "equipment_1") %>
+        <%= link_to image_tag("ylsb1.jpg",alt: '阿玛仕1050RS准分子激光治疗仪'),home_path(:技术设备, :anchor => "equipment_1") %>
       </div>
       <p>阿玛仕1050RS准分子激光治疗仪</p>
     </li>
     <li>
       <div>
-        <%= link_to image_tag("ylsb2.jpg"),home_path(:技术设备, :anchor => "equipment_2") %>
+        <%= link_to image_tag("ylsb2.jpg",alt:'蔡司全飞秒Visu Max 激光系统'),home_path(:技术设备, :anchor => "equipment_2") %>
       </div>
       <p>蔡司全飞秒Visu Max 激光系统</p>
     </li>
     <li>
       <div>
-        <%= link_to image_tag("ylsb3.jpg"),home_path(:技术设备, :anchor => "equipment_3") %>
+        <%= link_to image_tag("ylsb3.jpg",alt:'LENSAR非接触式3D飞秒白内障激光手术系统'),home_path(:技术设备, :anchor => "equipment_3") %>
       </div>
       <p>LENSAR非接触式3D飞秒白内障激光手术系统</p>
     </li>
     <li>
       <div>
-        <%= link_to image_tag("ylsb4.jpg"),home_path(:技术设备, :anchor => "equipment_4") %>
+        <%= link_to image_tag("ylsb4.jpg",alt:'爱尔康Constellation玻切机设备'),home_path(:技术设备, :anchor => "equipment_4") %>
       </div>
       <p>爱尔康Constellation玻切机设备</p>
     </li>
     <li>
       <div>
-        <%= link_to image_tag("ylsb5.jpg"),home_path(:技术设备, :anchor => "equipment_5") %>
+        <%= link_to image_tag("ylsb5.jpg",alt:'爱尔科医人Vision One 量子芯片多波长激光'),home_path(:技术设备, :anchor => "equipment_5") %>
       </div>
       <p>爱尔科医人Vision One 量子芯片多波长激光</p>
     </li>
     <li>
       <div>
-        <%= link_to image_tag("ylsb6.jpg"),home_path(:技术设备, :anchor => "equipment_6") %>
+        <%= link_to image_tag("ylsb6.jpg",alt:'DRI OCT-1 Triton'),home_path(:技术设备, :anchor => "equipment_6") %>
       </div>
       <p>DRI OCT-1 Triton</p>
     </li>
@@ -560,11 +560,11 @@
   <!--资质荣誉-->
   <div class="honorContainer honorplate">
     <ul class="flParent flow honorImgs">
-      <li><%= image_tag("honor_1.jpg") %></li>
-      <li><%= image_tag("honor_2.jpg") %></li>
-      <li><%= image_tag("honor_3.jpg") %></li>
-      <li><%= image_tag("honor_4.jpg") %></li>
-      <li><%= image_tag("honor_5.jpg") %></li>
+      <li><%= image_tag("honor_1.jpg",alt: '资质荣誉') %></li>
+      <li><%= image_tag("honor_2.jpg",alt: '资质荣誉') %></li>
+      <li><%= image_tag("honor_3.jpg",alt: '资质荣誉') %></li>
+      <li><%= image_tag("honor_4.jpg",alt: '资质荣誉') %></li>
+      <li><%= image_tag("honor_5.jpg",alt: '资质荣誉') %></li>
     </ul>
   </div>
   <!--资质荣誉-->
@@ -572,73 +572,73 @@
   <div class="honorplate">
     <ul class="flParent flow honorImgs commitAllImgs">
       <li>
-        <%= image_tag("jljy_1.jpg") %>
+        <%= image_tag("jljy_1.jpg",alt: '开业庆典外宾参观医院') %>
         <div class="photoMask">
           <span>2017.7.16-开业庆典外宾参观医院</span>
         </div>
       </li>
       <li>
-        <%= image_tag("jljy_2.jpg") %>
+        <%= image_tag("jljy_2.jpg",alt: '与地铁运营有限公司签订“地铁司机眼健康服务”协议') %>
         <div class="photoMask">
           <span>2017.6.6与地铁运营有限公司签订“地铁司机眼健康服务”-协议</span>
         </div>
       </li>
       <li>
-        <%= image_tag("jljy_3.jpg") %>
+        <%= image_tag("jljy_3.jpg",alt: '中医药管理局局长来我院视察工作') %>
         <div class="photoMask">
           <span>2017.7.5-中医药管理局局长来我院视察工作</span>
         </div>
       </li>
       <li>
-        <%= image_tag("jljy_4.jpg") %>
+        <%= image_tag("jljy_4.jpg",alt: '与太极集团签订“太极员工眼健康服务”协议') %>
         <div class="photoMask">
           <span>2017.6.6与太极集团签订“太极员工眼健康服务”协议</span>
         </div>
       </li>
       <li>
-        <%= image_tag("jljy_5.jpg") %>
+        <%= image_tag("jljy_5.jpg",alt: '举行国内眼科医院首台引进的阿玛仕1050RS准分子激光设备开机仪式') %>
         <div class="photoMask">
           <span>2017.6.8举行国内眼科医院首台引进的阿玛仕1050RS准分子激光设备开机仪式</span>
         </div>
       </li>
       <li>
-        <%= image_tag("jljy_6.jpg") %>
+        <%= image_tag("jljy_6.jpg",alt: '与金牛区教育局签订“青少年近视防控能力提升计划”协议') %>
         <div class="photoMask">
           <span>2017.6.6与金牛区教育局签订“青少年近视防控能力提升计划”协议</span>
         </div>
       </li>
       <li>
-        <%= image_tag("jljy_7.jpg") %>
+        <%= image_tag("jljy_7.jpg",alt: '成都中医药大学眼科学院与美国威斯康星大学签订合作备忘录') %>
         <div class="photoMask">
           <span>2010年12月10日 澳门 成都中医药大学眼科学院与美国威斯康星大学签订合作备忘录</span>
         </div>
       </li>
       <li>
-        <%= image_tag("jljy_8.jpg") %>
+        <%= image_tag("jljy_8.jpg",alt: '在2010年12月，在国际眼科药理及治疗研究会（澳门）上发言') %>
         <div class="photoMask">
           <span>在2010年12月，在国际眼科药理及治疗研究会（澳门）上发言</span>
         </div>
       </li>
       <li>
-        <%= image_tag("jljy_9.jpg") %>
+        <%= image_tag("jljy_9.jpg",alt: '2012年到美国加利福利亚州的希利眼科中心参观访问') %>
         <div class="photoMask">
           <span>2012年到美国加利福利亚州的希利眼科中心参观访问</span>
         </div>
       </li>
       <li>
-        <%= image_tag("jljy_10.jpg") %>
+        <%= image_tag("jljy_10.jpg",alt: '客座教授参观重点学科实验室并提出建设性意见') %>
         <div class="photoMask">
           <span>客座教授参观重点学科实验室并提出建设性意见</span>
         </div>
       </li>
       <li>
-        <%= image_tag("jljy_11.jpg") %>
+        <%= image_tag("jljy_11.jpg",alt: '2011国际眼科药物临床试验培训会上海') %>
         <div class="photoMask">
           <span>2011国际眼科药物临床试验培训会 上海</span>
         </div>
       </li>
       <li>
-        <%= image_tag("jljy_12.jpg") %>
+        <%= image_tag("jljy_12.jpg",alt: '读片中心人员赴美就眼底评价技术进行培训') %>
         <div class="photoMask">
           <span>2012年8月-2012年9月,读片中心人员赴美就眼底评价技术进行培训</span>
         </div>
@@ -655,43 +655,43 @@
   <iframe src="https://www.expoon.com/e/nu55nfz8p2s/panorama?from=singlemessage" style="width: 100%;height: 400px;border: 0"></iframe>
   <ul class="flParent flow honorImgs hosEnvironment">
     <li>
-      <%= image_tag("yyhj_1.jpg") %>
+      <%= image_tag("yyhj_1.jpg",alt: '配镜中心') %>
       <div class="photoMask">
         <span>配镜中心</span>
       </div>
     </li>
     <li>
-      <%= image_tag("yyhj_2.jpg") %>
+      <%= image_tag("yyhj_2.jpg",alt: 'VIP病房') %>
       <div class="photoMask">
         <span>VIP病房</span>
       </div>
     </li>
     <li>
-      <%= image_tag("yyhj_3.jpg") %>
+      <%= image_tag("yyhj_3.jpg",alt: '服务中心') %>
       <div class="photoMask">
         <span>服务中心</span>
       </div>
     </li>
     <li>
-      <%= image_tag("yyhj_4.jpg") %>
+      <%= image_tag("yyhj_4.jpg",alt: '药房') %>
       <div class="photoMask">
         <span>药房</span>
       </div>
     </li>
     <li>
-      <%= image_tag("yyhj_5.jpg") %>
+      <%= image_tag("yyhj_5.jpg",alt: '医院外观') %>
       <div class="photoMask">
         <span>医院外观</span>
       </div>
     </li>
     <li>
-      <%= image_tag("yyhj_6.jpg") %>
+      <%= image_tag("yyhj_6.jpg",alt: '国医大师工作室') %>
       <div class="photoMask">
         <span>国医大师工作室</span>
       </div>
     </li>
     <li>
-      <%= image_tag("yyhj_7.jpg") %>
+      <%= image_tag("yyhj_7.jpg",alt: '门诊一楼大厅') %>
       <div class="photoMask">
         <span>门诊一楼大厅</span>
       </div>

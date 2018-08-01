@@ -1,19 +1,19 @@
 <%= render 'centers/center_tkd' %>
 <!--banner-->
 <div>
-    <%= image_tag("readCenter-banner.jpg") %>
+    <%= image_tag("readCenter-banner.jpg",alt: '眼影像分析与诊断中心') %>
 </div>
 <!--banner-->
 <!--科室简介-->
 <div class="centerModule flow cataractCenterWord" id="module1">
     <div class="fl">
-        <%= image_tag("readCenter-member.jpg") %>
+        <%= image_tag("readCenter-member.jpg",alt: '成员') %>
     </div>
     <div class="fr centerWords chinCenterWord">
         <h5 class="h5Title">眼影像分析与诊断中心</h5>
         <p>眼影像分析与诊断中心2010年与美国威斯康星大学眼底读片中心合作，通过国家国际科技合作专项，引进ETDRS读片标准和标准操作规程，在国内率先实现糖尿病视网膜病变量化读片以及ETDRS分级。2013年，在国家重大仪器专项的支持下，正式建立云计算眼科读片中心。本中心重点开展临床读片、科研读片、慢病筛查、远程眼底病会诊等，运用图像分析技术、ETDRS读片技术、视网膜血氧分析技术等国际先进技术，建立符合中国人眼病特点的读片标准。中心面积300余平，配备先进设备和专业机房，与70余家医院与19家科研院所合作，形成了强大、全面的服务网络体系。</p>
         <div class="readCenterImg">
-            <%= image_tag("readCenterImg.jpg") %>
+            <%= image_tag("readCenterImg.jpg",alt: '眼影像分析与诊断中心') %>
         </div>
     </div>
 </div>
@@ -29,7 +29,7 @@
         <ul class="flParent flParent">
             <li>
                 <% user = User.alive.role_code_is('common_user').name_is('段俊国').first %>
-                 <%= link_to image_tag('doctors/段俊国.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:段俊国教授) %>
+                 <%= link_to image_tag('doctors/段俊国.jpg',alt: '段俊国'), user.present? ? doctor_path(user.try(:id)) : expert_path(:段俊国教授) %>
 
                 <div class="maskName">
                     <p><%= user.try(:name) %></p>
@@ -38,7 +38,7 @@
 
             <li>
                 <a href="javascript:;">
-                    <%= image_tag("zj-wf.jpg") %>
+                    <%= image_tag("zj-wf.jpg",alt: '文峰') %>
                 </a>
                 <div class="maskName">
                     <p>文峰</p>
@@ -46,7 +46,7 @@
             </li>
             <li>
                 <% user = User.alive.role_code_is('common_user').name_is('刘文').first %>
-                <%= link_to image_tag('doctors/刘文.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:刘文教授) %>
+                <%= link_to image_tag('doctors/刘文.jpg',alt: '刘文'), user.present? ? doctor_path(user.try(:id)) : expert_path(:刘文教授) %>
 
                 <div class="maskName">
                     <p><%= user.try(:name) %></p>
@@ -54,7 +54,7 @@
             </li>
             <li>
                 <% user = User.alive.role_code_is('common_user').name_is('路雪婧').first %>
-                <%= link_to image_tag('doctors/路雪婧.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:路雪婧主任医师) %>
+                <%= link_to image_tag('doctors/路雪婧.jpg',alt: '路雪婧'), user.present? ? doctor_path(user.try(:id)) : expert_path(:路雪婧主任医师) %>
 
                 <div class="maskName">
                     <p><%= user.try(:name) %></p>
@@ -62,7 +62,7 @@
             </li>
             <li>
                 <% user = User.alive.role_code_is('common_user').name_is('蹇文渊').first %>
-                 <%= link_to image_tag('doctors/蹇文渊.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:蹇文渊主治医师) %>
+                 <%= link_to image_tag('doctors/蹇文渊.jpg',alt: '蹇文渊'), user.present? ? doctor_path(user.try(:id)) : expert_path(:蹇文渊主治医师) %>
 
                 <div class="maskName">
                     <p><%= user.try(:name) %></p>
@@ -81,7 +81,7 @@
     <ul class="readCenterFunc flParent flow">
         <li>
             <div class="marT60">
-                <%= image_tag("readCenter-advantage1.jpg") %>
+                <%= image_tag("readCenter-advantage1.jpg",alt: '技术优势') %>
             </div>
             <div>
                 <h4>ETDRS分级【国际先进的科研分级标准】</h4>
@@ -90,7 +90,7 @@
         </li>
         <li>
             <div class="marT50">
-                <%= image_tag("readCenter-advantage2.jpg") %>
+                <%= image_tag("readCenter-advantage2.jpg",alt: '技术优势') %>
             </div>
             <div>
                 <h4>血管参数检测</h4>
@@ -99,7 +99,7 @@
         </li>
         <li>
             <div class="marT20">
-                <%= image_tag("readCenter-advantage3.jpg") %>
+                <%= image_tag("readCenter-advantage3.jpg",alt: '技术优势') %>
             </div>
             <div>
                 <h4>病变量化检测</h4>
@@ -109,7 +109,7 @@
         </li>
         <li>
             <div class="marT40">
-                <%= image_tag("readCenter-advantage4.jpg") %>
+                <%= image_tag("readCenter-advantage4.jpg",alt: '技术优势') %>
             </div>
             <h4>血氧饱和度分析</h4>
         </li>
@@ -124,8 +124,8 @@
 <div class="centerModule readCenterWork">
     <h5>糖尿病视网膜病变远程诊断服务</h5>
     <div class="readCenterWorkImg">
-        <%= image_tag("readCenter-server.jpg") %>
-        <%= image_tag("readCenter-report.jpg",:class=>"reportImg" ) %>
+        <%= image_tag("readCenter-server.jpg",alt: '糖尿病视网膜病变远程诊断服务') %>
+        <%= image_tag("readCenter-report.jpg",alt: '糖尿病视网膜病变远程诊断服务',:class=>"reportImg" ) %>
     </div>
     <div class="wordIndent2">
         <p>将基层医疗卫生机构、专业的眼影像分析诊断中心与2级及以上综合医院或眼科专科医院联系起来。</p>
@@ -149,7 +149,7 @@
                 <dd><i class="little icon_advantageList"></i> 医疗培训</dd>
             </dl>
         </div>
-        <%= image_tag("readCenter-function.jpg",:class=>"fr") %>
+        <%= image_tag("readCenter-function.jpg",alt: '平台功能',:class=>"fr") %>
     </div>
     <div class="line30">
         <h5 class="marT20">药物疗效评价</h5>
