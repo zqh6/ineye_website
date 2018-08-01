@@ -61,4 +61,8 @@ Rails.application.routes.draw do
     resources :uploads
   end
 
+  %w(404).each do |code|
+    get code, to: "errors#show", code: code
+  end
+
 end

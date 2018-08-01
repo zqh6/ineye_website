@@ -14,5 +14,7 @@ module IneyeWebsite
     config.time_to_lives = {
       validate_code_second: 900
     }
+
+    config.exceptions_app = self.routes
   end
 end

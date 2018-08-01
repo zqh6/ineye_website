@@ -7,15 +7,15 @@
   <div class="aboutUs headBg flow">
     <div class="fl telePhone">咨询电话：<span>400 9900 766</span> <span>028-68398866</span></div>
     <div class="fl commits">
-      <a href="http://171.221.236.106:5000/sw-amb/main.do" target="_blank">银海视觉训练中心</a>
-      <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">预约挂号</a>
-      <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank">在线咨询</a>
+      <a href="http://171.221.236.106:5000/sw-amb/main.do" target="_blank" rel="nofollow">银海视觉训练中心</a>
+      <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank" rel="nofollow">预约挂号</a>
+      <a href="http://put.zoosnet.net/LR/Chatpre.aspx?id=PUT57157670&cid=1492673497337873616010&lng=cn&sid=1494901384848349862390&p=http%3A//www.ineyehospital.com/main.asp&rf1=&rf2=&msg=&d=1494901387174" target="_blank" rel="nofollow">在线咨询</a>
       <% if @login_user.present? %>
-        <a href="<% if ['sys_admin', 'user_admin'].include?(@login_user.role_code) %>/administration/v1/dashboards/~<% else %>javascript: void(0);<% end %>">欢迎您，<%= @login_user.name %></a>
-        <a href="javascript: void(0);" class="js-logout">退出</a>
+        <a href="<% if ['sys_admin', 'user_admin'].include?(@login_user.role_code) %>/administration/v1/dashboards/~<% else %>javascript: void(0);<% end %>" rel="nofollow">欢迎您，<%= @login_user.name %></a>
+        <a href="javascript: void(0);" class="js-logout" rel="nofollow">退出</a>
       <% else %>
-        <%= link_to logins_path(callback: request.fullpath) do %>【登录】<% end %>
-        <%= link_to :'【注册】', registers_path %>
+        <%= link_to logins_path(callback: request.fullpath), rel: 'nofollow' do %>【登录】<% end %>
+        <%= link_to :'【注册】', registers_path, rel: 'nofollow' %>
       <% end %>
     </div>
     <div class="search fr">
