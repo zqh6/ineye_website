@@ -1,17 +1,17 @@
 <%= render 'centers/center_tkd' %>
 <!--科室简介-->
 <div class="marB20">
-    <%= image_tag("chiMedicine-banner.jpg") %>
+    <%= image_tag("chiMedicine-banner.jpg",alt:'中医简介') %>
 </div>
 <div class="centerModule flow cataractCenterWord" id="module1">
     <div class="fl">
-        <%= image_tag("chiMedicine-member.jpg") %>
+        <%= image_tag("chiMedicine-member.jpg",alt: '成员') %>
     </div>
     <div class="fr centerWords chinCenterWord ">
         <h5 class="h5Title chinCenterH5Title">中医眼科中心</h5>
         <p>传承陈氏中医眼科百余年积淀之学术精华，师国内众家学术流派之长，集六十年临床经验于一体，我院中医眼科具有得天独厚的基础条件。科室运用中医理论治疗，在黄斑水肿、出血性眼病、葡萄膜病、视神经疾病等方面，具有显著的诊疗特色和临床优势。其“中医特色治疗室”将中医丰富的治疗手段运用于临床，多方法、多途径的综合治疗，显著地提高了眼科临床疗效。</p>
         <div class="chinCenterImg">
-            <%= image_tag("chiMedicineImg.jpg") %>
+            <%= image_tag("chiMedicineImg.jpg",alt: '中医眼科中心') %>
         </div>
     </div>
 </div>
@@ -24,7 +24,7 @@
         <% user = User.alive.role_code_is('common_user').name_is('廖品正').first %>
         <div class="flow">
             <div class="CenterLeader fl">
-                 <%= link_to image_tag('doctors/廖品正.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:廖品正教授) %>
+                 <%= link_to image_tag('doctors/廖品正.jpg',alt: '廖品正'), user.present? ? doctor_path(user.try(:id)) : expert_path(:廖品正教授) %>
                 <div class="CenterLeaderIntroduce">
                     <h4><%= user.try(:name) %></h4>
                     <p><%= user.try(:honour_brief_introduction) %></p>
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <!-- <div class="chinMedAdvantageCon fr"> -->
-                <%= image_tag("chiMedicine-advantage.jpg",:class=>"fr") %>
+                <%= image_tag("chiMedicine-advantage.jpg",alt: '传承中医',:class=>"fr") %>
             <!-- </div> -->
             <%#= image_tag("chiMedicine-gyds.jpg",:class=>"fr") %>
         </div>
@@ -248,10 +248,7 @@
         <!--</div>-->
     <!--</div>-->
 
-<<<<<<< HEAD
 <!--</div>-->
 <!--科室科普-->
-=======
 </div>
 <!--科室科普-->
->>>>>>> ba939a7b096b383e05503a735ce18be82646ac7b

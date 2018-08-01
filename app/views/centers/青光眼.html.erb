@@ -1,6 +1,6 @@
 <%= render 'centers/center_tkd' %>
 <!--banner-->
-<%= image_tag("qgy_banner.jpg") %>
+<%= image_tag("qgy_banner.jpg",alt:"青光眼科") %>
 <!--banner-->
 <!--科室介绍-->
 <div class="centerModule flow pad15">
@@ -8,7 +8,7 @@
         <h5 class="h5Title centerH5">青光眼科</h5>
         <p>银海眼科医院青光眼科是一个集临床诊疗、教学科普、科研创新、产业研发为一体的医疗科室。科室云集了一批经验丰富的青光眼专家，充分整合中西医临床技术与资源，引进国际高端设备，开展各种抗青光眼手术和中西医视力保护等。科室秉承“大医精诚”之精神，综合运用前沿的西医技术及传统中医治疗手段，为广大青光眼患者提供专业、优质、全面的诊疗服务。</p>
     </div>
-    <%= image_tag("qgy_topRight.jpg",:class => "fr marR65") %>
+    <%= image_tag("qgy_topRight.jpg",alt:"青光眼科介绍",:class => "fr marR65") %>
 </div>
 <!--科室介绍-->
 <!--科室专家-->
@@ -21,7 +21,7 @@
         <li class="fl marB20">
             <% user = User.alive.role_code_is('common_user').name_is('潘学会').first %>
             <div class="fl">
-                <%= link_to image_tag('doctors/潘学会.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:潘学会) %>
+                <%= link_to image_tag('doctors/潘学会.jpg',alt:"潘学会"), user.present? ? doctor_path(user.try(:id)) : expert_path(:潘学会) %>
             </div>
             <div class="expertSynopsis fr">
                 <h5><%= user.try(:name) %></h5>
@@ -34,7 +34,7 @@
         <li class="fl">
             <% user = User.alive.role_code_is('common_user').name_is('陈小凤').first %>
             <div class="fl">
-                <%= link_to image_tag('doctors/陈小凤.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:陈小凤) %>
+                <%= link_to image_tag('doctors/陈小凤.jpg',alt:"陈小凤"), user.present? ? doctor_path(user.try(:id)) : expert_path(:陈小凤) %>
             </div>
             <div class="expertSynopsis fr">
                 <h5><%= user.try(:name) %></h5>
@@ -46,7 +46,7 @@
         <li class="fl">
             <% user = User.alive.role_code_is('common_user').name_is('李红惠').first %>
             <div class="fl">
-                <%= link_to image_tag('doctors/李红惠.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:李红惠主治医师) %>
+                <%= link_to image_tag('doctors/李红惠.jpg',alt:"李红惠"), user.present? ? doctor_path(user.try(:id)) : expert_path(:李红惠主治医师) %>
             </div>
             <div class="expertSynopsis fr">
                 <h5><%= user.try(:name) %></h5>
@@ -101,19 +101,19 @@
         <li>
             <div>
                 <div>
-                    <%= image_tag("diabetes_equ3.jpg") %>
+                    <%= image_tag("diabetes_equ3.jpg",alt: "医疗设备") %>
                 </div>
                 <p>HD-OCT5000</p>
             </div>
             <div>
                 <div>
-                    <%= image_tag("humphrey.jpg") %>
+                    <%= image_tag("humphrey.jpg",alt: "医疗设备") %>
                 </div>
                 <p>Humphrey 750i视野分析仪</p>
             </div>
             <div>
                 <div>
-                    <%= image_tag("haidebao.jpg") %>
+                    <%= image_tag("haidebao.jpg",alt: "医疗设备") %>
                 </div>
                 <p>海德堡OCT</p>
             </div>
@@ -121,7 +121,7 @@
         <li>
             <div>
                 <div>
-                    <%= image_tag("luo_lan.jpg") %>
+                    <%= image_tag("luo_lan.jpg",alt: "医疗设备") %>
                 </div>
                 <p>罗兰眼电生理RETI-Port/Scan 21</p>
             </div>

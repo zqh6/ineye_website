@@ -1,83 +1,83 @@
 <div class="regheader">
     <p class="regpageheader">
-      <a href="/"><%= image_tag("reglogo.png") %></a> <span class="operationtle">用户注册</span>
+      <a href="/"><%= image_tag("reglogo.png",alt: '中医大银海眼科医院') %></a> <span class="operationtle">用户注册</span>
     </p>
 </div>
 <div class="regarea">
     <div>
         <input type="text" placeholder="手机号：" class="tel" value="" maxlength="11" >
         <div class="remind">
-            <%= image_tag("remind.png") %> 建议使用常用手机，便于登录和找回密码
+            <%= image_tag("remind.png",alt: '格式/内容') %> 建议使用常用手机，便于登录和找回密码
         </div>
         <div class="warnimg hide">
-            <%= image_tag("warn.png") %> 号码不正确，请检查输入
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 号码不正确，请检查输入
         </div>
         <div class="okimg">
-            <%= image_tag("ok.png") %>
+            <%= image_tag("ok.png",alt: '格式正确') %>
         </div>
     </div>
     <div class="codeinput flow">
         <input type="text" placeholder="手机验证码：" class="importcode" value="" maxlength="4">
         <div class="getcode">获取短信验证码</div>
         <div class="warnimg hide">
-            <%= image_tag("warn.png") %> 验证码不正确
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 验证码不正确
         </div>
         <div class="warnimg hide warntel">
-            <%= image_tag("warn.png") %> 请输入正确的手机号码
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 请输入正确的手机号码
         </div>
         <div class="remind hide">
-            <%= image_tag("ok.png") %>
+            <%= image_tag("ok.png",alt: '格式正确') %>
         </div>
     </div>
     <div>
         <input type="text" placeholder="真实姓名：" class="name" value="" maxlength="4">
         <div class="remind">
-            <%= image_tag("remind.png") %> 建议填写4位以内的字符
+            <%= image_tag("remind.png",alt: '密码') %> 建议填写4位以内的字符
         </div>
         <div class="warnimg hide">
-            <%= image_tag("warn.png") %> 姓名不符合规则，请检查输入
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 姓名不符合规则，请检查输入
         </div>
         <div class="okimg">
-            <%= image_tag("ok.png") %>
+            <%= image_tag("ok.png",alt: '格式正确') %>
         </div>
     </div>
     <div>
         <input type="text" placeholder="医院：" class="hospital" value="" maxlength="20">
         <div class="remind">
-            <%= image_tag("remind.png") %> 请输入医院/单位名称
+            <%= image_tag("remind.png",alt: '单位') %> 请输入医院/单位名称
         </div>
         <div class="warnimg hide">
-            <%= image_tag("warn.png") %> 医院不符合要求，请检查输入
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 医院不符合要求，请检查输入
         </div>
         <div class="okimg">
-            <%= image_tag("ok.png") %>
+            <%= image_tag("ok.png",alt: '格式正确') %>
         </div>
     </div>
     <div>
         <input type="password" placeholder="设置密码：" class="pwd" value="" >
         <div class="remind">
-            <%= image_tag("remind.png") %> 密码需要6-20位
+            <%= image_tag("remind.png",alt: '密码') %> 密码需要6-20位
         </div>
         <div class="warnimg hide">
-            <%= image_tag("warn.png") %> 密码需要6-20位
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 密码需要6-20位
         </div>
         <div class="okimg">
-            <%= image_tag("ok.png") %>
+            <%= image_tag("ok.png",alt: '格式正确') %>
         </div>
     </div>
     <div>
         <input type="password" placeholder="确认密码：" class="surepwd" value="" >
         <div class="remind hide">
-            <%= image_tag("remind.png") %>
+            <%= image_tag("remind.png",alt: '密码') %>
         </div>
         <div class="warnimg hide">
-            <%= image_tag("warn.png") %> 密码不一致
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 密码不一致
         </div>
         <div class="warnimg hide warnpwd">
-            <%= image_tag("warn.png") %> 密码不能为空
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 密码不能为空
         </div>
         <div class="okimg">
-            <%= image_tag("ok.png") %>
+            <%= image_tag("ok.png",alt: '格式正确') %>
         </div>
     </div>
     <div class="regsubmit">
@@ -89,7 +89,7 @@
 <div class="regmask hide">
    <div class="succeemain">
        <p class="successword">
-        <%= image_tag("smileface.png") %>  恭喜您！注册成功！</p>
+        <%= image_tag("smileface.png",alt:'注册成功') %>  恭喜您！注册成功！</p>
        <p>今后您可以使用注册手机号登录银海官网平台，祝你生活愉快！</p>
      <div class="goprev subbtn"><a href="/logins?callback=/">立即登录</a></div>
    </div>
