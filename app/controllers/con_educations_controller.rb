@@ -60,7 +60,7 @@ class ConEducationsController < ApplicationController
       relation_ids = TagRelation.relation_type_is(ConEducationArticle.name.underscore).tag_flag_is('doctor_name').tag_name_like(params[:doctor_name].to_s.strip).collect{|i|i.relation_id}
       @con_education_articles = @con_education_articles.where('id in (?)', relation_ids)
     end
-    @con_education_articles = @con_education_articles.reorder('published_at ASC')
+    @con_education_articles = @con_education_articles.reorder('published_at DESC')
     @user_names = User.alive.role_code_is('common_user').collect{|i| i.name.to_s.strip}
   end
 end
