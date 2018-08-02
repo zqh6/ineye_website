@@ -29,6 +29,7 @@
                     <th><%= ActivityEnter.human_attribute_name :phone_number %></th>
                     <th><%= ActivityEnter.human_attribute_name :created_at %></th>
                     <th><%= ActivityEnter.human_attribute_name :activity_type %></th>
+                    <th><%= ActivityEnter.human_attribute_name :remark %></th>
                     <% if @login_user.role_code=='sys_admin' %>
                     <th><%= ActivityEnter.human_attribute_name :ip %></th>
                     <th><%= ActivityEnter.human_attribute_name :remote_ip %></th>
@@ -45,6 +46,7 @@
                         <td><%= activity_enter.phone_number %></td>
                         <td><%= activity_enter.created_at_desc %></td>
                         <td><%= ShareEnum.activity_types[activity_enter.activity_type.to_sym] %></td>
+                        <td><%= activity_enter.remark %></td>
                         <% if @login_user.role_code=='sys_admin' %>
                         <td><%= activity_enter.ip %></td>
                         <td><%= activity_enter.remote_ip %></td>
