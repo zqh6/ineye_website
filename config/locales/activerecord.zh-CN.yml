@@ -78,3 +78,4 @@ zh-CN:
         ip: IP
         remote_ip: 远程IP
         user_agent: 客户端信息
+        remark: 自定义备注
