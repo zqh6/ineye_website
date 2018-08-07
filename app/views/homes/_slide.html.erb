@@ -2,7 +2,12 @@
 <div class='banner-box  marB10 main'>
     <ul class='img'>
         <li>
-            <%= link_to  'javascript:;' do %>
+            <%= link_to  news_path(473, from: 'db') do %>
+                <%= image_tag("banner_jsxs.jpg", alt:'青少年近视学术讲座') %>
+            <% end %>
+        </li>
+        <li>
+            <%= link_to  news_path(464, from: 'db') do %>
                 <%= image_tag("banner_jjj.jpg", alt:'建军91周年') %>
             <% end %>
         </li>
@@ -12,21 +17,10 @@
             <% end %>
         </li>
         <li>
-            <%= link_to  'javascript:;' do %>
-                <%= image_tag("banner_cjbg.jpg", alt:'参军报国，无上荣光') %>
-            <% end %>
-        </li>
-        <li>
             <%= link_to 'http://m.ineyehospital.com/activity_enters/new?activity_type=%E9%93%B6%E6%B5%B7%E7%9C%BC%E7%A7%91%E7%A5%9D%E6%82%A8%E9%87%91%E6%A6%9C%E9%A2%98%E5%90%8D' do %>
                 <%= image_tag("banner_zjss.jpg", alt:'近视手术，就在银海') %>
             <% end %>
         </li>
-        <li>
-            <%= link_to  'javascript:;' do %>
-                <%= image_tag('banner_chooseIneye.jpg', alt:'目之所及，尽在银海') %>
-            <% end %>
-        </li>
-
         <li>
             <%= link_to image_tag("banner-entetnreye.jpg", alt:'成都中医大银海眼科医院'),home_path(:医院简介) %>
         </li>
