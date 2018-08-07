@@ -1,0 +1,12 @@
+<div>
+  <p class="last-new">
+    <%= link_to @last_new.scan_rails_path.blank? ? news_path(@last_new.id, from: 'db') : @last_new.scan_rails_path do %>
+      上一篇&nbsp;&nbsp;<span><%= @last_new.title %></span>
+    <% end %>
+  </p>
+  <p class="next-new">
+    <%= link_to @next_new.scan_rails_path.blank? ? news_path(@next_new.id, from: 'db') : @next_new.scan_rails_path do %>
+      下一篇&nbsp;&nbsp;<span><%= @next_new.title %></span>
+    <% end %>
+  </p>
+</div>

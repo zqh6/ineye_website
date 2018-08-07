@@ -1,18 +1,20 @@
 <%= render 'news/new_tkd' %>
 <div class="middle">
 
-    <div class="newsMain">
-        <div class="newsTitle">
-            <h5><%= @new.title %></h5>
-            <p class="rightWord"><%= @new.occurred_at.strftime('%Y-%m-%d') %></p>
-        </div>
+  <div class="newsMain">
+      <div class="newsTitle">
+          <h5><%= @new.title %></h5>
+          <p class="rightWord"><%= @new.occurred_at.strftime('%Y-%m-%d') %></p>
+      </div>
 
-        <div class="newsContent">
-            <!--正文开始-->
-            <%= @new.content.try(:html_safe) %>
-            <!--正文结束-->
-        </div>
-    </div>
+      <div class="newsContent">
+          <!--正文开始-->
+          <%= @new.content.try(:html_safe) %>
+          <!--正文结束-->
+      </div>
+
+      <%= render partial: 'news/last_and_next_new' %>
+  </div>
 
   <div class="newsAll">
     <h3 class="marT10">相关阅读</h3>

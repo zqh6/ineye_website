@@ -18,7 +18,17 @@ class NewsController < ApplicationController
     else
       new_ids = []
     end
+    #相关阅读
     @relation_news = New.alive.classify_is_not('notice').where('aim_at_platform in (?)', ['pc', 'pc_and_mobile']).where('id in (?)', new_ids).reorder('occurred_at DESC')
+    #上一篇
+    remain_new_ids = New.alive.collect{|n| n.id}-[@new.id]
+    last_new_id = remain_new_ids.sample
+    @last_new = New.find_by_id(last_new_id)
+    #下一篇
+    remain_new_ids = remain_new_ids-[last_new_id]
+    next_new_id = remain_new_ids.sample
+    @next_new = New.find_by_id(next_new_id)
+
     render :action => a and return
   end
 
