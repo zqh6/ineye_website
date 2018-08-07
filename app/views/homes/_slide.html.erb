@@ -2,6 +2,11 @@
 <div class='banner-box  marB10 main'>
     <ul class='img'>
         <li>
+            <%= link_to  news_path(473, from: 'db') do %>
+                <%= image_tag("banner_jsxs.jpg", alt:'青少年近视学术讲座') %>
+            <% end %>
+        </li>
+        <li>
             <%= link_to  news_path(464, from: 'db') do %>
                 <%= image_tag("banner_jjj.jpg", alt:'建军91周年') %>
             <% end %>
