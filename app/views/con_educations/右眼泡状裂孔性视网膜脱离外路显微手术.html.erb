@@ -1,0 +1,29 @@
+
+<%= image_tag("/assets/education-banner.jpg",alt:'继续教育',:class => 'marT10') %>
+<div class="flow conEducation">
+    <%= render 'con_educations/edu_left' %>
+    <div class="fr width1020 eduContentCon whiteBg">
+        <div class="whiteBg downModule minh400">
+          <video id="my-video" class="video-js" controls preload="auto" poster="m.png" data-setup="{}">
+              <source src="/uploads/video/右眼泡状裂孔性视网膜脱离外路显微手术.mp4">
+                  To view this video please enable JavaScript, and consider upgrading to a web browser that
+                  <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+
+          </video>
+          <p class="centerImgCon">右眼泡状裂孔性视网膜脱离外路显微手术</p>
+          <%= render 'con_educations/count' %>
+        </div>
+        <div>
+          <%= render 'con_educations/comment' %>
+        </div>
+    </div>
+
+
+</div>
+<% content_for :style do %>
+<%= stylesheet_link_tag 'video-js' %>
+<% end %>
+<% content_for :script do %>
+<%= javascript_include_tag 'video.min' %>
+<%= javascript_include_tag 'videoon' %>
+<% end %>

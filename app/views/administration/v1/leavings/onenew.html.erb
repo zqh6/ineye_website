@@ -1,0 +1,177 @@
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'one_user'}} %>
+
+  <!-- 内容区域 -->
+  <div class="tpl-content-wrapper">
+
+    <div class="row-content am-cf ">
+
+      <div class="widget am-cf">
+
+        <div class="row flow">
+          <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+
+            <div class="widget-head am-cf">
+              <div class="widget-title  am-cf">排班信息<span class="am-margin-left am-text-warning">此处排班是医生每周的默认排班表，实际结果请参阅<a href="/medicals/专家排班"><strong>《就诊排班表》</strong></a></span></div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="row marT30">
+          <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+            <div class="worklist">
+              <span>每周默认排班表：</span>
+            </div>
+            <table class="am-table am-table-hover workmsg doctorself">
+              <tr>
+                <td><b>科室</b></td>
+                <td><b>姓名</b></td>
+                <td><b>时段</b></td>
+                <% ShareEnum.weeks.each do |week_key, week_value| %>
+                    <td><b><%= week_value %></b></td>
+                <% end %>
+              </tr>
+
+              <% @offices.each do |office|%>
+              <% office_times = OfficeTime.alive.where(office_id: office.id) %>
+              <tr>
+                <td rowspan="2"><%= office.name%></td>
+                <td rowspan="2" data-user-id="<%= @login_user.id %>"><%= @login_user.name %></td>
+                <% office_time = office_times.where(am_pm_code: 'am').first %>
+                <td data-office-time-id="<%= office_time.id %>" class="worktime">上午</td>
+                <% ShareEnum.weeks.each do |week_key, week_value| %>
+                <td>
+                  <select data-am-selected="{searchBox: 1}" data-week-code="<%= week_key %>" placeholder="无" class="worktype">
+                    <option value="none" selected>无</option>
+                    <% ShareEnum.outpatient_services.each do |os_key, os_value| %>
+                      <% schedulings = Scheduling.alive.office_time_id_is(office_time.id).user_id_is(@login_user).outpatient_service_type_is(os_key).week_code_is(week_key) %>
+                      <option value="<%= os_key %>" <% if schedulings.present? %>selected<% end %>><%= os_value %></option>
+                    <% end %>
+                  </select>
+                </td>
+                <% end %>
+              </tr>
+
+              <tr>
+                <% office_time = office_times.where(am_pm_code: 'pm').first %>
+                <td data-office-time-id="<%= office_time.id %>" class="worktime" >下午</td>
+                <% ShareEnum.weeks.each do |week_key, week_value| %>
+                <td>
+                  <select data-am-selected="{searchBox: 1}" data-week-code="<%= week_key %>" placeholder="无">
+                    <option value="none" selected>无</option>
+                    <% ShareEnum.outpatient_services.each do |os_key, os_value|%>
+                      <% schedulings = Scheduling.alive.office_time_id_is(office_time.id).user_id_is(@login_user).outpatient_service_type_is(os_key).week_code_is(week_key) %>
+                      <option value="<%= os_key %>" <% if schedulings.present? %>selected<% end %>><%= os_value %></option>
+                    <% end %>
+                  </select>
+                </td>
+                <% end %>
+              </tr>
+              <% end %>
+            </table>
+            <div class="flow savechedulingcon">
+                <button type="button" class="am-btn am-btn-primary am-radius fr savecheduling">保存修改</button>
+            </div>
+          </div>
+        </div>
+        <div class="row flow clear-both">
+          <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+            <hr>
+          </div>
+        </div>
+
+        <div class="row marT30 expertself">
+          <form>
+            <div class="am-u-sm-12 am-u-md-12 am-u-lg-12 stopserver">
+              <%= hidden_field_tag :user_id, @login_user.id %>
+              <p><span>增加停诊： <small>（点击加号添加停诊时间）</small></span></p>
+              <p class="addBtn"><i class="am-icon-plus cursor"></i></p>
+              <div class="time-area">
+
+              </div>
+              <div class="surestop">
+                <button type="button" class="am-btn am-btn-primary am-radius">确认停诊</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+
+        <div class="row marT30">
+          <div class="am-u-sm-10 am-u-md-10 am-u-lg-10">
+            <div class="stoplist">
+              <span>停诊信息列表：</span>
+            </div>
+            <table class="stopmsg">
+              <tr>
+                <td><b>科室</b></td>
+                <td><b>姓名</b></td>
+                <td><b>停诊日期</b></td>
+                <td><b>停诊时段</b></td>
+                <td><b>创建时间</b></td>
+                <td><b>操作</b></td>
+              </tr>
+              <% @ask_for_leaves.each do |ask_for_leave| %>
+              <tr>
+                <td><%= ask_for_leave[:office_name] %></td>
+                <td><%= ask_for_leave[:user_name] %></td>
+                <td><%= ask_for_leave[:day] %></td>
+                <td><%= ask_for_leave[:am_pm_code_desc] %></td>
+                <td><%= ask_for_leave[:created_at_desc] %></td>
+                <td data-ask-for-leave-id="<%= ask_for_leave[:id] %>" class="delete-stopserver" >
+                  <span>删除停诊</span>
+                </td>
+              </tr>
+              <% end %>
+            </table>
+            <%= will_paginate @ask_for_leaves_query %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :body_attr do %>data-type="widgets"<% end %>
+
+<% content_for :style do %>
+    <%= stylesheet_link_tag 'administration/v1/leavings/new' %>
+<% end %>
+
+<% content_for :script do %>
+    <%= javascript_include_tag 'administration/v1/leavings/leaving' %>
+    <script type="text/html" id="javascript_template">
+        <tr>
+          <td><b>科室</b></td>
+          <td><b>姓名</b></td>
+          <td><b>停诊日期</b></td>
+          <td><b>停诊时段</b></td>
+          <td><b>创建时间</b></td>
+          <td><b>操作</b></td>
+        </tr>
+        <% @ask_for_leaves.each do |ask_for_leave| %>
+        <tr>
+          <td><%= ask_for_leave[:office_name] %></td>
+          <td><%= ask_for_leave[:user_name] %></td>
+          <td><%= ask_for_leave[:day] %></td>
+          <td><%= ask_for_leave[:am_pm_code_desc] %></td>
+          <td><%= ask_for_leave[:created_at_desc] %></td>
+          <td data-ask-for-leave-id="<%= ask_for_leave[:id] %>" class="delete-stopserver" >
+            <span>删除停诊</span>
+          </td>
+        </tr>
+        <% end %>
+    </script>
+<% end %>

@@ -1,13 +1,14 @@
+<%= render 'centers/center_tkd' %>
 <!--banner-->
 <div>
-    <%= image_tag("cataract-banner.jpg") %>
+    <%= image_tag("cataract-banner.jpg",alt: '白内障banner') %>
 </div>
 <!--banner-->
 <!--科室简介-->
 
 <div class="centerModule flow cataractCenterWord" id="module1">
     <div class="fl">
-        <%= image_tag("cataract-member.jpg") %>
+        <%= image_tag("cataract-member.jpg",alt: '成员') %>
     </div>
     <div class="fr centerWords">
         <h5 class="h5Title">白内障屈光中心</h5>
@@ -22,14 +23,15 @@
     </p>
     <div class="cataractCenterDoctor flow">
         <div class="CenterLeader fl">
-            <%= link_to image_tag("zj4.jpg"),expert_path(:朱思泉教授) %>
+            <% user = User.alive.role_code_is('common_user').name_is('朱思泉').first %>
+            <%= link_to image_tag('doctors/朱思泉.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:朱思泉教授) %>
             <div class="leaderMask">
                 <div class="">
-                    <h4 class="h5Title">朱思泉</h4>
-                    <p>教授 主任医师 博士生导师</p>
+                    <h4 class="h5Title"><%= user.try(:name) %></h4>
+                    <p><%= user.try(:honour_brief_introduction) %></p>
                 </div>
                 <p><span>擅长领域：</span></p>
-                <p>主要从事先天性白内障、葡萄膜炎并发白内障、伴有红斑狼疮的白内障、肾移植术后白内障患者等各类疑难、复杂性白内障的手术治疗游刃有余，技术精湛。迄今已完成逾35万台白内障手术，手术量居全国第一，亚洲乃至世界领先。</p>
+                <p><%= user.try(:good_at_field).try(:html_safe) %></p>
             </div>
         </div>
         <div class="centerMemberCon cataractCenterMember fr">
@@ -56,19 +58,19 @@
                 </ul>
             </div> -->
             <div class="centerMemberList">
+                <% users = [
+                    {name: '潘学会', fake_name: '潘学会'},
+                    {name: '陈小凤', fake_name: '陈小凤主治医师'},
+                    {name: '李红惠', fake_name: '李红惠主治医师'}
+                ]%>
                 <ul class="flParent">
-                    <li>
-                        <%= link_to image_tag("zj14.jpg"),expert_path(:潘学会) %>
-                        <div class="maskName">潘学会</div>
-                    </li>
-                    <li>
-                        <%= link_to image_tag("zj17.jpg"),expert_path(:陈小凤主治医师) %>
-                        <div class="maskName">陈小凤</div>
-                    </li>
-                    <li>
-                        <%= link_to image_tag("zj21.jpg"),expert_path(:李红惠主治医师) %>
-                        <div class="maskName">李红惠</div>
-                    </li>
+                    <% users.each do |u|%>
+                        <li>
+                          <% user = User.alive.role_code_is('common_user').name_is(u[:name]).first %>
+                          <%= link_to image_tag('doctors/'+u[:name]+'.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(u[:fake_name].to_sym) %>
+                          <div class="maskName"><%= u[:name] %></div>
+                        </li>
+                    <% end %>
                 </ul>
             </div>
             <div class="cataractAdvantageCon">
@@ -96,19 +98,19 @@
         <li>
             <div>
                 <div>
-                    <%= image_tag("ylsb3.jpg") %>
+                    <%= image_tag("ylsb3.jpg",alt: '医疗设备') %>
                 </div>
                 <p>Lens AR非接触式3D飞秒白内障</p>
             </div>
             <div>
                 <div>
-                    <%= image_tag("cataract-yq2.jpg") %>
+                    <%= image_tag("cataract-yq2.jpg",alt: '医疗设备') %>
                 </div>
                 <p>iolmaster光学生物测量仪</p>
             </div>
             <div>
                 <div>
-                    <%= image_tag("cataract-yq3.jpg") %>
+                    <%= image_tag("cataract-yq3.jpg",alt: '医疗设备') %>
                 </div>
                 <p>centurion</p>
             </div>
@@ -122,7 +124,7 @@
     <p class="cureProject"><span>诊疗项目</span><em class="active">飞秒激光辅助白内障手术</em><em>白内障超声乳化手术</em><em>ICL</em><em>ZEISS三焦点人工晶体</em></p>
     <div class="cureProjectContainer">
         <div class="cureProjectModule">
-            <%= image_tag("cataract-m1.jpg") %>
+            <%= image_tag("cataract-m1.jpg",alt: '') %>
 
             <div class="advListContainer">
                 <p class="advTitle">相比传统手术具备四大优势</p>
@@ -148,12 +150,12 @@
         </div>
 
         <div class="cureProjectModule">
-            <%= image_tag("cataract-m2.jpg") %>
+            <%= image_tag("cataract-m2.jpg",alt: '白内障超声乳化技术') %>
             <div class="advListContainer">
                 <p class="marT20">白内障超声乳化技术是显微手术的重大成果。1967年美国的KELMAN医生发明了第一台超声乳化仪并用于临床，之后经过众多眼科专家30多年不断改进、完善，白内障超声乳化技术已成为世界主流的手术方式。超声乳化目前在发达国家已普及，我国自1992年开始引进并推广。</p>
                 <p> 进行手术时，在术眼角膜或巩膜的小切口处伸入超乳探头将浑浊的晶状体和皮质击碎为乳糜状后，借助抽吸灌注系统将乳糜状物吸出，同时保持前房充盈，然后植入人工晶体，使患者重见光明。超声乳化技术真正实现了切口小，无痛苦，手术时间短，不需住院，快速复明的手术理想。</p>
                 <div class="centerImgCon">
-                    <%= image_tag("cataract-mImg1.jpg") %>
+                    <%= image_tag("cataract-mImg1.jpg",alt: '白内障超声乳化技术') %>
                 </div>
                 <p class="advTitle">与传统手术相比，白内障超声乳化人工晶体植入术有以下优点</p>
                 <ul class="flParent flow halfContainer">
@@ -178,12 +180,12 @@
         </div>
 
         <div class="cureProjectModule">
-            <%= image_tag("cataract-m3.jpg") %>
+            <%= image_tag("cataract-m3.jpg",alt: '屈光手术') %>
             <div class="advListContainer">
                 <p class="marT20">目前屈光手术有两种：一种是针对角膜屈光手术，另一种是晶体屈光手术。部分患者因角膜问题，干眼，散光、近视度数高等问题，无法通过角膜手术达到摘镜的目的,ICL成为这部分人群矫正近视的首选。ICL的英文全称是Implantable Contact Lens（可植入式隐形眼镜），它的出现给屈光手术医生和患者带来了矫正高度近视的另一个安全有效的可行性方案。手术的原理非常容易理解，就是相当于在眼睛里面放入了一个隐形眼镜。</p>
                 <div class="allNoIndent">
                     <p class="advBlueTitle">ICL手术的优点：</p>
-                    <p>1、矫正屈光度范围更广：近视50度～1800度，散光50度～600度。<%= image_tag("cataract-mImg2.png",:class=>"fr") %></p>
+                    <p>1、矫正屈光度范围更广：近视50度～1800度，散光50度～600度。<%= image_tag("cataract-mImg2.png",alt: 'ICL手术的优点',:class=>"fr") %></p>
                     <p>2、安全可逆：不切削角膜组织，必要时可取出或更换。</p>
                     <p>3、防护紫外线：更好保护眼睛。</p>
                     <p class="advBlueTitle">ICL手术适应证：</p>
@@ -224,7 +226,7 @@
                 <p>“高精尖”人工晶体，术后无需配镜</p>
             </div>
             <div class="flow width920 line30">
-                <%= image_tag("cataract-crystalImg1.jpg",:class => "fr") %>
+                <%= image_tag("cataract-crystalImg1.jpg",alt: '私人订制的屈光性人工晶体',:class => "fr") %>
                 <div class="fl marT40">
                     <p><i class="little icon_advantageList"></i> 完美的远中近全程视力</p>
                     <p><i class="little icon_advantageList"></i> 白天、黑夜全天候优视力</p>
@@ -232,10 +234,10 @@
                 </div>
             </div>
             <div class="centerImgCon marTNegative20">
-                <%= image_tag("cataract-crystalImg2.jpg") %>
+                <%= image_tag("cataract-crystalImg2.jpg",alt: '视力距离') %>
             </div>
             <div class="flow cataractMIntroduce">
-                <%= image_tag("cataract-crystalImg3.jpg",:class => "fl") %>
+                <%= image_tag("cataract-crystalImg3.jpg",alt: '类型',:class => "fl") %>
                 <div class="fr marT60 line30">
                     <p><i class="little icon_advantageList"></i> 各种类型，多种厂家</p>
                     <p><i class="little icon_advantageList"></i> 人工晶体一应俱全</p>
@@ -248,61 +250,61 @@
 </div>
 <!--诊疗项目-->
 <!--科室新闻-->
-<div class="centerModule">
-    <p class="blueBTitle">
-        <span>科室新闻</span><%= link_to :'更多>>',news_path(:新闻列表),:class=>"fr" %>
-    </p>
-    <div class="SectionNewsList">
-        <div>
-            <%= link_to news_path(:首批3D飞秒激光白内障手术获得成功) do %>
-                <%= image_tag("cataractNewImg.jpg") %>
-                <div class="fr SectionNewsRight">
-                    <h4>“省千人”朱思泉教授实施我院 首批3D飞秒激光白内障手术获得成功</h4>
-                    <p>“陈老师，我这辈子都没看这么清楚过，做手术之前我觉得你模模糊糊的挺瘦的，怎么现在看清楚你了，觉得你还有点胖呢。”这是住在12号床的任婆婆术后第一天最大的感触。近日，我院首批3D飞秒激光白内障手术在四川省千人计划特聘专家、北京同仁医院白内障中心主任、成都中医大银海眼科医院副院长/白内障屈光中心主任朱思泉教授的亲自主刀下成功完成。</p>
-                </div>
-            <% end %>
-        </div>
-        <div>
-            <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000478&idx=1&sn=f4eedb28338594567809a1263c56d494&chksm=7d4c428a4a3bcb9c90d36608ce8feff77e367b40d850054332107eaf11bf3b36a5b4908483f1#rd" target="_blank">
-                <%= image_tag("cataractNewImg2.jpg") %>
-                <div class="fr SectionNewsRight">
-                    <h4>一位眼科美女博士的“获得感”</h4>
-                    <p>“获得感”，是大家熟悉的热词。它的字面含义是“获取某种利益后所产生的满足感”。你的“获得感”是什么？也许是赚更多的钱，也许是换了一套大房子，也许是儿孙绕膝……但有一位美女博士，她的“获得感”却与众不同。</p>
-                </div>
-            </a>
-        </div>
-        <div>
-            <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000495&idx=1&sn=d690659718ca4207280fef99262902ff&chksm=7d4c42bb4a3bcbad45dc47e3c4a389dc543885ee1991895b0f8070202da0f08cbd8a4fdfcda2#rd" target="_blank">
-                <%= image_tag("cataractNewImg3.jpg") %>
-                <div class="fr SectionNewsRight">
-                    <h4>极致视觉 完美人生——白内障屈光中心三焦点晶体白飞秒</h4>
-                    <p>“四十七八，两眼花花”，很多人刚上40岁，就发现视力明显减退。阅读书报时，书本离得很远才能看得清楚；孩子拿着成绩单，坐等长辈雷霆一击时，长辈却发现根本看不清楚分数；乘坐电梯时，总觉得楼层数字越来越小，好似在逃遁一般。诸如此类，种种问题引起工作生活极大不便。其实这些都是“老花眼”在作怪。</p>
-                </div>
-            </a>
-        </div>
-    </div>
+<!--<div class="centerModule">-->
+    <!--<p class="blueBTitle">-->
+        <!--<span>科室新闻</span><%= link_to :'更多>>',news_path(:新闻列表),:class=>"fr" %>-->
+    <!--</p>-->
+    <!--<div class="SectionNewsList">-->
+        <!--<div>-->
+            <!--<%= link_to news_path(:首批3D飞秒激光白内障手术获得成功) do %>-->
+                <!--<%= image_tag("cataractNewImg.jpg") %>-->
+                <!--<div class="fr SectionNewsRight">-->
+                    <!--<h4>“省千人”朱思泉教授实施我院 首批3D飞秒激光白内障手术获得成功</h4>-->
+                    <!--<p>“陈老师，我这辈子都没看这么清楚过，做手术之前我觉得你模模糊糊的挺瘦的，怎么现在看清楚你了，觉得你还有点胖呢。”这是住在12号床的任婆婆术后第一天最大的感触。近日，我院首批3D飞秒激光白内障手术在四川省千人计划特聘专家、北京同仁医院白内障中心主任、成都中医大银海眼科医院副院长/白内障屈光中心主任朱思泉教授的亲自主刀下成功完成。</p>-->
+                <!--</div>-->
+            <!--<% end %>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000478&idx=1&sn=f4eedb28338594567809a1263c56d494&chksm=7d4c428a4a3bcb9c90d36608ce8feff77e367b40d850054332107eaf11bf3b36a5b4908483f1#rd" target="_blank">-->
+                <!--<%= image_tag("cataractNewImg2.jpg") %>-->
+                <!--<div class="fr SectionNewsRight">-->
+                    <!--<h4>一位眼科美女博士的“获得感”</h4>-->
+                    <!--<p>“获得感”，是大家熟悉的热词。它的字面含义是“获取某种利益后所产生的满足感”。你的“获得感”是什么？也许是赚更多的钱，也许是换了一套大房子，也许是儿孙绕膝……但有一位美女博士，她的“获得感”却与众不同。</p>-->
+                <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000495&idx=1&sn=d690659718ca4207280fef99262902ff&chksm=7d4c42bb4a3bcbad45dc47e3c4a389dc543885ee1991895b0f8070202da0f08cbd8a4fdfcda2#rd" target="_blank">-->
+                <!--<%= image_tag("cataractNewImg3.jpg") %>-->
+                <!--<div class="fr SectionNewsRight">-->
+                    <!--<h4>极致视觉 完美人生——白内障屈光中心三焦点晶体白飞秒</h4>-->
+                    <!--<p>“四十七八，两眼花花”，很多人刚上40岁，就发现视力明显减退。阅读书报时，书本离得很远才能看得清楚；孩子拿着成绩单，坐等长辈雷霆一击时，长辈却发现根本看不清楚分数；乘坐电梯时，总觉得楼层数字越来越小，好似在逃遁一般。诸如此类，种种问题引起工作生活极大不便。其实这些都是“老花眼”在作怪。</p>-->
+                <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
 
-</div>
+<!--</div>-->
 <!--科室新闻-->
 <!--科室科普-->
-<div class="centerModule">
-    <p class="blueBTitle">
-        <span>科室科普</span><%= link_to :'更多>>',news_path(:新闻列表),:class=>"fr" %>
-    </p>
-    <div class="SectionNewsList">
-        <div>
-            <%= link_to center_path(:白内障屈光科普) do %>
-            <%= image_tag("cataractKepuImg1.jpg") %>
-            <div class="fr SectionNewsRight">
-                <h4>白内障科普</h4>
-                <p>Q：什么是白内障？</p>
-                <p>A: 白内障目前是我国第一致盲眼病，发病率居首位，是指随着年龄的增长，眼球内自然晶状体发生浑浊，由透明变成不透明，阻碍光线和图像到达视网膜，导致我们的视力下降。早期浑浊轻微或范围较小时不影响视力，而后逐渐加重至明显影响视力，甚至失明及其他严重并发症。</p>
-            </div>
-            <% end %>
-        </div>
-    </div>
+<!--<div class="centerModule">-->
+    <!--<p class="blueBTitle">-->
+        <!--<span>科室科普</span><%= link_to :'更多>>',news_path(:新闻列表),:class=>"fr" %>-->
+    <!--</p>-->
+    <!--<div class="SectionNewsList">-->
+        <!--<div>-->
+            <!--<%= link_to center_path(:白内障屈光科普) do %>-->
+            <!--<%= image_tag("cataractKepuImg1.jpg") %>-->
+            <!--<div class="fr SectionNewsRight">-->
+                <!--<h4>白内障科普</h4>-->
+                <!--<p>Q：什么是白内障？</p>-->
+                <!--<p>A: 白内障目前是我国第一致盲眼病，发病率居首位，是指随着年龄的增长，眼球内自然晶状体发生浑浊，由透明变成不透明，阻碍光线和图像到达视网膜，导致我们的视力下降。早期浑浊轻微或范围较小时不影响视力，而后逐渐加重至明显影响视力，甚至失明及其他严重并发症。</p>-->
+            <!--</div>-->
+            <!--<% end %>-->
+        <!--</div>-->
+    <!--</div>-->
 
-</div>
+<!--</div>-->
 <!--科室科普-->
 
 <% content_for :script do %>

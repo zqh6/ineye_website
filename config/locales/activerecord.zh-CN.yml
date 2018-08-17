@@ -12,6 +12,8 @@ zh-CN:
       new: 新闻
       user: 用户
       password: 密码
+      con_education_article: 继续教育文章
+      activity_enter: 活动报名
 
     attributes:
       new:
@@ -28,6 +30,8 @@ zh-CN:
         aim_at_platform: 针对平台
         scan_rails_path: 路径
         state: 状态
+        tag: 标签
+        defunct: 状态
 
       user:
         name:         姓名
@@ -36,8 +40,42 @@ zh-CN:
         role_code:    角色
         create_user:  创建者
         created_at:   创建时间
+        honour_brief_introduction: 荣誉简介
+        honour_specific: 荣誉详情
+        good_at_field: 擅长领域
+        work_time: 工作时间描述
+        detailed_introduction: 详细介绍
+        office_id: 所属科室
+        official_account: 官方账户
+        user_order: 用户按大排序
+        doctor_level: 级别划分
+        unit_name: 医院名称
 
       password:
         old_password:  旧密码
         new_password:  新密码
         new_password2: 新密码
+
+      con_education_article:
+        article_classify: 归属板块
+        article_type: 媒体类型
+        static_url: 静态相对地址
+        title: 标题
+        content: 正文
+        pdf_url: PDF文件
+        video_url: 视频路径
+        published_at: 发表日期
+        tag: 标签
+        created_at: 创建时间
+        id: 编号
+
+      activity_enter:
+        id: 编号
+        created_at: 报名时间
+        name: 姓名
+        phone_number: 手机号码
+        activity_type: 活动标识
+        ip: IP
+        remote_ip: 远程IP
+        user_agent: 客户端信息
+        remark: 自定义备注

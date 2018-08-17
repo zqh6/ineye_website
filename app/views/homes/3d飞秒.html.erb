@@ -1,12 +1,12 @@
-
+<%= render 'homes/device_tkd' %>
 <div class="flow marT20 marB10">
     <div class="equLeft fl whiteBg line24">
         <p class="fontCenter30">精准、安全、完美</p>
         <p class="thisIndent2">LENSAR非接触式3D飞秒白内障激光手术系统运用于飞秒激光屈光白内障晶体手术中，可以使手术更精准、更安全，并达到可预期的术后效果。LENSAR雷斯亚独家使用3D环绕扫描技术，为眼球充足3D立体模型，并分析精确数据，打造专属您的飞秒白内障手术。LENSAR雷斯亚独特的液态非接触式病人对接界面，在治疗过程中完全不压迫角膜，保持角膜形态的完整，使激光能够精准击发零失误。</p>
         <div class="centerImgCon">
-            <%= image_tag("equ-detail3dImg1.jpg") %>
+            <%= image_tag("equ-detail3dImg1.jpg",alt: '设备') %>
             <p class="advBlueTitle">白内障手术比较</p>
-            <%= image_tag("equ-detail3dImg2.jpg") %>
+            <%= image_tag("equ-detail3dImg2.jpg",alt: '白内障手术比较') %>
             <p class="advBlueTitle">LENSAR非接触式3D飞秒白内障激光手术系统的优势</p>
         </div>
         <p>● 3D眼前节重建测量（3D-CSI）技术</p>
@@ -21,7 +21,7 @@
                 <ul class="flParent flow doctorRecommendCon">
                     <li>
                         <div class="centerImgCon doctorRecommendImg">
-                            <%= link_to image_tag("zj4.jpg"),expert_path(:朱思泉教授) %>
+                            <%= link_to image_tag("zj4.jpg",alt: '朱思泉教授'),expert_path(:朱思泉教授) %>
                         </div>
                         <div class="centerWords line24">
                             <p class="line30">朱思泉</p>
@@ -38,7 +38,7 @@
                     </li>
                     <li>
                         <div class="centerImgCon doctorRecommendImg">
-                            <%= link_to image_tag("zj14.jpg"),expert_path(:潘学会) %>
+                            <%= link_to image_tag("zj14.jpg",alt: '潘学会'),expert_path(:潘学会) %>
                         </div>
                         <div class="centerWords line24">
                             <p class="line30">潘学会</p>
@@ -54,7 +54,7 @@
                     </li>
                     <li>
                         <div class="centerImgCon doctorRecommendImg">
-                            <%= link_to image_tag("zj17.jpg"),expert_path(:陈小凤主治医师) %>
+                            <%= link_to image_tag("zj17.jpg",alt: '陈小凤主治医师'),expert_path(:陈小凤主治医师) %>
                         </div>
                         <div class="centerWords line24">
                             <p class="line30">陈小凤</p>

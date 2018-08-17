@@ -1,3 +1,4 @@
+<%= render 'news/new_tkd' %>
 <!--新闻中心-->
 <div class="middle">
     <div class="column flow mdlPad">
@@ -5,24 +6,32 @@
             <!--轮播-->
             <div class="slide slide-left">
                 <ul class="slide-wrapper">
+
                     <li>
-                        <%= link_to image_tag("news_kyhd_1.jpg"),news_path(:成都中医大银海眼科医院隆重举行开业庆典仪式) %>
+                        <%= link_to 'javascript:void(0);' do %>
+                            <%= image_tag("news_page_s1.jpg") %>
+                        <% end %>
                         <div class="inner">
-                            <p>大医精诚 银海启明--成都中医大银海眼科医院隆重举行开业庆典仪式</p>
+                          <p>中国医促会全民眼健康提升计划系列活动暨爱眼全国行</p>
                         </div>
                     </li>
                     <li>
-                        <%= link_to image_tag("news_ylsh_1.jpg"),news_path(:中国医疗保健国际交流促进会眼科分会首届学术年会等眼科四会在成都隆重召开) %>
+                        <%= link_to 'javascript:void(0);' do %>
+                            <%= image_tag("news_page_s2.jpg") %>
+                        <% end %>
                         <div class="inner">
-                            <p>中国医疗保健国际交流促进会眼科分会首届学术年会等眼科四会在成都隆重召开</p>
+                          <p>成都第二届爱眼月公益活动暨金牛区眼健康工程正式启动</p>
                         </div>
-                    </li>
+                   </li>
                     <li>
-                        <%= link_to image_tag("news_banner_lpz.jpg"),news_path(:第三届国医大师首个工作室廖品正大师工作室在蓉成立) %>
+                        <%= link_to 'javascript:void(0);' do %>
+                            <%= image_tag("news_page_s3.jpg") %>
+                        <% end %>
                         <div class="inner">
-                            <p>第三届国医大师工作室廖品正大师工作室在蓉成立</p>
+                          <p>成都中医药大学“2018高考学子中医药文化体验营”学生来我院参观学习</p>
                         </div>
-                    </li>
+                   </li>
+
                 </ul>
                 <div class="slidebox">
                     <div class="slideWrap">
@@ -54,9 +63,55 @@
         <!--轮播-->
         <!--视频-->
         <div class="fr videoScope">
+
             <div class="videoList">
                 <div class="flVideo">
-                    <a href="https://v.qq.com/x/page/h0549z9zloy.html">
+                    <a href="https://v.qq.com/x/page/r0670rdzjui.html" target="_blank" >
+                        <div>
+                            <%= image_tag("video-zyzf.jpg",:class => 'allWidth') %>
+                        </div>
+                        <p>中央电视台权威专访成都中医大银海眼科医院专家：激光笔对儿童视力的可怕危害</p>
+                        <%= image_tag("play_btn.png",class: "playBtn") %>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.qq.com/x/page/b06061kotft.html" target="_blank" >
+                        <div>
+                            <%= image_tag("video_ineye_xc.jpg",:class => 'allWidth') %>
+                        </div>
+                        <p>银海眼科宣传片</p>
+                        <%= image_tag("play_btn.png",class: "playBtn") %>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.qq.com/x/page/o0555duixcw.html" target="_blank" >
+                        <div>
+                            <%= image_tag("video-tx-ljs.jpg",:class => 'allWidth') %>
+                        </div>
+                        <p>全国知名眼底外科专家刘文做客《健康名人汇》</p>
+                        <%= image_tag("play_btn.png",class: "playBtn") %>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.qq.com/x/page/t0533taudpv.html" target="_blank" >
+                        <div>
+                            <%= image_tag("video-tx-yxh.jpg",:class => 'allWidth') %>
+                        </div>
+                        <p>青少年近视究竟该如何防控？</p>
+                        <%= image_tag("play_btn.png",class: "playBtn") %>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.qq.com/x/page/m0517omk4u8.html" target="_blank" >
+                        <div>
+                            <%= image_tag("video-tx-zcy.jpg",:class => 'allWidth') %>
+                        </div>
+                        <p>《健康名人汇》关于屈光不正的那些事儿</p>
+                        <%= image_tag("play_btn.png",class: "playBtn") %>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://v.qq.com/x/page/h0549z9zloy.html" target="_blank" >
                         <div>
                             <%= image_tag("videoImg_djg.jpg",:class => 'allWidth') %>
                         </div>
@@ -64,34 +119,22 @@
                         <%= image_tag("play_btn.png",class: "playBtn") %>
                     </a>
                 </div>
-                <div>
-                    <a href="http://v.youku.com/v_show/id_XMjgwODg2Mjk2OA==.html?sharefrom=iphone" target="_blank">
-                        <div>
-                            <%= image_tag("video_5.jpg") %>
-                        </div>
-                        <p>20170606爱眼月 爱心义诊关注健康 高清</p>
 
-                        <%= image_tag("play_btn.png",class: "playBtn") %>
-                    </a>
-                </div>
-                <div>
-                    <a href="http://v.youku.com/v_show/id_XMjg5OTgxODEzMg==.html?spm=a2h3j.8428770.3416059.1" target="_blank">
-                        <div>
-                            <%= image_tag("video_6.jpg") %>
-                        </div>
-                        <p>[资讯]四川科教频道—银海开业庆典新闻报道</p>
-                        <%= image_tag("play_btn.png",class: "playBtn") %>
-                    </a>
-                </div>
             </div>
 
 
             <div class="videoWordList">
                 <div>
+                    <a href="http://v.youku.com/v_show/id_XMjgwODg2Mjk2OA==.html?sharefrom=iphone">20170606爱眼月 爱心义诊关注健康 高清</a>
+                </div>
+                <div>
+                    <a href="http://v.youku.com/v_show/id_XMjg5OTgxODEzMg==.html?spm=a2h3j.8428770.3416059.1">[资讯]四川科教频道—银海开业庆典新闻报道</a>
+                </div>
+                <div>
                     <a href="https://v.qq.com/x/page/v0536bfx1p5.html" target="_blank">成都中医大银海眼科医院四会盛况暨开业庆典</a>
                 </div>
                 <div>
-                    <a href="http://mp.weixin.qq.com/s/x4I4FVTPyHSK9-x_ORfbRw" target="_blank">高新电视台报道第二届健康嘉年华活动</a>
+                    <a rel="nofollow" href="http://mp.weixin.qq.com/s/x4I4FVTPyHSK9-x_ORfbRw" target="_blank">高新电视台报道第二届健康嘉年华活动</a>
                 </div>
                 <div>
                     <a href="http://v.youku.com/v_show/id_XMTgxODgwNjE4OA==.html" target="_blank">银海眼科医院揭牌仪式</a>

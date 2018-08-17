@@ -1,0 +1,25 @@
+<%= image_tag("/assets/education-banner.jpg",alt:'继续教育',:class => 'marT10') %>
+<div class="flow conEducation">
+    <%= render 'con_educations/edu_left' %>
+    <div class="fr width1020 eduContentCon whiteBg">
+        <div class="whiteBg downModule minh400">
+          <iframe src="http://v.qq.com/iframe/player.html?vid=g063332bb9a" width="100%" height="400px"></iframe>
+          <p class="centerImgCon">糖尿病玻璃体积血27G全玻璃体切除术</p>
+          <%= render 'con_educations/count' %>
+        </div>
+        <div>
+          <%= render 'con_educations/comment' %>
+        </div>
+    </div>
+
+
+</div>
+<% content_for :style do %>
+<%= stylesheet_link_tag 'video-js' %>
+<% end %>
+<% content_for :script do %>
+<%= javascript_include_tag 'edu_example' %>
+<%= javascript_include_tag 'video.min' %>
+<%= javascript_include_tag 'videoon' %>
+<% end %>
+

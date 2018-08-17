@@ -1,0 +1,21 @@
+<script src="//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+  $(function(){
+    $('.js-check-login').on('click', function(){
+      var dom = $(this);
+      $.ajax({
+        url: '/all-api/sessions/~',
+        type: "GET",
+        dataType: "json"
+      })
+        .done(function( data ){
+          window.location.href=dom.attr('data-url');
+        })
+        .fail(function( xhr, status, errorThrown ) {
+          alert(xhr.responseJSON.message);
+        })
+        .always(function( xhr, status ) {
+        });
+    });
+  });
+</script>

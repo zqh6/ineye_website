@@ -20,6 +20,8 @@ config/database.yml
 log
 tmp
 
+
+
 # Ignore Byebug command history file.
 .byebug_history
 
@@ -27,5 +29,14 @@ public/assets
 public/uploads
 
 .idea/*
-*.DS_Store
 
+.DS_Store
+*DS_Store
+*.DS_Store
+*DS_Store*
+
+config/yetting.yml
+uploads
+test
+config/symmetric-encryption.yml
+.idea

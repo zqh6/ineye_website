@@ -1,6 +1,7 @@
+<%= render 'centers/center_tkd' %>
 <!--banner-->
 <div>
-    <%= image_tag("eyesight-banner.jpg") %>
+    <%= image_tag("eyesight-banner.jpg",alt: '视光中心' ) %>
 </div>
 <!--banner-->
 <!--科室简介-->
@@ -21,35 +22,33 @@
     </p>
     <div class="cataractCenterDoctor flow">
         <div class="CenterLeader fl">
-            <%= link_to image_tag("zj6.jpg",:alt=>"周跃华"),expert_path(:周跃华教授) %>
+            <% user = User.alive.role_code_is('common_user').name_is('周跃华').first %>
+            <%= link_to image_tag('doctors/周跃华.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:周跃华教授) %>
             <div class="leaderMask">
                 <div class="">
-                    <h4 class="h5Title">周跃华</h4>
-                    <p>教授 主任医师 硕士生导师</p>
+                    <h4 class="h5Title"><%= user.try(:name) %></h4>
+                    <p><%= user.try(:honour_brief_introduction) %></p>
                 </div>
                 <p><span>擅长领域：</span></p>
-                <p>主要从事角膜屈光手术的临床工作和近视理论的基础研究，长于Smart千频全激光、Smile全飞秒等各类屈光手术，共完成各类屈光手术15万余例。</p>
+                <p><%= user.try(:good_at_field).try(:html_safe) %></p>
             </div>
         </div>
         <div class="centerMemberCon fr">
             <div class="centerMemberList">
+                <% users = [
+                    {name: '袁晓辉', fake_name: '袁晓辉主任医师'},
+                    {name: '周春阳', fake_name: '周春阳主任医师'},
+                    {name: '谢艾芮', fake_name: '谢艾芮主任医师'},
+                    {name: '缪馨', fake_name: '缪馨主治医师'}
+                ]%>
                 <ul class="flParent">
+                  <% users.each do |u|%>
                     <li>
-                        <%= link_to image_tag("zj8.jpg",:alt=>"袁晓辉"),expert_path(:袁晓辉主任医师) %>
-                        <div class="maskName">袁晓辉</div>
+                      <% user = User.alive.role_code_is('common_user').name_is(u[:name]).first %>
+                      <%= link_to image_tag('doctors/'+u[:name]+'.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(u[:fake_name].to_sym) %>
+                      <div class="maskName"><%= u[:name] %></div>
                     </li>
-                    <li>
-                        <%= link_to image_tag("zj13.jpg",:alt=>"周春阳"),expert_path(:周春阳主任医师) %>
-                        <div class="maskName">周春阳</div>
-                    </li>
-                    <li>
-                        <%= link_to image_tag("zj16.jpg",:alt=>"谢艾芮"),expert_path(:谢艾芮主任医师) %>
-                        <div class="maskName">谢艾芮</div>
-                    </li>
-                    <li>
-                        <%= link_to image_tag("zj19.jpg",:alt=>"缪馨"),expert_path(:缪馨主治医师) %>
-                        <div class="maskName">缪馨</div>
-                    </li>
+                  <% end %>
                 </ul>
             </div>
             <div class="cataractAdvantageCon centerAdvantageCon">
@@ -164,72 +163,72 @@
 </div>
 <!--诊疗项目-->
 <!--科室新闻-->
-<div class="centerModule">
-    <p class="blueBTitle">
-        <span>科室新闻</span><%= link_to :'更多>>',news_path(:新闻列表),:class=>"fr" %>
-    </p>
-    <div class="SectionNewsList">
-        <div>
-            <a href="http://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000330&idx=2&sn=82b324b688d8390d78e4cd874104d0e9&chksm=7d4c421e4a3bcb081efda23d7c75a1e4f91071288178c9e788de44762bca71898973a0696a7a#rd" target="_blank">
-            <%= image_tag("eyesight-newImg1.jpg") %>
-            <div class="fr SectionNewsRight">
-                <h4>近视防控从小开始？具体该怎么办？她都能为您解答 ——【健康方程式】小儿眼科主任袁晓辉访谈</h4>
-                <p>近日，我院院长助理、小儿眼科主任、眼视光学术带头人袁晓辉教授被邀参加《健康方程式》栏目，就网友关心的眼健康问题进行了耐心解答。</p>
-            </div>
-            </a>
-        </div>
-        <div>
-            <a href="http://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000335&idx=2&sn=c15da088e37334be3ef6dace7628e65a&chksm=7d4c421b4a3bcb0d6d96ce4215dfea0d132b0350a2f807869e58f200e76364cd8a474c89bbe8#rd" target="_blank">
-            <%= image_tag("eyesight-newImg2.jpg") %>
-            <div class="fr SectionNewsRight">
-                <h4>著名屈光手术专家周跃华教授在我院与患者开展"专家面对面"交流活动</h4>
-                <p>8月12日，由成都中医药大学附属银海眼科医院主办的大型医患交流活动--“近视手术专家面对面”,在医院银海大厅隆重举行。医院院长、党委书记段俊国教授,医院眼视光部名誉主任周跃华教授、医院院长助理袁晓辉教授和近百名近视患者及其家属参与了交流。</p>
-            </div>
-            </a>
-        </div>
-        <div>
-            <a href="http://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000355&idx=2&sn=39c61867b3b98f6988a34502c3815f1d&chksm=7d4c42374a3bcb212cd931503646510eef358e1dfbe04278bc100036b96b20922c0491fb7068#rd" target="_blank">
-            <%= image_tag("eyesight-newImg3.jpg") %>
-            <div class="fr SectionNewsRight">
-                <h4>【喜讯】热烈祝贺我院四位教授荣获第五届“我心目中的名医”称号</h4>
-                <p>8月20日，四川省第二届院长城市圈高峰论坛暨第五届“榜样中国·我心目中的名医”大型公益评选活动颁奖典礼在四川日报报业集团举行。</p>
-            </div>
-            </a>
-        </div>
-    </div>
+<!--<div class="centerModule">-->
+    <!--<p class="blueBTitle">-->
+        <!--<span>科室新闻</span><%= link_to :'更多>>',news_path(:新闻列表),:class=>"fr" %>-->
+    <!--</p>-->
+    <!--<div class="SectionNewsList">-->
+        <!--<div>-->
+            <!--<a rel="nofollow" href="http://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000330&idx=2&sn=82b324b688d8390d78e4cd874104d0e9&chksm=7d4c421e4a3bcb081efda23d7c75a1e4f91071288178c9e788de44762bca71898973a0696a7a#rd" target="_blank">-->
+            <!--<%= image_tag("eyesight-newImg1.jpg") %>-->
+            <!--<div class="fr SectionNewsRight">-->
+                <!--<h4>近视防控从小开始？具体该怎么办？她都能为您解答 ——【健康方程式】小儿眼科主任袁晓辉访谈</h4>-->
+                <!--<p>近日，我院院长助理、小儿眼科主任、眼视光学术带头人袁晓辉教授被邀参加《健康方程式》栏目，就网友关心的眼健康问题进行了耐心解答。</p>-->
+            <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<a rel="nofollow" href="http://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000335&idx=2&sn=c15da088e37334be3ef6dace7628e65a&chksm=7d4c421b4a3bcb0d6d96ce4215dfea0d132b0350a2f807869e58f200e76364cd8a474c89bbe8#rd" target="_blank">-->
+            <!--<%= image_tag("eyesight-newImg2.jpg") %>-->
+            <!--<div class="fr SectionNewsRight">-->
+                <!--<h4>著名屈光手术专家周跃华教授在我院与患者开展"专家面对面"交流活动</h4>-->
+                <!--<p>8月12日，由成都中医药大学附属银海眼科医院主办的大型医患交流活动--“近视手术专家面对面”,在医院银海大厅隆重举行。医院院长、党委书记段俊国教授,医院眼视光部名誉主任周跃华教授、医院院长助理袁晓辉教授和近百名近视患者及其家属参与了交流。</p>-->
+            <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<a rel="nofollow" href="http://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000355&idx=2&sn=39c61867b3b98f6988a34502c3815f1d&chksm=7d4c42374a3bcb212cd931503646510eef358e1dfbe04278bc100036b96b20922c0491fb7068#rd" target="_blank">-->
+            <!--<%= image_tag("eyesight-newImg3.jpg") %>-->
+            <!--<div class="fr SectionNewsRight">-->
+                <!--<h4>【喜讯】热烈祝贺我院四位教授荣获第五届“我心目中的名医”称号</h4>-->
+                <!--<p>8月20日，四川省第二届院长城市圈高峰论坛暨第五届“榜样中国·我心目中的名医”大型公益评选活动颁奖典礼在四川日报报业集团举行。</p>-->
+            <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
 
-</div>
+<!--</div>-->
 <!--科室新闻-->
 <!--科室科普-->
-<div class="centerModule">
-    <p class="blueBTitle">
-        <span>科室科普</span><%= link_to :'更多>>',news_path(:新闻列表),:class=>"fr" %>
-    </p>
-    <div class="SectionNewsList">
-        <div>
-            <%= link_to kepu_path(:近视手术知多少) do %>
-            <%= image_tag("eyesight-kepuImg1.jpg") %>
-            <div class="fr SectionNewsRight">
-                <h4>【银海科普】近视手术知多少（三）</h4>
-                <p>近视手术多久可以恢复？眼睛变形可以通过手术改善吗？SMART千频全激光手术与其它近视手术又有什么不同呢？你关心的问题都在这里~快和小银一起来看看吧~</p>
-            </div>
-            <% end %>
-        </div>
-    </div>
-    <div class="SectionNewsList">
-        <div>
-            <%= link_to kepu_path(:青少年近视防控的十句真言) do %>
-            <%= image_tag("centerysg_kepusImg2.jpg") %>
-            <div class="fr SectionNewsRight">
-                <h4>青少年近视防控的“十句真言”</h4>
-                <p>1、保证每天足够的户外活动，目“浴”阳光每天超过两小时。</p>
-                <p>2、连续看书、做作业或看电视，30-40分钟休息眼睛10分钟。</p>
-                <p>3、不玩或少玩手机、电脑和游戏，偶尔玩时每次不超过30分钟。</p>
-            </div>
-            <% end %>
-        </div>
-    </div>
+<!--<div class="centerModule">-->
+    <!--<p class="blueBTitle">-->
+        <!--<span>科室科普</span><%= link_to :'更多>>',news_path(:新闻列表),:class=>"fr" %>-->
+    <!--</p>-->
+    <!--<div class="SectionNewsList">-->
+        <!--<div>-->
+            <!--<%= link_to kepu_path(:近视手术知多少) do %>-->
+            <!--<%= image_tag("eyesight-kepuImg1.jpg") %>-->
+            <!--<div class="fr SectionNewsRight">-->
+                <!--<h4>【银海科普】近视手术知多少（三）</h4>-->
+                <!--<p>近视手术多久可以恢复？眼睛变形可以通过手术改善吗？SMART千频全激光手术与其它近视手术又有什么不同呢？你关心的问题都在这里~快和小银一起来看看吧~</p>-->
+            <!--</div>-->
+            <!--<% end %>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="SectionNewsList">-->
+        <!--<div>-->
+            <!--<%= link_to kepu_path(:青少年近视防控的十句真言) do %>-->
+            <!--<%= image_tag("centerysg_kepusImg2.jpg") %>-->
+            <!--<div class="fr SectionNewsRight">-->
+                <!--<h4>青少年近视防控的“十句真言”</h4>-->
+                <!--<p>1、保证每天足够的户外活动，目“浴”阳光每天超过两小时。</p>-->
+                <!--<p>2、连续看书、做作业或看电视，30-40分钟休息眼睛10分钟。</p>-->
+                <!--<p>3、不玩或少玩手机、电脑和游戏，偶尔玩时每次不超过30分钟。</p>-->
+            <!--</div>-->
+            <!--<% end %>-->
+        <!--</div>-->
+    <!--</div>-->
 
-</div>
+<!--</div>-->
 <!--科室科普-->
 

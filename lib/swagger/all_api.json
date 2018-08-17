@@ -6,10 +6,144 @@
     "contact":     { "name": "mytxz", "email": "mytxz@foxmail.com" },
     "version":     "1"
   },
-  "basePath": "/all-api/",
+  "basePath": "/all-api",
   "produces": [ "application/json" ],
   "consumes": [ "application/json" ],
   "paths":    {
+
+    "/search_websites":{
+      "get": {
+        "summary": "站内搜索",
+        "description": "站内搜索",
+        "tags": ["搜索"],
+        "parameters": [
+          {
+            "name": "searchValue",
+            "in": "query",
+            "description": "搜索内容",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "出现错误。",
+            "schema": {
+              "$ref": "#/definitions/ErrorResponseBody"
+            }
+          }
+        }
+      }
+    },
+
+
+    "/validate_codes": {
+      "post": {
+        "name": "validate_code",
+        "summary":     "生成验证码",
+        "description": "生成验证码",
+        "tags":        [ "验证码" ],
+        "parameters":  [
+          {
+            "name": "validate_code",
+            "in": "body",
+            "description": "* phone_number 手机号 \n\r",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "phone_number": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+
+        "responses": {
+          "default": {
+            "description": "出现错误。",
+            "schema":      { "$ref": "#/definitions/ErrorResponseBody" }
+          }
+        }
+      },
+
+      "get": {
+        "name": "validate_code_check",
+        "summary":     "检验验证码",
+        "description": "检验验证码",
+        "tags":        [ "验证码" ],
+        "parameters": [
+          {
+            "name": "phone_number",
+            "in": "query",
+            "description": "手机号",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "validate_code",
+            "in": "query",
+            "description": "验证码",
+            "required": true,
+            "type": "string"
+          }
+        ],
+
+        "responses": {
+          "default": {
+            "description": "出现错误。",
+            "schema":      { "$ref": "#/definitions/ErrorResponseBody" }
+          }
+        }
+      }
+    },
+
+    "/users": {
+      "post": {
+        "summary":     "创建普通用户",
+        "description": "创建普通用户",
+        "tags":        [ "普通用户" ],
+        "parameters":  [
+          {
+            "name": "user",
+            "in": "body",
+            "description": "* name 真实姓名 \n\r* unit_name 医院名称 \n\r* phone_number 手机号 \n\r* validate_code 短信验证码 \n\r* password1 密码 \n\r* password2 确认密码",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "unit_name": {
+                  "type": "string"
+                },
+                "phone_number": {
+                  "type": "string"
+                },
+                "validate_code": {
+                  "type": "string"
+                },
+                "password1": {
+                  "type": "string"
+                },
+                "password2": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+
+        "responses": {
+          "default": {
+            "description": "出现错误。",
+            "schema":      { "$ref": "#/definitions/ErrorResponseBody" }
+          }
+        }
+      }
+    },
 
     "/comments": {
       "post": {
@@ -71,6 +205,13 @@
             "description": "帖子id（比post_link参数优先高）",
             "required": false,
             "type": "integer"
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "帖子状态，\n\r C表示新创建的 \n\r A表示通过的 \n\r D表示禁用的 \n\r 以逗号分隔 \n\r 若没有state参数，则状态包含 C,A,D",
+            "required": false,
+            "type": "string"
           }
         ],
         "responses": {

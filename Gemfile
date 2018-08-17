@@ -1,4 +1,4 @@
-source 'https://gems.ruby-china.org'
+source 'https://gems.ruby-china.com'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -32,6 +32,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -68,3 +70,8 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 
 gem 'swagger_engine'
+gem 'yettings'
+gem 'china_sms'
+gem 'aliyun-oss-sdk', '~> 0.1.8'
+gem "carrierwave", "0.8.0"
+gem 'carrierwave-aliyun', '~> 0.7.0'

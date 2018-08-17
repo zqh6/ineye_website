@@ -1,0 +1,97 @@
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'comment_show'}} %>
+
+  <!-- 内容区域 -->
+  <div class="tpl-content-wrapper">
+
+    <div class="row-content am-cf">
+
+      <div class="row">
+
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+          <div class="widget am-cf">
+            <div class="widget-head am-cf">
+              <div class="widget-title am-fl">评论详情</div>
+              <div class="widget-function am-fr">
+                <a href="javascript:;" class="am-icon-paperclip"></a>
+              </div>
+            </div>
+            <div class="widget-body am-fr">
+
+              <div class="tpl-form-line-form">
+                <div class="am-form-group">
+                  <label class="am-u-sm-3 am-form-label">
+                    编号<span class="tpl-form-line-small-title"></span>：
+                  </label>
+                  <label class="am-u-sm-9 field-value"><%= @comment.id %></label>
+                </div>
+
+                <div class="am-form-group">
+                  <label class="am-u-sm-3 am-form-label">
+                    上级编号<span class="tpl-form-line-small-title"></span>：
+                  </label>
+                  <label class="am-u-sm-9 field-value"><%= @comment.parent_id_desc %></label>
+                </div>
+
+                <div class="am-form-group">
+                  <label class="am-u-sm-3 am-form-label">
+                    内容 <span class="tpl-form-line-small-title"></span>：
+                  </label>
+                  <label class="am-u-sm-9 field-value" style="word-break: break-all;"><%= @comment.content %></label>
+                </div>
+
+                <div class="am-form-group">
+                  <label class="am-u-sm-3 am-form-label">
+                    帖子链接 <span class="tpl-form-line-small-title"></span>：
+                  </label>
+                  <label class="am-u-sm-9 field-value"><a href="<%= request.protocol+request.host_with_port+@comment.post_link %>"><%= @comment.post_link %></a></label>
+                </div>
+
+                <div class="am-form-group">
+                  <label class="am-u-sm-3 am-form-label">
+                    评论者 <span class="tpl-form-line-small-title"></span>：
+                  </label>
+                  <label class="am-u-sm-9 field-value"><%= @comment.creator_id_desc %></label>
+                </div>
+
+
+
+                <div class="am-form-group">
+                  <label class="am-u-sm-3 am-form-label">
+                    评论时间<span class="tpl-form-line-small-title"></span>：
+                  </label>
+                  <label class="am-u-sm-9 field-value"><%= @comment.created_at_desc %></label>
+                </div>
+
+                <div class="am-form-group">
+                  <div class="am-u-sm-9 am-u-sm-push-3">
+                    <%= link_to administration_v1_comments_path, class: '' do %><button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success button-include-link js-create-new">返回</button><% end %>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :body_attr do %>data-type="widgets"<% end %>
+
+<% content_for :style do %>
+    <%= stylesheet_link_tag 'administration/v1/new/show' %>
+<% end %>
+
+<% content_for :script do %>
+<% end %>

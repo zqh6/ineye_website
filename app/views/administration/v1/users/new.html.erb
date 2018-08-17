@@ -20,7 +20,7 @@
 							</div>
 						</div>
 						<div class="widget-body am-fr">
-							<%= render partial: 'form' %>
+              <%= render partial: 'form', locals: {options: {from: 'new'}} %>
 						</div>
 					</div>
 				</div>
@@ -29,11 +29,6 @@
 
 	</div>
 </div>
-
-
-<% content_for :title do %>
-		管理平台-新增用户
-<% end %>
 
 <% content_for :meta do %>
 <% end %>

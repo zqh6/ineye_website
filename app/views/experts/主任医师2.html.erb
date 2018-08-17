@@ -1,0 +1,89 @@
+<% render 'doctors/doctor_tkd' %>
+  <div class="doctorContainer" id="1">
+    <%= render 'experts/expert_top' %>
+  </div>
+  <ul class="flParent flow expertsListContainer">
+    <!--袁晓辉-->
+    <li>
+      <div class="photoBorder fl">
+        <%= image_tag("zj8.jpg") %>
+      </div>
+      <div class="expertSynopsis fl">
+        <h5>袁晓辉</h5>
+        <p>主任医师/教授</p>
+        <p class="expertsGoodAt"><span>擅长领域：</span></p>
+        <p>擅长儿童弱视矫治，青少年近视的中医药防控、各类屈光性弱视、眼球震颤性弱视等多种疑难性弱视的诊断和治疗有独到见解。各类斜视的诊治，医学验光及渐变多焦镜、OK镜、RGP镜的验配。对白内障、青光眼、葡萄膜炎、眼底病等各类眼科常见病也有丰富的临床经验。</p>
+        <div><%= link_to "查看详情",expert_path(:袁晓辉主任医师),:class =>'seeDetail' %></div>
+      </div>
+    </li>
+    <!--袁晓辉-->
+    <!--路雪婧-->
+    <li>
+      <div class="photoBorder fl">
+        <%= image_tag("zj9.jpg") %>
+      </div>
+      <div class="expertSynopsis fl">
+        <h5>路雪婧</h5>
+        <p>研究员/博士生导师</p>
+        <p class="expertsGoodAt"><span>擅长领域：</span></p>
+        <p>擅长中医药防治糖尿病视网膜病变、干眼症、葡萄膜炎、视网膜血管疾病，青光眼及视网膜色素变性等的中医药视功能保护治疗。</p>
+        <div><%= link_to "查看详情",expert_path(:路雪婧主任医师),:class =>'seeDetail' %></div>
+      </div>
+    </li>
+    <!--路雪婧-->
+    <!--张富文-->
+    <li>
+      <div class="photoBorder fl">
+        <%= image_tag("zj10.jpg") %>
+      </div>
+      <div class="expertSynopsis fl">
+        <h5>张富文</h5>
+        <p>主任医师/教授/硕士生导师</p>
+        <p class="expertsGoodAt"><span>擅长领域：</span></p>
+        <p>青光眼，眼底血管性疾病，如视网膜静脉阻塞、糖尿病视网膜病变，黄斑变性，视神经病变等疑难眼底病变。中医综合综合调节治疗干眼症、视疲劳，学龄儿童和青少年视力保护，延缓控制近视发展等。</p>
+        <div><%= link_to "查看详情",expert_path(:张富文主治医师),:class =>'seeDetail' %></div>
+      </div>
+    </li>
+    <!--张富文-->
+    <!--黄霄-->
+    <li>
+      <div class="photoBorder fl">
+        <%= image_tag("zj11.jpg") %>
+      </div>
+      <div class="expertSynopsis fl">
+        <h5>黄霄</h5>
+        <p>主任医师/教授/硕士生导师</p>
+        <p class="expertsGoodAt"><span>擅长领域：</span></p>
+        <p>从事眼科医教研工作30余年，对疑难眼病的诊治有丰富的临床经验。擅长老年性黄斑病变、糖尿病性视网膜病变、视网膜静脉阻塞、葡萄膜炎、视神经疾病、泪道疾病。</p>
+        <% doctor = User.role_code_is('common_user').name_is('黄霄').first %>
+        <div><%= link_to "查看详情",expert_path(:黄霄主任医师),:class =>'seeDetail' %></div>
+      </div>
+
+    </li>
+    <!--黄霄-->
+    <!--王智慧-->
+    <li>
+      <div class="photoBorder fl">
+        <%= image_tag("zj12.jpg") %>
+      </div>
+      <div class="expertSynopsis fl">
+        <h5>王智慧</h5>
+        <p>主任医师</p>
+        <p class="expertsGoodAt"><span>擅长领域：</span></p>
+        <p>从事内科临床工作35年，对重症疑难糖尿病及并发症、内分泌代谢性疾病、高血压病、冠心病、脑血管疾病等内科疑难重症有着丰富的临床经验。</p>
+        <div><%= link_to "查看详情",expert_path(:王智慧主任医师),:class =>'seeDetail' %></div>
+      </div>
+    </li>
+    <!--王智慧-->
+
+  </ul>
+
+<% content_for :script do %>
+    <script>
+      $(function(){
+       var doctorIndex = $(".expertCommon li").parents(".doctorContainer").attr("id");
+       console.log(doctorIndex);
+       $(".expertCommon li").eq(doctorIndex).addClass("active");
+       })
+    </script>
+<% end %>

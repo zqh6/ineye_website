@@ -1,0 +1,2 @@
+class AskForLeave < ApplicationRecord
+end

@@ -1,0 +1,264 @@
+input{
+    font-family: "Microsoft YaHei", "Arial", "黑体", "宋体", sans-serif;
+}
+.alignright{
+    text-align: right;
+}
+.regtopbg{
+    background: #f5f5f5;
+    line-height:40px;
+}
+.width1200{
+    width:1200px;
+    margin:0 auto;
+}
+.regheader{
+    height: 137px;
+    border-bottom: 2px solid #e6e6e6;
+    margin-bottom: 30px;
+}
+.regpageheader{
+    line-height: 137px;
+}
+.operationtle{
+    font-size: 18px;
+    margin-left: 26px;
+}
+.regarea{
+    padding: 0 190px;
+}
+.regarea input{
+    width: 406px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #dedede;
+    position: relative;
+    z-index: 2;
+}
+.regarea input[type=text],.regarea input[type=password]{
+    padding-left: 22px;
+}
+.regarea>div{
+    position: relative;
+    margin: 28px 0;
+}
+.okimg{
+    width: 20px;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    left: 400px;
+    top: 0;
+    text-align: right;
+    padding-right: 8px;
+    z-index: 3;
+    display: none;
+}
+.warnimg,.remind{
+    height: 50px;
+    line-height: 50px;
+    margin-left: 428px;
+    position: absolute;
+    left: 8px;
+    top: 0;
+}
+.warnimg img,.remind img{
+    vertical-align: text-top;
+}
+.warnimg{
+    color: #ee2222;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.getcode{
+    width: 110px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #dedede;
+    background: #e7e7e7;
+    color: #333;
+    float: left;
+    border-left: 0;
+    cursor: pointer;
+}
+.codeinput input{
+    width: 294px;
+    float: left;
+}
+.regarea .regsubmit{
+    margin-bottom: 0;
+}
+.regarea .regsubmit input{
+    width: 428px;
+    font-weight: bold;
+    font-size: 16px;
+}
+.regmask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,.5);
+}
+.succeemain{
+    width: 648px;
+    height: 290px;
+    background: #fff;
+    text-align: center;
+    margin: 320px auto;
+}
+.successword{
+    line-height: 60px;
+    font-size: 22px;
+    padding-top: 45px;
+    margin-bottom: 30px;
+}
+.goprev{
+    width: 280px;
+    line-height: 50px;
+    margin:30px auto;
+}
+.loginmain{
+    width: 695px;
+    height: 515px;
+    padding-top: 45px;
+    background: #fff;
+    position: relative;
+    text-align: center;
+    margin: 190px auto;
+}
+.loginarea{
+    width: 360px;
+    margin: 0 auto;
+}
+.loginword{
+    font-size: 24px;
+    line-height: 24px;
+    margin: 60px 0 45px;
+}
+.loginarea>div{
+    width: 350px;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 4px;
+    border: 1px solid #dedede;
+    margin: 20px auto;
+    text-align: left;
+    position: relative;
+}
+.loginarea>div input{
+    height: 40px;
+    line-height: 40px;
+    width: 265px;
+    border: 0;
+    padding-left: 85px;
+}
+.loginarea>div p{
+    width: 70px;
+    padding-left: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.logsubmit{
+    margin: 20px auto;
+    width: 362px;
+}
+.logsubmit>button{
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.closebtn{
+    position: absolute;
+    right:10px;
+    top: 10px;
+    cursor: pointer;
+}
+.findpwdheader{
+    padding-top: 85px;
+    margin-left: 290px;
+}
+.findpwdheader a{
+    display: block;
+    padding: 0 30px;
+    line-height: 52px;
+}
+.findpwdheader .active a{
+    border-bottom: 2px solid #72af2d;
+}
+.findpwdheader li:hover span{
+    background: #72af2d;
+}
+.findpwdheader li span{
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 26px;
+    background: #dddddd;
+    color: #fff;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.findpwdheader li.active span{
+    background: #72af2d;
+}
+.findpwdarea{
+    margin-left: 102px;
+}
+.findpwdsub input{
+    width: 168px;
+}
+.subbtn{
+    background: #008cd3;
+    padding: 0;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+}
+.subbtn a{
+    color: #fff;
+}
+.minheight930{
+    min-height: 930px;
+}
+.findpwdstep{
+    width: 840px;
+    height: 270px;
+    border: 1px solid #dedede;
+    margin: 60px auto 0;
+}
+.getpwd{
+    margin-top: 30px;
+    display: inline-block;
+}
+.getpwd>div{
+    height: 50px;
+    line-height: 50px;
+    width: 200px;
+    margin: 0 8px;
+}
+.getpwd>div a{
+    display: block;
+    width: 100%;
+    color: #fff;
+}
+.warnword{
+    color: #ee2222;
+}
+.mart150{
+    margin-top: 120px;
+}
+
+

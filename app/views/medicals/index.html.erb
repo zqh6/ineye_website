@@ -1,3 +1,5 @@
+<%= render 'medicals/medical_tkd' %>
+<% if false %>
 <!--就医服务-->
  <div class="middle">
    <div class="column">
@@ -254,7 +256,7 @@
       <li class="mar-L-z">
         <a href="javascript:;">
           <div>
-            <%= link_to image_tag("jy-1.jpg"), medical_path(:预约挂号) %>
+            <%= link_to image_tag("jy-1.jpg", alt:'预约挂号'), medical_path(:预约挂号) %>
           </div>
           <p>预约挂号</p>
         </a>
@@ -262,7 +264,7 @@
       <li>
         <a href="javascript:;">
           <div>
-            <%= link_to image_tag("jy-2.jpg") %>
+            <%= link_to image_tag("jy-2.jpg" ,alt: '专家排班') %>
           </div>
           <p>专家排班</p>
         </a>
@@ -270,7 +272,7 @@
       <li>
         <a href="javascript:;">
           <div>
-            <%= link_to image_tag("jy-3.jpg"), medical_path(:来院指引) %>
+            <%= link_to image_tag("jy-3.jpg" ,alt: '来院指引'), medical_path(:来院指引) %>
           </div>
           <p>来院指引</p>
         </a>
@@ -278,7 +280,7 @@
       <li class="mar-L-z">
         <a href="javascript:;">
           <div>
-            <%= link_to image_tag("jy-4.jpg"), medical_path(:就医流程) %>
+            <%= link_to image_tag("jy-4.jpg" ,alt: '就医流程'), medical_path(:就医流程) %>
           </div>
           <p>就医流程</p>
         </a>
@@ -287,7 +289,7 @@
         <a href="javascript:;">
           <div>
             <!--<%= link_to image_tag("jy-4.jpg"), medical_path(:就医流程) %>-->
-            <%= link_to image_tag("jy-5.jpg"), medical_path(:楼层指引) %>
+            <%= link_to image_tag("jy-5.jpg" ,alt: '楼层指引'), medical_path(:楼层指引) %>
           </div>
           <p>楼层指引</p>
         </a>
@@ -295,7 +297,7 @@
       <li>
         <a href="javascript:;">
           <div>
-            <%= link_to image_tag("jy-6.jpg"), medical_path(:医保政策) %>
+            <%= link_to image_tag("jy-6.jpg" ,alt: '医保政策'), medical_path(:医保政策) %>
           </div>
           <p>医保政策</p>
         </a>
@@ -303,6 +305,7 @@
     </ul>
   </div>
 </div>
+<% end %>
 <!--就医服务-->
 
 

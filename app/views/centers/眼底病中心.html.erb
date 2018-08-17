@@ -1,12 +1,13 @@
+<%= render 'centers/center_tkd' %>
 <!--banner-->
 <div>
-    <%= image_tag("fundiDisease-banner.jpg") %>
+    <%= image_tag("fundiDisease-banner.jpg",alt: '眼底病中心banner') %>
 </div>
 <!--banner-->
 <!--科室简介-->
 <div class="centerModule flow cataractCenterWord" id="module1">
     <div class="fl imgW580">
-        <%= image_tag("fundiDisease-member.jpg") %>
+        <%= image_tag("fundiDisease-member.jpg",alt: '眼底病中心成员') %>
     </div>
     <div class="fr centerWords">
         <h5 class="h5Title">眼底病中心</h5>
@@ -21,33 +22,33 @@
     </p>
     <div class="cataractCenterDoctor flow">
         <div class="CenterLeader fl">
-            <%= link_to image_tag("zj2.jpg",:alt=>"段俊国"),expert_path(:段俊国教授) %>
+            <% user = User.alive.role_code_is('common_user').name_is('段俊国').first %>
+            <%= link_to image_tag('doctors/段俊国.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(:段俊国教授) %>
             <div class="leaderMask">
                 <div class="">
-                    <h4 class="h5Title">段俊国</h4>
-                    <p>教授/主任医师/博士生导师</p>
+                    <h4 class="h5Title"><%= user.try(:name) %></h4>
+                    <p><%= user.try(:honour_brief_introduction) %></p>
                 </div>
                 <p><span>擅长领域：</span></p>
-                <p>长期从事青光眼、白内障和眼底病等临床工作，在青光眼的早期诊断和治疗上有丰富的临床经验。擅长各种抗青光眼手术、白内障人工晶体植入术、复杂眼底病的诊断和眼底出血性疾病中西医结合治疗。</p>
+                <p><%= user.try(:good_at_field).try(:html_safe) %></p>
             </div>
         </div>
         <div class="centerMemberCon fr">
 
             <div class="centerMemberList">
+                <% users = [
+                    {name: '刘文', fake_name: '刘文教授'},
+                    {name: '王国平', fake_name: '王国平'},
+                    {name: '李强', fake_name: '李强主治医师'}
+                ]%>
                 <ul class="flParent">
-                    <li>
-                        <%= link_to image_tag("zj5.jpg"),expert_path(:刘文教授) %>
-                        <div class="maskName">刘文</div>
-                    </li>
-                    <li>
-                        <%= link_to image_tag("zj15.jpg"),expert_path(:王国平) %>
-                        <div class="maskName">王国平</div>
-                    </li>
-                    <li>
-                        <%= link_to image_tag("zj18.jpg"),expert_path(:李强主治医师) %>
-                        <div class="maskName">李强</div>
-                    </li>
-
+                    <% users.each do |u|%>
+                      <li>
+                          <% user = User.alive.role_code_is('common_user').name_is(u[:name]).first %>
+                          <%= link_to image_tag('doctors/'+u[:name]+'.jpg'), user.present? ? doctor_path(user.try(:id)) : expert_path(u[:fake_name].to_sym) %>
+                          <div class="maskName"><%= u[:name] %></div>
+                      </li>
+                    <% end %>
                 </ul>
             </div>
             <div class="cataractAdvantageCon">
@@ -76,19 +77,19 @@
         <li>
             <div>
                 <div>
-                    <%= image_tag("eyesight_equ1.jpg") %>
+                    <%= image_tag("eyesight_equ1.jpg",alt: '医疗设备') %>
                 </div>
                 <p>爱尔康Constellation玻切超乳一体机 </p>
             </div>
             <div>
                 <div>
-                    <%= image_tag("eyesight_equ2.jpg") %>
+                    <%= image_tag("eyesight_equ2.jpg",alt: '医疗设备') %>
                 </div>
                 <p>海德堡OCT</p>
             </div>
             <div>
                 <div>
-                    <%= image_tag("eyesight_equ3.jpg") %>
+                    <%= image_tag("eyesight_equ3.jpg",alt: '医疗设备') %>
                 </div>
                 <p>科医人Vision One量子芯片多波长眼底激光机</p>
             </div>
@@ -96,7 +97,7 @@
         <li>
             <div>
                 <div>
-                    <%= image_tag("eyesight_equ4.jpg") %>
+                    <%= image_tag("eyesight_equ4.jpg",alt: '医疗设备') %>
                 </div>
                 <p>欧堡超广角眼底照相仪</p>
             </div>
@@ -126,62 +127,62 @@
 </div>
 <!--诊疗项目-->
 <!--科室新闻-->
-<div class="centerModule">
-    <p class="blueBTitle">
-        <span>科室新闻</span>
-    </p>
-    <div class="SectionNewsList">
-        <div>
-            <a href="http://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000465&idx=1&sn=bdf61e52057dd3d7c395905337bcda11&chksm=7d4c42854a3bcb934ffb77f9aed64d24ac2a3c459e2a7b446637ab3b6872c0f26b33ff4d6e02#rd" target="_blank" >
-                <%= image_tag("yd_newsImg_wgp.jpg") %>
-                <div class="fr SectionNewsRight">
-                    <h4>【银海名医——王国平】一个“五代医学世家”的“银海梦”</h4>
-                    <p>“我家五代从医，我爷爷的爷爷，清朝时在遂宁县是小有名气的中医。”5日下午小编前来采访时，成都中医大银海眼科医院眼底外科，副主任医师王国平略显骄傲地透露了这个小秘密。平时低调寡言的他在工作时更是忘我，一旁的护士和病人听到这个小秘密，目光中投来的满满的敬意。</p>
-                </div>
-            </a>
-        </div>
-        <div>
-            <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000330&idx=3&sn=8a77589304dda2a6ed5f6a3f1701736f&chksm=7d4c421e4a3bcb08657c446c11af147f2e24db1478da2fdd61feb6eaf7d8409ce9dad61fddd0#rd" target="_blank" >
-                <%= image_tag("fundiDisease-newsImg1.jpg") %>
-                <div class="fr SectionNewsRight">
-                    <h4>19岁大男孩因眼疾丢掉工作，终在银海重启光明！</h4>
-                    <p>最近一段时间成都持续高温，炎热的天气似乎让树上的知了也失去了聒噪的力气，萎靡在阴凉处，窃窃私语。比起窗外的烈日炎炎，守在儿子病房边的夫妇二人此时的内心却如寒冬！</p>
-                </div>
-            </a>
-        </div>
-        <div>
-            <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000355&idx=3&sn=8067e5b285df397b219168065127daf9&chksm=7d4c42374a3bcb217588fe2fd009a7176a77e1cc8e116b7c2764dfb382cd79cd308d1b6f8e7f#rd" target="_blank" >
-            <%= image_tag("fundiDisease-newsImg2.jpg") %>
-            <div class="fr SectionNewsRight">
-                <h4>视网膜脱离的海外工程师：瞄不到妹子很难过！</h4>
-                <p>初次见到张侃（化名），他正躺在病床上无聊的玩着手指。表明来意后，张侃仿佛一下打开了话匣子，滔滔不绝。我俩谈话的内容从大学专业到人生哲理，从海外风土人情到隔壁妹子，相谈甚欢之下大有“桃园结义”的架势。我很难想象如此乐观的他，面对眼疾时也会无助，惆怅。</p>
-                <p>他强调得最多一件事就是：视力受阻后，瞄不到妹子很难过！</p>
-            </div>
-            </a>
-        </div>
-        <div>
-            <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000355&idx=2&sn=39c61867b3b98f6988a34502c3815f1d&chksm=7d4c42374a3bcb212cd931503646510eef358e1dfbe04278bc100036b96b20922c0491fb7068#rd" target="_blank" >
-            <%= image_tag("fundiDisease-newsImg3.jpg") %>
-            <div class="fr SectionNewsRight">
-                <h4>【喜讯】热烈祝贺我院四位教授荣获第五届“我心目中的名医”称号</h4>
-                <p>8月20日，四川省第二届院长城市圈高峰论坛暨第五届“榜样中国·我心目中的名医”大型公益评选活动颁奖典礼在四川日报报业集团举行。</p>
-                <p>“我心目中的名医”、“我心目中的人气名医”、“我心目中的名医（科室）”、“优秀家庭医生”等13个奖项的获奖名医一一揭晓，数百人在现场见证了这一荣耀时刻。我院院长助理、小儿眼科主任、眼视光学术带头人袁晓辉教授被邀参加《健康方程式》栏目，就网友关心的眼健康问题进行了耐心解答。</p>
-            </div>
-            </a>
-        </div>
-        <div>
-            <a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000360&idx=1&sn=3be7fe0449c94608bb60867e3b93d045&chksm=7d4c423c4a3bcb2a3dd5cc60953281f66343e575774c722d5b9d4081eb29aa0381ea521e2b5c#rd" target="_blank" >
-            <%= image_tag("fundiDisease-newsImg4.jpg") %>
-            <div class="fr SectionNewsRight">
-                <h4>八旬太婆亲送锦旗：你是我见过最好的医生！</h4>
-                <p>近日，患者白成秀及其家属将一面锦旗送到成都中医大银海眼科医院刘文教授的门诊室，以表达对刘文教授及医护人员的感激和赞扬之情。今年81岁的白婆婆，思维清晰，比起同龄的老人精神要矍铄很多，但谈起病情，白婆婆一脸的无奈。</p>
-                <p>她说：“半个月前，自己右眼突然看不见了，眼前只有一片红色。起初自己还不在意，在女儿的极力劝说下，才来医院检查”。</p>
-            </div>
-            </a>
-        </div>
-    </div>
+<!--<div class="centerModule">-->
+    <!--<p class="blueBTitle">-->
+        <!--<span>科室新闻</span>-->
+    <!--</p>-->
+    <!--<div class="SectionNewsList">-->
+        <!--<div>-->
+            <!--<a rel="nofollow" href="http://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000465&idx=1&sn=bdf61e52057dd3d7c395905337bcda11&chksm=7d4c42854a3bcb934ffb77f9aed64d24ac2a3c459e2a7b446637ab3b6872c0f26b33ff4d6e02#rd" target="_blank" >-->
+                <!--<%= image_tag("yd_newsImg_wgp.jpg") %>-->
+                <!--<div class="fr SectionNewsRight">-->
+                    <!--<h4>【银海名医——王国平】一个“五代医学世家”的“银海梦”</h4>-->
+                    <!--<p>“我家五代从医，我爷爷的爷爷，清朝时在遂宁县是小有名气的中医。”5日下午小编前来采访时，成都中医大银海眼科医院眼底外科，副主任医师王国平略显骄傲地透露了这个小秘密。平时低调寡言的他在工作时更是忘我，一旁的护士和病人听到这个小秘密，目光中投来的满满的敬意。</p>-->
+                <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000330&idx=3&sn=8a77589304dda2a6ed5f6a3f1701736f&chksm=7d4c421e4a3bcb08657c446c11af147f2e24db1478da2fdd61feb6eaf7d8409ce9dad61fddd0#rd" target="_blank" >-->
+                <!--<%= image_tag("fundiDisease-newsImg1.jpg") %>-->
+                <!--<div class="fr SectionNewsRight">-->
+                    <!--<h4>19岁大男孩因眼疾丢掉工作，终在银海重启光明！</h4>-->
+                    <!--<p>最近一段时间成都持续高温，炎热的天气似乎让树上的知了也失去了聒噪的力气，萎靡在阴凉处，窃窃私语。比起窗外的烈日炎炎，守在儿子病房边的夫妇二人此时的内心却如寒冬！</p>-->
+                <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000355&idx=3&sn=8067e5b285df397b219168065127daf9&chksm=7d4c42374a3bcb217588fe2fd009a7176a77e1cc8e116b7c2764dfb382cd79cd308d1b6f8e7f#rd" target="_blank" >-->
+            <!--<%= image_tag("fundiDisease-newsImg2.jpg") %>-->
+            <!--<div class="fr SectionNewsRight">-->
+                <!--<h4>视网膜脱离的海外工程师：瞄不到妹子很难过！</h4>-->
+                <!--<p>初次见到张侃（化名），他正躺在病床上无聊的玩着手指。表明来意后，张侃仿佛一下打开了话匣子，滔滔不绝。我俩谈话的内容从大学专业到人生哲理，从海外风土人情到隔壁妹子，相谈甚欢之下大有“桃园结义”的架势。我很难想象如此乐观的他，面对眼疾时也会无助，惆怅。</p>-->
+                <!--<p>他强调得最多一件事就是：视力受阻后，瞄不到妹子很难过！</p>-->
+            <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000355&idx=2&sn=39c61867b3b98f6988a34502c3815f1d&chksm=7d4c42374a3bcb212cd931503646510eef358e1dfbe04278bc100036b96b20922c0491fb7068#rd" target="_blank" >-->
+            <!--<%= image_tag("fundiDisease-newsImg3.jpg") %>-->
+            <!--<div class="fr SectionNewsRight">-->
+                <!--<h4>【喜讯】热烈祝贺我院四位教授荣获第五届“我心目中的名医”称号</h4>-->
+                <!--<p>8月20日，四川省第二届院长城市圈高峰论坛暨第五届“榜样中国·我心目中的名医”大型公益评选活动颁奖典礼在四川日报报业集团举行。</p>-->
+                <!--<p>“我心目中的名医”、“我心目中的人气名医”、“我心目中的名医（科室）”、“优秀家庭医生”等13个奖项的获奖名医一一揭晓，数百人在现场见证了这一荣耀时刻。我院院长助理、小儿眼科主任、眼视光学术带头人袁晓辉教授被邀参加《健康方程式》栏目，就网友关心的眼健康问题进行了耐心解答。</p>-->
+            <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<a href="https://mp.weixin.qq.com/s?__biz=MzU4MTA4MTQwMw==&mid=100000360&idx=1&sn=3be7fe0449c94608bb60867e3b93d045&chksm=7d4c423c4a3bcb2a3dd5cc60953281f66343e575774c722d5b9d4081eb29aa0381ea521e2b5c#rd" target="_blank" >-->
+            <!--<%= image_tag("fundiDisease-newsImg4.jpg") %>-->
+            <!--<div class="fr SectionNewsRight">-->
+                <!--<h4>八旬太婆亲送锦旗：你是我见过最好的医生！</h4>-->
+                <!--<p>近日，患者白成秀及其家属将一面锦旗送到成都中医大银海眼科医院刘文教授的门诊室，以表达对刘文教授及医护人员的感激和赞扬之情。今年81岁的白婆婆，思维清晰，比起同龄的老人精神要矍铄很多，但谈起病情，白婆婆一脸的无奈。</p>-->
+                <!--<p>她说：“半个月前，自己右眼突然看不见了，眼前只有一片红色。起初自己还不在意，在女儿的极力劝说下，才来医院检查”。</p>-->
+            <!--</div>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
 
-</div>
+<!--</div>-->
 <!--科室新闻-->
 <% content_for :script do %>
 <%= javascript_include_tag 'jquery.jDiaporama' %>

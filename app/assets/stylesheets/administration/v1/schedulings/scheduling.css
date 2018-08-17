@@ -1,0 +1,63 @@
+.am-tabs-bd.flowVisible,.flowVisible{
+  overflow: visible;
+}
+.workingExperts{
+  width:80%;
+  }
+.doctorListCon{
+  position: relative;
+}
+.doctorListCon p{
+  margin-bottom: 0;
+}
+.workingExperts .am-selected{
+  width:100%;
+}
+.workingExperts p{
+  line-height: 40px;
+  padding: 0 10px;
+  border:1px solid #ccc;
+}
+.doctorList{
+  border:1px solid #ccc;
+  border-top: 0;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+.hide{
+  display: none;
+}
+.doctorList  li{
+  line-height: 40px;
+  padding: 0 10px;
+}
+.doctorList li:hover{
+  background: #f8f8f8;
+}
+.saveDoctor{
+  line-height: 30px;
+  width:100%;
+  display: block;
+  border:0;
+}
+.middleLine td{
+  vertical-align: middle !important;
+}
+.lineBorder{
+  border-collapse: collapse;
+}
+.lineBorder td{
+  border:1px solid #ddd;
+}
+.fr{
+  float: right;
+}
+.doctor-working{
+  font-size:14px;
+}
+.schedulingdoctormsg i{
+  font-style: normal;
+}

@@ -83,3 +83,16 @@ div.dIntroduction p{
   text-align: center;
   text-indent:0;
 }
+.bordertab{
+  width:70%;
+}
+.bordertab td,.bordertab th{
+  border:1px solid #ccc;
+  text-align:center;
+}
+.last-new{
+  float: left;
+}
+.next-new{
+  float: right;
+}

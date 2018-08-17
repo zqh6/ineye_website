@@ -1,0 +1,29 @@
+<%= render 'con_educations/con_educations_tkd' %>
+<div class="enterEyeCommon fl">
+  <ul class="">
+    <li>
+      <h4>继续教育</h4>
+      <p>Continuing education</p>
+    </li>
+    <% ShareEnum.con_education_article_classifies.each do |key, value| %>
+      <li>
+        <%= link_to con_educations_path(article_classify: key.to_s) do %><%= value %><% end %>
+      </li>
+    <% end %>
+  </ul>
+  <div class="hosInformation">
+    <i class="icon_enter icon_telephone icon_enterIcon"></i>
+    <div>
+      <p>咨询热线</p>
+      <p>400 9900 766</p>
+      <p>028 68398866</p>
+    </div>
+  </div>
+  <div class="hosInformation">
+    <i class="icon_enter icon_time icon_enterIcon"></i>
+    <div>
+      <p>门诊时间</p>
+      <p>08:30-17:30</p>
+    </div>
+  </div>
+</div>

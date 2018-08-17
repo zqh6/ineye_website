@@ -1,0 +1,38 @@
+<div class="whiteBg">
+  <div class="width1200">
+    <div class="regheader">
+      <ul class="findpwdheader flParent flow">
+        <li class="active"><a href="javascript: void(0);"><span class="">1</span>填写账户信息</a></li>
+        <li><a href="javascript: void(0);"><span class="">2</span>设置新密码</a></li>
+        <li><a href="javascript: void(0);"><span class="">3</span>完成</a></li>
+      </ul>
+    </div>
+    <div class="regarea findpwdarea">
+      <div>
+        <input type="text" class="js-phone-number" placeholder="手 机 号 ：" maxlength="11">
+      </div>
+      <div class="codeinput flow">
+        <input type="text" placeholder="手机验证码：" maxlength="4" class="js-validate-code">
+        <div class="getcode js-getcode" data-ok="1">获取短信验证码</div>
+      </div>
+
+      <div class="findpwdsub">
+        <input type="button" value="提交" class="subbtn js-submit"><span style="color: red; margin-left: 20px;" class="js-error-vector"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :title do %>
+    找回密码
+<% end %>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :style do %>
+<% end %>
+
+<% content_for :script do %>
+    <%= javascript_include_tag 'find_passwords/check_phone_number' %>
+<% end %>

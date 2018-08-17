@@ -1,0 +1,73 @@
+.marT30{
+  margin-top: 30px;
+}
+.inputBorder{
+  border:1px solid #c2cad8 !important;
+}
+.flow{
+  overflow: hidden;
+}
+.cursor{
+  cursor: pointer;
+}
+.addBtn{
+  font-size: 18px;
+}
+.clear-both{
+  clear: both;
+}
+.add-timegroup{
+  height: 38px;
+  margin-bottom: 15px;
+}
+.timechoose{
+  height: 100%;
+  line-height: 38px;
+  border: 1px solid #c2cad8;
+  color: #555;
+  width: 120px;
+  margin-right: 20px;
+}
+.timechoose option{
+  line-height: 36px;
+  display: inline-block;
+}
+.surestop button{
+  margin: 40px 40% 0;
+}
+.stoplist,.worklist{
+  /*margin-bottom: 20px;*/
+  line-height: 40px;
+}
+.stopmsg,.workmsg{
+  width: 100%;
+  margin-bottom: 40px;
+  font-size:14px;
+}
+.stopmsg td,.workmsg td{
+  line-height: 36px;
+  border: 1px solid #c2cad8;
+  padding: 0 5px;
+}
+.workmsg .am-selected{
+  min-width:110px;
+  width: 100%;
+  line-height: 36px;
+  border:0;
+}
+.workmsg .am-selected-content{
+  width: 100%;
+  min-width: 110px;
+}
+.workmsg select:focus{
+  outline:0;
+}
+.fr{
+  float: right;
+}
+.leavecenters select{
+  height: 40px;
+  line-height: 40px;
+  background: #fff;
+  padding:0 15px;
+}

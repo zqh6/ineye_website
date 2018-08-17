@@ -155,6 +155,49 @@
     transform: scale(1.2);
 }
 /*六大中心*/
+/*专家排班*/
+.schedulingWord{
+    font-size:22px;
+    text-align:center;
+    line-height:40px;
+}
+.doctorClickMask{
+    width:100% !important;
+    height:100%;
+    position:fixed;
+    left:0;
+    top:0;
+    background:rgba(0,0,0,.5) !important;
+}
+.doctorClickMask{
+    padding:100px 0;
+    .doctorDetails,.doctorIntroduce{
+        width:760px;
+        margin:0 auto;
+        box-sizing: border-box;
+    }
+    .doctorPortrait{
+        width:250px;
+        height:auto;
+    }
+    .doctorGoodAt span{
+        float:none;
+    }
+    .doctorGoodAt p{
+      width: auto;
+      float:none;
+    }
+    em{
+      font-style: normal;
+    }
+    .doctorPortrait img{
+        width:250px;
+    }
+    .doctorContent{
+        width:400px;
+    }
+}
+/*专家排班*/
 /*名医专家*/
 .proContainer{
     background: #fff;
@@ -783,6 +826,9 @@ a.ctrl-slide{
 .newsMain p{
     text-indent: 2rem;
 }
+.newsMain table p{
+    text-indent: 0;
+}
 .newsMain .noIndent{
     text-indent: 0;
 }
@@ -950,6 +996,9 @@ a.ctrl-slide{
 .videoList a p{
     line-height: 42px;
     text-indent: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
 }
 .videoList a div{
     height: 280px;
@@ -1422,9 +1471,9 @@ p>b{
     margin-left: 0;
 }
 .commits{
-    width: 520px;
+    width: 560px;
     font-size: 16px;
-    margin-left: 42px;
+    //margin-left: 42px;
 }
 .commits a:hover,.newTitle a:hover,.syTitle a:hover{
     color: #72af2d;
@@ -1491,7 +1540,7 @@ p>b{
     background: #008cd3;
 }
 .topNav li{
-    width: 11.1%;
+    width: 10%;
 }
 .topNav li.active{
     //background: #055499;
@@ -2555,10 +2604,16 @@ octorList li .IntroduceMask p{
     margin-bottom: 5px;
     min-height: 70px;
 }
+.doctorGoodAt span{
+    float:left;
+}
 .doctorGoodAt p{
     display: inline-block;
     width: 725px;
-    float: right;
+    float: left;
+}
+.doctorGoodAtFloat span,.doctorGoodAtFloat p{
+    float: left;
 }
 .seePatientTime span,.doctorGoodAt span{
     color: #72af2d;
@@ -2766,6 +2821,7 @@ octorList li .IntroduceMask p{
     background: #fff;
     padding: 15px 0;
     margin-top: 10px;
+    overflow:hidden;
 }
 .enterEyeCommon div.hosInformation i{
     width: 34px;
@@ -3100,7 +3156,7 @@ octorList li .IntroduceMask p{
     margin: 20px 0 12px 0;
 }
 .AppointmentTele{
-    width: 210px;
+    width: 300px;
 }
 .AppointmentTele p,.AppointmentWifi p{
     text-indent: 0;
@@ -3108,6 +3164,7 @@ octorList li .IntroduceMask p{
 }
 .AppointmentTele span{
     color: #72af2d;
+    margin-right:20px;
 }
 .iconAppointmentWifi{
     background-position: 0 -212px;
@@ -3218,9 +3275,10 @@ textarea:focus{
 }
 .schedulingTab th{
     border-right: 1px solid #fff;
-    background: #72af2d;
+    background: #008cd3;
     line-height: 60px;
     color: #fff;
+    font-size: large;
 }
 .schedulingTab th:last-child{
     border-right: 1px solid #c7c2c5;
@@ -3235,6 +3293,29 @@ textarea:focus{
 .schedulingTab .textLeft{
     text-align: left;
 }
+//libo
+.leave-table{
+  margin-top: 20px;
+  border: 1px solid #c7c2c5;
+  width: 100%;
+}
+
+.leave-table .title{
+  background: #008cd3;
+  color: white;
+  font-size: large;
+}
+
+.leave-table td, .leave-table th{
+  line-height: 42px;
+  border: 1px solid #c7c2c5;
+  text-align: center;
+}
+
+.doctor-name{
+  border-bottom: 1px solid red;
+}
+
 /*医疗服务*/
 /*医疗设备*/
 .allEquipment li{
@@ -3488,7 +3569,6 @@ textarea:focus{
 .advTitle{
     color: #72af2d;
     font-size: 18px;
-    text-align: center;
     text-align: center;
 }
 .advListContainer p{
@@ -4765,6 +4845,7 @@ textarea:focus{
 .doctorRecommendDiv .leftBtn,.doctorRecommendDiv .rightBtn{
     line-height: 600px;
 }
+
 /*仪器详情*/
 //专家新版index页面
 .footContent .codeContainer{
@@ -4793,4 +4874,250 @@ textarea:focus{
 }
 .footContent .codeContainer li:first-child{
     padding-left:0;
+}
+/*继续教育*/
+.official-account{
+  color: red;
+}
+
+.educationList{
+    border-bottom: 1px solid #eee;
+    padding: 0 20px;
+}
+.edumsglist li{
+    line-height:46px;
+    border-bottom: 1px solid #eee;
+}
+.edumsglist li span{
+    margin-right:20px;
+}
+.educationList li{
+    line-height: 60px;
+    padding: 0 20px;
+    cursor: pointer;
+}
+.educationList li.on{
+    color: #444;
+    border-bottom: 2px solid #444;
+}
+.caseContent{
+    padding: 35px 40px;
+}
+.caseContent h3{
+    line-height: 60px;
+    font-size: 24px;
+    font-weight: normal;
+}
+.caseContent p{
+    line-height: 36px;
+}
+.commentInner{
+    width: 950px;
+   // height: 50px;
+    display: block;
+   // background: #eeeeee;
+    border-radius: 5px;
+    text-indent: 2rem;
+    line-height: 24px;
+    color: #333;
+    padding: 5px;
+   //border: 1px solid #ddd;
+    resize: none;
+}
+.commentCon{
+    padding: 20px 30px;
+    border-bottom: 1px solid #eee;
+}
+.commentSubBtn, .commentImg{
+    width: 100px;
+    line-height: 36px;
+    background: #eeeeee;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+.allComment{
+    padding: 0 30px;
+    line-height: 40px;
+    color: #444444;
+    font-size: 18px;
+}
+.allComment span{
+    color: #bbb;
+    font-size: 14px;
+    margin-left: 15px;
+}
+.oneComment{
+    padding: 20px 30px;
+    border-bottom: 1px solid #eee;
+}
+.comContent{
+    margin-left: 20px;
+    line-height: 26px;
+    width:888px;
+}
+.comContent .identity{
+    color: #bbb;
+}
+.identity span{
+    margin-left: 10px;
+}
+.pad40{
+    padding: 40px 30px;
+}
+.tz-gallery .thumbnail{
+    margin-left: 50px;
+}
+.tz-gallery .thumbnail:first-child{
+    margin-left: 0;
+}
+.tz-gallery .thumbnail:nth-child(7n){
+    margin-left: 0;
+}
+.eduContentCon .edModule{
+    min-height: 400px;
+}
+.downModule{
+    padding: 30px;
+}
+.erroContent a{
+    color:red;
+}
+.comContent img{
+    max-width:60% !important;
+}
+.edu-pagecontent p{
+    line-height: 36px;
+    margin-bottom: 10px;
+    text-indent: 2rem;
+  }
+  .imgexplain p{
+    line-height: 15px;
+    font-size: 12px;
+    text-indent: 0;
+    text-align: left;
+  }
+  .imgexplain b{
+    display: block;
+  }
+  .imgexplain b p{
+    text-align: center;
+  }
+  .edu-pagecontent table td{
+    padding:2px 10px;
+    text-align: center;
+  }
+  .edu-pagecontent table tr p b{
+    text-align: center;
+  }
+  .edu-pagecontent table  p{
+    text-indent: 0;
+  }
+  .edue-eyetable{
+    margin: 0 auto;
+  }
+  .edue-eyetable th{
+    line-height: 40px;
+  }
+  .edue-eyetable tr{
+    background: #eee;
+  }
+  .edue-eyetable tr p{
+    line-height: 30px;
+    margin-bottom: 0;
+  }
+  .edu-pagecontent h3,.edu-pagecontent h4{
+    text-align: center
+  }
+  .edu-pagecontent h3{
+    font-size:20px;
+    line-height:46px;
+  }
+  .edu-pagecontent h4{
+    font-size:15px;
+}
+/*图片展示插件css*/
+#baguetteBox-overlay{display:none;opacity:0;position:fixed;overflow:hidden;top:0;left:0;width:100%;height:100%;z-index:1000000;background-color:#222;background-color:rgba(0,0,0,.8);-webkit-transition:opacity .5s ease;transition:opacity .5s ease}#baguetteBox-overlay.visible{opacity:1}#baguetteBox-overlay .full-image{display:inline-block;position:relative;width:100%;height:100%;text-align:center}#baguetteBox-overlay .full-image figure{display:inline;margin:0;height:100%}#baguetteBox-overlay .full-image img{display:inline-block;width:auto;height:auto;max-height:100%;max-width:100%;vertical-align:middle;-moz-box-shadow:0 0 8px rgba(0,0,0,.6);box-shadow:0 0 8px rgba(0,0,0,.6)}#baguetteBox-overlay .full-image figcaption{display:block;position:absolute;bottom:0;width:100%;text-align:center;line-height:1.8;white-space:normal;color:#ccc;background-color:#000;background-color:rgba(0,0,0,.6);font-family:sans-serif}#baguetteBox-overlay .full-image:before{content:"";display:inline-block;height:50%;width:1px;margin-right:-1px}#baguetteBox-slider{position:absolute;left:0;top:0;height:100%;width:100%;white-space:nowrap;-webkit-transition:left .4s ease,-webkit-transform .4s ease;transition:left .4s ease,-webkit-transform .4s ease;transition:left .4s ease,transform .4s ease;transition:left .4s ease,transform .4s ease,-webkit-transform .4s ease,-moz-transform .4s ease}#baguetteBox-slider.bounce-from-right{-webkit-animation:bounceFromRight .4s ease-out;animation:bounceFromRight .4s ease-out}#baguetteBox-slider.bounce-from-left{-webkit-animation:bounceFromLeft .4s ease-out;animation:bounceFromLeft .4s ease-out}@-webkit-keyframes bounceFromRight{0%,100%{margin-left:0}50%{margin-left:-30px}}@keyframes bounceFromRight{0%,100%{margin-left:0}50%{margin-left:-30px}}@-webkit-keyframes bounceFromLeft{0%,100%{margin-left:0}50%{margin-left:30px}}@keyframes bounceFromLeft{0%,100%{margin-left:0}50%{margin-left:30px}}.baguetteBox-button#next-button,.baguetteBox-button#previous-button{top:50%;top:calc(50% - 30px);width:44px;height:60px}.baguetteBox-button{position:absolute;cursor:pointer;outline:0;padding:0;margin:0;border:0;-moz-border-radius:15%;border-radius:15%;background-color:#323232;background-color:rgba(50,50,50,.5);color:#ddd;font:1.6em sans-serif;-webkit-transition:background-color .4s ease;transition:background-color .4s ease}.baguetteBox-button:focus,.baguetteBox-button:hover{background-color:rgba(50,50,50,.9)}.baguetteBox-button#next-button{right:2%}.baguetteBox-button#previous-button{left:2%}.baguetteBox-button#close-button{top:20px;right:2%;right:calc(2% + 6px);width:30px;height:30px}.baguetteBox-button svg{position:absolute;left:0;top:0}.baguetteBox-spinner{width:40px;height:40px;display:inline-block;position:absolute;top:50%;left:50%;margin-top:-20px;margin-left:-20px}.baguetteBox-double-bounce1,.baguetteBox-double-bounce2{width:100%;height:100%;-moz-border-radius:50%;border-radius:50%;background-color:#fff;opacity:.6;position:absolute;top:0;left:0;-webkit-animation:bounce 2s infinite ease-in-out;animation:bounce 2s infinite ease-in-out}.baguetteBox-double-bounce2{-webkit-animation-delay:-1s;animation-delay:-1s}@-webkit-keyframes bounce{0%,100%{-webkit-transform:scale(0);transform:scale(0)}50%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes bounce{0%,100%{-webkit-transform:scale(0);-moz-transform:scale(0);transform:scale(0)}50%{-webkit-transform:scale(1);-moz-transform:scale(1);transform:scale(1)}}
+/*视频播放插件*/
+.video-js{
+    background: #000;
+}
+.eduContentCon{
+    min-height:402px;
+}
+.eduContentCon .edModule{
+    display: none;
+}
+.eduContentCon .edModule.show{
+    display: block;
+}
+.conEducation{
+    margin:10px 0 20px;
+}
+.showSubBtn{
+    width:50px;
+}
+.userComment{
+    margin-top: 0;
+    background: transparent;
+}
+.commentInnerCon{
+    padding:0;
+    border:0;
+}
+.commentInnerCon .commentInner{
+    width:100%;
+    box-sizing:border-box;
+}
+.childComments{
+margin-left:50px;
+clear :both
+}
+.childComments .comContent{
+width:890px;
+}
+.educationList li{
+    line-height:60px;
+    border-buttom:1px solid #efefef;
+}
+.video-js{
+    width:100%;
+    height:400px;
+}
+.minh400{
+    min-height:400px;
+}
+.marl30{
+    margin-left:30px;
+}
+.marl50{
+    margin-left:50px;
+}
+.marb10{
+    margin-bottom:10px;
+}
+.casesmallimgs img{
+    width:280px;
+}
+.videocontainer li{
+
+}
+.videocontainer p{
+    text-align:center;
+}
+.caseimgs{
+    text-align:center;
+    margin-bottom:20px;
+}
+.caseimgs p{
+    line-height:30px;
+}
+.caseimgs img{
+    width:560px;
+}
+.edu-pagecontent table td.inlinetext-left,.edu-pagecontent table tr.inlinetext-left{
+    text-align:left;
+    font-size:12px;
+    margin-top:10px;
 }

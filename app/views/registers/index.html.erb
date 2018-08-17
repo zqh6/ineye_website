@@ -1,0 +1,284 @@
+<div class="regheader">
+    <p class="regpageheader">
+      <a href="/"><%= image_tag("reglogo.png",alt: '中医大银海眼科医院') %></a> <span class="operationtle">用户注册</span>
+    </p>
+</div>
+<div class="regarea">
+    <div>
+        <input type="text" placeholder="手机号：" class="tel" value="" maxlength="11" >
+        <div class="remind">
+            <%= image_tag("remind.png",alt: '格式/内容') %> 建议使用常用手机，便于登录和找回密码
+        </div>
+        <div class="warnimg hide">
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 号码不正确，请检查输入
+        </div>
+        <div class="okimg">
+            <%= image_tag("ok.png",alt: '格式正确') %>
+        </div>
+    </div>
+    <div class="codeinput flow">
+        <input type="text" placeholder="手机验证码：" class="importcode" value="" maxlength="4">
+        <div class="getcode">获取短信验证码</div>
+        <div class="warnimg hide">
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 验证码不正确
+        </div>
+        <div class="warnimg hide warntel">
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 请输入正确的手机号码
+        </div>
+        <div class="remind hide">
+            <%= image_tag("ok.png",alt: '格式正确') %>
+        </div>
+    </div>
+    <div>
+        <input type="text" placeholder="真实姓名：" class="name" value="" maxlength="4">
+        <div class="remind">
+            <%= image_tag("remind.png",alt: '密码') %> 建议填写4位以内的字符
+        </div>
+        <div class="warnimg hide">
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 姓名不符合规则，请检查输入
+        </div>
+        <div class="okimg">
+            <%= image_tag("ok.png",alt: '格式正确') %>
+        </div>
+    </div>
+    <div>
+        <input type="text" placeholder="医院：" class="hospital" value="" maxlength="20">
+        <div class="remind">
+            <%= image_tag("remind.png",alt: '单位') %> 请输入医院/单位名称
+        </div>
+        <div class="warnimg hide">
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 医院不符合要求，请检查输入
+        </div>
+        <div class="okimg">
+            <%= image_tag("ok.png",alt: '格式正确') %>
+        </div>
+    </div>
+    <div>
+        <input type="password" placeholder="设置密码：" class="pwd" value="" >
+        <div class="remind">
+            <%= image_tag("remind.png",alt: '密码') %> 密码需要6-20位
+        </div>
+        <div class="warnimg hide">
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 密码需要6-20位
+        </div>
+        <div class="okimg">
+            <%= image_tag("ok.png",alt: '格式正确') %>
+        </div>
+    </div>
+    <div>
+        <input type="password" placeholder="确认密码：" class="surepwd" value="" >
+        <div class="remind hide">
+            <%= image_tag("remind.png",alt: '密码') %>
+        </div>
+        <div class="warnimg hide">
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 密码不一致
+        </div>
+        <div class="warnimg hide warnpwd">
+            <%= image_tag("warn.png",alt: '格式/错误提醒') %> 密码不能为空
+        </div>
+        <div class="okimg">
+            <%= image_tag("ok.png",alt: '格式正确') %>
+        </div>
+    </div>
+    <div class="regsubmit">
+        <input type="submit" value="立即注册" class="subbtn">
+    </div>
+    <p class="datawarn warnword"></p>
+</div>
+<input type="hidden" name="" value="false" class="codeCheck">
+<div class="regmask hide">
+   <div class="succeemain">
+       <p class="successword">
+        <%= image_tag("smileface.png",alt:'注册成功') %>  恭喜您！注册成功！</p>
+       <p>今后您可以使用注册手机号登录银海官网平台，祝你生活愉快！</p>
+     <div class="goprev subbtn"><a href="/logins?callback=/">立即登录</a></div>
+   </div>
+</div>
+
+<% content_for :script do %>
+<script>
+    function checkmsg(phone,obj,reg){
+        if(!reg.test(phone)){
+            obj.find(".remind").hide();
+            obj.find(".okimg").hide();
+            obj.find(".warnimg").show();
+            return false
+        }else {
+            obj.find(".remind").hide();
+            obj.find(".warnimg").hide()
+            obj.find(".okimg").show()
+            return true
+        }
+    }
+    function checkpwd() {
+        if($(".surepwd").val().trim()==$(".pwd").val().trim()&&$(".surepwd").val().trim()!=""){
+            $(".surepwd").parent().find(".okimg").show();
+            $(".surepwd").parent().find(".warnimg").hide();
+            $(".warnpwd").hide();
+            return true
+        }else if($(".surepwd").val().trim()==$(".pwd").val().trim()&&$(".surepwd").val().trim()==""){
+            $(".surepwd").parent().find(".okimg").hide();
+            $(".surepwd").parent().find(".warnimg").hide();
+            $(".warnpwd").show();
+        }else{
+            $(".surepwd").parent().find(".okimg").hide();
+            $(".surepwd").parent().find(".warnimg").show();
+            $(".warnpwd").hide();
+            return false
+        }
+    }
+    var countNum = 60;
+
+    $(".getcode").click(function(){
+        clearInterval(setTime);
+        var checkphone=checkmsg($(".tel").val(),$(".tel").parent(),/^1\d{10}$/);
+        if($(".getcode").html()=="获取短信验证码"&&checkphone){
+            $(".warntel").hide()
+            var  setTime = setInterval(function(){
+            if(countNum<=0){
+                clearInterval(setTime);
+                countNum =60;
+                $(".getcode").html("获取短信验证码");
+                return;
+            }
+            countNum --;
+            $(".getcode").html(countNum+"s后才能继续点击");
+        },1000)
+        }else if(!checkphone){
+            $(".warntel").show(); //没输入电话或者电话号码格式不正确
+        }
+
+        if($(".getcode").html()=="获取短信验证码"){
+            $.ajax({
+                url: '/all-api/validate_codes',
+                type: "POST",
+                dataType: "json",
+                data: {
+                   "phone_number": $(".tel").val()
+                }
+            })
+                .done(function( data ) {
+
+                })
+                .fail(function( xhr, status, errorThrown ) {
+
+                })
+                .always(function( xhr, status ) {
+                });
+        }
+
+    })
+    function checkcode(dom){
+        //目前有bug,因为ajax返回值比较慢,导致return出来的值是不正确的
+
+        $.ajax({
+                url: '/all-api/validate_codes',
+                type: "GET",
+                dataType: "json",
+                data: {
+                   "phone_number": $(".tel").val(),
+                   "validate_code": $(".importcode").val()
+                }
+
+            })
+                .done(function( data ) {
+                    if(data.code==0){
+                        $(".codeCheck").val("false");
+                        $(dom).parent().find(".remind").hide();
+                        $(dom).parent().find(".warnimg").show();
+                        $(dom).parent().find(".warntel").hide();
+
+                    }else if(data.code==1){
+                        $(".codeCheck").val("true");
+                        $(dom).parent().find(".warnimg").hide();
+                        $(dom).parent().find(".remind").show(); //正确
+                        $(dom).parent().find(".warntel").hide();
+
+                    }
+
+
+                })
+                .fail(function( xhr, status, errorThrown ) {
+
+                })
+                .always(function( xhr, status ) {
+                });
+
+            return $(".codeCheck").val();
+
+
+    }
+    $(".importcode").blur(function(){
+        checkcode($(".importcode"));
+
+    })
+    $(".tel").blur(function () {
+        checkmsg($(".tel").val(),$(".tel").parent(),/^1\d{10}$/);
+    })
+    $(".name").blur(function(){
+        checkmsg($(".name").val(),$(".name").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,4}$/)
+    })
+    $(".hospital").blur(function () {
+        checkmsg($(".hospital").val(),$(".hospital").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/)
+    })
+    $(".pwd").blur(function () {
+        checkmsg($(".pwd").val(),$(".pwd").parent(),/^\w{6,20}$/)
+    })
+
+
+    $(".surepwd").blur(function () {
+        checkpwd();
+    })
+    $(".regsubmit input").click(function () {
+
+        var checkpcode=checkcode($(".importcode"));
+        var checkphone=checkmsg($(".tel").val(),$(".tel").parent(),/^1\d{10}$/);
+        var checkname=checkmsg($(".name").val(),$(".name").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/);
+        var checkhos=checkmsg($(".hospital").val(),$(".hospital").parent(),/^[\u4E00-\u9FA5A-Za-z]{2,20}$/);
+        var checkonepwd=checkmsg($(".pwd").val(),$(".pwd").parent(),/^.{6,20}$/);
+        var checktwopwd=checkpwd();
+        setTimeout(function(){
+           if(checkphone&&checkname&&checkhos&&checkonepwd&&checktwopwd){
+            if(checkpcode){
+                //console.log("进入创建用户")
+                $.ajax({
+                url: '/all-api/users',
+                type: "POST",
+                dataType: "json",
+                data: {
+                   "name": $(".name").val(),
+                   "unit_name": $(".hospital").val(),
+                   "phone_number": $(".tel").val(),
+                   "validate_code": $(".importcode").val(),
+                   "password1": $(".pwd").val(),
+                   "password2": $(".surepwd").val()
+                }
+
+                })
+                    .done(function( data ) {
+                        $(".regmask").show();
+
+                    })
+                    .fail(function( xhr, status, errorThrown ) {
+                        $(".datawarn").html(xhr.responseJSON.message);
+                    })
+                    .always(function( xhr, status ) {
+                    });
+
+                }
+
+
+
+            }else {
+                //console.log("验证不通过");
+            }
+        },1000)
+
+    })
+
+
+    $(".regmask").click(function(){
+        $(this).hide();
+    })
+</script>
+<% end %>

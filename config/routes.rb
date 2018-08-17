@@ -8,9 +8,16 @@ Rails.application.routes.draw do
   resources :medicals, only: [:index, :show      ]
   resources :centers,  only: [:index, :show      ]
   resources :experts,  only: [:index, :show      ]
+  resources :doctors
   resources :sciences, only: [:index, :show      ]
   resources :news,     only: [:index, :show, :new]
   resources :kepus,    only: [:index, :show      ]
+  resources :con_educations, only: [:index, :show ]
+  resources :registers
+  resources :logins
+  resources :find_passwords
+  resources :sessions
+  resources :search_websites
 
   namespace :exhibition do
     namespace :v1 do
@@ -25,17 +32,37 @@ Rails.application.routes.draw do
       resources :new,        only: [:new, :edit, :index, :show          ]
       resources :users,      only: [:new, :edit, :index, :show          ]
       resources :passwords,  only: [      :edit,                :update ]
+      resources :comments
+      resources :offices,    only: [:new, :edit, :index, :show, :update, :create, :destroy ]
+      resources :schedulings, only: [:new, :edit, :index, :create, :update]
+      resources :leavings
+      resources :con_educations
+      resources :activity_enters
     end
   end
 
   scope '/administration-api/v1', module: 'administration/dosser/v1', as: 'administration_dosser_v1' do
     resources :sessions, only: [:create, :destroy]
     resources :new,      only: [:create, :destroy, :update]
-    resources :users,    only: [:create, :destroy, :update]
+    resources :users,    only: [:create, :destroy, :update, :index]
+    resources :ask_for_leaves, only: [:create, :destroy, :update]
+
+    resources :schedulings
+    resources :con_educations
   end
 
   scope '/all-api', module: 'all_api', as: 'all_api' do
     resources :comments
+    resources :users
+    resources :validate_codes
+    resources :find_passwords
+    resources :search_websites
+    resources :sessions
+    resources :uploads
+  end
+
+  %w(404).each do |code|
+    get code, to: "errors#show", code: code
   end
 
 end
