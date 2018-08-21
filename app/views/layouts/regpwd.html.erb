@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <script>
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?dad2862ab90d6b48f75936d743085445";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
   <head>
     <title><% if (yield :title).present? %><%= yield :title %><% else %>糖尿病视网膜病变_斜弱视矫正_干眼治疗-成都中医大银海眼科医院<% end %></title>
     <meta name="keywords" content="<% if (yield :keywords).present? %><%= yield :keywords %><% else %>糖尿病视网膜病变_斜弱视矫正_干眼治疗-成都中医大银海眼科医院<% end %>">
@@ -27,14 +18,14 @@
        gtag('config', 'UA-112338179-1');
     </script>
     <script>
-        var _hmt = _hmt || [];
-        (function() {
-                var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?a1b23724d1f623eba7c26b3b596f96d8";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?<%= Rails.configuration.baidu_statistics[:code] %>";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
   </head>
 
 

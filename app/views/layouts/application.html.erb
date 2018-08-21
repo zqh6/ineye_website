@@ -22,7 +22,7 @@
       var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?dad2862ab90d6b48f75936d743085445";
+        hm.src = "https://hm.baidu.com/hm.js?<%= Rails.configuration.baidu_statistics[:code] %>";
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
       })();

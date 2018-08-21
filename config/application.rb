@@ -16,5 +16,9 @@ module IneyeWebsite
     }
 
     config.exceptions_app = self.routes
+
+    config.baidu_statistics = {
+      code: 'a1b23724d1f623eba7c26b3b596f96d8'
+    }
   end
 end

@@ -25,6 +25,15 @@
 
 	<%= render partial: 'administration/v1/shared/style' %>
 	<%= yield :style %>
+	<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?<%= Rails.configuration.baidu_statistics[:code] %>";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 </head>
 <body <%= (yield :body_attr).html_safe %> >
