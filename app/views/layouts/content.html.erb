@@ -27,7 +27,7 @@
       var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?a1b23724d1f623eba7c26b3b596f96d8";
+        hm.src = "https://hm.baidu.com/hm.js?<%= Rails.configuration.baidu_statistics[:code] %>";
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
       })();
