@@ -77,4 +77,5 @@ unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
 ####（正式服务器由于无法资源预编译所以用的development）
 RAILS_ENV=development rails db:migrate
 unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E development -D
+SECRET_KEY_BASE=50245009b98163aab6c8d2a43a0fa78640c0a13ff61a9e69becd9f3ac56aac9c662b70eff4745014d3a317f18f29f313fba95484484053ffc7a992ff14c27ff6 unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
 

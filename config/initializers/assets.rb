@@ -128,4 +128,6 @@ Rails.application.config.assets.precompile += %w(
   logins/index.js
 
   smileface.png
+  gwfc_icon.png
+  common.css.erb
 )
