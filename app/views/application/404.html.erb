@@ -3,7 +3,11 @@
 <a href="/">
 <div id="universal-preloader">
 <div class="preloader">
-<img src="/assets/404/universal-preloader.gif" alt="universal-preloader" class="universal-preloader-preloader" />
+  <%= image_tag("404/universal-preloader.gif",alt:'universal-preloader',:class => 'universal-preloader-preloader') %>
+
+<!-- <img src="/assets/404/universal-preloader.gif" alt="universal-preloader" class="universal-preloader-preloader" />
+ -->
+
 </div>
 </div>
 
@@ -39,7 +43,9 @@
 把浩瀚的海洋装进我胸膛，即使再小的帆也能远航~
 </p>
 <p class="dog-bubble">
-有点饿，想吃个曲奇<br /><img style="margin-top:8px" src="/assets/404/cookie.png" alt="cookie" />
+有点饿，想吃个曲奇<br />
+<%= image_tag("404/cookie.png",alt:'cookie',style:'margin-top:8px') %>
+<!-- <img style="margin-top:8px" src="/assets/404/cookie.png" alt="cookie" /> -->
 </p>
 <p class="dog-bubble">
 <br />
@@ -58,7 +64,7 @@
 好吧，我也迷路了 o(╯□╰)o
 </p>
 <p class="dog-bubble">
-我好像看到了一只 <br /><%= image_tag "/assets/404/cat.png", alt: "cat", style: "margin-top:8px" %>
+我好像看到了一只 <br /><%= image_tag("404/cat.png", alt: "cat", style: "margin-top:8px")%>
 </p>
 <p class="dog-bubble">
 <br />

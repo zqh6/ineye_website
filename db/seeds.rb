@@ -27,8 +27,9 @@ def create_user(phone_number: nil, password_str: nil)
   ActiveRecord::Base.transaction do
     user = User.phone_number_is(phone_number).first
     user = User.new phone_number: phone_number if user.blank?
-    user.name = '系统管理员'
+    user.name = '管理员'
     user.role_code  = ShareEnum.roles.first.first
+    user.official_account=0
     user.save!
     user.passwords.alive.each do |oldPassword|
       oldPassword.soft_destroy!

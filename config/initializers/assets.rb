@@ -663,6 +663,7 @@ Rails.application.config.assets.precompile += %w(
   glaucoma_equ1.jpg
   glaucoma_equ2.jpg
   gwfc_icon.png
+<<<<<<< Updated upstream
   haidebao.jpg
   header_bg.png
   home.png
@@ -2083,5 +2084,6 @@ Rails.application.config.assets.precompile += %w(
   附件2 专家推荐信 Letter of Recommendation.doc
   附件3 成都中医药大学博士后工作管理办法（试行）.doc
   霍剑.jpg
+
 
 )

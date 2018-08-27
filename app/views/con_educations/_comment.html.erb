@@ -19,7 +19,8 @@
         <% @collection.each do |top_comment| %>
             <div class="flow oneComment" parent_id = "<%= top_comment[:id] %>">
                 <div class="fl">
-                    <img src= "../../assets/edu_user.png" />
+                   <!--  <img src= "../../assets/edu_user.png" /> -->
+                    <%= image_tag("edu_user.png") %>
                 </div>
                 <div class="fl comContent" parent_id = "<%= top_comment[:id] %>">
                     <p class="identity">
@@ -32,7 +33,9 @@
                             <%= top_comment[:content].html_safe %>
                         </div>
                         <div class="commentImg fr userComment" >
-                            <img src= "../../assets/comment_before.png"  onclick="addChiComment('<%= top_comment[:id] %>')" />
+                            <!-- <img src= "../../assets/comment_before.png"  onclick="addChiComment('<%= top_comment[:id] %>')" /> -->
+
+                     <%= image_tag("comment_before.png", :onclick => "addChiComment('"+top_comment[:id].to_s+"')") %>
                         </div>
                     </div>
                 </div>
@@ -53,7 +56,8 @@
                                         <%= son_comment[:content].html_safe %>
                                     </p>
                                     <div class="commentImg fr userComment" >
-                                        <img src= "../../assets/comment_before.png" onclick="addChiComment('<%= son_comment[:id] %>', '<%= son_comment[:id] %>')" />
+                                       <!--  <img src= "../../assets/comment_before.png" onclick="addChiComment('<%= son_comment[:id] %>', '<%= son_comment[:id] %>')" /> -->
+<%= image_tag("comment_before.png", :onclick => "addChiComment('"+son_comment[:id].to_s+","+son_comment[:id].to_s+"')" ) %>
                                     </div>
                                 </div>
                             </div>
