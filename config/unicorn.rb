@@ -13,9 +13,14 @@ APP_HOME = Rails.root
 working_directory APP_HOME # available in 0.94.0+
 
 if 'production' == ENV['RAILS_ENV']
+=begin
   listen "/data/project/ineye_website/tmp/sockets/unicorn.sock", :backlog => 64
   pid "/data/project/ineye_website/tmp/pids/unicorn.pid"
   worker_processes 2
+=end
+  worker_processes 1
+  listen 3001, :tcp_nopush => true
+  pid "#{APP_HOME}/tmp/pids/unicorn.pid"
 else
   worker_processes 1
   listen 3001, :tcp_nopush => true
