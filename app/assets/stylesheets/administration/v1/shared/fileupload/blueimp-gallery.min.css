@@ -195,7 +195,6 @@
 body:last-child .blueimp-gallery>.slides>.slide-error {
   background-image: url(../img/error.svg)
 }
-
 body:last-child .blueimp-gallery>.play-pause {
   width: 20px;
   height: 20px;

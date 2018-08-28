@@ -48,13 +48,16 @@
     color: #fdfdfb;
 }
 .lightBlue ul{
-    background: url("../../assets/images/line.png") no-repeat 43px 24px #92d0dd;
+    background:/* url("../../assets/images/line.png") */
+    url("<%= asset_path 'line.png' %>") no-repeat 43px 24px #92d0dd;
 }
 .lightGreen ul{
-    background: url("../../assets/images/line.png") no-repeat 43px 24px #99d0c5;
+    background: /*url("../../assets/images/line.png")*/
+    url("<%= asset_path 'line.png' %>") no-repeat 43px 24px #99d0c5;
 }
 .deepBlue ul{
-    background: url("../../assets/images/line.png") no-repeat 43px 24px #9dbcd3;
+    background: /*url("../../assets/images/line.png")*/
+    url("<%= asset_path 'line.png' %>") no-repeat 43px 24px #9dbcd3;
 }
 .readCenter ul{
     width: 100%;
@@ -353,11 +356,11 @@
     left: 0;
 }
 .ChineseMed:before{
-    content: url("../../assets/images/pos_1.png");
+    content:/*url("../../assets/images/pos_1.png");*/ url("<%= asset_path 'pos_1.png' %>");
     top: 0;
 }
 .ChineseMed:after{
-    content: url("../../assets/images/pos_2.png");
+    content:/*url("../../assets/images/pos_2.png");*/ url("<%= asset_path 'pos_2.png' %>");
     bottom: 0;
 }
 .ChineseMedTit h5{
@@ -369,10 +372,13 @@
 }
 .disease{
     line-height: 18px;
-    background: url("../../assets/images/chinese-med_2.png") 0 26px repeat-x;
+    background: /*url("../../assets/images/chinese-med_2.png")*/
+    url("<%= asset_path 'chinese-med_2.png' %>") 0 26px repeat-x;
 }
 .disease span{
-    background: url("../../assets/images/chinese-med_1.png") 0 6px no-repeat #fefbee;
+    background:
+   /* url("../../assets/images/chinese-med_1.png")*/
+    url("<%= asset_path 'chinese-med_1.png' %>") 0 6px no-repeat #fefbee;
     padding:0 8px 0 16px;
 }
 .diseaseOne{
