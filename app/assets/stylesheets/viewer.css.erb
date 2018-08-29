@@ -75,7 +75,7 @@
   overflow: visible;
   border: 9px solid transparent;
   background-clip: content-box;
-  border-image: url(pdfjs/images/shadow.png) 9 9 repeat;
+  border-image: /*url(pdfjs/images/shadow.png)*/ url("<%= asset_path 'pdfjs/images/shadow.png' %>") 9 9 repeat;
   background-color: white;
 }
 
@@ -96,7 +96,8 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: url('pdfjs/images/loading-icon.gif') center no-repeat;
+  background: /*url('pdfjs/images/loading-icon.gif')*/
+  url("<%= asset_path 'pdfjs/images/loading-icon.gif' %>") center no-repeat;
 }
 
 .pdfViewer .page .annotLink > a:hover {
@@ -428,7 +429,8 @@ html[dir='rtl'] #viewerContainer {
   width: 200px;
   height: 32px;
   background-color: #424242; /* fallback */
-  background-image: url(pdfjs/images/texture.png),
+  background-image: /*url(pdfjs/images/texture.png)*/
+                    url("<%= asset_path 'pdfjs/images/texture.png' %>"),
                     linear-gradient(hsla(0,0%,30%,.99), hsla(0,0%,25%,.95));
 }
 html[dir='ltr'] #toolbarSidebar {
@@ -448,7 +450,8 @@ html[dir='rtl'] #toolbarSidebar {
   position: relative;
   height: 32px;
   background-color: #474747; /* fallback */
-  background-image: url(pdfjs/images/texture.png),
+  background-image: /*url(pdfjs/images/texture.png)*/
+                    url("<%= asset_path 'pdfjs/images/texture.png' %>"),
                     linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
 }
 html[dir='ltr'] #toolbarContainer, .findbar, .secondaryToolbar {
@@ -553,7 +556,8 @@ html[dir='rtl'] .findbar {
 }
 
 #findInput[data-status="pending"] {
-  background-image: url(pdfjs/images/loading-small.png);
+  background-image: /*url(pdfjs/images/loading-small.png)*/
+  url("<%= asset_path 'pdfjs/images/loading-small.png' %>");
   background-repeat: no-repeat;
   background-position: right;
 }
@@ -904,7 +908,9 @@ html[dir='rtl'] .dropdownToolbarButton {
   max-width: 120px;
   padding: 3px 2px 2px;
   overflow: hidden;
-  background: url(pdfjs/images/toolbarButton-menuArrows.png) no-repeat;
+  background:
+  /*url(pdfjs/images/toolbarButton-menuArrows.png)*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-menuArrows.png' %>") no-repeat;
 }
 html[dir='ltr'] .dropdownToolbarButton {
   background-position: 95%;
@@ -992,73 +998,91 @@ html[dir="rtl"] .secondaryToolbarButton::before {
 }
 
 html[dir='ltr'] .toolbarButton#sidebarToggle::before {
-  content: url(pdfjs/images/toolbarButton-sidebarToggle.png);
+  content: /*url(pdfjs/images/toolbarButton-sidebarToggle.png)*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-sidebarToggle.png' %>");
 }
 html[dir='rtl'] .toolbarButton#sidebarToggle::before {
-  content: url(pdfjs/images/toolbarButton-sidebarToggle-rtl.png);
+  content: /*url(pdfjs/images/toolbarButton-sidebarToggle-rtl.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-sidebarToggle-rtl.png' %>");
 }
 
 html[dir='ltr'] .toolbarButton#secondaryToolbarToggle::before {
-  content: url(pdfjs/images/toolbarButton-secondaryToolbarToggle.png);
+  content: /*url(pdfjs/images/toolbarButton-secondaryToolbarToggle.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-secondaryToolbarToggle.png' %>");
 }
 html[dir='rtl'] .toolbarButton#secondaryToolbarToggle::before {
-  content: url(pdfjs/images/toolbarButton-secondaryToolbarToggle-rtl.png);
+  content:/* url(pdfjs/images/toolbarButton-secondaryToolbarToggle-rtl.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-secondaryToolbarToggle-rtl.png' %>");
 }
 
 html[dir='ltr'] .toolbarButton.findPrevious::before {
-  content: url(pdfjs/images/findbarButton-previous.png);
+  content: /*url(pdfjs/images/findbarButton-previous.png);*/
+  url("<%= asset_path 'pdfjs/images/findbarButton-previous.png' %>");
 }
 html[dir='rtl'] .toolbarButton.findPrevious::before {
-  content: url(pdfjs/images/findbarButton-previous-rtl.png);
+  content: /*url(pdfjs/images/findbarButton-previous-rtl.png);*/
+  url("<%= asset_path 'pdfjs/images/findbarButton-previous-rtl.png' %>");
 }
 
 html[dir='ltr'] .toolbarButton.findNext::before {
-  content: url(pdfjs/images/findbarButton-next.png);
+  content: /*url(pdfjs/images/findbarButton-next.png);*/
+  url("<%= asset_path 'pdfjs/images/findbarButton-next.png' %>");
 }
 html[dir='rtl'] .toolbarButton.findNext::before {
-  content: url(pdfjs/images/findbarButton-next-rtl.png);
+  content: /*url(pdfjs/images/findbarButton-next-rtl.png);*/
+  url("<%= asset_path 'pdfjs/images/findbarButton-next-rtl.png' %>");
 }
 
 html[dir='ltr'] .toolbarButton.pageUp::before {
-  content: url(pdfjs/images/toolbarButton-pageUp.png);
+  content: /*url(pdfjs/images/toolbarButton-pageUp.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-pageUp.png' %>");
 }
 html[dir='rtl'] .toolbarButton.pageUp::before {
-  content: url(pdfjs/images/toolbarButton-pageUp-rtl.png);
+  content: /*url(pdfjs/images/toolbarButton-pageUp-rtl.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-pageUp-rtl.png' %>");
 }
 
 html[dir='ltr'] .toolbarButton.pageDown::before {
-  content: url(pdfjs/images/toolbarButton-pageDown.png);
+  content: /*url(pdfjs/images/toolbarButton-pageDown.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-pageDown.png' %>");
 }
 html[dir='rtl'] .toolbarButton.pageDown::before {
-  content: url(pdfjs/images/toolbarButton-pageDown-rtl.png);
+  content: /*url(pdfjs/images/toolbarButton-pageDown-rtl.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-pageDown-rtl.png' %>");
 }
 
 .toolbarButton.zoomOut::before {
-  content: url(pdfjs/images/toolbarButton-zoomOut.png);
+  content: /*url(pdfjs/images/toolbarButton-zoomOut.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-zoomOut.png' %>");
 }
 
 .toolbarButton.zoomIn::before {
-  content: url(pdfjs/images/toolbarButton-zoomIn.png);
+  content: /*url(pdfjs/images/toolbarButton-zoomIn.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-zoomIn.png' %>");
 }
 
 .toolbarButton.presentationMode::before,
 .secondaryToolbarButton.presentationMode::before {
-  content: url(pdfjs/images/toolbarButton-presentationMode.png);
+  content: /*url(pdfjs/images/toolbarButton-presentationMode.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-presentationMode.png' %>");
 }
 
 .toolbarButton.print::before,
 .secondaryToolbarButton.print::before {
-  content: url(pdfjs/images/toolbarButton-print.png);
+  content: /*url(pdfjs/images/toolbarButton-print.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-print.png' %>");
 }
 
 .toolbarButton.openFile::before,
 .secondaryToolbarButton.openFile::before {
-  content: url(pdfjs/images/toolbarButton-openFile.png);
+  content: /*url(pdfjs/images/toolbarButton-openFile.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-openFile.png' %>");
 }
 
 .toolbarButton.download::before,
 .secondaryToolbarButton.download::before {
-  content: url(pdfjs/images/toolbarButton-download.png);
+  content: /*url(pdfjs/images/toolbarButton-download.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-download.png' %>");
 }
 
 .toolbarButton.bookmark,
@@ -1081,26 +1105,32 @@ html[dir='rtl'] .toolbarButton.pageDown::before {
 
 .toolbarButton.bookmark::before,
 .secondaryToolbarButton.bookmark::before {
-  content: url(pdfjs/images/toolbarButton-bookmark.png);
+  content:/* url(pdfjs/images/toolbarButton-bookmark.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-bookmark.png' %>");
 }
 
 #viewThumbnail.toolbarButton::before {
-  content: url(pdfjs/images/toolbarButton-viewThumbnail.png);
+  content: /*url(pdfjs/images/toolbarButton-viewThumbnail.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-viewThumbnail.png' %>");
 }
 
 html[dir="ltr"] #viewOutline.toolbarButton::before {
-  content: url(pdfjs/images/toolbarButton-viewOutline.png);
+  content: /*url(pdfjs/images/toolbarButton-viewOutline.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-viewOutline.png' %>");
 }
 html[dir="rtl"] #viewOutline.toolbarButton::before {
-  content: url(pdfjs/images/toolbarButton-viewOutline-rtl.png);
+  content: /*url(pdfjs/images/toolbarButton-viewOutline-rtl.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-viewOutline-rtl.png' %>");
 }
 
 #viewAttachments.toolbarButton::before {
-  content: url(pdfjs/images/toolbarButton-viewAttachments.png);
+  content: /*url(pdfjs/images/toolbarButton-viewAttachments.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-viewAttachments' %>");
 }
 
 #viewFind.toolbarButton::before {
-  content: url(pdfjs/images/toolbarButton-search.png);
+  content: /*url(pdfjs/images/toolbarButton-search.png);*/
+  url("<%= asset_path 'pdfjs/images/toolbarButton-search.png' %>");
 }
 
 .secondaryToolbarButton {
@@ -1136,27 +1166,33 @@ html[dir="rtl"] .secondaryToolbarButton > span {
 }
 
 .secondaryToolbarButton.firstPage::before {
-  content: url(pdfjs/images/secondaryToolbarButton-firstPage.png);
+  content: /*url(pdfjs/images/secondaryToolbarButton-firstPage.png);*/
+  url("<%= asset_path 'pdfjs/images/secondaryToolbarButton-firstPage.png' %>");
 }
 
 .secondaryToolbarButton.lastPage::before {
-  content: url(pdfjs/images/secondaryToolbarButton-lastPage.png);
+  content: /*url(pdfjs/images/secondaryToolbarButton-lastPage.png);*/
+  url("<%= asset_path 'pdfjs/images/secondaryToolbarButton-lastPage.png' %>");
 }
 
 .secondaryToolbarButton.rotateCcw::before {
-  content: url(pdfjs/images/secondaryToolbarButton-rotateCcw.png);
+  content: /*url(pdfjs/images/secondaryToolbarButton-rotateCcw.png);*/
+  url("<%= asset_path 'pdfjs/images/secondaryToolbarButton-rotateCcw.png' %>");
 }
 
 .secondaryToolbarButton.rotateCw::before {
-  content: url(pdfjs/images/secondaryToolbarButton-rotateCw.png);
+  content: /*url(pdfjs/images/secondaryToolbarButton-rotateCw.png);*/
+  url("<%= asset_path 'pdfjs/images/secondaryToolbarButton-rotateCw.png' %>");
 }
 
 .secondaryToolbarButton.handTool::before {
-  content: url(pdfjs/images/secondaryToolbarButton-handTool.png);
+  content: /*url(pdfjs/images/secondaryToolbarButton-handTool.png);*/
+  url("<%= asset_path 'pdfjs/images/secondaryToolbarButton-handTool.png' %>");
 }
 
 .secondaryToolbarButton.documentProperties::before {
-  content: url(pdfjs/images/secondaryToolbarButton-documentProperties.png);
+  content: /*url(pdfjs/images/secondaryToolbarButton-documentProperties.png);*/
+  url("<%= asset_path 'pdfjs/images/secondaryToolbarButton-documentProperties.png' %>");
 }
 
 .verticalToolbarSeparator {
@@ -1217,7 +1253,8 @@ html[dir='rtl'] .verticalToolbarSeparator {
 }
 
 .toolbarField.pageNumber.visiblePageIsLoading {
-  background-image: url(pdfjs/images/loading-small.png);
+  background-image: /*url(pdfjs/images/loading-small.png)*/
+  url("<%= asset_path 'pdfjs/images/loading-small.png' %>");
   background-repeat: no-repeat;
   background-position: 1px;
 }
@@ -1488,7 +1525,8 @@ html[dir='rtl'] .attachmentsItem > button {
   font-size: 12px;
   line-height: 14px;
   background-color: #474747; /* fallback */
-  background-image: url(pdfjs/images/texture.png),
+  background-image: /*url(pdfjs/images/texture.png) */
+                    url("<%= asset_path 'pdfjs/images/texture.png' %>")
                     linear-gradient(hsla(0,0%,32%,.99), hsla(0,0%,27%,.95));
   box-shadow: inset 1px 0 0 hsla(0,0%,100%,.08),
               inset 0 1px 1px hsla(0,0%,0%,.15),
@@ -1692,131 +1730,162 @@ html[dir='rtl'] #documentPropertiesOverlay .row > * {
 
   .toolbarField.pageNumber.visiblePageIsLoading,
   #findInput[data-status="pending"] {
-    background-image: url(pdfjs/images/loading-small@2x.png);
+    background-image:url("<%= asset_path 'pdfjs/images/loading-small@2x.png' %>");/*url(pdfjs/images/loading-small@2x.png);*/
     background-size: 16px 17px;
   }
 
   .dropdownToolbarButton {
-    background: url(pdfjs/images/toolbarButton-menuArrows@2x.png) no-repeat;
+    background: /*url(pdfjs/images/toolbarButton-menuArrows@2x.png)*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-menuArrows@2x.png' %>") no-repeat;
     background-size: 7px 16px;
   }
 
   html[dir='ltr'] .toolbarButton#sidebarToggle::before {
-    content: url(pdfjs/images/toolbarButton-sidebarToggle@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-sidebarToggle@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-sidebarToggle@2x.png' %>");
   }
   html[dir='rtl'] .toolbarButton#sidebarToggle::before {
-    content: url(pdfjs/images/toolbarButton-sidebarToggle-rtl@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-sidebarToggle-rtl@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-sidebarToggle-rtl@2x' %>");
   }
 
   html[dir='ltr'] .toolbarButton#secondaryToolbarToggle::before {
-    content: url(pdfjs/images/toolbarButton-secondaryToolbarToggle@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-secondaryToolbarToggle@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-secondaryToolbarToggle@2x' %>")
   }
   html[dir='rtl'] .toolbarButton#secondaryToolbarToggle::before {
-    content: url(pdfjs/images/toolbarButton-secondaryToolbarToggle-rtl@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-secondaryToolbarToggle-rtl@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-secondaryToolbarToggle-rtl@2x.png' %>")
   }
 
   html[dir='ltr'] .toolbarButton.findPrevious::before {
-    content: url(pdfjs/images/findbarButton-previous@2x.png);
+    content: /*url(pdfjs/images/findbarButton-previous@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/findbarButton-previous@2x.png' %>")
   }
   html[dir='rtl'] .toolbarButton.findPrevious::before {
-    content: url(pdfjs/images/findbarButton-previous-rtl@2x.png);
+    content: /*url(pdfjs/images/findbarButton-previous-rtl@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/findbarButton-previous-rtl@2x.png' %>")
   }
 
   html[dir='ltr'] .toolbarButton.findNext::before {
-    content: url(pdfjs/images/findbarButton-next@2x.png);
+    content:/* url(pdfjs/images/findbarButton-next@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/findbarButton-next@2x.png' %>")
   }
   html[dir='rtl'] .toolbarButton.findNext::before {
-    content: url(pdfjs/images/findbarButton-next-rtl@2x.png);
+    content: /*url(pdfjs/images/findbarButton-next-rtl@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/findbarButton-next-rtl@2x.png' %>")
   }
 
   html[dir='ltr'] .toolbarButton.pageUp::before {
-    content: url(pdfjs/images/toolbarButton-pageUp@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-pageUp@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-pageUp@2x.png' %>")
   }
   html[dir='rtl'] .toolbarButton.pageUp::before {
-    content: url(pdfjs/images/toolbarButton-pageUp-rtl@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-pageUp-rtl@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-pageUp-rtl@2x.png' %>")
   }
 
   html[dir='ltr'] .toolbarButton.pageDown::before {
-    content: url(pdfjs/images/toolbarButton-pageDown@2x.png);
+    content:/* url(pdfjs/images/toolbarButton-pageDown@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-pageDown@2x.png' %>")
   }
   html[dir='rtl'] .toolbarButton.pageDown::before {
-    content: url(pdfjs/images/toolbarButton-pageDown-rtl@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-pageDown-rtl@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-pageDown-rtl@2x.png' %>")
   }
 
   .toolbarButton.zoomIn::before {
-    content: url(pdfjs/images/toolbarButton-zoomIn@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-zoomIn@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-zoomIn@2x.png' %>")
   }
 
   .toolbarButton.zoomOut::before {
-    content: url(pdfjs/images/toolbarButton-zoomOut@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-zoomOut@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-zoomOut@2x.png' %>")
   }
 
   .toolbarButton.presentationMode::before,
   .secondaryToolbarButton.presentationMode::before {
-    content: url(pdfjs/images/toolbarButton-presentationMode@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-presentationMode@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/oolbarButton-presentationMode@2x.png' %>")
   }
 
   .toolbarButton.print::before,
   .secondaryToolbarButton.print::before {
-    content: url(pdfjs/images/toolbarButton-print@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-print@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-print@2x.png' %>")
   }
 
   .toolbarButton.openFile::before,
   .secondaryToolbarButton.openFile::before {
-    content: url(pdfjs/images/toolbarButton-openFile@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-openFile@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-openFile@2x.png' %>")
   }
 
   .toolbarButton.download::before,
   .secondaryToolbarButton.download::before {
-    content: url(pdfjs/images/toolbarButton-download@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-download@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-download@2x.png' %>")
   }
 
   .toolbarButton.bookmark::before,
   .secondaryToolbarButton.bookmark::before {
-    content: url(pdfjs/images/toolbarButton-bookmark@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-bookmark@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-bookmark@2x.png' %>")
   }
 
   #viewThumbnail.toolbarButton::before {
-    content: url(pdfjs/images/toolbarButton-viewThumbnail@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-viewThumbnail@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-viewThumbnail@2x.png' %>")
   }
 
   html[dir="ltr"] #viewOutline.toolbarButton::before {
-    content: url(pdfjs/images/toolbarButton-viewOutline@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-viewOutline@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-viewOutline@2x.png' %>")
   }
   html[dir="rtl"] #viewOutline.toolbarButton::before {
-    content: url(pdfjs/images/toolbarButton-viewOutline-rtl@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-viewOutline-rtl@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-viewOutline-rtl@2x.png' %>")
   }
 
   #viewAttachments.toolbarButton::before {
-    content: url(pdfjs/images/toolbarButton-viewAttachments@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-viewAttachments@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-viewAttachments@2x.png' %>")
   }
 
   #viewFind.toolbarButton::before {
-    content: url(pdfjs/images/toolbarButton-search@2x.png);
+    content: /*url(pdfjs/images/toolbarButton-search@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/toolbarButton-search@2x.png' %>")
   }
 
   .secondaryToolbarButton.firstPage::before {
-    content: url(pdfjs/images/secondaryToolbarButton-firstPage@2x.png);
+    content: /*url(pdfjs/images/secondaryToolbarButton-firstPage@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/secondaryToolbarButton-firstPage@2x.png' %>")
   }
 
   .secondaryToolbarButton.lastPage::before {
-    content: url(pdfjs/images/secondaryToolbarButton-lastPage@2x.png);
+    content: /*url(pdfjs/images/secondaryToolbarButton-lastPage@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/secondaryToolbarButton-lastPage@2x.png' %>")
   }
 
   .secondaryToolbarButton.rotateCcw::before {
-    content: url(pdfjs/images/secondaryToolbarButton-rotateCcw@2x.png);
+    content: /*url(pdfjs/images/secondaryToolbarButton-rotateCcw@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/secondaryToolbarButton-rotateCcw@2x.png' %>")
   }
 
   .secondaryToolbarButton.rotateCw::before {
-    content: url(pdfjs/images/secondaryToolbarButton-rotateCw@2x.png);
+    content: /*url(pdfjs/images/secondaryToolbarButton-rotateCw@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/secondaryToolbarButton-rotateCw@2x.png' %>")
   }
 
   .secondaryToolbarButton.handTool::before {
-    content: url(pdfjs/images/secondaryToolbarButton-handTool@2x.png);
+    content:/* url(pdfjs/images/secondaryToolbarButton-handTool@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/secondaryToolbarButton-handTool@2x.png' %>")
   }
 
   .secondaryToolbarButton.documentProperties::before {
-    content: url(pdfjs/images/secondaryToolbarButton-documentProperties@2x.png);
+    content: /*url(pdfjs/images/secondaryToolbarButton-documentProperties@2x.png);*/
+    url("<%= asset_path 'pdfjs/images/secondaryToolbarButton-documentProperties@2x.png' %>")
   }
 }
 
