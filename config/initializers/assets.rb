@@ -339,23 +339,6 @@ Rails.application.config.assets.precompile += %w(
   address.png
   arrow-icon.png
   banne_yhtd.jpg
-  banner/kxj.jpg
-  banner/qsnjsfkxjz.jpg
-  banner/ymcg.jpg
-  banner/ymcg_small.jpg
-  banner-doctors.jpg
-  banner-entetnreye.jpg
-  banner-zyhdq.jpg
-  banner_chooseIneye.jpg
-  banner_cjbg.jpg
-  banner_jiepai.jpg
-  banner_jjj.jpg
-  banner_jsxs.jpg
-  banner_qphys.jpg
-  banner_qsnfk.jpg
-  banner_vipkz.jpg
-  banner_yhjz.jpg
-  banner_zjss.jpg
   bl-img1.jpg
   bl-img2.jpg
   bm_1.png
@@ -2083,6 +2066,24 @@ Rails.application.config.assets.precompile += %w(
   附件2 专家推荐信 Letter of Recommendation.doc
   附件3 成都中医药大学博士后工作管理办法（试行）.doc
   霍剑.jpg
-
+  banner-doctors.jpg
+  banner-entetnreye.jpg
+  banner-zyhdq.jpg
+  banner_chooseIneye.jpg
+  banner_cjbg.jpg
+  banner_jiepai.jpg
+  banner_jjj.jpg
+  banner_jsxs.jpg
+  banner_qphys.jpg
+  banner_qsnfk.jpg
+  banner_vipkz.jpg
+  banner_yhjz.jpg
+  banner_zjss.jpg
+  banner/xyzsjzs.jpg
+  banner/jkgcxlhd.jpg
+  banner/kxj.jpg
+  banner/qsnjsfkxjz.jpg
+  banner/ymcg.jpg
+  banner/ymcg_small.jpg
 
 )
