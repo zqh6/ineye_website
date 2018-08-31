@@ -73,9 +73,11 @@ kill -9 xxxx(进程号)
 出于安全原因，请添加SECRET_KEY_BASE参数
 unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
 
-#备用
-####（正式服务器由于无法资源预编译所以用的development）
-RAILS_ENV=development rails db:migrate
+#备用命令
+####正式服务器用development时
 unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E development -D
-SECRET_KEY_BASE=50245009b98163aab6c8d2a43a0fa78640c0a13ff61a9e69becd9f3ac56aac9c662b70eff4745014d3a317f18f29f313fba95484484053ffc7a992ff14c27ff6 unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
+####正式服务器用production时
+RAILS_ENV=production rails db:migrate
+RAILS_ENV=production rails assets:precompile
+SECRET_KEY_BASE=SecureRandom.hex(64) unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
 
