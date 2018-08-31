@@ -80,4 +80,5 @@ unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E development -D
 RAILS_ENV=production rails db:migrate
 RAILS_ENV=production rails assets:precompile
 SECRET_KEY_BASE=SecureRandom.hex(64) unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
+SECRET_KEY_BASE= unicorn_rails -c /data/project/ineye_website/config/unicorn.rb -E production -D
 
