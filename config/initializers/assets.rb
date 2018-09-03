@@ -2086,5 +2086,6 @@ Rails.application.config.assets.precompile += %w(
   banner/ymcg.jpg
   banner/ymcg_small.jpg
   banner/baishi.png
+  banner/jiaotonggy.jpg
 
 )

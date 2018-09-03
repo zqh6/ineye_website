@@ -12,6 +12,12 @@
             <% end %>
         </li>
         <li>
+            <%= link_to news_path(498, from: 'db') do %>
+                <%= image_tag("banner/jiaotonggy.jpg", alt:'关爱成都市交通警察眼健康公益活动') %>
+            <% end %>
+        </li>
+        <li>
+
             <%= link_to 'javascript: void(0);' do %>
                 <%= image_tag("banner/jkgcxlhd.jpg", alt:'爱眼工程') %>
             <% end %>
@@ -21,6 +27,7 @@
                 <%= image_tag("banner/kxj.jpg", alt:'银海开学季献礼') %>
             <% end %>
         </li>
+
         <li>
             <%= link_to  news_path(491, from: 'db') do %>
             <%= image_tag("banner/ymcg.jpg", alt:'中国中西医结合学会眼科专业委员会第十七届学术年会、首届廖品正国医大师学术思想研讨会暨第四届银海眼科（国际）论坛在成都隆重召开') %>
