@@ -12,7 +12,7 @@ class AllApi::UploadsController < AllApi::PresentationController
       params[:files].each do |file|
         path = ''
         if params[:oss]=='true'
-          oss_dir  = 'ineye_website_dev/'+params[:path].to_s+'/'+Time.new.strftime('%Y_%m')+'/'+SecureRandom.uuid+'/'+file.original_filename
+          oss_dir  = Yetting.aliyun_oss['aliyun_bucket']+'/'+params[:path].to_s+'/'+Time.new.strftime('%Y_%m')+'/'+SecureRandom.uuid+'/'+file.original_filename
           oss_path = AliyunOss.instance.put(oss_dir, File.open(file.tempfile), {'content_type': file.content_type})
           path = oss_path
         elsif params[:local]=='true'
@@ -47,9 +47,10 @@ class AllApi::UploadsController < AllApi::PresentationController
     else
       if params[:oss]=='true'
         file = params[:files]
-        oss_dir  = 'ineye_website_dev/'+params[:path].to_s+'/'+Time.new.strftime('%Y_%m')+'/'+SecureRandom.uuid+'/'+file.original_filename
+        oss_dir  = Yetting.aliyun_oss['aliyun_bucket']+'/'+params[:path].to_s+'/'+Time.new.strftime('%Y_%m')+'/'+SecureRandom.uuid+'/'+file.original_filename
+        Rails.logger.warn file.content_type.inspect
         oss_path = AliyunOss.instance.put(oss_dir, File.open(file.tempfile), {'content_type': file.content_type})
-        path = oss_path#.gsub('http', 'http')
+        path = oss_path
         collection.push({
           path: path,
           name: file.original_filename
