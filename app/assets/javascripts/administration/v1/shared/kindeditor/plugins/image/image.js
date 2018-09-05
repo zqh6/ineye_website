@@ -1,23 +1,24 @@
 /*******************************************************************************
-* KindEditor - WYSIWYG HTML Editor for Internet
-* Copyright (C) 2006-2011 kindsoft.net
-*
-* @author Roddy <luolonghao@gmail.com>
-* @site http://www.kindsoft.net/
-* @licence http://www.kindsoft.net/license.php
-*******************************************************************************/
-
+ * KindEditor - WYSIWYG HTML Editor for Internet
+ * Copyright (C) 2006-2011 kindsoft.net
+ *
+ * @author Roddy <luolonghao@gmail.com>
+ * @site http://www.kindsoft.net/
+ * @licence http://www.kindsoft.net/license.php
+ *******************************************************************************/
+var uploadPath = $('.js-upload-path').val();
+//var savePathPrefix = $('.js-save-path-prefix').val();
 KindEditor.plugin('image', function(K) {
 	var self = this, name = 'image',
 		allowImageUpload = K.undef(self.allowImageUpload, true),
 		allowImageRemote = K.undef(self.allowImageRemote, true),
 		formatUploadUrl = K.undef(self.formatUploadUrl, true),
 		allowFileManager = K.undef(self.allowFileManager, false),
-		uploadJson = K.undef(self.uploadJson, self.basePath + 'php/upload_json.php'),
+		uploadJson = K.undef(self.uploadJson, '/all-api/uploads'),
 		imageTabIndex = K.undef(self.imageTabIndex, 0),
 		imgPath = self.pluginsPath + 'image/images/',
 		extraParams = K.undef(self.extraFileUploadParams, {}),
-		filePostName = K.undef(self.filePostName, 'imgFile'),
+		filePostName = K.undef(self.filePostName, 'files'),
 		fillDescAfterUploadImage = K.undef(self.fillDescAfterUploadImage, false),
 		lang = self.lang(name + '.');
 
@@ -74,14 +75,15 @@ KindEditor.plugin('image', function(K) {
 			//local upload - start
 			'<div class="tab2" style="display:none;">',
 			'<iframe name="' + target + '" style="display:none;"></iframe>',
-			'<form class="ke-upload-area ke-form" method="post" enctype="multipart/form-data" target="' + target + '" action="' + K.addParam(uploadJson, 'dir=image') + '">',
+			'<form class="ke-upload-area ke-form" method="post" enctype="multipart/form-data" target="' + target + '" action="' + K.addParam(uploadJson, 'oss=true&single=true&path=rich_text') + '">',
 			//file
 			'<div class="ke-dialog-row">',
 			hiddenElements.join(''),
 			'<label style="width:60px;">' + lang.localUrl + '</label>',
-			//Mytxz hide input
 			'<!--<input type="text" name="localUrl" class="ke-input-text" tabindex="-1" style="width:200px;" readonly="true" />--> &nbsp;',
 			'<input type="button" class="ke-upload-button" value="' + lang.upload + '" />',
+			'</div>',
+			'<div class="ke-dialog-row" name="fileNames">',
 			'</div>',
 			'</form>',
 			'</div>',
@@ -91,74 +93,71 @@ KindEditor.plugin('image', function(K) {
 		var dialogWidth = showLocal || allowFileManager ? 450 : 400,
 			dialogHeight = showLocal && showRemote ? 300 : 250;
 		var dialog = self.createDialog({
-			name : name,
-			width : dialogWidth,
-			height : dialogHeight,
-			title : self.lang(name),
-			body : html,
-			yesBtn : {
-				name : self.lang('yes'),
-				click : function(e) {
-					// Bugfix: http://code.google.com/p/kindeditor/issues/detail?id=319
-					if (dialog.isLoading) {
-						return;
-					}
-					// insert local image
-					if (showLocal && showRemote && tabs && tabs.selectedIndex === 1 || !showRemote) {
-						if (uploadbutton.fileBox.val() == '') {
-							alert(self.lang('pleaseSelectFile'));
+				name : name,
+				width : dialogWidth,
+				height : dialogHeight,
+				title : self.lang(name),
+				body : html,
+				yesBtn : {
+					name : self.lang('yes'),
+					click : function(e) {
+						// Bugfix: http://code.google.com/p/kindeditor/issues/detail?id=319
+						if (dialog.isLoading) {
 							return;
 						}
-						dialog.showLoading(self.lang('uploadLoading'));
-						uploadbutton.submit();
-            for(var i = 0; i<fileLenght; i++) {
-              self.insertHtml('<img src=\"'+fileBase64s[i]+'\" border="0" alt="aaa" />');
-            }
-            self.hideDialog();
-						localUrlBox.val('');
-						return;
-					}
-					// insert remote image
-					var url = K.trim(urlBox.val()),
-						width = widthBox.val(),
-						height = heightBox.val(),
-						title = titleBox.val(),
-						align = '';
-					alignBox.each(function() {
-						if (this.checked) {
-							align = this.value;
-							return false;
+						// insert local image
+						if (showLocal && showRemote && tabs && tabs.selectedIndex === 1 || !showRemote) {
+							if (uploadbutton.fileBox.val() == '') {
+								alert(self.lang('pleaseSelectFile'));
+								return;
+							}
+							dialog.showLoading(self.lang('uploadLoading'));
+							uploadbutton.submit();
+							localUrlBox.val('');
+							return;
 						}
-					});
-					if (url == '//' || K.invalidUrl(url)) {
-						alert(self.lang('invalidUrl'));
-						urlBox[0].focus();
-						return;
+						// insert remote image
+						var url = K.trim(urlBox.val()),
+							width = widthBox.val(),
+							height = heightBox.val(),
+							title = titleBox.val(),
+							align = '';
+						alignBox.each(function() {
+							if (this.checked) {
+								align = this.value;
+								return false;
+							}
+						});
+						if (url == 'http://' || K.invalidUrl(url)) {
+							alert(self.lang('invalidUrl'));
+							urlBox[0].focus();
+							return;
+						}
+						if (!/^\d*$/.test(width)) {
+							alert(self.lang('invalidWidth'));
+							widthBox[0].focus();
+							return;
+						}
+						if (!/^\d*$/.test(height)) {
+							alert(self.lang('invalidHeight'));
+							heightBox[0].focus();
+							return;
+						}
+						clickFn.call(self, url, title, width, height, 0, align);
 					}
-					if (!/^\d*$/.test(width)) {
-						alert(self.lang('invalidWidth'));
-						widthBox[0].focus();
-						return;
-					}
-					if (!/^\d*$/.test(height)) {
-						alert(self.lang('invalidHeight'));
-						heightBox[0].focus();
-						return;
-					}
-					clickFn.call(self, url, title, width, height, 0, align);
+				},
+				beforeRemove : function() {
+					viewServerBtn.unbind();
+					widthBox.unbind();
+					heightBox.unbind();
+					refreshBtn.unbind();
 				}
-			},
-			beforeRemove : function() {
-				viewServerBtn.unbind();
-				widthBox.unbind();
-				heightBox.unbind();
-				refreshBtn.unbind();
-			}
-		}),
-		div = dialog.div;
+			}),
+			div = dialog.div;
 
 		var urlBox = K('[name="url"]', div),
 			localUrlBox = K('[name="localUrl"]', div),
+			fileNamesBox = K('[name="fileNames"]', div),
 			viewServerBtn = K('[name="viewServer"]', div),
 			widthBox = K('.tab1 [name="width"]', div),
 			heightBox = K('.tab1 [name="height"]', div),
@@ -195,23 +194,30 @@ KindEditor.plugin('image', function(K) {
 			width: 60,
 			afterUpload : function(data) {
 				dialog.hideLoading();
-				if (data.error === 0) {
-					var url = data.url;
-					if (formatUploadUrl) {
-						url = K.formatUrl(url, 'absolute');
-					}
-					if (self.afterUpload) {
-						self.afterUpload.call(self, url, data, name);
-					}
-					if (!fillDescAfterUploadImage) {
-						clickFn.call(self, url, data.title, data.width, data.height, data.border, data.align);
-					} else {
-						K(".ke-dialog-row #remoteUrl", div).val(url);
-						K(".ke-tabs-li", div)[0].click();
-						K(".ke-refresh-btn", div).click();
-					}
+				if (data.success == true) {
+					console.log('结果：')
+					console.log(data);
+					console.log('开始处理：')
+					$.each(data.files, function(key, uploadedFile){
+						console.log(1);
+						console.log(uploadedFile.id);
+						var url = uploadedFile.path;
+						if (formatUploadUrl) {
+							url = K.formatUrl(url, 'absolute');
+						}
+						if (self.afterUpload) {
+							self.afterUpload.call(self, url, data, name);
+						}
+						if (!fillDescAfterUploadImage) {
+							clickFn.call(self, url, data.title, data.width, data.height, data.border, data.align);
+						} else {
+							K(".ke-dialog-row #remoteUrl", div).val(url);
+							K(".ke-tabs-li", div)[0].click();
+							K(".ke-refresh-btn", div).click();
+						}
+					});
 				} else {
-					alert(data.message);
+					alert('上传失败');
 				}
 			},
 			afterError : function(html) {
@@ -219,21 +225,15 @@ KindEditor.plugin('image', function(K) {
 				self.errorDialog(html);
 			}
 		});
-
-		var fileBase64s = [];
-		var fileLenght;
-
 		uploadbutton.fileBox.change(function(e) {
-			files = this.files;
-			fileLenght = files.length;
-      for(var i = 0; i<fileLenght; i++) {
-        var fileReader = new FileReader();
-        fileReader.readAsDataURL(files[i]);
-        fileReader.onload = function(e){
-        	fileBase64s.push(e.target.result);
-				};
-      }
-			localUrlBox.val(uploadbutton.fileBox.val());
+			fileNamesBox.html('');
+			var files = this.files;
+			var fileLenght = files.length;
+			for(var i = 0; i<fileLenght; i++) {
+				fileNamesBox.append('<p class="filename">'+files[i].name+'</p>');
+			}
+
+			//localUrlBox.val(uploadbutton.fileBox.val());
 		});
 		if (allowFileManager) {
 			viewServerBtn.click(function(e) {
@@ -305,7 +305,7 @@ KindEditor.plugin('image', function(K) {
 		edit : function() {
 			var img = self.plugin.getSelectedImage();
 			self.plugin.imageDialog({
-				imageUrl : img ? img.attr('data-ke-src') : '//',
+				imageUrl : img ? img.attr('data-ke-src') : 'http://',
 				imageWidth : img ? img.width() : '',
 				imageHeight : img ? img.height() : '',
 				imageTitle : img ? img.attr('title') : '',

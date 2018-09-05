@@ -2735,7 +2735,7 @@
         var k = [], i;
         for (i in g)k.push('<input type="hidden" name="' + i + '" value="' + g[i] + '" />');
         c = ['<div class="ke-inline-block ' + h + '">', a.target ? "" : '<iframe name="' + j + '" style="display:none;"></iframe>', a.form ? '<div class="ke-upload-area">' : '<form class="ke-upload-area ke-form" method="post" enctype="multipart/form-data" target="' +
-                j + '" action="' + d + '">', '<span class="ke-button-common">', k.join(""), '<input type="button" class="ke-button-common ke-button" value="' + e + '" />', "</span>", '<input type="file" class="ke-upload-file" name="' + c + '" tabindex="-1" multiple/>', a.form ? "</div>" : "</form>", "</div>"].join("");
+                j + '" action="' + d + '">', '<span class="ke-button-common">', k.join(""), '<input type="button" class="ke-button-common ke-button" value="' + e + '" />', "</span>", '<input type="file" class="ke-upload-file" name="' + c + '" tabindex="-1"/>', a.form ? "</div>" : "</form>", "</div>"].join("");
         c = f(c, b.doc);
         b.hide();
         b.before(c);
