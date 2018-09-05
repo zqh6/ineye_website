@@ -5,8 +5,7 @@ class AliyunOss
     config.aliyun_access_key = Yetting.aliyun_oss["aliyun_access_key"]
     config.aliyun_bucket     = Yetting.aliyun_oss["aliyun_bucket"]
     config.aliyun_internal   = Yetting.aliyun_oss["aliyun_internal"]
-
-    config.aliyun_area     = "cn-hangzhou"
+    config.aliyun_area       = Yetting.aliyun_oss["aliyun_area"]
   end
 
   @uploader = CarrierWave::Uploader::Base.new
