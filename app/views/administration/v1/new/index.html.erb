@@ -65,7 +65,11 @@
 										<% @new.each do |new| %>
 											<tr class="gradeX">
 												<td><%= new.id %></td>
-												<td><%= new.title %></td>
+												<td>
+													<%= link_to new.scan_rails_path.blank? ? news_path(new.id, from: 'db') : new.scan_rails_path do %>
+														<%= new.title %>
+        					        <% end %>
+			                  </td>
 												<td><%= TagRelation.get_tags_by(object: new) %></td>
 												<!--<td><%= new.user.try(:name).blank? ? '（暂无名称）' : new.user.name %></td>-->
 												<td><%= ShareEnum.new_classifies[new.classify.to_sym] %></td>

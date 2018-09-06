@@ -219,7 +219,8 @@
       <% if @new_notice.present? %>
           <% @new_notice.each do |new_notice| %>
               <li>
-                <%= link_to new_notice.scan_rails_path.blank? ? news_path(new_notice.id, from: 'db') : new_notice.scan_rails_path do %><%= new_notice.title %><% end %>
+                <%= link_to new_notice.scan_rails_path.blank? ? news_path(new_notice.id, from: 'db') : new_notice.scan_rails_path do %><%= new_notice.title %>
+                <% end %>
               </li>
           <% end %>
       <% end %>
