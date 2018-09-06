@@ -2066,6 +2066,9 @@ Rails.application.config.assets.precompile += %w(
   附件2 专家推荐信 Letter of Recommendation.doc
   附件3 成都中医药大学博士后工作管理办法（试行）.doc
   霍剑.jpg
+
+  ineye/logo.jpg
+
   banner-doctors.jpg
   banner-entetnreye.jpg
   banner-zyhdq.jpg

@@ -1,7 +1,13 @@
 <header>
 	<!-- logo -->
 	<div class="am-fl tpl-header-logo">
-		<a href="/"><%= image_tag 'shared/logo.png', rel: "Logo" %></a>
+		<a href="/"><%= image_tag 'ineye/logo.jpg', rel: "Logo", class: 'admin-logo' %>
+			<% a = ['A','B','C','D','E','F', '1', '2', '3','4','5','6','7','8','9','0'] %>
+			<% color = '#'%>
+			<% 6.times{color = color+a.sample} %>
+			<p class="admin-hesheng" style="color: <%= color %>!important;">和生视界提供技术支持</p>
+			<p class="admin-index">点击前往银海官网首页</p>
+		</a>
 	</div>
 	<!-- 右侧内容 -->
 	<div class="tpl-header-fluid">
