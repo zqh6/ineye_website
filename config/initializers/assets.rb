@@ -807,6 +807,8 @@ Rails.application.config.assets.precompile += %w(
   logo_1.png
   logo_2.png
   logo_3.png
+  logo_1_1.png
+  logo_1_2.png
   luo_lan.jpg
   newEquipment_1.jpg
   newEquipment_10.jpg
