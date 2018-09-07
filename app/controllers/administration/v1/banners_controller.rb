@@ -10,7 +10,7 @@ class Administration::V1::BannersController < Administration::V1::PrivilegedCont
 
   def index
     @banners = Banner.all
-    @banners = @banners.reorder('serial asc, created_at desc').paginate(page: params[:page], per_page: 10)
+    @banners = @banners.reorder('state desc, serial asc, created_at desc').paginate(page: params[:page], per_page: 10)
   end
 
 end
