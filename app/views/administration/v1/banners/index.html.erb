@@ -36,7 +36,7 @@
                   <tr>
                     <th class="am-text-danger"><%= Banner.human_attribute_name :serial %>（从小到大）</th>
                     <th><%= Banner.human_attribute_name :image_url %></th>
-                    <th><%= Banner.human_attribute_name :link_url %></th>
+                    <th><%= Banner.human_attribute_name :link_url %>（悬停鼠标查看完整链接）</th>
                     <th><%= Banner.human_attribute_name :description %></th>
                     <th><%= Banner.human_attribute_name :state %></th>
                     <th><%= Banner.human_attribute_name :aim_at_platform %></th>
@@ -50,9 +50,9 @@
                     <% @banners.each do |banner| %>
                       <tr class="gradeX">
                         <td><span class="am-text-danger"><%= banner.serial %></span></td>
-                        <td><img src="<%= banner.image_url %>" style="height: 50px; width: auto;" /></td>
+                        <td><img src="<%= banner.image_url %>" title="<%= banner.description %>" style="height: 50px; width: auto;" /></td>
                         <td>
-                          <a href="<%= banner.link_url %>" target="_blank">
+                          <a href="<%= banner.link_url %>" target="_blank" title="<%= banner.link_url %>">
                             <%= banner.link_url[0, 19] %><%= '...' if banner.link_url[20].present? %>
                           </a>
                         </td>
