@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>成都中医大银海眼科医院-糖尿病视网膜病变_斜弱视矫正_干眼治疗</title>
+    <title><% if (yield :title).present? %><%= yield :title %><% else %>成都中医大银海眼科医院-糖尿病视网膜病变_斜弱视矫正_干眼治疗<% end %></title>
+    <%= Rails.configuration.baidu_meta[:code].html_safe %>
     <meta name="keywords" content="屈光不正防治,斜视矫正">
     <meta name="description" content="成都中医大银海眼科医院为成都中医药大学附属眼科医院，是集医、教、研三位于一体的研究型大型专科医院.医院治疗项目包括视网膜脱落、屈光不正防治、斜视矫正、玻璃体疾病、角膜屈光、糖尿病视网膜病变、近视防控等。">
     <%= csrf_meta_tags %>

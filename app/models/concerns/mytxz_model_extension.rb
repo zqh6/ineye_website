@@ -9,6 +9,7 @@ module MytxzModelExtension
     scope :valid_at, ->(now: Time.now) { where "? BETWEEN #{includer.table_name}.opened_at AND #{includer.table_name}.closed_at", now }
     scope :alive,    ->(living:  true) { where defunct: !living }
     scope :state_alive, ->(state: 'C') { where state: state}
+    scope :state_alive2, ->(state: 1)  { where state: state}
 
     def soft_destroy!
       self.closed_at = Time.now
@@ -42,6 +43,14 @@ module MytxzModelExtension
 
     def updated_at_desc
       self.updated_at.strftime('%Y-%m-%d %H:%M:%S')
+    end
+
+    def operated_at_desc
+      if self.updated_at.present?
+        self.updated_at_desc
+      else
+        self.created_at_desc
+      end
     end
 
   end

@@ -282,6 +282,8 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/shared/share.js
   administration/v1/users/index.js
   administration/v1/users/new.js
+  administration/v1/banners/new.js
+
   application.js
   baguetteBox.min.js
   bannerList.js
@@ -318,6 +320,7 @@ Rails.application.config.assets.precompile += %w(
   videoon.js
   viewer.js
   wangEditor.js
+
 
 
   2.jpg

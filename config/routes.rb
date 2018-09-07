@@ -38,6 +38,7 @@ Rails.application.routes.draw do
       resources :leavings
       resources :con_educations
       resources :activity_enters
+      resources :banners
     end
   end
 
@@ -49,6 +50,7 @@ Rails.application.routes.draw do
 
     resources :schedulings
     resources :con_educations
+    resources :banners
   end
 
   scope '/all-api', module: 'all_api', as: 'all_api' do

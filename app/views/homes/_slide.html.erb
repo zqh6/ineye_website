@@ -1,7 +1,17 @@
 <!--修改轮播-->
 <div class='banner-box  marB10 main'>
     <ul class='img'>
-        <li>
+        <% if @banners.present? %>
+            <% @banners.each do |banner| %>
+                <% next if banner.image_url.blank? %>
+                <li>
+                    <%= link_to (banner.link_url.present? ? banner.link_url : 'javascript: void(0);' ) do %>
+                        <%= image_tag(banner.image_url, alt: banner.description.to_s) %>
+                    <% end %>
+                </li>
+            <% end %>
+        <% end %>
+        <!-- <li>
             <%= link_to news_path(516, from: 'db') do %>
                 <%= image_tag("banner/yjzxcscl.jpg", alt:'视觉眼健康中心正式成立') %>
             <% end %>
@@ -55,7 +65,7 @@
         </li>
         <li>
             <%= link_to image_tag("banner_vipkz.jpg", alt:'银海眼科医院vip门诊正式开诊'),news_path(:关于调整门诊流程及增设VIP服务的通知) %>
-        </li>
+        </li> -->
     </ul>
     <ul class='li'></ul>
     <div class='but but-left'>&lt;</div>

@@ -1,0 +1,174 @@
+<div class="am-form tpl-form-line-form">
+  <%= hidden_field_tag :id, @banner.id, class: 'js-id' %>
+
+  <div class="am-form-group">
+    <label for="article_classify" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= Banner.human_attribute_name :serial %></label>
+    <div class="am-u-sm-9">
+      <%= number_field_tag :serial, @banner.serial, class: 'tpl-form-input' %>
+    </div>
+  </div>
+
+  <div class="am-form-group js-pdf-vector">
+    <label for="pdf_file" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= Banner.human_attribute_name :image_url %>（一张）</label>
+    <div class="am-u-sm-9">
+      <% if !@banner.new_record? %>
+        <img src="<%= @banner.image_url %>" style="height: 200px; width: auto;"/>
+      <% end %>
+      <!-- 上传表单 -->
+      <form id="fileupload" action="/upload" method="POST" enctype="multipart/form-data"
+            class="am-form tpl-form-border-form tpl-form-border-br">
+        <div class="am-form-group">
+          <div class="am-u-sm-3">
+            <span class="btn btn-success fileinput-button">
+              <i class="am-icon-plus"></i>
+              <span><% if !@banner.new_record? %>重新<% end %>上传图像</span>
+              <input type="file" name="files[]">
+            </span>
+
+            <!-- <button type="button" class="btn btn-danger delete js-delete-all-files">
+              <i class="am-icon-trash"></i>
+              <span>取消上传</span>
+            </button> -->
+
+            <!-- The global file processing state -->
+            <span class="fileupload-process"></span>
+          </div>
+          <div class="am-u-sm-3">
+            <div class="fileupload-progress fade">
+              <!-- The global progress bar -->
+              <div class="progress progress-striped active" role="progressbar" aria-valuemin="0"
+                   aria-valuemax="100">
+                <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+              </div>
+              <!-- The extended global progress state -->
+              <div class="progress-extended">&nbsp;</div>
+            </div>
+          </div>
+          <div class="row fileupload-buttonbar">
+            <!-- The global progress state -->
+
+          </div>
+        </div>
+        <!-- The table listing the files available for upload/download -->
+        <table role="presentation" class="js-picture-table table table-striped">
+          <tbody class="files js-files-vector"></tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+
+  <div class="am-form-group">
+    <label for="user-phone" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= Banner.human_attribute_name :aim_at_platform %></label>
+    <div class="am-u-sm-9">
+      <%= select_tag :aim_at_platform, options_for_select(ShareEnum.form_options('aim_at_platforms'), @banner.aim_at_platform), include_blank: false, class: '', "data-am-selected"=> "{searchBox: 1}", style: "display: none;" %>
+    </div>
+  </div>
+
+  <div class="am-form-group">
+    <label for="user-name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= Banner.human_attribute_name :state %></label>
+    <div class="am-u-sm-9">
+      <select class="tpl-form-input" id="state">
+        <option <% if @banner.state==1 %>selected<% end %> value="true">生效</option>
+        <option <% if @banner.state==0 %>selected<% end %> value="false">不生效</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="am-form-group">
+    <label for="static_url" class="am-u-sm-3 am-form-label"><%= Banner.human_attribute_name :link_url %></label>
+    <div class="am-u-sm-9">
+      <%= text_field_tag :link_url, @banner.link_url, class: 'tpl-form-input' %>
+    </div>
+  </div>
+
+  <div class="am-form-group">
+    <label for="title" class="am-u-sm-3 am-form-label"><%= Banner.human_attribute_name :description %></label>
+    <div class="am-u-sm-9">
+      <%= text_field_tag :description, @banner.description, class: 'tpl-form-input' %>
+    </div>
+  </div>
+
+  <div class="am-form-group">
+    <div class="am-u-sm-9 am-u-sm-push-3">
+      <button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success js-create">提交</button>
+      <%= link_to :back, class: '' do %><button type="button" class="am-btn am-btn-primary tpl-btn-bg-color-success button-include-link">取消</button><% end %>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+<!-- 图片放大 -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+<!-- 上传时的模版 -->
+<script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+  <tr class="template-upload fade">
+    <td>
+      <span class="preview">
+      </span>
+    </td>
+    <td>
+      <p class="name">{%=file.name%}</p>
+      <strong class="error text-danger"></strong>
+    </td>
+    <td>
+      <p class="size">Processing...</p>
+      <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+    </td>
+    <td>
+      {% if (!i && !o.options.autoUpload) { %}
+        <button class="btn btn-primary start" disabled>
+          <i class="am-icon-cloud-upload"></i>
+          <span>Start</span>
+        </button>
+      {% } %}
+      {% if (!i) { %}
+        <button class="btn btn-warning cancel">
+          <i class="am-icon-close"></i>
+          <span>Cancel</span>
+        </button>
+      {% } %}
+    </td>
+  </tr>
+{% } %}
+</script>
+
+<!-- 上传完毕后的模版 -->
+<script id="template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+  <tr class="template-download fade js-one" data-file-path="{%=file.path%}">
+    <td>
+      <img style="width: 100px; height: auto;" src="{%= file.path %}"/>
+    </td>
+    <td>
+      <span>{%=file.name%}</span>
+      {% if (file.error) { %}
+        <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+      {% } %}
+    </td>
+    <td>
+      {%=o.formatFileSize(file.size)%}
+    </td>
+    <td>
+      <button class="btn btn-warning cancel">
+        <i class="am-icon-close"></i>
+        <span>Cancel</span>
+      </button>
+    </td>
+  </tr>
+{% } %}
+</script>
+

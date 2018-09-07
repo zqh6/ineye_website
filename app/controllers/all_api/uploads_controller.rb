@@ -15,6 +15,7 @@ class AllApi::UploadsController < AllApi::PresentationController
           oss_dir  = Yetting.aliyun_oss['aliyun_bucket']+'/'+params[:path].to_s+'/'+Time.new.strftime('%Y_%m')+'/'+SecureRandom.uuid+'/'+file.original_filename
           oss_path = AliyunOss.instance.put(oss_dir, File.open(file.tempfile), {'content_type': file.content_type})
           path = oss_path
+          Rails.logger.warn '批量上传OSS成功'
         elsif params[:local]=='true'
           time_str = Time.new.strftime('%Y_%m')
           uuid = SecureRandom.uuid
@@ -36,10 +37,12 @@ class AllApi::UploadsController < AllApi::PresentationController
           FileUtils.chmod 0777, local_path2
 
           path = relative_path
+          Rails.logger.warn '批量上传本地并复制到手机端成功'
         end
         collection.push({
           path: path,
-          name: file.original_filename
+          name: file.original_filename,
+          size: file.size
         })
       end
       Rails.logger.warn collection.inspect
@@ -55,6 +58,8 @@ class AllApi::UploadsController < AllApi::PresentationController
           path: path,
           name: file.original_filename
         })
+
+        Rails.logger.warn '单个上传OSS成功'
         Rails.logger.warn collection.inspect
         render json: {success: true, files: collection} and return
       end

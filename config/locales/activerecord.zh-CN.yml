@@ -14,6 +14,7 @@ zh-CN:
       password: 密码
       con_education_article: 继续教育文章
       activity_enter: 活动报名
+      banner: 轮播图
 
     attributes:
       new:
@@ -79,3 +80,13 @@ zh-CN:
         remote_ip: 远程IP
         user_agent: 客户端信息
         remark: 自定义备注
+      banner:
+        id: 编号
+        serial: 排序
+        image_url: 图片
+        link_url: 链接
+        description: 描述
+        state: 状态
+        aim_at_platform: 针对平台
+        operated_at: 最近操作时间
+        operator_id: 最近操作人员

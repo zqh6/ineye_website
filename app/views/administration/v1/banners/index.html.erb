@@ -1,0 +1,102 @@
+
+<div class="am-g tpl-g">
+  <!-- 头部 -->
+  <%= render partial: 'administration/v1/shared/navigation_bar' %>
+
+  <!-- 风格切换 -->
+  <%= render partial: 'administration/v1/shared/change_theme' %>
+
+  <!-- 侧边导航栏 -->
+  <%= render partial: 'administration/v1/shared/sidebar', locals: { options: {list_item: 'banner_index'}} %>
+
+  <!-- 内容区域 -->
+  <div class="tpl-content-wrapper">
+    <div class="row-content am-cf">
+      <div class="row">
+        <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+          <div class="widget am-cf">
+            <div class="widget-head am-cf">
+              <div class="widget-title  am-cf">轮播图列表</div>
+            </div>
+            <div class="widget-body  am-fr">
+
+              <div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+                <div class="am-form-group">
+                  <div class="am-btn-toolbar">
+                    <div class="am-btn-group am-btn-group-xs">
+                      <%= link_to new_administration_v1_banner_path, class: 'am-btn am-btn-default am-btn-success button-include-link' do %><span class="am-icon-plus"></span> 新增<% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="am-u-sm-12">
+                <table width="100%" class="am-table am-table-hover am-table-compact am-table-striped tpl-table-black " id="example-r">
+                  <thead>
+                  <tr>
+                    <th class="am-text-danger"><%= Banner.human_attribute_name :serial %>（从小到大）</th>
+                    <th><%= Banner.human_attribute_name :image_url %></th>
+                    <th><%= Banner.human_attribute_name :link_url %></th>
+                    <th><%= Banner.human_attribute_name :description %></th>
+                    <th><%= Banner.human_attribute_name :state %></th>
+                    <th><%= Banner.human_attribute_name :aim_at_platform %></th>
+                    <th><%= Banner.human_attribute_name :operated_at %></th>
+                    <th><%= Banner.human_attribute_name :operator_id %></th>
+                    <th><%= t :operate %></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <% if @banners.present? %>
+                    <% @banners.each do |banner| %>
+                      <tr class="gradeX">
+                        <td><span class="am-text-danger"><%= banner.serial %></span></td>
+                        <td><img src="<%= banner.image_url %>" style="height: 50px; width: auto;" /></td>
+                        <td>
+                          <a href="<%= banner.link_url %>" target="_blank">
+                            <%= banner.link_url[0, 19] %><%= '...' if banner.link_url[20].present? %>
+                          </a>
+                        </td>
+                        <td><%= banner.description %></td>
+                        <td><% if banner.state==1 %><span class="am-text-success">生效</span><% else %><span class="am-text-warning">不生效</span><% end %></td>
+                        <td><%= ShareEnum.aim_at_platforms[banner.aim_at_platform.to_sym] %></td>
+                        <td><%= banner.operated_at_desc %></td>
+                        <td><%= User.find(banner.operator_id).try(:name) %></td>
+                        <td>
+                          <div class="tpl-table-black-operation">
+                            <%= link_to edit_administration_v1_banner_path(banner.id) do %>
+                              <i class="am-icon-pencil"></i> 编辑
+                            <% end %>
+                          </div>
+                        </td>
+                      </tr>
+                    <% end %>
+                  <% end %>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="am-u-lg-12 am-cf">
+                <div class="am-fr">
+                  <%= will_paginate @banners, :previous_label=> '上一页',:next_label=> '下一页' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<% content_for :meta do %>
+<% end %>
+
+<% content_for :body_attr do %>data-type="widgets"<% end %>
+
+<% content_for :style do %>
+<% end %>
+
+<% content_for :script do %>
+<% end %>

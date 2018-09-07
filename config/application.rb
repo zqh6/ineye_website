@@ -20,5 +20,8 @@ module IneyeWebsite
     config.baidu_statistics = {
       code: 'a1b23724d1f623eba7c26b3b596f96d8'
     }
+    config.baidu_meta={
+      code: '<meta name="baidu-site-verification" content="0SjYedCjcK" />'
+    }
   end
 end

@@ -9,7 +9,7 @@ class Administration::V1::NewController < Administration::V1::PrivilegedControll
   end
 
   def new
-    @new = New.new occurred_at: DateTime.now, user_id: session[:user_id]
+    @new = New.new occurred_at: DateTime.now, user_id: session[:user_id], aim_at_platform: 'pc_and_mobile'
   end
 
   def index
