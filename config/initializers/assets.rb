@@ -2097,4 +2097,17 @@ Rails.application.config.assets.precompile += %w(
   banner/jiaotonggy.jpg
   banner/yjzxcscl.jpg
 
+  fabing_1.jpg
+  fabing_2.jpg
+  jinshi_1.jpg
+  jinshi_2.jpg
+  jinshi_3.jpg
+  jinshi_4.jpg
+  weihai_1.jpg
+  weihai_2.jpg
+  yufang_1.jpg
+  yufang_2.jpg
+  zhiliao1_1.jpg
+  zhiliao1_2.jpg
+
 )
