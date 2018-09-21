@@ -2127,4 +2127,11 @@ Rails.application.config.assets.precompile += %w(
   ssaq_2.jpg
   ssaq_3.jpg
   ssaq_4.jpg
+
+  bnz_1
+  bnz_2
+  bnz_3
+  bnz_4
+  bnz_5
+  bnz_6
 )
