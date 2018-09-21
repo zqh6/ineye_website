@@ -53,11 +53,13 @@
       <% content_for :script do %>
       <script type="text/javascript">
         $(function(){
+
           $(".doctorClickMask").click(function(){
             $(this).hide();
           });
 
           $('.js-user-name').on('click', function(){
+            console.log(1)
             var dom = $(this);
             $.ajax({
               url: "/all-api/users/"+dom.attr('data-user-id'),
@@ -67,6 +69,7 @@
               }
             })
               .done(function( data ) {
+                console.log(data)
                 if(data['success']){
                   var alertDom = $('.doctorClickMask');
                   var userInfo = data['collection'][0]['user'];
