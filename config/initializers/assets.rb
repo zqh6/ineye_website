@@ -13,7 +13,7 @@ Rails.application.config.assets.precompile += %w( mobile_test.css )
 #Todo Maybe remove shared/editor/google-code-prettify/prettify.css
 #Todo Maybe remove shared/bootstrap-wgsiwyg.js
 Rails.application.config.assets.precompile += %w(
-  404/main.css
+  404/main.css.erb
   abouts.css.erb
   administration/v1/con_educations/index.css
   administration/v1/con_educations/new.css
