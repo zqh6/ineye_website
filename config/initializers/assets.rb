@@ -2110,4 +2110,21 @@ Rails.application.config.assets.precompile += %w(
   zhiliao1_1.jpg
   zhiliao1_2.jpg
 
+  gzmx_1.jpg
+  gzmx_2.jpg
+  gzmx_3.jpg
+
+  hhsm_1.jpg
+  hhsm_2.jpg
+
+  ssqwt_1.jpg
+  ssqwt_2.jpg
+  ssqwt_3.jpg
+  ssqwt_4.jpg
+  ssqwt_5.jpg
+
+  ssaq_1.jpg
+  ssaq_2.jpg
+  ssaq_3.jpg
+  ssaq_4.jpg
 )
