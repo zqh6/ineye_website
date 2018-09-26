@@ -93,6 +93,9 @@ class ShareEnum < ApplicationRecord
     :'青少年近视防控新进展' => '青少年近视防控新进展',
     :'2018开学献礼' => '2018开学献礼',
     bnz:'白内障',
+
+
+
   }
 
   def self.form_options(enum_type)
