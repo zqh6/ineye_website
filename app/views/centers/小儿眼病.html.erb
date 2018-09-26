@@ -44,7 +44,15 @@
 <!--科室专家-->
 <!--诊疗项目-->
 <div class="centerModule" id="module4">
-    <p class="cureProject childrenProject"><span>诊疗项目</span><em class="active">视觉训练中心</em><em>RGP</em><em>青少年近视防控</em><em>儿童弱视科普</em><em>斜视</em><em>散光</em></p>
+    <p class="cureProject childrenProject">
+    <span>诊疗项目</span>
+    <a href="#1" class="<%= active if request.url.include?('#1')%>">视觉训练中心</a>
+    <a href="#2" class="<%= active if request.url.include?('#2')%>">RGP</a>
+    <a href="#3" class="<%= active if request.url.include?('#3')%>">青少年近视防控</a>
+    <a href="#4" class="<%= active if request.url.include?('#4')%>">儿童弱视科普</a>
+    <a href="#5" class="<%= active if request.url.include?('#5')%>">斜视</a>
+    <a href="#6" class="<%= active if request.url.include?('#6')%>">散光</a>
+    </p>
     <div class="cureProjectContainer">
         <div class="cureProjectModule">
             <div class="childrenTle">
@@ -211,7 +219,7 @@
             </div>
         </div>
         <div class="cureProjectModule flow pad15">
-            <div class="flow">
+            <div class="flow" id="1">
                 <div class="fl width560">
                     <p class="advBlueTitle">如何预防近视？</p>
                     <p class="thisIndent2">对于青少年而言，每学期应到医院进行健康检查，预防近视的发生及发展。</p>
@@ -259,6 +267,7 @@
                         <%= image_tag("shortsight4.jpg",alt: '视防控中的优势') %>
                     </div>
                 </div>
+
             </div>
 
         </div>
@@ -313,6 +322,88 @@
                     </div>
                 </div>
             </div>
+
+        </div>
+        <div class="cureProjectModule wordIndent">
+            <div class="flow">
+                 <p class="thisIndent2"> 斜视（strabismus）是指斜视是指一眼注视目标, 另一眼视线偏离目标的现象。 可因双眼单视异常或控制眼球运动的神经肌肉异常引起。
+                    </p>
+                    <p class="thisIndent2"> 斜视严重影响美观，斜视患者常被人起外号，难免给患者心理健康蒙上阴影，从而造成其孤僻、自卑及反常的心理， 所以要鼓励家长尽早为患儿做治疗。
+                    </p>
+
+                    <div class="img_box">
+                        <%= image_tag("xs_1.jpg",alt: '斜视的分类',:class=>'width560') %>
+                    </div>
+                <div class="fl width560">
+                    <p class="greenWord">1、内斜视</p>
+                    <p class="thisIndent2"> 一眼或双眼向内侧偏斜，双眼分别注视和各个方向。</p>
+                    <div class="img_box">
+                        <%= image_tag("xs_2.jpg",alt: '内斜视',:class=>'width560' ) %>
+                    </div>
+                    <p class="greenWord">2、外斜视</p>
+                    <p class="thisIndent2"> 双眼视轴分离，一眼或双眼交替间歇性或者恒定性外斜，遮盖注视是非主视眼由外向内转，向正前方注视。</p>
+                    <div class="img_box">
+                        <%= image_tag("xs_3.jpg",alt: '外斜视',:class=>'width560' ) %>
+                    </div>
+                </div>
+                <div class="fr width560 line24">
+                    <p class="greenWord">3、垂直斜视</p>
+                    <p class="thisIndent2"> 垂直斜视一般根据高位眼诊断。垂直性斜视病因很多，先天性的可以是解剖异常或神经肌肉麻痹，获得性的可以是闭合性颅脑外伤，眶壁骨折和眶肿瘤及全身性病变等。</p>
+                    <div class="img_box">
+                        <%= image_tag("xs_4.jpg",alt: '外斜视',:class=>'width560' ) %>
+                    </div>
+                    <p class="advBlueTitle"> 斜视的治疗目的</p>
+                    <p class="thisIndent2"> 儿童斜视治疗的最佳时间：先天性一般在6个月以内手术为最佳，在5岁以内做手术为宜。</p>
+                    <p class="greenWord">  儿童斜视治疗的主要目的：</p>
+                    <p class="thisIndent2"> 1、矫正屈光不正；</p>
+                    <p class="thisIndent2"> 2、有弱视的需要先行弱视训练；</p>
+                    <p class="thisIndent2"> 3、进行一些训练尽可能让眼球达到正位；</p>
+                    <p class="thisIndent2">  4、戴镜以后仍然存在斜视，或者经过弱视训练弱视眼睛恢复到了一定程度，就可以采用手术治疗。</p>
+                    <p class="greenWord">  成人斜视治疗的主要目的：主要纠正眼部的外观。：</p>
+                </div>
+            </div>
+        </div>
+        <div class="cureProjectModule wordIndent">
+            <div class="flow">
+                <h2 class="advBlueTitle flow_title"> 科普小知识之散光，不是闪光！</h2>
+                <p class="thisIndent2"> 当检查眼睛的时候，医生告诉我你有散光，配镜要特别注意。散光？一头雾水的我脑海里闪过这样的画面：“一闪一闪亮晶晶，满天都是小星星……”，别逗了，那是闪光，不是散光！
+                </p>
+                <div class="img_box">
+                    <%= image_tag("sg_1.jpg",alt: '散光1') %>
+                </div>
+                <div class="fl width560">
+                    <p class="greenWord">1、散光患者的世界应该是这样的：</p>
+                    <p class="thisIndent2"> 一眼或双眼向内侧偏斜，双眼分别注视和各个方向。</p>
+                    <div class="img_box">
+                        <%= image_tag("sg_2.jpg",alt: '散光2') %>
+                    </div>
+
+                    <p class="thisIndent2"> 看远看近都不清楚</p>
+                    <div class="img_box">
+                        <%= image_tag("sg_3.jpg",alt: '散光3' ) %>
+                    </div>
+                    <p class="thisIndent2"> 视物会有虚影</p>
+                    <div class="img_box">
+                        <%= image_tag("sg_4.jpg",alt: '散光4') %>
+                    </div>
+                    <p class="thisIndent2"> 散光眼的招牌动作是眯眼</p>
+
+                </div>
+                <div class="fr width560 line24">
+                    <p class="greenWord">2.什么是散光呢？</p>
+                    <p class="thisIndent2"> 散光指屈光系统中有部分屈光介质并不均匀，外界光线经过屈光系统不能汇聚成一点，而在视网膜上形成一个弥散光斑，无法形成点像，所以模糊，有虚影。</p>
+                    <div class="img_box">
+                        <%= image_tag("sg_5.jpg",alt: '散光5') %>
+                    </div>
+                    <p class="greenWord">3.有了散光怎么办？</p>
+                    <div class="img_box">
+                        <%= image_tag("sg_6.jpg",alt: '散光6') %>
+                    </div>
+                    <p class="thisIndent2"> 配戴框架眼镜：矫正大多数的规则散光。</p>
+                    <p class="greenWord">配戴角膜接触镜：可矫正规则和部分不规则散光。（临床中多使用的是RGP，即透气性硬镜。）</p>
+                    <p class="thisIndent2"> 手术：18岁以上成人的高度散光可考虑行角膜屈光手术治疗。</p>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -320,10 +411,42 @@
 <!--诊疗项目-->
 <% content_for :script do %>
 <script>
-    $(".cureProject em").click(function(){
-        console.log($(this).index());
-        $(this).addClass("active").siblings().removeClass("active")
-        $(".cureProjectContainer .cureProjectModule").eq($(this).index()-1).show().siblings().hide()
+    $(document).ready(function(){
+        //解析URL拿到锚点
+        var url = window.location.href;
+        //console.log(url)
+        var str = url.split("#",2)[1]
+        changes(str)
+        function changes(index){
+            if(index&&index!=""){
+                if(index>=0&&index<=6){
+                    index=index
+                }
+                else{
+                    index= 1;
+                }
+            }else{
+                index = 1
+            }
+        //console.log($(".cureProject a")[index])
+        // 相应标签增加背景
+        var dom = $(".cureProject a")[index-1]
+        $(dom).addClass("active")
+        //相应内容展示
+        var cureProjectModule = $(".cureProjectContainer .cureProjectModule").eq(index-1)
+        //console.log(cureProjectModule)
+        $(cureProjectModule).show().siblings().hide()
+            //console.log(dom)
+        }
+        $(".cureProject a").click(function(){
+
+            //console.log($(this).index());
+            var index = $(this).index()
+            $(this).siblings().removeClass("active")
+            changes(index)
+            $(".cureProjectContainer .cureProjectModule").eq($(this).index()-1).show().siblings().hide()
+        })
     })
+
 </script>
 <% end %>
