@@ -22,7 +22,7 @@
 						</div>
 						<div class="widget-body  am-fr">
 
-							<div class="am-u-sm-12 am-u-md-6 am-u-lg-6">
+							<div class="am-u-sm-3 am-u-md-3 am-u-lg-3">
 								<div class="am-form-group">
 									<div class="am-btn-toolbar">
 										<div class="am-btn-group am-btn-group-xs">
@@ -32,12 +32,17 @@
 								</div>
 							</div>
 							<%= form_tag administration_v1_new_index_path, method: :get do %>
-								<div class="am-u-sm-12 am-u-md-6 am-u-lg-3">
+								<div class="am-u-sm-3 am-u-md-3 am-u-lg-3">
 									<div class="am-form-group tpl-table-list-select">
 										<%= select_tag :classify, options_for_select({'所有类别' => '0'}.merge(ShareEnum.form_options('new_classifies')), params[:classify].present? ? params[:classify] : 0), include_blank: false, class: '', "data-am-selected"=> "{searchBox: 1, btnSize: 'sm'}", style: "display: none;" %>
 									</div>
 								</div>
-								<div class="am-u-sm-12 am-u-md-12 am-u-lg-3">
+								<div class="am-u-sm-3 am-u-md-3 am-u-lg-3">
+									<div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
+										<%= text_field_tag :content, params[:content], class: 'am-form-field', placeholder: '内容' %>
+									</div>
+								</div>
+								<div class="am-u-sm-3 am-u-md-3 am-u-lg-3">
 									<div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
 										<%= text_field_tag :title, params[:title], class: 'am-form-field', placeholder: '标题' %>
 										<span class="am-input-group-btn">
