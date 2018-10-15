@@ -240,7 +240,7 @@
     <ul class="flParent flow doctorList fl">
       <% @doctors.each do |doctor|%>
           <li>
-            <%= link_to image_tag('doctors/'+doctor.name.strip+'.jpg'), doctor_path(doctor.id) %>
+            <%= link_to image_tag(doctor.image_url_desc), doctor_path(doctor.id) %>
             <div class="IntroduceMask">
 
               <h5><%= doctor.name %></h5>

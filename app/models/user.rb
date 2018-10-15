@@ -27,6 +27,12 @@ class User < ApplicationRecord
   scope :name_is,           ->(name)         { where "#{table_name}.name = :name", name: "#{name}" }
   scope :create_user_is,    ->(create_user)  { where "#{table_name}.create_user_id = :create_user_id", create_user_id: create_user.id }
 
+  def image_url_desc
+    result = self.image_url
+    result = 'doctors/'+self.name.strip+'.jpg' if result.blank?
+    result
+  end
+
   def get_offices
     user_office_ids = OfficeUserRelation.alive.user_id_is(self.id).reorder('created_at DESC').collect{|i| i.office_id}
 

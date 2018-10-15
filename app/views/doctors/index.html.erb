@@ -6,7 +6,7 @@
   <% @doctors.each do |doctor| %>
   <li>
     <div class="photoBorder fl">
-      <%= image_tag('doctors/'+doctor.name.strip+'.jpg') %>
+      <%= image_tag(doctor.image_url_desc) %>
     </div>
     <div class="expertSynopsis fl">
       <h5><%= doctor.name %></h5>

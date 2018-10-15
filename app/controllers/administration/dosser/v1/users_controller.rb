@@ -87,7 +87,7 @@ class Administration::Dosser::V1::UsersController < Administration::Dosser::V1::
   end
 
   def user_attributes
-    params.permit(:name, :phone_number, :role_code, :honour_brief_introduction, :honour_specific, :good_at_field, :work_time, :detailed_introduction, :official_account, :user_order, :doctor_level)
+    params.permit(:name, :phone_number, :role_code, :honour_brief_introduction, :honour_specific, :good_at_field, :work_time, :detailed_introduction, :official_account, :user_order, :doctor_level, :image_url)
   end
 
   private :user_attributes

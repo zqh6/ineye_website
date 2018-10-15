@@ -1,8 +1,31 @@
 /*
- *= require_self
  */
 
 $(function(){
+
+  $('#fileupload').fileupload({
+    url: '/all-api/uploads'
+  });
+
+  //一选择文件的时候，自动上传
+  $('#fileupload').fileupload('option', {
+    dataType: 'json',
+    type: 'POST',
+    url: '/all-api/uploads',
+    singleFileUploads: false,
+    sequentialUploads: true,
+    autoUpload: true,
+    formData: {path: 'image/doctor', oss: 'true'}
+  });
+
+  $('#fileupload').fileupload(
+    'option',
+    'redirect',
+    window.location.href.replace(
+      /\/[^\/]*$/,
+      '/cors/result.html?%s'
+    )
+  );
 
   //showOrHide($('#role_code').val()=='common_user');
 	$('.js-create').on('click', submitData);
@@ -49,6 +72,7 @@ function submitData(){
     requestData['work_time'] = $('#work_time').val();
     requestData['detailed_introduction'] = changeStr($('#detailed_introduction').val());
     requestData['doctor_level'] = $('#doctor_level').val();
+    requestData['image_url'] = $('.js-files-vector').find('.js-one').attr('data-file-path');
   }
   console.log(requestData);
 	$.ajax({
