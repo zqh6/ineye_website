@@ -1,0 +1,98 @@
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>读取Excel表格的内容</title>
+  </head>
+  <body>
+    <style type="text/css">
+      #canvas{
+        width: 1072px;
+        height: 712px;
+        background-image:url("<%= asset_path '1.jpg' %>");
+        background-size:100%;
+      }
+    </style>
+    <canvas id="canvas" width="1072" height="712"></canvas>
+        <input type="file" id="excel-file">
+    <div class="content">
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112338179-1"></script> -->
+    <%= javascript_include_tag 'xlsx.core.min' %>
+    <% content_for :script do %>
+    <script type="text/javascript">
+      var newPerX = []
+      var newPerY = []
+      $('#excel-file').change(function(e) {
+            var files = e.target.files;
+
+            var fileReader = new FileReader();
+            fileReader.onload = function(ev) {
+                try {
+                    var data = ev.target.result,
+                        workbook = XLSX.read(data, {
+                            type: 'binary'
+                        }), // 以二进制流方式读取得到整份excel表格对象
+                        persons = []; // 存储获取到的数据
+                } catch (e) {
+                    console.log('文件类型不正确');
+                    return;
+                }
+
+                // 表格的表格范围，可用于判断表头是否数量是否正确
+                var fromTo = '';
+                // 遍历每张表读取
+                for (var sheet in workbook.Sheets) {
+                    if (workbook.Sheets.hasOwnProperty(sheet)) {
+                        fromTo = workbook.Sheets[sheet]['!ref'];
+                        //console.log(fromTo);
+                        persons = persons.concat(XLSX.utils.sheet_to_json(workbook.Sheets[sheet]));
+                        // break; // 如果只取第一张表，就取消注释这行
+                    }
+                }
+                eachFlie(persons)
+                //console.log(persons[0].x);
+            };
+
+            // 以二进制方式打开文件
+            fileReader.readAsBinaryString(files[0]);
+        });
+      function eachFlie(persons){
+               for(i=0;i<persons.length;i++)
+               {
+
+                   // var newPersX = persons[i].x
+                   //console.log(newPersX)
+                   var newPersX = parseInt((persons[i].x)/4)
+                   newPerX.push(newPersX)
+                   // var newPersY = persons[i].Y
+                   var newPersY = parseInt((persons[i].y)/4)
+                   newPerY.push(newPersY)
+               }
+               // console.log(newPerX)
+               // console.log(newPerY)
+               draw()
+      }
+      function draw(){
+        //矩形绘画
+          var canvas = document.getElementById("canvas");
+          var context = canvas.getContext('2d');
+          // context.fillStyle = "white"        //填充颜色
+          context.strokeStyle ="red"        //图形边框颜色
+          context.lineWidth = 0.5 ;             //设置画笔宽度
+          // context.fillRect(0,0,500,500)      //设置背景位置宽高
+          for (j=0;j<newPerY.length;j++)
+          {
+
+           context.strokeRect(newPerY[j],newPerX[j],0,1)
+            //console.log(newPerY[j],newPerX[j])
+            // context.strokeRect(1,1,1,1)
+          }
+
+          console.log("画完了")
+      }
+</script>
+<% end %>
+      </body>
+</html>

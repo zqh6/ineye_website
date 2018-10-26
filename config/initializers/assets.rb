@@ -284,6 +284,7 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/users/new.js
   administration/v1/banners/new.js
 
+  xlsx.core.min.js
   application.js
   baguetteBox.min.js
   bannerList.js
