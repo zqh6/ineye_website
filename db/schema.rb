@@ -275,6 +275,7 @@ ActiveRecord::Schema.define(version: 20181026034317) do
     t.string   "official_account",                                                        null: false
     t.integer  "user_order",                              default: 0
     t.string   "doctor_level"
+    t.string   "image_url"
     t.index ["create_user_id"], name: "index_users_on_create_user_id", using: :btree
     t.index ["doctor_level"], name: "index_users_on_doctor_level", using: :btree
     t.index ["name"], name: "index_users_on_name", using: :btree

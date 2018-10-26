@@ -1,4 +1,4 @@
-<form class="am-form tpl-form-line-form js-form" <% if @user.new_record? %>action="/administration-api/v1/users" method="post"<% else %> action="/administration-api/v1/users/<%= @user.id %>" method="put"<% end %>>
+<div class="am-form tpl-form-line-form js-form" <% if @user.new_record? %>action="/administration-api/v1/users" method="post"<% else %> action="/administration-api/v1/users/<%= @user.id %>" method="put"<% end %>>
 	<div class="am-form-group">
 		<label for="name" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :name %> <span class="tpl-form-line-small-title"><%= :name.to_s.titleize %></span></label>
 		<div class="am-u-sm-9">
@@ -54,6 +54,55 @@
       </div>
     </div>
 
+    <div class="am-form-group js-pdf-vector">
+      <label for="pdf_file" class="am-u-sm-3 am-form-label"><span class="required-hint">*</span><%= User.human_attribute_name :image_url %>（一张）</label>
+      <div class="am-u-sm-9">
+        <% if !@user.new_record? %>
+          <img src="<%= @user.image_url %>" style="height: 200px; width: auto;"/>
+        <% end %>
+        <!-- 上传表单 -->
+        <form id="fileupload" action="/upload" method="POST" enctype="multipart/form-data"
+              class="am-form tpl-form-border-form tpl-form-border-br">
+          <div class="am-form-group">
+            <div class="am-u-sm-3">
+              <span class="btn btn-success fileinput-button">
+                <i class="am-icon-plus"></i>
+                <span><% if !@user.new_record? %>重新<% end %>上传图像</span>
+                <input type="file" name="files[]">
+              </span>
+
+              <!-- <button type="button" class="btn btn-danger delete js-delete-all-files">
+                <i class="am-icon-trash"></i>
+                <span>取消上传</span>
+              </button> -->
+
+              <!-- The global file processing state -->
+              <span class="fileupload-process"></span>
+            </div>
+            <div class="am-u-sm-3">
+              <div class="fileupload-progress fade">
+                <!-- The global progress bar -->
+                <div class="progress progress-striped active" role="progressbar" aria-valuemin="0"
+                     aria-valuemax="100">
+                  <div class="progress-bar progress-bar-success" style="width:0%;"></div>
+                </div>
+                <!-- The extended global progress state -->
+                <div class="progress-extended">&nbsp;</div>
+              </div>
+            </div>
+            <div class="row fileupload-buttonbar">
+              <!-- The global progress state -->
+
+            </div>
+          </div>
+          <!-- The table listing the files available for upload/download -->
+          <table role="presentation" class="js-picture-table table table-striped">
+            <tbody class="files js-files-vector"></tbody>
+          </table>
+        </form>
+      </div>
+    </div>
+
     <div class="am-form-group">
       <label for="honour_brief_introduction" class="am-u-sm-3 am-form-label"><%= User.human_attribute_name :honour_brief_introduction %> <span class="tpl-form-line-small-title"><%= :honour.to_s.titleize %></span></label>
       <div class="am-u-sm-9">
@@ -97,4 +146,75 @@
 		</div>
 	</div>
 
-</form>
+</div>
+
+<!-- 图片放大 -->
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+<!-- 上传时的模版 -->
+<script id="template-upload" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+  <tr class="template-upload fade">
+    <td>
+      <span class="preview">
+      </span>
+    </td>
+    <td>
+      <p class="name">{%=file.name%}</p>
+      <strong class="error text-danger"></strong>
+    </td>
+    <td>
+      <p class="size">Processing...</p>
+      <div class="progress progress-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar progress-bar-success" style="width:0%;"></div></div>
+    </td>
+    <td>
+      {% if (!i && !o.options.autoUpload) { %}
+        <button class="btn btn-primary start" disabled>
+          <i class="am-icon-cloud-upload"></i>
+          <span>Start</span>
+        </button>
+      {% } %}
+      {% if (!i) { %}
+        <button class="btn btn-warning cancel">
+          <i class="am-icon-close"></i>
+          <span>Cancel</span>
+        </button>
+      {% } %}
+    </td>
+  </tr>
+{% } %}
+</script>
+
+<!-- 上传完毕后的模版 -->
+<script id="template-download" type="text/x-tmpl">
+{% for (var i=0, file; file=o.files[i]; i++) { %}
+  <tr class="template-download fade js-one" data-file-path="{%=file.path%}">
+    <td>
+      <img style="width: 100px; height: auto;" src="{%= file.path %}"/>
+    </td>
+    <td>
+      <span>{%=file.name%}</span>
+      {% if (file.error) { %}
+        <div><span class="label label-danger">Error</span> {%=file.error%}</div>
+      {% } %}
+    </td>
+    <td>
+      {%=o.formatFileSize(file.size)%}
+    </td>
+    <td>
+      <button class="btn btn-warning cancel">
+        <i class="am-icon-close"></i>
+        <span>Cancel</span>
+      </button>
+    </td>
+  </tr>
+{% } %}
+</script>

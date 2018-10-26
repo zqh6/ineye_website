@@ -51,6 +51,7 @@ zh-CN:
         user_order: 用户按大排序
         doctor_level: 级别划分
         unit_name: 医院名称
+        image_url: 医生宣传照
 
       password:
         old_password:  旧密码
