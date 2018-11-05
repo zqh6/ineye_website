@@ -10,7 +10,7 @@ set :deploy_to, '/data/project/ineye_website'
 set :repository, 'git@git.healthsvision.com:hesheng/ineye_website.git'
 set :branch, 'master'
 #set :forward_agent, false
-set :shared_paths, ['config/database.yml', 'config/local_env.yml','config/yetting.yml', 'log', 'tmp']
+set :shared_paths, ['config/database.yml', 'config/local_env.yml','config/yetting.yml', 'log', 'tmp', 'tmp/pids/unicorn.pid']
 #set :sidekiq_pid, "#{deploy_to}/tmp/pids/sidekiq.pid"
 set :unicorn_pid, "#{deploy_to}/tmp/pids/unicorn.pid"
 
