@@ -10,7 +10,7 @@ set :deploy_to, '/data/project/ineye_website'
 set :repository, 'git@git.healthsvision.com:hesheng/ineye_website.git'
 set :branch, 'master'
 #set :forward_agent, false
-set :shared_paths, ['config/database.yml', 'config/local_env.yml','config/yetting.yml', 'log', 'tmp', 'tmp/pids/unicorn.pid']
+set :shared_paths, ['config/database.yml', 'config/local_env.yml','config/yetting.yml', 'log', 'tmp']
 #set :sidekiq_pid, "#{deploy_to}/tmp/pids/sidekiq.pid"
 set :unicorn_pid, "#{deploy_to}/tmp/pids/unicorn.pid"
 
@@ -19,6 +19,9 @@ task :environment do
 end
 
 task :setup => :environment do
+  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/tmp/sockets/"]
+  queue! %[mkdir -p "#{deploy_to}/#{shared_path}/tmp/pids/"]
+
   queue! %[mkdir -p "#{deploy_to}/tmp/sockets/"]
   queue! %[mkdir -p "#{deploy_to}/tmp/pids/"]
 
@@ -29,6 +32,8 @@ task :setup => :environment do
   queue! %[touch "#{deploy_to}/#{shared_path}/config/local_env.yml"]
   queue! %[touch "#{deploy_to}/#{shared_path}/config/database.yml"]
   queue! %[touch "#{deploy_to}/#{shared_path}/config/yetting.yml"]
+
+  queue! %[touch "#{deploy_to}/#{shared_path}/tmp/pids/unicorn.pid"]
   queue  %[echo "-----> Be sure to edit '#{deploy_to}/#{shared_path}/config/database.yml','local_env.yml'"]
 
 =begin
