@@ -2135,4 +2135,6 @@ Rails.application.config.assets.precompile += %w(
   bnz_4
   bnz_5
   bnz_6
+
+  header_logo3.png
 )
