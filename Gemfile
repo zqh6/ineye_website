@@ -75,3 +75,6 @@ gem 'china_sms'
 gem 'aliyun-oss-sdk', '~> 0.1.8'
 gem "carrierwave", "0.8.0"
 gem 'carrierwave-aliyun', '~> 0.7.0'
+
+gem 'mina', '~> 0.3.8'
+gem 'mina-unicorn', :require => false
