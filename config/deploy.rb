@@ -70,8 +70,9 @@ task :deploy do
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
-    invoke :'unicorn:restart'
     to :launch do
+      queue %[cd "#{deploy_to}/current"]
+      invoke :'unicorn:restart'
     end
   end
 
