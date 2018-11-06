@@ -70,8 +70,8 @@ task :deploy do
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
+    invoke :'unicorn:restart'
     to :launch do
-      invoke :'unicorn:restart'
     end
   end
 
