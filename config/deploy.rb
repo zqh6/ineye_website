@@ -10,7 +10,7 @@ set :deploy_to, '/data/project/ineye_website'
 set :repository, 'git@git.healthsvision.com:hesheng/ineye_website.git'
 set :branch, 'master'
 #set :forward_agent, false
-set :shared_paths, ['config/database.yml', 'config/local_env.yml','config/yetting.yml', 'log', 'tmp']
+set :shared_paths, ['config/database.yml', 'config/local_env.yml','config/yetting.yml', 'log']
 #set :sidekiq_pid, "#{deploy_to}/tmp/pids/sidekiq.pid"
 set :unicorn_pid, "#{deploy_to}/tmp/pids/unicorn.pid"
 
@@ -71,7 +71,6 @@ task :deploy do
     invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
     to :launch do
-      queue %[cd "#{deploy_to}/current"]
       invoke :'unicorn:restart'
     end
   end

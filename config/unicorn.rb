@@ -20,7 +20,8 @@ if 'production' == ENV['RAILS_ENV']
 =end
   worker_processes 1
   listen 3001, :tcp_nopush => true
-  pid "#{APP_HOME}/tmp/pids/unicorn.pid"
+  #pid "#{APP_HOME}/tmp/pids/unicorn.pid"
+  pid "/data/project/ineye_website/tmp/pids/unicorn.pid"
 else
   worker_processes 1
   listen 3001, :tcp_nopush => true
