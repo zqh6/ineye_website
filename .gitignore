@@ -30,6 +30,9 @@ tmp
 /public/test
 /public/uploads
 
+#/public/*
+#!/public/mytxz/
+
 
 .idea/*
 
