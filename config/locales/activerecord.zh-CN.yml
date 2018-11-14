@@ -33,6 +33,7 @@ zh-CN:
         state: 状态
         tag: 标签
         defunct: 状态
+        read_count: 阅读量
 
       user:
         name:         姓名

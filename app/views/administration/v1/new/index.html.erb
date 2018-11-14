@@ -57,6 +57,9 @@
 									<tr>
 										<th><%= New.human_attribute_name :id %></th>
 										<th><%= New.human_attribute_name :title %></th>
+										<% if @login_user.role_code=='sys_admin' %>
+											<th><%= New.human_attribute_name :read_count %></th>
+										<% end %>
 										<th><%= New.human_attribute_name :tag %></th>
 										<!--<th><%= New.human_attribute_name :user %></th>-->
                     <th><%= New.human_attribute_name :classify %></th>
@@ -75,6 +78,9 @@
 														<%= new.title %>
         					        <% end %>
 			                  </td>
+			                  <% if @login_user.role_code=='sys_admin' %>
+			                  	<td><%= new.read_count %></td>
+			                  <% end %>
 												<td><%= TagRelation.get_tags_by(object: new) %></td>
 												<!--<td><%= new.user.try(:name).blank? ? '（暂无名称）' : new.user.name %></td>-->
 												<td><%= ShareEnum.new_classifies[new.classify.to_sym] %></td>

@@ -11,6 +11,10 @@ class NewsController < ApplicationController
       a = params[:id]
     end
 
+    #read count
+    @new.read_count = @new.read_count.to_i+1
+    @new.save!
+
     tag_names = TagRelation.alive.relation_id_is(@new.id).collect{|i| i.tag_name}
     new_ids = TagRelation.alive.relation_type_is(New.name.underscore).where('tag_name in (?)', tag_names).collect{|i| i.relation_id.to_i}.uniq
     if new_ids.present?
