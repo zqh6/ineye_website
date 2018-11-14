@@ -25,14 +25,21 @@ tmp
 # Ignore Byebug command history file.
 .byebug_history
 
-/public/another
-/public/pdfjs
-/public/test
-/public/uploads
+#/public/another
+#/public/pdfjs
+#/public/test
+#/public/uploads
 
-#/public/*
-#!/public/mytxz/
-
+/public/*
+!/public/assets/
+/public/assets/*
+!/public/assets/administration
+/public/assets/administration/*
+!/public/assets/administration/v1
+/public/assets/administration/v1/*
+!/public/assets/administration/v1/shared
+/public/assets/administration/v1/shared/*
+!/public/assets/administration/v1/shared/kindeditor
 
 .idea/*
 
