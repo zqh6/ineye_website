@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181115055311) do
+ActiveRecord::Schema.define(version: 20181115060830) do
 
   create_table "activity_enters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "phone_number"
-    t.string   "activity_type",                                            null: false
-    t.string   "state",          limit: 1, default: "C",                   null: false
-    t.datetime "opened_at",                default: '1970-01-01 00:00:00', null: false
-    t.datetime "closed_at",                default: '3000-01-01 00:00:00', null: false
-    t.boolean  "defunct",                  default: false,                 null: false
-    t.datetime "created_at",                                               null: false
-    t.datetime "updated_at",                                               null: false
+    t.string   "activity_type",                                           null: false
+    t.string   "state",         limit: 1, default: "C",                   null: false
+    t.datetime "opened_at",               default: '1970-01-01 00:00:00', null: false
+    t.datetime "closed_at",               default: '3000-01-01 00:00:00', null: false
+    t.boolean  "defunct",                 default: false,                 null: false
+    t.datetime "created_at",                                              null: false
+    t.datetime "updated_at",                                              null: false
     t.string   "ip"
     t.string   "remote_ip"
     t.string   "user_agent"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20181115055311) do
     t.string   "description"
     t.string   "remark"
     t.string   "age"
-    t.string   "glasses_number"
     t.index ["activity_type"], name: "index_activity_enters_on_activity_type", using: :btree
     t.index ["name"], name: "index_activity_enters_on_name", using: :btree
     t.index ["phone_number"], name: "index_activity_enters_on_phone_number", using: :btree
