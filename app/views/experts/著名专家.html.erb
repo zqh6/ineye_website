@@ -57,7 +57,7 @@
         <h5>朱思泉</h5>
         <p>主任医师/教授/博士生导师</p>
         <p class="expertsGoodAt"><span>擅长领域：</span></p>
-        <p>主要从事先天性白内障、葡萄膜炎并发白内障、伴有红斑狼疮的白内障、肾移植术后白内障等各类疑难、复杂性白内障的手术治疗游刃有余，技术精湛。迄今已完成逾35万台白内障手术，手术量居全国第一，亚洲乃至世界领先。</p>
+        <p>主要从事先天性白内障、葡萄膜炎并发白内障、伴有红斑狼疮的白内障、肾移植术后白内障等各类疑难、复杂性白内障的手术治疗游刃有余，技术精湛。迄今已完成逾35万台白内障手术。</p>
         <% doctor = User.role_code_is('common_user').name_is('朱思泉').first %>
         <div><%= link_to "查看详情", (doctor.present? ? doctor_path(doctor.try(:id)) : expert_path(:朱思泉教授)),:class =>'seeDetail' %></div>
       </div>
