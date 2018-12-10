@@ -33,8 +33,9 @@ http://sourceforge.net/adobe/cmap/wiki/License/
 <!-- This snippet is used in production (included from viewer.html) -->
 <link rel="resource" type="application/l10n" href="/pdfjs/locale/locale.properties"/>
 
-<%= javascript_include_tag '/assets/pdfjs/l10n.js' %>
-<%= javascript_include_tag '/assets/pdfjs/pdf.js' %>
+<script src="/assets/pdfjs/l10n.js"></script>
+<script src="/assets/pdfjs/pdf.js"></script>
+
 <style type="text/css">
   #outerContainer{
     height: 900px;
@@ -43,8 +44,10 @@ http://sourceforge.net/adobe/cmap/wiki/License/
     background: #404040;
   }
 </style>
-    <%= javascript_include_tag '/assets/pdfjs/debugger.js' %>
-    <%= javascript_include_tag '/assets/pdfjs/viewer.js' %>
+
+    <script src="/assets/pdfjs/debugger.js"></script>
+    <script src="/assets/pdfjs/viewer.js"></script>
+
   <!-- </head> -->
 
 

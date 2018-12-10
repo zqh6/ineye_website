@@ -25,15 +25,15 @@ http://sourceforge.net/adobe/cmap/wiki/License/
 
 <%= stylesheet_link_tag 'viewer' %>
 
+<script src="/assets/pdfjs/compatibility.js"></script>
 
-<%= stylesheet_link_tag 'locale.properties' %>
-<%= javascript_include_tag 'pdfjs/compatibility' %>
+
+
 <!-- This snippet is used in production (included from viewer.html) -->
 <link rel="resource" type="application/l10n" href="/pdfjs/locale/locale.properties"/>
-<%= javascript_include_tag 'pdfjs/l10n' %>
-<%= javascript_include_tag 'pdfjs/pdf' %>
 
-
+<script src="/assets/pdfjs/l10n.js"></script>
+<script src="/assets/pdfjs/pdf.js"></script>
 
 <style type="text/css">
   #outerContainer{
@@ -43,8 +43,10 @@ http://sourceforge.net/adobe/cmap/wiki/License/
     background: #404040;
   }
 </style>
-<%= javascript_include_tag 'pdfjs/debugger' %>
-<%= javascript_include_tag 'pdfjs/viewer' %>
+
+<script src="/assets/pdfjs/debugger.js"></script>
+<script src="/assets/pdfjs/viewer.js"></script>
+
 <!-- </head> -->
 
 
