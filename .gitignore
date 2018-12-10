@@ -34,6 +34,7 @@ tmp
 !/public/assets/
 /public/assets/*
 !/public/assets/administration
+!/public/assets/pdfjs
 /public/assets/administration/*
 !/public/assets/administration/v1
 /public/assets/administration/v1/*
