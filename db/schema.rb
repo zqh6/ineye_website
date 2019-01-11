@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181115064740) do
+ActiveRecord::Schema.define(version: 20190111082351) do
 
   create_table "activity_enters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20181115064740) do
     t.string   "remark"
     t.string   "age"
     t.string   "glasses_number_one"
+    t.string   "pre_time"
     t.index ["activity_type"], name: "index_activity_enters_on_activity_type", using: :btree
     t.index ["name"], name: "index_activity_enters_on_name", using: :btree
     t.index ["phone_number"], name: "index_activity_enters_on_phone_number", using: :btree
