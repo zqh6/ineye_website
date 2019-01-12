@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20190112021826) do
     t.string   "age"
     t.string   "glasses_number"
     t.string   "glasses_number_one"
+    t.string   "pre_time"
     t.index ["activity_type"], name: "index_activity_enters_on_activity_type", using: :btree
     t.index ["name"], name: "index_activity_enters_on_name", using: :btree
     t.index ["phone_number"], name: "index_activity_enters_on_phone_number", using: :btree
