@@ -13,7 +13,7 @@ class Administration::V1::ActivityEntersController < Administration::V1::Privile
           row_data =[activity_enter.name, activity_enter.phone_number, activity_enter.created_at_desc, ShareEnum.activity_types[activity_enter.activity_type.to_sym]]
           csv << row_data
         end
-      end.encode('gb2312', :invalid => :replace, :undef => :replace, :replace => "?")
+      end.encode('UTF-8')
       send_data csv, filename: '活动报名'+Time.now.strftime('%Y-%m-%d %H-%M-%S')+'.csv' and return
     end
   end
