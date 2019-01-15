@@ -12,7 +12,7 @@ class Administration::V1::ActivityEntersController < Administration::V1::Privile
         names = []
         @activity_enters.each do |activity_enter|
           if names.exclude?(activity_enter.name)
-            row_data =[activity_enter.name, activity_enter.phone_number, activity_enter.created_at_desc, ShareEnum.activity_types[activity_enter.activity_type.to_sym], activity_enter.pre_time.try(:strftime, '%Y-%m-%d %H:%M:%S'), activity_enter.age]
+            row_data =[activity_enter.name, activity_enter.phone_number, activity_enter.created_at_desc, ShareEnum.activity_types[activity_enter.activity_type.to_sym], activity_enter.pre_time, activity_enter.age]
             csv << row_data
             names.push(activity_enter.name)
           end
