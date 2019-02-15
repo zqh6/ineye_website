@@ -78,3 +78,6 @@ gem 'carrierwave-aliyun', '~> 0.7.0'
 
 gem 'mina', '~> 0.3.8'
 gem 'mina-unicorn', :require => false
+
+gem 'axlsx', '2.1.0.pre'
+gem 'axlsx_rails'
