@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190112021826) do
+ActiveRecord::Schema.define(version: 20190130023731) do
 
   create_table "activity_enters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(version: 20190112021826) do
     t.string   "description"
     t.string   "remark"
     t.string   "age"
-    t.string   "glasses_number"
     t.string   "glasses_number_one"
     t.string   "pre_time"
     t.index ["activity_type"], name: "index_activity_enters_on_activity_type", using: :btree
@@ -200,6 +199,30 @@ ActiveRecord::Schema.define(version: 20190112021826) do
     t.index ["user_id"], name: "index_passwords_on_user_id", using: :btree
   end
 
+  create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "questions_1"
+    t.string "answer_1"
+    t.string "questions_2"
+    t.string "answer_2"
+    t.string "questions_3"
+    t.string "answer_3"
+    t.string "questions_4"
+    t.string "answer_4"
+    t.string "questions_5"
+    t.string "answer_5"
+    t.string "questions_6"
+    t.string "answer_6"
+    t.string "questions_7"
+    t.string "answer_7"
+    t.string "questions_8"
+    t.string "answer_8"
+    t.string "questions_9"
+    t.string "answer_9"
+    t.string "questions_10"
+    t.string "answer_10"
+    t.string "suggestions"
+  end
+
   create_table "schedulings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "office_time_id",                                                    null: false
     t.integer  "user_id",                                                           null: false
@@ -221,18 +244,6 @@ ActiveRecord::Schema.define(version: 20190112021826) do
     t.index ["state"], name: "index_schedulings_on_state", using: :btree
     t.index ["user_id"], name: "index_schedulings_on_user_id", using: :btree
     t.index ["week_code"], name: "index_schedulings_on_week_code", using: :btree
-  end
-
-  create_table "statistics_urls", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "url",                                                  null: false
-    t.integer  "count",                default: 0,                     null: false
-    t.string   "state",      limit: 1, default: "C",                   null: false
-    t.datetime "opened_at",            default: '1970-01-01 00:00:00', null: false
-    t.datetime "closed_at",            default: '3000-01-01 00:00:00', null: false
-    t.boolean  "defunct",              default: false,                 null: false
-    t.datetime "created_at",                                           null: false
-    t.datetime "updated_at",                                           null: false
-    t.index ["url"], name: "index_statistics_urls_on_url", using: :btree
   end
 
   create_table "tag_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
