@@ -96,7 +96,8 @@ class ShareEnum < ApplicationRecord
     bnzbt:'白内障补贴',
     zjhd:'摘镜活动',
     nzhk:'年终回馈',
-    hdbm:'眼健康活动报名'
+    hdbm:'眼健康活动报名',
+    jsfkjz:'青少年近视防控讲座'
 
 
   }
