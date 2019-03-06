@@ -13,8 +13,7 @@ class SearchWebsitesController < ApplicationController
       info[:link] = '/doctors/'+doctor.id.to_s
       @collection.push(info)
     end
-
-    news = New.alive.title_like(@search_value)
+    news = New.alive.title_like(@search_value)+New.alive.classify_tag_like(@search_value)
     news.each do |n|
       info = {}
       info[:name] = n.title

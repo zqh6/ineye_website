@@ -83,7 +83,9 @@
 			                  <% end %>
 												<td><%= TagRelation.get_tags_by(object: new) %></td>
 												<!--<td><%= new.user.try(:name).blank? ? '（暂无名称）' : new.user.name %></td>-->
-												<td><%= ShareEnum.new_classifies[new.classify.to_sym] %></td>
+												<td><%= ShareEnum.new_classifies[new.classify.to_sym] %>
+													<%#=new.classify.to_sym%>
+												</td>
 												<td><%= new.occurred_at==Time.utc(1970) ? ' ' : (l new.occurred_at, format: :human_date) %></td>
 												<td><%= l new.created_at, format: :human_date %></td>
 												<td>

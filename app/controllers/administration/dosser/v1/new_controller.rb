@@ -7,6 +7,7 @@ class Administration::Dosser::V1::NewController < Administration::Dosser::V1::Pr
       new = New.new new_attributes
       new.user = @login_user
       new.defunct = (params[:defunct]=='true')
+      new.classify_tag = ShareEnum.new_classifies[params[:classify].to_sym]
       if new.save
         tags = params[:tags].to_s.strip
         render_conflict message: '标签不要乱输入，Okay?' and return if (/\A(;|；)+\z/.match(tags)).present?

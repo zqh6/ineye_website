@@ -15,7 +15,8 @@ class ShareEnum < ApplicationRecord
     science: '科普新闻',
     medicion: '医药新闻',
     activity: '活动新闻',
-    notice: '通知公告'
+    notice: '通知公告',
+    ybjc:'眼保健操'
   }
 
   enum role: {
@@ -110,4 +111,11 @@ class ShareEnum < ApplicationRecord
     h
   end
 
+  def self.form_options_value(enum_type)
+     h = {}
+    ShareEnum.try(enum_type.to_sym).each do |key, value|
+      h[value.to_sym] = value.to_s
+    end
+    h
+  end
 end

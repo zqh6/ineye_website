@@ -37,6 +37,7 @@ class NewsController < ApplicationController
   end
 
   def new
+
   end
 
   def index
@@ -46,5 +47,7 @@ class NewsController < ApplicationController
       render action: 'list/'+params[:function] and return
     end
   end
+
+
 
 end
