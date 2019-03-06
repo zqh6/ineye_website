@@ -59,7 +59,6 @@
 <%= javascript_include_tag '//apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js' %>
 <script type="application/javascript">
   $('.js-search-btn').on('click', function(){
-    console.log(1)
     var searchValue = $('.js-search-input').val();
     if(searchValue==null ||searchValue=='' || $.trim(searchValue)==''){
       return;
