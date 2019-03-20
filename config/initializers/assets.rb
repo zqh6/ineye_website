@@ -2148,4 +2148,5 @@ Rails.application.config.assets.precompile += %w(
   yjk_sp_img_1.jpg
   yjk_sp_img_2.jpg
   yjk_footer_logo.jpg
+
 )

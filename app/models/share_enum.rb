@@ -98,7 +98,8 @@ class ShareEnum < ApplicationRecord
     zjhd:'摘镜活动',
     nzhk:'年终回馈',
     hdbm:'眼健康活动报名',
-    jsfkjz:'青少年近视防控讲座'
+    jsfkjz:'青少年近视防控讲座',
+    rgjthd:'三焦点人工晶体',
 
 
   }
