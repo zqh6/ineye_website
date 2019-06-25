@@ -18,7 +18,11 @@ Rails.application.routes.draw do
   resources :find_passwords
   resources :sessions
   resources :search_websites
-
+  resources :zt do
+    collection do
+      get :sq
+    end
+  end
   namespace :exhibition do
     namespace :v1 do
       resources :news,     only: [:index, :show]
@@ -61,6 +65,7 @@ Rails.application.routes.draw do
     resources :search_websites
     resources :sessions
     resources :uploads
+
   end
 
   %w(404).each do |code|

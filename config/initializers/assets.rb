@@ -55,7 +55,7 @@ Rails.application.config.assets.precompile += %w(
   shared/amazeui_template1.css.erb
   video-js.css.erb
   viewer.css.erb
-
+  zt.css.erb
 
   404/custom-scripts.js
   404/jquery-1.7.2.min.js
@@ -283,6 +283,7 @@ Rails.application.config.assets.precompile += %w(
   administration/v1/users/index.js
   administration/v1/users/new.js
   administration/v1/banners/new.js
+  zt.js
 
   xlsx.core.min.js
   application.js
@@ -2148,5 +2149,36 @@ Rails.application.config.assets.precompile += %w(
   yjk_sp_img_1.jpg
   yjk_sp_img_2.jpg
   yjk_footer_logo.jpg
+
+  zt/banner.jpg
+  zt/m1_pic1.jpg
+  zt/m2_pic1.jpg
+  zt/team.jpg
+  zt/zj1.jpg
+  zt/zj2.jpg
+  zt/zj3.jpg
+  zt/m2_pic2.jpg
+  zt/m3a_pic1.jpg
+  zt/m3a_pic2.jpg
+  zt/header_bg.jpg
+  zt/m1_bg.jpg
+  zt/logo.png
+  zt/home.png
+  zt/tel.png
+  zt/footer.png
+  zt/m3a_pic3.jpg
+  zt/smile.jpg
+  zt/m3b_pic1.jpg
+  zt/m3b_pic2.jpg
+  zt/m3c_pic1.jpg
+  zt/m3d_pic1.jpg
+  zt/m3d_pic2.jpg
+  zt/hj.jpg
+  zt/wx.jpg
+  zt/by.jpg
+  zt/f_tel.jpg
+  zt/gotop.png
+  zt/nav.jpg
+
 
 )
