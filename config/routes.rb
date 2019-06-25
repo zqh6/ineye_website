@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :zt do
     collection do
       get :sq
+      get :ce_shi
     end
   end
   namespace :exhibition do

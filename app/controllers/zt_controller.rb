@@ -6,4 +6,7 @@ class ZtController < ApplicationController
   def sq
 
   end
+
+  def ce_shi
+  end
 end
