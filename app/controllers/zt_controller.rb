@@ -4,6 +4,6 @@ class ZtController < ApplicationController
 
   end
   def sq
-
+    Rails.logger.warn 'zt sq 路由日志'
   end
 end
