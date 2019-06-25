@@ -3,10 +3,8 @@ class ZtController < ApplicationController
   def index
 
   end
-  def sq
 
-  end
+  def sqs
 
-  def ce_shi
   end
 end
