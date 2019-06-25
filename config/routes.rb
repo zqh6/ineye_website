@@ -20,8 +20,7 @@ Rails.application.routes.draw do
   resources :search_websites
   resources :zt do
     collection do
-      get :sq
-      get :ce_shi
+      get :sqs
     end
   end
   namespace :exhibition do
