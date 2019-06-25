@@ -55,7 +55,7 @@ Rails.application.config.assets.precompile += %w(
   shared/amazeui_template1.css.erb
   video-js.css.erb
   viewer.css.erb
-  zt.css.erb
+  zts.css.erb
 
   404/custom-scripts.js
   404/jquery-1.7.2.min.js
