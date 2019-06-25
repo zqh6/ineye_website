@@ -4,6 +4,6 @@ class ZtController < ApplicationController
 
   end
   def sq
-    Rails.logger.warn "sq路径"
+
   end
 end
