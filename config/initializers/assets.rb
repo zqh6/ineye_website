@@ -56,6 +56,7 @@ Rails.application.config.assets.precompile += %w(
   video-js.css.erb
   viewer.css.erb
   zts.css.erb
+  animate.min.css.erb
 
   404/custom-scripts.js
   404/jquery-1.7.2.min.js
