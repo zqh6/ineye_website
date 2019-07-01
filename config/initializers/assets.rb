@@ -323,7 +323,7 @@ Rails.application.config.assets.precompile += %w(
   videoon.js
   viewer.js
   wangEditor.js
-
+  layer.js
 
 
   2.jpg
