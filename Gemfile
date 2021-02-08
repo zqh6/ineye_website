@@ -73,7 +73,7 @@ gem 'swagger_engine'
 gem 'yettings'
 gem 'china_sms'
 gem 'aliyun-oss-sdk', '~> 0.1.8'
-gem "carrierwave", "0.8.0"
+gem "carrierwave", "1.3.2"
 gem 'carrierwave-aliyun', '~> 0.7.0'
 
 gem 'mina', '~> 0.3.8'
